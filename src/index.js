@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as Perseus from './perseus';
 
 ReactDOM.render(
   <React.StrictMode>
