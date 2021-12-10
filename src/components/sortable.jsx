@@ -1,17 +1,30 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _gorgonGorgonJs from "../gorgon/gorgon.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _utilJs from "../util.js";
+import _underscore from "underscore";
+import { StyleSheet, css } from "aphrodite";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types, react/prop-types, react/sort-comp */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const {StyleSheet, css} = require("aphrodite");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const Util = require("../util.js");
-const Renderer = require("../renderer.jsx");
+const Util = _utilJs;
+const Renderer = _rendererJsx;
 
-const ApiClassNames = require("../perseus-api.jsx").ClassNames;
+const ApiClassNames = _perseusApiJsx.ClassNames;
 
-const Gorgon = require("../gorgon/gorgon.js");
-const {linterContextProps, linterContextDefault} = require("../gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs;
 
 const HORIZONTAL = "horizontal";
 const VERTICAL = "vertical";
@@ -661,3 +674,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = Sortable;
+export default module.exports;

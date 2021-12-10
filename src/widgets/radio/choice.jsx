@@ -1,22 +1,31 @@
-/* eslint-disable object-curly-spacing */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
+import _optionStatusJsx from "./option-status.jsx";
+import _choiceIconJsx from "./choice-icon.jsx";
+import _toggleableRadioButtonJsx from "./toggleable-radio-button.jsx";
+import _stylesMediaQueriesJs from "../../styles/media-queries.js";
+import _stylesConstantsJs from "../../styles/constants.js";
+import _stylesSharedJs from "../../styles/shared.js";
+import { ClassNames } from "../../perseus-api.jsx";
+import _classnames from "classnames";
+import _react from "react";
+import _underscore from "underscore";
+import { StyleSheet, css } from "aphrodite";
 
-/* global i18n */
+var module = {
+    exports: {}
+};
 
-const {StyleSheet, css} = require("aphrodite");
-const _ = require("underscore");
-const React = require("react");
-const classNames = require("classnames");
+var exports = module.exports;
+const _ = _underscore;
+const React = _react;
+const classNames = _classnames;
 
-const {ClassNames} = require("../../perseus-api.jsx");
-const sharedStyles = require("../../styles/shared.js");
-const styleConstants = require("../../styles/constants.js");
-const mediaQueries = require("../../styles/media-queries.js");
+const sharedStyles = _stylesSharedJs;
+const styleConstants = _stylesConstantsJs;
+const mediaQueries = _stylesMediaQueriesJs;
 
-const ToggleableRadioButton = require("./toggleable-radio-button.jsx");
-const ChoiceIcon = require("./choice-icon.jsx");
-const OptionStatus = require("./option-status.jsx");
+const ToggleableRadioButton = _toggleableRadioButtonJsx;
+const ChoiceIcon = _choiceIconJsx;
+const OptionStatus = _optionStatusJsx;
 
 const focusedStyleMixin = {
     backgroundColor: styleConstants.satSelectedBackgroundColor,
@@ -605,3 +614,4 @@ const Choice = React.createClass({
 });
 
 module.exports = Choice;
+export default module.exports;

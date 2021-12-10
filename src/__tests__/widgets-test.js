@@ -1,8 +1,18 @@
+import _rendererJsx from "../renderer.jsx";
+import _reactDom from "react-dom";
+import _react from "react";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* global beforeEach, notStrictEqual, strictEqual, xit */
 
-const _ = require("underscore");
-const React = require("react");
-const ReactDOM = require("react-dom");
+const _ = _underscore;
+const React = _react;
+const ReactDOM = _reactDom;
 
 let fixture;
 
@@ -83,7 +93,7 @@ describe("widgets", function() {
     let Renderer;
 
     beforeEach(function() {
-        Renderer = React.createFactory(require("../renderer.jsx"));
+        Renderer = React.createFactory(_rendererJsx);
         fixture = document.createElement('div');
     });
 
@@ -235,3 +245,4 @@ describe("widgets", function() {
         }
     );
 });
+export default module.exports;

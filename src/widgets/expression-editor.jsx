@@ -1,21 +1,37 @@
+import _expressionJsx from "./expression.jsx";
+import _componentsTexButtonsJsx from "../components/tex-buttons.jsx";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _reactComponentsSortableJsx from "react-components/sortable.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _hubbleIndexJs from "../../hubble/index.js";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, indent, no-var, object-curly-spacing, one-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var lens = require("../../hubble/index.js");
+var lens = _hubbleIndexJs;
 
-var Changeable = require("../mixins/changeable.jsx");
+var Changeable = _mixinsChangeableJsx;
 
-var InfoTip = require("../components/info-tip.jsx");
-var PropCheckBox = require("../components/prop-check-box.jsx");
-var SortableArea = require("react-components/sortable.jsx");
-var TeX = require("react-components/tex.jsx"); // OldExpression only
-var TexButtons = require("../components/tex-buttons.jsx");
+var InfoTip = _componentsInfoTipJsx;
+var PropCheckBox = _componentsPropCheckBoxJsx;
+var SortableArea = _reactComponentsSortableJsx;
+var TeX = _reactComponentsTexJsx; // OldExpression only
+var TexButtons = _componentsTexButtonsJsx;
 
-var Expression = require("./expression.jsx").Expression;
+var Expression = _expressionJsx.Expression;
 
 // An answer can be considered correct, wrong, or ungraded.
 var CONSIDERED = ["correct", "wrong", "ungraded"];
@@ -547,3 +563,4 @@ var AnswerOption = React.createClass({
 });
 
 module.exports = ExpressionEditor;
+export default module.exports;

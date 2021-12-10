@@ -1,4 +1,13 @@
-"use strict";
+"use strict";;
+import _articleEditorJsx from "./article-editor.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 /**
  * Renders an ArticleEditor as a non-controlled component.
@@ -9,10 +18,10 @@
  * can query them with serialize.
  */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const ArticleEditor = require("./article-editor.jsx");
+const ArticleEditor = _articleEditorJsx;
 
 const StatefulArticleEditor = React.createClass({
     getInitialState: function() {
@@ -156,3 +165,4 @@ const styles = {
 };
 
 module.exports = StatefulArticleEditor;
+export default module.exports;

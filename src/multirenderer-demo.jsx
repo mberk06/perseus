@@ -1,19 +1,18 @@
-/* eslint-disable no-console */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
-/**
- * Demo for the multi-item multirenderer layout.
- */
-const {StyleSheet, css} = require("aphrodite");
-const React = require("react");
+import { buildEmptyItemForShape, MultiRenderer, shapes } from "./multi-items.js";
+import _utilJs from "./util.js";
+import _multirendererEditorJsx from "./multirenderer-editor.jsx";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
 
-const MultiRendererEditor = require("./multirenderer-editor.jsx");
-const Util = require("./util.js");
-const {
-    buildEmptyItemForShape,
-    MultiRenderer,
-    shapes,
-} = require("./multi-items.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+
+const MultiRendererEditor = _multirendererEditorJsx;
+const Util = _utilJs;
 
 const DemoLayout = React.createClass({
     propTypes: {
@@ -229,3 +228,4 @@ const MultiRendererDemo = React.createClass({
 });
 
 module.exports = MultiRendererDemo;
+export default module.exports;

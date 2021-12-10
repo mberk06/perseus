@@ -1,9 +1,16 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * Tracks the user's current selection, and exposes it to the subtree using the
  * function-as-children pattern.
  */
-const React = require("react");
+const React = _react;
 
 class SelectionTracker extends React.PureComponent {
     state = {
@@ -131,3 +138,4 @@ class SelectionTracker extends React.PureComponent {
 }
 
 module.exports = SelectionTracker;
+export default module.exports;

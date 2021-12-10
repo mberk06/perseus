@@ -1,13 +1,22 @@
+import _widgetsJs from "./widgets.js";
+import _traversalJsx from "./traversal.jsx";
+import { findContentNodesInItem, inferItemShape } from "./multi-items.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Identifies whether or not a given perseus item requires the use of a mouse
  * or screen, based on the widgets it contains.
  */
 
-const _ = require("underscore");
+const _ = _underscore;
 
-const {findContentNodesInItem, inferItemShape} = require("./multi-items.js");
-const Traversal = require("./traversal.jsx");
-const Widgets = require("./widgets.js");
+const Traversal = _traversalJsx;
+const Widgets = _widgetsJs;
 
 // Iterate over a single Perseus renderer, mutating `widgets` by appending
 // violating widget types discovered in this item.
@@ -42,3 +51,4 @@ module.exports = {
         return _.uniq(widgets);
     },
 };
+export default module.exports;

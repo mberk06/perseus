@@ -1,3 +1,11 @@
+import _interactiveJs from "./interactive.js";
+import _graphieJs from "./graphie.js";
+
+var module = {
+ exports: {}
+};
+
+var exports = module.exports;
 /**
  * A wrapper around graphie.js and interactive.js to make sure interactive.js
  * is always required at the same time as graphie.js. This is because
@@ -7,7 +15,8 @@
  * To use the utilities exported from interactive.js, require that file
  * itself.
  */
-const GraphUtils = require("./graphie.js");
-require("./interactive.js"); // For side effects
+const GraphUtils = _graphieJs;
+_interactiveJs; // For side effects
 
 module.exports = GraphUtils;
+export default module.exports;

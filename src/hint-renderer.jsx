@@ -1,25 +1,29 @@
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
-const classnames = require("classnames");
+import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
+import _gorgonGorgonJs from "./gorgon/gorgon.js";
+import { baseUnitPx, hintBorderWidth, kaGreen, gray97 } from "./styles/constants.js";
+import _stylesMediaQueriesJs from "./styles/media-queries.js";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _rendererJsx from "./renderer.jsx";
+import _classnames from "classnames";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const classnames = _classnames;
 const i18n = window.i18n;
 
-const Renderer = require("./renderer.jsx");
+const Renderer = _rendererJsx;
 
-const ApiOptions = require("./perseus-api.jsx").Options;
+const ApiOptions = _perseusApiJsx.Options;
 
-const mediaQueries = require("./styles/media-queries.js");
-const {
-    baseUnitPx,
-    hintBorderWidth,
-    kaGreen,
-    gray97,
-} = require("./styles/constants.js");
+const mediaQueries = _stylesMediaQueriesJs;
 
-const Gorgon = require("./gorgon/gorgon.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("./gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs;
 
 /* Renders just a hint preview */
 const HintRenderer = React.createClass({
@@ -151,3 +155,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = HintRenderer;
+export default module.exports;

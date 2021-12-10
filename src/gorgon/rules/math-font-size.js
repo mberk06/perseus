@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "math-font-size",
     severity: Rule.Severity.GUIDELINE,
@@ -9,3 +15,4 @@ module.exports = Rule.makeRule({
     message: `Math font size:
 Don't change the default font size with \\Large{} or similar commands`,
 });
+export default module.exports;

@@ -1,18 +1,32 @@
+import _testutilsDelayedPromiseJsx from "../../testutils/delayed-promise.jsx";
+import _reactAddonsTestUtils from "react-addons-test-utils";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _perseusJs from "../../perseus.js";
+import _hubbleIndexJs from "../../../hubble/index.js";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-unused-vars, no-var, react/jsx-closing-bracket-location */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var assert = require("assert");
-var lens = require("../../../hubble/index.js");
+var assert = _assert;
+var lens = _hubbleIndexJs;
 // TODO(jack): Package MathQuill
 var MathQuill = window.MathQuill;
 var MQ = MathQuill.getInterface(2);
-var Perseus = require("../../perseus.js");
-var React = require("react");
-var ReactDOM = require("react-dom");
-const _ = require("underscore");
-var TestUtils = require("react-addons-test-utils");
-var delayedPromise = require("../../testutils/delayed-promise.jsx");
+var Perseus = _perseusJs;
+var React = _react;
+var ReactDOM = _reactDom;
+const _ = _underscore;
+var TestUtils = _reactAddonsTestUtils;
+var delayedPromise = _testutilsDelayedPromiseJsx;
 
 var expressionItem1 = {
     question: {
@@ -277,3 +291,4 @@ describe("Expression Widget", function() {
         });
     });
 });
+export default module.exports;

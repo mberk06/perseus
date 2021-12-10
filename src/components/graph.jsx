@@ -1,14 +1,26 @@
+import _componentsSvgImageJsx from "../components/svg-image.jsx";
+import { interactiveSizes } from "../styles/constants.js";
+import _utilGraphUtilsJs from "../util/graph-utils.js";
+import _utilJs from "../util.js";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types, react/prop-types, react/sort-comp */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const Util = require("../util.js");
-const GraphUtils = require("../util/graph-utils.js");
-const {interactiveSizes} = require("../styles/constants.js");
+const Util = _utilJs;
+const GraphUtils = _utilGraphUtilsJs;
 
-const SvgImage = require("../components/svg-image.jsx");
+const SvgImage = _componentsSvgImageJsx;
 
 const defaultBackgroundImage = {
     url: null,
@@ -386,3 +398,4 @@ const Graph = React.createClass({
 });
 
 module.exports = Graph;
+export default module.exports;

@@ -1,3 +1,11 @@
+import _extraWidgetsJs from "./extra-widgets.js";
+import _widgetsJs from "./widgets.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * This should be called by all clients, specifying whether extra widgets are
  * needed via `loadExtraWidgets`. It is idempotent, so it's not a problem to
@@ -26,11 +34,11 @@ const init = function(options) {
     // lightweight fix that will get exercises working in our mobile apps
     // immediately.
     if (options.loadExtraWidgets === undefined || options.loadExtraWidgets) {
-        const Widgets = require("./widgets.js");
+        const Widgets = _widgetsJs;
         require.ensure(
             [],
             require => {
-                const extraWidgets = require("./extra-widgets.js");
+                const extraWidgets = _extraWidgetsJs;
                 Widgets.registerMany(extraWidgets);
                 widgetsDeferred.resolve();
             },
@@ -64,3 +72,4 @@ const init = function(options) {
 };
 
 module.exports = init;
+export default module.exports;

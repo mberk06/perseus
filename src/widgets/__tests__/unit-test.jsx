@@ -1,14 +1,16 @@
+import { widget as UnitWidget, countSigfigs, sigfigPrint } from "../unit.jsx";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-redeclare, no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var assert = require("assert");
-// var Perseus = require("../../perseus.js");
-
-// var TestUtils = require("react-addons-test-utils");
-// var delayedPromise = require("../../testutils/delayed-promise.jsx");
-
-var {widget: UnitWidget, countSigfigs, sigfigPrint} = require("../unit.jsx");
+var assert = _assert;
 
 describe("countSigfigs", () => {
     it("gets a few simple cases right", () => {
@@ -119,3 +121,4 @@ describe("Unit Widget Grading", () => {
         );
     });
 });
+export default module.exports;

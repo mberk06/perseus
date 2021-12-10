@@ -1,13 +1,23 @@
+import _perseusMarkdownJsx from "../perseus-markdown.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
+var Changeable = _mixinsChangeableJsx;
 
-var PerseusMarkdown = require("../perseus-markdown.jsx");
+var PerseusMarkdown = _perseusMarkdownJsx;
 var mdParse = PerseusMarkdown.parse;
 var mdOutput = PerseusMarkdown.basicOutput;
 
@@ -98,3 +108,4 @@ module.exports = {
     widget: SimpleMarkdownTester,
     transform: _.identity,
 };
+export default module.exports;

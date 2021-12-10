@@ -1,15 +1,27 @@
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
+const React = _react;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const InfoTip = require("../components/info-tip.jsx");
-const NumberInput = require("../components/number-input.jsx");
-const TextInput = require("../components/text-input.jsx");
+const InfoTip = _componentsInfoTipJsx;
+const NumberInput = _componentsNumberInputJsx;
+const TextInput = _componentsTextInputJsx;
 
 const PassageRefEditor = React.createClass({
     propTypes: {
@@ -79,3 +91,4 @@ const PassageRefEditor = React.createClass({
 });
 
 module.exports = PassageRefEditor;
+export default module.exports;

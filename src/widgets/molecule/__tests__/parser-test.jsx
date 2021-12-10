@@ -1,10 +1,18 @@
+import _smilesParserJsx from "../smiles-parser.jsx";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable space-in-parens */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const assert = require("assert");
+const assert = _assert;
 
-const SmilesParser = require("../smiles-parser.jsx");
+const SmilesParser = _smilesParserJsx;
 const parser = SmilesParser.parse;
 const ParseError = SmilesParser.ParseError;
 
@@ -162,3 +170,4 @@ describe("SMILES parser", () => {
         });
     });
 });
+export default module.exports;

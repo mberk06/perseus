@@ -1,9 +1,19 @@
-const allWidgets = require("../all-widgets.js");
-const Widgets = require("../widgets.js");
+import _a11yJs from "../a11y.js";
+import _assert from "assert";
+import _widgetsJs from "../widgets.js";
+import _allWidgetsJs from "../all-widgets.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const allWidgets = _allWidgetsJs;
+const Widgets = _widgetsJs;
 Widgets.registerMany(allWidgets);
 
-const assert = require("assert");
-const a11y = require("../a11y.js");
+const assert = _assert;
+const a11y = _a11yJs;
 
 const noWidgets = {
     "question": {
@@ -336,3 +346,4 @@ describe("a11y", () => {
         });
     });
 });
+export default module.exports;

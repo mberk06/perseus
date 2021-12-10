@@ -1,20 +1,26 @@
-/* eslint-disable comma-dangle, object-curly-spacing, react/forbid-prop-types, react/sort-comp */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _stylesConstantsJs from "../styles/constants.js";
+import _stylesMediaQueriesJs from "../styles/media-queries.js";
+import _rendererJsx from "../renderer.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
 
-const {StyleSheet, css} = require("aphrodite");
-const React = require("react");
-const _ = require("underscore");
+var module = {
+    exports: {}
+};
 
-const Changeable = require("../mixins/changeable.jsx");
-const PerseusApi = require("../perseus-api.jsx");
-const Renderer = require("../renderer.jsx");
-const mediaQueries = require("../styles/media-queries.js");
-const styleConstants = require("../styles/constants.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var exports = module.exports;
+const React = _react;
+const _ = _underscore;
+
+const Changeable = _mixinsChangeableJsx;
+const PerseusApi = _perseusApiJsx;
+const Renderer = _rendererJsx;
+const mediaQueries = _stylesMediaQueriesJs;
+const styleConstants = _stylesConstantsJs;
 
 const defaultExplanationProps = {
     showPrompt: "Explain",
@@ -275,3 +281,4 @@ module.exports = {
     transform: _.identity,
     isLintable: true,
 };
+export default module.exports;

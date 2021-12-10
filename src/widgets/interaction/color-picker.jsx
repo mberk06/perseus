@@ -1,14 +1,24 @@
+import _utilColorsJs from "../../util/colors.js";
+import { ChangeableProps } from "../../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 // @flow
 
-const ButtonGroup = require("react-components/button-group.jsx");
-const React = require("react");
-const _ = require("underscore");
+const ButtonGroup = _reactComponentsButtonGroupJsx;
+const React = _react;
+const _ = _underscore;
 
-const {ChangeableProps} = require("../../mixins/changeable.jsx");
-const KhanColors = require("../../util/colors.js");
+const KhanColors = _utilColorsJs;
 
 const COLORS = [
     KhanColors.BLACK,
@@ -63,3 +73,4 @@ class ColorPicker extends React.Component {
 }
 
 module.exports = ColorPicker;
+export default module.exports;

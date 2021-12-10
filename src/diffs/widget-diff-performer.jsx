@@ -1,4 +1,11 @@
-const _ = require("underscore");
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const _ = _underscore;
 
 const UNCHANGED = "unchanged";
 const CHANGED = "changed";
@@ -68,3 +75,4 @@ const performDiff = function(before, after, /* optional */ key) {
 };
 
 module.exports = performDiff;
+export default module.exports;

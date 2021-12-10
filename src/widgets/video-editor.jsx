@@ -1,15 +1,27 @@
+import _reactComponentsBlurInputJsx from "react-components/blur-input.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const InfoTip = require("../components/info-tip.jsx");
-const BlurInput = require("react-components/blur-input.jsx");
+const InfoTip = _componentsInfoTipJsx;
+const BlurInput = _reactComponentsBlurInputJsx;
 
 const KA_VIDEO_URL = /khanacademy\.org\/.*\/v\/(.*)$/;
 
@@ -75,3 +87,4 @@ const VideoEditor = React.createClass({
 });
 
 module.exports = VideoEditor;
+export default module.exports;

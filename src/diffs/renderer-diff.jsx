@@ -1,13 +1,24 @@
+import _widgetsJs from "../widgets.js";
+import _widgetDiffJsx from "./widget-diff.jsx";
+import _textDiffJsx from "./text-diff.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A side by side diff view for Perseus renderers.
  */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const TextDiff = require("./text-diff.jsx");
-const WidgetDiff = require("./widget-diff.jsx");
-const Widgets = require("../widgets.js");
+const TextDiff = _textDiffJsx;
+const WidgetDiff = _widgetDiffJsx;
+const Widgets = _widgetsJs;
 
 const rendererProps = React.PropTypes.shape({
     content: React.PropTypes.string,
@@ -124,3 +135,4 @@ const RendererDiff = React.createClass({
 });
 
 module.exports = RendererDiff;
+export default module.exports;

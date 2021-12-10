@@ -1,18 +1,28 @@
-/* eslint-disable react/sort-comp */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
-// @flow
+import _componentsInlineIconJsx from "../../components/inline-icon.jsx";
 
-const React = require("react");
-
-const {
+import {
     iconChevronDown,
     iconChevronRight,
     iconCircleArrowDown,
     iconCircleArrowUp,
     iconTrash,
-} = require("../../icon-paths.js");
-const InlineIcon = require("../../components/inline-icon.jsx");
+} from "../../icon-paths.js";
+
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+/* eslint-disable react/sort-comp */
+/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
+/* To fix, remove an entry above, run ka-lint, and fix errors. */
+// @flow
+
+const React = _react;
+
+const InlineIcon = _componentsInlineIconJsx;
 
 class ElementContainer extends React.Component {
     static defaultProps = {
@@ -80,3 +90,4 @@ class ElementContainer extends React.Component {
 }
 
 module.exports = ElementContainer;
+export default module.exports;

@@ -1,9 +1,20 @@
-const React = require("react");
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _react from "react";
 
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
-const Changeable = require("../mixins/changeable.jsx");
-const NumberInput = require("../components/number-input.jsx");
-const TextInput = require("../components/text-input.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+
+const EditorJsonify = _mixinsEditorJsonifyJsx;
+const Changeable = _mixinsChangeableJsx;
+const NumberInput = _componentsNumberInputJsx;
+const TextInput = _componentsTextInputJsx;
 
 const MoleculeWidgetEditor = React.createClass({
     propTypes: {
@@ -57,3 +68,4 @@ const MoleculeWidgetEditor = React.createClass({
 });
 
 module.exports = MoleculeWidgetEditor;
+export default module.exports;

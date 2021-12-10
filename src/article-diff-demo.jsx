@@ -1,5 +1,12 @@
-const {Component} = require("react");
-const ArticleDiff = require("./diffs/article-diff.jsx");
+import _diffsArticleDiffJsx from "./diffs/article-diff.jsx";
+import { Component } from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const ArticleDiff = _diffsArticleDiffJsx;
 
 class ArticleDiffDemo extends Component {
     state = {swapped: false};
@@ -206,3 +213,4 @@ const after = [
 /* eslint-enable max-len */
 
 module.exports = ArticleDiffDemo;
+export default module.exports;

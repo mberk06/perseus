@@ -1,3 +1,10 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * This component, whenever its content updates, traverses the DOM to find
@@ -12,7 +19,7 @@
  * The words yielded by WordIndexer are sorted in document order, which makes
  * them amenable to binary search - see `findBoundaryWordIndex` in ranges.js.
  */
-const React = require("react");
+const React = _react;
 
 class WordIndexer extends React.PureComponent {
     /* eslint-enable react/sort-comp */
@@ -131,3 +138,4 @@ class WordIndexer extends React.PureComponent {
 }
 
 module.exports = WordIndexer;
+export default module.exports;

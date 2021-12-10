@@ -1,12 +1,22 @@
+import _componentsTextListEditorJsx from "../components/text-list-editor.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, max-len, no-var, object-curly-spacing, one-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const InfoTip = require("../components/info-tip.jsx");
-const TextListEditor = require("../components/text-list-editor.jsx");
+const InfoTip = _componentsInfoTipJsx;
+const TextListEditor = _componentsTextListEditorJsx;
 
 var NORMAL = "normal",
     AUTO = "auto",
@@ -153,3 +163,4 @@ const OrdererEditor = React.createClass({
 });
 
 module.exports = OrdererEditor;
+export default module.exports;

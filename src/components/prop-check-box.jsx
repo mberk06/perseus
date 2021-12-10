@@ -1,7 +1,15 @@
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
 /* A checkbox that syncs its value to props using the
  * renderer's onChange method, and gets the prop name
@@ -68,3 +76,4 @@ const PropCheckBox = React.createClass({
 });
 
 module.exports = PropCheckBox;
+export default module.exports;

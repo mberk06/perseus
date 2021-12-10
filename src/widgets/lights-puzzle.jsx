@@ -1,12 +1,22 @@
+import _mixinsWidgetJsonifyDeprecatedJsx from "../mixins/widget-jsonify-deprecated.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable array-bracket-spacing, comma-dangle, no-undef, no-unused-vars, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
-var WidgetJsonifyDeprecated = require("../mixins/widget-jsonify-deprecated.jsx");
+var Changeable = _mixinsChangeableJsx;
+var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
 
 var MAX_SIZE = 8;
 
@@ -349,3 +359,4 @@ module.exports = {
     widget: LightsPuzzle,
     transform: transformProps,
 };
+export default module.exports;

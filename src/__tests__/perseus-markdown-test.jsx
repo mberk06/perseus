@@ -1,10 +1,22 @@
-const assert = require("assert");
-const nodeUtil = require("util");
-const React = require("react");
-const ReactDOMServer = require("react-dom/server");
-const _ = require("underscore");
+import _perseusMarkdownJsx from "../perseus-markdown.jsx";
+import _underscore from "underscore";
+import _reactDomServer from "react-dom/server";
+import _react from "react";
+import _util from "util";
+import _assert from "assert";
 
-const PerseusMarkdown = require("../perseus-markdown.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
+const nodeUtil = _util;
+const React = _react;
+const ReactDOMServer = _reactDomServer;
+const _ = _underscore;
+
+const PerseusMarkdown = _perseusMarkdownJsx;
 const parse = PerseusMarkdown.parse;
 const characterCount = PerseusMarkdown.characterCount;
 
@@ -542,3 +554,4 @@ describe("perseus markdown", () => {
         });
     });
 });
+export default module.exports;

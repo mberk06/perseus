@@ -1,6 +1,12 @@
-const assert = require("assert");
+import { maybeUnescape, maybeUnescapeAccordingToSource, shouldUnescape } from "../jipt-hack.jsx";
+import _assert from "assert";
 
-const {maybeUnescape, maybeUnescapeAccordingToSource, shouldUnescape} = require("../jipt-hack.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
 
 const assertShouldKeepOriginal = function(text) {
     assert.equal(maybeUnescape(text), text);
@@ -137,3 +143,4 @@ describe("shouldUnescape", () => {
         assert.equal(shouldUnescape("Multiple\nlines\r\nand a\ttab"), false);
     });
 });
+export default module.exports;

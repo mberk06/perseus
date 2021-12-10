@@ -1,3 +1,11 @@
+import _reactComponentsInfoTipJsx from "react-components/info-tip.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A wrapper around react-components/info-tip.jsx that can be rendered on the
  * server without causing a checksum mismatch on the client.
@@ -5,9 +13,9 @@
  * two sets of generated classnames will not match.)
  */
 
-const React = require("react");
+const React = _react;
 
-const ReactComponentsInfoTip = require("react-components/info-tip.jsx");
+const ReactComponentsInfoTip = _reactComponentsInfoTipJsx;
 
 const InfoTip = React.createClass({
     getInitialState: function() {
@@ -32,3 +40,4 @@ const InfoTip = React.createClass({
 });
 
 module.exports = InfoTip;
+export default module.exports;

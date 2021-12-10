@@ -1,11 +1,21 @@
+import _kmath from "kmath";
+import _objective_Js from "./objective_.js";
+import _interactiveUtilJs from "./interactive-util.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Default methods for a wrapped movable.
  */
 
-const _ = require("underscore");
-const InteractiveUtil = require("./interactive-util.js");
-const objective_ = require("./objective_.js");
-const kvector = require("kmath").vector;
+const _ = _underscore;
+const InteractiveUtil = _interactiveUtilJs;
+const objective_ = _objective_Js;
+const kvector = _kmath.vector;
 
 /*
  * These functions, when called on the wrapped object, simply pass the
@@ -78,3 +88,4 @@ const WrappedDefaults = _.extend({
 }));
 
 module.exports = WrappedDefaults;
+export default module.exports;

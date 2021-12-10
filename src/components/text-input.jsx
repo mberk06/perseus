@@ -1,8 +1,16 @@
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/sort-comp */
 
-const React = require("react");
+const React = _react;
 
-const ReactDOM = require("react-dom");
+const ReactDOM = _reactDom;
 
 const TextInput = React.createClass({
     propTypes: {
@@ -67,3 +75,4 @@ const TextInput = React.createClass({
 });
 
 module.exports = TextInput;
+export default module.exports;

@@ -1,26 +1,41 @@
+import _interactive2WrappedLineJs from "../interactive2/wrapped-line.js";
+import { containerSizeClassPropType, getInteractiveBoxFromSizeClass } from "../util/sizing-utils.js";
+import { interactiveSizes } from "../styles/constants.js";
+import _utilGraphUtilsJs from "../util/graph-utils.js";
+import _utilColorsJs from "../util/colors.js";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _utilJs from "../util.js";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _interactive2Js from "../interactive2.js";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _componentsGraphJsx from "../components/graph.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, indent, max-lines, no-redeclare, no-undef, no-unused-vars, no-var, object-curly-spacing, one-var, prefer-spread, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Graph = require("../components/graph.jsx");
-var InfoTip = require("../components/info-tip.jsx");
-var Interactive2 = require("../interactive2.js");
-var NumberInput = require("../components/number-input.jsx");
-var Util = require("../util.js");
+var Graph = _componentsGraphJsx;
+var InfoTip = _componentsInfoTipJsx;
+var Interactive2 = _interactive2Js;
+var NumberInput = _componentsNumberInputJsx;
+var Util = _utilJs;
 
-var knumber = require("kmath").number;
-var kpoint = require("kmath").point;
-const KhanColors = require("../util/colors.js");
-const GraphUtils = require("../util/graph-utils.js");
-const {interactiveSizes} = require("../styles/constants.js");
-const {
-    containerSizeClassPropType,
-    getInteractiveBoxFromSizeClass,
-} = require("../util/sizing-utils.js");
-const WrappedLine = require("../interactive2/wrapped-line.js");
+var knumber = _kmath.number;
+var kpoint = _kmath2.point;
+const KhanColors = _utilColorsJs;
+const GraphUtils = _utilGraphUtilsJs;
+const WrappedLine = _interactive2WrappedLineJs;
 
 var DeprecationMixin = Util.DeprecationMixin;
 
@@ -2660,3 +2675,4 @@ module.exports = {
     displayName: "Interactive graph",
     widget: InteractiveGraph,
 };
+export default module.exports;

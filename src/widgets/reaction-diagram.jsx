@@ -1,6 +1,14 @@
-const React = require("react");
+import _moleculeJsx from "./molecule.jsx";
+import _react from "react";
 
-const Molecule = require("./molecule.jsx").molecule;
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+
+const Molecule = _moleculeJsx.molecule;
 
 const Separator = React.createClass({
     propTypes: {
@@ -129,3 +137,4 @@ module.exports = {
     hidden: true,
     widget: ReactionDiagramWidget,
 };
+export default module.exports;

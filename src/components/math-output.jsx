@@ -1,11 +1,23 @@
+import _texWranglerJs from "../tex-wrangler.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/sort-comp */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
-const TeX = require("react-components/tex.jsx");
-const ApiClassNames = require("../perseus-api.jsx").ClassNames;
-const ModifyTex = require("../tex-wrangler.js").modifyTex;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
+const TeX = _reactComponentsTexJsx;
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const ModifyTex = _texWranglerJs.modifyTex;
 
 const MathOutput = React.createClass({
     propTypes: {
@@ -128,3 +140,4 @@ const MathOutput = React.createClass({
 });
 
 module.exports = MathOutput;
+export default module.exports;

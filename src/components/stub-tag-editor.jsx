@@ -1,3 +1,11 @@
+import _textListEditorJsx from "./text-list-editor.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Stub Tag Editor.
  *
@@ -11,9 +19,9 @@
  * It also gives a nicer interface for the group metadata editor
  * in local demo mode.
  */
-const React = require("react");
+const React = _react;
 
-const TextListEditor = require("./text-list-editor.jsx");
+const TextListEditor = _textListEditorJsx;
 const EMPTY_ARRAY = [];
 
 const StubTagEditor = React.createClass({
@@ -50,3 +58,4 @@ const StubTagEditor = React.createClass({
 });
 
 module.exports = StubTagEditor;
+export default module.exports;

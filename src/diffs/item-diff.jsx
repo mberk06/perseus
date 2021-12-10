@@ -1,12 +1,22 @@
+import _widgetDiffJsx from "./widget-diff.jsx";
+import _rendererDiffJsx from "./renderer-diff.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A side by side diff view for Perseus exercise items.
  */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const RendererDiff = require("./renderer-diff.jsx");
-const WidgetDiff = require("./widget-diff.jsx");
+const RendererDiff = _rendererDiffJsx;
+const WidgetDiff = _widgetDiffJsx;
 
 const itemProps = React.PropTypes.shape({
     question: React.PropTypes.shape({}).isRequired,
@@ -61,3 +71,4 @@ const ItemDiff = React.createClass({
 });
 
 module.exports = ItemDiff;
+export default module.exports;

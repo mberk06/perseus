@@ -1,3 +1,21 @@
+import { getCanUse3dTransform } from "../interactive2/interactive-util.js";
+import _colorsJs from "./colors.js";
+import _mathJs from "./math.js";
+import _interactive2WrappedPathJs from "../interactive2/wrapped-path.js";
+import _interactive2WrappedLineJs from "../interactive2/wrapped-line.js";
+import _interactive2WrappedEllipseJs from "../interactive2/wrapped-ellipse.js";
+import _kmath3 from "kmath";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _graphieJs from "./graphie.js";
+import _libJqueryMobileVmouseJs from "../../lib/jquery.mobile.vmouse.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable max-lines */
 
 /**
@@ -9,22 +27,20 @@
 
 // TODO(emily): This file breaks our line length limits like nobody's business.
 // Figure out how to fix that.
-const _ = require("underscore");
+const _ = _underscore;
 
-require("../../lib/jquery.mobile.vmouse.js");
+_libJqueryMobileVmouseJs;
 
 /* global Raphael:false */
-const GraphUtils = require("./graphie.js");
-const kvector = require("kmath").vector;
-const kpoint = require("kmath").point;
-const kline = require("kmath").line;
-const WrappedEllipse = require("../interactive2/wrapped-ellipse.js");
-const WrappedLine = require("../interactive2/wrapped-line.js");
-const WrappedPath = require("../interactive2/wrapped-path.js");
-const KhanMath = require("./math.js");
-const KhanColors = require("./colors.js");
-
-const {getCanUse3dTransform} = require("../interactive2/interactive-util.js");
+const GraphUtils = _graphieJs;
+const kvector = _kmath.vector;
+const kpoint = _kmath2.point;
+const kline = _kmath3.line;
+const WrappedEllipse = _interactive2WrappedEllipseJs;
+const WrappedLine = _interactive2WrappedLineJs;
+const WrappedPath = _interactive2WrappedPathJs;
+const KhanMath = _mathJs;
+const KhanColors = _colorsJs;
 
 function sum(array) {
     return _.reduce(
@@ -3963,3 +3979,4 @@ _.extend(MovableAngle.prototype, {
 });
 
 module.exports = InteractiveUtils;
+export default module.exports;

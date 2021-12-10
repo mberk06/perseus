@@ -1,9 +1,17 @@
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-const _ = require("underscore");
+var React = _react;
+const _ = _underscore;
 
 var JsonEditor = React.createClass({
     getInitialState: function() {
@@ -115,3 +123,4 @@ var JsonEditor = React.createClass({
 });
 
 module.exports = JsonEditor;
+export default module.exports;

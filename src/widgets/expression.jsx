@@ -1,37 +1,57 @@
+import _hubbleIndexJs from "../../hubble/index.js";
+import { iconExclamationSign } from "../icon-paths.js";
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _mathInput3 from "../../math-input";
+import _mathInput2 from "../../math-input";
+import _mathInput from "../../math-input";
+import _componentsTexButtonsJsx from "../components/tex-buttons.jsx";
+import _componentsMathInputJsx from "../components/math-input.jsx";
+import _componentsInputWithExamplesJsx from "../components/input-with-examples.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _utilAnswerTypesJs from "../util/answer-types.js";
+import _perseusApiJsx3 from "../perseus-api.jsx";
+import _perseusApiJsx2 from "../perseus-api.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactComponentsTooltipJsx from "react-components/tooltip.jsx";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, indent, no-redeclare, no-undef, no-unused-vars, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var classNames = require("classnames");
-var React = require("react");
-var ReactDOM = require("react-dom");
-var Tooltip = require("react-components/tooltip.jsx");
-var _ = require("underscore");
+var classNames = _classnames;
+var React = _react;
+var ReactDOM = _reactDom;
+var Tooltip = _reactComponentsTooltipJsx;
+var _ = _underscore;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-var Changeable = require("../mixins/changeable.jsx");
-var ApiOptions = require("../perseus-api.jsx").Options;
-var ApiClassNames = require("../perseus-api.jsx").ClassNames;
-const KhanAnswerTypes = require("../util/answer-types.js");
+var ApiOptions = _perseusApiJsx.Options;
+var Changeable = _mixinsChangeableJsx;
+var ApiOptions = _perseusApiJsx2.Options;
+var ApiClassNames = _perseusApiJsx3.ClassNames;
+const KhanAnswerTypes = _utilAnswerTypesJs;
 
-const InlineIcon = require("../components/inline-icon.jsx");
-var InputWithExamples = require("../components/input-with-examples.jsx");
-var MathInput = require("../components/math-input.jsx");
-var TexButtons = require("../components/tex-buttons.jsx");
-const {KeypadInput} = require("../../math-input").components;
+const InlineIcon = _componentsInlineIconJsx;
+var InputWithExamples = _componentsInputWithExamplesJsx;
+var MathInput = _componentsMathInputJsx;
+var TexButtons = _componentsTexButtonsJsx;
+const {KeypadInput} = _mathInput.components;
 const {
     keypadConfigurationPropType,
     keypadElementPropType,
-} = require("../../math-input").propTypes;
-const {KeypadTypes} = require("../../math-input").consts;
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+} = _mathInput2.propTypes;
+const {KeypadTypes} = _mathInput3.consts;
 
-const {iconExclamationSign} = require("../icon-paths.js");
-
-var lens = require("../../hubble/index.js");
+var lens = _hubbleIndexJs;
 
 var ERROR_MESSAGE = i18n._("Sorry, I don't understand that!");
 
@@ -572,3 +592,4 @@ module.exports = {
     Expression,
     isLintable: true,
 };
+export default module.exports;

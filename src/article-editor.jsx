@@ -1,26 +1,36 @@
-"use strict";
+"use strict";;
+import _componentsHudJsx from "./components/hud.jsx";
+import _iframeContentRendererJsx from "./iframe-content-renderer.jsx";
+import _componentsDeviceFramerJsx from "./components/device-framer.jsx";
+import _jsonEditorJsx from "./json-editor.jsx";
+import _componentsInlineIconJsx from "./components/inline-icon.jsx";
+import { iconCircleArrowDown, iconCircleArrowUp, iconPlus, iconTrash } from "./icon-paths.js";
+import _editorJsx from "./editor.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 /**
  * An article editor. Articles are long-form pieces of content, composed of
  * multiple (Renderer) sections concatenated together.
  */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const ApiOptions = require("./perseus-api.jsx").Options;
-const Editor = require("./editor.jsx");
-const {
-    iconCircleArrowDown,
-    iconCircleArrowUp,
-    iconPlus,
-    iconTrash,
-} = require("./icon-paths.js");
-const InlineIcon = require("./components/inline-icon.jsx");
-const JsonEditor = require("./json-editor.jsx");
-const DeviceFramer = require("./components/device-framer.jsx");
-const IframeContentRenderer = require("./iframe-content-renderer.jsx");
-const HUD = require("./components/hud.jsx");
+const ApiOptions = _perseusApiJsx.Options;
+const Editor = _editorJsx;
+const InlineIcon = _componentsInlineIconJsx;
+const JsonEditor = _jsonEditorJsx;
+const DeviceFramer = _componentsDeviceFramerJsx;
+const IframeContentRenderer = _iframeContentRendererJsx;
+const HUD = _componentsHudJsx;
 
 const rendererProps = React.PropTypes.shape({
     content: React.PropTypes.string,
@@ -437,3 +447,4 @@ const ArticleEditor = React.createClass({
 });
 
 module.exports = ArticleEditor;
+export default module.exports;

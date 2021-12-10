@@ -1,8 +1,15 @@
+import _rulesAllRulesJs from "./rules/all-rules.js";
 import PerseusMarkdown from "../perseus-markdown.jsx";
 import Rule from "./rule.js";
 import TreeTransformer from "./tree-transformer.js";
 
-const allLintRules = require("./rules/all-rules.js")
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
+const allLintRules = _rulesAllRulesJs
     .filter(r => r.severity < Rule.Severity.BULK_WARNING);
 
 //
@@ -277,3 +284,4 @@ module.exports = {
     pushContextStack,
     rules: allLintRules,
 };
+export default module.exports;

@@ -1,11 +1,23 @@
-const React = require("react");
-const _ = require("underscore");
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _editorJsx from "../editor.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var module = {
+    exports: {}
+};
 
-const Editor = require("../editor.jsx");
-const TextInput = require("../components/text-input.jsx");
+var exports = module.exports;
+const React = _react;
+const _ = _underscore;
+
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
+
+const Editor = _editorJsx;
+const TextInput = _componentsTextInputJsx;
 
 const DefinitionEditor = React.createClass({
     propTypes: {
@@ -70,3 +82,4 @@ const DefinitionEditor = React.createClass({
 });
 
 module.exports = DefinitionEditor;
+export default module.exports;

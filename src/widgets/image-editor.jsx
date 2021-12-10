@@ -1,21 +1,37 @@
+import _componentsRangeInputJsx from "../components/range-input.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _editorJsx from "../editor.jsx";
+import _reactComponentsBlurInputJsx from "react-components/blur-input.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _utilJs from "../util.js";
+import { iconTrash } from "../icon-paths.js";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const {iconTrash} = require("../icon-paths.js");
-const Util = require("../util.js");
+const Util = _utilJs;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const BlurInput = require("react-components/blur-input.jsx");
-const Editor = require("../editor.jsx");
-const InfoTip = require("../components/info-tip.jsx");
-const InlineIcon = require("../components/inline-icon.jsx");
-const RangeInput = require("../components/range-input.jsx");
+const BlurInput = _reactComponentsBlurInputJsx;
+const Editor = _editorJsx;
+const InfoTip = _componentsInfoTipJsx;
+const InlineIcon = _componentsInlineIconJsx;
+const RangeInput = _componentsRangeInputJsx;
 
 const defaultBoxSize = 400;
 const defaultRange = [0, 10];
@@ -312,3 +328,4 @@ const ImageEditor = React.createClass({
 });
 
 module.exports = ImageEditor;
+export default module.exports;

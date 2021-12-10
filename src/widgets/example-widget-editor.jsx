@@ -1,11 +1,20 @@
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
+var React = _react;
 
-var Changeable = require("../mixins/changeable.jsx");
-var EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var Changeable = _mixinsChangeableJsx;
+var EditorJsonify = _mixinsEditorJsonifyJsx;
 
 /**
  * This is the widget's editor. This is what shows up on the left side
@@ -58,3 +67,4 @@ var ExampleWidgetEditor = React.createClass({
 });
 
 module.exports = ExampleWidgetEditor;
+export default module.exports;

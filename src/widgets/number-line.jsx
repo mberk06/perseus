@@ -1,31 +1,51 @@
+import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js";
+import _utilColorsJs from "../util/colors.js";
+import _utilMathJs from "../util/math.js";
+import _kmath from "kmath";
+import _componentsGraphieJsx from "../components/graphie.jsx";
+import _mathInput from "../../math-input";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals i18n, $_ */
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
+var Changeable = _mixinsChangeableJsx;
 
-var NumberInput = require("../components/number-input.jsx");
-var MathOutput = require("../components/math-output.jsx");
-const SimpleKeypadInput = require("../components/simple-keypad-input.jsx");
+var NumberInput = _componentsNumberInputJsx;
+var MathOutput = _componentsMathOutputJsx;
+const SimpleKeypadInput = _componentsSimpleKeypadInputJsx;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-const {keypadElementPropType} = require("../../math-input").propTypes;
+var ApiOptions = _perseusApiJsx.Options;
+const {keypadElementPropType} = _mathInput.propTypes;
 
-var Graphie = require("../components/graphie.jsx");
+var Graphie = _componentsGraphieJsx;
 var MovablePoint = Graphie.MovablePoint;
 var Line = Graphie.Line;
 
-var knumber = require("kmath").number;
-const KhanMath = require("../util/math.js");
-const KhanColors = require("../util/colors.js");
+var knumber = _kmath.number;
+const KhanMath = _utilMathJs;
+const KhanColors = _utilColorsJs;
 
 var bound = (x, gt, lt) => Math.min(Math.max(x, gt), lt);
-var assert = require("../interactive2/interactive-util.js").assert;
+var assert = _interactive2InteractiveUtilJs.assert;
 
 var EN_DASH = "\u2013";
 const horizontalPadding = 30;
@@ -804,3 +824,4 @@ module.exports = {
     transform: numberLineTransform,
     staticTransform: staticTransform,
 };
+export default module.exports;

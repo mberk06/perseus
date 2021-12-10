@@ -1,11 +1,20 @@
+import _deferredJs from "../deferred.js";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Zooms child to fit with tap-to-zoom behavior.
  */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
+const React = _react;
+const ReactDOM = _reactDom;
 
-const Deferred = require("../deferred.js");
+const Deferred = _deferredJs;
 
 const Zoomable = React.createClass({
     propTypes: {
@@ -251,3 +260,4 @@ const Zoomable = React.createClass({
 });
 
 module.exports = Zoomable;
+export default module.exports;

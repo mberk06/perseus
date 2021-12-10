@@ -1,3 +1,8 @@
+var module = {
+ exports: {}
+};
+
+var exports = module.exports;
 /**
  * These are things that widgets should exclude when serializing themselves.
  *
@@ -33,3 +38,4 @@ module.exports = [
     "trackInteraction",
     "keypadElement",
 ];
+export default module.exports;

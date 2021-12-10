@@ -1,7 +1,15 @@
+import _shapesJs from "../shapes.js";
+import { buildMapper } from "../trees.js";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
-const assert = require("assert");
-const {buildMapper} = require("../trees.js");
-const shapes = require("../shapes.js");
+const assert = _assert;
+const shapes = _shapesJs;
 
 describe("buildMapper", () => {
     function content(n) {
@@ -262,3 +270,4 @@ describe("buildMapper", () => {
         }, result);
     });
 });
+export default module.exports;

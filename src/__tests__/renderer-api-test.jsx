@@ -1,19 +1,38 @@
-const React = require("react");
-const _ = require("underscore");
+import _testItemsImageItemJson from "./test-items/image-item.json";
+import _testItemsInputNumber1ItemJson2 from "./test-items/input-number-1-item.json";
+import _testItemsTableItemJson from "./test-items/table-item.json";
+import _testItemsInputNumber2ItemJson from "./test-items/input-number-2-item.json";
+import _testItemsInputNumber1ItemJson from "./test-items/input-number-1-item.json";
+import _testutilsDelayedPromiseJsx from "../testutils/delayed-promise.jsx";
+import _reactAddonsTestUtils from "react-addons-test-utils";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _assert from "assert";
+import _reactDom from "react-dom";
+import _underscore from "underscore";
+import _react from "react";
 
-const ReactDOM = require("react-dom");
+var module = {
+    exports: {}
+};
 
-const assert = require("assert");
-const Renderer = require("../renderer.jsx");
-const ClassNames = require("../perseus-api.jsx").ClassNames;
+var exports = module.exports;
+const React = _react;
+const _ = _underscore;
 
-const TestUtils = require("react-addons-test-utils");
-const delayedPromise = require("../testutils/delayed-promise.jsx");
+const ReactDOM = _reactDom;
+
+const assert = _assert;
+const Renderer = _rendererJsx;
+const ClassNames = _perseusApiJsx.ClassNames;
+
+const TestUtils = _reactAddonsTestUtils;
+const delayedPromise = _testutilsDelayedPromiseJsx;
 
 // Items for testing!
-const inputNumber1Item = require("./test-items/input-number-1-item.json");
-const inputNumber2Item = require("./test-items/input-number-2-item.json");
-const tableItem = require("./test-items/table-item.json");
+const inputNumber1Item = _testItemsInputNumber1ItemJson;
+const inputNumber2Item = _testItemsInputNumber2ItemJson;
+const tableItem = _testItemsTableItemJson;
 
 // Jasmine requires us to use `pit` to support promises;
 // mocha supports this already with `it`.
@@ -276,7 +295,7 @@ describe("Perseus API", function() {
 
     describe("widget placeholders", function() {
         it("should replace widgets with [WIDGET]", function() {
-            const item = require("./test-items/input-number-1-item.json");
+            const item = _testItemsInputNumber1ItemJson2;
             const widgetPlaceholder = <span>[WIDGET]</span>;
             const apiOptions = {
                 widgetPlaceholder: widgetPlaceholder,
@@ -298,7 +317,7 @@ describe("Perseus API", function() {
         });
 
         it("should replace images with [IMAGE]", function() {
-            const item = require("./test-items/image-item.json");
+            const item = _testItemsImageItemJson;
             const imagePlaceholder = <span>[IMAGE]</span>;
             const apiOptions = {
                 imagePlaceholder: imagePlaceholder,
@@ -320,3 +339,4 @@ describe("Perseus API", function() {
         });
     });
 });
+export default module.exports;

@@ -1,10 +1,19 @@
+import _kmath from "kmath";
+import _wrappedEllipseJs from "./wrapped-ellipse.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A library of options to pass to add/draw/remove/constraints
  */
-const _ = require("underscore");
+const _ = _underscore;
 
-const WrappedEllipse = require("./wrapped-ellipse.js");
-const kpoint = require("kmath").point;
+const WrappedEllipse = _wrappedEllipseJs;
+const kpoint = _kmath.point;
 
 const add = {
     constrain: function() {
@@ -171,3 +180,4 @@ module.exports = {
     onMoveEnd: {standard: null},
     onClick: {standard: null},
 };
+export default module.exports;

@@ -1,19 +1,34 @@
+import _kmath from "kmath";
+import _componentsRangeInputJsx from "../components/range-input.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var EditorJsonify = _mixinsEditorJsonifyJsx;
 
-var ButtonGroup = require("react-components/button-group.jsx");
-var InfoTip = require("../components/info-tip.jsx");
-var NumberInput = require("../components/number-input.jsx");
-var PropCheckBox = require("../components/prop-check-box.jsx");
-var RangeInput = require("../components/range-input.jsx");
+var ButtonGroup = _reactComponentsButtonGroupJsx;
+var InfoTip = _componentsInfoTipJsx;
+var NumberInput = _componentsNumberInputJsx;
+var PropCheckBox = _componentsPropCheckBoxJsx;
+var RangeInput = _componentsRangeInputJsx;
 
-var knumber = require("kmath").number;
+var knumber = _kmath.number;
 var bound = (x, gt, lt) => Math.min(Math.max(x, gt), lt);
 
 var EN_DASH = "\u2013";
@@ -485,3 +500,4 @@ var NumberLineEditor = React.createClass({
 });
 
 module.exports = NumberLineEditor;
+export default module.exports;

@@ -1,4 +1,11 @@
-const assert = require("assert");
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
 
 describe("Polyfill Sanity Checks", () => {
     describe("Array", () => {
@@ -102,3 +109,4 @@ describe("Polyfill Sanity Checks", () => {
         });
     });
 });
+export default module.exports;

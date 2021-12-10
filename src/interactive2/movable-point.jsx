@@ -1,3 +1,22 @@
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _reactDom from "react-dom";
+import _react from "react";
+import { iconTrash } from "../icon-paths.js";
+import _utilTexJs from "../util/tex.js";
+import _utilColorsJs from "../util/colors.js";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _objective_Js from "./objective_.js";
+import _interactiveUtilJs from "./interactive-util.js";
+import _wrappedEllipseJs from "./wrapped-ellipse.js";
+import _movablePointOptionsJs from "./movable-point-options.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Creates and adds a point to the graph that can be dragged around.
  * It allows constraints on its movement and draws when moves happen.
@@ -49,24 +68,23 @@
  *   remove:
  *     removes the point from graphie
  */
-const _ = require("underscore");
+const _ = _underscore;
 
-const MovablePointOptions = require("./movable-point-options.js");
-const WrappedEllipse = require("./wrapped-ellipse.js");
-const InteractiveUtil = require("./interactive-util.js");
-const objective_ = require("./objective_.js");
+const MovablePointOptions = _movablePointOptionsJs;
+const WrappedEllipse = _wrappedEllipseJs;
+const InteractiveUtil = _interactiveUtilJs;
+const objective_ = _objective_Js;
 const assert = InteractiveUtil.assert;
 const normalizeOptions = InteractiveUtil.normalizeOptions;
 
-const kpoint = require("kmath").point;
-const kvector = require("kmath").vector;
-const KhanColors = require("../util/colors.js");
-const processMath = require("../util/tex.js").processMath;
-const {iconTrash} = require("../icon-paths.js");
+const kpoint = _kmath.point;
+const kvector = _kmath2.vector;
+const KhanColors = _utilColorsJs;
+const processMath = _utilTexJs.processMath;
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const InlineIcon = require("../components/inline-icon.jsx");
+const React = _react;
+const ReactDOM = _reactDom;
+const InlineIcon = _componentsInlineIconJsx;
 
 // State parameters that should be converted into an array of
 // functions
@@ -554,3 +572,4 @@ _.extend(MovablePoint.prototype, {
 });
 
 module.exports = MovablePoint;
+export default module.exports;

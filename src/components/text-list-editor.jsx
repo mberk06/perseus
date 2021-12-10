@@ -1,8 +1,17 @@
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
 const textWidthCache = {};
 function getTextWidth(text) {
@@ -149,3 +158,4 @@ const TextListEditor = React.createClass({
 });
 
 module.exports = TextListEditor;
+export default module.exports;

@@ -1,3 +1,10 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * Utility functions to build React PropTypes for multi-items and shapes.
@@ -5,7 +12,7 @@
  * If you're writing new components, though, consider using the Item and Shape
  * Flow types instead.
  */
-const React = require("react");
+const React = _react;
 
 /**
  * A recursive PropType that accepts Shape objects, and rejects other objects.
@@ -94,3 +101,4 @@ module.exports = {
     shapePropType,
     buildPropTypeForShape,
 };
+export default module.exports;

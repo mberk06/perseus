@@ -1,21 +1,38 @@
+import _kmath from "kmath";
+import _plotterJsx from "./plotter.jsx";
+import _componentsTextListEditorJsx from "../components/text-list-editor.jsx";
+import _componentsSvgImageJsx from "../components/svg-image.jsx";
+import _componentsRangeInputJsx from "../components/range-input.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _reactComponentsBlurInputJsx from "react-components/blur-input.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, max-len, no-var, one-var, react/jsx-closing-bracket-location, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const BlurInput = require("react-components/blur-input.jsx");
-const InfoTip = require("../components/info-tip.jsx");
-const NumberInput = require("../components/number-input.jsx");
-const RangeInput = require("../components/range-input.jsx");
-const SvgImage = require("../components/svg-image.jsx");
-const TextListEditor = require("../components/text-list-editor.jsx");
+const BlurInput = _reactComponentsBlurInputJsx;
+const InfoTip = _componentsInfoTipJsx;
+const NumberInput = _componentsNumberInputJsx;
+const RangeInput = _componentsRangeInputJsx;
+const SvgImage = _componentsSvgImageJsx;
+const TextListEditor = _componentsTextListEditorJsx;
 
-const Plotter = require("./plotter.jsx").widget;
+const Plotter = _plotterJsx.widget;
 
-const knumber = require("kmath").number;
+const knumber = _kmath.number;
 
 const BAR = "bar",
     LINE = "line",
@@ -513,3 +530,4 @@ const PlotterEditor = React.createClass({
 });
 
 module.exports = PlotterEditor;
+export default module.exports;

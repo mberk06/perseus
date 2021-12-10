@@ -1,22 +1,25 @@
+import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
+import { containerSizeClass, getClassFromWidth } from "./util/sizing-utils.js";
+import _widgetsJs from "./widgets.js";
+import { zIndexInteractiveComponent } from "./styles/constants.js";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const classNames = require("classnames");
-const React = require("react");
-const ReactDOM = require("react-dom");
+const classNames = _classnames;
+const React = _react;
+const ReactDOM = _reactDom;
 
-const {zIndexInteractiveComponent} = require("./styles/constants.js");
-const Widgets = require("./widgets.js");
-const {
-    containerSizeClass,
-    getClassFromWidth,
-} = require("./util/sizing-utils.js");
-
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("./gorgon/proptypes.js");
+const Widgets = _widgetsJs;
 
 const WidgetContainer = React.createClass({
     propTypes: {
@@ -164,3 +167,4 @@ const WidgetContainer = React.createClass({
 });
 
 module.exports = WidgetContainer;
+export default module.exports;

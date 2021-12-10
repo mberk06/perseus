@@ -1,11 +1,21 @@
+import _utilJs from "./util.js";
+import _statefulArticleEditorJsx from "./stateful-article-editor.jsx";
+import _articleEditorJsx from "./article-editor.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Demonstrates the rendered result of a Perseus article
  */
 
-const React = require("react");
-const ArticleEditor = require("./article-editor.jsx");
-const StatefulArticleEditor = require("./stateful-article-editor.jsx");
-const Util = require("./util.js");
+const React = _react;
+const ArticleEditor = _articleEditorJsx;
+const StatefulArticleEditor = _statefulArticleEditorJsx;
+const Util = _utilJs;
 
 const defaultArticle = [
     {
@@ -158,3 +168,4 @@ const ArticleDemo = React.createClass({
 });
 
 module.exports = ArticleDemo;
+export default module.exports;

@@ -1,12 +1,21 @@
+import _radioWidgetJsx from "./radio/widget.jsx";
+import _utilJs from "../util.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var _ = require("underscore");
+var _ = _underscore;
 
-var shuffle = require("../util.js").shuffle;
+var shuffle = _utilJs.shuffle;
 
-var Radio = require("./radio/widget.jsx");
+var Radio = _radioWidgetJsx;
 
 var _choiceTransform = (editorProps, problemNum) => {
     var _maybeRandomize = function(array) {
@@ -119,3 +128,4 @@ module.exports = {
     propUpgrades: propUpgrades,
     isLintable: true,
 };
+export default module.exports;

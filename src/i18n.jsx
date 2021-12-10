@@ -1,15 +1,20 @@
+import _perseusMarkdownJsx from "./perseus-markdown.jsx";
+import _traversalJsx from "./traversal.jsx";
+import { findContentNodesInItem, findHintNodesInItem, inferItemShape } from "./multi-items.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Functions for extracting data from items for use in i18n.
  */
-const _ = require("underscore");
+const _ = _underscore;
 
-const {
-    findContentNodesInItem,
-    findHintNodesInItem,
-    inferItemShape,
-} = require("./multi-items.js");
-const traversal = require("./traversal.jsx");
-const PerseusMarkdown = require("./perseus-markdown.jsx");
+const traversal = _traversalJsx;
+const PerseusMarkdown = _perseusMarkdownJsx;
 
 // Takes a renderer content and parses the markdown for images
 function findImagesInContent(content, images) {
@@ -140,3 +145,4 @@ module.exports = {
     findImagesInArticles: findImagesInArticles,
     findImagesInItemData: findImagesInItemData,
 };
+export default module.exports;

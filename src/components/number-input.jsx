@@ -1,15 +1,29 @@
+import _utilMathJs from "../util/math.js";
+import _kmath from "kmath";
+import _utilJs2 from "../util.js";
+import _utilJs from "../util.js";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
-const classNames = require("classnames");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const classNames = _classnames;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const firstNumericalParse = require("../util.js").firstNumericalParse;
-const captureScratchpadTouchStart = require("../util.js")
+const firstNumericalParse = _utilJs.firstNumericalParse;
+const captureScratchpadTouchStart = _utilJs2
     .captureScratchpadTouchStart;
-const knumber = require("kmath").number;
-const KhanMath = require("../util/math.js");
+const knumber = _kmath.number;
+const KhanMath = _utilMathJs;
 
 const toNumericString = KhanMath.toNumericString;
 const getNumericFormat = KhanMath.getNumericFormat;
@@ -225,3 +239,4 @@ const NumberInput = React.createClass({
 });
 
 module.exports = NumberInput;
+export default module.exports;

@@ -1,3 +1,10 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Component to display an image (or other React components) while the desired
  * image is loading.
@@ -8,7 +15,7 @@
  * not introduce a wrapper element, which makes styling easier.
  */
 
-const React = require("react");
+const React = _react;
 
 const {PropTypes} = React;
 
@@ -137,3 +144,4 @@ const ImageLoader = React.createClass({
 });
 
 module.exports = ImageLoader;
+export default module.exports;

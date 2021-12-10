@@ -1,3 +1,10 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Displays the given content in an iframe, isolating it from the parent page
  *
@@ -12,7 +19,7 @@
  * send the current data.
  */
 
-const React = require("react");
+const React = _react;
 
 let nextIframeID = 0;
 const requestIframeData = {};
@@ -179,3 +186,4 @@ const IframeContentRenderer = React.createClass({
 });
 
 module.exports = IframeContentRenderer;
+export default module.exports;

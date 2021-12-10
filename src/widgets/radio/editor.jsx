@@ -1,17 +1,31 @@
+import _componentsPropCheckBoxJsx from "../../components/prop-check-box.jsx";
+import _componentsInlineIconJsx from "../../components/inline-icon.jsx";
+import { iconPlus, iconTrash } from "../../icon-paths.js";
+import _editorJsx from "../../editor.jsx";
+import _mixinsChangeableJsx from "../../mixins/changeable.jsx";
+import _baseRadioJsx from "./base-radio.jsx";
+import _perseusApiJsx from "../../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, indent, no-undef, no-var, object-curly-spacing, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var ApiOptions = require("../../perseus-api.jsx").Options;
-var BaseRadio = require("./base-radio.jsx");
-var Changeable = require("../../mixins/changeable.jsx");
-var Editor = require("../../editor.jsx");
-var {iconPlus, iconTrash} = require("../../icon-paths.js");
-var InlineIcon = require("../../components/inline-icon.jsx");
-var PropCheckBox = require("../../components/prop-check-box.jsx");
+var ApiOptions = _perseusApiJsx.Options;
+var BaseRadio = _baseRadioJsx;
+var Changeable = _mixinsChangeableJsx;
+var Editor = _editorJsx;
+var InlineIcon = _componentsInlineIconJsx;
+var PropCheckBox = _componentsPropCheckBoxJsx;
 
 var ChoiceEditor = React.createClass({
     propTypes: {
@@ -377,3 +391,4 @@ var RadioEditor = React.createClass({
 });
 
 module.exports = RadioEditor;
+export default module.exports;

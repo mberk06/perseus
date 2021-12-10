@@ -1,6 +1,15 @@
-const assert = require("assert");
-const Renderability = require("../renderability.jsx");
-const PerseusItemVersion = require("../item-version.js");
+import _itemVersionJs from "../item-version.js";
+import _renderabilityJsx from "../renderability.jsx";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
+const Renderability = _renderabilityJsx;
+const PerseusItemVersion = _itemVersionJs;
 
 const sampleItemNoWidgets = {
     "question": {
@@ -477,3 +486,4 @@ describe("Renderability", () => {
         });
     });
 });
+export default module.exports;

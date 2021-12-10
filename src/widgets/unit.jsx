@@ -1,3 +1,18 @@
+import { SignificantFigures, displaySigFigs } from "../sigfigs.jsx";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx2 from "../perseus-api.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _hubbleIndexJs from "../../hubble/index.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-redeclare, no-undef, no-unused-vars, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -7,16 +22,15 @@
 // TODO(joel): Allow sigfigs within a range rather than an exact expected
 // value?
 
-var lens = require("../../hubble/index.js");
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var lens = _hubbleIndexJs;
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var ApiClassNames = require("../perseus-api.jsx").ClassNames;
-var ApiOptions = require("../perseus-api.jsx").Options;
-var Changeable = require("../mixins/changeable.jsx");
-var MathOutput = require("../components/math-output.jsx");
-var {SignificantFigures, displaySigFigs} = require("../sigfigs.jsx");
+var ApiClassNames = _perseusApiJsx.ClassNames;
+var ApiOptions = _perseusApiJsx2.Options;
+var Changeable = _mixinsChangeableJsx;
+var MathOutput = _componentsMathOutputJsx;
 
 var ALL = "all";
 var SOME = "some";
@@ -285,3 +299,4 @@ module.exports = {
     sigfigPrint,
     hidden: true,
 };
+export default module.exports;

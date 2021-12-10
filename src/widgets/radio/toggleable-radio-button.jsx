@@ -1,5 +1,13 @@
-const React = require("react");
-const _ = require("underscore");
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const _ = _underscore;
 
 /**
  * A radio button that can be unchecked by clicking it again.
@@ -98,3 +106,4 @@ const ToggleableRadioButton = React.createClass({
 });
 
 module.exports = ToggleableRadioButton;
+export default module.exports;

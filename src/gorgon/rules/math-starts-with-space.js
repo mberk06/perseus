@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "math-starts-with-space",
     severity: Rule.Severity.GUIDELINE,
@@ -9,3 +15,4 @@ module.exports = Rule.makeRule({
 math should not be indented. Do not begin math expressions with
 LaTeX space commands like ~, \\;, \\quad, or \\phantom`,
 });
+export default module.exports;

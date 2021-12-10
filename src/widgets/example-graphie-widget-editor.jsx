@@ -1,13 +1,23 @@
+import _exampleGraphieWidgetJsx from "./example-graphie-widget.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
+var React = _react;
 
-var Changeable = require("../mixins/changeable.jsx");
-var EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var Changeable = _mixinsChangeableJsx;
+var EditorJsonify = _mixinsEditorJsonifyJsx;
 
-var ExampleGraphieWidget = require("./example-graphie-widget.jsx").widget;
+var ExampleGraphieWidget = _exampleGraphieWidgetJsx.widget;
 
 /**
  * This is the widget's editor. This is what shows up on the left side
@@ -66,3 +76,4 @@ var ExampleGraphieWidgetEditor = React.createClass({
 });
 
 module.exports = ExampleGraphieWidgetEditor;
+export default module.exports;

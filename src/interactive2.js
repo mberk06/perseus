@@ -1,9 +1,20 @@
-const Movable = require("./interactive2/movable.js");
-const MovablePoint = require("./interactive2/movable-point.jsx");
-const MovableLine = require("./interactive2/movable-line.js");
-const MovablePolygon = require("./interactive2/movable-polygon.js");
+import _utilColorsJs from "./util/colors.js";
+import _interactive2MovablePolygonJs from "./interactive2/movable-polygon.js";
+import _interactive2MovableLineJs from "./interactive2/movable-line.js";
+import _interactive2MovablePointJsx from "./interactive2/movable-point.jsx";
+import _interactive2MovableJs from "./interactive2/movable.js";
 
-const KhanColors = require("./util/colors.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const Movable = _interactive2MovableJs;
+const MovablePoint = _interactive2MovablePointJsx;
+const MovableLine = _interactive2MovableLineJs;
+const MovablePolygon = _interactive2MovablePolygonJs;
+
+const KhanColors = _utilColorsJs;
 
 const Interactive2 = {
     MovablePoint: MovablePoint,
@@ -69,3 +80,4 @@ const Interactive2 = {
 };
 
 module.exports = Interactive2;
+export default module.exports;

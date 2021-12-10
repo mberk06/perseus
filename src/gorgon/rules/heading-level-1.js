@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "heading-level-1",
     severity: Rule.Severity.WARNING,
@@ -11,3 +17,4 @@ Begin headings with two or more # characters.`;
         }
     },
 });
+export default module.exports;

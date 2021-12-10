@@ -1,3 +1,12 @@
+import _mathInput from "../../math-input";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -14,10 +23,10 @@
  * extend a `ProvideKeypad` component instead of using this mixin.
  */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
+const React = _react;
+const ReactDOM = _reactDom;
 
-const { Keypad } = require("../../math-input").components;
+const { Keypad } = _mathInput.components;
 
 const ProvideKeypad = {
     propTypes: {
@@ -81,3 +90,4 @@ const ProvideKeypad = {
 };
 
 module.exports = ProvideKeypad;
+export default module.exports;

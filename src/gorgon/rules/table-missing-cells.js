@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "table-missing-cells",
     severity: Rule.Severity.WARNING,
@@ -17,3 +23,4 @@ Row ${r + 1} has ${rowLengths[r]} cells.`;
         }
     },
 });
+export default module.exports;

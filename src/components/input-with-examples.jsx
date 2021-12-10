@@ -1,19 +1,35 @@
+import _utilJs from "../util.js";
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _gorgonGorgonJs from "../gorgon/gorgon.js";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _textInputJsx from "./text-input.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _mathInputJsx from "./math-input.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactComponentsTooltipJsx from "react-components/tooltip.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/sort-comp */
 
-const React = require("react");
-const Tooltip = require("react-components/tooltip.jsx");
-const _ = require("underscore");
+const React = _react;
+const Tooltip = _reactComponentsTooltipJsx;
+const _ = _underscore;
 
-const ApiClassNames = require("../perseus-api.jsx").ClassNames;
-const MathInput = require("./math-input.jsx");
-const Renderer = require("../renderer.jsx");
-const TextInput = require("./text-input.jsx");
-const MathOutput = require("../components/math-output.jsx");
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const MathInput = _mathInputJsx;
+const Renderer = _rendererJsx;
+const TextInput = _textInputJsx;
+const MathOutput = _componentsMathOutputJsx;
 
-const Gorgon = require("../gorgon/gorgon.js");
-const {linterContextProps, linterContextDefault} = require("../gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs;
 
-const captureScratchpadTouchStart = require("../util.js")
+const captureScratchpadTouchStart = _utilJs
     .captureScratchpadTouchStart;
 
 const MATH = "math";
@@ -230,3 +246,4 @@ const InputWithExamples = React.createClass({
 });
 
 module.exports = InputWithExamples;
+export default module.exports;

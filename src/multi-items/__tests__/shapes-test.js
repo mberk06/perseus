@@ -1,7 +1,15 @@
-// @flow
-const assert = require("assert");
+import _shapesJs from "../shapes.js";
+import _assert from "assert";
 
-const shapes = require("../shapes.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+// @flow
+const assert = _assert;
+
+const shapes = _shapesJs;
 
 describe("shapes.content", () => {
     it('has type "content"', () => {
@@ -44,3 +52,4 @@ describe("shapes.shape", () => {
         assert.equal(shapes.hint, shape.shape.bar);
     });
 });
+export default module.exports;

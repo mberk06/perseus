@@ -1,3 +1,13 @@
+import _utilJs from "../util.js";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -6,11 +16,11 @@
  * This widget is for embedding Khan Academy CS programs.
  */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
-var updateQueryString = require("../util.js").updateQueryString;
+var Changeable = _mixinsChangeableJsx;
+var updateQueryString = _utilJs.updateQueryString;
 
 var PADDING_WIDTH = 2;
 
@@ -196,3 +206,4 @@ module.exports = {
     widget: CSProgram,
     hidden: true,
 };
+export default module.exports;

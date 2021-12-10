@@ -1,19 +1,35 @@
+import _interactive2WrappedLineJs from "../interactive2/wrapped-line.js";
+import _interactive2Js from "../interactive2.js";
+import _utilGraphUtilsJs from "../util/graph-utils.js";
+import _utilColorsJs from "../util/colors.js";
+import _utilMathJs from "../util/math.js";
+import _utilJs from "../util.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, indent, max-lines, no-redeclare, no-unused-vars, no-var, object-curly-spacing, one-var, react/prop-types, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var ApiClassNames = require("../perseus-api.jsx").ClassNames;
+var ApiClassNames = _perseusApiJsx.ClassNames;
 
-var deepEq = require("../util.js").deepEq;
-const KhanMath = require("../util/math.js");
-const KhanColors = require("../util/colors.js");
-const GraphUtils = require("../util/graph-utils.js");
-const Interactive2 = require("../interactive2.js");
-const WrappedLine = require("../interactive2/wrapped-line.js");
+var deepEq = _utilJs.deepEq;
+const KhanMath = _utilMathJs;
+const KhanColors = _utilColorsJs;
+const GraphUtils = _utilGraphUtilsJs;
+const Interactive2 = _interactive2Js;
+const WrappedLine = _interactive2WrappedLineJs;
 
 var BAR = "bar",
     LINE = "line",
@@ -1066,3 +1082,4 @@ module.exports = {
     widget: Plotter,
     staticTransform: staticTransform,
 };
+export default module.exports;

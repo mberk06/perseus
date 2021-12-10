@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "math-align-extra-break",
     severity: Rule.Severity.WARNING,
@@ -8,3 +14,4 @@ module.exports = Rule.makeRule({
     message: `Extra space at end of block:
 Don't end an align block with backslashes`,
 });
+export default module.exports;

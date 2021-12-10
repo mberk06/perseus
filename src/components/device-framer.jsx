@@ -1,10 +1,18 @@
+import _constantsJs from "./constants.js";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A component that displays its contents inside a device frame.
  */
 
-const React = require("react");
+const React = _react;
 
-const constants = require("./constants.js");
+const constants = _constantsJs;
 
 const SCREEN_SIZES = {
     phone: {
@@ -89,3 +97,4 @@ const DeviceFramer = React.createClass({
 });
 
 module.exports = DeviceFramer;
+export default module.exports;

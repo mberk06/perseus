@@ -1,3 +1,20 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _componentsSvgImageJsx from "../components/svg-image.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _stylesMediaQueriesJs from "../styles/media-queries.js";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import { baseUnitPx } from "../styles/constants.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -7,21 +24,15 @@
     react/jsx-closing-bracket-location
 */
 
-var classNames = require("classnames");
-const {StyleSheet, css} = require("aphrodite");
-var React = require("react");
-var _ = require("underscore");
+var classNames = _classnames;
+var React = _react;
+var _ = _underscore;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-const {baseUnitPx} = require("../styles/constants.js");
-var Changeable = require("../mixins/changeable.jsx");
-const mediaQueries = require("../styles/media-queries.js");
-var Renderer = require("../renderer.jsx");
-var SvgImage = require("../components/svg-image.jsx");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var ApiOptions = _perseusApiJsx.Options;
+var Changeable = _mixinsChangeableJsx;
+const mediaQueries = _stylesMediaQueriesJs;
+var Renderer = _rendererJsx;
+var SvgImage = _componentsSvgImageJsx;
 
 var defaultBoxSize = 400;
 var defaultRange = [0, 10];
@@ -329,3 +340,4 @@ module.exports = {
     widget: ImageWidget,
     isLintable: true,
 };
+export default module.exports;

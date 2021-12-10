@@ -1,24 +1,43 @@
+import _utilJs from "../util.js";
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _reactComponentsMultiButtonGroupJsx from "react-components/multi-button-group.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import { iconGear, iconTrash } from "../icon-paths.js";
+import _editorJsx from "../editor.jsx";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-redeclare, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const ButtonGroup = require("react-components/button-group.jsx");
-const Editor = require("../editor.jsx");
-const {iconGear, iconTrash} = require("../icon-paths.js");
-const InfoTip = require("../components/info-tip.jsx");
-const InlineIcon = require("../components/inline-icon.jsx");
-const MultiButtonGroup = require("react-components/multi-button-group.jsx");
-const NumberInput = require("../components/number-input.jsx");
-const PropCheckBox = require("../components/prop-check-box.jsx");
-const TextInput = require("../components/text-input.jsx");
+const ButtonGroup = _reactComponentsButtonGroupJsx;
+const Editor = _editorJsx;
+const InfoTip = _componentsInfoTipJsx;
+const InlineIcon = _componentsInlineIconJsx;
+const MultiButtonGroup = _reactComponentsMultiButtonGroupJsx;
+const NumberInput = _componentsNumberInputJsx;
+const PropCheckBox = _componentsPropCheckBoxJsx;
+const TextInput = _componentsTextInputJsx;
 
-const firstNumericalParse = require("../util.js").firstNumericalParse;
+const firstNumericalParse = _utilJs.firstNumericalParse;
 
 const answerFormButtons = [
     {title: "Integers", value: "integer", content: "6"},
@@ -509,3 +528,4 @@ const NumericInputEditor = React.createClass({
 });
 
 module.exports = NumericInputEditor;
+export default module.exports;

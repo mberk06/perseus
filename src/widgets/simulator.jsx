@@ -1,27 +1,48 @@
+import _utilMathJs from "../util/math.js";
+import _utilColorsJs from "../util/colors.js";
+import _kmath from "kmath";
+import _utilJs2 from "../util.js";
+import _utilJs from "../util.js";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsGraphieJsx from "../components/graphie.jsx";
+import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, indent, no-unused-vars, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, space-unary-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals $_, i18n */
-var InfoTip = require("../components/info-tip.jsx");
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var InfoTip = _componentsInfoTipJsx;
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
+var Changeable = _mixinsChangeableJsx;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-var assert = require("../interactive2/interactive-util.js").assert;
+var ApiOptions = _perseusApiJsx.Options;
+var assert = _interactive2InteractiveUtilJs.assert;
 
-var Graphie = require("../components/graphie.jsx");
+var Graphie = _componentsGraphieJsx;
 var {Path, Arc, Circle, Label, Line, MovablePoint, MovableLine} = Graphie;
-var NumberInput = require("../components/number-input.jsx");
-var MathOutput = require("../components/math-output.jsx");
-var seededRNG = require("../util.js").seededRNG;
-var Util = require("../util.js");
-var knumber = require("kmath").number;
-const KhanColors = require("../util/colors.js");
-const KhanMath = require("../util/math.js");
+var NumberInput = _componentsNumberInputJsx;
+var MathOutput = _componentsMathOutputJsx;
+var seededRNG = _utilJs.seededRNG;
+var Util = _utilJs2;
+var knumber = _kmath.number;
+const KhanColors = _utilColorsJs;
+const KhanMath = _utilMathJs;
 
 var defaultBoxSize = 400;
 var maxSampleSize = 1000;
@@ -790,3 +811,4 @@ module.exports = {
     transform: propTransform,
     hidden: true,
 };
+export default module.exports;

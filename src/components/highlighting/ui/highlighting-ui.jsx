@@ -1,3 +1,14 @@
+import _selectionTrackerJsx from "./selection-tracker.jsx";
+import { rangesOverlap } from "../ranges.js";
+import _highlightTooltipJsx from "./highlight-tooltip.jsx";
+import _highlightSetRendererJsx from "./highlight-set-renderer.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * This component, given a set of DOMHighlights, draws highlight rectangles in
@@ -10,12 +21,11 @@
  *     we should add a hook to allow the parent to `forceUpdate` the
  *     `HighlightingUI`.
  */
-const React = require("react");
+const React = _react;
 
-const HighlightSetRenderer = require("./highlight-set-renderer.jsx");
-const HighlightTooltip = require("./highlight-tooltip.jsx");
-const {rangesOverlap} = require("../ranges.js");
-const SelectionTracker = require("./selection-tracker.jsx");
+const HighlightSetRenderer = _highlightSetRendererJsx;
+const HighlightTooltip = _highlightTooltipJsx;
+const SelectionTracker = _selectionTrackerJsx;
 
 class HighlightingUI extends React.PureComponent {
     _handleAddHighlight(highlightToAdd) {
@@ -102,3 +112,4 @@ class HighlightingUI extends React.PureComponent {
 }
 
 module.exports = HighlightingUI;
+export default module.exports;

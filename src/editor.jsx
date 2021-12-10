@@ -1,29 +1,51 @@
+import _mixinsWidgetPropBlacklistJsx from "./mixins/widget-prop-blacklist.jsx";
+import _perseusEditorJsx from "./perseus-editor.jsx";
+import _utilKatexPreprocessJs from "./util/katex-preprocess.js";
+import _widgetsJs from "./widgets.js";
+import _utilJs from "./util.js";
+import _componentsPropCheckBoxJsx from "./components/prop-check-box.jsx";
+import _perseusMarkdownJsx from "./perseus-markdown.jsx";
+import _katexErrorViewJsx from "./katex-error-view.jsx";
+import _componentsInlineIconJsx from "./components/inline-icon.jsx";
+import { iconChevronDown, iconChevronRight, iconTrash } from "./icon-paths.js";
+import _reactComponentsDragTargetJsx from "react-components/drag-target.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _underscore from "underscore";
+import _jquery from "jquery";
+import _reactAddonsCreateFragment from "react-addons-create-fragment";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable max-lines, no-console, no-var, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals katex */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var ReactCreateFragment = require("react-addons-create-fragment");
-var $ = require("jquery");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var ReactCreateFragment = _reactAddonsCreateFragment;
+var $ = _jquery;
+var _ = _underscore;
 
-var ApiOptions = require("./perseus-api.jsx").Options;
-var DragTarget = require("react-components/drag-target.jsx");
-var {iconChevronDown, iconChevronRight, iconTrash} = require("./icon-paths.js");
-var InlineIcon = require("./components/inline-icon.jsx");
-var KatexErrorView = require("./katex-error-view.jsx");
-var PerseusMarkdown = require("./perseus-markdown.jsx");
-var PropCheckBox = require("./components/prop-check-box.jsx");
-var Util = require("./util.js");
-var Widgets = require("./widgets.js");
-var preprocessTex = require("./util/katex-preprocess.js");
+var ApiOptions = _perseusApiJsx.Options;
+var DragTarget = _reactComponentsDragTargetJsx;
+var InlineIcon = _componentsInlineIconJsx;
+var KatexErrorView = _katexErrorViewJsx;
+var PerseusMarkdown = _perseusMarkdownJsx;
+var PropCheckBox = _componentsPropCheckBoxJsx;
+var Util = _utilJs;
+var Widgets = _widgetsJs;
+var preprocessTex = _utilKatexPreprocessJs;
 
-var PerseusEditor = require("./perseus-editor.jsx");
+var PerseusEditor = _perseusEditorJsx;
 
-var WIDGET_PROP_BLACKLIST = require("./mixins/widget-prop-blacklist.jsx");
+var WIDGET_PROP_BLACKLIST = _mixinsWidgetPropBlacklistJsx;
 
 // like [[snowman input-number 1]]
 var widgetPlaceholder = "[[\u2603 {id}]]";
@@ -1158,3 +1180,4 @@ var Editor = React.createClass({
 });
 
 module.exports = Editor;
+export default module.exports;

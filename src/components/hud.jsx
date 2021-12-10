@@ -1,6 +1,14 @@
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
-const constants = require("../styles/constants.js");
+import _stylesConstantsJs from "../styles/constants.js";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const constants = _stylesConstantsJs;
 
 const HUD = React.createClass({
     propTypes: {
@@ -159,3 +167,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = HUD;
+export default module.exports;

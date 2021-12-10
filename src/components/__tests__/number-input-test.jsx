@@ -1,10 +1,22 @@
-const assert = require("assert");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+import _reactAddonsTestUtils from "react-addons-test-utils";
+import _numberInputJsx from "../number-input.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _assert from "assert";
 
-const NumberInput = require("../number-input.jsx");
-const TestUtils = require("react-addons-test-utils");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
+
+const NumberInput = _numberInputJsx;
+const TestUtils = _reactAddonsTestUtils;
 
 const STARTING_VALUE = 1;
 
@@ -109,3 +121,4 @@ describe("NumberInput", function() {
         });
     });
 });
+export default module.exports;

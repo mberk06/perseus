@@ -1,14 +1,25 @@
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
+const React = _react;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const NumberInput = require("../components/number-input.jsx");
-const TextInput = require("../components/text-input.jsx");
+const NumberInput = _componentsNumberInputJsx;
+const TextInput = _componentsTextInputJsx;
 
 var ReactionDiagramWidgetEditor = React.createClass({
     propTypes: {
@@ -124,3 +135,4 @@ var ReactionDiagramWidgetEditor = React.createClass({
 });
 
 module.exports = ReactionDiagramWidgetEditor;
+export default module.exports;

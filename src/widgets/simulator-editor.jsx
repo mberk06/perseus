@@ -1,16 +1,28 @@
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals i18n */
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const InfoTip = require("../components/info-tip.jsx");
-const NumberInput = require("../components/number-input.jsx");
+const InfoTip = _componentsInfoTipJsx;
+const NumberInput = _componentsNumberInputJsx;
 
 const maxTrials = 5000;
 
@@ -143,3 +155,4 @@ const SimulatorEditor = React.createClass({
 });
 
 module.exports = SimulatorEditor;
+export default module.exports;

@@ -1,3 +1,5 @@
+import _reactAddonsCssTransitionGroup from "react-addons-css-transition-group";
+import _reactAddonsPureRenderMixin from "react-addons-pure-render-mixin";
 import $ from "jquery";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -7,6 +9,12 @@ import mathquill from "mathquill";
 import katex from "katex";
 import classnames from "classnames";
 import _ from "underscore";
+
+var module = {
+  exports: {}
+};
+
+var exports = module.exports;
 
 // NOTE: We don't import the CSS here. Instead, applications can do it separately:
 //       import "perseus-configured/lib/khan-exercises.css";
@@ -34,8 +42,8 @@ window._ = _;
 // load it in strict mode
 window.Raphael = undefined;
 
-const PureRenderMixin = require("react-addons-pure-render-mixin");
-const CSSTransitionGroup = require("react-addons-css-transition-group");
+const PureRenderMixin = _reactAddonsPureRenderMixin;
+const CSSTransitionGroup = _reactAddonsCssTransitionGroup;
 
 window.React = React;
 window.ReactDOM = ReactDOM;
@@ -91,3 +99,4 @@ window.Khan = {
   query: { debug: "" },
   imageBase: "/images/",
 };
+export default module.exports;

@@ -1,3 +1,13 @@
+import _widgetsJs from "./widgets.js";
+import _traversalJsx from "./traversal.jsx";
+import { findContentNodesInItem, inferItemShape } from "./multi-items.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Calculates whether a perseus item is renderable by a specific
  * perseus-item-data version.
@@ -8,11 +18,10 @@
  * group or sequence widgets.
  */
 
-const _ = require("underscore");
+const _ = _underscore;
 
-const {findContentNodesInItem, inferItemShape} = require("./multi-items.js");
-const Traversal = require("./traversal.jsx");
-const Widgets = require("./widgets.js");
+const Traversal = _traversalJsx;
+const Widgets = _widgetsJs;
 
 const isUpgradedWidgetInfoRenderableBy = function(widgetInfo, widgetRendererVersion) {
     if (widgetRendererVersion == null) {
@@ -92,3 +101,4 @@ const isItemRenderableBy = function(itemData, rendererContentVersion) {
 module.exports = {
     isItemRenderableByVersion: isItemRenderableBy,
 };
+export default module.exports;

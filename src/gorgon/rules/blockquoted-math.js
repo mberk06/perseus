@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "blockquoted-math",
     severity: Rule.Severity.WARNING,
@@ -7,3 +13,4 @@ module.exports = Rule.makeRule({
     message: `Blockquoted math:
 math should not be indented.`,
 });
+export default module.exports;

@@ -1,8 +1,18 @@
-const _ = require("underscore");
-const GraphieClasses = require("./graphie-classes.jsx");
-const Interactive2 = require("../interactive2.js");
+import _utilColorsJs from "../util/colors.js";
+import _interactive2Js from "../interactive2.js";
+import _graphieClassesJsx from "./graphie-classes.jsx";
+import _underscore from "underscore";
 
-const KhanColors = require("../util/colors.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const _ = _underscore;
+const GraphieClasses = _graphieClassesJsx;
+const Interactive2 = _interactive2Js;
+
+const KhanColors = _utilColorsJs;
 
 const MovablePoint = GraphieClasses.createClass({
     displayName: "MovablePoint",
@@ -316,3 +326,4 @@ module.exports = {
     Sinusoid: Sinusoid,
     Rect: Rect,
 };
+export default module.exports;

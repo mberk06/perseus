@@ -1,13 +1,21 @@
+import _stylesConstantsJs from "../../styles/constants.js";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 
 /**
  * Renders a circular selection ring around the child.
  */
 
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
 
-const styleConstants = require("../../styles/constants.js");
+const styleConstants = _stylesConstantsJs;
 
 class FocusRing extends React.Component {
     static defaultProps = {
@@ -40,3 +48,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = FocusRing;
+export default module.exports;

@@ -1,21 +1,31 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _utilJs2 from "../util.js";
+import _utilJs from "../util.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _componentsSortableJsx from "../components/sortable.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _underscore from "underscore";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Renderer = require("../renderer.jsx");
-const Sortable = require("../components/sortable.jsx");
+const Renderer = _rendererJsx;
+const Sortable = _componentsSortableJsx;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-const shuffle = require("../util.js").shuffle;
-const seededRNG = require("../util.js").seededRNG;
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+const ApiOptions = _perseusApiJsx.Options;
+const shuffle = _utilJs.shuffle;
+const seededRNG = _utilJs2.seededRNG;
 
 const HACKY_CSS_CLASSNAME = "perseus-widget-matcher";
 
@@ -220,3 +230,4 @@ module.exports = {
     widget: Matcher,
     isLintable: true,
 };
+export default module.exports;

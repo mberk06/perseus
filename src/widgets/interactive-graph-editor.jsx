@@ -1,23 +1,32 @@
+import { containerSizeClass, getInteractiveBoxFromSizeClass } from "../util/sizing-utils.js";
+import { interactiveSizes } from "../styles/constants.js";
+import _interactiveGraphJsx from "./interactive-graph.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _componentsGraphSettingsJsx from "../components/graph-settings.jsx";
+import _utilJs from "../util.js";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Util = require("../util.js");
+const Util = _utilJs;
 
 const DeprecationMixin = Util.DeprecationMixin;
 
-const GraphSettings = require("../components/graph-settings.jsx");
-const InfoTip = require("../components/info-tip.jsx");
+const GraphSettings = _componentsGraphSettingsJsx;
+const InfoTip = _componentsInfoTipJsx;
 
-const InteractiveGraph = require("./interactive-graph.jsx").widget;
-const {interactiveSizes} = require("../styles/constants.js");
-const {
-    containerSizeClass,
-    getInteractiveBoxFromSizeClass,
-} = require("../util/sizing-utils.js");
+const InteractiveGraph = _interactiveGraphJsx.widget;
 
 const defaultBackgroundImage = {
     url: null,
@@ -301,3 +310,4 @@ const InteractiveGraphEditor = React.createClass({
 });
 
 module.exports = InteractiveGraphEditor;
+export default module.exports;

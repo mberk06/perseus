@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable eqeqeq, indent, keyword-spacing, max-len, no-mixed-spaces-and-tabs, no-unused-vars, no-var, semi, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -484,3 +489,4 @@ module.exports = {
     SignificantFigures,
     displaySigFigs,
 };
+export default module.exports;

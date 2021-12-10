@@ -1,3 +1,18 @@
+import _iframeContentRendererJsx from "./iframe-content-renderer.jsx";
+import _componentsInlineIconJsx from "./components/inline-icon.jsx";
+import { iconCircleArrowDown, iconCircleArrowUp, iconPlus, iconTrash } from "./icon-paths.js";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _componentsDeviceFramerJsx from "./components/device-framer.jsx";
+import _componentsInfoTipJsx from "./components/info-tip.jsx";
+import _editorJsx from "./editor.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -6,22 +21,16 @@
  * hint editor boxes, and hint previews
  */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Editor = require("./editor.jsx");
-var InfoTip = require("./components/info-tip.jsx");
-var DeviceFramer = require("./components/device-framer.jsx");
+var Editor = _editorJsx;
+var InfoTip = _componentsInfoTipJsx;
+var DeviceFramer = _componentsDeviceFramerJsx;
 
-const ApiOptions = require("./perseus-api.jsx").Options;
-const {
-    iconCircleArrowDown,
-    iconCircleArrowUp,
-    iconPlus,
-    iconTrash,
-} = require("./icon-paths.js");
-const InlineIcon = require("./components/inline-icon.jsx");
-const IframeContentRenderer = require("./iframe-content-renderer.jsx");
+const ApiOptions = _perseusApiJsx.Options;
+const InlineIcon = _componentsInlineIconJsx;
+const IframeContentRenderer = _iframeContentRendererJsx;
 
 /* Renders a hint editor box
  *
@@ -362,3 +371,4 @@ var CombinedHintsEditor = React.createClass({
 });
 
 module.exports = CombinedHintsEditor;
+export default module.exports;

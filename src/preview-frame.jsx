@@ -1,3 +1,14 @@
+import _libTouchEmulatorJs from "../lib/touch-emulator.js";
+import _articleRendererJsx from "./article-renderer.jsx";
+import _hintRendererJsx from "./hint-renderer.jsx";
+import _itemRendererJsx from "./item-renderer.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
   * Demonstrates the rendered result of a Perseus question within an iframe.
   *
@@ -7,12 +18,12 @@
   * perseus-preview-package (which largely duplicates this logic)
   */
 
-const React = require("react");
+const React = _react;
 
-const ItemRenderer = require("./item-renderer.jsx");
-const HintRenderer = require("./hint-renderer.jsx");
-const ArticleRenderer = require("./article-renderer.jsx");
-const TouchEmulator = require("../lib/touch-emulator.js");
+const ItemRenderer = _itemRendererJsx;
+const HintRenderer = _hintRendererJsx;
+const ArticleRenderer = _articleRendererJsx;
+const TouchEmulator = _libTouchEmulatorJs;
 
 const PreviewFrame = React.createClass({
     propTypes: {
@@ -199,3 +210,4 @@ const PreviewFrame = React.createClass({
 });
 
 module.exports = PreviewFrame;
+export default module.exports;

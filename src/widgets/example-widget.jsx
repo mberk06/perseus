@@ -1,3 +1,12 @@
+import _underscore from "underscore";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -11,9 +20,9 @@
  * TODO(jack): Add more comments
  */
 
-var React = require("react");
-var Changeable = require("../mixins/changeable.jsx");
-var _ = require("underscore");
+var React = _react;
+var Changeable = _mixinsChangeableJsx;
+var _ = _underscore;
 
 var TextInput = React.createClass({
     render: function() {
@@ -153,3 +162,4 @@ module.exports = {
     hidden: true, // Hides this widget from the Perseus.Editor widget select
     widget: ExampleWidget,
 };
+export default module.exports;

@@ -1,25 +1,35 @@
-/* eslint-disable react/forbid-prop-types */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
-const React = require("react");
-const _ = require("underscore");
-const {StyleSheet, css} = require("aphrodite");
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-const Changeable = require("../mixins/changeable.jsx");
-const GradedGroup = require("./graded-group.jsx").widget;
-const {
+import {
     grayLight,
     gray76,
     tableBackgroundAccent,
     kaGreen,
     phoneMargin,
     negativePhoneMargin,
-} = require("../styles/constants.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+} from "../styles/constants.js";
+
+import _gradedGroupJsx from "./graded-group.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import { StyleSheet, css } from "aphrodite";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+/* eslint-disable react/forbid-prop-types */
+/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
+/* To fix, remove an entry above, run ka-lint, and fix errors. */
+const React = _react;
+const _ = _underscore;
+
+const ApiOptions = _perseusApiJsx.Options;
+const Changeable = _mixinsChangeableJsx;
+const GradedGroup = _gradedGroupJsx.widget;
 
 const Indicators = React.createClass({
     propTypes: {
@@ -222,3 +232,4 @@ const styles = StyleSheet.create({
         width: "auto",
     },
 });
+export default module.exports;

@@ -1,32 +1,6 @@
-/*
-Draft.js can seem pretty low level, and its library is highly imperative.
-While this gives the user a very good grasp of the underlying mechanisms,
-making it easier to understand, it can get verbose.
+import { List } from "immutable";
 
-This file contains various utility functions to search and edit Draft.js
-data.
-
-NOTE:
-
-Return values for functions which cause mutations to the content must return
-
-{
-    editorState?: EditorState,
-    contentState: ContentState
-}
-
-The issue with returning only the `editorState` is that editing it through
-the suggested way (EditorState.push) may add a state onto the undo/redo stack.
-This stops the function from being able to be used in the middle of a set of
-operations, undo/redo should not bring you to an intermediate step.
-
-The issue with returning only the `contentState` is that the verbose
-EditorState.push step ends up being repeated quite often
-
-Therefore both must always be returned
-*/
-
-const {
+import {
     CharacterMetadata,
     BlockMapBuilder,
     ContentBlock,
@@ -35,9 +9,13 @@ const {
     Modifier,
     SelectionState,
     genKey,
-} = require("draft-js");
+} from "draft-js";
 
-const {List} = require("immutable");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 // This provides sensible defaults for editorState, contentState, and selection.
 // This means that if I wanted to insert text at the current cursor location,
@@ -498,3 +476,4 @@ module.exports = {
     snapSelectionOutsideEntities,
     toggleDecoration,
 };
+export default module.exports;

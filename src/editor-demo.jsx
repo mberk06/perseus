@@ -1,3 +1,14 @@
+import _renderabilityJsx from "./renderability.jsx";
+import _utilJs from "./util.js";
+import _editorPageJsx from "./editor-page.jsx";
+import _statefulEditorPageJsx from "./stateful-editor-page.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
   * Demonstrates the main Perseus editor
   *
@@ -5,11 +16,11 @@
   * buttons and their event listeners above a StatefulEditorPage
   */
 
-const React = require("react");
-const StatefulEditorPage = require("./stateful-editor-page.jsx");
-const EditorPage = require("./editor-page.jsx");
-const Util = require("./util.js");
-const Renderability = require("./renderability.jsx");
+const React = _react;
+const StatefulEditorPage = _statefulEditorPageJsx;
+const EditorPage = _editorPageJsx;
+const Util = _utilJs;
+const Renderability = _renderabilityJsx;
 
 const defaultQuestion = {
     question: {
@@ -222,3 +233,4 @@ const EditorDemo = React.createClass({
 });
 
 module.exports = EditorDemo;
+export default module.exports;

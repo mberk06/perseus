@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * These tools allow you to construct arbirtary shapes, by combining simple
  * leaf shapes like `content` and `hint` into composite shapes like
@@ -31,3 +36,4 @@ module.exports = {
     arrayOf: buildArrayShape,
     shape: buildObjectShape,
 };
+export default module.exports;

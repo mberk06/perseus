@@ -1,12 +1,24 @@
+import _utilMathJs from "../util/math.js";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _wrappedPathJs from "./wrapped-path.js";
+import _wrappedLineJs from "./wrapped-line.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A library of options to pass to add/draw/remove/constraints
  */
-const _ = require("underscore");
-const WrappedLine = require("./wrapped-line.js");
-const WrappedPath = require("./wrapped-path.js");
-const kvector = require("kmath").vector;
-const kpoint = require("kmath").point;
-const KhanMath = require("../util/math.js");
+const _ = _underscore;
+const WrappedLine = _wrappedLineJs;
+const WrappedPath = _wrappedPathJs;
+const kvector = _kmath.vector;
+const kpoint = _kmath2.point;
+const KhanMath = _utilMathJs;
 
 /**
  * Helper functions
@@ -355,3 +367,4 @@ module.exports = {
     onMove: onMove,
     onMoveEnd: {standard: null},
 };
+export default module.exports;

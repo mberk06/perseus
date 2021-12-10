@@ -1,3 +1,12 @@
+import _highlightTooltipJsx from "./highlight-tooltip.jsx";
+import _highlightRendererJsx from "./highlight-renderer.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * Render a set of highlights. See HighlightRenderer for more details about how
@@ -7,10 +16,10 @@
  * determine the currently-hovered highlight, it calls the `isHovered` method
  * on each HighlightRenderer.
  */
-const React = require("react");
+const React = _react;
 
-const HighlightRenderer = require("./highlight-renderer.jsx");
-const HighlightTooltip = require("./highlight-tooltip.jsx");
+const HighlightRenderer = _highlightRendererJsx;
+const HighlightTooltip = _highlightTooltipJsx;
 
 class HighlightSetRenderer extends React.PureComponent {
     state = {
@@ -146,3 +155,4 @@ class HighlightSetRenderer extends React.PureComponent {
 }
 
 module.exports = HighlightSetRenderer;
+export default module.exports;

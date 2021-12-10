@@ -1,3 +1,12 @@
+import _kmath from "kmath";
+import _interactiveUtilJs from "./interactive-util.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Movable
  *
@@ -9,13 +18,13 @@
  * let this class handle all of the virtual mouse events, and then
  * take appropriate action in onMoveStart, onMove, onMoveEnd
  */
-const _ = require("underscore");
+const _ = _underscore;
 
-const InteractiveUtil = require("./interactive-util.js");
+const InteractiveUtil = _interactiveUtilJs;
 const normalizeOptions = InteractiveUtil.normalizeOptions;
 
 const assert = InteractiveUtil.assert;
-const kpoint = require("kmath").point;
+const kpoint = _kmath.point;
 
 // state parameters that should be converted into an array of
 // functions
@@ -279,3 +288,4 @@ _.extend(Movable.prototype, {
 });
 
 module.exports = Movable;
+export default module.exports;

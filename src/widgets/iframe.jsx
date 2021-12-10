@@ -1,3 +1,14 @@
+import _utilJs from "../util.js";
+import _mixinsWidgetJsonifyDeprecatedJsx from "../mixins/widget-jsonify-deprecated.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -12,12 +23,12 @@
  */
 
 /* globals KA */
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
-var WidgetJsonifyDeprecated = require("../mixins/widget-jsonify-deprecated.jsx");
-var updateQueryString = require("../util.js").updateQueryString;
+var Changeable = _mixinsChangeableJsx;
+var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
+var updateQueryString = _utilJs.updateQueryString;
 
 /* This renders the iframe and handles validation via window.postMessage */
 var Iframe = React.createClass({
@@ -200,3 +211,4 @@ module.exports = {
     // Let's not expose it to all content creators yet
     hidden: true,
 };
+export default module.exports;

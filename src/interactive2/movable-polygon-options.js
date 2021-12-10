@@ -1,10 +1,19 @@
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A library of options to pass to add/draw/remove/constraints
  */
 
-const _ = require("underscore");
-const kpoint = require("kmath").point;
-const kvector = require("kmath").vector;
+const _ = _underscore;
+const kpoint = _kmath.point;
+const kvector = _kmath2.vector;
 
 function sum(array) {
     return _.reduce(array, function(memo, arg) {
@@ -317,3 +326,4 @@ module.exports = {
     onMoveEnd: {standard: null},
     onClick: {standard: null},
 };
+export default module.exports;

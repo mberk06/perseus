@@ -1,8 +1,15 @@
+import _simpleMarkdown from "simple-markdown";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Paragraph parsing/splitting for article jipt i18n
  */
 
-const SimpleMarkdown = require("simple-markdown");
+const SimpleMarkdown = _simpleMarkdown;
 
 const arrayRules = {
     fence: {
@@ -35,3 +42,4 @@ module.exports = {
     parseToArray: parseToArray,
     joinFromArray: joinFromArray,
 };
+export default module.exports;

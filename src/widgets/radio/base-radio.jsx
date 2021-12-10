@@ -1,25 +1,36 @@
-/* eslint-disable object-curly-spacing */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
+import _choiceJsx from "./choice.jsx";
+import _utilJs from "../../util.js";
+import _stylesMediaQueriesJs from "../../styles/media-queries.js";
+import _stylesConstantsJs from "../../styles/constants.js";
+import _stylesSharedJs from "../../styles/shared.js";
+import _rendererJsx from "../../renderer.jsx";
+import _perseusApiJsx from "../../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+import { StyleSheet, css } from "aphrodite";
 
-/* global i18n */
+var module = {
+    exports: {}
+};
 
-const {StyleSheet, css} = require("aphrodite");
-const classNames = require("classnames");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+var exports = module.exports;
+const classNames = _classnames;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const ApiClassNames = require("../../perseus-api.jsx").ClassNames;
-const Renderer = require("../../renderer.jsx");
-const sharedStyles = require("../../styles/shared.js");
-const styleConstants = require("../../styles/constants.js");
-const mediaQueries = require("../../styles/media-queries.js");
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const Renderer = _rendererJsx;
+const sharedStyles = _stylesSharedJs;
+const styleConstants = _stylesConstantsJs;
+const mediaQueries = _stylesMediaQueriesJs;
 
-const captureScratchpadTouchStart = require("../../util.js")
+const captureScratchpadTouchStart = _utilJs
     .captureScratchpadTouchStart;
 
-const Choice = require("./choice.jsx");
+const Choice = _choiceJsx;
 
 const ChoiceNoneAbove = React.createClass({
     propTypes: {
@@ -569,3 +580,4 @@ const BaseRadio = React.createClass({
 });
 
 module.exports = BaseRadio;
+export default module.exports;

@@ -1,18 +1,25 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _rendererJsx from "../renderer.jsx";
+import _mixinsWidgetJsonifyDeprecatedJsx from "../mixins/widget-jsonify-deprecated.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
-var WidgetJsonifyDeprecated = require("../mixins/widget-jsonify-deprecated.jsx");
-var Renderer = require("../renderer.jsx");
-
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var Changeable = _mixinsChangeableJsx;
+var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
+var Renderer = _rendererJsx;
 
 var PassageRefTarget = React.createClass({
     propTypes: {
@@ -75,3 +82,4 @@ module.exports = {
     version: {major: 0, minor: 0},
     isLintable: true,
 };
+export default module.exports;

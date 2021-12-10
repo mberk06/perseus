@@ -1,4 +1,10 @@
-const {rangesOverlap, intersectRanges} = require("../ranges.js");
+import { rangesOverlap, intersectRanges } from "../ranges.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 /**
  * Given two positions relative to the same origin, return `child`'s position
@@ -143,3 +149,4 @@ module.exports = {
     getRelativePosition,
     getRelativeRect,
 };
+export default module.exports;

@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /*
     We are currently in a situation where Crowdin adds extra backslashes
     to some strings, but not all. However, we can trust that an individual
@@ -510,3 +515,4 @@ module.exports = {
     maybeUnescapeAccordingToSource,
     shouldUnescape,
 };
+export default module.exports;

@@ -1,3 +1,14 @@
+import _inlineIconJsx from "./inline-icon.jsx";
+import _stylesConstantsJs from "../styles/constants.js";
+import { StyleSheet, css } from "aphrodite";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * This component renders "lint" nodes in a markdown parse tree. Lint nodes
  * are inserted into the tree by the Gorgon linter (see src/gorgon/gorgon.js).
@@ -19,11 +30,10 @@
  * that has a right margin (like anything blockquoted) the circle will appear
  * to the left of where it belongs.  And if there is more
  **/
-const React = require("react");
-const ReactDOM = require("react-dom");
-const {StyleSheet, css} = require("aphrodite");
-const constants = require("../styles/constants.js");
-const InlineIcon = require("./inline-icon.jsx");
+const React = _react;
+const ReactDOM = _reactDom;
+const constants = _stylesConstantsJs;
+const InlineIcon = _inlineIconJsx;
 
 const exclamationIcon = {
     path: "M6 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1z", // eslint-disable-line max-len
@@ -380,3 +390,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = Lint;
+export default module.exports;

@@ -1,9 +1,20 @@
-const classNames = require("classnames");
-const React = require("react");
-const _ = require("underscore");
+import _componentsSvgImageJsx from "../components/svg-image.jsx";
+import _widgetDiffPerformerJsx from "./widget-diff-performer.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import _classnames from "classnames";
 
-const performDiff = require("./widget-diff-performer.jsx");
-const SvgImage = require("../components/svg-image.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const classNames = _classnames;
+const React = _react;
+const _ = _underscore;
+
+const performDiff = _widgetDiffPerformerJsx;
+const SvgImage = _componentsSvgImageJsx;
 
 const indentationFromDepth = function(depth) {
     return (depth - 1) * 20;
@@ -263,3 +274,4 @@ const WidgetDiff = React.createClass({
 });
 
 module.exports = WidgetDiff;
+export default module.exports;

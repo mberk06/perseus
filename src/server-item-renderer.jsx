@@ -1,3 +1,19 @@
+import { mapObject } from "./interactive2/objective_.js";
+import _utilJs from "./util.js";
+import _rendererJsx from "./renderer.jsx";
+import _mixinsProvideKeypadJsx from "./mixins/provide-keypad.jsx";
+import _hintsRendererJsx from "./hints-renderer.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import { StyleSheet, css } from "aphrodite";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A copy of the ItemRenderer which renders its question renderer and hints
  * renderer normally instead of ReactDOM.render()ing them into elements in the
@@ -6,18 +22,15 @@
  * This allows this component to be used in server-rendering of a perseus
  * exercise.
  */
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const ApiOptions = require("./perseus-api.jsx").Options;
-const HintsRenderer = require("./hints-renderer.jsx");
-const ProvideKeypad = require("./mixins/provide-keypad.jsx");
-const Renderer = require("./renderer.jsx");
-const Util = require("./util.js");
-
-const {mapObject} = require("./interactive2/objective_.js");
+const ApiOptions = _perseusApiJsx.Options;
+const HintsRenderer = _hintsRendererJsx;
+const ProvideKeypad = _mixinsProvideKeypadJsx;
+const Renderer = _rendererJsx;
+const Util = _utilJs;
 
 const RP = React.PropTypes;
 
@@ -374,3 +387,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = ItemRenderer;
+export default module.exports;

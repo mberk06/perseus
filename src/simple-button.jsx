@@ -1,10 +1,17 @@
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
   * Provides a simple styled button
   *
   */
 
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
 
 const SimpleButton = React.createClass({
     propTypes: {
@@ -80,3 +87,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = SimpleButton;
+export default module.exports;

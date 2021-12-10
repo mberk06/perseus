@@ -1,10 +1,18 @@
+import _componentsInfoTipJsx from "./components/info-tip.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
+var React = _react;
 
-var InfoTip = require("./components/info-tip.jsx");
+var InfoTip = _componentsInfoTipJsx;
 
 var ItemExtrasEditor = React.createClass({
     propTypes: {
@@ -149,3 +157,4 @@ var ItemExtrasEditor = React.createClass({
 });
 
 module.exports = ItemExtrasEditor;
+export default module.exports;

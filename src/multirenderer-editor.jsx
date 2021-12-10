@@ -1,28 +1,32 @@
-// eslint-disable-line max-lines
-/**
- * Editor for a multi-item question.
- *
- * TODO(mdr): The UI for managing arrays isn't visually consistent with
- *     HintsEditor. Should we bring them in line with each other?
- */
-const {StyleSheet, css} = require("aphrodite");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const lens = require("../hubble/index.js");
+import { shapePropType } from "./multi-items/prop-type-builders.js";
+import { buildEmptyItemTreeForShape, itemToTree } from "./multi-items/items.js";
+import { MultiRenderer } from "./multi-items.js";
+import _simpleButtonJsx from "./simple-button.jsx";
+import _jsonEditorJsx from "./json-editor.jsx";
+import _componentsInlineIconJsx from "./components/inline-icon.jsx";
+import { iconChevronDown, iconTrash } from "./icon-paths.js";
+import { HintEditor } from "./hint-editor.jsx";
+import _editorJsx from "./editor.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _hubbleIndexJs from "../hubble/index.js";
+import _reactDom from "react-dom";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
 
-const ApiOptions = require("./perseus-api.jsx").Options;
-const Editor = require("./editor.jsx");
-const {HintEditor} = require("./hint-editor.jsx");
-const {iconChevronDown, iconTrash} = require("./icon-paths.js");
-const InlineIcon = require("./components/inline-icon.jsx");
-const JsonEditor = require("./json-editor.jsx");
-const SimpleButton = require("./simple-button.jsx");
-const {MultiRenderer} = require("./multi-items.js");
-const {
-    buildEmptyItemTreeForShape,
-    itemToTree,
-} = require("./multi-items/items.js");
-const {shapePropType} = require("./multi-items/prop-type-builders.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const ReactDOM = _reactDom;
+const lens = _hubbleIndexJs;
+
+const ApiOptions = _perseusApiJsx.Options;
+const Editor = _editorJsx;
+const InlineIcon = _componentsInlineIconJsx;
+const JsonEditor = _jsonEditorJsx;
+const SimpleButton = _simpleButtonJsx;
 
 const EDITOR_MODES = ["edit", "preview", "json"];
 
@@ -1020,3 +1024,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = MultiRendererEditor;
+export default module.exports;

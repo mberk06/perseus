@@ -1,18 +1,26 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _utilJs from "../util.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _componentsSortableJsx from "../components/sortable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, one-var, react/forbid-prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Sortable = require("../components/sortable.jsx");
+var Sortable = _componentsSortableJsx;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-var shuffle = require("../util.js").shuffle;
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+const ApiOptions = _perseusApiJsx.Options;
+var shuffle = _utilJs.shuffle;
 
 var HORIZONTAL = "horizontal",
     VERTICAL = "vertical";
@@ -97,3 +105,4 @@ module.exports = {
     widget: Sorter,
     isLintable: true,
 };
+export default module.exports;

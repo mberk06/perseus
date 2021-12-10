@@ -1,6 +1,12 @@
-const assert = require("assert");
+import { parseTex, modifyTex } from "../tex-wrangler.js";
+import _assert from "assert";
 
-const {parseTex, modifyTex} = require("../tex-wrangler.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
 
 const whitespaceRegex = /\s/g;
 
@@ -75,3 +81,4 @@ describe("parseTex", () => {
         assertParsed("\\dfrac{3\\%}{4}", "3% / 4");
     });
 });
+export default module.exports;

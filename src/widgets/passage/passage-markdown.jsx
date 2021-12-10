@@ -1,11 +1,20 @@
+import _underscore from "underscore";
+import _simpleMarkdown from "simple-markdown";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals $_ */
-var React = require("react");
-var SimpleMarkdown = require("simple-markdown");
-var _ = require("underscore");
+var React = _react;
+var SimpleMarkdown = _simpleMarkdown;
+var _ = _underscore;
 
 var START_REF_PREFIX = "start-ref-";
 var END_REF_PREFIX = "end-ref-";
@@ -384,3 +393,4 @@ module.exports = {
     END_REF_PREFIX: END_REF_PREFIX,
     _rulesForTesting: rules,
 };
+export default module.exports;

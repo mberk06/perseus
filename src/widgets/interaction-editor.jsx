@@ -1,25 +1,46 @@
+import _utilColorsJs from "../util/colors.js";
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsMathInputJsx from "../components/math-input.jsx";
+import _componentsGraphSettingsJsx from "../components/graph-settings.jsx";
+import _interactionElementContainerJsx from "./interaction/element-container.jsx";
+import _interactionDashPickerJsx from "./interaction/dash-picker.jsx";
+import _interactionConstraintEditorJsx from "./interaction/constraint-editor.jsx";
+import _interactionColorPickerJsx from "./interaction/color-picker.jsx";
+import _interactionArrowPickerJsx from "./interaction/arrow-picker.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable max-lines, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const ArrowPicker = require("./interaction/arrow-picker.jsx");
-const ColorPicker = require("./interaction/color-picker.jsx");
-const ConstraintEditor = require("./interaction/constraint-editor.jsx");
-const DashPicker = require("./interaction/dash-picker.jsx");
-const ElementContainer = require("./interaction/element-container.jsx");
-const GraphSettings = require("../components/graph-settings.jsx");
-const MathInput = require("../components/math-input.jsx");
-const NumberInput = require("../components/number-input.jsx");
-const TeX = require("react-components/tex.jsx");
-const TextInput = require("../components/text-input.jsx");
+const ArrowPicker = _interactionArrowPickerJsx;
+const ColorPicker = _interactionColorPickerJsx;
+const ConstraintEditor = _interactionConstraintEditorJsx;
+const DashPicker = _interactionDashPickerJsx;
+const ElementContainer = _interactionElementContainerJsx;
+const GraphSettings = _componentsGraphSettingsJsx;
+const MathInput = _componentsMathInputJsx;
+const NumberInput = _componentsNumberInputJsx;
+const TeX = _reactComponentsTexJsx;
+const TextInput = _componentsTextInputJsx;
 
-const KhanColors = require("../util/colors.js");
+const KhanColors = _utilColorsJs;
 
 var defaultInteractionProps = {
     graph: {
@@ -1327,3 +1348,4 @@ var InteractionEditor = React.createClass({
 });
 
 module.exports = InteractionEditor;
+export default module.exports;

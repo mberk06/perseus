@@ -1,10 +1,17 @@
+import _splitDiffJsx from "../split-diff.jsx";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* global beforeEach, expect */
 
 describe("split diff", function() {
     let splitDiff;
 
     beforeEach(function() {
-        splitDiff = require("../split-diff.jsx");
+        splitDiff = _splitDiffJsx;
     });
 
     it("splits an empty diff", function() {
@@ -40,3 +47,4 @@ describe("split diff", function() {
         ]);
     });
 });
+export default module.exports;

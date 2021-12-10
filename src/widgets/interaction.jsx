@@ -1,13 +1,24 @@
+import _kmath from "kmath";
+import _componentsGraphieJsx from "../components/graphie.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, no-redeclare, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
+var Changeable = _mixinsChangeableJsx;
 
-var Graphie = require("../components/graphie.jsx");
+var Graphie = _componentsGraphieJsx;
 
 var Label = Graphie.Label;
 var Line = Graphie.Line;
@@ -18,7 +29,7 @@ var PlotParametric = Graphie.PlotParametric;
 var Point = Graphie.Point;
 var Rect = Graphie.Rect;
 
-var kvector = require("kmath").vector;
+var kvector = _kmath.vector;
 
 // Memoize KAS parsing
 var KAShashFunc = (expr, options) => {
@@ -676,3 +687,4 @@ module.exports = {
     transform: _.identity,
     hidden: true,
 };
+export default module.exports;

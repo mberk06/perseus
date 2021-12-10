@@ -1,3 +1,14 @@
+import { addHighlight, buildHighlight, deserializeHighlight, serializeHighlight } from "./highlights.js";
+import _wordIndexerJsx from "./word-indexer.jsx";
+import _uiHighlightingUiJsx from "./ui/highlighting-ui.jsx";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * The entry point for highlighting!
@@ -13,13 +24,10 @@
  * new set of serialized highlights, which you can then persist and send back
  * down to this component. Easy peasy!
  */
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
 
-const HighlightingUI = require("./ui/highlighting-ui.jsx");
-const WordIndexer = require("./word-indexer.jsx");
-const {addHighlight, buildHighlight, deserializeHighlight, serializeHighlight}
-    = require("./highlights.js");
+const HighlightingUI = _uiHighlightingUiJsx;
+const WordIndexer = _wordIndexerJsx;
 
 class HighlightableContent extends React.PureComponent {
     state = {
@@ -175,3 +183,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = HighlightableContent;
+export default module.exports;

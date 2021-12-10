@@ -1,7 +1,15 @@
-const Util = require("../util.js");
+import _underscore from "underscore";
+import _utilJs from "../util.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const Util = _utilJs;
 const nestedMap = Util.nestedMap;
 const deepEq = Util.deepEq;
-const _ = require("underscore");
+const _ = _underscore;
 
 /**
  * A base class for all Graphie Movables
@@ -126,3 +134,4 @@ module.exports = {
     createClass: createClass,
     createSimpleClass: createSimpleClass,
 };
+export default module.exports;

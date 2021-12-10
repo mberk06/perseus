@@ -1,17 +1,32 @@
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+import _utilGraphUtilsJs from "../util/graph-utils.js";
+import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js";
+import _utilJs2 from "../util.js";
+import _utilJs from "../util.js";
+import _graphieMovablesJsx from "./graphie-movables.jsx";
+import _graphieClassesJsx from "./graphie-classes.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
 
-const GraphieClasses = require("./graphie-classes.jsx");
-const Movables = require("./graphie-movables.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
+
+const GraphieClasses = _graphieClassesJsx;
+const Movables = _graphieMovablesJsx;
 
 const GraphieMovable = GraphieClasses.GraphieMovable;
 
-const deepEq = require("../util.js").deepEq;
-const nestedMap = require("../util.js").nestedMap;
-const assert = require("../interactive2/interactive-util.js").assert;
+const deepEq = _utilJs.deepEq;
+const nestedMap = _utilJs2.nestedMap;
+const assert = _interactive2InteractiveUtilJs.assert;
 
-const GraphUtils = require("../util/graph-utils.js");
+const GraphUtils = _utilGraphUtilsJs;
 const createGraphie = GraphUtils.createGraphie;
 
 const Graphie = React.createClass({
@@ -335,3 +350,4 @@ _.extend(Graphie, GraphieClasses);
 _.extend(Graphie, Movables);
 
 module.exports = Graphie;
+export default module.exports;

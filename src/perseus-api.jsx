@@ -1,3 +1,11 @@
+import _componentsStubTagEditorJsx from "./components/stub-tag-editor.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -33,9 +41,9 @@
  * These are css class names that will continue to preserve their
  * semantic meaning across the same perseus api major version.
  */
-const React = require("react");
+const React = _react;
 
-const StubTagEditor = require("./components/stub-tag-editor.jsx");
+const StubTagEditor = _componentsStubTagEditorJsx;
 
 module.exports = {
     Options: {
@@ -200,3 +208,4 @@ module.exports = {
         MOBILE: "perseus-mobile",
     },
 };
+export default module.exports;

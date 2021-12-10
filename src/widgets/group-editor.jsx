@@ -1,14 +1,25 @@
+import _editorJsx from "../editor.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-const Changeable = require("../mixins/changeable.jsx");
+const ApiOptions = _perseusApiJsx.Options;
+const Changeable = _mixinsChangeableJsx;
 
-const Editor = require("../editor.jsx");
+const Editor = _editorJsx;
 
 const GroupEditor = React.createClass({
     propTypes: {
@@ -79,3 +90,4 @@ const GroupEditor = React.createClass({
 });
 
 module.exports = GroupEditor;
+export default module.exports;

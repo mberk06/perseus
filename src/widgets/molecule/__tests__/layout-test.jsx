@@ -1,7 +1,16 @@
-const assert = require("assert");
+import _smilesParserJsx from "../smiles-parser.jsx";
+import _moleculeLayoutJsx from "../molecule-layout.jsx";
+import _assert from "assert";
 
-const Layout = require("../molecule-layout.jsx");
-const SmilesParser = require("../smiles-parser.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
+
+const Layout = _moleculeLayoutJsx;
+const SmilesParser = _smilesParserJsx;
 
 function assertApproximately(actual, expected, allowed) {
     assert(
@@ -148,3 +157,4 @@ describe("Molecule layout", () => {
         });
     });
 });
+export default module.exports;

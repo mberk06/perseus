@@ -1,15 +1,27 @@
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _reactComponentsBlurInputJsx from "react-components/blur-input.jsx";
+import _utilJs from "../util.js";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const Util = require("../util.js");
+const Util = _utilJs;
 
-const BlurInput = require("react-components/blur-input.jsx");
-const InfoTip = require("../components/info-tip.jsx");
+const BlurInput = _reactComponentsBlurInputJsx;
+const InfoTip = _componentsInfoTipJsx;
 
 var answerTypes = {
     number: {
@@ -236,3 +248,4 @@ const InputNumberEditor = React.createClass({
 });
 
 module.exports = InputNumberEditor;
+export default module.exports;

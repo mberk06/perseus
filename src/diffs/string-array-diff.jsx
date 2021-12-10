@@ -1,5 +1,13 @@
-const jsdiff = require("../../lib/jsdiff");
-const _ = require("underscore");
+import _underscore from "underscore";
+import _libJsdiff from "../../lib/jsdiff";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const jsdiff = _libJsdiff;
+const _ = _underscore;
 
 const statusFor = function(chunk) {
     if (chunk.added) {
@@ -67,3 +75,4 @@ const stringArrayDiff = function(a, b) {
 };
 
 module.exports = stringArrayDiff;
+export default module.exports;

@@ -1,20 +1,49 @@
+import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js";
+import _utilColorsJs from "../util/colors.js";
+import _utilMathJs from "../util/math.js";
+import _kmath5 from "kmath";
+import _kmath4 from "kmath";
+import _kmath3 from "kmath";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _utilJs3 from "../util.js";
+import _utilJs2 from "../util.js";
+import _utilJs from "../util.js";
+import { iconPlus, iconUndo } from "../icon-paths.js";
+import _mathInput from "../../math-input";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _componentsGraphJsx from "../components/graph.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable camelcase, comma-dangle, indent, max-lines, no-redeclare, no-undef, no-var, object-curly-spacing, prefer-spread, react/jsx-closing-bracket-location, react/jsx-indent-props, react/no-did-update-set-state, react/prop-types, react/sort-comp, space-before-function-paren, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var Graph = require("../components/graph.jsx");
-const InlineIcon = require("../components/inline-icon.jsx");
-var NumberInput = require("../components/number-input.jsx");
-var MathOutput = require("../components/math-output.jsx");
-var TeX = require("react-components/tex.jsx");
-const SimpleKeypadInput = require("../components/simple-keypad-input.jsx");
+var Graph = _componentsGraphJsx;
+const InlineIcon = _componentsInlineIconJsx;
+var NumberInput = _componentsNumberInputJsx;
+var MathOutput = _componentsMathOutputJsx;
+var TeX = _reactComponentsTexJsx;
+const SimpleKeypadInput = _componentsSimpleKeypadInputJsx;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-const {keypadElementPropType} = require("../../math-input").propTypes;
+var ApiOptions = _perseusApiJsx.Options;
+const {keypadElementPropType} = _mathInput.propTypes;
 
 var ROTATE_SNAP_DEGREES = 15;
 var DEGREE_SIGN = "\u00B0";
@@ -23,21 +52,20 @@ var ROTATE_HANDLE_DIST = 1.5;
 var REFLECT_ROTATE_HANDLE_DIST = 2;
 var REFLECT_BUTTON_SIZE = 1;
 
-const {iconPlus, iconUndo} = require("../icon-paths.js");
-var deepEq = require("../util.js").deepEq;
-var getGridStep = require("../util.js").getGridStep;
-var captureScratchpadTouchStart = require("../util.js")
+var deepEq = _utilJs.deepEq;
+var getGridStep = _utilJs2.getGridStep;
+var captureScratchpadTouchStart = _utilJs3
     .captureScratchpadTouchStart;
 
-var knumber = require("kmath").number;
-var kvector = require("kmath").vector;
-var kpoint = require("kmath").point;
-var kray = require("kmath").ray;
-var kline = require("kmath").line;
-const KhanMath = require("../util/math.js");
-const KhanColors = require("../util/colors.js");
+var knumber = _kmath.number;
+var kvector = _kmath2.vector;
+var kpoint = _kmath3.point;
+var kray = _kmath4.ray;
+var kline = _kmath5.line;
+const KhanMath = _utilMathJs;
+const KhanColors = _utilColorsJs;
 
-var assert = require("../interactive2/interactive-util.js").assert;
+var assert = _interactive2InteractiveUtilJs.assert;
 
 var defaultBoxSize = 400;
 var defaultBackgroundImage = {
@@ -2650,3 +2678,4 @@ module.exports = {
     displayName: "Transformer",
     widget: Transformer,
 };
+export default module.exports;

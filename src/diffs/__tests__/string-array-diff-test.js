@@ -1,6 +1,13 @@
+import _stringArrayDiffJsx from "../string-array-diff.jsx";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* global expect */
 
-const stringArrayDiff = require("../string-array-diff.jsx");
+const stringArrayDiff = _stringArrayDiffJsx;
 
 describe("string array diff", function() {
     it("diffs an empty diff", function() {
@@ -73,3 +80,4 @@ describe("string array diff", function() {
         });
     });
 });
+export default module.exports;

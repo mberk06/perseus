@@ -1,13 +1,24 @@
+import _utilGraphUtilsJs from "../util/graph-utils.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, indent, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-const GraphUtils = require("../util/graph-utils.js");
+var ApiOptions = _perseusApiJsx.Options;
+const GraphUtils = _utilGraphUtilsJs;
 
 var defaultImage = {
     url: null,
@@ -198,3 +209,4 @@ module.exports = {
     version: {major: 1, minor: 0},
     propUpgrades: propUpgrades,
 };
+export default module.exports;

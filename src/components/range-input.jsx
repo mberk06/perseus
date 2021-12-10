@@ -1,7 +1,15 @@
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 
-const React = require("react");
-const NumberInput = require("../components/number-input.jsx");
+const React = _react;
+const NumberInput = _componentsNumberInputJsx;
 
 const truth = () => true;
 
@@ -57,3 +65,4 @@ const RangeInput = React.createClass({
 });
 
 module.exports = RangeInput;
+export default module.exports;

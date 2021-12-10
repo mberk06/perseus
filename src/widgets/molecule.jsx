@@ -1,12 +1,21 @@
+import _moleculeSmilesParserJsx from "./molecule/smiles-parser.jsx";
+import { layout } from "./molecule/molecule-layout.jsx";
+import _moleculeMoleculeDrawingJsx from "./molecule/molecule-drawing.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
+const React = _react;
 
-const draw = require("./molecule/molecule-drawing.jsx");
-const {layout} = require("./molecule/molecule-layout.jsx");
-const SmilesParser = require("./molecule/smiles-parser.jsx");
+const draw = _moleculeMoleculeDrawingJsx;
+const SmilesParser = _moleculeSmilesParserJsx;
 
 const parse = SmilesParser.parse;
 const ParseError = SmilesParser.ParseError;
@@ -169,3 +178,4 @@ module.exports = {
     widget: MoleculeWidget,
     molecule: Molecule,
 };
+export default module.exports;

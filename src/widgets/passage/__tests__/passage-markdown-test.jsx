@@ -1,13 +1,24 @@
+import _passageMarkdownJsx from "../passage-markdown.jsx";
+import _underscore from "underscore";
+import _reactDomServer from "react-dom/server";
+import _react from "react";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-console, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var assert = require("assert");
-var React = require("react");
-var ReactDOMServer = require("react-dom/server");
-var _ = require("underscore");
+var assert = _assert;
+var React = _react;
+var ReactDOMServer = _reactDomServer;
+var _ = _underscore;
 
-var PassageMarkdown = require("../passage-markdown.jsx");
+var PassageMarkdown = _passageMarkdownJsx;
 var parse = PassageMarkdown.parse;
 var rules = PassageMarkdown._rulesForTesting;
 
@@ -373,4 +384,6 @@ describe("passage markdown", () => {
         });
     });
 });
+
+export default module.exports;
 

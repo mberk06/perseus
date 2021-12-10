@@ -1,38 +1,51 @@
+import { GrapherUtil, typeToButton, functionForType, DEFAULT_GRAPHER_PROPS } from "./grapher/util.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import { getInteractiveBoxFromSizeClass } from "../util/sizing-utils.js";
+import { interactiveSizes } from "../styles/constants.js";
+import { containerSizeClassPropType } from "../util/sizing-utils.js";
+import _utilColorsJs from "../util/colors.js";
+import _kmath3 from "kmath";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _interactive2WrappedLineJs from "../interactive2/wrapped-line.js";
+import _componentsGraphieJsx from "../components/graphie.jsx";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+import _utilJs from "../util.js";
+import _componentsSvgImageJsx from "../components/svg-image.jsx";
+import _interactive2Js from "../interactive2.js";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, indent, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Interactive2 = require("../interactive2.js");
-var SvgImage = require("../components/svg-image.jsx");
-var Util = require("../util.js");
-var ButtonGroup = require("react-components/button-group.jsx");
+var Interactive2 = _interactive2Js;
+var SvgImage = _componentsSvgImageJsx;
+var Util = _utilJs;
+var ButtonGroup = _reactComponentsButtonGroupJsx;
 
 /* Graphie and relevant components. */
-var Graphie = require("../components/graphie.jsx");
+var Graphie = _componentsGraphieJsx;
 var MovablePoint = Graphie.MovablePoint;
 var MovableLine = Graphie.MovableLine;
-const WrappedLine = require("../interactive2/wrapped-line.js");
+const WrappedLine = _interactive2WrappedLineJs;
 
-var knumber = require("kmath").number;
-var kvector = require("kmath").vector;
-var kpoint = require("kmath").point;
-const KhanColors = require("../util/colors.js");
-const {containerSizeClassPropType} = require("../util/sizing-utils.js");
-const {interactiveSizes} = require("../styles/constants.js");
-const {getInteractiveBoxFromSizeClass} = require("../util/sizing-utils.js");
+var knumber = _kmath.number;
+var kvector = _kmath2.vector;
+var kpoint = _kmath3.point;
+const KhanColors = _utilColorsJs;
 
 /* Mixins. */
-var Changeable = require("../mixins/changeable.jsx");
-
-const {
-    GrapherUtil,
-    typeToButton,
-    functionForType,
-    DEFAULT_GRAPHER_PROPS,
-} = require("./grapher/util.jsx");
+var Changeable = _mixinsChangeableJsx;
 
 function isFlipped(newCoord, oldCoord, line) {
     var CCW = (a, b, c) => {
@@ -602,3 +615,4 @@ module.exports = {
     transform: propTransform,
     staticTransform: staticTransform,
 };
+export default module.exports;

@@ -1,25 +1,37 @@
-"use strict";
+"use strict";;
+import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
+import _gorgonGorgonJs from "./gorgon/gorgon.js";
+import _mixinsProvideKeypadJsx from "./mixins/provide-keypad.jsx";
+import _rendererJsx from "./renderer.jsx";
+import _perseusApiJsx2 from "./perseus-api.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _utilJs from "./util.js";
+import _classnames from "classnames";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 /**
  * An article renderer. Articles are long-form pieces of content,
  * composed of multiple (Renderer) sections concatenated together.
  */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const classNames = require("classnames");
+const React = _react;
+const ReactDOM = _reactDom;
+const classNames = _classnames;
 
-const Util = require("./util.js");
-const ApiOptions = require("./perseus-api.jsx").Options;
-const ApiClassNames = require("./perseus-api.jsx").ClassNames;
-const Renderer = require("./renderer.jsx");
-const ProvideKeypad = require("./mixins/provide-keypad.jsx");
+const Util = _utilJs;
+const ApiOptions = _perseusApiJsx.Options;
+const ApiClassNames = _perseusApiJsx2.ClassNames;
+const Renderer = _rendererJsx;
+const ProvideKeypad = _mixinsProvideKeypadJsx;
 
-const Gorgon = require("./gorgon/gorgon.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("./gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs;
 
 const rendererProps = React.PropTypes.shape({
     content: React.PropTypes.string,
@@ -213,3 +225,4 @@ const ArticleRenderer = React.createClass({
 });
 
 module.exports = ArticleRenderer;
+export default module.exports;

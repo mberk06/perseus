@@ -1,11 +1,22 @@
+import _texButtonsJsx from "./tex-buttons.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
-const classNames = require("classnames");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const classNames = _classnames;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const TexButtons = require("./tex-buttons.jsx");
+const TexButtons = _texButtonsJsx;
 
 // TODO(alex): Package MathQuill
 const MathQuill = window.MathQuill;
@@ -269,3 +280,4 @@ const MathInput = React.createClass({
 });
 
 module.exports = MathInput;
+export default module.exports;

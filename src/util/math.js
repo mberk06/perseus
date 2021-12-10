@@ -1,5 +1,13 @@
-const _ = require("underscore");
-const knumber = require("kmath").number;
+import _kmath from "kmath";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const _ = _underscore;
+const knumber = _kmath.number;
 
 const KhanMath = {
     // Simplify formulas before display
@@ -295,3 +303,4 @@ const KhanMath = {
 };
 
 module.exports = KhanMath;
+export default module.exports;

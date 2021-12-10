@@ -1,10 +1,20 @@
+import _movablePointJsx from "../movable-point.jsx";
+import _movableMockJs from "./movable-mock.js";
+import _underscore from "underscore";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // System requires
-const assert = require("assert");
-const _ = require("underscore");
+const assert = _assert;
+const _ = _underscore;
 
 // Interactive2 requires
-const _createMockMovable = require("./movable-mock.js");
-const MovablePoint = require("../movable-point.jsx");
+const _createMockMovable = _movableMockJs;
+const MovablePoint = _movablePointJsx;
 
 // Create a testable MovablePoint with a mocked out Movable
 const createPoint = function(options) {
@@ -134,3 +144,4 @@ describe("MovablePoint", function() {
     });
 
 });
+export default module.exports;

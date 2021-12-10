@@ -1,29 +1,45 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _utilJs from "../util.js";
+import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js";
+import _mathInput from "../../math-input";
+import _utilAnswerTypesJs from "../util/answer-types.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, max-len, no-undef, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var classNames = require("classnames");
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var classNames = _classnames;
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var NumberInput = require("../components/number-input.jsx");
-var Renderer = require("../renderer.jsx");
-var TextInput = require("../components/text-input.jsx");
-var MathOutput = require("../components/math-output.jsx");
-const SimpleKeypadInput = require("../components/simple-keypad-input.jsx");
+var NumberInput = _componentsNumberInputJsx;
+var Renderer = _rendererJsx;
+var TextInput = _componentsTextInputJsx;
+var MathOutput = _componentsMathOutputJsx;
+const SimpleKeypadInput = _componentsSimpleKeypadInputJsx;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-const KhanAnswerTypes = require("../util/answer-types.js");
-const {keypadElementPropType} = require("../../math-input").propTypes;
+var ApiOptions = _perseusApiJsx.Options;
+const KhanAnswerTypes = _utilAnswerTypesJs;
+const {keypadElementPropType} = _mathInput.propTypes;
 
-var assert = require("../interactive2/interactive-util.js").assert;
-var stringArrayOfSize = require("../util.js").stringArrayOfSize;
-
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var assert = _interactive2InteractiveUtilJs.assert;
+var stringArrayOfSize = _utilJs.stringArrayOfSize;
 
 // We store three sets of dimensions for the brackets, for our three types of
 // inputs, which vary in formatting: (1) the "static" inputs rendered for the
@@ -583,3 +599,4 @@ module.exports = {
     staticTransform: staticTransform,
     isLintable: true,
 };
+export default module.exports;

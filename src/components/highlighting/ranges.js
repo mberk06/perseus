@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Given two DOMRange objects, and a choice of start/end point for each, compare
  * the two chosen points. Return -1 if a's comes first in the document, return
@@ -272,3 +277,4 @@ module.exports = {
     unionRanges,
     spanRanges,
 };
+export default module.exports;

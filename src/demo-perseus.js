@@ -1,3 +1,17 @@
+import _articleDiffDemoJsx from "./article-diff-demo.jsx";
+import _itemDiffDemoJsx from "./item-diff-demo.jsx";
+import _multirendererDemoJsx from "./multirenderer-demo.jsx";
+import _articleDemoJsx from "./article-demo.jsx";
+import _rendererDemoJsx from "./renderer-demo.jsx";
+import _editorDemoJsx from "./editor-demo.jsx";
+import _editorPerseusJs from "./editor-perseus.js";
+import _perseusEnvJs from "./perseus-env.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Loads the Perseus demo pages
  *
@@ -5,7 +19,7 @@
  * to demonstrate and develop the Perseus application
  */
 
-require("./perseus-env.js");
+_perseusEnvJs;
 
 window.Khan = {
     Util: KhanUtil,
@@ -14,15 +28,15 @@ window.Khan = {
     imageBase: "/images/",
 };
 
-const Perseus = (window.Perseus = require("./editor-perseus.js"));
+const Perseus = (window.Perseus = _editorPerseusJs);
 const ReactDOM = (window.ReactDOM = React.__internalReactDOM);
 
-const EditorDemo = require("./editor-demo.jsx");
-const RendererDemo = require("./renderer-demo.jsx");
-const ArticleDemo = require("./article-demo.jsx");
-const MultirendererDemo = require("./multirenderer-demo.jsx");
-const ItemDiffDemo = require("./item-diff-demo.jsx");
-const ArticleDiffDemo = require("./article-diff-demo.jsx");
+const EditorDemo = _editorDemoJsx;
+const RendererDemo = _rendererDemoJsx;
+const ArticleDemo = _articleDemoJsx;
+const MultirendererDemo = _multirendererDemoJsx;
+const ItemDiffDemo = _itemDiffDemoJsx;
+const ArticleDiffDemo = _articleDiffDemoJsx;
 
 const query = Perseus.Util.parseQueryString(window.location.hash.substring(1));
 const question = query.content && JSON.parse(query.content);
@@ -53,3 +67,4 @@ Perseus.init({skipMathJax: false, loadExtraWidgets: true})
             console.error(err); // @Nolint
         }
     );
+export default module.exports;

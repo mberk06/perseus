@@ -1,19 +1,28 @@
-/* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
+import { iconDropdownArrow } from "../icon-paths.js";
+import _stylesConstantsJs from "../styles/constants.js";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _perseusApiJsx2 from "../perseus-api.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _classnames from "classnames";
+import { StyleSheet, css } from "aphrodite";
 
-const {StyleSheet, css} = require("aphrodite");
-const classNames = require("classnames");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+var module = {
+    exports: {}
+};
 
-const ApiClassNames = require("../perseus-api.jsx").ClassNames;
-const ApiOptions = require("../perseus-api.jsx").Options;
-const InlineIcon = require("../components/inline-icon.jsx");
-const styleConstants = require("../styles/constants.js");
+var exports = module.exports;
+const classNames = _classnames;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const {iconDropdownArrow} = require("../icon-paths.js");
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const ApiOptions = _perseusApiJsx2.Options;
+const InlineIcon = _componentsInlineIconJsx;
+const styleConstants = _stylesConstantsJs;
 
 const dropdownArrowSize = 24;
 
@@ -179,3 +188,4 @@ module.exports = {
     widget: Dropdown,
     transform: propTransform,
 };
+export default module.exports;

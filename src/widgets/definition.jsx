@@ -1,12 +1,25 @@
-const {StyleSheet, css} = require("aphrodite");
-const React = require("react");
-const _ = require("underscore");
+import _stylesConstantsJs from "../styles/constants.js";
+import _stylesMediaQueriesJs from "../styles/media-queries.js";
+import _rendererJsx from "../renderer.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
 
-const Changeable = require("../mixins/changeable.jsx");
-const PerseusApi = require("../perseus-api.jsx");
-const Renderer = require("../renderer.jsx");
-const mediaQueries = require("../styles/media-queries.js");
-const styleConstants = require("../styles/constants.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const _ = _underscore;
+
+const Changeable = _mixinsChangeableJsx;
+const PerseusApi = _perseusApiJsx;
+const Renderer = _rendererJsx;
+const mediaQueries = _stylesMediaQueriesJs;
+const styleConstants = _stylesConstantsJs;
 
 const Definition = React.createClass({
     propTypes: {
@@ -428,3 +441,4 @@ module.exports = {
     widget: Definition,
     transform: _.identity,
 };
+export default module.exports;

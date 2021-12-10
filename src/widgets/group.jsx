@@ -1,19 +1,27 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _rendererJsx from "../renderer.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var classNames = require("classnames");
-var React = require("react");
-var _ = require("underscore");
+var classNames = _classnames;
+var React = _react;
+var _ = _underscore;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-var Changeable = require("../mixins/changeable.jsx");
-var Renderer = require("../renderer.jsx");
-
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var ApiOptions = _perseusApiJsx.Options;
+var Changeable = _mixinsChangeableJsx;
+var Renderer = _rendererJsx;
 
 var Group = React.createClass({
     propTypes: {
@@ -196,3 +204,4 @@ module.exports = {
     hidden: false,
     isLintable: true,
 };
+export default module.exports;

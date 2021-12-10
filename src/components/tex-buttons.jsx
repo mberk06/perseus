@@ -1,9 +1,18 @@
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const TeX = require("react-components/tex.jsx");
+const TeX = _reactComponentsTexJsx;
 
 const prettyBig = {fontSize: "150%"};
 const slightlyBig = {fontSize: "120%"};
@@ -222,3 +231,4 @@ const TexButtons = React.createClass({
 });
 
 module.exports = TexButtons;
+export default module.exports;

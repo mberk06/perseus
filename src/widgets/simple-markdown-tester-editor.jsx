@@ -1,3 +1,12 @@
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -7,10 +16,10 @@
  * up on the left side of the screen in the demo. Only the question writer
  * sees this.
  */
-var React = require("react");
+var React = _react;
 
-var Changeable = require("../mixins/changeable.jsx");
-var EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var Changeable = _mixinsChangeableJsx;
+var EditorJsonify = _mixinsEditorJsonifyJsx;
 
 var TextArea = React.createClass({
     render: function() {
@@ -78,3 +87,4 @@ var SimpleMarkdownTesterEditor = React.createClass({
 });
 
 module.exports = SimpleMarkdownTesterEditor;
+export default module.exports;

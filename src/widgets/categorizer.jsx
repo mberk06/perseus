@@ -1,26 +1,37 @@
-/* eslint-disable comma-dangle, no-undef, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _stylesSharedJs from "../styles/shared.js";
+import _stylesMediaQueriesJs from "../styles/media-queries.js";
+import _utilJs from "../util.js";
+import _rendererJsx from "../renderer.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import { iconCircle, iconCircleThin } from "../icon-paths.js";
+import _perseusApiJsx2 from "../perseus-api.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _mixinsWidgetJsonifyDeprecatedJsx from "../mixins/widget-jsonify-deprecated.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _classnames from "classnames";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
 
-const {StyleSheet, css} = require("aphrodite");
-const React = require("react");
-const classNames = require("classnames");
-const Changeable = require("../mixins/changeable.jsx");
-const WidgetJsonifyDeprecated = require("../mixins/widget-jsonify-deprecated.jsx");
-const _ = require("underscore");
+var module = {
+    exports: {}
+};
 
-const ApiClassNames = require("../perseus-api.jsx").ClassNames;
-const ApiOptions = require("../perseus-api.jsx").Options;
-const {iconCircle, iconCircleThin} = require("../icon-paths.js");
-const InlineIcon = require("../components/inline-icon.jsx");
-const Renderer = require("../renderer.jsx");
-const Util = require("../util.js");
-const mediaQueries = require("../styles/media-queries.js");
-const sharedStyles = require("../styles/shared.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var exports = module.exports;
+const React = _react;
+const classNames = _classnames;
+const Changeable = _mixinsChangeableJsx;
+const WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
+const _ = _underscore;
+
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const ApiOptions = _perseusApiJsx2.Options;
+const InlineIcon = _componentsInlineIconJsx;
+const Renderer = _rendererJsx;
+const Util = _utilJs;
+const mediaQueries = _stylesMediaQueriesJs;
+const sharedStyles = _stylesSharedJs;
 
 const Categorizer = React.createClass({
     propTypes: {
@@ -305,3 +316,4 @@ module.exports = {
     },
     isLintable: true,
 };
+export default module.exports;

@@ -1,11 +1,24 @@
-const classNames = require("classnames");
-const React = require("react");
-const _ = require("underscore");
+import _componentsSvgImageJsx from "../components/svg-image.jsx";
+import _stringArrayDiffJsx from "./string-array-diff.jsx";
+import _splitDiffJsx from "./split-diff.jsx";
+import _libJsdiff from "../../lib/jsdiff";
+import _underscore from "underscore";
+import _react from "react";
+import _classnames from "classnames";
 
-const diff = require("../../lib/jsdiff");
-const splitDiff = require("./split-diff.jsx");
-const stringArrayDiff = require("./string-array-diff.jsx");
-const SvgImage = require("../components/svg-image.jsx");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const classNames = _classnames;
+const React = _react;
+const _ = _underscore;
+
+const diff = _libJsdiff;
+const splitDiff = _splitDiffJsx;
+const stringArrayDiff = _stringArrayDiffJsx;
+const SvgImage = _componentsSvgImageJsx;
 
 
 const BEFORE = "before";
@@ -173,3 +186,4 @@ const TextDiff = React.createClass({
 });
 
 module.exports = TextDiff;
+export default module.exports;

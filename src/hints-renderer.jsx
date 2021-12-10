@@ -1,29 +1,36 @@
-const React = require("react");
-const ReactDOM = require("react-dom");
-const {StyleSheet, css} = require("aphrodite");
-const classnames = require("classnames");
-const _ = require("underscore");
+import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
+import _gorgonGorgonJs from "./gorgon/gorgon.js";
+import { baseUnitPx, hintBorderWidth, kaGreen, gray85, gray17 } from "./styles/constants.js";
+import _stylesSharedJs from "./styles/shared.js";
+import _stylesMediaQueriesJs from "./styles/media-queries.js";
+import _mixinsApiOptionsPropsJs from "./mixins/api-options-props.js";
+import _componentsSvgImageJsx from "./components/svg-image.jsx";
+import _hintRendererJsx from "./hint-renderer.jsx";
+import _underscore from "underscore";
+import _classnames from "classnames";
+import { StyleSheet, css } from "aphrodite";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const React = _react;
+const ReactDOM = _reactDom;
+const classnames = _classnames;
+const _ = _underscore;
 const i18n = window.i18n;
 
-const HintRenderer = require("./hint-renderer.jsx");
-const SvgImage = require("./components/svg-image.jsx");
-const ApiOptionsProps = require("./mixins/api-options-props.js");
+const HintRenderer = _hintRendererJsx;
+const SvgImage = _componentsSvgImageJsx;
+const ApiOptionsProps = _mixinsApiOptionsPropsJs;
 
-const mediaQueries = require("./styles/media-queries.js");
-const sharedStyles = require("./styles/shared.js");
-const {
-    baseUnitPx,
-    hintBorderWidth,
-    kaGreen,
-    gray85,
-    gray17,
-} = require("./styles/constants.js");
+const mediaQueries = _stylesMediaQueriesJs;
+const sharedStyles = _stylesSharedJs;
 
-const Gorgon = require("./gorgon/gorgon.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("./gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs;
 
 const HintsRenderer = React.createClass({
     propTypes: {
@@ -310,3 +317,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = HintsRenderer;
+export default module.exports;

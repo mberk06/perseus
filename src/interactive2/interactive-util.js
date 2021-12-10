@@ -1,9 +1,17 @@
+import _movableHelperMethodsJs from "./movable-helper-methods.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Utility functions for writing Interactive2 movablethings
  */
 
-const _ = require("underscore");
-const MovableHelperMethods = require("./movable-helper-methods.js");
+const _ = _underscore;
+const MovableHelperMethods = _movableHelperMethodsJs;
 
 /**
  * Compute the correct vendor-prefixed `transform`.
@@ -127,3 +135,4 @@ const InteractiveUtil = {
 };
 
 module.exports = InteractiveUtil;
+export default module.exports;

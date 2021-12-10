@@ -1,27 +1,49 @@
+import _utilColorsJs from "../util/colors.js";
+import _kmath5 from "kmath";
+import _kmath4 from "kmath";
+import _kmath3 from "kmath";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _utilJs2 from "../util.js";
+import _utilJs from "../util.js";
+import _transformerJsx from "./transformer.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _componentsGraphSettingsJsx from "../components/graph-settings.jsx";
+import _componentsGraphJsx from "../components/graph.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, camelcase, comma-dangle, indent, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
+const ApiOptions = _perseusApiJsx.Options;
 
-const Graph = require("../components/graph.jsx");
-const GraphSettings = require("../components/graph-settings.jsx");
-const InfoTip = require("../components/info-tip.jsx");
-const PropCheckBox = require("../components/prop-check-box.jsx");
+const Graph = _componentsGraphJsx;
+const GraphSettings = _componentsGraphSettingsJsx;
+const InfoTip = _componentsInfoTipJsx;
+const PropCheckBox = _componentsPropCheckBoxJsx;
 
-const Transformer = require("./transformer.jsx").widget;
+const Transformer = _transformerJsx.widget;
 
-const deepEq = require("../util.js").deepEq;
-const getGridStep = require("../util.js").getGridStep;
-const kline = require("kmath").line;
-const knumber = require("kmath").number;
-const kpoint = require("kmath").point;
-const kray = require("kmath").ray;
-const kvector = require("kmath").vector;
-const KhanColors = require("../util/colors.js");
+const deepEq = _utilJs.deepEq;
+const getGridStep = _utilJs2.getGridStep;
+const kline = _kmath.line;
+const knumber = _kmath2.number;
+const kpoint = _kmath3.point;
+const kray = _kmath4.ray;
+const kvector = _kmath5.vector;
+const KhanColors = _utilColorsJs;
 
 function arraySum(array) {
     return _.reduce(
@@ -952,3 +974,4 @@ var TransformerEditor = React.createClass({
 });
 
 module.exports = TransformerEditor;
+export default module.exports;

@@ -1,3 +1,11 @@
+import _kmath from "kmath";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * MovableThing convenience methods
  *
@@ -6,8 +14,8 @@
  * are simply for convenience.
  */
 
-const _ = require("underscore");
-const kpoint = require("kmath").point;
+const _ = _underscore;
+const kpoint = _kmath.point;
 
 /* Local helper methods. */
 
@@ -140,3 +148,4 @@ const MovableHelperMethods = {
 };
 
 module.exports = MovableHelperMethods;
+export default module.exports;

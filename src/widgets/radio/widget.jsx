@@ -1,18 +1,26 @@
+import { linterContextProps, linterContextDefault } from "../../gorgon/proptypes.js";
+import _baseRadioJsx from "./base-radio.jsx";
+import _utilJs from "../../util.js";
+import _passageRefJsx from "../passage-ref.jsx";
+import _rendererJsx from "../../renderer.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* global i18n */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Renderer = require("../../renderer.jsx");
-const PassageRef = require("../passage-ref.jsx");
-const Util = require("../../util.js");
+const Renderer = _rendererJsx;
+const PassageRef = _passageRefJsx;
+const Util = _utilJs;
 
-const BaseRadio = require("./base-radio.jsx");
-
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../../gorgon/proptypes.js");
+const BaseRadio = _baseRadioJsx;
 
 const Radio = React.createClass({
     propTypes: {
@@ -481,3 +489,4 @@ _.extend(Radio, {
 });
 
 module.exports = Radio;
+export default module.exports;

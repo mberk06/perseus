@@ -1,17 +1,30 @@
+import _utilColorsJs from "../util/colors.js";
+import _kmath from "kmath";
+import _objective_Js from "./objective_.js";
+import _interactiveUtilJs from "./interactive-util.js";
+import _wrappedLineJs from "./wrapped-line.js";
+import _movableLineOptionsJs from "./movable-line-options.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * MovableLine
  */
-const _ = require("underscore");
+const _ = _underscore;
 
-const MovableLineOptions = require("./movable-line-options.js");
-const WrappedLine = require("./wrapped-line.js");
-const InteractiveUtil = require("./interactive-util.js");
-const objective_ = require("./objective_.js");
+const MovableLineOptions = _movableLineOptionsJs;
+const WrappedLine = _wrappedLineJs;
+const InteractiveUtil = _interactiveUtilJs;
+const objective_ = _objective_Js;
 const assert = InteractiveUtil.assert;
 const normalizeOptions = InteractiveUtil.normalizeOptions;
 
-const kvector = require("kmath").vector;
-const KhanColors = require("../util/colors.js");
+const kvector = _kmath.vector;
+const KhanColors = _utilColorsJs;
 
 const FUNCTION_ARRAY_OPTIONS = [
     "add",
@@ -279,3 +292,4 @@ _.extend(MovableLine.prototype, {
 });
 
 module.exports = MovableLine;
+export default module.exports;

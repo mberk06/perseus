@@ -1,20 +1,30 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _utilJs from "../util.js";
+import _rendererJsx from "../renderer.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import { iconOk } from "../icon-paths.js";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-var Changeable = require("../mixins/changeable.jsx");
-const {iconOk} = require("../icon-paths.js");
-const InlineIcon = require("../components/inline-icon.jsx");
-var Renderer = require("../renderer.jsx");
-var Util = require("../util.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var ApiOptions = _perseusApiJsx.Options;
+var Changeable = _mixinsChangeableJsx;
+const InlineIcon = _componentsInlineIconJsx;
+var Renderer = _rendererJsx;
+var Util = _utilJs;
 
 var Sequence = React.createClass({
     propTypes: {
@@ -135,3 +145,4 @@ module.exports = {
     hidden: true,
     isLintable: true,
 };
+export default module.exports;

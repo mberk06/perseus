@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "math-nested",
     severity: Rule.Severity.ERROR,
@@ -8,3 +14,4 @@ module.exports = Rule.makeRule({
     message: `Nested math:
 Don't nest math expressions inside \\text{} blocks`,
 });
+export default module.exports;

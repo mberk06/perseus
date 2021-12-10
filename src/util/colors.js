@@ -1,3 +1,8 @@
+var module = {
+ exports: {}
+};
+
+var exports = module.exports;
 /**
  * Color constants we use throughout Perseus (originally on KhanUtil).
  *
@@ -92,3 +97,4 @@ KhanColors.INTERACTIVE = KhanColors.KA_GREEN;
 KhanColors.DYNAMIC = KhanColors.BLUE;
 
 module.exports = KhanColors;
+export default module.exports;

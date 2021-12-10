@@ -1,5 +1,13 @@
-const _ = require("underscore");
-const WrappedDefaults = require("./wrapped-defaults.js");
+import _wrappedDefaultsJs from "./wrapped-defaults.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const _ = _underscore;
+const WrappedDefaults = _wrappedDefaultsJs;
 
 const DEFAULT_OPTIONS = {
     center: null, // gets ignored in `graphie.fixedPath` if `null`
@@ -35,3 +43,4 @@ const WrappedPath = function(graphie, points, options) {
 _.extend(WrappedPath.prototype, WrappedDefaults);
 
 module.exports = WrappedPath;
+export default module.exports;

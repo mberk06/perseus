@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "image-spaces-around-urls",
     severity: Rule.Severity.ERROR,
@@ -32,3 +38,4 @@ Whitespace in image URLs causes translation difficulties.`;
         }
     },
 });
+export default module.exports;

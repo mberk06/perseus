@@ -1,17 +1,21 @@
-/* eslint-disable object-curly-spacing */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
-
-const { StyleSheet } = require("aphrodite");
-const mediaQueries = require("./media-queries.js");
-const {
+import {
     zIndexAboveScratchpad,
     zIndexInteractiveComponent,
     radioBorderColor,
     checkedColor,
     circleSize,
     radioMarginWidth,
-} = require("./constants.js");
+} from "./constants.js";
+
+import _mediaQueriesJs from "./media-queries.js";
+import { StyleSheet } from "aphrodite";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const mediaQueries = _mediaQueriesJs;
 
 module.exports = StyleSheet.create({
     perseusInteractive: {
@@ -126,3 +130,4 @@ module.exports = StyleSheet.create({
         userSelect: 'none',
     },
 });
+export default module.exports;

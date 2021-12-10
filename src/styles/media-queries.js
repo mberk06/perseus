@@ -1,24 +1,19 @@
-/**
- * A default set of media queries to use for different screen sizes. Based on
- * the breakpoints from purecss.
- *
- * Use like:
- *   StyleSheet.create({
- *       blah: {
- *           [mediaQueries.xs]: {
- *
- *           },
- *       },
- *   });
- */
-
-const {
+import {
     pureXsMax,
-    pureSmMin, pureSmMax,
-    pureMdMin, pureMdMax,
-    pureLgMin, pureLgMax,
+    pureSmMin,
+    pureSmMax,
+    pureMdMin,
+    pureMdMax,
+    pureLgMin,
+    pureLgMax,
     pureXlMin,
-} = require("./constants.js");
+} from "./constants.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 module.exports = {
     xs: `@media screen and (max-width: ${pureXsMax})`,
@@ -38,3 +33,4 @@ module.exports = {
     mdOrLarger: `@media screen and (min-width: ${pureMdMin})`,
     lgOrLarger: `@media screen and (min-width: ${pureLgMin})`,
 };
+export default module.exports;

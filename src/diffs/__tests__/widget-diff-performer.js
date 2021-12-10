@@ -1,10 +1,17 @@
+import _widgetDiffPerformerJsx from "../widget-diff-performer.jsx";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* global beforeEach, expect */
 
 describe("widget-diff-performer", function() {
     let diff;
 
     beforeEach(function() {
-        diff = require("../widget-diff-performer.jsx");
+        diff = _widgetDiffPerformerJsx;
     });
 
     it("diffs a same single value", function() {
@@ -47,3 +54,4 @@ describe("widget-diff-performer", function() {
         expect(addedObj.children[0].status).toBe("added");
     });
 });
+export default module.exports;

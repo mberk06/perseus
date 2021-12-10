@@ -1,3 +1,13 @@
+import _componentsFixedToResponsiveJsx from "../components/fixed-to-responsive.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -6,11 +16,11 @@
  * This is a video widget for embedding videos in articles.
  */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
-var FixedToResponsive = require("../components/fixed-to-responsive.jsx");
+var Changeable = _mixinsChangeableJsx;
+var FixedToResponsive = _componentsFixedToResponsiveJsx;
 
 // Current default is 720p, based on the typical videos we upload currently
 var DEFAULT_WIDTH = 1280;
@@ -107,3 +117,4 @@ module.exports = {
     supportedAlignments: ["block", "float-left", "float-right", "full-width"],
     widget: Video,
 };
+export default module.exports;

@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Simple version of jQuery's Deferred.
  */
@@ -16,3 +21,4 @@ class Deferred {
 }
 
 module.exports = Deferred;
+export default module.exports;

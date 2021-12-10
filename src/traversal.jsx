@@ -1,3 +1,12 @@
+import _widgetsJs from "./widgets.js";
+import _interactive2Objective_Js from "./interactive2/objective_.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -17,11 +26,11 @@
  * more confident in the interface provided first.
  */
 
-var _ = require("underscore");
+var _ = _underscore;
 // TODO(aria): Pull this out of interactive2 / replace with new _.mapObject
-var objective_ = require("./interactive2/objective_.js");
+var objective_ = _interactive2Objective_Js;
 
-var Widgets = require("./widgets.js");
+var Widgets = _widgetsJs;
 
 var noop = function() {};
 
@@ -132,3 +141,4 @@ var traverseRendererDeep = function(rendererOptions, contentCallback, widgetCall
 module.exports = {
     traverseRendererDeep: traverseRendererDeep,
 };
+export default module.exports;

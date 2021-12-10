@@ -1,12 +1,23 @@
-const {StyleSheet, css} = require("aphrodite");
-const lens = require("../../hubble/index.js");
-const React = require("react");
+import _utilJs from "../util.js";
+import { buildMapper } from "./trees.js";
+import _rendererJsx from "../renderer.jsx";
+import _hintsRendererJsx from "../hints-renderer.jsx";
+import { itemToTree } from "./items.js";
+import _react from "react";
+import _hubbleIndexJs from "../../hubble/index.js";
+import { StyleSheet, css } from "aphrodite";
 
-const {itemToTree} = require("./items.js");
-const HintsRenderer = require("../hints-renderer.jsx");
-const Renderer = require("../renderer.jsx");
-const {buildMapper} = require("./trees.js");
-const Util = require("../util.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const lens = _hubbleIndexJs;
+const React = _react;
+
+const HintsRenderer = _hintsRendererJsx;
+const Renderer = _rendererJsx;
+const Util = _utilJs;
 
 
 
@@ -369,3 +380,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = MultiRenderer;
+export default module.exports;

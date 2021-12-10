@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 // Normally we have one rule per file. But since our selector class
 // can't match specific widget types directly, this rule implements
 // a number of image widget related rules in one place. This should
@@ -47,3 +53,4 @@ Don't include math expressions in image captions.`;
         }
     },
 });
+export default module.exports;

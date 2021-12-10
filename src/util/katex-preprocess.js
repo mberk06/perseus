@@ -1,3 +1,8 @@
+var module = {
+ exports: {}
+};
+
+var exports = module.exports;
 /**
  * Preprocess TeX code to convert things that KaTeX doesn't know how to handle
  * to things is does.
@@ -11,3 +16,4 @@ module.exports = texCode => texCode
     .replace(/\{align[*]?\}/g, "{aligned}")
     // Replace non-breaking spaces with regular spaces.
     .replace(/[\u00a0]/g, " ");
+export default module.exports;

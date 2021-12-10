@@ -1,12 +1,20 @@
+import _inlineIconJsx from "./inline-icon.jsx";
+import { iconChevronDown, iconChevronUp } from "../icon-paths.js";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
 /* A div that shows/hides its children.
  * (meant for use with editor widgets)
  */
-const React = require("react");
+const React = _react;
 
-const {iconChevronDown, iconChevronUp} = require("../icon-paths.js");
-const InlineIcon = require("./inline-icon.jsx");
+const InlineIcon = _inlineIconJsx;
 
 const MoreOptions = React.createClass({
     getDefaultProps: function() {
@@ -45,3 +53,4 @@ const MoreOptions = React.createClass({
 });
 
 module.exports = MoreOptions;
+export default module.exports;

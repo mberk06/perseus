@@ -1,16 +1,30 @@
+import _iframeContentRendererJsx from "./iframe-content-renderer.jsx";
+import _versionJson from "./version.json";
+import _componentsDeviceFramerJsx from "./components/device-framer.jsx";
+import _itemExtrasEditorJsx from "./item-extras-editor.jsx";
+import _editorJsx from "./editor.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, object-curly-spacing, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var ApiOptions = require("./perseus-api.jsx").Options;
-var Editor = require("./editor.jsx");
-var ItemExtrasEditor = require("./item-extras-editor.jsx");
-var DeviceFramer = require("./components/device-framer.jsx");
-var ITEM_DATA_VERSION = require("./version.json").itemDataVersion;
-const IframeContentRenderer = require("./iframe-content-renderer.jsx");
+var ApiOptions = _perseusApiJsx.Options;
+var Editor = _editorJsx;
+var ItemExtrasEditor = _itemExtrasEditorJsx;
+var DeviceFramer = _componentsDeviceFramerJsx;
+var ITEM_DATA_VERSION = _versionJson.itemDataVersion;
+const IframeContentRenderer = _iframeContentRendererJsx;
 
 var ItemEditor = React.createClass({
     propTypes: {
@@ -132,3 +146,4 @@ var ItemEditor = React.createClass({
 });
 
 module.exports = ItemEditor;
+export default module.exports;

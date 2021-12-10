@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * This is a TreeMapper that only has mappers specified for its leaf nodes; its
  * array mapper is the identity function.
@@ -147,3 +152,4 @@ function mapTree(tree, shape, path, mappers) {
 module.exports = {
     buildMapper,
 };
+export default module.exports;

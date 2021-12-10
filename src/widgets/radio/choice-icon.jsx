@@ -1,16 +1,26 @@
+import _focusRingJsx from "./focus-ring.jsx";
+import _componentsInlineIconJsx from "../../components/inline-icon.jsx";
+import { iconCheck, iconMinus } from "../../icon-paths.js";
+import _stylesConstantsJs from "../../styles/constants.js";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 
 /* Component for rendering a letter icon in radio choice */
 
 /* global i18n */
 
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
 
-const styleConstants = require("../../styles/constants.js");
-const {iconCheck, iconMinus} = require("../../icon-paths.js");
-const InlineIcon = require("../../components/inline-icon.jsx");
-const FocusRing = require("./focus-ring.jsx");
+const styleConstants = _stylesConstantsJs;
+const InlineIcon = _componentsInlineIconJsx;
+const FocusRing = _focusRingJsx;
 
 class SATChoiceIcon extends React.Component {
     // TODO(amy): figure out a better scheme for specifying these
@@ -343,3 +353,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = ChoiceIcon;
+export default module.exports;

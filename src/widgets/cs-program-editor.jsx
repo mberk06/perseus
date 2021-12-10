@@ -1,16 +1,29 @@
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _reactComponentsBlurInputJsx from "react-components/blur-input.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-console, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp, space-before-function-paren, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var Changeable = require("../mixins/changeable.jsx");
-var EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var Changeable = _mixinsChangeableJsx;
+var EditorJsonify = _mixinsEditorJsonifyJsx;
 
-var BlurInput = require("react-components/blur-input.jsx");
-var InfoTip = require("../components/info-tip.jsx");
-var PropCheckBox = require("../components/prop-check-box.jsx");
+var BlurInput = _reactComponentsBlurInputJsx;
+var InfoTip = _componentsInfoTipJsx;
+var PropCheckBox = _componentsPropCheckBoxJsx;
 
 var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 400;
@@ -235,3 +248,4 @@ var CSProgramEditor = React.createClass({
 });
 
 module.exports = CSProgramEditor;
+export default module.exports;

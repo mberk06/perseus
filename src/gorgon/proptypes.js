@@ -1,7 +1,14 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // Define the shape of the linter context object that is passed through the
 // tree with additional information about what we are checking.
 
-const React = require("react");
+const React = _react;
 
 export const linterContextProps = React.PropTypes.shape({
     contentType: React.PropTypes.string,
@@ -16,3 +23,4 @@ export const linterContextDefault = {
     paths: [],
     stack: [],
 };
+export default module.exports;

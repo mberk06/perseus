@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Icon paths to be used with `inline-icon.jsx`.
  *
@@ -134,3 +139,4 @@ module.exports = {
         height: 24,
     },
 };
+export default module.exports;

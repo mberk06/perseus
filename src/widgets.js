@@ -1,8 +1,15 @@
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-console, no-var, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var _ = require("underscore");
+var _ = _underscore;
 
 var DEFAULT_ALIGNMENT = "block";
 var DEFAULT_SUPPORTED_ALIGNMENTS = ["default"];
@@ -396,3 +403,4 @@ var Widgets = {
 };
 
 module.exports = Widgets;
+export default module.exports;

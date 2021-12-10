@@ -1,15 +1,26 @@
+import _componentsNumberInputJsx from "../../components/number-input.jsx";
+import _componentsMathInputJsx from "../../components/math-input.jsx";
+import { ChangeableProps, change } from "../../mixins/changeable.jsx";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 // @flow
 
-const React = require("react");
-const TeX = require("react-components/tex.jsx");
+const React = _react;
+const TeX = _reactComponentsTexJsx;
 
-const ButtonGroup = require("react-components/button-group.jsx");
-const {ChangeableProps, change} = require("../../mixins/changeable.jsx");
-const MathInput = require("../../components/math-input.jsx");
-const NumberInput = require("../../components/number-input.jsx");
+const ButtonGroup = _reactComponentsButtonGroupJsx;
+const MathInput = _componentsMathInputJsx;
+const NumberInput = _componentsNumberInputJsx;
 
 class ConstraintEditor extends React.Component {
     static defaultProps = {
@@ -121,3 +132,4 @@ class ConstraintEditor extends React.Component {
 }
 
 module.exports = ConstraintEditor;
+export default module.exports;

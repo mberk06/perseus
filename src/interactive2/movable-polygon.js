@@ -1,17 +1,30 @@
+import _utilGraphUtilsJs from "../util/graph-utils.js";
+import _utilColorsJs from "../util/colors.js";
+import _objective_Js from "./objective_.js";
+import _interactiveUtilJs from "./interactive-util.js";
+import _movablePolygonOptionsJs from "./movable-polygon-options.js";
+import _underscore from "underscore";
+import _kmath from "kmath";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Creates and adds a polygon to the graph that can be dragged around.
  * It allows constraints on its movement and draws when moves happen.
  */
-const kvector = require("kmath").vector;
-const _ = require("underscore");
+const kvector = _kmath.vector;
+const _ = _underscore;
 
-const MovablePolygonOptions = require("./movable-polygon-options.js");
-const InteractiveUtil = require("./interactive-util.js");
-const objective_ = require("./objective_.js");
+const MovablePolygonOptions = _movablePolygonOptionsJs;
+const InteractiveUtil = _interactiveUtilJs;
+const objective_ = _objective_Js;
 const assert = InteractiveUtil.assert;
 const normalizeOptions = InteractiveUtil.normalizeOptions;
-const KhanColors = require("../util/colors.js");
-const GraphUtils = require("../util/graph-utils.js");
+const KhanColors = _utilColorsJs;
+const GraphUtils = _utilGraphUtilsJs;
 
 // State parameters that should be converted into an array of
 // functions
@@ -325,3 +338,4 @@ _.extend(MovablePolygon.prototype, {
 });
 
 module.exports = MovablePolygon;
+export default module.exports;

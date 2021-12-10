@@ -1,15 +1,30 @@
-/* globals KA */
-const classNames = require("classnames");
-const React = require("react");
-const $ = require("jquery");
-const _ = require("underscore");
+import _zoomJs from "../zoom.js";
+import _utilJs from "../util.js";
+import { maybeUnescape } from "../jipt-hack.jsx";
+import _componentsImageLoaderJsx from "../components/image-loader.jsx";
+import _componentsGraphieJsx from "../components/graphie.jsx";
+import _componentsFixedToResponsiveJsx from "../components/fixed-to-responsive.jsx";
+import _underscore from "underscore";
+import _jquery from "jquery";
+import _react from "react";
+import _classnames from "classnames";
 
-const FixedToResponsive = require("../components/fixed-to-responsive.jsx");
-const Graphie = require("../components/graphie.jsx");
-const ImageLoader = require("../components/image-loader.jsx");
-const {maybeUnescape} = require("../jipt-hack.jsx");
-const Util = require("../util.js");
-const Zoom = require("../zoom.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+/* globals KA */
+const classNames = _classnames;
+const React = _react;
+const $ = _jquery;
+const _ = _underscore;
+
+const FixedToResponsive = _componentsFixedToResponsiveJsx;
+const Graphie = _componentsGraphieJsx;
+const ImageLoader = _componentsImageLoaderJsx;
+const Util = _utilJs;
+const Zoom = _zoomJs;
 
 // Minimum image width to make an image appear as zoomable.
 const ZOOMABLE_THRESHOLD = 700;
@@ -677,3 +692,4 @@ const SvgImage = React.createClass({
 });
 
 module.exports = SvgImage;
+export default module.exports;

@@ -1,29 +1,34 @@
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import { StyleSheet, css } from "aphrodite";
+import { gray76, phoneMargin, negativePhoneMargin, tableBackgroundAccent, kaGreen } from "../styles/constants.js";
+import _gradedGroupAnswerBarJsx from "./graded-group-answer-bar.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import { iconOk, iconRemove } from "../icon-paths.js";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 /* globals i18n */
-const classNames = require("classnames");
-const React = require("react");
-const _ = require("underscore");
+const classNames = _classnames;
+const React = _react;
+const _ = _underscore;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-const Changeable = require("../mixins/changeable.jsx");
-const {iconOk, iconRemove} = require("../icon-paths.js");
-const InlineIcon = require("../components/inline-icon.jsx");
-const Renderer = require("../renderer.jsx");
-const GradedGroupAnswerBar = require("./graded-group-answer-bar.jsx");
-const {
-    gray76,
-    phoneMargin,
-    negativePhoneMargin,
-    tableBackgroundAccent,
-    kaGreen,
-} = require("../styles/constants.js");
-const {StyleSheet, css} = require("aphrodite");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+const ApiOptions = _perseusApiJsx.Options;
+const Changeable = _mixinsChangeableJsx;
+const InlineIcon = _componentsInlineIconJsx;
+const Renderer = _rendererJsx;
+const GradedGroupAnswerBar = _gradedGroupAnswerBarJsx;
 
 // A Graded Group is more or less a Group widget that displays a check
 // answer button below the rendered content. When clicked, the widget grades
@@ -384,3 +389,4 @@ const styles = StyleSheet.create({
         letterSpacing: 0.8,
     },
 });
+export default module.exports;

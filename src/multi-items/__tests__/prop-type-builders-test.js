@@ -1,9 +1,17 @@
-// @flow
-const assert = require("assert");
+import _shapesJs from "../shapes.js";
+import { buildPropTypeForShape } from "../prop-type-builders.js";
+import { treeToItem } from "../items.js";
+import _assert from "assert";
 
-const {treeToItem} = require("../items.js");
-const {buildPropTypeForShape} = require("../prop-type-builders.js");
-const shapes = require("../shapes.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+// @flow
+const assert = _assert;
+
+const shapes = _shapesJs;
 
 describe("buildPropTypeForShape", () => {
     // The value we're wrapping might not be a valid ItemTree - that's the
@@ -124,3 +132,4 @@ describe("buildPropTypeForShape", () => {
         assertPropTypeFails(propType, {b: emptyItem});
     });
 });
+export default module.exports;

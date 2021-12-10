@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 // These are 3-letter and longer words that we would not expect to be
 // capitalized even in a title-case heading.  See
 // http://blog.apastyle.org/apastyle/2012/03/title-case-and-sentence-case-capitalization-in-apa-style.html
@@ -59,3 +65,4 @@ Only capitalize the first letter and proper nouns.`;
         }
     },
 });
+export default module.exports;

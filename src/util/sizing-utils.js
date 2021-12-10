@@ -1,15 +1,18 @@
-/* eslint-disable object-curly-spacing */
-/* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
-/* To fix, remove an entry above, run ka-lint, and fix errors. */
+import _react from "react";
+import { interactiveSizes } from "../styles/constants.js";
 
-const {interactiveSizes} = require("../styles/constants.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 // Note: these size cutoffs represent content-width cutoffs as
 // specified in http://zpl.io/1mVmvU
 // TODO(benkomalo): these values aren't used in JS outside of this file, but
 // are coupled to the values in
 // stylesheets/exercise-content-package/articles.less - DRY it up at some point
-const React = require("react");
+const React = _react;
 
 const smMax = 512;
 const mdMax = 688;
@@ -55,3 +58,4 @@ module.exports = {
         }
     },
 };
+export default module.exports;

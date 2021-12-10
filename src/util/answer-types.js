@@ -1,13 +1,22 @@
+import _mathJs from "./math.js";
+import _underscore from "underscore";
+import _jquery from "jquery";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* global i18n:false */
 
-const $ = require("jquery");
-const _ = require("underscore");
+const $ = _jquery;
+const _ = _underscore;
 
-const KhanMath = require("./math.js");
+const KhanMath = _mathJs;
 
 const MAXERROR_EPSILON = Math.pow(2, -42);
 
@@ -757,3 +766,4 @@ const KhanAnswerTypes = {
 };
 
 module.exports = KhanAnswerTypes;
+export default module.exports;

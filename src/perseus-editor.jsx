@@ -1,3 +1,26 @@
+import _draftUtilsJs from "./draft-utils.js";
+import _widgetsJs from "./widgets.js";
+
+import {
+    CharacterMetadata,
+    Entity,
+    Editor,
+    EditorState,
+    CompositeDecorator,
+    ContentState,
+    Modifier,
+    genKey,
+    getDefaultKeyBinding,
+    KeyBindingUtil,
+} from "draft-js";
+
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /*
 This is essentially a more advanced `textarea`, using Draft.js
 https://facebook.github.io/draft-js/
@@ -23,21 +46,9 @@ TODO(samiskin): Make tasks such as "addWidget" and "updateWidget" not functions
                 fully replacess the old editor).
 */
 
-const React = require("react");
-const {
-    CharacterMetadata,
-    Entity,
-    Editor,
-    EditorState,
-    CompositeDecorator,
-    ContentState,
-    Modifier,
-    genKey,
-    getDefaultKeyBinding,
-    KeyBindingUtil,
-} = require("draft-js");
-const Widgets = require("./widgets.js");
-const DraftUtils = require("./draft-utils.js");
+const React = _react;
+const Widgets = _widgetsJs;
+const DraftUtils = _draftUtilsJs;
 
 // This controls the minimum time between when updates for the parent
 // component are generated.  The best time for this number sort of depends
@@ -799,3 +810,4 @@ const PerseusEditor = React.createClass({
 });
 
 module.exports = PerseusEditor;
+export default module.exports;

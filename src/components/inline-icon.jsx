@@ -1,3 +1,10 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types */
 
 /**
@@ -24,7 +31,7 @@
  *   <InlineIcon {...editIcon} />
  *
  */
-const React = require("react");
+const React = _react;
 
 const InlineIcon = (
     {
@@ -64,3 +71,4 @@ InlineIcon.propTypes = {
 /* eslint-enable react/jsx-sort-prop-types */
 
 module.exports = InlineIcon;
+export default module.exports;

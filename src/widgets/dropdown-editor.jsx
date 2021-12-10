@@ -1,15 +1,27 @@
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import { iconPlus, iconTrash } from "../icon-paths.js";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, max-len, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, semi, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var {iconPlus, iconTrash} = require("../icon-paths.js");
-var InfoTip = require("../components/info-tip.jsx");
-var InlineIcon = require("../components/inline-icon.jsx");
-var EditorJsonify = require("../mixins/editor-jsonify.jsx");
+var InfoTip = _componentsInfoTipJsx;
+var InlineIcon = _componentsInlineIconJsx;
+var EditorJsonify = _mixinsEditorJsonifyJsx;
 
 var DropdownEditor = React.createClass({
     propTypes: {
@@ -185,3 +197,4 @@ var DropdownEditor = React.createClass({
 });
 
 module.exports = DropdownEditor;
+export default module.exports;

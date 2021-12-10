@@ -1,9 +1,20 @@
-const assert = require("assert");
-const _ = require("underscore");
+import _widgetsJs from "../widgets.js";
+import _allWidgetsJs from "../all-widgets.js";
+import _traversalJsx from "../traversal.jsx";
+import _underscore from "underscore";
+import _assert from "assert";
 
-const Traversal = require("../traversal.jsx");
-const allWidgets = require("../all-widgets.js");
-const Widgets = require("../widgets.js");
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const assert = _assert;
+const _ = _underscore;
+
+const Traversal = _traversalJsx;
+const allWidgets = _allWidgetsJs;
+const Widgets = _widgetsJs;
 Widgets.registerMany(allWidgets);
 
 const traverse = Traversal.traverseRendererDeep;
@@ -391,3 +402,4 @@ describe("Traversal", () => {
         assertNonMutative();
     });
 });
+export default module.exports;

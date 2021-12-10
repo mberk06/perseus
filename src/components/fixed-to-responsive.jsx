@@ -1,3 +1,12 @@
+import { negativePhoneMargin } from "../styles/constants.js";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/prop-types */
 
 /**
@@ -15,10 +24,8 @@
  *     <img src="top-layer.png" />
  * </FixedToResponsive>
  */
-const classNames = require("classnames");
-const React = require("react");
-
-const {negativePhoneMargin} = require("../styles/constants.js");
+const classNames = _classnames;
+const React = _react;
 
 const MIN_VIEWPORT_HEIGHT = 480;
 
@@ -148,3 +155,4 @@ const FixedToResponsive = React.createClass({
 });
 
 module.exports = FixedToResponsive;
+export default module.exports;

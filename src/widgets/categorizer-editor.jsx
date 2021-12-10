@@ -1,17 +1,31 @@
+import _categorizerJsx from "./categorizer.jsx";
+import _componentsTextListEditorJsx from "../components/text-list-editor.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, indent, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const Changeable = require("../mixins/changeable.jsx");
-const _ = require("underscore");
+const React = _react;
+const Changeable = _mixinsChangeableJsx;
+const _ = _underscore;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
-const PropCheckBox = require("../components/prop-check-box.jsx");
-const TextListEditor = require("../components/text-list-editor.jsx");
+const ApiOptions = _perseusApiJsx.Options;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
+const PropCheckBox = _componentsPropCheckBoxJsx;
+const TextListEditor = _componentsTextListEditorJsx;
 
-const Categorizer = require("./categorizer.jsx").widget;
+const Categorizer = _categorizerJsx.widget;
 
 const CategorizerEditor = React.createClass({
     propTypes: {
@@ -94,3 +108,4 @@ const CategorizerEditor = React.createClass({
 });
 
 module.exports = CategorizerEditor;
+export default module.exports;

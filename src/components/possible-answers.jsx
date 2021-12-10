@@ -1,10 +1,18 @@
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * In review mode (currently only visible in the sat-mission), NumericInput and
  * InputNumber use this component to display the set of correct answers.
  */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
 const PossibleAnswers = React.createClass({
     propTypes: {
@@ -34,3 +42,4 @@ const PossibleAnswers = React.createClass({
 });
 
 module.exports = PossibleAnswers;
+export default module.exports;

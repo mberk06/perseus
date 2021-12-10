@@ -1,8 +1,15 @@
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
+var React = _react;
 
 var QuestionParagraph = React.createClass({
     render: function() {
@@ -24,3 +31,4 @@ var QuestionParagraph = React.createClass({
 });
 
 module.exports = QuestionParagraph;
+export default module.exports;

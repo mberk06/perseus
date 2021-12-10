@@ -1,5 +1,12 @@
-const {buildMapper} = require("./trees.js");
-const shapes = require("./shapes.js");
+import _shapesJs from "./shapes.js";
+import { buildMapper } from "./trees.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const shapes = _shapesJs;
 
 /**
  * Return a semantically empty ItemTree that conforms to the given shape.
@@ -148,3 +155,4 @@ module.exports = {
     itemToTree,
     treeToItem,
 };
+export default module.exports;

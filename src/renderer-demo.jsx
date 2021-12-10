@@ -1,3 +1,15 @@
+import _simpleButtonJsx from "./simple-button.jsx";
+import _itemRendererJsx from "./item-renderer.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _reactDom from "react-dom";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
   * Demonstrates the rendered result of a Perseus question
   *
@@ -5,13 +17,12 @@
   * show hints and mark answers
   */
 
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
-const ReactDOM = require("react-dom");
+const React = _react;
+const ReactDOM = _reactDom;
 
-const ApiClassNames = require("./perseus-api.jsx").ClassNames;
-const ItemRenderer = require("./item-renderer.jsx");
-const SimpleButton = require("./simple-button.jsx");
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const ItemRenderer = _itemRendererJsx;
+const SimpleButton = _simpleButtonJsx;
 
 const defaultQuestion = {
     question: {
@@ -250,3 +261,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = RendererDemo;
+export default module.exports;

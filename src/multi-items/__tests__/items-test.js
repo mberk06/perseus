@@ -1,11 +1,25 @@
-// @flow
-const assert = require("assert");
-const {
-    buildEmptyItemTreeForShape, buildEmptyItemForShape,
-    findContentNodesInItem, findHintNodesInItem, inferItemShape, itemToTree,
+import _shapesJs from "../shapes.js";
+
+import {
+    buildEmptyItemTreeForShape,
+    buildEmptyItemForShape,
+    findContentNodesInItem,
+    findHintNodesInItem,
+    inferItemShape,
+    itemToTree,
     treeToItem,
-} = require("../items.js");
-const shapes = require("../shapes.js");
+} from "../items.js";
+
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+// @flow
+const assert = _assert;
+const shapes = _shapesJs;
 
 describe("treeToItem", () => {
     it("wraps an item tree in the `_multi` key", () => {
@@ -202,3 +216,4 @@ describe("findHintNodesInItem", () => {
         assert.deepEqual([hint(6), hint(7)], hints);
     });
 });
+export default module.exports;

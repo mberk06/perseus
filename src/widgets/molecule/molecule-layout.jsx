@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -351,3 +356,4 @@ module.exports = {
     _bondLength: bondLength,
     _convertTree: convertTree,
 };
+export default module.exports;

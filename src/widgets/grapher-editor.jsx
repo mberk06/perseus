@@ -1,27 +1,32 @@
+import { containerSizeClass, getInteractiveBoxFromSizeClass } from "../util/sizing-utils.js";
+import { GrapherUtil, allTypes, typeToButton, DEFAULT_GRAPHER_PROPS } from "./grapher/util.jsx";
+import _grapherJsx from "./grapher.jsx";
+import _reactComponentsMultiButtonGroupJsx from "react-components/multi-button-group.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _componentsGraphSettingsJsx from "../components/graph-settings.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-redeclare, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
+const Changeable = _mixinsChangeableJsx;
 
-const GraphSettings = require("../components/graph-settings.jsx");
-const InfoTip = require("../components/info-tip.jsx");
-const MultiButtonGroup = require("react-components/multi-button-group.jsx");
+const GraphSettings = _componentsGraphSettingsJsx;
+const InfoTip = _componentsInfoTipJsx;
+const MultiButtonGroup = _reactComponentsMultiButtonGroupJsx;
 
-const Grapher = require("./grapher.jsx").widget;
-const {
-    GrapherUtil,
-    allTypes,
-    typeToButton,
-    DEFAULT_GRAPHER_PROPS,
-} = require("./grapher/util.jsx");
-const {
-    containerSizeClass,
-    getInteractiveBoxFromSizeClass,
-} = require("../util/sizing-utils.js");
+const Grapher = _grapherJsx.widget;
 
 const GrapherEditor = React.createClass({
     propTypes: {
@@ -147,3 +152,4 @@ const GrapherEditor = React.createClass({
 });
 
 module.exports = GrapherEditor;
+export default module.exports;

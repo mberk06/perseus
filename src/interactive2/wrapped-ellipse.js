@@ -1,7 +1,17 @@
-const _ = require("underscore");
-const WrappedDefaults = require("./wrapped-defaults.js");
-const InteractiveUtil = require("./interactive-util.js");
-const kvector = require("kmath").vector;
+import _kmath from "kmath";
+import _interactiveUtilJs from "./interactive-util.js";
+import _wrappedDefaultsJs from "./wrapped-defaults.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const _ = _underscore;
+const WrappedDefaults = _wrappedDefaultsJs;
+const InteractiveUtil = _interactiveUtilJs;
+const kvector = _kmath.vector;
 
 const DEFAULT_OPTIONS = {
     maxScale: 1,
@@ -60,3 +70,4 @@ const WrappedEllipse = function(graphie, center, radii, options) {
 _.extend(WrappedEllipse.prototype,  WrappedDefaults);
 
 module.exports = WrappedEllipse;
+export default module.exports;

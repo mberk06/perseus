@@ -1,25 +1,39 @@
+import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js";
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _utilAnswerTypesJs from "../util/answer-types.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _mathInput from "../../math-input";
+import _utilJs from "../util.js";
+import _rendererJsx from "../renderer.jsx";
+import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
+import _componentsMathOutputJsx from "../components/math-output.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
 
-var MathOutput = require("../components/math-output.jsx");
-const SimpleKeypadInput = require("../components/simple-keypad-input.jsx");
-var Renderer = require("../renderer.jsx");
-var Util = require("../util.js");
+var MathOutput = _componentsMathOutputJsx;
+const SimpleKeypadInput = _componentsSimpleKeypadInputJsx;
+var Renderer = _rendererJsx;
+var Util = _utilJs;
 
-const {keypadElementPropType} = require("../../math-input").propTypes;
-var ApiOptions = require("../perseus-api.jsx").Options;
-const KhanAnswerTypes = require("../util/answer-types.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+const {keypadElementPropType} = _mathInput.propTypes;
+var ApiOptions = _perseusApiJsx.Options;
+const KhanAnswerTypes = _utilAnswerTypesJs;
 
-var assert = require("../interactive2/interactive-util.js").assert;
+var assert = _interactive2InteractiveUtilJs.assert;
 
 /* Input handling: Maps a (row, column) pair to a unique ref used by React,
  * and extracts (row, column) pairs from input paths, used to allow outsiders
@@ -379,3 +393,4 @@ module.exports = {
     hidden: true,
     isLintable: true,
 };
+export default module.exports;

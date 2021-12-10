@@ -1,14 +1,25 @@
+import _componentsLintJsx from "./components/lint.jsx";
+import _utilJs from "./util.js";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _simpleMarkdown from "simple-markdown";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals KA */
-var _ = require("underscore");
+var _ = _underscore;
 
-var SimpleMarkdown = require("simple-markdown");
-var TeX = require("react-components/tex.jsx");
-var Util = require("./util.js");
-const Lint = require("./components/lint.jsx");
+var SimpleMarkdown = _simpleMarkdown;
+var TeX = _reactComponentsTexJsx;
+var Util = _utilJs;
+const Lint = _componentsLintJsx;
 
 /**
  * This match function matches math in `$`s, such as:
@@ -584,3 +595,4 @@ module.exports = {
     ),
     sanitizeUrl: SimpleMarkdown.sanitizeUrl,
 };
+export default module.exports;

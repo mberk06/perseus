@@ -1,14 +1,4 @@
-/* globals i18n */
-/**
- * Renders answer bar for mobile graded groups. [STATELESS]
- */
-const React = require("react");
-
-const ApiOptions = require("../perseus-api.jsx").Options;
-const InlineIcon = require("../components/inline-icon.jsx");
-const {iconStar, iconTryAgain} = require("../icon-paths.js");
-
-const {
+import {
     boldFontFamily,
     gray68,
     gray76,
@@ -17,7 +7,26 @@ const {
     kaGreen,
     phoneMargin,
     negativePhoneMargin,
-} = require("../styles/constants.js");
+} from "../styles/constants.js";
+
+import { iconStar, iconTryAgain } from "../icon-paths.js";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+/* globals i18n */
+/**
+ * Renders answer bar for mobile graded groups. [STATELESS]
+ */
+const React = _react;
+
+const ApiOptions = _perseusApiJsx.Options;
+const InlineIcon = _componentsInlineIconJsx;
 
 const ANSWER_BAR_STATES = {
     // Initial state before the question is answerable.  The user must complete
@@ -195,3 +204,4 @@ const styles = {
 GradedGroupAnswerBar.ANSWER_BAR_STATES = ANSWER_BAR_STATES;
 
 module.exports = GradedGroupAnswerBar;
+export default module.exports;

@@ -1,3 +1,8 @@
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 const devices = {
     PHONE: "phone",
     TABLET: "tablet",
@@ -14,3 +19,4 @@ module.exports = {
     // space for it in DeviceFramer.
     perseusFrameBorderWidth: 1,
 };
+export default module.exports;

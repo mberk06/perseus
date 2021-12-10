@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "heading-level-skip",
     severity: Rule.Severity.WARNING,
@@ -17,3 +23,4 @@ the previous heading was level ${previousHeading.level}`;
         }
     },
 });
+export default module.exports;

@@ -1,24 +1,35 @@
+import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
+import _gorgonGorgonJs from "./gorgon/gorgon.js";
+import { mapObject } from "./interactive2/objective_.js";
+import _utilJs from "./util.js";
+import _mixinsProvideKeypadJsx from "./mixins/provide-keypad.jsx";
+import _rendererJsx from "./renderer.jsx";
+import _hintsRendererJsx from "./hints-renderer.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, prefer-spread */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const ApiOptions = require("./perseus-api.jsx").Options;
-const HintsRenderer = require("./hints-renderer.jsx");
-const Renderer = require("./renderer.jsx");
-const ProvideKeypad = require("./mixins/provide-keypad.jsx");
-const Util = require("./util.js");
+const ApiOptions = _perseusApiJsx.Options;
+const HintsRenderer = _hintsRendererJsx;
+const Renderer = _rendererJsx;
+const ProvideKeypad = _mixinsProvideKeypadJsx;
+const Util = _utilJs;
 
-const {mapObject} = require("./interactive2/objective_.js");
-
-const Gorgon = require("./gorgon/gorgon.js");
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("./gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs;
 
 const RP = React.PropTypes;
 
@@ -469,3 +480,4 @@ const ItemRenderer = React.createClass({
 });
 
 module.exports = ItemRenderer;
+export default module.exports;

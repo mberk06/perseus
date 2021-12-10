@@ -1,20 +1,33 @@
+import _colors from "./colors";
+import _texJs from "./tex.js";
+import _mathJs from "./math.js";
+import _libRaphaelJs from "../../lib/raphael.js";
+import _underscore from "underscore";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, max-lines, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const kpoint = require("kmath").point;
-const kvector = require("kmath").vector;
-const _ = require("underscore");
+const kpoint = _kmath.point;
+const kvector = _kmath2.vector;
+const _ = _underscore;
 
 // Minify Raphael ourselves because IE8 has a problem with the 1.5.2 minified
 // release
 // http://groups.google.com/group/raphaeljs/browse_thread/thread/c34c75ad8d431544
 /* globals Raphael:false */
-require("../../lib/raphael.js");
+_libRaphaelJs;
 
-const KhanMath = require("./math.js");
-const processMath = require("./tex.js").processMath;
-const KhanColors = require("./colors");
+const KhanMath = _mathJs;
+const processMath = _texJs.processMath;
+const KhanColors = _colors;
 
 /* Convert cartesian coordinates [x, y] to polar coordinates [r,
  * theta], with theta in degrees, or in radians if angleInRadians is
@@ -1547,3 +1560,4 @@ GraphUtils.createGraphie = function(el) {
 };
 
 module.exports = GraphUtils;
+export default module.exports;

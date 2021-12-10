@@ -1,5 +1,11 @@
 import Rule from "../rule.js";
 
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+
 module.exports = Rule.makeRule({
     name: "image-alt-text",
     severity: Rule.Severity.BULK_WARNING,
@@ -17,3 +23,4 @@ This image's alt text is only ${image.alt.length} characters long.`;
         }
     },
 });
+export default module.exports;

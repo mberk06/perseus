@@ -1,3 +1,10 @@
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A work-in-progress of _ methods for objects.
  * That is, they take an object as a parameter,
@@ -6,7 +13,7 @@
  * TODO(aria): Move this out of interactive2
  */
 
-const _ = require("underscore");
+const _ = _underscore;
 
 /**
  * Does a pluck on keys inside objects in an object
@@ -68,3 +75,4 @@ module.exports = {
     mapObject: mapObject,
     mapObjectFromArray: mapObjectFromArray,
 };
+export default module.exports;

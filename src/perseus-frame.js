@@ -1,3 +1,13 @@
+import _componentsConstantsJs from "./components/constants.js";
+import _previewFrameJsx from "./preview-frame.jsx";
+import _perseusJs from "./perseus.js";
+import _perseusEnvJs from "./perseus-env.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Loads the Perseus preview frame
  *
@@ -7,7 +17,7 @@
  * perseus-preview-package (which largely duplicates this logic)
  */
 
-require("./perseus-env.js");
+_perseusEnvJs;
 
 // We only apply the stub implementation of window.Khan when it is not detected.
 // When the stub implementation is not used, mathJaxLoaded is defined on
@@ -22,11 +32,11 @@ if (!window.Khan) {
     };
 }
 
-const Perseus = (window.Perseus = require("./perseus.js"));
+const Perseus = (window.Perseus = _perseusJs);
 const ReactDOM = (window.ReactDOM = React.__internalReactDOM);
 
-const PreviewFrame = require("./preview-frame.jsx");
-const constants = require("./components/constants.js");
+const PreviewFrame = _previewFrameJsx;
+const constants = _componentsConstantsJs;
 
 const afterMathJaxLoad = () => {
     Perseus.init({skipMathJax: false, loadExtraWidgets: true})
@@ -70,3 +80,4 @@ if (window.Khan.mathJaxLoaded) {
 } else {
     afterMathJaxLoad();
 }
+export default module.exports;

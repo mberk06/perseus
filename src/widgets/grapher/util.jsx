@@ -1,13 +1,23 @@
+import _kmath from "kmath";
+import _componentsGraphieJsx from "../../components/graphie.jsx";
+import _utilJs from "../../util.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, no-var, one-var, space-unary-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const _ = require("underscore");
+const _ = _underscore;
 
-const Util = require("../../util.js");
-const Graphie = require("../../components/graphie.jsx");
+const Util = _utilJs;
+const Graphie = _componentsGraphieJsx;
 const Plot = Graphie.Plot;
-const kpoint = require("kmath").point;
+const kpoint = _kmath.point;
 
 const DEFAULT_BACKGROUND_IMAGE = {
     url: null,
@@ -725,3 +735,4 @@ module.exports = {
     DEFAULT_GRAPHER_PROPS,
     DEFAULT_BACKGROUND_IMAGE,
 };
+export default module.exports;

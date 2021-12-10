@@ -1,10 +1,18 @@
+import _traversalJsx from "../traversal.jsx";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var _ = require("underscore");
+var _ = _underscore;
 
-var Traversal = require("../traversal.jsx");
+var Traversal = _traversalJsx;
 
 var findPassageRefR = new RegExp(
     // [[ passage-ref 1]]
@@ -127,3 +135,4 @@ var FixPassageRefs = itemData => {
 };
 
 module.exports = FixPassageRefs;
+export default module.exports;

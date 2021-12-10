@@ -1,18 +1,34 @@
+import _componentsHudJsx from "./components/hud.jsx";
+import _componentsViewportResizerJsx from "./components/viewport-resizer.jsx";
+import _jsonEditorJsx from "./json-editor.jsx";
+import _itemEditorJsx from "./item-editor.jsx";
+import _utilFixPassageRefsJsx from "./util/fix-passage-refs.jsx";
+import _hintEditorJsx from "./hint-editor.jsx";
+import _mixinsApiOptionsPropsJs from "./mixins/api-options-props.js";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable no-var, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-const ApiClassNames = require("./perseus-api.jsx").ClassNames;
-const ApiOptionsProps = require("./mixins/api-options-props.js");
-var CombinedHintsEditor = require("./hint-editor.jsx");
-var FixPassageRefs = require("./util/fix-passage-refs.jsx");
-var ItemEditor = require("./item-editor.jsx");
-var JsonEditor = require("./json-editor.jsx");
-var ViewportResizer = require("./components/viewport-resizer.jsx");
-const HUD = require("./components/hud.jsx");
+const ApiClassNames = _perseusApiJsx.ClassNames;
+const ApiOptionsProps = _mixinsApiOptionsPropsJs;
+var CombinedHintsEditor = _hintEditorJsx;
+var FixPassageRefs = _utilFixPassageRefsJsx;
+var ItemEditor = _itemEditorJsx;
+var JsonEditor = _jsonEditorJsx;
+var ViewportResizer = _componentsViewportResizerJsx;
+const HUD = _componentsHudJsx;
 
 var EditorPage = React.createClass({
     propTypes: {
@@ -298,3 +314,4 @@ var EditorPage = React.createClass({
 });
 
 module.exports = EditorPage;
+export default module.exports;

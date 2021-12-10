@@ -1,11 +1,17 @@
+import { getRelativePosition } from "./util.js";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 /**
  * A tooltip to point to the focus of a highlight.
  */
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
-
-const {getRelativePosition} = require("./util.js");
+const React = _react;
 
 class HighlightTooltip extends React.PureComponent {
     _getPosition() {
@@ -145,3 +151,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = HighlightTooltip;
+export default module.exports;

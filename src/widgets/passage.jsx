@@ -1,17 +1,26 @@
-// @flow
-/* globals KA */
+import { linterContextDefault } from "../gorgon/proptypes.js";
+import _passagePassageMarkdownJsx from "./passage/passage-markdown.jsx";
+import _rendererJsx from "../renderer.jsx";
+import _componentsHighlightingHighlightableContentJsx from "../components/highlighting/highlightable-content.jsx";
+import _jquery from "jquery";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import { StyleSheet, css } from "aphrodite";
 
-const {StyleSheet, css} = require("aphrodite");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
-const $ = require("jquery");
+var module = {
+    exports: {}
+};
 
-const HighlightableContent = require("../components/highlighting/highlightable-content.jsx");
-const Renderer = require("../renderer.jsx");
-const PassageMarkdown = require("./passage/passage-markdown.jsx");
+var exports = module.exports;
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
+const $ = _jquery;
 
-const {linterContextDefault} = require("../gorgon/proptypes.js");
+const HighlightableContent = _componentsHighlightingHighlightableContentJsx;
+const Renderer = _rendererJsx;
+const PassageMarkdown = _passagePassageMarkdownJsx;
 
 // A fake paragraph to measure the line height of the passage. In CSS we always
 // set the line height to 22 pixels, but when using the browser zoom feature,
@@ -510,3 +519,4 @@ module.exports = {
     },
     isLintable: true,
 };
+export default module.exports;

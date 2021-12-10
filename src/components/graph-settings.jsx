@@ -1,19 +1,36 @@
+import { interactiveSizes } from "../styles/constants.js";
+import _utilMathJs from "../util/math.js";
+import _utilJs from "../util.js";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _componentsRangeInputJsx from "../components/range-input.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types */
 
-const React = require("react");
-const ReactDOM = require("react-dom");
-const _ = require("underscore");
+const React = _react;
+const ReactDOM = _reactDom;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
+const Changeable = _mixinsChangeableJsx;
 
-const ButtonGroup = require("react-components/button-group.jsx");
-const InfoTip = require("../components/info-tip.jsx");
-const PropCheckBox = require("../components/prop-check-box.jsx");
-const RangeInput = require("../components/range-input.jsx");
-const TeX = require("react-components/tex.jsx");
-const Util = require("../util.js");
-const KhanMath = require("../util/math.js");
-const {interactiveSizes} = require("../styles/constants.js");
+const ButtonGroup = _reactComponentsButtonGroupJsx;
+const InfoTip = _componentsInfoTipJsx;
+const PropCheckBox = _componentsPropCheckBoxJsx;
+const RangeInput = _componentsRangeInputJsx;
+const TeX = _reactComponentsTexJsx;
+const Util = _utilJs;
+const KhanMath = _utilMathJs;
 
 const defaultBackgroundImage = {
     url: null,
@@ -607,3 +624,4 @@ const GraphSettings = React.createClass({
 });
 
 module.exports = GraphSettings;
+export default module.exports;

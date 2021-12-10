@@ -1,3 +1,12 @@
+import _stylesConstantsJs from "../../styles/constants.js";
+import { StyleSheet, css } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 // @flow
 
 /**
@@ -10,10 +19,9 @@
 
 /* globals i18n */
 
-const React = require("react");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
 
-const styleConstants = require("../../styles/constants.js");
+const styleConstants = _stylesConstantsJs;
 
 class OptionStatus extends React.Component {
     render() {
@@ -45,3 +53,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = OptionStatus;
+export default module.exports;

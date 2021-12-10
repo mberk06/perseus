@@ -1,8 +1,15 @@
+import { css, StyleSheet } from "aphrodite";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * Displays a collapsable list of KaTeX rendering errors.
  */
-const React = require("react");
-const {css, StyleSheet} = require("aphrodite");
+const React = _react;
 
 const KatexErrorView = React.createClass({
     propTypes: {
@@ -84,3 +91,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = KatexErrorView;
+export default module.exports;

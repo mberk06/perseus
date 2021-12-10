@@ -1,3 +1,13 @@
+import _mathInput3 from "../../math-input";
+import _mathInput2 from "../../math-input";
+import _mathInput from "../../math-input";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A version of the `math-input` subrepo's KeypadInput component that adheres to
  * the same API as Perseus's  MathOuput and NumberInput, allowing it to be
@@ -8,11 +18,11 @@
  * interface to `math-input`'s MathInput component.
  */
 
-const React = require("react");
+const React = _react;
 
-const {KeypadInput} = require("../../math-input").components;
-const {KeypadTypes} = require("../../math-input").consts;
-const {keypadElementPropType} = require("../../math-input").propTypes;
+const {KeypadInput} = _mathInput.components;
+const {KeypadTypes} = _mathInput2.consts;
+const {keypadElementPropType} = _mathInput3.propTypes;
 
 const SimpleKeypadInput = React.createClass({
     propTypes: {
@@ -71,3 +81,4 @@ const SimpleKeypadInput = React.createClass({
 });
 
 module.exports = SimpleKeypadInput;
+export default module.exports;

@@ -15,7 +15,12 @@
 /*global $*/
 /*jshint browser:true, node:true */
 
-"use strict";
+"use strict";;
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 /* ========================================================================
  * Bootstrap: transition.js v3.3.4
@@ -122,9 +127,9 @@ function changeViewportTag(contentString, callback) {
 /**
  * The zoom service
  */
-function ZoomService() {}
+function _ZoomService() {}
 
-ZoomService.prototype._initialize = function(enableMobilePinch) {
+_ZoomService.prototype._initialize = function(enableMobilePinch) {
     // Check to see if the service is already initialized
     if (this._$document) {
         return;
@@ -140,7 +145,7 @@ ZoomService.prototype._initialize = function(enableMobilePinch) {
     this._enableMobilePinch = enableMobilePinch;
 };
 
-ZoomService.prototype.handleZoomClick = function(e, enableMobilePinch) {
+_ZoomService.prototype.handleZoomClick = function(e, enableMobilePinch) {
     this._initialize(enableMobilePinch);
     var target = e.target;
 
@@ -197,12 +202,12 @@ ZoomService.prototype.handleZoomClick = function(e, enableMobilePinch) {
     e.stopPropagation();
 };
 
-ZoomService.prototype._zoom = function(target) {
+_ZoomService.prototype._zoom = function(target) {
     this._activeZoom = new Zoom(target, this._enableMobilePinch);
     this._activeZoom.zoomImage();
 };
 
-ZoomService.prototype._activeZoomClose = function(forceDispose) {
+_ZoomService.prototype._activeZoomClose = function(forceDispose) {
     if (!this._activeZoom) {
         return;
     }
@@ -225,7 +230,7 @@ ZoomService.prototype._activeZoomClose = function(forceDispose) {
     }
 };
 
-ZoomService.prototype._disposeActiveZoom = function() {
+_ZoomService.prototype._disposeActiveZoom = function() {
     this._$window.off(".zoom");
     this._$document.off(".zoom");
 
@@ -234,7 +239,7 @@ ZoomService.prototype._disposeActiveZoom = function() {
     this._activeZoom = null;
 };
 
-ZoomService.prototype._scrollHandler = function(e) {
+_ZoomService.prototype._scrollHandler = function(e) {
     if (this._initialScrollPosition === null) {
         this._initialScrollPosition = window.scrollY;
     }
@@ -244,26 +249,26 @@ ZoomService.prototype._scrollHandler = function(e) {
     }
 };
 
-ZoomService.prototype._keyHandler = function(e) {
+_ZoomService.prototype._keyHandler = function(e) {
     if (e.keyCode === 27) {
         this._activeZoomClose();
     }
 };
 
-ZoomService.prototype._clickHandler = function(e) {
+_ZoomService.prototype._clickHandler = function(e) {
     e.stopPropagation();
     e.preventDefault();
     this._activeZoomClose();
 };
 
-ZoomService.prototype._touchStart = function(e) {
+_ZoomService.prototype._touchStart = function(e) {
     // Our jQuery doesn't include `touches` in its event
     // TODO(kevindangoor) Remove `originalEvent` once jQuery is updated
     this._initialTouchPosition = e.originalEvent.touches[0].pageY;
     $(e.target).on("touchmove.zoom", $.proxy(this._touchMove, this));
 };
 
-ZoomService.prototype._touchMove = function(e) {
+_ZoomService.prototype._touchMove = function(e) {
     // Our jQuery doesn't include `touches` in its event
     // TODO(kevindangoor) Remove `originalEvent` once jQuery is updated
     if (
@@ -515,4 +520,6 @@ Zoom.prototype.dispose = function() {
     $(this._targetImage).css("visibility", "visible");
 };
 
-exports.ZoomService = new ZoomService();
+exports.ZoomService = new _ZoomService();
+export let ZoomService = exports.ZoomService;
+export default module.exports;

@@ -1,11 +1,20 @@
+import _fixPassageRefsJsx from "../fix-passage-refs.jsx";
+import _underscore from "underscore";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var assert = require("assert");
-var _ = require("underscore");
+var assert = _assert;
+var _ = _underscore;
 
-var FixPassageRefs = require("../fix-passage-refs.jsx");
+var FixPassageRefs = _fixPassageRefsJsx;
 
 var sampleItem = {
     "question": {
@@ -227,3 +236,4 @@ describe("fix-passage-refs", () => {
         assertNonMutative();
     });
 });
+export default module.exports;

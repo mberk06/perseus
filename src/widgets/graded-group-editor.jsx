@@ -1,17 +1,30 @@
+import { iconPlus, iconTrash } from "../icon-paths.js";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _componentsTextInputJsx from "../components/text-input.jsx";
+import _editorJsx from "../editor.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import { StyleSheet, css } from "aphrodite";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
-const {StyleSheet, css} = require("aphrodite");
+const React = _react;
+const _ = _underscore;
 
-const ApiOptions = require("../perseus-api.jsx").Options;
-const Changeable = require("../mixins/changeable.jsx");
-const Editor = require("../editor.jsx");
-const TextInput = require("../components/text-input.jsx");
-const InlineIcon = require("../components/inline-icon.jsx");
-const {iconPlus, iconTrash} = require("../icon-paths.js");
+const ApiOptions = _perseusApiJsx.Options;
+const Changeable = _mixinsChangeableJsx;
+const Editor = _editorJsx;
+const TextInput = _componentsTextInputJsx;
+const InlineIcon = _componentsInlineIconJsx;
 
 const GradedGroupEditor = React.createClass({
     propTypes: {
@@ -151,3 +164,4 @@ const styles = StyleSheet.create({
 });
 
 module.exports = GradedGroupEditor;
+export default module.exports;

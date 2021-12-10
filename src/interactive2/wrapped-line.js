@@ -1,9 +1,21 @@
-const _ = require("underscore");
-const InteractiveUtil = require("./interactive-util.js");
-const WrappedDefaults = require("./wrapped-defaults.js");
-const kpoint = require("kmath").point;
-const kvector = require("kmath").vector;
-const KhanMath = require("../util/math.js");
+import _utilMathJs from "../util/math.js";
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _wrappedDefaultsJs from "./wrapped-defaults.js";
+import _interactiveUtilJs from "./interactive-util.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
+const _ = _underscore;
+const InteractiveUtil = _interactiveUtilJs;
+const WrappedDefaults = _wrappedDefaultsJs;
+const kpoint = _kmath.point;
+const kvector = _kmath2.vector;
+const KhanMath = _utilMathJs;
 
 const DEFAULT_OPTIONS = {
     thickness: 2,
@@ -83,3 +95,4 @@ _.extend(WrappedLine.prototype, WrappedDefaults, {
 });
 
 module.exports = WrappedLine;
+export default module.exports;

@@ -1,6 +1,13 @@
+import _mathJs from "./math.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* globals katex:false, MathJax:false, Exercises:false */
 
-const KhanMath = require("./math.js");
+const KhanMath = _mathJs;
 
 function findChildOrAdd(elem, className) {
     const $child = $(elem).find("." + className);
@@ -204,3 +211,4 @@ module.exports = {
         return $(elem).attr("data-math-formula");
     },
 };
+export default module.exports;

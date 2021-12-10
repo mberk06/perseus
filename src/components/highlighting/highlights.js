@@ -1,9 +1,10 @@
-// @flow
-/**
- * Utility functions for manipulating highlights.
- */
-const {findFirstAndLastWordIndexes, unionRanges, spanRanges, rangeIncludes} =
-    require("./ranges.js");
+import { findFirstAndLastWordIndexes, unionRanges, spanRanges, rangeIncludes } from "./ranges.js";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 
 /**
  * Given a list of DOMHighlights, return a new list that also includes the
@@ -176,3 +177,4 @@ module.exports = {
     deserializeHighlight,
     serializeHighlight,
 };
+export default module.exports;

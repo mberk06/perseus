@@ -1,13 +1,24 @@
+import _componentsTextListEditorJsx from "../components/text-list-editor.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var InfoTip = require("../components/info-tip.jsx");
-var PropCheckBox = require("../components/prop-check-box.jsx");
-var TextListEditor = require("../components/text-list-editor.jsx");
+var InfoTip = _componentsInfoTipJsx;
+var PropCheckBox = _componentsPropCheckBoxJsx;
+var TextListEditor = _componentsTextListEditorJsx;
 
 var MatcherEditor = React.createClass({
     propTypes: {
@@ -141,3 +152,4 @@ var MatcherEditor = React.createClass({
 });
 
 module.exports = MatcherEditor;
+export default module.exports;

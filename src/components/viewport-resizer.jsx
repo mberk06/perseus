@@ -1,15 +1,24 @@
+import _inlineIconJsx from "./inline-icon.jsx";
+import { iconDesktop, iconMobilePhone, iconTablet } from "../icon-paths.js";
+import { devices } from "./constants.js";
+import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A component that displays controls for choosing a viewport size.
  * Renders three buttons: "Phone", "Tablet", and "Desktop".
  */
 
-const React = require("react");
+const React = _react;
 
-const ButtonGroup = require("react-components/button-group.jsx");
+const ButtonGroup = _reactComponentsButtonGroupJsx;
 
-const {devices} = require("./constants.js");
-const {iconDesktop, iconMobilePhone, iconTablet} = require("../icon-paths.js");
-const InlineIcon = require("./inline-icon.jsx");
+const InlineIcon = _inlineIconJsx;
 
 const ViewportResizer = React.createClass({
     propTypes: {
@@ -64,3 +73,4 @@ const ViewportResizer = React.createClass({
 });
 
 module.exports = ViewportResizer;
+export default module.exports;

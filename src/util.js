@@ -1,9 +1,18 @@
+import _componentsSvgImageJsx from "./components/svg-image.jsx";
+import _utilAnswerTypesJs from "./util/answer-types.js";
+import _underscore from "underscore";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, indent, max-len, no-var, one-var, prefer-spread */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const _ = require("underscore");
-const KhanAnswerTypes = require("./util/answer-types.js");
+const _ = _underscore;
+const KhanAnswerTypes = _utilAnswerTypesJs;
 
 const nestedMap = function(children, func, context) {
     if (_.isArray(children)) {
@@ -674,7 +683,7 @@ const Util = {
         };
 
         // Require here to prevent recursive imports
-        var SvgImage = require("./components/svg-image.jsx");
+        var SvgImage = _componentsSvgImageJsx;
         img.src = SvgImage.getRealImageUrl(url);
     },
 
@@ -720,3 +729,4 @@ const Util = {
 Util.random = Util.seededRNG(new Date().getTime() & 0xffffffff);
 
 module.exports = Util;
+export default module.exports;

@@ -1,3 +1,18 @@
+import _kmath2 from "kmath";
+import _kmath from "kmath";
+import _componentsGraphieJsx from "../components/graphie.jsx";
+import _mixinsWidgetJsonifyDeprecatedJsx from "../mixins/widget-jsonify-deprecated.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _utilJs from "../util.js";
+import _perseusApiJsx from "../perseus-api.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, no-unused-vars, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -8,19 +23,19 @@
  * TODO(jack): Add more comments
  */
 
-var React = require("react");
-var _ = require("underscore");
+var React = _react;
+var _ = _underscore;
 
-var ApiOptions = require("../perseus-api.jsx").Options;
-var Util = require("../util.js");
-var Changeable = require("../mixins/changeable.jsx");
-var WidgetJsonifyDeprecated = require("../mixins/widget-jsonify-deprecated.jsx");
+var ApiOptions = _perseusApiJsx.Options;
+var Util = _utilJs;
+var Changeable = _mixinsChangeableJsx;
+var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
 
-var Graphie = require("../components/graphie.jsx");
+var Graphie = _componentsGraphieJsx;
 var MovablePoint = Graphie.MovablePoint;
 
-var knumber = require("kmath").number;
-var kpoint = require("kmath").point;
+var knumber = _kmath.number;
+var kpoint = _kmath2.point;
 
 /**
  * This is the widget's renderer. It shows up in the right column
@@ -165,3 +180,4 @@ module.exports = {
     hidden: true, // Hides this widget from the Perseus.Editor widget select
     widget: ExampleGraphieWidget,
 };
+export default module.exports;

@@ -1,3 +1,17 @@
+import { displaySigFigs } from "../sigfigs.jsx";
+import { iconOk, iconRemove } from "../icon-paths.js";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _componentsInlineIconJsx from "../components/inline-icon.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -7,17 +21,14 @@
 // TODO(joel): Allow sigfigs within a range rather than an exact expected
 // value?
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const InlineIcon = require("../components/inline-icon.jsx");
-const NumberInput = require("../components/number-input.jsx");
-
-const {iconOk, iconRemove} = require("../icon-paths.js");
-const {displaySigFigs} = require("../sigfigs.jsx");
+const InlineIcon = _componentsInlineIconJsx;
+const NumberInput = _componentsNumberInputJsx;
 
 const ALL = "all";
 const SOME = "some";
@@ -284,3 +295,4 @@ const UnitInputEditor = React.createClass({
 });
 
 module.exports = UnitInputEditor;
+export default module.exports;

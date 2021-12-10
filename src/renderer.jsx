@@ -1,40 +1,62 @@
+import { mapObject, mapObjectFromArray } from "./interactive2/objective_.js";
+import _mathInput from "../math-input";
+import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
+import _gorgonGorgonJs from "./gorgon/gorgon.js";
+import _utilKatexPreprocessJs from "./util/katex-preprocess.js";
+import _deferredJs from "./deferred.js";
+import _componentsZoomableJsx from "./components/zoomable.jsx";
+import _perseusApiJsx from "./perseus-api.jsx";
+import _mixinsApiOptionsPropsJs from "./mixins/api-options-props.js";
+import _utilJs from "./util.js";
+import _widgetsJs from "./widgets.js";
+import _widgetContainerJsx from "./widget-container.jsx";
+import _reactComponentsTexJsx from "react-components/tex.jsx";
+import _componentsSvgImageJsx from "./components/svg-image.jsx";
+import _questionParagraphJsx from "./question-paragraph.jsx";
+import _perseusMarkdownJsx from "./perseus-markdown.jsx";
+import { maybeUnescape } from "./jipt-hack.jsx";
+import _jiptParagraphsJsx from "./jipt-paragraphs.jsx";
+import _classnames from "classnames";
+import _underscore from "underscore";
+import _reactDom from "react-dom";
+import _react from "react";
+import _jquery from "jquery";
 /* eslint-disable max-lines, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 /* globals KA */
-var $ = require("jquery");
-var React = require("react");
-var ReactDOM = require("react-dom");
-var _ = require("underscore");
-var classNames = require("classnames");
+var $ = _jquery;
+var React = _react;
+var ReactDOM = _reactDom;
+var _ = _underscore;
+var classNames = _classnames;
 
-var JiptParagraphs = require("./jipt-paragraphs.jsx");
-var {maybeUnescape} = require("./jipt-hack.jsx");
-var PerseusMarkdown = require("./perseus-markdown.jsx");
-var QuestionParagraph = require("./question-paragraph.jsx");
-var SvgImage = require("./components/svg-image.jsx");
-var TeX = require("react-components/tex.jsx");
-var WidgetContainer = require("./widget-container.jsx");
-var Widgets = require("./widgets.js");
+var JiptParagraphs = _jiptParagraphsJsx;
+var PerseusMarkdown = _perseusMarkdownJsx;
+var QuestionParagraph = _questionParagraphJsx;
+var SvgImage = _componentsSvgImageJsx;
+var TeX = _reactComponentsTexJsx;
+var WidgetContainer = _widgetContainerJsx;
+var Widgets = _widgetsJs;
 
-var Util = require("./util.js");
-var ApiOptionsProps = require("./mixins/api-options-props.js");
-var ApiClassNames = require("./perseus-api.jsx").ClassNames;
-var Zoomable = require("./components/zoomable.jsx");
-var Deferred = require("./deferred.js");
-var preprocessTex = require("./util/katex-preprocess.js");
+var Util = _utilJs;
+var ApiOptionsProps = _mixinsApiOptionsPropsJs;
+var ApiClassNames = _perseusApiJsx.ClassNames;
+var Zoomable = _componentsZoomableJsx;
+var Deferred = _deferredJs;
+var preprocessTex = _utilKatexPreprocessJs;
 
-const Gorgon = require("./gorgon/gorgon.js"); // The linter engine
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("./gorgon/proptypes.js");
+const Gorgon = _gorgonGorgonJs; // The linter engine
 import NotGorgon from "./not-gorgon.js"; // The i18n linter
 
-const {keypadElementPropType} = require("../math-input").propTypes;
+var module = {
+    exports: {}
+};
 
-var {mapObject, mapObjectFromArray} = require("./interactive2/objective_.js");
+var exports = module.exports;
+
+const {keypadElementPropType} = _mathInput.propTypes;
 
 var rContainsNonWhitespace = /\S/;
 var rImageURL = /(web\+graphie|https):\/\/[^\s]*/;
@@ -1735,3 +1757,4 @@ var Renderer = React.createClass({
 });
 
 module.exports = Renderer;
+export default module.exports;

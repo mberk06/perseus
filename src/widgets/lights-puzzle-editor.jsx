@@ -1,16 +1,29 @@
+import _componentsInfoTipJsx from "../components/info-tip.jsx";
+import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
+import _componentsNumberInputJsx from "../components/number-input.jsx";
+import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
+import _mixinsChangeableJsx from "../mixins/changeable.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable array-bracket-spacing, comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const Changeable = require("../mixins/changeable.jsx");
-const EditorJsonify = require("../mixins/editor-jsonify.jsx");
+const Changeable = _mixinsChangeableJsx;
+const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const NumberInput = require("../components/number-input.jsx");
-const PropCheckBox = require("../components/prop-check-box.jsx");
-const InfoTip = require("../components/info-tip.jsx");
+const NumberInput = _componentsNumberInputJsx;
+const PropCheckBox = _componentsPropCheckBoxJsx;
+const InfoTip = _componentsInfoTipJsx;
 
 const MAX_SIZE = 8;
 
@@ -265,3 +278,4 @@ const LightsPuzzleEditor = React.createClass({
 });
 
 module.exports = LightsPuzzleEditor;
+export default module.exports;

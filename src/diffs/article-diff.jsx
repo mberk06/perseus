@@ -1,11 +1,20 @@
+import _rendererDiffJsx from "./renderer-diff.jsx";
+import _underscore from "underscore";
+import _react from "react";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /**
  * A side by side diff view for Perseus articles.
  */
 
-const React = require("react");
-const _ = require("underscore");
+const React = _react;
+const _ = _underscore;
 
-const RendererDiff = require("./renderer-diff.jsx");
+const RendererDiff = _rendererDiffJsx;
 
 const rendererProps = React.PropTypes.shape({
     content: React.PropTypes.string,
@@ -64,3 +73,4 @@ const ArticleDiff = React.createClass({
 });
 
 module.exports = ArticleDiff;
+export default module.exports;

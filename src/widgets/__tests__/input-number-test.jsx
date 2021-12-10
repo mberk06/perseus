@@ -1,3 +1,14 @@
+import _reactAddonsTestUtils from "react-addons-test-utils";
+import _inputNumberJsx from "../input-number.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import _assert from "assert";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable comma-dangle, no-unused-vars, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -6,12 +17,12 @@
  * Disclaimer: Definitely not thorough enough
  */
 
-var assert = require("assert");
-var React = require("react");
-const _ = require("underscore");
-var InputNumber = require("../input-number.jsx");
+var assert = _assert;
+var React = _react;
+const _ = _underscore;
+var InputNumber = _inputNumberJsx;
 
-var TestUtils = require("react-addons-test-utils");
+var TestUtils = _reactAddonsTestUtils;
 
 var transform = InputNumber.transform;
 
@@ -29,3 +40,4 @@ describe("input-number", function() {
         assert.strictEqual(_.has(widgetProps, "value"), false);
     });
 });
+export default module.exports;

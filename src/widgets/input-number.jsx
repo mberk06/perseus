@@ -1,24 +1,38 @@
+import _perseusApiJsx2 from "../perseus-api.jsx";
+import _perseusApiJsx from "../perseus-api.jsx";
+import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
+import _mathInput from "../../math-input";
+import _utilAnswerTypesJs from "../util/answer-types.js";
+import _componentsPossibleAnswersJsx from "../components/possible-answers.jsx";
+import _texWranglerJs from "../tex-wrangler.js";
+import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
+import _componentsInputWithExamplesJsx from "../components/input-with-examples.jsx";
+import _underscore from "underscore";
+import _react from "react";
+import _classnames from "classnames";
+
+var module = {
+    exports: {}
+};
+
+var exports = module.exports;
 /* eslint-disable brace-style, comma-dangle, no-undef, no-var, object-curly-spacing, react/forbid-prop-types, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var classNames = require("classnames");
-var React = require("react");
-var _ = require("underscore");
+var classNames = _classnames;
+var React = _react;
+var _ = _underscore;
 
-var InputWithExamples = require("../components/input-with-examples.jsx");
-const SimpleKeypadInput = require("../components/simple-keypad-input.jsx");
-var ParseTex = require("../tex-wrangler.js").parseTex;
-var PossibleAnswers = require("../components/possible-answers.jsx");
-const KhanAnswerTypes = require("../util/answer-types.js");
-const {keypadElementPropType} = require("../../math-input").propTypes;
-const {
-    linterContextProps,
-    linterContextDefault,
-} = require("../gorgon/proptypes.js");
+var InputWithExamples = _componentsInputWithExamplesJsx;
+const SimpleKeypadInput = _componentsSimpleKeypadInputJsx;
+var ParseTex = _texWranglerJs.parseTex;
+var PossibleAnswers = _componentsPossibleAnswersJsx;
+const KhanAnswerTypes = _utilAnswerTypesJs;
+const {keypadElementPropType} = _mathInput.propTypes;
 
-var ApiClassNames = require("../perseus-api.jsx").ClassNames;
-var ApiOptions = require("../perseus-api.jsx").Options;
+var ApiClassNames = _perseusApiJsx.ClassNames;
+var ApiOptions = _perseusApiJsx2.Options;
 
 var answerTypes = {
     number: {
@@ -340,3 +354,4 @@ module.exports = {
     transform: propTransform,
     isLintable: true,
 };
+export default module.exports;
