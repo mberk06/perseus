@@ -727,12 +727,19 @@ function typeToButton(type) {
     };
 }
 
-module.exports = {
+export {
     GrapherUtil,
     allTypes,
     typeToButton,
     functionForType,
     DEFAULT_GRAPHER_PROPS,
     DEFAULT_BACKGROUND_IMAGE,
-};
-export default module.exports;
+}
+export default {
+    GrapherUtil,
+    allTypes,
+    typeToButton,
+    functionForType,
+    DEFAULT_GRAPHER_PROPS,
+    DEFAULT_BACKGROUND_IMAGE,
+}

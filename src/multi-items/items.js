@@ -1,11 +1,6 @@
 import _shapesJs from "./shapes.js";
 import { buildMapper } from "./trees.js";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
 const shapes = _shapesJs;
 
 /**
@@ -146,7 +141,7 @@ function treeToItem(node) {
     return {_multi: node};
 }
 
-module.exports = {
+export {
     buildEmptyItemTreeForShape,
     buildEmptyItemForShape,
     findContentNodesInItem,
@@ -155,4 +150,12 @@ module.exports = {
     itemToTree,
     treeToItem,
 };
-export default module.exports;
+export default {
+    buildEmptyItemTreeForShape,
+    buildEmptyItemForShape,
+    findContentNodesInItem,
+    findHintNodesInItem,
+    inferItemShape,
+    itemToTree,
+    treeToItem,
+};

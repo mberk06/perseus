@@ -1,25 +1,18 @@
-import _react from "react";
+import React from "react";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
-// @flow
 /**
  * Utility functions to build React PropTypes for multi-items and shapes.
  *
  * If you're writing new components, though, consider using the Item and Shape
  * Flow types instead.
  */
-const React = _react;
 
 /**
  * A recursive PropType that accepts Shape objects, and rejects other objects.
  *
  * Usage: `propTypes: {shape: shapePropType}`.
  */
-function shapePropType(...args) {
+export function shapePropType(...args) {
     const itemShape = React.PropTypes.oneOfType([
         React.PropTypes.shape({
             type: React.PropTypes.oneOf(["content"]).isRequired,
@@ -49,7 +42,7 @@ function shapePropType(...args) {
  *
  * Usage: `propTypes: {item: buildPropTypeForShape(myShape)}`
  */
-function buildPropTypeForShape(shape) {
+export function buildPropTypeForShape(shape) {
     return React.PropTypes.oneOfType([
         React.PropTypes.shape({
             _multi: buildTreePropTypeForShape(shape),
@@ -96,9 +89,3 @@ function buildTreePropTypeForShape(shape) {
         throw new Error(`unexpected shape type ${shape.type}`);
     }
 }
-
-module.exports = {
-    shapePropType,
-    buildPropTypeForShape,
-};
-export default module.exports;

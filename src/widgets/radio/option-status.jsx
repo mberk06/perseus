@@ -1,4 +1,4 @@
-import _stylesConstantsJs from "../../styles/constants.js";
+import * as styleConstants from "../../styles/constants.js";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
@@ -20,8 +20,6 @@ var exports = module.exports;
 /* globals i18n */
 
 const React = _react;
-
-const styleConstants = _stylesConstantsJs;
 
 class OptionStatus extends React.Component {
     render() {

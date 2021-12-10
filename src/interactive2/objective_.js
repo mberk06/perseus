@@ -1,10 +1,5 @@
 import _underscore from "underscore";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
 /**
  * A work-in-progress of _ methods for objects.
  * That is, they take an object as a parameter,
@@ -32,7 +27,7 @@ const _ = _underscore;
  *     rotation: false
  * }
  */
-const pluck = function(table, subKey) {
+export const pluck = function(table, subKey) {
     return _.object(_.map(table, function(value, key) {
         return [key, value[subKey]];
     }));
@@ -46,7 +41,7 @@ const pluck = function(table, subKey) {
  *   });
  * {a: 2, b: 3}
  */
-const mapObject = function(obj, lambda) {
+export const mapObject = function(obj, lambda) {
     const result = {};
     _.each(_.keys(obj), function(key) {
         result[key] = lambda(obj[key], key);
@@ -62,7 +57,7 @@ const mapObject = function(obj, lambda) {
  *   });
  * {a: 'aa', b: 'bb'}
  */
-const mapObjectFromArray = function(arr, lambda) {
+export const mapObjectFromArray = function(arr, lambda) {
     const result = {};
     _.each(arr, function(elem) {
         result[elem] = lambda(elem);

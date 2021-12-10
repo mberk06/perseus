@@ -269,7 +269,7 @@ function findFirstAndLastWordIndexes(selectionRange, wordRanges) {
     return [firstWordIndex, lastWordIndex];
 }
 
-module.exports = {
+export {
     findFirstAndLastWordIndexes,
     rangesOverlap,
     rangeIncludes,
@@ -277,4 +277,11 @@ module.exports = {
     unionRanges,
     spanRanges,
 };
-export default module.exports;
+export default {
+    findFirstAndLastWordIndexes,
+    rangesOverlap,
+    rangeIncludes,
+    intersectRanges,
+    unionRanges,
+    spanRanges,
+};

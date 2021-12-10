@@ -1,16 +1,10 @@
 import { rangesOverlap, intersectRanges } from "../ranges.js";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
-
 /**
  * Given two positions relative to the same origin, return `child`'s position
  * relative to `parent`'s position.
  */
-function getRelativePosition(child, parent) {
+export function getRelativePosition(child, parent) {
     return {
         left: child.left - parent.left,
         top: child.top - parent.top,
@@ -24,7 +18,7 @@ function getRelativePosition(child, parent) {
  * rectangle of the same size, whose position is relative to the given
  * position.
  */
-function getRelativeRect(child, parent) {
+export function getRelativeRect(child, parent) {
     return {
         ...getRelativePosition(child, parent),
         width: child.width,
@@ -45,7 +39,7 @@ function getRelativeRect(child, parent) {
  * return a rectangle that covers the entire paragraph block, whereas this
  * method will only return rectangles for the text inside the paragraph.
  */
-function getClientRectsForTextInRange(range) {
+export function getClientRectsForTextInRange(range) {
     const mutableRects = [];
     addClientRectsForTextInNodeAndRange(
         range.commonAncestorContainer, range, mutableRects);
@@ -59,7 +53,7 @@ function getClientRectsForTextInRange(range) {
  * and the range by recursing down the node's subtree, and push the text's
  * client rects onto the given `mutableRects` array.
  */
-function addClientRectsForTextInNodeAndRange(node, range, mutableRects) {
+export function addClientRectsForTextInNodeAndRange(node, range, mutableRects) {
     const nodeContentsRange = new Range();
     nodeContentsRange.selectNodeContents(node);
 
@@ -97,8 +91,8 @@ function addClientRectsForTextInNodeAndRange(node, range, mutableRects) {
  * match the visual behavior of native text selection, and remove annoying gaps
  * between lines that disrupt hover behavior.
  */
-function addClientRectsForText(textNode, textRange, mutableRects) {
-    const parentElement = textNode.parentElement;
+export function addClientRectsForText(textNode, textRange, mutableRects) {
+  const parentElement = textNode.parentElement;
     const computedStyle = window.getComputedStyle(parentElement);
 
     // NOTE(mdr): I'm not sure how computed line height works in all contexts
@@ -144,9 +138,8 @@ function addClientRectsForText(textNode, textRange, mutableRects) {
     }
 }
 
-module.exports = {
+export default {
     getClientRectsForTextInRange,
     getRelativePosition,
     getRelativeRect,
-};
-export default module.exports;
+}

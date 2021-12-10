@@ -10,7 +10,7 @@ import _componentsPossibleAnswersJsx from "../components/possible-answers.jsx";
 import _texWranglerJs from "../tex-wrangler.js";
 import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
 import _componentsInputWithExamplesJsx from "../components/input-with-examples.jsx";
-import _stylesConstantsJs from "../styles/constants.js";
+import * as styleConstants from "../styles/constants.js";
 import { StyleSheet, css } from "aphrodite";
 import _underscore from "underscore";
 import _react from "react";
@@ -28,7 +28,6 @@ var exports = module.exports;
 var classNames = _classnames;
 var React = _react;
 var _ = _underscore;
-const styleConstants = _stylesConstantsJs;
 
 var InputWithExamples = _componentsInputWithExamplesJsx;
 const SimpleKeypadInput = _componentsSimpleKeypadInputJsx;

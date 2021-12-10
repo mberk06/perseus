@@ -1,5 +1,5 @@
 import { iconDropdownArrow } from "../icon-paths.js";
-import _stylesConstantsJs from "../styles/constants.js";
+import * as styleConstants from "../styles/constants.js";
 import _componentsInlineIconJsx from "../components/inline-icon.jsx";
 import _perseusApiJsx2 from "../perseus-api.jsx";
 import _perseusApiJsx from "../perseus-api.jsx";
@@ -22,7 +22,6 @@ const _ = _underscore;
 const ApiClassNames = _perseusApiJsx.ClassNames;
 const ApiOptions = _perseusApiJsx2.Options;
 const InlineIcon = _componentsInlineIconJsx;
-const styleConstants = _stylesConstantsJs;
 
 const dropdownArrowSize = 24;
 

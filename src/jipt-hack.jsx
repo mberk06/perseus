@@ -406,7 +406,7 @@ const getLatexLevel = function(text) {
     }
 };
 
-const tryUnescape = function(text) {
+export const tryUnescape = function(text) {
     let i = 0;
     let result = "";
     while (i < text.length) {
@@ -430,7 +430,7 @@ const tryUnescape = function(text) {
     return result;
 };
 
-const shouldUnescape = function(text) {
+export const shouldUnescape = function(text) {
     // - If there are no backslashes in the text, (un)escaping will have
     //   no effect, so we can't tell whether this string has been escaped
     //   by Crowdin. However, in order to help Manticore detect situations
@@ -483,7 +483,7 @@ const shouldUnescape = function(text) {
 };
 
 // Unescape the given string if it seems to be escaped.
-const maybeUnescape = function(text) {
+export const maybeUnescape = function(text) {
     if (shouldUnescape(text)) {
         return tryUnescape(text);
     } else {
@@ -498,7 +498,7 @@ const maybeUnescape = function(text) {
 // download job, so we must ensure that they also give an error in the frontend.
 // We do this by retaining the mismatch in their escaping, instead of giving
 // them individual unescaping treatments.
-const maybeUnescapeAccordingToSource = function(source, translation) {
+export const maybeUnescapeAccordingToSource = function(source, translation) {
     if (shouldUnescape(source)) {
         // Note: We have not yet seen a situation where the source string is
         // escaped and the translation is unescaped, so we choose not to care

@@ -1,11 +1,6 @@
-import _componentsStubTagEditorJsx from "./components/stub-tag-editor.jsx";
-import _react from "react";
+import StubTagEditor from "./components/stub-tag-editor.jsx";
+import * as React from "react";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
 /* eslint-disable brace-style */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -41,12 +36,8 @@ var exports = module.exports;
  * These are css class names that will continue to preserve their
  * semantic meaning across the same perseus api major version.
  */
-const React = _react;
 
-const StubTagEditor = _componentsStubTagEditorJsx;
-
-module.exports = {
-    Options: {
+export const Options = {
         propTypes: React.PropTypes.shape({
             isArticle: React.PropTypes.bool.isRequired,
 
@@ -189,8 +180,9 @@ module.exports = {
                 radioStyleVersion: "final",
             },
         },
-    },
-    ClassNames: {
+    };
+
+export const ClassNames = {
         RENDERER: "perseus-renderer",
         TWO_COLUMN_RENDERER: "perseus-renderer-two-columns",
         RESPONSIVE_RENDERER: "perseus-renderer-responsive",
@@ -206,6 +198,7 @@ module.exports = {
         INCORRECT: "perseus-incorrect",
         UNANSWERED: "perseus-unanswered",
         MOBILE: "perseus-mobile",
-    },
-};
-export default module.exports;
+    };
+
+
+export default { Options: Options, ClassNames: ClassNames };

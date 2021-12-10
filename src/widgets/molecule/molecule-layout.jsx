@@ -339,7 +339,7 @@ function bondLayoutHelper(outputs, atoms, bonds) {
  *     an array of rendering instructions for all the atoms and bonds in the
  *     molecule suitable for processing by the renderer
  */
-function layout(tree, rotationAngle) {
+export function layout(tree, rotationAngle) {
     const converted = convertTree({}, [], tree);
     const atoms = converted[0];
     const bonds = converted[1];

@@ -1,4 +1,4 @@
-import _stylesConstantsJs from "../styles/constants.js";
+import * as constants from "../styles/constants.js";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
@@ -8,7 +8,6 @@ var module = {
 
 var exports = module.exports;
 const React = _react;
-const constants = _stylesConstantsJs;
 
 const HUD = React.createClass({
     propTypes: {

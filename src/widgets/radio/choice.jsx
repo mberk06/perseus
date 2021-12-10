@@ -2,7 +2,7 @@ import _optionStatusJsx from "./option-status.jsx";
 import _choiceIconJsx from "./choice-icon.jsx";
 import _toggleableRadioButtonJsx from "./toggleable-radio-button.jsx";
 import _stylesMediaQueriesJs from "../../styles/media-queries.js";
-import _stylesConstantsJs from "../../styles/constants.js";
+import * as styleConstants from "../../styles/constants.js";
 import _stylesSharedJs from "../../styles/shared.js";
 import { ClassNames } from "../../perseus-api.jsx";
 import _classnames from "classnames";
@@ -20,7 +20,6 @@ const React = _react;
 const classNames = _classnames;
 
 const sharedStyles = _stylesSharedJs;
-const styleConstants = _stylesConstantsJs;
 const mediaQueries = _stylesMediaQueriesJs;
 
 const ToggleableRadioButton = _toggleableRadioButtonJsx;

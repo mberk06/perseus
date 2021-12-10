@@ -82,7 +82,7 @@ function identity(x) {
  * `setHintMapper`, `setTagMapper`, and `setArrayMapper` to specify
  * transformations for the individual node types.
  */
-function buildMapper() {
+export function buildMapper() {
     return new TreeMapperJustForLeaves(identity, identity, identity);
 }
 
@@ -148,8 +148,3 @@ function mapTree(tree, shape, path, mappers) {
         throw new Error(`unexpected shape type ${shape.type}`);
     }
 }
-
-module.exports = {
-    buildMapper,
-};
-export default module.exports;

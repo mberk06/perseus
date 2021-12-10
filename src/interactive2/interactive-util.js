@@ -134,5 +134,5 @@ const InteractiveUtil = {
     },
 };
 
-module.exports = InteractiveUtil;
-export default module.exports;
+export const getCanUse3dTransform = InteractiveUtil.getCanUse3dTransform;
+export default InteractiveUtil;

@@ -1,7 +1,7 @@
 import _choiceJsx from "./choice.jsx";
 import _utilJs from "../../util.js";
 import _stylesMediaQueriesJs from "../../styles/media-queries.js";
-import _stylesConstantsJs from "../../styles/constants.js";
+import * as styleConstants from "../../styles/constants.js";
 import _stylesSharedJs from "../../styles/shared.js";
 import _rendererJsx from "../../renderer.jsx";
 import _perseusApiJsx from "../../perseus-api.jsx";
@@ -24,7 +24,6 @@ const _ = _underscore;
 const ApiClassNames = _perseusApiJsx.ClassNames;
 const Renderer = _rendererJsx;
 const sharedStyles = _stylesSharedJs;
-const styleConstants = _stylesConstantsJs;
 const mediaQueries = _stylesMediaQueriesJs;
 
 const captureScratchpadTouchStart = _utilJs

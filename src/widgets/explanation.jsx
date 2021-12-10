@@ -1,5 +1,5 @@
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
-import _stylesConstantsJs from "../styles/constants.js";
+import * as styleConstants from "../styles/constants.js";
 import _stylesMediaQueriesJs from "../styles/media-queries.js";
 import _rendererJsx from "../renderer.jsx";
 import _perseusApiJsx from "../perseus-api.jsx";
@@ -20,7 +20,6 @@ const Changeable = _mixinsChangeableJsx;
 const PerseusApi = _perseusApiJsx;
 const Renderer = _rendererJsx;
 const mediaQueries = _stylesMediaQueriesJs;
-const styleConstants = _stylesConstantsJs;
 
 const defaultExplanationProps = {
     showPrompt: "Explain",

@@ -24,7 +24,18 @@ const Widgets = _widgetsJs;
 const basicWidgets = _basicWidgetsJs;
 Widgets.registerMany(basicWidgets);
 
-module.exports = {
+export const apiVersion = version.apiVersion;
+export const itemDataVersion = version.itemDataVersion;
+export const init = _initJs;
+export const ArticleRenderer = _articleRendererJsx;
+export const QuestionRenderer = _questionRendererJsx;
+export const ItemRenderer = _itemRendererJsx;
+export const ServerItemRenderer = _serverItemRendererJsx;
+export const HintsRenderer = _hintsRendererJsx;
+export const Renderer = _rendererJsx;
+export const MultiItems = _multiItemsJs;
+
+export default {
     apiVersion: version.apiVersion,
     itemDataVersion: version.itemDataVersion,
     init: _initJs,
@@ -36,4 +47,3 @@ module.exports = {
     Renderer: _rendererJsx,
     MultiItems: _multiItemsJs,
 };
-export default module.exports;

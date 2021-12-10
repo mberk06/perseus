@@ -1,11 +1,5 @@
 import { findFirstAndLastWordIndexes, unionRanges, spanRanges, rangeIncludes } from "./ranges.js";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
-
 /**
  * Given a list of DOMHighlights, return a new list that also includes the
  * given DOMRange as a new DOMHighlight. If the DOMHighlight intersects
@@ -171,10 +165,15 @@ function serializeHighlight(highlight) {
     };
 }
 
-module.exports = {
+export {
     addHighlight,
     buildHighlight,
     deserializeHighlight,
     serializeHighlight,
 };
-export default module.exports;
+export default {
+    addHighlight,
+    buildHighlight,
+    deserializeHighlight,
+    serializeHighlight,
+};

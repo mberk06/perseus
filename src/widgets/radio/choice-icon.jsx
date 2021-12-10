@@ -1,7 +1,7 @@
 import _focusRingJsx from "./focus-ring.jsx";
 import _componentsInlineIconJsx from "../../components/inline-icon.jsx";
 import { iconCheck, iconMinus } from "../../icon-paths.js";
-import _stylesConstantsJs from "../../styles/constants.js";
+import * as styleConstants from "../../styles/constants.js";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
@@ -18,7 +18,6 @@ var exports = module.exports;
 
 const React = _react;
 
-const styleConstants = _stylesConstantsJs;
 const InlineIcon = _componentsInlineIconJsx;
 const FocusRing = _focusRingJsx;
 

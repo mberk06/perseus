@@ -30,7 +30,7 @@ var exports = module.exports;
  *
  * @param s A string representation of a floating point.
  */
-function SignificantFigures(s) {
+export function SignificantFigures(s) {
     this.order = parseOrder(s);
     this.mantissa = parseMantissa(s);
     this.positive = parseSign(s);
@@ -74,7 +74,7 @@ function SignificantFigures(s) {
  * @param scientific true iff scientific notation should always be used.
  * @return a string of this object formatted correctly.
  */
-function displaySigFigs(f, sigFigs, sigDecs, scientific) {
+export function displaySigFigs(f, sigFigs, sigDecs, scientific) {
     var s = "" + f;
     var order = parseOrder(s);
     var mantissa = parseMantissa(s);
@@ -485,8 +485,7 @@ function round(mantissa, digits) {
     }
 }
 
-module.exports = {
+export default {
     SignificantFigures,
     displaySigFigs,
 };
-export default module.exports;

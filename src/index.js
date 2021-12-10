@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as Perseus from './perseus';
 import "mathquill/mathquill.css";
-import "../src/lib/khan-exercises.css";
-import "../src/lib/perseus.css";
+import "../lib/khan-exercises.css";
+import "../lib/perseus.css";
 
 const itemData = {
   question: {

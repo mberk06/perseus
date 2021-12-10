@@ -31,6 +31,7 @@
     "btoa": "^1.2.1",
     "classnames": "^2.3.1",
     "create-react-class": "^15.7.0",
+    "draft-js": "^0.11.7",
     "jquery": "1.9.x",
     "katex": "^0.15.1",
     "prop-types": "^15.7.2",
