@@ -4,8 +4,6 @@ import 'katex/dist/katex.css';
 import './lib/perseus.css';
 import ServerItemRenderer from "./ServerItemRenderer";
 
-const Perseus = require('./perseus-configured.js').default;
-
 type Props = {
   question: {
     data: QuestionDataType,
