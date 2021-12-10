@@ -36,14 +36,9 @@ window.Raphael = undefined;
 
 const PureRenderMixin = require("react-addons-pure-render-mixin");
 const CSSTransitionGroup = require("react-addons-css-transition-group");
-const CreateFragment = require("react-addons-create-fragment");
 
 window.React = React;
 window.ReactDOM = ReactDOM;
-
-window.React.__internalAddons = {
-  createFragment: CreateFragment,
-};
 
 window["underscore"] = window._;
 window["react"] = window.React;
