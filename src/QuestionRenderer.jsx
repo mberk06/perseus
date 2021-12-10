@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import 'katex/dist/katex.css';
 import './lib/perseus.css';
+import ServerItemRenderer from "./ServerItemRenderer";
 
 const Perseus = require('./perseus-configured.js').default;
 
@@ -30,21 +31,19 @@ export default class QuestionRenderer extends Component {
       readOnly,
       isMobile,
     } = this.props;
-    const questionContents = Perseus !== null
-      ? <Perseus.ServerItemRenderer
-          controlPeripherals={false}
-          item={question}
-          apiOptions={{
-            isMobile: isMobile,
-            staticRender: !!readOnly,
-            readOnly: !!readOnly,
-            customKeypad: !readOnly,
-          }}
-          problemNum={0}
-          hintsVisible={0}
-          ref={n => (setRef ? setRef(n) : null)}
-        />
-      : <div>Loading...</div>;
+    const questionContents = <ServerItemRenderer
+      controlPeripherals={false}
+      item={question}
+      apiOptions={{
+        isMobile: isMobile,
+        staticRender: !!readOnly,
+        readOnly: !!readOnly,
+        customKeypad: !readOnly,
+      }}
+      problemNum={0}
+      hintsVisible={0}
+      ref={n => (setRef ? setRef(n) : null)}
+    />;
     return (
       <div
         className={'framework-perseus' + (isMobile ? ' perseus-mobile' : '')}

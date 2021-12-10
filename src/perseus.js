@@ -12,6 +12,7 @@ module.exports = {
     itemDataVersion: version.itemDataVersion,
     init: require("./init.js"),
     ArticleRenderer: require("./article-renderer.jsx"),
+    QuestionRenderer: require("./question-renderer.jsx"),
     ItemRenderer: require("./item-renderer.jsx"),
     ServerItemRenderer: require("./server-item-renderer.jsx"),
     HintsRenderer: require("./hints-renderer.jsx"),
