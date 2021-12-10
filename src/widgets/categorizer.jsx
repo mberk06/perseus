@@ -151,8 +151,7 @@ const Categorizer = React.createClass({
                                                             itemNum,
                                                             catNum
                                                         )}
-                                                        onClick={e =>
-                                                            e.stopPropagation()}
+                                                        onClick={e => e.stopPropagation()}
                                                     />}
                                                 {!isMobile &&
                                                     <span

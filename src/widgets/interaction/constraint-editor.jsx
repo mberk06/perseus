@@ -22,17 +22,7 @@ class ConstraintEditor extends React.Component {
         constraintYMax: "10",
     };
 
-    props: ChangeableProps & {
-        constraint?: string,
-        constraintFn?: string,
-        constraintXMax?: string,
-        constraintXMin?: string,
-        constraintYMax?: string,
-        constraintYMin?: string,
-        snap?: number,
-    };
-
-    change = (...args: any) => {
+    change = (...args) => {
         return change.apply(this, args);
     };
 

@@ -63,9 +63,7 @@ const _changeSingle = function(component, propName, value, callback) {
  * this.change(propName) -> returns a lambda that takes a prop value to
  * set and a callback to call after having set that value.
  */
-export const change = function(newPropsOrSinglePropName,
-                               propValue,
-                               callback) {
+export const change = function(newPropsOrSinglePropName, propValue, callback) {
 
     if (_.isObject(newPropsOrSinglePropName) &&
             callback === undefined) {
@@ -94,8 +92,4 @@ export const change = function(newPropsOrSinglePropName,
 
 export const propTypes = {
     onChange: React.PropTypes.func.isRequired,
-};
-
-export type ChangeableProps = {
-    onChange: Function,
 };

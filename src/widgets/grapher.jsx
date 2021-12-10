@@ -266,60 +266,56 @@ var FunctionGrapher = React.createClass({
         var dashed = {
             strokeDasharray: "- ",
         };
-        return (
-            asymptote &&
-            <MovableLine
-                onMove={(newCoord, oldCoord) => {
-                    // Calculate and apply displacement
+        return asymptote &&
+        <MovableLine
+            onMove={(newCoord, oldCoord) => {
+                // Calculate and apply displacement
+                var delta = kvector.subtract(newCoord, oldCoord);
+                var newAsymptote = _.map(this._asymptote(), coord => kvector.add(coord, delta)
+                );
+                this.props.onChange({
+                    asymptote: newAsymptote,
+                });
+            }}
+            constraints={[
+                Interactive2.MovableLine.constraints.bound(),
+                Interactive2.MovableLine.constraints.snap(),
+                (newCoord, oldCoord) => {
+                    // Calculate and apply proposed displacement
                     var delta = kvector.subtract(newCoord, oldCoord);
-                    var newAsymptote = _.map(this._asymptote(), coord =>
-                        kvector.add(coord, delta)
+                    var proposedAsymptote = _.map(
+                        this._asymptote(),
+                        coord => kvector.add(coord, delta)
                     );
-                    this.props.onChange({
-                        asymptote: newAsymptote,
-                    });
-                }}
-                constraints={[
-                    Interactive2.MovableLine.constraints.bound(),
-                    Interactive2.MovableLine.constraints.snap(),
-                    (newCoord, oldCoord) => {
-                        // Calculate and apply proposed displacement
-                        var delta = kvector.subtract(newCoord, oldCoord);
-                        var proposedAsymptote = _.map(
-                            this._asymptote(),
-                            coord => kvector.add(coord, delta)
+                    // Verify that resulting asymptote is valid for graph
+                    if (model.extraAsymptoteConstraint) {
+                        return model.extraAsymptoteConstraint(
+                            newCoord,
+                            oldCoord,
+                            this._coords(),
+                            proposedAsymptote,
+                            graph
                         );
-                        // Verify that resulting asymptote is valid for graph
-                        if (model.extraAsymptoteConstraint) {
-                            return model.extraAsymptoteConstraint(
-                                newCoord,
-                                oldCoord,
-                                this._coords(),
-                                proposedAsymptote,
-                                graph
-                            );
-                        }
-                        return true;
-                    },
-                ]}
-                normalStyle={dashed}
-                highlightStyle={dashed}
-            >
-                {_.map(asymptote, (coord, i) =>
-                    <MovablePoint
-                        key={`asymptoteCoord-${i}`}
-                        coord={coord}
-                        static={true}
-                        draw={null}
-                        extendLine={true}
-                        showHairlines={this.props.showHairlines}
-                        hideHairlines={this.props.hideHairlines}
-                        showTooltips={this.props.showTooltips}
-                        isMobile={this.props.isMobile}
-                    />
-                )}
-            </MovableLine>
-        );
+                    }
+                    return true;
+                },
+            ]}
+            normalStyle={dashed}
+            highlightStyle={dashed}
+        >
+            {_.map(asymptote, (coord, i) => <MovablePoint
+                key={`asymptoteCoord-${i}`}
+                coord={coord}
+                static={true}
+                draw={null}
+                extendLine={true}
+                showHairlines={this.props.showHairlines}
+                hideHairlines={this.props.hideHairlines}
+                showTooltips={this.props.showTooltips}
+                isMobile={this.props.isMobile}
+            />
+            )}
+        </MovableLine>;
     },
 });
 

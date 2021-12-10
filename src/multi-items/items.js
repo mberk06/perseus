@@ -1,18 +1,3 @@
-// @flow
-/**
- * Utility functions for constructing and manipulating multi-items.
- *
- * These functions apply *specifically* to Items and ItemTrees - things that
- * actually semantically *are* multi-items. For more general functions for
- * traversing and manipulating *anything* shaped like a multi-item (like a
- * renderer tree or a score tree or, well, a multi-item), see trees.js.
- */
-import type {
-    Item, ItemTree, ContentNode, HintNode, TagsNode, ItemArrayNode,
-    ItemObjectNode,
-} from "./item-types.js";
-import type {Shape} from "./shape-types.js";
-
 const {buildMapper} = require("./trees.js");
 const shapes = require("./shapes.js");
 
@@ -25,7 +10,7 @@ const shapes = require("./shapes.js");
  * - An empty object node has a semantically empty node for each of its keys.
  *   (That is, we recursively call buildEmptyItemTreeForShape for each key.)
  */
-function buildEmptyItemTreeForShape(shape: Shape): ItemTree {
+function buildEmptyItemTreeForShape(shape) {
     if (shape.type === "content") {
         return {
             "__type": "content",
@@ -42,12 +27,12 @@ function buildEmptyItemTreeForShape(shape: Shape): ItemTree {
             "widgets": {},
         };
     } else if (shape.type === "tags") {
-        return ([]: TagsNode);
+        return [];
     } else if (shape.type === "array") {
-        return ([]: ItemArrayNode);
+        return [];
     } else if (shape.type === "object") {
         const valueShapes = shape.shape;
-        const object: ItemObjectNode = {};
+        const object = {};
         Object.keys(valueShapes).forEach(key => {
             object[key] = buildEmptyItemTreeForShape(valueShapes[key]);
         });
@@ -66,18 +51,14 @@ function buildEmptyItemTreeForShape(shape: Shape): ItemTree {
  * - An empty object node has a semantically empty node for each of its keys.
  *   (That is, we recursively call buildEmptyItemTreeForShape for each key.)
  */
-function buildEmptyItemForShape(shape: Shape): Item {
+function buildEmptyItemForShape(shape) {
     return treeToItem(buildEmptyItemTreeForShape(shape));
 }
 
 /**
  * Given an Item and its Shape, yield all of its content nodes to the callback.
  */
-function findContentNodesInItem(
-    item: Item,
-    shape: Shape,
-    callback: (c: ContentNode) => any
-) {
+function findContentNodesInItem(item, shape, callback) {
     const itemTree = itemToTree(item);
     buildMapper()
         .setContentMapper(callback)
@@ -87,11 +68,7 @@ function findContentNodesInItem(
 /**
  * Given an Item and its Shape, yield all of its hint nodes to the callback.
  */
-function findHintNodesInItem(
-    item: Item,
-    shape: Shape,
-    callback: (h: HintNode) => any
-) {
+function findHintNodesInItem(item, shape, callback) {
     const itemTree = itemToTree(item);
     buildMapper()
         .setHintMapper(callback)
@@ -104,12 +81,12 @@ function findHintNodesInItem(
  * The Shape might not be complete or correct Shape that this Item was designed
  * for. If you have access to the intended Shape, use that instead.
  */
-function inferItemShape(item: Item) {
+function inferItemShape(item) {
     const itemTree = itemToTree(item);
     return inferItemTreeShape(itemTree);
 }
 
-function inferItemTreeShape(node: ItemTree): Shape {
+function inferItemTreeShape(node) {
     if (Array.isArray(node)) {
         if (node.length) {
             if (typeof node[0] === "string") {
@@ -151,14 +128,14 @@ function inferItemTreeShape(node: ItemTree): Shape {
 /**
  * Convert the given ItemTree to an Item, by wrapping it in the `_multi` key.
  */
-function itemToTree(item: Item): ItemTree {
+function itemToTree(item) {
     return item._multi;
 }
 
 /**
  * Convert the given Item to an ItemTree, by unwrapping the `_multi` key.
  */
-function treeToItem(node: ItemTree): Item {
+function treeToItem(node) {
     return {_multi: node};
 }
 

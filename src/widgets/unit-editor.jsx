@@ -72,7 +72,13 @@ var UnitExample = React.createClass({
         this._checkValidity(this.props);
     },
 
-    _checkValidity: function({name, original, sigfigs}) {
+    _checkValidity: function(
+        {
+            name,
+            original,
+            sigfigs
+        }
+    ) {
         var parseResult = KAS.unitParse(name);
         var solvedExample = "";
 
@@ -130,13 +136,12 @@ const UnitInputEditor = React.createClass({
         acceptingUnits = acceptingUnits || [];
         var acceptingElem = null;
         if (accepting === SOME) {
-            var unitsArr = acceptingUnits.map((name, i) =>
-                <UnitExample
-                    name={name}
-                    original={this.original || null}
-                    sigfigs={this.props.sigfigs}
-                    key={i}
-                />
+            var unitsArr = acceptingUnits.map((name, i) => <UnitExample
+                name={name}
+                original={this.original || null}
+                sigfigs={this.props.sigfigs}
+                key={i}
+            />
             );
 
             acceptingElem = (

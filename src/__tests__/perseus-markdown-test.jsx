@@ -15,7 +15,7 @@ const characterCount = PerseusMarkdown.characterCount;
 // Important because some AST node fields can be undefined, and
 // if those don't show up in the assert output, it can be
 // very confusing to figure out how the actual and expected differ
-const prettyPrintAST = (ast) => {
+const prettyPrintAST = ast => {
     return nodeUtil.inspect(ast, {
         depth: null,
         colors: false,

@@ -95,7 +95,7 @@ describe("i18n", () => {
                     foundImages.length + " > " + allImages.length + ")"
             );
 
-            _.each(allImages, (image) => {
+            _.each(allImages, image => {
                 assert(
                     foundImages.indexOf(image) !== -1,
                     "The image '" + image + "' wasn't found"
@@ -115,7 +115,7 @@ describe("i18n", () => {
                     foundImages.length + " > " + allImages.length + ")"
             );
 
-            _.each(allImages, (image) => {
+            _.each(allImages, image => {
                 assert(
                     foundImages.indexOf(image) !== -1,
                     "The image '" + image + "' wasn't found"
@@ -134,7 +134,7 @@ describe("i18n", () => {
                     },
                     hints: exerciseImagesEverywhere.hints.map(hint => ({
                         __type: "hint",
-                        ...hint,
+                        ...hint
                     })),
                 },
             });
@@ -145,7 +145,7 @@ describe("i18n", () => {
                     foundImages.length + " > " + allImages.length + ")"
             );
 
-            _.each(allImages, (image) => {
+            _.each(allImages, image => {
                 assert(
                     foundImages.indexOf(image) !== -1,
                     "The image '" + image + "' wasn't found"

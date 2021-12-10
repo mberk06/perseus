@@ -36,11 +36,6 @@ class ColorPicker extends React.Component {
         lightColors: false,
     };
 
-    props: ChangeableProps & {
-        lightColors?: boolean,
-        value?: string,
-    };
-
     render() {
         const colors = this.props.lightColors ? LIGHT_COLORS : COLORS;
         return (

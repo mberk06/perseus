@@ -344,7 +344,7 @@ describe("passage markdown", () => {
 
     describe("orders", () => {
         it("should always be numbers", () => {
-            _.each(rules, (rule) => {
+            _.each(rules, rule => {
                 assert(
                     typeof rule.order === "number",
                     rule.type + " order was not a number: " + rule.order

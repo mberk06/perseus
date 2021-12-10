@@ -25,11 +25,7 @@ var Widgets = require("./widgets.js");
 
 var noop = function() {};
 
-var deepCallbackFor = function(
-    contentCallback,
-    widgetCallback,
-    optionsCallback
-) {
+var deepCallbackFor = function(contentCallback, widgetCallback, optionsCallback) {
     var deepCallback = function(widgetInfo, widgetId) {
         // This doesn't modify the widget info if the widget info
         // is at a later version than is supported, which is important
@@ -85,12 +81,7 @@ var deepCallbackFor = function(
     return deepCallback;
 };
 
-var traverseRenderer = function(
-    rendererOptions,
-    contentCallback,
-    deepWidgetCallback,
-    optionsCallback
-) {
+var traverseRenderer = function(rendererOptions, contentCallback, deepWidgetCallback, optionsCallback) {
     var newContent = rendererOptions.content;
     if (rendererOptions.content != null) {
         var modifiedContent = contentCallback(rendererOptions.content);
@@ -125,12 +116,7 @@ var traverseRenderer = function(
     }
 };
 
-var traverseRendererDeep = function(
-    rendererOptions,
-    contentCallback,
-    widgetCallback,
-    optionsCallback
-) {
+var traverseRendererDeep = function(rendererOptions, contentCallback, widgetCallback, optionsCallback) {
     contentCallback = contentCallback || noop;
     widgetCallback = widgetCallback || noop;
     optionsCallback = optionsCallback || noop;

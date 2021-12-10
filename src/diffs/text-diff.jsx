@@ -34,23 +34,25 @@ const ImageDiffSide = React.createClass({
     },
 
     render: function() {
-        return <div>
+        return (
+            <div>
 
 
-            {_.map(this.props.images, (entry, index) => {
-                const className = classNames({
-                    "image": true,
-                    "image-unchanged": entry.status === "unchanged",
-                    "image-added": entry.status === "added",
-                    "image-removed": entry.status === "removed",
-                });
-                return <div key={index} >
-                    <div className={className}>
-                        <SvgImage src={entry.value} title={entry.value} />
-                    </div>
-                </div>;
-            })}
-        </div>;
+                {_.map(this.props.images, (entry, index) => {
+                    const className = classNames({
+                        "image": true,
+                        "image-unchanged": entry.status === "unchanged",
+                        "image-added": entry.status === "added",
+                        "image-removed": entry.status === "removed",
+                    });
+                    return <div key={index} >
+                        <div className={className}>
+                            <SvgImage src={entry.value} title={entry.value} />
+                        </div>
+                    </div>;
+                })}
+            </div>
+        );
     },
 });
 
@@ -93,7 +95,7 @@ const TextDiff = React.createClass({
         const afterImages = imagesInString(this.props.after);
         const images = stringArrayDiff(beforeImages, afterImages);
 
-        const renderedLines = _.map(lines, (line) => {
+        const renderedLines = _.map(lines, line => {
             const contents = {};
 
             contents.before = _(line).map(function(entry, i) {
@@ -122,47 +124,51 @@ const TextDiff = React.createClass({
             "collapsed": this.state.collapsed,
         });
 
-        return <div>
-            <div className="diff-header">{this.props.title}</div>
-            <div className="diff-header">{this.props.title}</div>
-            <div className="diff-body ui-helper-clearfix">
+        return (
+            <div>
+                <div className="diff-header">{this.props.title}</div>
+                <div className="diff-header">{this.props.title}</div>
+                <div className="diff-body ui-helper-clearfix">
+                    {_.map([BEFORE, AFTER], (side, index) => {
+                        return (
+                            <div className={"diff-row " + side} key={index}>
+                                {!this.state.collapsed &&
+                                    _.map(renderedLines, (line, lineNum) => {
+                                        const changed = line[side].length > 1;
+                                        const lineClass = classNames({
+                                            "diff-line": true,
+                                            "added": side === AFTER && changed,
+                                            "removed": side === BEFORE && changed,
+                                        });
+                                        return <div
+                                            className={lineClass}
+                                            key={lineNum}
+                                        >
+                                            {line[side]}
+                                        </div>;
+                                    })}
+                                 {!this.state.collapsed &&
+                                     <ImageDiffSide images={images[side]} />}
+                            </div>
+                        );
+                    })}
+                </div>
                 {_.map([BEFORE, AFTER], (side, index) => {
-                    return <div className={"diff-row " + side} key={index}>
-                        {!this.state.collapsed &&
-                            _.map(renderedLines, (line, lineNum) => {
-                                const changed = line[side].length > 1;
-                                const lineClass = classNames({
-                                    "diff-line": true,
-                                    "added": side === AFTER && changed,
-                                    "removed": side === BEFORE && changed,
-                                });
-                                return <div
-                                    className={lineClass}
-                                    key={lineNum}
-                                >
-                                    {line[side]}
-                                </div>;
-                            })}
-                         {!this.state.collapsed &&
-                             <ImageDiffSide images={images[side]} />}
+                    return <div
+                        className={className + " " + side}
+                        key={index}
+                        onClick={this.handleExpand}
+                    >
+                        {this.state.collapsed &&
+                        <span>
+                            <span className="expand-button" >
+                                {" "}[ show unmodified ]
+                            </span>
+                        </span>}
                     </div>;
                 })}
             </div>
-            {_.map([BEFORE, AFTER], (side, index) => {
-                return <div
-                    className={className + " " + side}
-                    key={index}
-                    onClick={this.handleExpand}
-                >
-                    {this.state.collapsed &&
-                    <span>
-                        <span className="expand-button" >
-                            {" "}[ show unmodified ]
-                        </span>
-                    </span>}
-                </div>;
-            })}
-        </div>;
+        );
     },
 });
 

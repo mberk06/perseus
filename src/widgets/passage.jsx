@@ -13,25 +13,12 @@ const PassageMarkdown = require("./passage/passage-markdown.jsx");
 
 const {linterContextDefault} = require("../gorgon/proptypes.js");
 
-import type {ChangeableProps} from "../mixins/changeable.jsx";
-import type {SerializedHighlightSet} from "../components/highlighting/types.js";
-
-declare var i18n: {
-    _(format: string, args?: any): string,
-};
-
-type JQueryCollection = any;
-
 // A fake paragraph to measure the line height of the passage. In CSS we always
 // set the line height to 22 pixels, but when using the browser zoom feature,
 // the line height often ends up being a fractional number of pixels close to
 // 22 pixels.
 class LineHeightMeasurer extends React.Component {
-    _cachedLineHeight: number;
-    $body: JQueryCollection;
-    $end: JQueryCollection;
-
-    measureLineHeight(): number {
+    measureLineHeight() {
         if (typeof this._cachedLineHeight !== "number") {
             this.forceMeasureLineHeight();
         }
@@ -56,8 +43,8 @@ class LineHeightMeasurer extends React.Component {
         return (
             <div className={css(styles.measurer)}>
                 <div>
-                    <div ref={e => (this.$body = $(e))} className="paragraph" />
-                    <div ref={e => (this.$end = $(e))} />
+                    <div ref={e => this.$body = $(e)} className="paragraph" />
+                    <div ref={e => this.$end = $(e)} />
                 </div>
             </div>
         );
@@ -73,57 +60,7 @@ const styles = StyleSheet.create({
     },
 });
 
-type PassageProps = ChangeableProps & {
-    passageTitle: string,
-    passageText: string,
-    footnotes: string,
-    showLineNumbers: boolean,
-    highlights: SerializedHighlightSet,
-    reviewModeRubric: {
-        passageTitle: string,
-        passageText: string,
-        footnotes: string,
-        showLineNumbers: boolean,
-        static: boolean,
-    },
-
-    // NOTE(mdr): An old version of the highlighting feature used a widget
-    //     state field named `highlightRanges` to save serialized highlights.
-    //     This version of highlighting was removed in D36490, but some old
-    //     serialized Perseus state might still contain references to
-    //     `highlightRanges`. So, do not add a new prop to this component named
-    //     `highlightRanges`, or else you might get data that's not in the
-    //     format you expect.
-    highlightRanges: any,
-    // TODO(scottgrant): Flow type for linter context object
-    linterContext: any,
-};
-
-type PassageState = {
-    nLines: ?number,
-    startLineNumbersAfter: number,
-    stylesAreApplied: boolean,
-};
-
-// State kept track of by the PassageMarkdown parser.
-type PassageParseState = {
-    firstQuestionRef: ?any,
-    firstSentenceRef: ?any,
-};
-
-// Information about a passage reference, used in inter-widgets.
-type Reference = {
-    startLine: number,
-    endLine: number,
-    content: ?string,
-};
-
 class Passage extends React.Component {
-    props: PassageProps;
-
-    _onResize: () => {};
-    _lineHeightMeasurer: LineHeightMeasurer;
-
     static defaultProps = {
         passageTitle: "",
         passageText: "",
@@ -133,7 +70,7 @@ class Passage extends React.Component {
         linterContext: linterContextDefault,
     };
 
-    state: PassageState = {
+    state = {
         nLines: null,
         startLineNumbersAfter: 0,
         stylesAreApplied: false,
@@ -177,7 +114,7 @@ class Passage extends React.Component {
         }, 0);
     }
 
-    shouldComponentUpdate(nextProps: PassageProps, nextState: PassageState) {
+    shouldComponentUpdate(nextProps, nextState) {
         return (
             !_.isEqual(this.props, nextProps) ||
             !_.isEqual(this.state, nextState)
@@ -192,9 +129,7 @@ class Passage extends React.Component {
         window.removeEventListener("resize", this._onResize);
     }
 
-    _handleSerializedHighlightsUpdate = (
-        serializedHighlights: SerializedHighlightSet
-    ) => {
+    _handleSerializedHighlightsUpdate = serializedHighlights => {
         this.props.onChange({highlights: serializedHighlights});
     };
 
@@ -219,7 +154,7 @@ class Passage extends React.Component {
         });
     }
 
-    _measureLines(): number {
+    _measureLines() {
         const $renderer = $(ReactDOM.findDOMNode(this.refs.content));
         const contentsHeight = $renderer.height();
         const lineHeight = this._getLineHeight();
@@ -227,7 +162,7 @@ class Passage extends React.Component {
         return nLines;
     }
 
-    _getInitialLineNumber(): number {
+    _getInitialLineNumber() {
         let isPassageBeforeThisPassage = true;
         const passagesBeforeUs = this.props.findWidgets((id, widgetInfo) => {
             if (widgetInfo.type !== "passage") {
@@ -246,11 +181,11 @@ class Passage extends React.Component {
             .reduce((a, b) => a + b, 0);
     }
 
-    _getLineHeight(): number {
+    _getLineHeight() {
         return this._lineHeightMeasurer.measureLineHeight();
     }
 
-    getLineCount(): number {
+    getLineCount() {
         if (this.state.nLines != null) {
             return this.state.nLines;
         } else {
@@ -266,7 +201,7 @@ class Passage extends React.Component {
      * a passage.
      */
 
-    _getStartRefLineNumber(referenceNumber: number): ?number {
+    _getStartRefLineNumber(referenceNumber) {
         const refRef = PassageMarkdown.START_REF_PREFIX + referenceNumber;
         const ref = this.refs[refRef];
         if (!ref) {
@@ -291,7 +226,7 @@ class Passage extends React.Component {
         );
     }
 
-    _getEndRefLineNumber(referenceNumber: number): ?number {
+    _getEndRefLineNumber(referenceNumber) {
         const refRef = PassageMarkdown.END_REF_PREFIX + referenceNumber;
         const ref = this.refs[refRef];
         if (!ref) {
@@ -324,7 +259,7 @@ class Passage extends React.Component {
         return this.state.startLineNumbersAfter + line;
     }
 
-    _convertPosToLineNumber(absoluteVPos): number {
+    _convertPosToLineNumber(absoluteVPos) {
         const $content = $(ReactDOM.findDOMNode(this.refs.content));
         const relativeVPos = absoluteVPos - $content.offset().top;
         const lineHeight = this._getLineHeight();
@@ -333,7 +268,7 @@ class Passage extends React.Component {
         return line;
     }
 
-    _getRefContent(referenceNumber: number): ?string {
+    _getRefContent(referenceNumber) {
         const refRef = PassageMarkdown.START_REF_PREFIX + referenceNumber;
         const ref = this.refs[refRef];
         if (!ref) {
@@ -342,7 +277,7 @@ class Passage extends React.Component {
         return ref.getRefContent();
     }
 
-    getReference(referenceNumber: number): ?Reference {
+    getReference(referenceNumber) {
         const refStartLine = this._getStartRefLineNumber(referenceNumber);
         const refEndLine = this._getEndRefLineNumber(referenceNumber);
         if (refStartLine == null || refEndLine == null) {
@@ -363,11 +298,11 @@ class Passage extends React.Component {
      * These are misc widget functions used for the widget API
      */
 
-    getUserInput(): null {
+    getUserInput() {
         return null;
     }
 
-    simpleValidate(rubric: any) {
+    simpleValidate(rubric) {
         return Passage.validate(this.getUserInput(), rubric);
     }
 
@@ -388,7 +323,7 @@ class Passage extends React.Component {
      * Functions to render the passage widget.
      */
 
-    _renderInstructions(parseState: PassageParseState): React.Element<any> {
+    _renderInstructions(parseState) {
         const firstQuestionNumber = parseState.firstQuestionRef;
         const firstSentenceRef = parseState.firstSentenceRef;
 
@@ -432,7 +367,7 @@ class Passage extends React.Component {
         );
     }
 
-    _renderContent(parsed): React.Element<any> {
+    _renderContent(parsed) {
         // Wait until Aphrodite styles are applied before enabling highlights,
         // so that we measure the correct positions.
         const enabled = this.state.stylesAreApplied;
@@ -451,7 +386,7 @@ class Passage extends React.Component {
             >
                 <div ref="content">
                     <LineHeightMeasurer
-                        ref={e => (this._lineHeightMeasurer = e)}
+                        ref={e => this._lineHeightMeasurer = e}
                     />
                     {PassageMarkdown.output(parsed)}
                 </div>
@@ -459,13 +394,13 @@ class Passage extends React.Component {
         );
     }
 
-    _hasFootnotes(): boolean {
+    _hasFootnotes() {
         const rawContent = this.props.footnotes;
         const isEmpty = /^\s*$/.test(rawContent);
         return !isEmpty;
     }
 
-    _renderFootnotes(): React.Element<any> {
+    _renderFootnotes() {
         const rawContent = this.props.footnotes;
         const parsed = PassageMarkdown.parse(rawContent);
         return PassageMarkdown.output(parsed);
@@ -497,7 +432,7 @@ class Passage extends React.Component {
             });
         }
 
-        const parseState: PassageParseState = {
+        const parseState = {
             firstSentenceRef: null,
             firstQuestionRef: null,
         };
@@ -564,7 +499,7 @@ module.exports = {
     name: "passage",
     displayName: "Passage (SAT only)",
     widget: Passage,
-    transform: (editorProps: any) => {
+    transform: editorProps => {
         return _.pick(
             editorProps,
             "passageTitle",

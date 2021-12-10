@@ -123,82 +123,15 @@
 
 // @flow
 import Selector from "./selector.js";
-import type {TraversalState, TreeNode} from "./tree-transformer.js";
-
-// This represents the type returned by String.match(). It is an
-// array of strings, but also has index:number and input:string properties.
-// Flow doesn't handle it well, so we punt and just use any.
-export type PatternMatchType = any;
-
-// This is the return type of the check() method of a Rule object
-export type RuleCheckReturnType = ?{
-    rule: string,
-    message: string,
-    start: number,
-    end: number,
-};
-
-// This is the return type of the lint detection function passed as the 4th
-// argument to the Rule() constructor. It can return null or a string or an
-// object containing a string and two numbers.
-// prettier-ignore
-// (prettier formats this in a way that ka-lint does not like)
-export type LintTesterReturnType = ?(
-    string
-    | {
-          message: string,
-          start: number,
-          end: number,
-      });
-
-export type LintRuleContextObject = ?Object;
-
-// This is the type of the lint detection function that the Rule() constructor
-// expects as its fourth argument. It is passed the TraversalState object and
-// content string that were passed to check(), and is also passed the array of
-// nodes returned by the selector match and the array of strings returned by
-// the pattern match. It should return null if no lint is detected or an
-// error message or an object contining an error message.
-export type LintTester = (
-    state: TraversalState,
-    content: string,
-    selectorMatch: Array<TreeNode>,
-    patternMatch: PatternMatchType,
-    context: LintRuleContextObject
-) => LintTesterReturnType;
-
-// An optional check to verify whether or not a particular rule should
-// be checked by context. For example, some rules only apply in exercises,
-// and should never be applied to articles. Defaults to true, so if we
-// omit the applies function in a rule, it'll be tested everywhere.
-export type AppliesTester = (
-    context: LintRuleContextObject
-) => boolean;
 
 /**
  * A Rule object describes a Gorgon lint rule. See the comment at the top of
  * this file for detailed description.
  */
 export default class Rule {
-    name: string; // The name of the rule
-    severity: number; // The severity of the rule
-    selector: Selector; // The specified selector or the DEFAULT_SELECTOR
-    pattern: ?RegExp; // A regular expression if one was specified
-    lint: LintTester; // The lint-testing function or a default
-    applies: AppliesTester; // Checks to see if we should apply a rule or not
-    message: ?string; // The error message for use with the default function
-    static DEFAULT_SELECTOR: Selector;
-
     // The comment at the top of this file has detailed docs for
     // this constructor and its arguments
-    constructor(
-        name: ?string,
-        severity: ?number,
-        selector: ?Selector,
-        pattern: ?RegExp,
-        lint: LintTester | string,
-        applies: AppliesTester
-    ) {
+    constructor(name, severity, selector, pattern, lint, applies) {
         if (!selector && !pattern) {
             throw new Error("Lint rules must have a selector or pattern");
         }
@@ -225,7 +158,7 @@ export default class Rule {
 
     // A factory method for use with rules described in JSON files
     // See the documentation at the start of this file for details.
-    static makeRule(options: Object) {
+    static makeRule(options) {
         return new Rule(
             options.name,
             options.severity,
@@ -239,12 +172,7 @@ export default class Rule {
     // Check the node n to see if it violates this lint rule.  A return value
     // of false means there is no lint.  A returned object indicates a lint
     // error. See the documentation at the top of this file for details.
-    check(
-        node: TreeNode,
-        traversalState: TraversalState,
-        content: string,
-        context: LintRuleContextObject
-    ): RuleCheckReturnType {
+    check(node, traversalState, content, context) {
         // First, see if we match the selector.
         // If no selector was passed to the constructor, we use a
         // default selector that matches text nodes.
@@ -328,12 +256,7 @@ ${e.stack}`,
     // place of a function, but also adds start and end properties that
     // specify which particular portion of the node content matched the
     // pattern.
-    _defaultLintFunction(
-        state: TraversalState,
-        content: string,
-        selectorMatch: Array<TreeNode>,
-        patternMatch: PatternMatchType
-    ) {
+    _defaultLintFunction(state, content, selectorMatch, patternMatch) {
         return {
             message: this.message || "",
             start: patternMatch.index,
@@ -356,7 +279,7 @@ ${e.stack}`,
     //   input "foo"     ==> output /foo/
     //   input "/foo/i"  ==> output /foo/i
     //
-    static makePattern(pattern: ?(RegExp | string)): ?RegExp {
+    static makePattern(pattern) {
         if (!pattern) {
             return null;
         } else if (pattern instanceof RegExp) {
@@ -365,7 +288,7 @@ ${e.stack}`,
             const lastSlash = pattern.lastIndexOf("/");
             const expression = pattern.substring(1, lastSlash);
             const flags = pattern.substring(lastSlash + 1);
-            return new RegExp(expression, ((flags: any): RegExp$flags));
+            return new RegExp(expression, (flags));
         } else {
             return new RegExp(pattern);
         }
@@ -375,12 +298,8 @@ ${e.stack}`,
     // properties added, in order to simulate the return value of the
     // String.match() method. We use it when a Rule has no pattern and we
     // want to simulate a match on the entire content string.
-    static FakePatternMatch(
-        input: string,
-        match: ?string,
-        index: number
-    ): PatternMatchType {
-        const result: any = [match];
+    static FakePatternMatch(input, match, index) {
+        const result = [match];
         result.index = index;
         result.input = input;
         return result;
@@ -392,7 +311,6 @@ ${e.stack}`,
         GUIDELINE: 3,
         BULK_WARNING: 4,
     }
-
 }
 
 Rule.DEFAULT_SELECTOR = Selector.parse("text");

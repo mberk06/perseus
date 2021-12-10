@@ -106,7 +106,12 @@ function multiPath(path) {
 }
 
 // Return an h1 if depth=0, h2 if depth=1, etc.
-function Header({depth, ...props}) {
+function Header(
+    {
+        depth,
+        ...props
+    }
+) {
     const headerLevel = Math.min(depth, 5) + 1;
     const HeaderTag = `h${headerLevel}`;
     return <HeaderTag {...props} />;
@@ -200,7 +205,15 @@ NodeContainer.propTypes = {
     controls: React.PropTypes.arrayOf(React.PropTypes.node),
 };
 
-const LeafContainer = ({name, controls, children, path, shape}) => {
+const LeafContainer = (
+    {
+        name,
+        controls,
+        children,
+        path,
+        shape
+    }
+) => {
     const hasPreviewHeading = shape.type === "content" || shape.type === "hint";
     const previewHeading = hasPreviewHeading &&
         <div className={css(styles.containerHeader)}>
@@ -259,8 +272,7 @@ const ArrayContainer = props => {
             <div className={css(styles.columnLeft)}>
                 <a
                     href="javascript:void 0"
-                    onClick={() =>
-                        actions.addArrayElement(path, shape.elementShape)}
+                    onClick={() => actions.addArrayElement(path, shape.elementShape)}
                 >
                     Add a {pluralToSingular(name)}
                 </a>
@@ -279,7 +291,14 @@ ArrayContainer.propTypes = {
     }).isRequired,
 };
 
-const ObjectContainer = ({name, controls, children, path}) => {
+const ObjectContainer = (
+    {
+        name,
+        controls,
+        children,
+        path
+    }
+) => {
     const headingEditor = <div
         className={css(
             styles.containerHeader,
@@ -422,10 +441,6 @@ function getChromeVersion() {
  */
 function withChromeHack(Component) {
     return class ChromeHack extends React.Component {
-        props: {
-            sticky: boolean,
-            actions: any,
-        }
         _detached = false;
         _reattachTimer = null;
 
@@ -496,7 +511,7 @@ function withChromeHack(Component) {
             });
             this._detached = false;
         }
-    }
+    };
 }
 
 const ItemNodeContent = withStickiness(withChromeHack(props => {
@@ -606,8 +621,7 @@ const ArrayNodeContent = props => {
                         <SimpleButton
                             color="orange"
                             title="Move up"
-                            onClick={() =>
-                                actions.moveArrayElementUp(subpath)}
+                            onClick={() => actions.moveArrayElementUp(subpath)}
                         >
                             <div className={css(styles.verticalFlip)}>
                                 <InlineIcon {...iconChevronDown} />
@@ -622,8 +636,7 @@ const ArrayNodeContent = props => {
                         <SimpleButton
                             color="orange"
                             title="Move down"
-                            onClick={() =>
-                                actions.moveArrayElementDown(subpath)}
+                            onClick={() => actions.moveArrayElementDown(subpath)}
                         >
                             <InlineIcon {...iconChevronDown} />
                         </SimpleButton>
@@ -635,8 +648,7 @@ const ArrayNodeContent = props => {
                 <SimpleButton
                     color="orange"
                     title="Delete"
-                    onClick={() =>
-                        actions.removeArrayElement(subpath)}
+                    onClick={() => actions.removeArrayElement(subpath)}
                 >
                     <InlineIcon {...iconTrash} />
                 </SimpleButton>
@@ -678,15 +690,14 @@ const ObjectNodeContent = props => {
     // Object iteration order should automatically match the order in which the
     // keys were defined in the object literal. So, whatever order semantically
     // made sense to the shape's author is the order in which we'll iterate :)
-    const children = Object.keys(shape.shape).map(subkey =>
-        <div key={subkey} className={css(styles.objectElement)}>
-            <NodeContainer
-                {...otherProps}
-                shape={shape.shape[subkey]}
-                data={data[subkey]}
-                path={path.concat(subkey)}
-            />
-        </div>
+    const children = Object.keys(shape.shape).map(subkey => <div key={subkey} className={css(styles.objectElement)}>
+        <NodeContainer
+            {...otherProps}
+            shape={shape.shape[subkey]}
+            data={data[subkey]}
+            path={path.concat(subkey)}
+        />
+    </div>
     );
 
     return (
@@ -714,7 +725,7 @@ const MultiRendererEditor = React.createClass({
 
         return (
             <Layout
-                ref={e => (this.layout = e)}
+                ref={e => this.layout = e}
                 item={item}
                 apiOptions={apiOptions}
             />
@@ -829,16 +840,19 @@ const MultiRendererEditor = React.createClass({
                     shape={itemShape}
                     apiOptions={apiOptions}
                 >
-                    {({renderers}) =>
-                        <NodeContainer
-                            mode="edit"
-                            shape={itemShape}
-                            data={itemToTree(item)}
-                            path={[]}
-                            actions={this}
-                            apiOptions={apiOptions}
-                            renderers={renderers}
-                        />}
+                    {(
+                        {
+                            renderers
+                        }
+                    ) => <NodeContainer
+                        mode="edit"
+                        shape={itemShape}
+                        data={itemToTree(item)}
+                        path={[]}
+                        actions={this}
+                        apiOptions={apiOptions}
+                        renderers={renderers}
+                    />}
                 </MultiRenderer>
             </div>
         );
@@ -874,10 +888,9 @@ const MultiRendererEditor = React.createClass({
                 return (
                     <ModeDropdown
                         currentMode={this.props.editorMode}
-                        onChange={editorMode =>
-                            this.props.onChange({
-                                editorMode,
-                            })}
+                        onChange={editorMode => this.props.onChange({
+                            editorMode,
+                        })}
                     />
                 );
         }

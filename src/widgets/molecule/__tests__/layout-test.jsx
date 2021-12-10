@@ -70,14 +70,14 @@ describe("Molecule layout", () => {
     describe("Layout at a three-way junction", () => {
         const layoutItems = Layout.layout(SmilesParser.parse("CC(C)C"), 0);
         it("should place the second atom in the center", () => {
-            const centerAtom = layoutItems.find((item) => item.idx === "2,0");
+            const centerAtom = layoutItems.find(item => item.idx === "2,0");
             assertApproximately(centerAtom.pos[0], 0, 1e-14);
             assert.strictEqual(centerAtom.pos[1], Layout._bondLength);
         });
 
         it("should place the branched atom at +60 degrees", () => {
             const branchedAtom = layoutItems.find(
-                (item) => item.idx === "2,1:1,0");
+                item => item.idx === "2,1:1,0");
             assertApproximately(
                 branchedAtom.pos[0],
                 Math.sqrt(3) / 2 * Layout._bondLength, 1e-14);
@@ -87,7 +87,7 @@ describe("Molecule layout", () => {
         });
 
         it("should place the next atom in the backbone at -60 degrees", () => {
-            const nextAtom = layoutItems.find((item) => item.idx === "3,0");
+            const nextAtom = layoutItems.find(item => item.idx === "3,0");
             assertApproximately(
                 nextAtom.pos[0],
                 -1 * Math.sqrt(3) / 2 * Layout._bondLength, 1e-14);
@@ -99,14 +99,14 @@ describe("Molecule layout", () => {
     describe("Layout at a four-way junction", () => {
         const layoutItems = Layout.layout(SmilesParser.parse("CC(C)(C)C"), 0);
         it("should place the second atom in the center", () => {
-            const centerAtom = layoutItems.find((item) => item.idx === "2,0");
+            const centerAtom = layoutItems.find(item => item.idx === "2,0");
             assertApproximately(centerAtom.pos[0], 0, 1e-7);
             assert.strictEqual(centerAtom.pos[1], Layout._bondLength);
         });
 
         it("should place the branched atom at +90 degrees", () => {
             const branchedAtom = layoutItems.find(
-                (item) => item.idx === "2,1:1,0");
+                item => item.idx === "2,1:1,0");
             assertApproximately(
                 branchedAtom.pos[0],
                 Layout._bondLength, 1e-7);
@@ -117,7 +117,7 @@ describe("Molecule layout", () => {
 
         it("should place the second branched atom at 0 degrees", () => {
             const branchedAtom = layoutItems.find(
-                (item) => item.idx === "2,2:1,0");
+                item => item.idx === "2,2:1,0");
             assertApproximately(
                 branchedAtom.pos[0],
                 0, 1e-7);
@@ -127,7 +127,7 @@ describe("Molecule layout", () => {
         });
 
         it("should place the next atom in the backbone at -90 degrees", () => {
-            const nextAtom = layoutItems.find((item) => item.idx === "3,0");
+            const nextAtom = layoutItems.find(item => item.idx === "3,0");
             assertApproximately(
                 nextAtom.pos[0],
                 -1 * Layout._bondLength, 1e-7);
@@ -138,7 +138,7 @@ describe("Molecule layout", () => {
     describe("Triple bond layout", () => {
         const layoutItems = Layout.layout(SmilesParser.parse("CC#CC"), 0);
         it("should place all the atoms colinearly", () => {
-            const atoms = layoutItems.filter((item) => item.idx);
+            const atoms = layoutItems.filter(item => item.idx);
             assert.strictEqual(atoms.length, 4);
             atoms.forEach((atom, i) => {
                 assertApproximately(atom.pos[0], 0, 1e-14);

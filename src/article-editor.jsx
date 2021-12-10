@@ -398,7 +398,7 @@ const ArticleEditor = React.createClass({
      *
      * This function can currently only be called in edit mode.
      */
-    getSaveWarnings: function(): Array<Array<string>> {
+    getSaveWarnings: function() {
         if (this.props.mode !== "edit") {
             // TODO(joshuan): We should be able to get save warnings in
             // preview mode.

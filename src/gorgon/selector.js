@@ -1,94 +1,4 @@
 /**
- * The Selector class implements a CSS-like system for matching nodes in a
- * parse tree based on the structure of the tree. Create a Selector object by
- * calling the static Selector.parse() method on a string that describes the
- * tree structure you want to match. For example, if you want to find text
- * nodes that are direct children of paragraph nodes that immediately follow
- * heading nodes, you could create an appropriate selector like this:
- *
- *   selector = Selector.parse("heading + paragraph > text");
- *
- * Recall from the TreeTransformer class, that we consider any object with a
- * string-valued `type` property to be a tree node. The words "heading",
- * "paragraph" and "text" in the selector string above specify node types and
- * will match nodes in a parse tree that have `type` properties with those
- * values.
- *
- * Selectors are designed for use during tree traversals done with the
- * TreeTransformer traverse() method. To test whether the node currently being
- * traversed matches a selector, simply pass the TraversalState object to the
- * match() method of the Selector object. If the node does not match the
- * selector, match() returns null. If it does match, then match() returns an
- * array of nodes that match the selector. In the example above the first
- * element of the array would be the node the heading node, the second would
- * be the paragraph node that follows it, and the third would be the text node
- * that is a child of the paragraph.  The last element of a returned array of
- * nodes is always equal to the current node of the tree traversal.
- *
- * Code that uses a selector might look like this:
- *
- *   matchingNodes = selector.match(state);
- *   if (matchingNodes) {
- *       let heading = matchingNodes[0];
- *       let text = matchingNodes[2];
- *       // do something with those nodes
- *   }
- *
- * The Selector.parse() method recognizes a grammar that is similar to CSS
- * selectors:
- *
- * selector := treeSelector (, treeSelector)*
- *
- *    A selector is one or more comma-separated treeSelectors. A node matches
- *    the selector if it matches any of the treeSelectors.
- *
- * treeSelector := (treeSelector combinator)? nodeSelector
- *
- *    A treeSelector is a nodeSelector optionally preceeded by a combinator
- *    and another tree selector. The tree selector matches if the current node
- *    matches the node selector and a sibling or ancestor (depending on the
- *    combinator) of the current node matches the optional treeSelector.
- *
- * combinator := ' ' | '>' | '+' | '~'   // standard CSS3 combinators
- *
- *    A combinator is a space or punctuation character that specifies the
- *    relationship between two nodeSelectors. A space between two
- *    nodeSelectors means that the first selector much match an ancestor of
- *    the node that matches the second selector. A '>' character means that
- *    the first selector must match the parent of the node matched by the
- *    second. The '~' combinator means that the first selector must match a
- *    previous sibling of the node matched by the second. And the '+' selector
- *    means that first selector must match the immediate previous sibling of
- *    the node that matched the second.
- *
- * nodeSelector := <IDENTIFIER> | '*'
- *
- *    A nodeSelector is simply an identifier (a letter followed by any number
- *    of letters, digits, hypens, and underscores) or the wildcard asterisk
- *    character. A wildcard node selector matches any node. An identifier
- *    selector matches any node that has a `type` property whose value matches
- *    the identifier.
- *
- * If you call Selector.parse() on a string that does not match this grammar,
- * it will throw an exception
- *
- * TODO(davidflanagan): it might be useful to allow more sophsticated node
- * selector matching with attribute matches and pseudo-classes, like
- * "heading[level=2]" or "paragraph:first-child"
- *
- * Implementation Note: this file exports a very simple Selector class but all
- * the actual work is done in various internal classes. The Parser class
- * parses the string representation of a selector into a parse tree that
- * consists of instances of various subclasses of the Selector class. It is
- * these subclasses that implement the selector matching logic, often
- * depending on features of the TraversalState object from the TreeTransformer
- * traversal.
- */
-
-// @flow
-import type {TreeNode, TraversalState} from "./tree-transformer.js";
-
-/**
  * This is the base class for all Selector types. The key method that all
  * selector subclasses must implement is match(). It takes a TraversalState
  * object (from a TreeTransformer traversal) and tests whether the selector
@@ -96,7 +6,7 @@ import type {TreeNode, TraversalState} from "./tree-transformer.js";
  * more details on the match() method.
  */
 export default class Selector {
-    static parse(selectorText: string): Selector {
+    static parse(selectorText) {
         return new Parser(selectorText).parse();
     }
 
@@ -105,7 +15,7 @@ export default class Selector {
      * This is the base class so we just throw an exception. All Selector
      * subclasses must provide an implementation of this method.
      */
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         throw new Error("Selector subclasses must implement match()");
     }
 
@@ -113,7 +23,7 @@ export default class Selector {
      * Selector subclasses all define a toString() method primarily
      * because it makes it easy to write parser tests.
      */
-    toString(): string {
+    toString() {
         return "Unknown selector class";
     }
 }
@@ -128,11 +38,7 @@ export default class Selector {
  * Instead call the static Selector.parse() method.
  */
 class Parser {
-    static TOKENS: RegExp; // We do lexing with a simple regular expression
-    tokens: Array<string>; // The array of tokens
-    tokenIndex: number; // Which token in the array we're looking at now
-
-    constructor(s: string) {
+    constructor(s) {
         // Normalize whitespace:
         // - remove leading and trailing whitespace
         // - replace runs of whitespace with single space characters
@@ -145,18 +51,18 @@ class Parser {
     }
 
     // Return the next token or the empty string if there are no more
-    nextToken(): string {
+    nextToken() {
         return this.tokens[this.tokenIndex] || "";
     }
 
     // Increment the token index to "consume" the token we were looking at
     // and move on to the next one.
-    consume(): void {
+    consume() {
         this.tokenIndex++;
     }
 
     // Return true if the current token is an identifier or false otherwise
-    isIdentifier(): boolean {
+    isIdentifier() {
         // The Parser.TOKENS regexp ensures that we only have to check
         // the first character of a token to know what kind of token it is.
         const c = this.tokens[this.tokenIndex][0];
@@ -164,7 +70,7 @@ class Parser {
     }
 
     // Consume space tokens until the next token is not a space.
-    skipSpace(): void {
+    skipSpace() {
         while (this.nextToken() === " ") {
             this.consume();
         }
@@ -173,7 +79,7 @@ class Parser {
     // Parse a comma-separated sequence of tree selectors. This is the
     // entry point for the Parser class and the only method that clients
     // ever need to call.
-    parse(): Selector {
+    parse() {
         // We expect at least one tree selector
         const ts = this.parseTreeSelector();
 
@@ -210,11 +116,11 @@ class Parser {
 
     // Parse a sequence of node selectors linked together with
     // hierarchy combinators: space, >, + and ~.
-    parseTreeSelector(): Selector {
+    parseTreeSelector() {
         this.skipSpace(); // Ignore space after a comma, for example
 
         // A tree selector must begin with a node selector
-        let ns: Selector = this.parseNodeSelector();
+        let ns = this.parseNodeSelector();
 
         for (;;) {
             // Now check the next token. If there is none, or if it is a
@@ -254,7 +160,7 @@ class Parser {
     // TODO(davidflanagan): we may need to extend this with attribute
     // selectors like 'heading[level=3]', or with pseudo-classes like
     // paragraph:first-child
-    parseNodeSelector(): Selector {
+    parseNodeSelector() {
         // First, skip any whitespace
         this.skipSpace();
 
@@ -281,7 +187,7 @@ Parser.TOKENS = /([a-zA-Z][\w-]*)|(\d+)|[^\s]|(\s(?=[a-zA-Z\*]))/g;
  * This is a trivial Error subclass that the Parser uses to signal parse errors
  */
 class ParseError extends Error {
-    constructor(message: string) {
+    constructor(message) {
         super(message);
     }
 }
@@ -293,14 +199,12 @@ class ParseError extends Error {
  * first.
  */
 class SelectorList extends Selector {
-    selectors: Array<Selector>;
-
-    constructor(selectors: Array<Selector>) {
+    constructor(selectors) {
         super();
         this.selectors = selectors;
     }
 
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         for (let i = 0; i < this.selectors.length; i++) {
             const s = this.selectors[i];
             const result = s.match(state);
@@ -311,7 +215,7 @@ class SelectorList extends Selector {
         return null;
     }
 
-    toString(): string {
+    toString() {
         let result = "";
         for (let i = 0; i < this.selectors.length; i++) {
             result += i > 0 ? ", " : "";
@@ -326,11 +230,11 @@ class SelectorList extends Selector {
  * matches any node.
  */
 class AnyNode extends Selector {
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         return [state.currentNode()];
     }
 
-    toString(): string {
+    toString() {
         return "*";
     }
 }
@@ -340,14 +244,12 @@ class AnyNode extends Selector {
  * it matches any node whose `type` property is a specified string
  */
 class TypeSelector extends Selector {
-    type: string;
-
-    constructor(type: string) {
+    constructor(type) {
         super();
         this.type = type;
     }
 
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         const node = state.currentNode();
         if (node.type === this.type) {
             return [node];
@@ -356,7 +258,7 @@ class TypeSelector extends Selector {
         }
     }
 
-    toString(): string {
+    toString() {
         return this.type;
     }
 }
@@ -368,10 +270,7 @@ class TypeSelector extends Selector {
  * method.
  */
 class SelectorCombinator extends Selector {
-    left: Selector;
-    right: Selector;
-
-    constructor(left: Selector, right: Selector) {
+    constructor(left, right) {
         super();
         this.left = left;
         this.right = right;
@@ -384,11 +283,11 @@ class SelectorCombinator extends Selector {
  * ancestor of the current node.
  */
 class AncestorCombinator extends SelectorCombinator {
-    constructor(left: Selector, right: Selector) {
+    constructor(left, right) {
         super(left, right);
     }
 
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         const rightResult = this.right.match(state);
         if (rightResult) {
             state = state.clone();
@@ -403,7 +302,7 @@ class AncestorCombinator extends SelectorCombinator {
         return null;
     }
 
-    toString(): string {
+    toString() {
         return this.left.toString() + " " + this.right.toString();
     }
 }
@@ -414,11 +313,11 @@ class AncestorCombinator extends SelectorCombinator {
  * the parent of the current node.
  */
 class ParentCombinator extends SelectorCombinator {
-    constructor(left: Selector, right: Selector) {
+    constructor(left, right) {
         super(left, right);
     }
 
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         const rightResult = this.right.match(state);
         if (rightResult) {
             if (state.hasParent()) {
@@ -433,7 +332,7 @@ class ParentCombinator extends SelectorCombinator {
         return null;
     }
 
-    toString(): string {
+    toString() {
         return this.left.toString() + " > " + this.right.toString();
     }
 }
@@ -444,11 +343,11 @@ class ParentCombinator extends SelectorCombinator {
  * the immediate previous sibling of the current node.
  */
 class PreviousCombinator extends SelectorCombinator {
-    constructor(left: Selector, right: Selector) {
+    constructor(left, right) {
         super(left, right);
     }
 
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         const rightResult = this.right.match(state);
         if (rightResult) {
             if (state.hasPreviousSibling()) {
@@ -463,7 +362,7 @@ class PreviousCombinator extends SelectorCombinator {
         return null;
     }
 
-    toString(): string {
+    toString() {
         return this.left.toString() + " + " + this.right.toString();
     }
 }
@@ -474,11 +373,11 @@ class PreviousCombinator extends SelectorCombinator {
  * any previous sibling of the current node.
  */
 class SiblingCombinator extends SelectorCombinator {
-    constructor(left: Selector, right: Selector) {
+    constructor(left, right) {
         super(left, right);
     }
 
-    match(state: TraversalState): ?Array<TreeNode> {
+    match(state) {
         const rightResult = this.right.match(state);
         if (rightResult) {
             state = state.clone();
@@ -493,7 +392,7 @@ class SiblingCombinator extends SelectorCombinator {
         return null;
     }
 
-    toString(): string {
+    toString() {
         return this.left.toString() + " ~ " + this.right.toString();
     }
 }

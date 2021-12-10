@@ -330,11 +330,10 @@ var Plotter = React.createClass({
                                 stroke: isMobile ? KhanColors.GRAY_G : "#000",
                                 strokeWidth: isMobile ? 1 : 2,
                             },
-                            () =>
-                                graphie.line(
-                                    [isMobile ? 0 : 0.5, 0],
-                                    [c.dimX - (isMobile ? 0 : 0.5), 0]
-                                )
+                            () => graphie.line(
+                                [isMobile ? 0 : 0.5, 0],
+                                [c.dimX - (isMobile ? 0 : 0.5), 0]
+                            )
                         );
                     } else {
                         graphie.line([0, 0], [c.dimX, 0]);
@@ -359,11 +358,10 @@ var Plotter = React.createClass({
                             stroke: isMobile ? KhanColors.GRAY_G : "#000",
                             strokeWidth: isMobile ? 1 : 2,
                         },
-                        () =>
-                            graphie.line(
-                                [isMobile ? -padX * 3 : 0, 0],
-                                [c.dimX + (isMobile ? padX : 0), 0]
-                            )
+                        () => graphie.line(
+                            [isMobile ? -padX * 3 : 0, 0],
+                            [c.dimX + (isMobile ? padX : 0), 0]
+                        )
                     );
 
                     if (!((isBar || isLine) && isMobile)) {
@@ -459,13 +457,12 @@ var Plotter = React.createClass({
                 transform: isMobile && !mathyCategory ? labelRotation : "none",
                 transformOrigin: "100%",
             },
-            () =>
-                graphie.label(
-                    [x, isMobile ? -0.5 : 0],
-                    category,
-                    "below",
-                    isTeX
-                )
+            () => graphie.label(
+                [x, isMobile ? -0.5 : 0],
+                category,
+                "below",
+                isTeX
+            )
         );
     },
 
@@ -1016,13 +1013,12 @@ var Plotter = React.createClass({
                                 "stroke-width": 8,
                             },
                             75,
-                            () =>
-                                pic.animate(
-                                    {
-                                        "stroke-width": 2,
-                                    },
-                                    75
-                                )
+                            () => pic.animate(
+                                {
+                                    "stroke-width": 2,
+                                },
+                                75
+                            )
                         );
                     }
                 }

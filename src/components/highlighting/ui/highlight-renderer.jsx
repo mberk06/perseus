@@ -16,48 +16,13 @@ const {StyleSheet, css} = require("aphrodite");
 const {getClientRectsForTextInRange, getRelativePosition, getRelativeRect} =
     require("./util.js");
 
-import type {DOMHighlight, Position, Rect, ZIndexes} from "./types.js";
-
-type HighlightRendererProps = {
-    // The DOMHighlight to render.
-    highlight: DOMHighlight,
-
-    // A unique key corresponding to the given `highlight`.
-    highlightKey: string,
-
-    // This component's `offsetParent` element, which is the nearest ancestor
-    // with `position: relative`. This will enable us to choose the correct
-    // CSS coordinates to align highlights and tooltips with the target
-    // content.
-    offsetParent: Element,
-
-    // The z-indexes to use when rendering tooltips above content, and
-    // highlights below content.
-    zIndexes: ZIndexes,
-};
-
-type HighlightRendererState = {
-    // The set of rectangles that cover this highlight's content, relative to
-    // the offset parent. This cache is updated on mount and on changes to
-    // the `highlight` and `offsetParent` props.
-    //
-    // We perform this caching because HighlightSetRenderer uses this
-    // component's `isHovered` function to access the rectangles every time the
-    // user's mouse moves, in order to check the hover state, and recomputing
-    // them on every mousemove seems like it could be expensive on older
-    // devices (though tbf that's just a gut instinct, not the result of
-    // testing on older devices).
-    cachedHighlightRects: Rect[],
-};
-
 class HighlightRenderer extends React.PureComponent {
-    props: HighlightRendererProps
-    state: HighlightRendererState = {
+    state = {
         cachedHighlightRects: this._computeRects(this.props),
         tooltipIsHovered: false,
-    }
+    };
 
-    componentWillReceiveProps(nextProps: HighlightRendererProps) {
+    componentWillReceiveProps(nextProps) {
         if (
             this.props.highlight !== nextProps.highlight ||
             this.props.offsetParent !== nextProps.offsetParent
@@ -73,7 +38,7 @@ class HighlightRenderer extends React.PureComponent {
      * coordinates relative to the offset parent. That way, we can use them
      * for CSS positioning.
      */
-    _computeRects(props: HighlightRendererProps): Rect[] {
+    _computeRects(props) {
         const {highlight, offsetParent} = props;
 
         // Get the set of rectangles that covers the range's text, relative to
@@ -91,7 +56,7 @@ class HighlightRenderer extends React.PureComponent {
      * component's offset parent) is hovering over the given rectangle
      * (coordinates also relative to this component's offset parent).
      */
-    _rectIsHovered(rect: Rect, mouseOffsetPosition: Position): boolean {
+    _rectIsHovered(rect, mouseOffsetPosition) {
         const positionWithinRect =
             getRelativePosition(mouseOffsetPosition, rect);
 
@@ -105,7 +70,7 @@ class HighlightRenderer extends React.PureComponent {
      * Return whether the given mouse position (coordinates relative to the
      * viewport) is hovering over this highlight.
      */
-    isHovered(mouseClientPosition: ?Position): boolean {
+    isHovered(mouseClientPosition) {
         if (!mouseClientPosition) {
             return false;
         }
@@ -120,16 +85,15 @@ class HighlightRenderer extends React.PureComponent {
         const mouseOffsetPosition =
             getRelativePosition(mouseClientPosition, offsetParentRect);
 
-        return cachedHighlightRects.some(rect =>
-            this._rectIsHovered(rect, mouseOffsetPosition));
+        return cachedHighlightRects.some(rect => this._rectIsHovered(rect, mouseOffsetPosition));
     }
 
     render() {
         const rects = this.state.cachedHighlightRects;
 
-        return <div>
-            {rects.map((rect, index) =>
-                <div
+        return (
+            <div>
+                {rects.map((rect, index) => <div
                     key={index}
                     className={css(styles.highlightRect)}
                     style={{
@@ -148,8 +112,9 @@ class HighlightRenderer extends React.PureComponent {
                         zIndex: this.props.zIndexes.belowContent,
                     }}
                 />
-            )}
-        </div>;
+                )}
+            </div>
+        );
     }
 }
 

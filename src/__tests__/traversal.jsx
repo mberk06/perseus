@@ -261,7 +261,7 @@ const assertNonMutative = () => {
 describe("Traversal", () => {
     it("should call a root level content field", () => {
         let readContent = null;
-        traverse(sampleOptions, (content) => {
+        traverse(sampleOptions, content => {
             assert(readContent === null, "Content was read multiple times :(");
             readContent = content;
         });
@@ -271,7 +271,7 @@ describe("Traversal", () => {
     });
 
     it("should be able to modify root level content", () => {
-        const newOptions = traverse(sampleOptions, (content) => {
+        const newOptions = traverse(sampleOptions, content => {
             return "new content text";
         });
         assert.deepEqual(newOptions, _.extend({}, sampleOptions, {
@@ -282,7 +282,7 @@ describe("Traversal", () => {
 
     it("should have access to widgets", () => {
         const widgetMap = {};
-        traverse(sampleOptions, null, (widgetInfo) => {
+        traverse(sampleOptions, null, widgetInfo => {
             widgetMap[widgetInfo.type] = (widgetMap[widgetInfo.type] || 0) + 1;
         });
         assert.deepEqual(widgetMap, {
@@ -292,7 +292,7 @@ describe("Traversal", () => {
     });
 
     it("should be able to modify widgetInfo", () => {
-        const newOptions = traverse(sampleOptions, null, (widgetInfo) => {
+        const newOptions = traverse(sampleOptions, null, widgetInfo => {
             return _.extend({}, widgetInfo, {
                 graded: false,
             });
@@ -309,7 +309,7 @@ describe("Traversal", () => {
     });
 
     it("should have access to modify full renderer options", () => {
-        const newOptions = traverse(sampleOptions, null, null, (options) => {
+        const newOptions = traverse(sampleOptions, null, null, options => {
             return _.extend({}, options, {
                 content: `${options.content}\n\nnew content!`,
             });
@@ -338,7 +338,7 @@ describe("Traversal", () => {
 
     it("should be able to see group widgets", () => {
         const widgetMap = {};
-        traverse(sampleGroup, null, (widgetInfo) => {
+        traverse(sampleGroup, null, widgetInfo => {
             widgetMap[widgetInfo.type] = (widgetMap[widgetInfo.type] || 0) + 1;
         });
         assert.deepEqual(widgetMap, {
@@ -350,7 +350,7 @@ describe("Traversal", () => {
 
     it("should see upgraded widgets inside groups", () => {
         let sawRadio = false;
-        traverse(sampleGroup, null, (widgetInfo) => {
+        traverse(sampleGroup, null, widgetInfo => {
             if (widgetInfo.type === "radio") {
                 assert.deepEqual(
                     widgetInfo.version,
@@ -370,7 +370,7 @@ describe("Traversal", () => {
     });
 
     it("should modify full renderer options inside of groups", () => {
-        const newOptions = traverse(sampleGroup, null, null, (options) => {
+        const newOptions = traverse(sampleGroup, null, null, options => {
             if (/radio/.test(options.content)) {
                 return _.extend({}, options, {
                     content: "Extra instructions\n\n" + options.content,

@@ -330,24 +330,12 @@ var Exponential = _.extend({}, PlotDefaults, {
      * the move) or a boolean, where `true` uses newCoord as the resulting
      * coordinate, and `false` uses oldCoord as the resulting coordinate.
      */
-    extraCoordConstraint: function(
-        newCoord,
-        oldCoord,
-        coords,
-        asymptote,
-        graph
-    ) {
+    extraCoordConstraint: function(newCoord, oldCoord, coords, asymptote, graph) {
         var y = _.head(asymptote)[1];
         return _.all(coords, coord => coord[1] !== y);
     },
 
-    extraAsymptoteConstraint: function(
-        newCoord,
-        oldCoord,
-        coords,
-        asymptote,
-        graph
-    ) {
+    extraAsymptoteConstraint: function(newCoord, oldCoord, coords, asymptote, graph) {
         var y = newCoord[1];
         var isValid =
             _.all(coords, coord => coord[1] > y) ||
@@ -416,27 +404,13 @@ var Logarithm = _.extend({}, PlotDefaults, {
 
     defaultAsymptote: [[0.5, 0], [0.5, 1.0]],
 
-    extraCoordConstraint: function(
-        newCoord,
-        oldCoord,
-        coords,
-        asymptote,
-        graph
-    ) {
+    extraCoordConstraint: function(newCoord, oldCoord, coords, asymptote, graph) {
         var x = _.head(asymptote)[0];
-        return (
-            _.all(coords, coord => coord[0] !== x) &&
-            coords[0][1] !== coords[1][1]
-        );
+        return _.all(coords, coord => coord[0] !== x) &&
+        coords[0][1] !== coords[1][1];
     },
 
-    extraAsymptoteConstraint: function(
-        newCoord,
-        oldCoord,
-        coords,
-        asymptote,
-        graph
-    ) {
+    extraAsymptoteConstraint: function(newCoord, oldCoord, coords, asymptote, graph) {
         var x = newCoord[0];
         var isValid =
             _.all(coords, coord => coord[0] > x) ||

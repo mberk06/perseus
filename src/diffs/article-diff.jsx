@@ -49,15 +49,14 @@ const ArticleDiff = React.createClass({
 
         const sectionCount = Math.max(before.length, after.length);
 
-        const sections = _.times(sectionCount, n =>
-            <RendererDiff
-                before={n < before.length ? before[n] : undefined}
-                after={n < after.length ? after[n] : undefined}
-                title={`Section ${n + 1}`}
-                showAlignmentOptions={true}
-                showSeparator={n < sectionCount - 1}
-                key={n}
-            />
+        const sections = _.times(sectionCount, n => <RendererDiff
+            before={n < before.length ? before[n] : undefined}
+            after={n < after.length ? after[n] : undefined}
+            title={`Section ${n + 1}`}
+            showAlignmentOptions={true}
+            showSeparator={n < sectionCount - 1}
+            key={n}
+        />
         );
 
         return <div className="framework-perseus">{sections}</div>;

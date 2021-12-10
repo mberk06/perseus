@@ -28,12 +28,12 @@ var answerFormType = React.PropTypes.shape({
 });
 
 // Pick a key that isn't currently used by an answer in answerForms
-var _makeNewKey = (answerForms) => {
+var _makeNewKey = answerForms => {
   // first note all the currently used keys in an array, used like a map :3
   // note that this automatically updates the array's length property to
   // be one past the largest key.
   var usedKeys = [];
-  answerForms.forEach((ans) => {
+  answerForms.forEach(ans => {
     usedKeys[ans.key] = true;
   });
 

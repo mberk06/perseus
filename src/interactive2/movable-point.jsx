@@ -252,7 +252,7 @@ _.extend(MovablePoint.prototype, {
         }
 
         const showTrashTooltip = () => {
-            this._showTooltip((container) => {
+            this._showTooltip(container => {
                 ReactDOM.render(
                     <span style={{fontSize: "2em"}}>
                                 <InlineIcon {...iconTrash} style={{
@@ -280,7 +280,7 @@ _.extend(MovablePoint.prototype, {
             modify: null,
             draw: self.draw.bind(self),
             remove: null,
-            onMoveStart: (startMouseCoord) => {
+            onMoveStart: startMouseCoord => {
                 state.hasMoved = false;
                 startCoord = state.coord;
 
@@ -394,14 +394,14 @@ _.extend(MovablePoint.prototype, {
                     content.style.filter = "none";
 
                     this._tooltip.firstChild.addEventListener("touchstart",
-                        (e) => {
+                        e => {
                             // Prevent creation of a new point when the event is
                             // propagated up the DOM.
                             e.stopPropagation();
                         }, true);
 
                     this._tooltip.firstChild.addEventListener("touchend",
-                        (e) => {
+                        e => {
                             // Remove the point and prevent creation of a
                             // new point.
                             state.onRemove();

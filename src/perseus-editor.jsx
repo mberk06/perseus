@@ -70,29 +70,26 @@ const headerRegExp = /^ *(#{1,6})([^\n]+)$/g;
     where a `strategy` is given to denote what ranges of text to style,
     and a `component` is given to denote how that range should be rendered
 */
-const entityStrategy = (contentBlock, callback, type) =>
-    contentBlock.findEntityRanges(
-        char => char.getEntity() && Entity.get(char.getEntity()).type === type,
-        callback
-    );
+const entityStrategy = (contentBlock, callback, type) => contentBlock.findEntityRanges(
+    char => char.getEntity() && Entity.get(char.getEntity()).type === type,
+    callback
+);
 
-const styledBlock = (props, style) =>
-    <span {...props} style={style}>
-        {props.children}
-    </span>;
+const styledBlock = (props, style) => <span {...props} style={style}>
+    {props.children}
+</span>;
 styledBlock.propTypes = {children: React.PropTypes.any};
 
-const highlightedBlock = (props, backgroundColor) =>
-    styledBlock(props, {backgroundColor});
+const highlightedBlock = (props, backgroundColor) => styledBlock(props, {backgroundColor});
 
 const entityColorDecorator = (type, color) => ({
     strategy: (...args) => entityStrategy(...args, type),
-    component: props => highlightedBlock(props, color),
+    component: props => highlightedBlock(props, color)
 });
 
 const regexColorDecorator = (regex, color) => ({
     strategy: (...args) => DraftUtils.regexStrategy(...args, regex),
-    component: props => highlightedBlock(props, color),
+    component: props => highlightedBlock(props, color)
 });
 
 const boldDecorator = {
@@ -123,11 +120,10 @@ const underlineDecorator = {
 
 const boldItalicsDecorator = {
     strategy: (...args) => DraftUtils.regexStrategy(...args, boldItalicsRegExp),
-    component: props =>
-        styledBlock(props, {
-            fontWeight: "bold",
-            fontStyle: "italic",
-        }),
+    component: props => styledBlock(props, {
+        fontWeight: "bold",
+        fontStyle: "italic",
+    }),
 };
 
 // TODO: Make the headers also able to scale with the rest of the text
@@ -205,7 +201,7 @@ const PerseusEditor = React.createClass({
         content: "",
         initialWidgets: {},
         widgetEnabled: true,
-        placeholder: "Type here",
+        placeholder: "Type here"
     }),
 
     getInitialState() {
@@ -581,8 +577,7 @@ const PerseusEditor = React.createClass({
 
             const charData = CharacterMetadata.create().merge({entity});
             const characterList = Array(text.length).fill(charData);
-            const sanitizer = textLine =>
-                textLine === text ? {text, characterList} : null;
+            const sanitizer = textLine => textLine === text ? {text, characterList} : null;
 
             const blockKey = selection.getEndKey();
             const contentBlock = contentState.getBlockForKey(blockKey);
@@ -785,7 +780,7 @@ const PerseusEditor = React.createClass({
                 }}
             >
                 <Editor
-                    ref={e => (this.editor = e)}
+                    ref={e => this.editor = e}
                     editorState={this.state.editorState}
                     onChange={editorState => this._handleChange({editorState})}
                     spellCheck={true}

@@ -14,10 +14,7 @@ const {findContentNodesInItem, inferItemShape} = require("./multi-items.js");
 const Traversal = require("./traversal.jsx");
 const Widgets = require("./widgets.js");
 
-const isUpgradedWidgetInfoRenderableBy = function(
-    widgetInfo,
-    widgetRendererVersion
-) {
+const isUpgradedWidgetInfoRenderableBy = function(widgetInfo, widgetRendererVersion) {
     if (widgetRendererVersion == null) {
         // If the widget does not exist in this version, this will
         // be null, and that version of perseus cannot render the
@@ -39,10 +36,7 @@ const isUpgradedWidgetInfoRenderableBy = function(
     }
 };
 
-const isRawWidgetInfoRenderableBy = function(
-    widgetInfo,
-    rendererContentVersion
-) {
+const isRawWidgetInfoRenderableBy = function(widgetInfo, rendererContentVersion) {
     // Empty/non-existant widgets are always safe to render
     if (widgetInfo == null || widgetInfo.type == null) {
         return true;
@@ -59,10 +53,7 @@ const isRawWidgetInfoRenderableBy = function(
     );
 };
 
-const isRendererContentRenderableBy = function(
-    rendererOptions,
-    rendererContentVersion
-) {
+const isRendererContentRenderableBy = function(rendererOptions, rendererContentVersion) {
     let isRenderable = true;
     Traversal.traverseRendererDeep(rendererOptions, null, function(widgetInfo) {
         isRenderable =

@@ -1,7 +1,5 @@
 // @flow
 const assert = require("assert");
-declare function describe(s: string, f: () => any): any;
-declare function it(s: string, f: () => any): any;
 
 const {treeToItem} = require("../items.js");
 const {buildPropTypeForShape} = require("../prop-type-builders.js");
@@ -12,18 +10,16 @@ describe("buildPropTypeForShape", () => {
     // point of testing this PropType - so we disable Flow checking by casting
     // `value` to type `any`. The current implementation of `treeToItem` can
     // handle that possibility.
-    const tryPropType = (propType, value: any) => propType(
+    const tryPropType = (propType, value) => propType(
         {value: treeToItem(value)}, "value", "<function tryPropType>");
 
-    const assertPropTypePasses = (propType, value) =>
-          assert.equal(null, tryPropType(propType, value),
-            `expected ${JSON.stringify(value)} to pass propType, ` +
-            `but it failed`);
+    const assertPropTypePasses = (propType, value) => assert.equal(null, tryPropType(propType, value),
+      `expected ${JSON.stringify(value)} to pass propType, ` +
+      `but it failed`);
 
-    const assertPropTypeFails = (propType, value) =>
-        assert.ok(tryPropType(propType, value) instanceof Error,
-            `expected ${JSON.stringify(value)} to fail propType, ` +
-            `but it passed`);
+    const assertPropTypeFails = (propType, value) => assert.ok(tryPropType(propType, value) instanceof Error,
+        `expected ${JSON.stringify(value)} to fail propType, ` +
+        `but it passed`);
 
     it("validates a content node", () => {
         const propType = buildPropTypeForShape(shapes.content);

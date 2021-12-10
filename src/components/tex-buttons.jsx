@@ -175,28 +175,26 @@ const TexButtons = React.createClass({
         // Always show buttonSets in the same order. Note: Technically it's ok
         // for _.keys() to return the keys in an arbitrary order, but in
         // practice, they will be ordered as listed above.
-        const sortedButtonSets = _.sortBy(this.props.sets, setName =>
-            _.keys(buttonSets).indexOf(setName)
+        const sortedButtonSets = _.sortBy(this.props.sets, setName => _.keys(buttonSets).indexOf(setName)
         );
 
         const buttons = _(sortedButtonSets).map(setName => buttonSets[setName]);
 
-        const buttonRows = _(buttons).map(row =>
-            row.map(symbGen => {
-                // create a (component, thing we should send to mathquill) pair
-                const symbol = symbGen(this.props);
-                return (
-                    <button
-                        onClick={() => this.props.onInsert(symbol[1])}
-                        className="tex-button"
-                        key={symbol[0].key}
-                        tabIndex={-1}
-                        type="button"
-                    >
-                        {symbol[0]}
-                    </button>
-                );
-            })
+        const buttonRows = _(buttons).map(row => row.map(symbGen => {
+            // create a (component, thing we should send to mathquill) pair
+            const symbol = symbGen(this.props);
+            return (
+                <button
+                    onClick={() => this.props.onInsert(symbol[1])}
+                    className="tex-button"
+                    key={symbol[0].key}
+                    tabIndex={-1}
+                    type="button"
+                >
+                    {symbol[0]}
+                </button>
+            );
+        })
         );
 
         const buttonPopup = _(buttonRows).map((row, i) => {

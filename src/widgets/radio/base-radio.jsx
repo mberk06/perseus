@@ -540,7 +540,7 @@ const BaseRadio = React.createClass({
                         return (
                             <li
                                 key={i}
-                                ref={e => (listElem = e)}
+                                ref={e => listElem = e}
                                 className={className}
                                 onClick={clickHandler}
                                 onTouchStart={

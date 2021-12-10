@@ -4,19 +4,8 @@ import 'katex/dist/katex.css';
 import './lib/perseus.css';
 import ServerItemRenderer from "./ServerItemRenderer";
 
-type Props = {
-  question: {
-    data: QuestionDataType,
-    attribution?: ?string,
-  },
-  setRef?: (node: any) => void,
-  readOnly?: boolean,
-};
-
 
 export default class QuestionRenderer extends Component {
-  props: Props;
-
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.question !== this.props.question ||
         nextProps.readOnly !== this.props.readOnly;
@@ -40,7 +29,7 @@ export default class QuestionRenderer extends Component {
       }}
       problemNum={0}
       hintsVisible={0}
-      ref={n => (setRef ? setRef(n) : null)}
+      ref={n => setRef ? setRef(n) : null}
     />;
     return (
       <div

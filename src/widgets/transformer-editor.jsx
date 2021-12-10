@@ -424,11 +424,7 @@ var ShapeTypes = {
         var typeOptions =
             options.shape.options || ShapeTypes.defaultOptions(types);
 
-        var shapes = ShapeTypes._mapTypes(types, points, function(
-            type,
-            points,
-            i
-        ) {
+        var shapes = ShapeTypes._mapTypes(types, points, function(type, points, i) {
             var shapeOptions = _.extend({}, options, typeOptions[i]);
             return ShapeTypes._addType(graphie, type, points, shapeOptions);
         });

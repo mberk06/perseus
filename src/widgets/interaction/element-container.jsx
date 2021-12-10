@@ -14,22 +14,13 @@ const {
 } = require("../../icon-paths.js");
 const InlineIcon = require("../../components/inline-icon.jsx");
 
-type ElementContainerProps = {
-    children: React.Element<*> | React.Element<*>[],
-    initiallyVisible: boolean,
-    onDelete?: () => void,
-    onDown?: () => void,
-    onUp?: () => void,
-    title: string | React.Element<*>,
-};
-
 class ElementContainer extends React.Component {
     static defaultProps = {
         initiallyVisible: false,
         title: "More",
     };
 
-    constructor(props: ElementContainerProps) {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -37,13 +28,7 @@ class ElementContainer extends React.Component {
         };
     }
 
-    state: {
-        show: boolean,
-    };
-
-    props: ElementContainerProps;
-
-    toggle = (e: SyntheticEvent) => {
+    toggle = e => {
         e.preventDefault();
         this.setState({show: !this.state.show});
     };

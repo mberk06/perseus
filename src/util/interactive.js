@@ -702,11 +702,7 @@ _.extend(GraphUtils.Graphie.prototype, {
 
         // Using the passed coordinates, apply any constraints and return
         // the closest coordinates that match the constraints.
-        movablePoint.applyConstraint = function(
-            coord,
-            extraConstraints,
-            override
-        ) {
+        movablePoint.applyConstraint = function(coord, extraConstraints, override) {
             let newCoord = coord.slice();
             const constraints = {};
             if (override) {
@@ -859,9 +855,7 @@ _.extend(GraphUtils.Graphie.prototype, {
             // point, when dragging.
             offset = offset || [0, 0];
 
-            $(document).bind("vmousemove.point vmouseup.point", function(
-                event
-            ) {
+            $(document).bind("vmousemove.point vmouseup.point", function(event) {
                 event.preventDefault();
                 movablePoint.dragging = true;
                 dragging = true;
@@ -961,9 +955,7 @@ _.extend(GraphUtils.Graphie.prototype, {
 
             const $mouseTarget = $(movablePoint.mouseTarget.getMouseTarget());
             $mouseTarget.css("cursor", "move");
-            $mouseTarget.bind("vmousedown vmouseover vmouseout", function(
-                event
-            ) {
+            $mouseTarget.bind("vmousedown vmouseover vmouseout", function(event) {
                 if (event.type === "vmouseover") {
                     movablePoint.highlight = true;
                     if (!dragging) {
@@ -1545,9 +1537,7 @@ _.extend(GraphUtils.Graphie.prototype, {
         if (!lineSegment.fixed && !lineSegment.constraints.fixed) {
             const $mouseTarget = $(lineSegment.mouseTarget.getMouseTarget());
             $mouseTarget.css("cursor", "move");
-            $mouseTarget.bind("vmousedown vmouseover vmouseout", function(
-                event
-            ) {
+            $mouseTarget.bind("vmousedown vmouseover vmouseout", function(event) {
                 if (event.type === "vmouseover") {
                     if (!dragging) {
                         lineSegment.highlight = true;
@@ -2075,9 +2065,7 @@ _.extend(GraphUtils.Graphie.prototype, {
                             polygon.highlightStyle,
                             50
                         );
-                        _.each(_.filter(polygon.points, isPoint), function(
-                            point
-                        ) {
+                        _.each(_.filter(polygon.points, isPoint), function(point) {
                             point.visibleShape.animate(
                                 polygon.pointHighlightStyle,
                                 50
@@ -2142,9 +2130,7 @@ _.extend(GraphUtils.Graphie.prototype, {
 
                     $(
                         document
-                    ).bind("vmousemove.polygon vmouseup.polygon", function(
-                        event
-                    ) {
+                    ).bind("vmousemove.polygon vmouseup.polygon", function(event) {
                         event.preventDefault();
 
                         polygon.dragging = true;
@@ -2216,10 +2202,7 @@ _.extend(GraphUtils.Graphie.prototype, {
                             };
 
                             if (doMove) {
-                                _.each(polygon.points, function(
-                                    coordOrPoint,
-                                    i
-                                ) {
+                                _.each(polygon.points, function(coordOrPoint, i) {
                                     if (isPoint(coordOrPoint)) {
                                         coordOrPoint.setCoord(increment(i));
                                     } else {
@@ -2545,9 +2528,7 @@ _.extend(GraphUtils.Graphie.prototype, {
             {passive: false}
         );
 
-        $(circle.perim.node).on("vmouseover vmouseout vmousedown", function(
-            event
-        ) {
+        $(circle.perim.node).on("vmouseover vmouseout vmousedown", function(event) {
             if (event.type === "vmouseover") {
                 circle.highlight = true;
                 if (!dragging) {
@@ -2630,19 +2611,8 @@ _.extend(GraphUtils.Graphie.prototype, {
     },
 
     addRotateHandle: (function() {
-        const drawRotateHandle = function(
-            graphie,
-            center,
-            radius,
-            halfWidth,
-            lengthAngle,
-            angle,
-            interacting
-        ) {
-            const getRotateHandlePoint = function(
-                offset,
-                distanceFromArrowMidline
-            ) {
+        const drawRotateHandle = function(graphie, center, radius, halfWidth, lengthAngle, angle, interacting) {
+            const getRotateHandlePoint = function(offset, distanceFromArrowMidline) {
                 const distFromRotationCenter =
                     radius + distanceFromArrowMidline;
                 const vec = kvector.cartFromPolarDeg([

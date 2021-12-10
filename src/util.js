@@ -25,12 +25,10 @@ const Util = {
             return a == null === (b == null);
         }
 
-        return (
-            a.length === b.length &&
-            a.every((item, index) => {
-                return b[index] === item;
-            })
-        );
+        return a.length === b.length &&
+        a.every((item, index) => {
+            return b[index] === item;
+        });
     },
 
     nestedMap: nestedMap,
@@ -237,12 +235,7 @@ const Util = {
      *      unityLabel: true
      * };
      */
-    gridDimensionConfig: function(
-        absTickStep,
-        extent,
-        dimensionConstraint,
-        gridStep
-    ) {
+    gridDimensionConfig: function(absTickStep, extent, dimensionConstraint, gridStep) {
         var scale = Util.scaleFromExtent(extent, dimensionConstraint);
         var stepPx = absTickStep * scale;
         var unityLabel = stepPx > 30;
@@ -473,15 +466,13 @@ const Util = {
         } else if (_.isFunction(x) || _.isFunction(y)) {
             return false;
         } else if (_.isObject(x) && _.isObject(y)) {
-            return (
-                x === y ||
-                (_.all(x, function(v, k) {
-                    return Util.deepEq(y[k], v);
-                }) &&
-                    _.all(y, function(v, k) {
-                        return Util.deepEq(x[k], v);
-                    }))
-            );
+            return x === y ||
+            (_.all(x, function(v, k) {
+                return Util.deepEq(y[k], v);
+            }) &&
+                _.all(y, function(v, k) {
+                    return Util.deepEq(x[k], v);
+                }));
         } else if (_.isObject(x) || _.isObject(y)) {
             return false;
         } else {
@@ -539,13 +530,11 @@ const Util = {
      * CC-BY-SA 2.5 license.
      */
     strongEncodeURIComponent: function(str) {
-        return (
-            encodeURIComponent(str)
-                // Note that although RFC3986 reserves "!", RFC5987 does not,
-                // so we do not need to escape it
-                .replace(/['()!]/g, window.escape) // i.e., %27 %28 %29
-                .replace(/\*/g, "%2A")
-        );
+        return encodeURIComponent(str)
+            // Note that although RFC3986 reserves "!", RFC5987 does not,
+            // so we do not need to escape it
+            .replace(/['()!]/g, window.escape) // i.e., %27 %28 %29
+            .replace(/\*/g, "%2A");
     },
 
     // There are certain widgets where we don't want to provide the "answered"

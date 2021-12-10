@@ -570,7 +570,7 @@ var staticTransform = editorProps => {
     // input into the rendered widget.
     widgetProps.answers = _.map(editorProps.answers, row => {
         // Replace null values with empty string
-        return _.map(row, cell => (cell != null ? String(cell) : ""));
+        return _.map(row, cell => cell != null ? String(cell) : "");
     });
     return widgetProps;
 };

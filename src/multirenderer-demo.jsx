@@ -50,7 +50,13 @@ const DemoLayout = React.createClass({
     },
 
     addHint() {
-        this.setState(({numHints}) => ({numHints: numHints + 1}));
+        this.setState((
+            {
+                numHints
+            }
+        ) => ({
+            numHints: numHints + 1
+        }));
     },
 
     clearHints() {
@@ -60,46 +66,48 @@ const DemoLayout = React.createClass({
     render() {
         return (
             <MultiRenderer
-                ref={e => (this.multirenderer = e)}
+                ref={e => this.multirenderer = e}
                 item={this.props.item}
                 shape={DemoLayout.shape}
             >
-                {({renderers}) =>
-                    <div>
-                        <div className={css(demoStyles.left)}>
-                            {renderers.sharedContext}
-                        </div>
-                        <div className={css(demoStyles.right)}>
-                            <h2>Questions</h2>
-                            <ul>
-                                {renderers.questions.map((r, i) =>
-                                    <li key={i}>
-                                        {r.question}
-                                    </li>
+                {(
+                    {
+                        renderers
+                    }
+                ) => <div>
+                    <div className={css(demoStyles.left)}>
+                        {renderers.sharedContext}
+                    </div>
+                    <div className={css(demoStyles.right)}>
+                        <h2>Questions</h2>
+                        <ul>
+                            {renderers.questions.map((r, i) => <li key={i}>
+                                {r.question}
+                            </li>
+                            )}
+                        </ul>
+                        {renderers.hints.length > 0 &&
+                            <div>
+                                <h2>Hints</h2>
+                                {renderers.hints.firstN(
+                                    this.state.numHints
                                 )}
-                            </ul>
-                            {renderers.hints.length > 0 &&
-                                <div>
-                                    <h2>Hints</h2>
-                                    {renderers.hints.firstN(
-                                        this.state.numHints
-                                    )}
-                                    {this.state.numHints <
-                                        renderers.hints.length &&
-                                        <div>
-                                            <button onClick={this.addHint}>
-                                                Get a hint
-                                            </button>
-                                        </div>}
-                                    {this.state.numHints > 0 &&
-                                        <div>
-                                            <button onClick={this.clearHints}>
-                                                Clear hints
-                                            </button>
-                                        </div>}
-                                </div>}
-                        </div>
-                    </div>}
+                                {this.state.numHints <
+                                    renderers.hints.length &&
+                                    <div>
+                                        <button onClick={this.addHint}>
+                                            Get a hint
+                                        </button>
+                                    </div>}
+                                {this.state.numHints > 0 &&
+                                    <div>
+                                        <button onClick={this.clearHints}>
+                                            Clear hints
+                                        </button>
+                                    </div>}
+                            </div>}
+                    </div>
+                </div>}
             </MultiRenderer>
         );
     },
@@ -212,7 +220,7 @@ const MultiRendererDemo = React.createClass({
                     <MultiRendererEditor
                         {...this.getEditorProps()}
                         onChange={this.handleChange}
-                        ref={e => (this.editor = e)}
+                        ref={e => this.editor = e}
                     />
                 </div>
             </div>

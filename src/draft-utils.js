@@ -207,9 +207,8 @@ function findEntity(contentState, filter) {
     let selection = null;
     blocks.some(block => {
         block.findEntityRanges(
-            char =>
-                char.getEntity() !== null &&
-                filter(Entity.get(char.getEntity())),
+            char => char.getEntity() !== null &&
+            filter(Entity.get(char.getEntity())),
             (start, end) => {
                 const base = _createEmptySelection(block);
                 selection = base.merge({

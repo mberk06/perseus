@@ -14,16 +14,13 @@ import Rule from "./gorgon/rule.js";
 
 import { debounce } from "underscore";
 
-// A LintCB is called once the linter has been run.
-type LintCB = (errors: Array<string>) => void;
-
 // msec to wait before we actually call the linter after receiving the
 // last call. The timer is reset if the lint is called during the wait.
 const DEBOUNCE_TIMEOUT = 1000;
 
 export default class NotGorgon {
   // To avoid linting when nothing has changed.
-  previousContent: ?string = null;
+  previousContent = null;
 
   /**
    * Runs the poentry linter on the given perseus string asynchronously.
@@ -36,7 +33,7 @@ export default class NotGorgon {
    * Linting is relatively expensive -- so we debounce linting each instance
    * for some amount of time.
    */
-  runLinter = debounce((perseusStr: string, onLintErrorsGenerated: LintCB) => {
+  runLinter = debounce((perseusStr, onLintErrorsGenerated) => {
     // $FlowFixMe -- TODO(joshuan): use an api flag instead?
     if (typeof KA === "undefined") {
       return;
@@ -102,7 +99,7 @@ export default class NotGorgon {
    * information (NotGorgon and the legacy getSaveWarnings()) to the top
    * of a Perseus tree.
    */
-  applyLintErrors(parsedMarkdown: any, notGorgonLintErrors: string[]) {
+  applyLintErrors(parsedMarkdown, notGorgonLintErrors) {
     // These lint errors do not have position data associated with
     // them, so we just plop them at the top.
     if (notGorgonLintErrors.length) {

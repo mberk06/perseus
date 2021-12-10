@@ -111,14 +111,15 @@ const PreviewFrame = React.createClass({
 
     render: function() {
         if (this.state.data) {
-            const makeUpdatedData = (data) => ({
+            const makeUpdatedData = data => ({
                 ...data,
                 workAreaSelector: "#workarea",
                 hintsAreaSelector: "#hintsarea",
+
                 apiOptions: {
                     ...data.apiOptions,
                     isMobile: this.props.isMobile,
-                },
+                }
             });
 
             const isExercise =

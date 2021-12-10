@@ -46,23 +46,21 @@ const GradedGroupSetEditor = React.createClass({
         if (!this.props.gradedGroups) {
             return null;
         }
-        return this.props.gradedGroups.map((group, i) =>
-            <GradedGroupEditor
-                key={i}
-                ref={el => (this._editors[i] = el)}
-                {...group}
-                apiOptions={this.props.apiOptions}
-                widgetEnabled={true}
-                immutableWidgets={false}
-                onChange={data =>
-                    this.change(
-                        "gradedGroups",
-                        setArrayItem(this.props.gradedGroups, i, {
-                            ...this.props.gradedGroups[i],
-                            ...data,
-                        })
-                    )}
-            />
+        return this.props.gradedGroups.map((group, i) => <GradedGroupEditor
+            key={i}
+            ref={el => this._editors[i] = el}
+            {...group}
+            apiOptions={this.props.apiOptions}
+            widgetEnabled={true}
+            immutableWidgets={false}
+            onChange={data => this.change(
+                "gradedGroups",
+                setArrayItem(this.props.gradedGroups, i, {
+                    ...this.props.gradedGroups[i],
+                    ...data,
+                })
+            )}
+        />
         );
     },
 

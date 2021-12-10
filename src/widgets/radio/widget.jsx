@@ -151,7 +151,9 @@ const Radio = React.createClass({
         // mutate them.
         let newChoiceStates;
         if (choiceStates) {
-            newChoiceStates = choiceStates.map(state => ({...state}));
+            newChoiceStates = choiceStates.map(state => ({
+                ...state
+            }));
         } else {
             newChoiceStates = choices.map(() => ({
                 selected: false,
@@ -159,7 +161,7 @@ const Radio = React.createClass({
                 highlighted: false,
                 rationaleShown: false,
                 correctnessShown: false,
-                readOnly: false,
+                readOnly: false
             }));
         }
 
@@ -271,6 +273,7 @@ const Radio = React.createClass({
             const newStates = this.props.choiceStates.map(state => ({
                 ...state,
                 highlighted: state.selected,
+
                 // If the choice is selected, show the rationale now
                 rationaleShown:
                     state.selected ||
@@ -279,11 +282,13 @@ const Radio = React.createClass({
                     // If the widget is correctly answered, show the rationale
                     // for all the choices
                     widgetCorrect,
+
                 // We use the same behavior for the readOnly flag as for
                 // rationaleShown, but we keep it separate in case other
                 // behaviors want to disable choices without showing rationales.
                 readOnly: state.selected || state.readOnly || widgetCorrect,
-                correctnessShown: state.selected || state.correctnessShown,
+
+                correctnessShown: state.selected || state.correctnessShown
             }));
 
             this.props.onChange(
@@ -304,7 +309,7 @@ const Radio = React.createClass({
             const newStates = this.props.choiceStates.map((state, i) => ({
                 ...state,
                 selected: state.selected && !!this.props.choices[i].correct,
-                highlighted: false,
+                highlighted: false
             }));
 
             this.props.onChange(
@@ -327,7 +332,7 @@ const Radio = React.createClass({
                 readOnly: true,
                 highlighted: false,
                 rationaleShown: true,
-                correctnessShown: true,
+                correctnessShown: true
             }));
         } else if (this.props.choiceStates) {
             choiceStates = this.props.choiceStates;
@@ -339,7 +344,7 @@ const Radio = React.createClass({
                 readOnly: false,
                 highlighted: false,
                 rationaleShown: false,
-                correctnessShown: false,
+                correctnessShown: false
             }));
         } else {
             choiceStates = _.map(choices, () => ({
@@ -348,7 +353,7 @@ const Radio = React.createClass({
                 readOnly: false,
                 highlighted: false,
                 rationaleShown: false,
-                correctnessShown: false,
+                correctnessShown: false
             }));
         }
 

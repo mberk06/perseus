@@ -100,8 +100,7 @@ function atomLayout(atom, atoms, bonds, rotationAngle) {
             bond => bond.bondType === "triple" && bond.to === atom.idx
         ) ||
         bonds.find(
-            bond =>
-                bond.bondType === "triple" && bond.to === prevPositionedAtom.idx
+            bond => bond.bondType === "triple" && bond.to === prevPositionedAtom.idx
         )
     ) {
         // Triple bonds have a bond angle of 180 degrees, so don't change the
@@ -275,13 +274,7 @@ function convertTree(atoms, bonds, tree) {
  * Return:
  *     an array of rendering instructions for all the atoms in the molecule
  */
-function atomLayoutHelper(
-    outputs,
-    atomProcessingQueue,
-    atoms,
-    bonds,
-    rotationAngle
-) {
+function atomLayoutHelper(outputs, atomProcessingQueue, atoms, bonds, rotationAngle) {
     if (atomProcessingQueue.length === 0) {
         return outputs;
     }

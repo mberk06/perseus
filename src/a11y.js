@@ -32,8 +32,7 @@ module.exports = {
 
         if (itemData._multi) {
             const shape = inferItemShape(itemData);
-            findContentNodesInItem(itemData, shape, content =>
-                traverseRenderer(content, widgets)
+            findContentNodesInItem(itemData, shape, content => traverseRenderer(content, widgets)
             );
         } else {
             traverseRenderer(itemData.question, widgets);

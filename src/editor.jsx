@@ -237,10 +237,9 @@ var WidgetEditor = React.createClass({
                             value={widgetInfo.alignment}
                             onChange={this._handleAlignmentChange}
                         >
-                            {supportedAlignments.map(alignment =>
-                                <option key={alignment}>
-                                    {alignment}
-                                </option>
+                            {supportedAlignments.map(alignment => <option key={alignment}>
+                                {alignment}
+                            </option>
                             )}
                         </select>}
                     <a
@@ -687,8 +686,7 @@ var Editor = React.createClass({
         var widgetTypes = _.uniq(widgets.map(widget => widget[0]));
 
         // List of existing widgets as [[name, number], ...]
-        var existingWidgets = _.keys(this.props.widgets).map(name =>
-            name.split(" ")
+        var existingWidgets = _.keys(this.props.widgets).map(name => name.split(" ")
         );
 
         // Mapping of widget type to a safe (non-conflicting) number

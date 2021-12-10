@@ -12,58 +12,20 @@ const React = require("react");
 const HighlightRenderer = require("./highlight-renderer.jsx");
 const HighlightTooltip = require("./highlight-tooltip.jsx");
 
-import type {DOMHighlightSet, Position, ZIndexes} from "./types.js";
-
-/* global i18n */
-
-type HighlightSetRendererProps = {
-    // Whether the highlights are user-editable. If false, highlights are
-    // read-only.
-    editable: boolean,
-
-    // A set of highlights to render.
-    highlights: DOMHighlightSet,
-
-    // This component's `offsetParent` element, which is the nearest ancestor
-    // with `position: relative`. This will enable us to choose the correct
-    // CSS coordinates to align highlights and tooltips with the target
-    // content.
-    offsetParent: Element,
-
-    // A callback indicating that the user would like to remove the highlight
-    // with the given key.
-    onRemoveHighlight: (highlightKey: string) => mixed,
-
-    // The z-indexes to use when rendering tooltips above content, and
-    // highlights below content.
-    zIndexes: ZIndexes,
-};
-type HighlightSetRendererState = {
-    // The mouse's position relative to the viewport, as of the most recent
-    // global `mousemove` event. Passed to each `SingleHighlightRenderer` that
-    // this component renders.
-    mouseClientPosition: ?Position,
-
-    // If the user is currently hovering over the "Remove highlight" tooltip,
-    // this field contains the key of the corresponding highlight.
-    hoveringTooltipFor: ?string,
-};
-
 class HighlightSetRenderer extends React.PureComponent {
-    props: HighlightSetRendererProps
-    state: HighlightSetRendererState = {
+    state = {
         mouseClientPosition: null,
         hoveringTooltipFor: null,
-    }
+    };
 
     // eslint-disable-next-line react/sort-comp
-    _highlightRenderers: {[highlightKey: string]: HighlightRenderer} = {}
+    _highlightRenderers = {};
 
     componentDidMount() {
         this._updateEditListeners(false, this.props.editable);
     }
 
-    componentWillReceiveProps(nextProps: HighlightSetRendererProps) {
+    componentWillReceiveProps(nextProps) {
         this._updateEditListeners(this.props.editable, nextProps.editable);
 
         // If we were previously hovering over the tooltip for a highlight that
@@ -85,7 +47,7 @@ class HighlightSetRenderer extends React.PureComponent {
      * whether we will now listen to mousemove events, add or remove the
      * listener accordingly.
      */
-    _updateEditListeners(wasListening: boolean, willListen: boolean) {
+    _updateEditListeners(wasListening, willListen) {
         if (!wasListening && willListen) {
             window.addEventListener("mousemove", this._handleMouseMove);
         } else if (wasListening && !willListen) {
@@ -102,7 +64,7 @@ class HighlightSetRenderer extends React.PureComponent {
         }
     }
 
-    _handleMouseMove = (e: MouseEvent) => {
+    _handleMouseMove = e => {
         this.setState({
             mouseClientPosition: {
                 left: e.clientX,
@@ -111,7 +73,7 @@ class HighlightSetRenderer extends React.PureComponent {
         });
     }
 
-    _getHoveredHighlightKey(): ?string {
+    _getHoveredHighlightKey() {
         // If we're hovering over the tooltip, the hovered highlight is the
         // highlight that the tooltip is pointing to.
         const {hoveringTooltipFor} = this.state;
@@ -137,27 +99,29 @@ class HighlightSetRenderer extends React.PureComponent {
 
         const hoveredHighlight = this.props.highlights[hoveredHighlightKey];
 
-        return <HighlightTooltip
-            label={i18n._("Remove highlight")}
+        return (
+            <HighlightTooltip
+                label={i18n._("Remove highlight")}
 
-            focusNode={hoveredHighlight.domRange.endContainer}
-            focusOffset={hoveredHighlight.domRange.endOffset}
-            offsetParent={this.props.offsetParent}
-            zIndex={this.props.zIndexes.aboveContent}
+                focusNode={hoveredHighlight.domRange.endContainer}
+                focusOffset={hoveredHighlight.domRange.endOffset}
+                offsetParent={this.props.offsetParent}
+                zIndex={this.props.zIndexes.aboveContent}
 
-            onClick={
-                () => this.props.onRemoveHighlight(hoveredHighlightKey)}
-            onMouseEnter={
-                () => this.setState({hoveringTooltipFor: hoveredHighlightKey})}
-            onMouseLeave={
-                () => this.setState({hoveringTooltipFor: null})}
-        />;
+                onClick={
+                    () => this.props.onRemoveHighlight(hoveredHighlightKey)}
+                onMouseEnter={
+                    () => this.setState({hoveringTooltipFor: hoveredHighlightKey})}
+                onMouseLeave={
+                    () => this.setState({hoveringTooltipFor: null})}
+            />
+        );
     }
 
     render() {
-        return <div>
-            {Object.keys(this.props.highlights).map(key =>
-                <HighlightRenderer
+        return (
+            <div>
+                {Object.keys(this.props.highlights).map(key => <HighlightRenderer
                     ref={r => {
                         if (r) {
                             this._highlightRenderers[key] = r;
@@ -174,9 +138,10 @@ class HighlightSetRenderer extends React.PureComponent {
                     onRemoveHighlight={this.props.onRemoveHighlight}
                     zIndexes={this.props.zIndexes}
                 />
-            )}
-            {this.props.editable && this._renderTooltip()}
-        </div>;
+                )}
+                {this.props.editable && this._renderTooltip()}
+            </div>
+        );
     }
 }
 

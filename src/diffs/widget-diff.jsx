@@ -55,22 +55,24 @@ const CollapsedRow = React.createClass({
 
     render: function() {
         const self = this;
-        return <div onClick={self.props.onClick} style={{clear: "both"}}>
-            {_.map([BEFORE, AFTER], function(side) {
-                return <div
-                    className={"diff-row collapsed " + side}
-                    key={side}
-                >
-                    <div
-                        style={{paddingLeft:
-                            indentationFromDepth(self.props.depth),
-                        }}
+        return (
+            <div onClick={self.props.onClick} style={{clear: "both"}}>
+                {_.map([BEFORE, AFTER], function(side) {
+                    return <div
+                        className={"diff-row collapsed " + side}
+                        key={side}
                     >
-                        <span> [ show unmodified ] </span>
-                    </div>
-                </div>;
-            })}
-        </div>;
+                        <div
+                            style={{paddingLeft:
+                                indentationFromDepth(self.props.depth),
+                            }}
+                        >
+                            <span> [ show unmodified ] </span>
+                        </div>
+                    </div>;
+                })}
+            </div>
+        );
     },
 });
 
@@ -141,39 +143,41 @@ const DiffEntry = React.createClass({
         }
 
         const self = this;
-        return <div>
-            {entry.key && <div style={{clear: "both"}}>
-            <DiffSide
-                side={BEFORE}
-                className={leftClass}
-                depth={this.props.depth}
-                propKey={entry.key}
-                showKey={!propertyAdded}
-                value={entry.before}
-            />
-            <DiffSide
-                side={AFTER}
-                className={rightClass}
-                depth={this.props.depth}
-                propKey={entry.key}
-                showKey={!propertyDeleted}
-                value={entry.after}
-            />
-            </div>}
-            {_.map(shownChildren, function(child) {
-                return <DiffEntry
-                    key={child.key}
-                    depth={self.props.depth + 1}
-                    entry={child}
-                    expanded={self.state.expanded}
-                />;
-            })}
-            {collapsed &&
-                <CollapsedRow
-                    depth={this.props.depth + 1}
-                    onClick={this.expand}
-                />}
-        </div>;
+        return (
+            <div>
+                {entry.key && <div style={{clear: "both"}}>
+                <DiffSide
+                    side={BEFORE}
+                    className={leftClass}
+                    depth={this.props.depth}
+                    propKey={entry.key}
+                    showKey={!propertyAdded}
+                    value={entry.before}
+                />
+                <DiffSide
+                    side={AFTER}
+                    className={rightClass}
+                    depth={this.props.depth}
+                    propKey={entry.key}
+                    showKey={!propertyDeleted}
+                    value={entry.after}
+                />
+                </div>}
+                {_.map(shownChildren, function(child) {
+                    return <DiffEntry
+                        key={child.key}
+                        depth={self.props.depth + 1}
+                        entry={child}
+                        expanded={self.state.expanded}
+                    />;
+                })}
+                {collapsed &&
+                    <CollapsedRow
+                        depth={this.props.depth + 1}
+                        onClick={this.expand}
+                    />}
+            </div>
+        );
     },
 });
 

@@ -14,22 +14,7 @@
  */
 const React = require("react");
 
-import type {DOMRange} from "./types.js";
-
-type WordIndexerProps = {
-    // The content to display and traverse in search of words.
-    children?: React.Element<any>,
-
-    // After each mount and update, this callback is called with the list of
-    // word ranges in `children`'s DOM, sorted in document order.
-    onWordsUpdate: (wordRanges: DOMRange[]) => mixed,
-};
-
 class WordIndexer extends React.PureComponent {
-    /* eslint-disable react/sort-comp */
-    props: WordIndexerProps
-
-    _container: ?HTMLElement
     /* eslint-enable react/sort-comp */
 
     componentDidMount() {
@@ -44,7 +29,7 @@ class WordIndexer extends React.PureComponent {
         this.props.onWordsUpdate(this._getWordRanges());
     }
 
-    _getWordRanges(): DOMRange[] {
+    _getWordRanges() {
         const container = this._container;
 
         if (!container) {
@@ -71,7 +56,7 @@ class WordIndexer extends React.PureComponent {
             const node = treeWalker.currentNode;
 
             if (node.nodeType === Node.ELEMENT_NODE) {
-                const element: Element = (node: any);
+                const element = (node);
                 if (getComputedStyle(element).display !== "inline") {
                     // Block-level elements interrupt text words, so set the
                     // current trailing word to `null`.
@@ -137,9 +122,11 @@ class WordIndexer extends React.PureComponent {
     }
 
     render() {
-        return <div ref={container => this._container = container}>
-            {this.props.children}
-        </div>;
+        return (
+            <div ref={container => this._container = container}>
+                {this.props.children}
+            </div>
+        );
     }
 }
 

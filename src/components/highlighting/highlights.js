@@ -5,19 +5,13 @@
 const {findFirstAndLastWordIndexes, unionRanges, spanRanges, rangeIncludes} =
     require("./ranges.js");
 
-import type {DOMHighlight, DOMHighlightSet, SerializedHighlight, DOMRange}
-    from "./types.js";
-
 /**
  * Given a list of DOMHighlights, return a new list that also includes the
  * given DOMRange as a new DOMHighlight. If the DOMHighlight intersects
  * existing DOMHighlights, the other Highlights are removed and their ranges
  * are merged into the new DOMHighlight.
  */
-function addHighlight(
-    existingHighlights: DOMHighlightSet,
-    newHighlight: DOMHighlight,
-): DOMHighlightSet {
+function addHighlight(existingHighlights, newHighlight) {
     const newHighlights = {};
 
     // Merge the new highlight with any existing highlights that intersect it.
@@ -64,11 +58,7 @@ function addHighlight(
  *
  * If the DOMRange is not a valid highlight given the word ranges, return null.
  */
-function buildHighlight(
-    existingHighlights: DOMHighlightSet,
-    wordRanges: DOMRange[],
-    newHighlightRange: DOMRange,
-): ?DOMHighlight {
+function buildHighlight(existingHighlights, wordRanges, newHighlightRange) {
     // If any existing highlight fully contains the new highlight range, it's
     // redundant and therefore not valid to build this as a highlight.
     // Return null.
@@ -114,7 +104,7 @@ function buildHighlight(
 /**
  * Given a list of keys, return a new unique key that is not in the list.
  */
-function createNewUniqueKey(existingKeys: string[]): string {
+function createNewUniqueKey(existingKeys) {
     // The base of the key is the current time, in milliseconds since epoch.
     const base = `${new Date().getTime()}`;
     if (!existingKeys.includes(base)) {
@@ -141,10 +131,7 @@ function createNewUniqueKey(existingKeys: string[]): string {
  * If the SerializedHighlight is not valid given the list of word ranges, throw
  * an error.
  */
-function deserializeHighlight(
-    serializedHighlight: SerializedHighlight,
-    wordRanges: DOMRange[],
-): DOMHighlight {
+function deserializeHighlight(serializedHighlight, wordRanges) {
     const {firstWordIndex, lastWordIndex} = serializedHighlight.range;
 
     const firstWord = wordRanges[firstWordIndex];
@@ -171,7 +158,7 @@ function deserializeHighlight(
 /**
  * Return a SerializedHighlight representing the given DOMHighlight.
  */
-function serializeHighlight(highlight: DOMHighlight): SerializedHighlight {
+function serializeHighlight(highlight) {
     const {firstWordIndex, lastWordIndex} = highlight;
 
     return {

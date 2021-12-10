@@ -199,7 +199,9 @@ var rules = _.extend({}, SimpleMarkdown.defaultRules, {
                 return null;
             }
         },
-        parse: (capture, parse, state) => ({id: capture[1]}),
+        parse: (capture, parse, state) => ({
+            id: capture[1]
+        }),
         react: (node, output, state) => node.id,
     },
     // This is pretty much horrible, but we have a regex here to capture an

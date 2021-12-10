@@ -314,7 +314,7 @@ describe("a11y", () => {
             it("should handle all these same cases in multi-items", () => {
                 const decorateItem = item => ({
                     __type: "content",
-                    ...item.question,
+                    ...item.question
                 });
                 const result = a11y.violatingWidgets({
                     _multi: {

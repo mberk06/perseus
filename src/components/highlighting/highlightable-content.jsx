@@ -21,55 +21,12 @@ const WordIndexer = require("./word-indexer.jsx");
 const {addHighlight, buildHighlight, deserializeHighlight, serializeHighlight}
     = require("./highlights.js");
 
-import type {DOMHighlight, DOMHighlightSet, SerializedHighlightSet, DOMRange}
-    from "./types.js";
-
-type HighlightableContentProps = {
-    // The highlightable content itself. Highlights will be defined relative to
-    // the content specified here.
-    children?: React.Element<any>,
-
-    // Whether the highlights are user-editable. If false, highlights are
-    // read-only.
-    editable: boolean,
-
-    // Whether highlighting is currently enabled. If false, highlights are not
-    // visible and are read-only (regardless of the `editable` prop), and this
-    // component is effectively a no-op.
-    //
-    // NOTE(mdr): The purpose of the `enabled` prop, as opposed to, say, just
-    //     *not* wrapping the content, is to enable quick toggles between
-    //     enabled/disabled while maintaining the same component structure.
-    //     Forcing React to rebuild the entire component tree is not kind!
-    enabled: boolean,
-
-    // When the user attempts to add/remove/update a highlight, this callback
-    // will be called with a newly-updated full set of highlights that reflects
-    // the user's intent.
-    onSerializedHighlightsUpdate: (
-        serializedHighlights: SerializedHighlightSet) => mixed,
-
-    // The set of highlights to apply to the given content.
-    serializedHighlights: SerializedHighlightSet,
-};
-
-type HighlightableContentState = {
-    // A cached list of DOMRanges, each representing one of the content's
-    // semantic words. Sorted in document order.
-    wordRanges: DOMRange[],
-};
-
 class HighlightableContent extends React.PureComponent {
-    // References to the mounted container and content divs.
-    _container: ?HTMLElement
-    _content: ?HTMLElement
-
-    props: HighlightableContentProps
-    state: HighlightableContentState = {
+    state = {
         wordRanges: [],
-    }
+    };
 
-    _buildHighlight(highlightRange: DOMRange): ?DOMHighlight {
+    _buildHighlight(highlightRange) {
         // TODO(mdr): If _buildHighlight starts getting called more often, we
         //     might want to cache the DOMHighlightSet instead of recomputing
         //     it here.
@@ -81,7 +38,7 @@ class HighlightableContent extends React.PureComponent {
      * Take the highlights from props, and deserialize them into DOMHighlights,
      * according to the latest cache of word ranges.
      */
-    _getDOMHighlights(): DOMHighlightSet {
+    _getDOMHighlights() {
         const {serializedHighlights} = this.props;
         const {wordRanges} = this.state;
 
@@ -96,7 +53,7 @@ class HighlightableContent extends React.PureComponent {
     /**
      * Add the given DOMHighlight to the current set.
      */
-    _handleAddHighlight = (highlight: DOMHighlight) => {
+    _handleAddHighlight = highlight => {
         const newDomHighlights =
             addHighlight(this._getDOMHighlights(), highlight);
 
@@ -113,7 +70,7 @@ class HighlightableContent extends React.PureComponent {
      * Remove the given highlight from the list, and call our callback with the
      * new set of highlights.
      */
-    _handleRemoveHighlight = (keyToRemove: string) => {
+    _handleRemoveHighlight = keyToRemove => {
         const {serializedHighlights} = this.props;
         const newSerializedHighlights = {...serializedHighlights};
         delete newSerializedHighlights[keyToRemove];
@@ -124,7 +81,7 @@ class HighlightableContent extends React.PureComponent {
      * When our WordIndexer sends us a new cache of word ranges, store it in
      * our component state.
      */
-    _handleWordsUpdate = (wordRanges: DOMRange[]) => {
+    _handleWordsUpdate = wordRanges => {
         this.setState({wordRanges});
     }
 
@@ -144,42 +101,44 @@ class HighlightableContent extends React.PureComponent {
         //     object until its implicitly-bound inputs change. If profiling
         //     leads us to implement such caching, this draft might be a good
         //     starting point: https://phabricator.khanacademy.org/D35623?id=170698
-        const buildHighlight = (r: DOMRange) => this._buildHighlight(r);
+        const buildHighlight = r => this._buildHighlight(r);
 
-        return <div
-            className={css(styles.container)}
-            ref={container => this._container = container}
-        >
-            <div>
-                {this.props.enabled && this._container && this._content &&
-                    <HighlightingUI
-                        buildHighlight={buildHighlight}
-                        contentNode={this._content}
-                        editable={this.props.editable}
-                        highlights={highlights}
-                        offsetParent={this._container}
-                        zIndexes={{
-                            // The content has a z-index of 1, so, to be above
-                            // or below the content, use z-index of 2 or 0,
-                            // respectively.
-                            aboveContent: 2,
-                            belowContent: 0,
-                        }}
-
-                        onAddHighlight={this._handleAddHighlight}
-                        onRemoveHighlight={this._handleRemoveHighlight}
-                    />
-                }
-            </div>
+        return (
             <div
-                className={css(styles.content)}
-                ref={content => this._content = content}
+                className={css(styles.container)}
+                ref={container => this._container = container}
             >
-                <WordIndexer onWordsUpdate={this._handleWordsUpdate}>
-                    {this.props.children}
-                </WordIndexer>
+                <div>
+                    {this.props.enabled && this._container && this._content &&
+                        <HighlightingUI
+                            buildHighlight={buildHighlight}
+                            contentNode={this._content}
+                            editable={this.props.editable}
+                            highlights={highlights}
+                            offsetParent={this._container}
+                            zIndexes={{
+                                // The content has a z-index of 1, so, to be above
+                                // or below the content, use z-index of 2 or 0,
+                                // respectively.
+                                aboveContent: 2,
+                                belowContent: 0,
+                            }}
+
+                            onAddHighlight={this._handleAddHighlight}
+                            onRemoveHighlight={this._handleRemoveHighlight}
+                        />
+                    }
+                </div>
+                <div
+                    className={css(styles.content)}
+                    ref={content => this._content = content}
+                >
+                    <WordIndexer onWordsUpdate={this._handleWordsUpdate}>
+                        {this.props.children}
+                    </WordIndexer>
+                </div>
             </div>
-        </div>;
+        );
     }
 }
 

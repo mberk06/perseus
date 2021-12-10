@@ -475,8 +475,7 @@ const keypadConfigurationForProps = props => {
             // requires `PI` instead of `pi`). Right now, it only supports Pi
             // and Theta, so we special-case.
             const isGreek = symbol => symbol === "pi" || symbol === "theta";
-            const toKey = symbol =>
-                isGreek(symbol) ? symbol.toUpperCase() : symbol;
+            const toKey = symbol => isGreek(symbol) ? symbol.toUpperCase() : symbol;
 
             for (const variable of expr.getVars()) {
                 uniqueExtraVariables[toKey(variable)] = true;
@@ -547,7 +546,7 @@ var propUpgrades = {
                 value: v0props.value,
                 key: 0,
             },
-        ],
+        ]
     }),
 };
 

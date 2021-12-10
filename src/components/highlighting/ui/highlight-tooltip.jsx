@@ -7,24 +7,8 @@ const {StyleSheet, css} = require("aphrodite");
 
 const {getRelativePosition} = require("./util.js");
 
-import type {Position} from "./types.js";
-
-type HighlightTooltipProps = {
-    label: string,
-    onClick: () => mixed,
-    onMouseEnter?: ?(() => mixed),
-    onMouseLeave?: ?(() => mixed),
-
-    focusNode: Node,
-    focusOffset: number,
-    offsetParent: Element,
-    zIndex: number,
-};
-
 class HighlightTooltip extends React.PureComponent {
-    props: HighlightTooltipProps
-
-    _getPosition(): ?Position {
+    _getPosition() {
         const {focusNode, focusOffset, offsetParent} = this.props;
 
         // Get a range of *just* the focus point of the selection.

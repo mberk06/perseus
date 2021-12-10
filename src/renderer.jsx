@@ -1395,12 +1395,12 @@ var Renderer = React.createClass({
     },
 
     _setWidgetProps: function(
-        id: string,
+        id,
         newProps,
-        cb: Function,
+        cb,
         // Widgets can call `onChange` with `silent` set to `true` to prevent
         // interaction events from being triggered in listeners.
-        silent: boolean
+        silent
     ) {
         this.setState(
             prevState => {

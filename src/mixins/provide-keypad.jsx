@@ -47,7 +47,7 @@ const ProvideKeypad = {
 
             ReactDOM.render(
                 <Keypad
-                    onElementMounted={(element) => {
+                    onElementMounted={element => {
                         this.setState({
                             keypadElement: element,
                         });

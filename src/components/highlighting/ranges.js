@@ -1,10 +1,3 @@
-// @flow
-/**
- * Utility functions for manipulating ranges of highlightable content.
- */
-
-import type {DOMRange} from "./types.js";
-
 /**
  * Given two DOMRange objects, and a choice of start/end point for each, compare
  * the two chosen points. Return -1 if a's comes first in the document, return
@@ -15,10 +8,7 @@ import type {DOMRange} from "./types.js";
  *     of the DOM's `compareBoundaryPoints` API, and to cover over a Flow bug
  *     documented here: https://github.com/facebook/flow/issues/3734.
  */
-function compareRangeBoundaryPoints(
-    a: DOMRange, whichA: "start" | "end",
-    b: DOMRange, whichB: "start" | "end",
-): number {
+function compareRangeBoundaryPoints(a, whichA, b, whichB) {
     let mode;
     if (whichA === "start" && whichB === "start") {
         // $FlowFixMe(mdr)
@@ -44,7 +34,7 @@ function compareRangeBoundaryPoints(
  * Given two DOMRanges, return a DOMRange whose start point comes from A, and
  * whose end point comes from B.
  */
-function spanRanges(a: DOMRange, b: DOMRange): DOMRange {
+function spanRanges(a, b) {
     const range = a.cloneRange();
     range.setEnd(b.endContainer, b.endOffset);
     return range;
@@ -57,7 +47,7 @@ function spanRanges(a: DOMRange, b: DOMRange): DOMRange {
  * considered to be included in the range, and, if a ends exactly where b
  * starts, they are considered to overlap.
  */
-function rangesOverlap(a: DOMRange, b: DOMRange): boolean {
+function rangesOverlap(a, b) {
     // Two ranges do *not* overlap iff one ends before the other begins.
     const rangesDoNotOverlap =
         compareRangeBoundaryPoints(a, "end", b, "start") < 0 ||
@@ -69,7 +59,7 @@ function rangesOverlap(a: DOMRange, b: DOMRange): boolean {
  * Given two DOMRanges, return whether the first includes the second: whether
  * all points that B contains are also contained by A.
  */
-function rangeIncludes(a: DOMRange, b: DOMRange): boolean {
+function rangeIncludes(a, b) {
     const rangeIsIncluded =
         compareRangeBoundaryPoints(a, "start", b, "start") <= 0 &&
         compareRangeBoundaryPoints(a, "end", b, "end") >= 0;
@@ -82,7 +72,7 @@ function rangeIncludes(a: DOMRange, b: DOMRange): boolean {
  *
  * If A and B do not overlap, no intersection exists; return null.
  */
-function intersectRanges(a: DOMRange, b: DOMRange): ?DOMRange {
+function intersectRanges(a, b) {
     if (!rangesOverlap(a, b)) {
         return null;
     }
@@ -103,7 +93,7 @@ function intersectRanges(a: DOMRange, b: DOMRange): ?DOMRange {
  *
  * If A and B do not overlap, no union exists; return null.
  */
-function unionRanges(a: DOMRange, b: DOMRange): ?DOMRange {
+function unionRanges(a, b) {
     if (!rangesOverlap(a, b)) {
         return null;
     }
@@ -129,10 +119,7 @@ function unionRanges(a: DOMRange, b: DOMRange): ?DOMRange {
  * If `goal` is "last", return the index of the last word whose start point is
  * before the selection's end point.
  */
-function findBoundaryWordIndex(
-    selectionRange: DOMRange, wordRanges: DOMRange[], goal: "first" | "last",
-    initialLowerBound: number, initialUpperBound: number,
-): number {
+function findBoundaryWordIndex(selectionRange, wordRanges, goal, initialLowerBound, initialUpperBound) {
     let bestValidWordIndex = -1;
     let lowerBound = initialLowerBound;
     let upperBound = initialUpperBound;
@@ -198,9 +185,7 @@ function findBoundaryWordIndex(
  * and return the indexes of the first and last words that the selection
  * intersects, or `null` if the range includes no words.
  */
-function findFirstAndLastWordIndexes(
-    selectionRange: DOMRange, wordRanges: DOMRange[],
-): ?[number, number] {
+function findFirstAndLastWordIndexes(selectionRange, wordRanges) {
     // Find the first word whose end point is after the selection's start
     // point.
     //

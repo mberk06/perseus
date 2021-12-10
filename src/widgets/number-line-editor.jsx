@@ -225,11 +225,10 @@ var NumberLineEditor = React.createClass({
                         value={this.props.correctX}
                         format={this.props.labelStyle}
                         onChange={this.onNumChange.bind(this, "correctX")}
-                        checkValidity={val =>
-                            val >= range[0] &&
-                            val <= range[1] &&
-                            (!step ||
-                                knumber.isInteger((val - range[0]) / step))}
+                        checkValidity={val => val >= range[0] &&
+                        val <= range[1] &&
+                        (!step ||
+                            knumber.isInteger((val - range[0]) / step))}
                         placeholder="answer"
                         size="normal"
                         useArrowKeys={true}
@@ -299,8 +298,7 @@ var NumberLineEditor = React.createClass({
                             value={labelRange[0]}
                             placeholder={range[0]}
                             format={this.props.labelStyle}
-                            checkValidity={val =>
-                                val >= range[0] && val <= range[1]}
+                            checkValidity={val => val >= range[0] && val <= range[1]}
                             onChange={this.onLabelRangeChange.bind(this, 0)}
                             useArrowKeys={true}
                         />
@@ -309,8 +307,7 @@ var NumberLineEditor = React.createClass({
                             value={labelRange[1]}
                             placeholder={range[1]}
                             format={this.props.labelStyle}
-                            checkValidity={val =>
-                                val >= range[0] && val <= range[1]}
+                            checkValidity={val => val >= range[0] && val <= range[1]}
                             onChange={this.onLabelRangeChange.bind(this, 1)}
                             useArrowKeys={true}
                         />

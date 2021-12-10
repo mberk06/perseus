@@ -26,18 +26,25 @@
  */
 const React = require("react");
 
-const InlineIcon = ({path, width, height, style = {}, title}) =>
-    <svg
-        role="img"
-        aria-hidden={!title}
-        style={{verticalAlign: "middle", ...style}}
-        width={`${width / height}em`}
-        height="1em"
-        viewBox={`0 0 ${width} ${height}`}
-    >
-        {!!title && <title>{title}</title>}
-        <path d={path} fill="currentColor" />
-    </svg>;
+const InlineIcon = (
+    {
+        path,
+        width,
+        height,
+        style = {},
+        title
+    }
+) => <svg
+    role="img"
+    aria-hidden={!title}
+    style={{verticalAlign: "middle", ...style}}
+    width={`${width / height}em`}
+    height="1em"
+    viewBox={`0 0 ${width} ${height}`}
+>
+    {!!title && <title>{title}</title>}
+    <path d={path} fill="currentColor" />
+</svg>;
 
 InlineIcon.propTypes = {
     // An SVG path to render.

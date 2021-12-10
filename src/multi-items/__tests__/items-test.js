@@ -1,11 +1,5 @@
 // @flow
 const assert = require("assert");
-declare function describe(s: string, f: () => any): any;
-declare function it(s: string, f: () => any): any;
-
-import type {
-    Item, ItemTree, ContentNode, HintNode, TagsNode, ItemArrayNode,
-} from "../item-types.js";
 const {
     buildEmptyItemTreeForShape, buildEmptyItemForShape,
     findContentNodesInItem, findHintNodesInItem, inferItemShape, itemToTree,
@@ -43,7 +37,7 @@ describe("buildEmptyItemTreeForShape and buildEmptyItemForShape", () => {
         "__type": "hint",
     };
 
-    function assertEmptyItemTreeForShape(expectedEmptyTree: ItemTree, shape) {
+    function assertEmptyItemTreeForShape(expectedEmptyTree, shape) {
         const emptyTree = buildEmptyItemTreeForShape(shape);
         assert.deepEqual(expectedEmptyTree, emptyTree);
 
@@ -61,12 +55,12 @@ describe("buildEmptyItemTreeForShape and buildEmptyItemForShape", () => {
     });
 
     it("creates empty tags", () => {
-        assertEmptyItemTreeForShape(([]: TagsNode), shapes.tags);
+        assertEmptyItemTreeForShape(([]), shapes.tags);
     });
 
     it("creates an empty array", () => {
         assertEmptyItemTreeForShape(
-            ([]: ItemArrayNode), shapes.arrayOf(shapes.content));
+            ([]), shapes.arrayOf(shapes.content));
     });
 
     it("creates an empty object containing all node types", () => {
@@ -82,7 +76,7 @@ describe("buildEmptyItemTreeForShape and buildEmptyItemForShape", () => {
         const expectedEmptyTree = {
             instructions: expectedEmptyContentNode,
             hint: expectedEmptyHintNode,
-            questions: ([]: ItemArrayNode),
+            questions: ([]),
             context: {
                 prompt: expectedEmptyContentNode,
                 footnotes: expectedEmptyContentNode,
@@ -117,7 +111,7 @@ describe("inferItemShape", () => {
     });
 
     it("infers a tags node's shape", () => {
-        const item = treeToItem((["foo", "bar"]: TagsNode));
+        const item = treeToItem((["foo", "bar"]));
         assert.equal(shapes.tags, inferItemShape(item));
     });
 
@@ -131,7 +125,7 @@ describe("inferItemShape", () => {
     });
 
     it("poorly infers an empty array node's shape", () => {
-        const item = treeToItem(([]: ItemArrayNode));
+        const item = treeToItem(([]));
         assert.deepEqual(shapes.arrayOf(shapes.content), inferItemShape(item));
     });
 
@@ -139,8 +133,8 @@ describe("inferItemShape", () => {
         const item = treeToItem(([
             buildEmptyItemTreeForShape(shapes.hint),
             buildEmptyItemTreeForShape(shapes.hint),
-            buildEmptyItemTreeForShape(shapes.hint),
-        ]: ItemArrayNode));
+            buildEmptyItemTreeForShape(shapes.hint)
+        ]));
         assert.deepEqual(shapes.arrayOf(shapes.hint), inferItemShape(item));
     });
 
@@ -148,20 +142,20 @@ describe("inferItemShape", () => {
         const item = treeToItem(([
             buildEmptyItemTreeForShape(shapes.hint),
             buildEmptyItemTreeForShape(shapes.content),
-            buildEmptyItemTreeForShape(shapes.hint),
-        ]: ItemArrayNode));
+            buildEmptyItemTreeForShape(shapes.hint)
+        ]));
         assert.deepEqual(shapes.arrayOf(shapes.hint), inferItemShape(item));
     });
 });
 
-function content(n): ContentNode {
+function content(n) {
     return {
         __type: "content",
         content: `content ${n}`,
     };
 }
 
-function hint(n): HintNode {
+function hint(n) {
     return {
         __type: "hint",
         content: `hint ${n}`,
@@ -178,9 +172,9 @@ const shape = shapes.shape({
     f: shapes.hint,
 });
 
-const item: Item = treeToItem({
+const item = treeToItem({
     a: content(1),
-    b: ([content(2), content(3), content(4)]: ItemArrayNode),
+    b: ([content(2), content(3), content(4)]),
     c: {
         d: content(5),
         e: hint(6),

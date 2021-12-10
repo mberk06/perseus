@@ -16,13 +16,6 @@ const {StyleSheet, css} = require("aphrodite");
 const styleConstants = require("../../styles/constants.js");
 
 class OptionStatus extends React.Component {
-    props: {
-        // Was this option the correct answer?
-        correct: boolean,
-        // Did the user select this option as the answer?
-        checked: boolean,
-    }
-
     render() {
         const {checked, correct} = this.props;
         const correctness = correct ? i18n._("correct") : i18n._("incorrect");

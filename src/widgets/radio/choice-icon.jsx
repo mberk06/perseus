@@ -13,22 +13,10 @@ const InlineIcon = require("../../components/inline-icon.jsx");
 const FocusRing = require("./focus-ring.jsx");
 
 class SATChoiceIcon extends React.Component {
-    props: {
-        letter: string,
-        a11yText: string,
-        checked: boolean,
-        correct: boolean,
-        reviewMode: boolean,
-    };
-
     // TODO(amy): figure out a better scheme for specifying these
     // styles that isn't such a pain to grok. See some neat ideas
     // from MDR in https://phabricator.khanacademy.org/D35249.
-    constructStyles(
-        reviewMode: boolean,
-        correct: boolean,
-        checked: boolean
-    ): {color: string, backgroundColor: ?string, borderColor: string} {
+    constructStyles(reviewMode, correct, checked) {
         let backgroundColor;
         let borderColor = styleConstants.satBlue;
         let color = styleConstants.satBlue;
@@ -81,18 +69,6 @@ class SATChoiceIcon extends React.Component {
 }
 
 class LibraryChoiceIcon extends React.Component {
-    props: {
-        letter: string,
-        a11yText: string,
-        checked: boolean,
-        pressed: boolean,
-        focused: boolean,
-        correct: ?boolean,
-        reviewMode: boolean,
-        showCorrectness: boolean,
-        primaryProductColor: string,
-    };
-
     getChoiceInner() {
         const {letter, showCorrectness, correct} = this.props;
 
@@ -183,27 +159,12 @@ class LibraryChoiceIcon extends React.Component {
     }
 }
 
-type ChoiceIconProps = {
-    pos: number,
-    checked: boolean,
-    pressed: boolean,
-    focused: boolean,
-    correct: boolean,
-    showCorrectness: boolean,
-    // TODO(amy): if we go this "product" flag route, define this type
-    // somewhere shared
-    product: "sat" | "library",
-    primaryProductColor: string,
-    reviewMode: boolean,
-};
 class ChoiceIcon extends React.Component {
-    props: ChoiceIconProps;
-
     static defaultProps = {
         primaryProductColor: styleConstants.kaGreen,
     };
 
-    a11yText(letter: string) {
+    a11yText(letter) {
         // If the option was checked we need to reveal more context about
         // what the result was (correct/incorrect)
         if (this.props.checked) {

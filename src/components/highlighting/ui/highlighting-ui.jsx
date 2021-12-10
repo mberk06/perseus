@@ -17,51 +17,8 @@ const HighlightTooltip = require("./highlight-tooltip.jsx");
 const {rangesOverlap} = require("../ranges.js");
 const SelectionTracker = require("./selection-tracker.jsx");
 
-import type {DOMHighlight, DOMHighlightSet, DOMRange, ZIndexes}
-    from "./types.js";
-import type {TrackedSelection} from "./selection-tracker.jsx";
-
-/* global i18n */
-
-type HighlightingUIProps = {
-    // A function that builds a DOMHighlight from the given DOMRange, if
-    // possible. If it would not currently be valid to add a highlight over the
-    // given DOMRange, returns null.
-    buildHighlight: (range: DOMRange) => ?DOMHighlight,
-
-    // A Node that contains the highlightable content.
-    contentNode: Node,
-
-    // Whether the highlights are user-editable. If false, highlights are
-    // read-only.
-    editable: boolean,
-
-    // A set of highlights to render.
-    highlights: DOMHighlightSet,
-
-    // This component's `offsetParent` element, which is the nearest ancestor
-    // with `position: relative`. This will enable us to choose the correct
-    // CSS coordinates to align highlights and tooltips with the target
-    // content.
-    offsetParent: Element,
-
-    // A callback indicating that the user would like to add the given
-    // highlight to the current set of highlights.
-    onAddHighlight: (range: DOMHighlight) => mixed,
-
-    // A callback indicating that the user would like to remove the highlight
-    // with the given key.
-    onRemoveHighlight: (highlightKey: string) => mixed,
-
-    // The z-indexes to use when rendering tooltips above content, and
-    // highlights below content.
-    zIndexes: ZIndexes,
-};
-
 class HighlightingUI extends React.PureComponent {
-    props: HighlightingUIProps
-
-    _handleAddHighlight(highlightToAdd: DOMHighlight) {
+    _handleAddHighlight(highlightToAdd) {
         this.props.onAddHighlight(highlightToAdd);
 
         // Deselect the newly-highlighted text, by collapsing the selection
@@ -72,7 +29,7 @@ class HighlightingUI extends React.PureComponent {
         }
     }
 
-    _selectionIsValid(trackedSelection: TrackedSelection): boolean {
+    _selectionIsValid(trackedSelection) {
         if (!trackedSelection) {
             return false;
         }
@@ -106,12 +63,12 @@ class HighlightingUI extends React.PureComponent {
     }
 
     render() {
-        return <SelectionTracker
-            buildHighlight={this.props.buildHighlight}
-            enabled={this.props.editable}
-        >
-            {(trackedSelection, userIsMouseSelecting) =>
-                <div>
+        return (
+            <SelectionTracker
+                buildHighlight={this.props.buildHighlight}
+                enabled={this.props.editable}
+            >
+                {(trackedSelection, userIsMouseSelecting) => <div>
                     <HighlightSetRenderer
                         editable={
                             /* An existing highlight is editable when the
@@ -138,8 +95,9 @@ class HighlightingUI extends React.PureComponent {
                         />
                     }
                 </div>
-            }
-        </SelectionTracker>;
+                }
+            </SelectionTracker>
+        );
     }
 }
 

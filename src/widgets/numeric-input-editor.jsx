@@ -70,94 +70,91 @@ const NumericInputEditor = React.createClass({
     render: function() {
         var answers = this.props.answers;
 
-        var unsimplifiedAnswers = i =>
+        var unsimplifiedAnswers = i => <div className="perseus-widget-row">
+            <label>Unsimplified answers are</label>
+            <ButtonGroup
+                value={answers[i]["simplify"]}
+                allowEmpty={false}
+                buttons={[
+                    {value: "required", content: "ungraded"},
+                    {value: "optional", content: "accepted"},
+                    {value: "enforced", content: "wrong"},
+                ]}
+                onChange={this.updateAnswer(i, "simplify")}
+            />
+            <InfoTip>
+                <p>
+                    Normally select "ungraded". This will give the user a
+                    message saying the answer is correct but not simplified.
+                    The user will then have to simplify it and re-enter, but
+                    will not be penalized. (5th grade and after)
+                </p>
+                <p>
+                    Select "accepted" only if the user is not expected to
+                    know how to simplify fractions yet. (Anything prior to
+                    5th grade)
+                </p>
+                <p>
+                    Select "wrong" <em>only</em> if we are specifically
+                    assessing the ability to simplify.
+                </p>
+            </InfoTip>
+        </div>;
+
+        var suggestedAnswerTypes = i => <div>
             <div className="perseus-widget-row">
-                <label>Unsimplified answers are</label>
-                <ButtonGroup
-                    value={answers[i]["simplify"]}
-                    allowEmpty={false}
-                    buttons={[
-                        {value: "required", content: "ungraded"},
-                        {value: "optional", content: "accepted"},
-                        {value: "enforced", content: "wrong"},
-                    ]}
-                    onChange={this.updateAnswer(i, "simplify")}
+                <label>Choose the suggested answer formats</label>
+                <MultiButtonGroup
+                    buttons={answerFormButtons}
+                    values={answers[i]["answerForms"]}
+                    onChange={this.updateAnswer(i, "answerForms")}
                 />
                 <InfoTip>
                     <p>
-                        Normally select "ungraded". This will give the user a
-                        message saying the answer is correct but not simplified.
-                        The user will then have to simplify it and re-enter, but
-                        will not be penalized. (5th grade and after)
+                        Formats will be autoselected for you based on the
+                        given answer; to show no suggested formats and
+                        accept all types, simply have a decimal/integer be
+                        the answer. Values with &pi; will have format "pi",
+                        and values that are fractions will have some subset
+                        (mixed will be "mixed" and "proper"; improper/proper
+                        will both be "improper" and "proper"). If you would
+                        like to specify that it is only a proper fraction
+                        (or only a mixed/improper fraction), deselect the
+                        other format. Except for specific cases, you should
+                        not need to change the autoselected formats.
                     </p>
                     <p>
-                        Select "accepted" only if the user is not expected to
-                        know how to simplify fractions yet. (Anything prior to
-                        5th grade)
+                        To restrict the answer to <em>only</em> an improper
+                        fraction (i.e. 7/4), select the improper fraction
+                        and toggle "strict" to true. This <b>will
+                        not</b>{" "} accept 1.75 as an answer.{" "}
                     </p>
                     <p>
-                        Select "wrong" <em>only</em> if we are specifically
-                        assessing the ability to simplify.
+                        Unless you are testing that specific skill, please
+                        do not restrict the answer format.
                     </p>
                 </InfoTip>
-            </div>;
-
-        var suggestedAnswerTypes = i =>
-            <div>
-                <div className="perseus-widget-row">
-                    <label>Choose the suggested answer formats</label>
-                    <MultiButtonGroup
-                        buttons={answerFormButtons}
-                        values={answers[i]["answerForms"]}
-                        onChange={this.updateAnswer(i, "answerForms")}
-                    />
-                    <InfoTip>
-                        <p>
-                            Formats will be autoselected for you based on the
-                            given answer; to show no suggested formats and
-                            accept all types, simply have a decimal/integer be
-                            the answer. Values with &pi; will have format "pi",
-                            and values that are fractions will have some subset
-                            (mixed will be "mixed" and "proper"; improper/proper
-                            will both be "improper" and "proper"). If you would
-                            like to specify that it is only a proper fraction
-                            (or only a mixed/improper fraction), deselect the
-                            other format. Except for specific cases, you should
-                            not need to change the autoselected formats.
-                        </p>
-                        <p>
-                            To restrict the answer to <em>only</em> an improper
-                            fraction (i.e. 7/4), select the improper fraction
-                            and toggle "strict" to true. This <b>will
-                            not</b>{" "} accept 1.75 as an answer.{" "}
-                        </p>
-                        <p>
-                            Unless you are testing that specific skill, please
-                            do not restrict the answer format.
-                        </p>
-                    </InfoTip>
-                </div>
-                <div className="perseus-widget-row">
-                    <PropCheckBox
-                        label="Strictly match only these formats"
-                        strict={answers[i]["strict"]}
-                        onChange={this.updateAnswer.bind(this, i)}
-                    />
-                </div>
-            </div>;
-
-        var maxError = i =>
+            </div>
             <div className="perseus-widget-row">
-                <label>
-                    Max error{" "}
-                    <NumberInput
-                        className="max-error"
-                        value={answers[i]["maxError"]}
-                        onChange={this.updateAnswer(i, "maxError")}
-                        placeholder="0"
-                    />
-                </label>
-            </div>;
+                <PropCheckBox
+                    label="Strictly match only these formats"
+                    strict={answers[i]["strict"]}
+                    onChange={this.updateAnswer.bind(this, i)}
+                />
+            </div>
+        </div>;
+
+        var maxError = i => <div className="perseus-widget-row">
+            <label>
+                Max error{" "}
+                <NumberInput
+                    className="max-error"
+                    value={answers[i]["maxError"]}
+                    onChange={this.updateAnswer(i, "maxError")}
+                    placeholder="0"
+                />
+            </label>
+        </div>;
 
         var inputSize = (
             <div className="perseus-widget-row">
@@ -236,156 +233,152 @@ const NumericInputEditor = React.createClass({
             correct: "(reinforce the user's understanding)",
         };
 
-        var generateInputAnswerEditors = () =>
-            answers.map((answer, i) => {
-                var editor = (
-                    <Editor
-                        apiOptions={this.props.apiOptions}
-                        content={answer.message || ""}
-                        placeholder={
-                            "Why is this answer " +
-                            answer.status +
-                            "?\t" +
-                            instructions[answer.status]
+        var generateInputAnswerEditors = () => answers.map((answer, i) => {
+            var editor = (
+                <Editor
+                    apiOptions={this.props.apiOptions}
+                    content={answer.message || ""}
+                    placeholder={
+                        "Why is this answer " +
+                        answer.status +
+                        "?\t" +
+                        instructions[answer.status]
+                    }
+                    widgetEnabled={false}
+                    onChange={newProps => {
+                        if ("content" in newProps) {
+                            this.updateAnswer(i, {
+                                message: newProps.content,
+                            });
                         }
-                        widgetEnabled={false}
-                        onChange={newProps => {
-                            if ("content" in newProps) {
+                    }}
+                />
+            );
+            return (
+                <div className="perseus-widget-row" key={i}>
+                    <div
+                        className={
+                            "input-answer-editor-value-container" +
+                            (answer.maxError ? " with-max-error" : "")
+                        }
+                    >
+                        <NumberInput
+                            value={answer.value}
+                            className="numeric-input-value"
+                            placeholder="answer"
+                            format={_.last(answer.answerForms)}
+                            onFormatChange={(newValue, format) => {
+                                // NOTE(charlie): The mobile web expression
+                                // editor relies on this automatic answer
+                                // form resolution for determining when to
+                                // show the Pi symbol. If we get rid of it,
+                                // we should also disable Pi for
+                                // NumericInput and require problems that
+                                // use Pi to build on Expression.
+                                // Alternatively, we could store answers
+                                // as plaintext and parse them to determine
+                                // whether or not to reveal Pi on the
+                                // keypad (right now, answers are stored as
+                                // resolved values, like '0.125' rather
+                                // than '1/8').
+                                var forms;
+                                if (format === "pi") {
+                                    forms = ["pi"];
+                                } else if (format === "mixed") {
+                                    forms = ["proper", "mixed"];
+                                } else if (
+                                    format === "proper" ||
+                                    format === "improper"
+                                ) {
+                                    forms = ["proper", "improper"];
+                                }
                                 this.updateAnswer(i, {
-                                    message: newProps.content,
+                                    value: firstNumericalParse(newValue),
+                                    answerForms: forms,
                                 });
-                            }
-                        }}
-                    />
-                );
-                return (
-                    <div className="perseus-widget-row" key={i}>
-                        <div
-                            className={
-                                "input-answer-editor-value-container" +
-                                (answer.maxError ? " with-max-error" : "")
-                            }
-                        >
-                            <NumberInput
-                                value={answer.value}
-                                className="numeric-input-value"
-                                placeholder="answer"
-                                format={_.last(answer.answerForms)}
-                                onFormatChange={(newValue, format) => {
-                                    // NOTE(charlie): The mobile web expression
-                                    // editor relies on this automatic answer
-                                    // form resolution for determining when to
-                                    // show the Pi symbol. If we get rid of it,
-                                    // we should also disable Pi for
-                                    // NumericInput and require problems that
-                                    // use Pi to build on Expression.
-                                    // Alternatively, we could store answers
-                                    // as plaintext and parse them to determine
-                                    // whether or not to reveal Pi on the
-                                    // keypad (right now, answers are stored as
-                                    // resolved values, like '0.125' rather
-                                    // than '1/8').
-                                    var forms;
-                                    if (format === "pi") {
-                                        forms = ["pi"];
-                                    } else if (format === "mixed") {
-                                        forms = ["proper", "mixed"];
-                                    } else if (
-                                        format === "proper" ||
-                                        format === "improper"
-                                    ) {
-                                        forms = ["proper", "improper"];
-                                    }
-                                    this.updateAnswer(i, {
-                                        value: firstNumericalParse(newValue),
-                                        answerForms: forms,
-                                    });
-                                }}
-                                onChange={newValue => {
-                                    this.updateAnswer(i, {
-                                        value: firstNumericalParse(newValue),
-                                    });
-                                }}
-                            />
-                            {answer.strict &&
-                                <div
-                                    className="is-strict-indicator"
-                                    title="strictly equivalent to"
-                                >
-                                    &equiv;
-                                </div>}
-                            {answer.simplify !== "required" &&
-                                answer.status === "correct" &&
-                                <div
-                                    className={
-                                        "simplify-indicator " + answer.simplify
-                                    }
-                                    title="accepts unsimplified answers"
-                                >
-                                    &permil;
-                                </div>}
-                            {answer.maxError
-                                ? <div className="max-error-container">
-                                      <div className="max-error-plusmn">
-                                          &plusmn;
-                                      </div>
-                                      <NumberInput
-                                          placeholder={0}
-                                          value={answers[i]["maxError"]}
-                                          format={_.last(answer.answerForms)}
-                                          onChange={this.updateAnswer(
-                                              i,
-                                              "maxError"
-                                          )}
-                                      />
-                                  </div>
-                                : null}
-                            <div className="value-divider" />
-                            <a
-                                href="javascript:void(0)"
-                                className={"answer-status " + answer.status}
-                                onClick={() => this.onStatusChange(i)}
-                                onKeyDown={e =>
-                                    this.onSpace(e, this.onStatusChange, i)}
+                            }}
+                            onChange={newValue => {
+                                this.updateAnswer(i, {
+                                    value: firstNumericalParse(newValue),
+                                });
+                            }}
+                        />
+                        {answer.strict &&
+                            <div
+                                className="is-strict-indicator"
+                                title="strictly equivalent to"
                             >
-                                {answer.status}
-                            </a>
-                            <a
-                                href="javascript:void(0)"
-                                className="answer-trash"
-                                onClick={() => this.onTrashAnswer(i)}
-                                onKeyDown={e =>
-                                    this.onSpace(e, this.onTrashAnswer, i)}
-                            >
-                                <InlineIcon {...iconTrash} />
-                            </a>
-                            <a
-                                href="javascript:void(0)"
-                                className="options-toggle"
-                                onClick={() => this.onToggleOptions(i)}
-                                onKeyDown={e =>
-                                    this.onSpace(e, this.onToggleOptions, i)}
-                            >
-                                <InlineIcon {...iconGear} />
-                            </a>
-                        </div>
-                        <div className="input-answer-editor-message">
-                            {editor}
-                        </div>
-                        {this.state.showOptions[i] &&
-                            <div className="options-container">
-                                {maxError(i)}
-                                {answer.status === "correct" &&
-                                    unsimplifiedAnswers(i)}
-                                {suggestedAnswerTypes(i)}
+                                &equiv;
                             </div>}
+                        {answer.simplify !== "required" &&
+                            answer.status === "correct" &&
+                            <div
+                                className={
+                                    "simplify-indicator " + answer.simplify
+                                }
+                                title="accepts unsimplified answers"
+                            >
+                                &permil;
+                            </div>}
+                        {answer.maxError
+                            ? <div className="max-error-container">
+                                  <div className="max-error-plusmn">
+                                      &plusmn;
+                                  </div>
+                                  <NumberInput
+                                      placeholder={0}
+                                      value={answers[i]["maxError"]}
+                                      format={_.last(answer.answerForms)}
+                                      onChange={this.updateAnswer(
+                                          i,
+                                          "maxError"
+                                      )}
+                                  />
+                              </div>
+                            : null}
+                        <div className="value-divider" />
+                        <a
+                            href="javascript:void(0)"
+                            className={"answer-status " + answer.status}
+                            onClick={() => this.onStatusChange(i)}
+                            onKeyDown={e => this.onSpace(e, this.onStatusChange, i)}
+                        >
+                            {answer.status}
+                        </a>
+                        <a
+                            href="javascript:void(0)"
+                            className="answer-trash"
+                            onClick={() => this.onTrashAnswer(i)}
+                            onKeyDown={e => this.onSpace(e, this.onTrashAnswer, i)}
+                        >
+                            <InlineIcon {...iconTrash} />
+                        </a>
+                        <a
+                            href="javascript:void(0)"
+                            className="options-toggle"
+                            onClick={() => this.onToggleOptions(i)}
+                            onKeyDown={e => this.onSpace(e, this.onToggleOptions, i)}
+                        >
+                            <InlineIcon {...iconGear} />
+                        </a>
                     </div>
-                );
-            });
+                    <div className="input-answer-editor-message">
+                        {editor}
+                    </div>
+                    {this.state.showOptions[i] &&
+                        <div className="options-container">
+                            {maxError(i)}
+                            {answer.status === "correct" &&
+                                unsimplifiedAnswers(i)}
+                            {suggestedAnswerTypes(i)}
+                        </div>}
+                </div>
+            );
+        });
 
         return (
             <div className="perseus-input-number-editor">
-                <div ref={e => (this.multInputOption = e)}>
+                <div ref={e => this.multInputOption = e}>
                     <select onChange={this.onMultipleInputChange}>
                         <option value="simple-numeric-input">
                             Ask for one correct solution

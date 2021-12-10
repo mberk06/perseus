@@ -1,7 +1,5 @@
 // @flow
 const assert = require("assert");
-declare function describe(s: string, f: () => any): any;
-declare function it(s: string, f: () => any): any;
 
 const shapes = require("../shapes.js");
 

@@ -50,15 +50,14 @@ const KatexErrorView = React.createClass({
                         need, please message Cam.
                     </div>}
                 {showErrors &&
-                    errorList.map((e, index) =>
-                        <div className={css(styles.error)} key={index}>
-                            <div style={{color: "red"}}>
-                                {e.math}
-                            </div>
-                            <div>
-                                {e.message}
-                            </div>
+                    errorList.map((e, index) => <div className={css(styles.error)} key={index}>
+                        <div style={{color: "red"}}>
+                            {e.math}
                         </div>
+                        <div>
+                            {e.message}
+                        </div>
+                    </div>
                     )}
             </div>
         );

@@ -165,8 +165,7 @@ var TickMarks = Graphie.createSimpleClass((graphie, props) => {
                     color: KhanColors.BLUE_D,
                 }
                 : {},
-            () =>
-                _label(graphie, props.labelStyle, rightLabel, rightLabel, base)
+            () => _label(graphie, props.labelStyle, rightLabel, rightLabel, base)
         )
     );
 
@@ -628,8 +627,7 @@ var NumberLine = React.createClass({
                                 ? null
                                 : this.props.numDivisions || divisionRange[0]
                         }
-                        checkValidity={val =>
-                            val >= divisionRange[0] && val <= divisionRange[1]}
+                        checkValidity={val => val >= divisionRange[0] && val <= divisionRange[1]}
                         onChange={this.onNumDivisionsChange}
                         onFocus={this._handleTickCtrlFocus}
                         onBlur={this._handleTickCtrlBlur}

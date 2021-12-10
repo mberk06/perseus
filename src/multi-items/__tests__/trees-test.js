@@ -1,37 +1,30 @@
 // @flow
 const assert = require("assert");
-declare function describe(s: string, f: () => any): any;
-declare function it(s: string, f: () => any): any;
-
-import type {
-    ItemTree, ContentNode, HintNode, TagsNode, ItemArrayNode,
-} from "../item-types.js";
-import type {TreeMapper} from "../trees.js";
 const {buildMapper} = require("../trees.js");
 const shapes = require("../shapes.js");
 
 describe("buildMapper", () => {
-    function content(n): ContentNode {
+    function content(n) {
         return {
             __type: "content",
             content: `content ${n}`,
         };
     }
 
-    function hint(n): HintNode {
+    function hint(n) {
         return {
             __type: "hint",
             content: `hint ${n}`,
         };
     }
 
-    function tags(...elements): TagsNode {
+    function tags(...elements) {
         // This function mostly exists as a shorthand way to clarify to Flow
         // that this is a TagsNode, not a confused ItemArrayNode.
         return elements;
     }
 
-    function array(...elements): ItemArrayNode {
+    function array(...elements) {
         // This function mostly exists as a shorthand way to clarify to Flow
         // that this is an ItemArrayNode, not a confused TagsNode.
         return elements;
@@ -48,7 +41,7 @@ describe("buildMapper", () => {
         g: shapes.tags,
     });
 
-    const tree: ItemTree = {
+    const tree = {
         a: content(1),
         b: array(content(2), content(3), content(4)),
         c: {
@@ -92,8 +85,7 @@ describe("buildMapper", () => {
     });
 
     it("returns a mapped tree with the correct shape", () => {
-        const mapper: TreeMapper<ContentNode, string, HintNode, string,
-            TagsNode, string>
+        const mapper
         =
             buildMapper()
             .setContentMapper(c => `mapped content: ${c.content || "<none>"}`)
@@ -168,8 +160,7 @@ describe("buildMapper", () => {
 
         const tree = {a: {b: {c: content(1)}}};
 
-        const mapper: TreeMapper<ContentNode, ?string, HintNode, HintNode,
-            TagsNode, TagsNode>
+        const mapper
         =
             buildMapper()
             .setContentMapper(c => c.content);
@@ -187,8 +178,7 @@ describe("buildMapper", () => {
             array(array(content(2)), array(content(3), content(4))),
         );
 
-        const mapper: TreeMapper<ContentNode, ?string, HintNode, HintNode,
-            TagsNode, TagsNode>
+        const mapper
         =
             buildMapper()
             .setContentMapper(c => c.content);
@@ -205,8 +195,7 @@ describe("buildMapper", () => {
 
         const tree = array(array(), array(content(1)), array());
 
-        const mapper: TreeMapper<ContentNode, ?string, HintNode, HintNode,
-            TagsNode, TagsNode>
+        const mapper
         =
             buildMapper()
             .setContentMapper(c => c.content);
@@ -225,8 +214,7 @@ describe("buildMapper", () => {
 
         let wasCalled = false;
         let callArgs = {};
-        const mapper: TreeMapper<ContentNode, ?string, HintNode, HintNode,
-            TagsNode, TagsNode>
+        const mapper
         =
             buildMapper()
             .setContentMapper(c => c.content)
@@ -247,8 +235,7 @@ describe("buildMapper", () => {
     });
 
     it("uses the array mapper return value to construct the new tree", () => {
-        const mapper: TreeMapper<ContentNode, ?string, HintNode, ?string,
-            TagsNode, ?string>
+        const mapper
         =
             buildMapper()
             .setContentMapper(c => c.content)

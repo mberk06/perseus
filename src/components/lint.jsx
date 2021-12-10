@@ -114,13 +114,12 @@ const Lint = React.createClass({
                         styles.tooltip, tooltipAbove && styles.tooltipAbove
                     )}
                 >
-                    {this.props.message.split("\n\n").map((m, i) =>
-                        <p key={i} className={css(styles.tooltipParagraph)}>
-                            <span className={css(warningTextStyle)}>
-                                {warningText}:{" "}
-                            </span>
-                            {m}
-                        </p>
+                    {this.props.message.split("\n\n").map((m, i) => <p key={i} className={css(styles.tooltipParagraph)}>
+                        <span className={css(warningTextStyle)}>
+                            {warningText}:{" "}
+                        </span>
+                        {m}
+                    </p>
                     )}
                     <div
                         className={css(

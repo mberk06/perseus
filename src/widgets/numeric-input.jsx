@@ -40,21 +40,18 @@ var answerFormButtons = [
 
 var formExamples = {
     integer: () => i18n._("an integer, like $6$"),
-    proper: form =>
-        form.simplify === "optional"
-            ? i18n._("a *proper* fraction, like $1/2$ or $6/10$")
-            : i18n._("a *simplified proper* fraction, like $3/5$"),
-    improper: form =>
-        form.simplify === "optional"
-            ? i18n._("an *improper* fraction, like $10/7$ or $14/8$")
-            : i18n._("a *simplified improper* fraction, like $7/4$"),
+    proper: form => form.simplify === "optional"
+        ? i18n._("a *proper* fraction, like $1/2$ or $6/10$")
+        : i18n._("a *simplified proper* fraction, like $3/5$"),
+    improper: form => form.simplify === "optional"
+        ? i18n._("an *improper* fraction, like $10/7$ or $14/8$")
+        : i18n._("a *simplified improper* fraction, like $7/4$"),
     mixed: () => i18n._("a mixed number, like $1\\ 3/4$"),
     decimal: () => i18n._("an *exact* decimal, like $0.75$"),
-    pi: () =>
-        i18n._(
-            "a multiple of pi, like $12\\ \\text{pi}$ or " +
-                "$2/3\\ \\text{pi}$"
-        ),
+    pi: () => i18n._(
+        "a multiple of pi, like $12\\ \\text{pi}$ or " +
+            "$2/3\\ \\text{pi}$"
+    ),
 };
 
 var NumericInput = React.createClass({
@@ -214,47 +211,46 @@ var NumericInput = React.createClass({
                 );
 
                 input = <div>
-                    {this.props.currentMultipleValues.map((item, i) =>
-                        <div
-                            key={i}
-                            className={css(styles.numberInputContainer)}
+                    {this.props.currentMultipleValues.map((item, i) => <div
+                        key={i}
+                        className={css(styles.numberInputContainer)}
+                    >
+                        {i > 0 && <div
+                            className={css(styles.removeInputButton)}
+                            onClick={evt => this._removeInput(i, evt)}
+                            aria-label="Remove this answer"
                         >
-                            {i > 0 && <div
-                                className={css(styles.removeInputButton)}
-                                onClick={evt => this._removeInput(i, evt)}
-                                aria-label="Remove this answer"
-                            >
-                                    -
-                                </div>
-                            }
-                            {this.props.apiOptions.customKeypad ?
-                            <SimpleKeypadInput
-                                ref="input"
-                                value={this.props.currentMultipleValues[i]}
-                                keypadElement={this.props.keypadElement}
-                                onChange={
-                                    e => this.handleMultipleInputChange(i, e)}
-                                onFocus={this._handleFocus}
-                                onBlur={this._handleBlur}
-                            /> :
-                            <InputWithExamples
-                                ref="input"
-                                value={this.props.currentMultipleValues[i]}
-                                onChange={
-                                    e => this.handleMultipleInputChange(i, e)}
-                                className={classNames(
-                                    classes, css(styles.numberInput))}
-                                labelText={labelText}
-                                type={this._getInputType()}
-                                examples={this.examples()}
-                                shouldShowExamples={this.shouldShowExamples()}
-                                onFocus={this._handleFocus}
-                                onBlur={this._handleBlur}
-                                id={this.props.widgetId}
-                                disabled={this.props.apiOptions.readOnly}
-                                highlightLint={this.props.highlightLint}
-                            />}
-                        </div>)
+                                -
+                            </div>
+                        }
+                        {this.props.apiOptions.customKeypad ?
+                        <SimpleKeypadInput
+                            ref="input"
+                            value={this.props.currentMultipleValues[i]}
+                            keypadElement={this.props.keypadElement}
+                            onChange={
+                                e => this.handleMultipleInputChange(i, e)}
+                            onFocus={this._handleFocus}
+                            onBlur={this._handleBlur}
+                        /> :
+                        <InputWithExamples
+                            ref="input"
+                            value={this.props.currentMultipleValues[i]}
+                            onChange={
+                                e => this.handleMultipleInputChange(i, e)}
+                            className={classNames(
+                                classes, css(styles.numberInput))}
+                            labelText={labelText}
+                            type={this._getInputType()}
+                            examples={this.examples()}
+                            shouldShowExamples={this.shouldShowExamples()}
+                            onFocus={this._handleFocus}
+                            onBlur={this._handleBlur}
+                            id={this.props.widgetId}
+                            disabled={this.props.apiOptions.readOnly}
+                            highlightLint={this.props.highlightLint}
+                        />}
+                    </div>)
                     }
                     {addInput}
                     Add answer
@@ -487,20 +483,19 @@ _.extend(NumericInput, {
     validate: function(state, rubric) {
         var allAnswerForms = _.pluck(answerFormButtons, "value");
 
-        var createValidator = answer =>
-            KhanAnswerTypes.number.createValidatorFunctional(answer.value, {
-                message: answer.message,
-                simplify:
-                    answer.status === "correct" ? answer.simplify : "optional",
-                inexact: true, // TODO(merlob) backfill / delete
-                maxError: answer.maxError,
-                forms:
-                    answer.strict &&
-                    answer.answerForms &&
-                    answer.answerForms.length !== 0
-                        ? answer.answerForms
-                        : allAnswerForms,
-            });
+        var createValidator = answer => KhanAnswerTypes.number.createValidatorFunctional(answer.value, {
+            message: answer.message,
+            simplify:
+                answer.status === "correct" ? answer.simplify : "optional",
+            inexact: true, // TODO(merlob) backfill / delete
+            maxError: answer.maxError,
+            forms:
+                answer.strict &&
+                answer.answerForms &&
+                answer.answerForms.length !== 0
+                    ? answer.answerForms
+                    : allAnswerForms,
+        });
 
         // We may have received TeX; try to parse it before grading.
         // If `currentValue` is not TeX, this should be a no-op.

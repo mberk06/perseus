@@ -7,14 +7,12 @@
  */
 const React = require("react");
 
-import type {Shape} from "./shape-types.js";
-
 /**
  * A recursive PropType that accepts Shape objects, and rejects other objects.
  *
  * Usage: `propTypes: {shape: shapePropType}`.
  */
-function shapePropType(...args: Array<any>) {
+function shapePropType(...args) {
     const itemShape = React.PropTypes.oneOfType([
         React.PropTypes.shape({
             type: React.PropTypes.oneOf(["content"]).isRequired,
@@ -44,7 +42,7 @@ function shapePropType(...args: Array<any>) {
  *
  * Usage: `propTypes: {item: buildPropTypeForShape(myShape)}`
  */
-function buildPropTypeForShape(shape: Shape) {
+function buildPropTypeForShape(shape) {
     return React.PropTypes.oneOfType([
         React.PropTypes.shape({
             _multi: buildTreePropTypeForShape(shape),
@@ -57,7 +55,7 @@ function buildPropTypeForShape(shape: Shape) {
  * Return a PropType that accepts ItemTrees of the given shape, and rejects
  * other objects.
  */
-function buildTreePropTypeForShape(shape: Shape) {
+function buildTreePropTypeForShape(shape) {
     if (shape.type === "content") {
         return React.PropTypes.shape({
             // TODO(mdr): Remove #LegacyContentNode support.

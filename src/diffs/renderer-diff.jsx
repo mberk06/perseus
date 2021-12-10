@@ -102,17 +102,16 @@ const RendererDiff = React.createClass({
 
         if (beforeWidgets.length || afterWidgets.length) {
             const widgets = _.union(beforeWidgets, afterWidgets);
-            widgetsDiff = widgets.map(widget =>
-                <WidgetDiff
-                    before={filterWidgetInfo(
-                        before.widgets[widget], showAlignmentOptions)}
-                    after={filterWidgetInfo(
-                        after.widgets[widget], showAlignmentOptions)}
-                    title={widget}
-                    type={(before.widgets[widget] || {}).type ||
-                          (after.widgets[widget] || {}).type}
-                    key={widget}
-                />
+            widgetsDiff = widgets.map(widget => <WidgetDiff
+                before={filterWidgetInfo(
+                    before.widgets[widget], showAlignmentOptions)}
+                after={filterWidgetInfo(
+                    after.widgets[widget], showAlignmentOptions)}
+                title={widget}
+                type={(before.widgets[widget] || {}).type ||
+                      (after.widgets[widget] || {}).type}
+                key={widget}
+            />
             );
         }
 

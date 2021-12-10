@@ -298,8 +298,7 @@ const GradedGroup = React.createClass({
                         ? <div>
                               <div
                                   className={css(styles.explanationTitle)}
-                                  onClick={() =>
-                                      this.setState({showHint: false})}
+                                  onClick={() => this.setState({showHint: false})}
                               >
                                   {i18n._("Hide explanation")}
                               </div>

@@ -57,16 +57,16 @@ const Molecule = React.createClass({
 
     setCanvasBounds: function(canvas, items) {
         const xmax = Math.max(
-            ...items.map(item => (item.pos ? item.pos[0] : -Infinity))
+            ...items.map(item => item.pos ? item.pos[0] : -Infinity)
         );
         const ymax = Math.max(
-            ...items.map(item => (item.pos ? item.pos[1] : -Infinity))
+            ...items.map(item => item.pos ? item.pos[1] : -Infinity)
         );
         const xmin = Math.min(
-            ...items.map(item => (item.pos ? item.pos[0] : Infinity))
+            ...items.map(item => item.pos ? item.pos[0] : Infinity)
         );
         const ymin = Math.min(
-            ...items.map(item => (item.pos ? item.pos[1] : Infinity))
+            ...items.map(item => item.pos ? item.pos[1] : Infinity)
         );
         const width = xmax - xmin + 2 * borderSize;
         const height = ymax - ymin + 2 * borderSize;

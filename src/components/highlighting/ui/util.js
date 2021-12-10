@@ -1,16 +1,10 @@
-// @flow
-/**
- * Utility functions for highlighting UI.
- */
-import type {DOMRange, Position, Rect} from "./types.js";
-
 const {rangesOverlap, intersectRanges} = require("../ranges.js");
 
 /**
  * Given two positions relative to the same origin, return `child`'s position
  * relative to `parent`'s position.
  */
-function getRelativePosition(child: Position, parent: Position): Position {
+function getRelativePosition(child, parent) {
     return {
         left: child.left - parent.left,
         top: child.top - parent.top,
@@ -24,7 +18,7 @@ function getRelativePosition(child: Position, parent: Position): Position {
  * rectangle of the same size, whose position is relative to the given
  * position.
  */
-function getRelativeRect(child: Rect, parent: Position): Rect {
+function getRelativeRect(child, parent) {
     return {
         ...getRelativePosition(child, parent),
         width: child.width,
@@ -45,7 +39,7 @@ function getRelativeRect(child: Rect, parent: Position): Rect {
  * return a rectangle that covers the entire paragraph block, whereas this
  * method will only return rectangles for the text inside the paragraph.
  */
-function getClientRectsForTextInRange(range: DOMRange): Rect[] {
+function getClientRectsForTextInRange(range) {
     const mutableRects = [];
     addClientRectsForTextInNodeAndRange(
         range.commonAncestorContainer, range, mutableRects);
@@ -59,9 +53,7 @@ function getClientRectsForTextInRange(range: DOMRange): Rect[] {
  * and the range by recursing down the node's subtree, and push the text's
  * client rects onto the given `mutableRects` array.
  */
-function addClientRectsForTextInNodeAndRange(
-    node: Node, range: DOMRange, mutableRects: Rect[],
-): void {
+function addClientRectsForTextInNodeAndRange(node, range, mutableRects) {
     const nodeContentsRange = new Range();
     nodeContentsRange.selectNodeContents(node);
 
@@ -99,9 +91,7 @@ function addClientRectsForTextInNodeAndRange(
  * match the visual behavior of native text selection, and remove annoying gaps
  * between lines that disrupt hover behavior.
  */
-function addClientRectsForText(
-    textNode: Node, textRange: DOMRange, mutableRects: Rect[],
-): void {
+function addClientRectsForText(textNode, textRange, mutableRects) {
     const parentElement = textNode.parentElement;
     const computedStyle = window.getComputedStyle(parentElement);
 
@@ -128,7 +118,7 @@ function addClientRectsForText(
     const boundingRects = Array.from(textRange.getClientRects());
 
     for (const boundingRect of boundingRects) {
-        const rect: Rect = {
+        const rect = {
             left: boundingRect.left,
             top: boundingRect.top,
             height: boundingRect.height,

@@ -1244,8 +1244,7 @@ var InteractiveGraph = React.createClass({
                         ],
                         onMove: () => {
                             var graph = _.extend({}, this.props.graph, {
-                                coords: _.map(this.points, segment =>
-                                    _.invoke(segment, "coord")
+                                coords: _.map(this.points, segment => _.invoke(segment, "coord")
                                 ),
                             });
                             this.onChange({graph: graph});
@@ -1731,8 +1730,7 @@ var InteractiveGraph = React.createClass({
             this.props
         );
 
-        const createPoint = options =>
-            Interactive2.addMaybeMobileMovablePoint(this, options);
+        const createPoint = options => Interactive2.addMaybeMobileMovablePoint(this, options);
 
         this.points = [];
         this.lines = _.map(
@@ -2139,14 +2137,12 @@ _.extend(InteractiveGraph, {
      * @param {object} props of an InteractiveGraph instance
      */
     getLinearSystemCoords: function(graph, props) {
-        return (
-            graph.coords ||
-            _.map(
-                [[[0.25, 0.75], [0.75, 0.75]], [[0.25, 0.25], [0.75, 0.25]]],
-                coords => {
-                    return InteractiveGraph.pointsFromNormalized(props, coords);
-                }
-            )
+        return graph.coords ||
+        _.map(
+            [[[0.25, 0.75], [0.75, 0.75]], [[0.25, 0.25], [0.75, 0.25]]],
+            coords => {
+                return InteractiveGraph.pointsFromNormalized(props, coords);
+            }
         );
     },
 
@@ -2394,13 +2390,11 @@ _.extend(InteractiveGraph, {
     getSegmentEquationString: function(props) {
         var segments = InteractiveGraph.getSegmentCoords(props.graph, props);
         return _.map(segments, function(segment) {
-            return (
-                "[" +
-                _.map(segment, function(coord) {
-                    return "(" + coord.join(", ") + ")";
-                }).join(" ") +
-                "]"
-            );
+            return "[" +
+            _.map(segment, function(coord) {
+                return "(" + coord.join(", ") + ")";
+            }).join(" ") +
+            "]";
         }).join(" ");
     },
 

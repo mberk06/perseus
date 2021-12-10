@@ -19,8 +19,8 @@ import _ from "underscore";
 React.createClass = createReactClass;
 React.PropTypes = PropTypes;
 React.DOM = {
-  span: (props) => React.createElement("span", props),
-  input: (props) => React.createElement("input", props),
+  span: props => React.createElement("span", props),
+  input: props => React.createElement("input", props),
 };
 
 window.jQuery = window.$ = $;
@@ -53,7 +53,7 @@ window["react-addons-css-transition-group"] = CSSTransitionGroup;
  */
 
 window.icu = {
-  getDecimalFormatSymbols: function () {
+  getDecimalFormatSymbols: function() {
     return {
       decimal_separator: ".",
       grouping_separator: ",",
@@ -63,8 +63,8 @@ window.icu = {
 };
 
 window.KhanUtil = {
-  debugLog: function () {},
-  localeToFixed: function (num, precision) {
+  debugLog: function() {},
+  localeToFixed: function(num, precision) {
     return num.toFixed(precision);
   },
 };
@@ -75,11 +75,11 @@ window.Exercises = {
   useKatex: true,
   khanExercisesUrlBase: "../",
 
-  getCurrentFramework: function () {
+  getCurrentFramework: function() {
     return "khan-exercises";
   },
   PerseusBridge: {
-    cleanupProblem: function () {
+    cleanupProblem: function() {
       return false;
     },
   },
@@ -87,7 +87,7 @@ window.Exercises = {
 
 window.Khan = {
   Util: window.KhanUtil,
-  error: function () {},
+  error: function() {},
   query: { debug: "" },
   imageBase: "/images/",
 };

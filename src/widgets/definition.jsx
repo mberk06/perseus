@@ -242,14 +242,14 @@ const Definition = React.createClass({
         return (
             <div
                 className={css(styles.container)}
-                ref={e => (this.container = e)}
+                ref={e => this.container = e}
             >
                 <div className={css(styles.linkContainer)}>
                     {link}
                     {this.state.expanded &&
                         <svg
                             className={css(styles.disclosureArrow)}
-                            ref={e => (this.arrow = e)}
+                            ref={e => this.arrow = e}
                             transform={arrowTransform}
                             style={{
                                 bottom:
@@ -311,7 +311,7 @@ const Definition = React.createClass({
                             : this.state.contentWidth,
                         marginTop: this.state.contentMarginTop,
                     }}
-                    ref={e => (this.content = e)}
+                    ref={e => this.content = e}
                 >
                     <Renderer
                         apiOptions={this.props.apiOptions}

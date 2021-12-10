@@ -7,7 +7,7 @@ const _ = require("underscore");
 
 // Returns a promise that will resolve shortly after the end of this
 // browser tick (roughly a `setTimeout(0)`)
-var delayedPromise = (value) => {
+var delayedPromise = value => {
     var deferred = $.Deferred();
     _.defer(() => {
         deferred.resolve(value);

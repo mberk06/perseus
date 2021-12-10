@@ -13,10 +13,6 @@ class DashPicker extends React.Component {
         value: "",
     };
 
-    props: ChangeableProps & {
-        value?: string,
-    };
-
     render() {
         return (
             <ButtonGroup

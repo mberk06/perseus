@@ -10,15 +10,6 @@ const {StyleSheet, css} = require("aphrodite");
 const styleConstants = require("../../styles/constants.js");
 
 class FocusRing extends React.Component {
-    props: {
-        children?: any,
-        // Whether the focus ring is visible. Allows for positioning
-        // the child identically regardless of whether the ring is visible.
-        visible: boolean,
-        // Color of the focus ring
-        color: string,
-    }
-
     static defaultProps = {
         visible: true,
         color: styleConstants.kaGreen,

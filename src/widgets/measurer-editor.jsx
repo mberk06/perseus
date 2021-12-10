@@ -124,11 +124,10 @@ const MeasurerEditor = React.createClass({
                             <label>
                                 {" "}Ruler label:{" "}
                                 <select
-                                    onChange={e =>
-                                        this.change(
-                                            "rulerLabel",
-                                            e.target.value
-                                        )}
+                                    onChange={e => this.change(
+                                        "rulerLabel",
+                                        e.target.value
+                                    )}
                                     value={this.props.rulerLabel}
                                 >
                                     <option value="">None</option>
@@ -155,11 +154,10 @@ const MeasurerEditor = React.createClass({
                             <label>
                                 {" "}Ruler ticks:{" "}
                                 <select
-                                    onChange={e =>
-                                        this.change(
-                                            "rulerTicks",
-                                            +e.target.value
-                                        )}
+                                    onChange={e => this.change(
+                                        "rulerTicks",
+                                        +e.target.value
+                                    )}
                                     value={this.props.rulerTicks}
                                 >
                                     {_.map([1, 2, 4, 8, 10, 16], function(n) {

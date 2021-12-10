@@ -332,7 +332,7 @@ const ItemRenderer = React.createClass({
                 apiOptions={apiOptions}
                 questionCompleted={this.state.questionCompleted}
                 reviewMode={this.props.reviewMode}
-                ref={elem => (this.questionRenderer = elem)}
+                ref={elem => this.questionRenderer = elem}
                 {...this.props.item.question}
             />
         );
@@ -342,7 +342,7 @@ const ItemRenderer = React.createClass({
                 hints={this.props.item.hints}
                 hintsVisible={this.props.hintsVisible}
                 apiOptions={apiOptions}
-                ref={elem => (this.hintsRenderer = elem)}
+                ref={elem => this.hintsRenderer = elem}
             />
         );
 

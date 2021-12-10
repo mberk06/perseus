@@ -138,13 +138,12 @@ const GradedGroupSet = React.createClass({
                     <Indicators
                         numGroups={numGroups}
                         currentGroup={this.state.currentGroup}
-                        onChangeCurrentGroup={currentGroup =>
-                            this.setState({currentGroup})}
+                        onChangeCurrentGroup={currentGroup => this.setState({currentGroup})}
                     />
                 </div>
                 <GradedGroup
                     key={this.state.currentGroup}
-                    ref={comp => (this._childGroup = comp)}
+                    ref={comp => this._childGroup = comp}
                     {...this.props}
                     {...currentGroup}
                     inGradedGroupSet={true}
