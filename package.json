@@ -30,7 +30,12 @@
     "aphrodite": "^2.4.0",
     "btoa": "^1.2.1",
     "classnames": "^2.3.1",
-    "react": "^17.0.2"
+    "create-react-class": "^15.7.0",
+    "jquery": "1.9.x",
+    "katex": "^0.15.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-addons-pure-render-mixin": "^15.6.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
