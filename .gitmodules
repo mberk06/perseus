@@ -1,6 +1,3 @@
-[submodule "kmath"]
-	path = kmath
-	url = https://github.com/Khan/kmath.git
 [submodule "lib/mathjax"]
 	path = lib/mathjax
 	url = https://github.com/Khan/khan-MathJax.git
