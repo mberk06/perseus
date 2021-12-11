@@ -4,9 +4,6 @@
 [submodule "kmath"]
 	path = kmath
 	url = https://github.com/Khan/kmath.git
-[submodule "simple-markdown"]
-	path = simple-markdown
-	url = https://github.com/Khan/simple-markdown.git
 [submodule "hubble"]
 	path = hubble
 	url = https://github.com/joelburget/hubble.git
