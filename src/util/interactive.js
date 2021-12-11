@@ -8,7 +8,7 @@ import _kmath3 from "kmath";
 import _kmath2 from "kmath";
 import _kmath from "kmath";
 import _graphieJs from "./graphie.js";
-import _libJqueryMobileVmouseJs from "../../lib/jquery.mobile.vmouse.js";
+import _libJqueryMobileVmouseJs from "../lib/jquery.mobile.vmouse.js";
 import _underscore from "underscore";
 
 var module = {
