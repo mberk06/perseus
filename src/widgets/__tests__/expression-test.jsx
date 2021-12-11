@@ -4,7 +4,7 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 import _perseusJs from "../../perseus.js";
-import _hubbleIndexJs from "../../../hubble/index.js";
+import _hubbleIndexJs from "../../hubble/index.js";
 import _assert from "assert";
 
 var module = {

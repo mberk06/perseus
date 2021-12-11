@@ -5,7 +5,7 @@ import _reactComponentsSortableJsx from "react-components/sortable.jsx";
 import _componentsPropCheckBoxJsx from "../components/prop-check-box.jsx";
 import _componentsInfoTipJsx from "../components/info-tip.jsx";
 import _mixinsChangeableJsx from "../mixins/changeable.jsx";
-import _hubbleIndexJs from "../../hubble/index.js";
+import _hubbleIndexJs from "../hubble/index.js";
 import _underscore from "underscore";
 import _react from "react";
 

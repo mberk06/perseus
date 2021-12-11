@@ -1,4 +1,4 @@
-import _hubbleIndexJs from "../../hubble/index.js";
+import _hubbleIndexJs from "../hubble/index.js";
 import { iconExclamationSign } from "../icon-paths.js";
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
 import _mathInput3 from "../../math-input";

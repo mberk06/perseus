@@ -8,7 +8,7 @@ import { iconChevronDown, iconTrash } from "./icon-paths.js";
 import { HintEditor } from "./hint-editor.jsx";
 import _editorJsx from "./editor.jsx";
 import _perseusApiJsx from "./perseus-api.jsx";
-import _hubbleIndexJs from "../hubble/index.js";
+import _hubbleIndexJs from "./hubble/index.js";
 import _reactDom from "react-dom";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";

@@ -6,7 +6,7 @@ import _perseusApiJsx from "../perseus-api.jsx";
 import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
-import _hubbleIndexJs from "../../hubble/index.js";
+import _hubbleIndexJs from "../hubble/index.js";
 
 var module = {
     exports: {}

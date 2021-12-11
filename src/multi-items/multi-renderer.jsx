@@ -4,7 +4,7 @@ import _rendererJsx from "../renderer.jsx";
 import _hintsRendererJsx from "../hints-renderer.jsx";
 import { itemToTree } from "./items.js";
 import _react from "react";
-import _hubbleIndexJs from "../../hubble/index.js";
+import _hubbleIndexJs from "../hubble/index.js";
 import { StyleSheet, css } from "aphrodite";
 
 var module = {
