@@ -2,7 +2,7 @@ import _interactive2InteractiveUtilJs from "../interactive2/interactive-util.js"
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
 import _utilAnswerTypesJs from "../util/answer-types.js";
 import _perseusApiJsx from "../perseus-api.jsx";
-import _mathInput from "../../math-input";
+import _mathInput from "@khanacademy/math-input";
 import _utilJs from "../util.js";
 import _rendererJsx from "../renderer.jsx";
 import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";

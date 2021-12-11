@@ -1,4 +1,4 @@
-import _mathInput from "../../math-input";
+import _mathInput from "@khanacademy/math-input";
 import _reactDom from "react-dom";
 import _react from "react";
 

@@ -10,7 +10,7 @@ import _utilJs3 from "../util.js";
 import _utilJs2 from "../util.js";
 import _utilJs from "../util.js";
 import { iconPlus, iconUndo } from "../icon-paths.js";
-import _mathInput from "../../math-input";
+import _mathInput from "@khanacademy/math-input";
 import _perseusApiJsx from "../perseus-api.jsx";
 import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
 import _reactComponentsTexJsx from "react-components/tex.jsx";

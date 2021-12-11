@@ -3,7 +3,7 @@ import _utilColorsJs from "../util/colors.js";
 import _utilMathJs from "../util/math.js";
 import _kmath from "kmath";
 import _componentsGraphieJsx from "../components/graphie.jsx";
-import _mathInput from "../../math-input";
+import _mathInput from "@khanacademy/math-input";
 import _perseusApiJsx from "../perseus-api.jsx";
 import _componentsSimpleKeypadInputJsx from "../components/simple-keypad-input.jsx";
 import _componentsMathOutputJsx from "../components/math-output.jsx";

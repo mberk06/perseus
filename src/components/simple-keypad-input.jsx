@@ -1,6 +1,6 @@
-import _mathInput3 from "../../math-input";
-import _mathInput2 from "../../math-input";
-import _mathInput from "../../math-input";
+import _mathInput3 from "@khanacademy/math-input";
+import _mathInput2 from "@khanacademy/math-input";
+import _mathInput from "@khanacademy/math-input";
 import _react from "react";
 
 var module = {

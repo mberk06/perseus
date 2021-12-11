@@ -1,5 +1,5 @@
 import { mapObject, mapObjectFromArray } from "./interactive2/objective_.js";
-import _mathInput from "../math-input";
+import _mathInput from "@khanacademy/math-input";
 import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
 import _gorgonGorgonJs from "./gorgon/gorgon.js";
 import _utilKatexPreprocessJs from "./util/katex-preprocess.js";

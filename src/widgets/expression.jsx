@@ -1,9 +1,9 @@
 import _hubbleIndexJs from "../hubble/index.js";
 import { iconExclamationSign } from "../icon-paths.js";
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
-import _mathInput3 from "../../math-input";
-import _mathInput2 from "../../math-input";
-import _mathInput from "../../math-input";
+import _mathInput3 from "@khanacademy/math-input";
+import _mathInput2 from "@khanacademy/math-input";
+import _mathInput from "@khanacademy/math-input";
 import _componentsTexButtonsJsx from "../components/tex-buttons.jsx";
 import _componentsMathInputJsx from "../components/math-input.jsx";
 import _componentsInputWithExamplesJsx from "../components/input-with-examples.jsx";

@@ -1,7 +1,7 @@
 import _componentsInlineIconJsx from "../components/inline-icon.jsx";
 import { iconDropdownArrow } from "../icon-paths.js";
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
-import _mathInput from "../../math-input";
+import _mathInput from "@khanacademy/math-input";
 import _utilMathJs from "../util/math.js";
 import _utilAnswerTypesJs from "../util/answer-types.js";
 import _perseusApiJsx2 from "../perseus-api.jsx";

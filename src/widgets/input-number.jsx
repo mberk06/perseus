@@ -1,7 +1,7 @@
 import _perseusApiJsx2 from "../perseus-api.jsx";
 import _perseusApiJsx from "../perseus-api.jsx";
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";
-import _mathInput from "../../math-input";
+import _mathInput from "@khanacademy/math-input";
 import _utilAnswerTypesJs from "../util/answer-types.js";
 import _componentsPossibleAnswersJsx from "../components/possible-answers.jsx";
 import _texWranglerJs from "../tex-wrangler.js";
