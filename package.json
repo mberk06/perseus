@@ -37,7 +37,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-addons-pure-render-mixin": "^15.6.3",
-    "simple-markdown": "^0.7.3"
+    "simple-markdown": "^0.7.3",
+    "underscore": "^1.4.4"
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "^7.16.0",
