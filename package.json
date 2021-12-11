@@ -32,7 +32,7 @@
     "classnames": "^2.3.1",
     "create-react-class": "^15.7.0",
     "draft-js": "^0.11.7",
-    "jquery": "1.9.x",
+    "jquery": "^1.12.4",
     "katex": "^0.15.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
