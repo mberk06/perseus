@@ -68,7 +68,6 @@ InlineIcon.propTypes = {
     // aria-hidden=true
     title: React.PropTypes.string,
 };
-/* eslint-enable react/jsx-sort-prop-types */
 
 module.exports = InlineIcon;
 export default module.exports;

@@ -7,19 +7,14 @@ import _widgetsInputNumberJsx from "./widgets/input-number.jsx";
 import _widgetsRadioEditorJsx from "./widgets/radio/editor.jsx";
 import _widgetsRadioJsx from "./widgets/radio.jsx";
 
-var module = {
-    exports: {}
-};
-
-var exports = module.exports;
-/* globals __EDITOR__ */
+// TODO(aria): env/build var
+const __EDITOR__ = true;
 
 // As new widgets get added here, please also make sure they get added in
 // webapp perseus/traversal.py so they can be properly translated.
-module.exports = [
-    __EDITOR__ = _widgetsRadioEditorJsx,
-    __EDITOR__ = _widgetsInputNumberEditorJsx,
-    __EDITOR__ = _widgetsNumericInputEditorJsx,
-    __EDITOR__ = _widgetsExpressionEditorJsx,
+export default [
+  [_widgetsRadioJsx, __EDITOR__ && _widgetsRadioEditorJsx],
+  [_widgetsInputNumberJsx, __EDITOR__ && _widgetsInputNumberEditorJsx],
+  [_widgetsNumericInputJsx, __EDITOR__ && _widgetsNumericInputEditorJsx],
+  [_widgetsExpressionJsx, __EDITOR__ && _widgetsExpressionEditorJsx],
 ];
-export default module.exports;

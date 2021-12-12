@@ -33,20 +33,23 @@ const init = function(options) {
     // (since this is a breaking change in the API) but this is a more
     // lightweight fix that will get exercises working in our mobile apps
     // immediately.
-    if (options.loadExtraWidgets === undefined || options.loadExtraWidgets) {
-        const Widgets = _widgetsJs;
-        require.ensure(
-            [],
-            require => {
-                const extraWidgets = _extraWidgetsJs;
-                Widgets.registerMany(extraWidgets);
-                widgetsDeferred.resolve();
-            },
-            "extra-widgets"
-        );
-    } else {
+
+    // TODO(aria): Re-enable extra-widgets
+
+    //if (options.loadExtraWidgets === undefined || options.loadExtraWidgets) {
+    //    const Widgets = _widgetsJs;
+    //    require.ensure(
+    //        [],
+    //        require => {
+    //            const extraWidgets = _extraWidgetsJs;
+    //            Widgets.registerMany(extraWidgets);
+    //            widgetsDeferred.resolve();
+    //        },
+    //        "extra-widgets"
+    //    );
+    //} else {
         widgetsDeferred.resolve();
-    }
+    //}
 
     const mathJaxDeferred = $.Deferred();
 
