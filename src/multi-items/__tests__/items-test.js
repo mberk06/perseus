@@ -12,11 +12,11 @@ import {
 
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 const assert = _assert;
 const shapes = _shapesJs;
@@ -216,4 +216,4 @@ describe("findHintNodesInItem", () => {
         assert.deepEqual([hint(6), hint(7)], hints);
     });
 });
-export default module.exports;
+export default _module_.exports;

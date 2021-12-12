@@ -1,11 +1,11 @@
 import _mathJs from "./math.js";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* globals katex:false, MathJax:false, Exercises:false */
 
 const KhanMath = _mathJs;
@@ -35,7 +35,7 @@ function doCallback(elem, callback) {
     })();
 }
 
-module.exports = {
+_module_.exports = {
     // Process a node and add math inside of it. This attempts to use KaTeX to
     // format the math, and if that fails it falls back to MathJax.
     //
@@ -212,4 +212,4 @@ module.exports = {
         return $(elem).attr("data-math-formula");
     },
 };
-export default module.exports;
+export default _module_.exports;

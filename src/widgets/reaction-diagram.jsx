@@ -1,11 +1,11 @@
 import _moleculeJsx from "./molecule.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 
 const Molecule = _moleculeJsx.molecule;
@@ -131,10 +131,10 @@ const ReactionDiagramWidget = React.createClass({
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "reaction-diagram",
     displayName: "Chemical reaction",
     hidden: true,
     widget: ReactionDiagramWidget,
 };
-export default module.exports;
+export default _module_.exports;

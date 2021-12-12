@@ -10,11 +10,11 @@ import {
 
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -89,5 +89,5 @@ class ElementContainer extends React.Component {
     }
 }
 
-module.exports = ElementContainer;
-export default module.exports;
+_module_.exports = ElementContainer;
+export default _module_.exports;

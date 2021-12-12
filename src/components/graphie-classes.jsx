@@ -1,11 +1,11 @@
 import _underscore from "underscore";
 import _utilJs from "../util.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const Util = _utilJs;
 const nestedMap = Util.nestedMap;
 const deepEq = Util.deepEq;
@@ -129,9 +129,9 @@ const createSimpleClass = function(addFunction) {
     });
 };
 
-module.exports = {
+_module_.exports = {
     GraphieMovable: GraphieMovable,
     createClass: createClass,
     createSimpleClass: createSimpleClass,
 };
-export default module.exports;
+export default _module_.exports;

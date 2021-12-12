@@ -1,11 +1,11 @@
 import _diffsItemDiffJsx from "./diffs/item-diff.jsx";
 import { Component } from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const ItemDiff = _diffsItemDiffJsx;
 
 class ItemDiffDemo extends Component {
@@ -217,5 +217,5 @@ const after = {
 };
 /* eslint-enable max-len */
 
-module.exports = ItemDiffDemo;
-export default module.exports;
+_module_.exports = ItemDiffDemo;
+export default _module_.exports;

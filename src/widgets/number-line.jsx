@@ -13,11 +13,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -817,11 +817,11 @@ var staticTransform = editorProps => {
     return props;
 };
 
-module.exports = {
+_module_.exports = {
     name: "number-line",
     displayName: "Number line",
     widget: NumberLine,
     transform: numberLineTransform,
     staticTransform: staticTransform,
 };
-export default module.exports;
+export default _module_.exports;

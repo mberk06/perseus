@@ -50,11 +50,11 @@ var preprocessTex = _utilKatexPreprocessJs;
 
 const Gorgon = _gorgonGorgonJs; // The linter engine
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 const {keypadElementPropType} = _mathInput.propTypes;
 
@@ -1760,5 +1760,5 @@ var Renderer = React.createClass({
     },
 });
 
-module.exports = Renderer;
-export default module.exports;
+_module_.exports = Renderer;
+export default _module_.exports;

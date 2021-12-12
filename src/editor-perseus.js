@@ -19,14 +19,14 @@ import _diffsItemDiffJsx from "./diffs/item-diff.jsx";
 import _itemVersion from "./item-version";
 import _perseusJs from "./perseus.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const Perseus = _perseusJs;
 
-module.exports = {
+_module_.exports = {
     itemVersion: _itemVersion,
     ItemDiff: _diffsItemDiffJsx,
     ArticleDiff: _diffsArticleDiffJsx,
@@ -48,4 +48,4 @@ module.exports = {
     JiptHack: _jiptHackJsx,
     ...Perseus,
 };
-export default module.exports;
+export default _module_.exports;

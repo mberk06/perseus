@@ -6,11 +6,11 @@ import _underscore from "underscore";
 import _react from "react";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -196,7 +196,7 @@ var traverseChildWidgets = function(props, traverseRenderer) {
     return _.extend({}, props, traverseRenderer(props));
 };
 
-module.exports = {
+_module_.exports = {
     name: "group",
     displayName: "Group (SAT only)",
     widget: Group,
@@ -204,4 +204,4 @@ module.exports = {
     hidden: false,
     isLintable: true,
 };
-export default module.exports;
+export default _module_.exports;

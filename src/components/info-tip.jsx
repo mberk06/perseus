@@ -1,11 +1,11 @@
 import _reactComponentsInfoTipJsx from "react-components/info-tip.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A wrapper around react-components/info-tip.jsx that can be rendered on the
  * server without causing a checksum mismatch on the client.
@@ -39,5 +39,5 @@ const InfoTip = React.createClass({
     },
 });
 
-module.exports = InfoTip;
-export default module.exports;
+_module_.exports = InfoTip;
+export default _module_.exports;

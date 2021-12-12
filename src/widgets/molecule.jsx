@@ -3,11 +3,11 @@ import { layout } from "./molecule/molecule-layout.jsx";
 import _moleculeMoleculeDrawingJsx from "./molecule/molecule-drawing.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -171,11 +171,11 @@ const MoleculeWidget = React.createClass({
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "molecule-renderer",
     displayName: "Molecule renderer",
     hidden: true,
     widget: MoleculeWidget,
     molecule: Molecule,
 };
-export default module.exports;
+export default _module_.exports;

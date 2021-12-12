@@ -1,10 +1,10 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 /**
  * This component, whenever its content updates, traverses the DOM to find
@@ -137,5 +137,5 @@ class WordIndexer extends React.PureComponent {
     }
 }
 
-module.exports = WordIndexer;
-export default module.exports;
+_module_.exports = WordIndexer;
+export default _module_.exports;

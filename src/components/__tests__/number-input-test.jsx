@@ -5,11 +5,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 const React = _react;
 const ReactDOM = _reactDom;
@@ -121,4 +121,4 @@ describe("NumberInput", function() {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

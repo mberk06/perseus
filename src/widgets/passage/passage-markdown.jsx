@@ -2,11 +2,11 @@ import _underscore from "underscore";
 import _simpleMarkdown from "simple-markdown";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -386,11 +386,11 @@ var parse = (source, state) => {
     return builtParser(paragraphedSource, _.extend(state, INITIAL_PARSE_STATE));
 };
 
-module.exports = {
+_module_.exports = {
     parse: parse,
     output: SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, "react")),
     START_REF_PREFIX: START_REF_PREFIX,
     END_REF_PREFIX: END_REF_PREFIX,
     _rulesForTesting: rules,
 };
-export default module.exports;
+export default _module_.exports;

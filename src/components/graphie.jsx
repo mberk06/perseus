@@ -9,11 +9,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const ReactDOM = _reactDom;
 const _ = _underscore;
@@ -350,5 +350,5 @@ _.extend(Graphie, GraphieClasses);
 // Attach the Movable react components for easy reference
 _.extend(Graphie, Movables);
 
-module.exports = Graphie;
-export default module.exports;
+_module_.exports = Graphie;
+export default _module_.exports;

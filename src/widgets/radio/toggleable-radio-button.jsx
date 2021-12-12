@@ -1,11 +1,11 @@
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const _ = _underscore;
 
@@ -105,5 +105,5 @@ const ToggleableRadioButton = React.createClass({
     },
 });
 
-module.exports = ToggleableRadioButton;
-export default module.exports;
+_module_.exports = ToggleableRadioButton;
+export default _module_.exports;

@@ -10,11 +10,11 @@ import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -326,7 +326,7 @@ _.extend(ImageWidget, {
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "image",
     // This widget's accessibility depends on its contents: if the image has
     // has a background but no alt text, it is not accessible
@@ -340,4 +340,4 @@ module.exports = {
     widget: ImageWidget,
     isLintable: true,
 };
-export default module.exports;
+export default _module_.exports;

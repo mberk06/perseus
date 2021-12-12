@@ -1,11 +1,11 @@
 import _perseusApiJsx from "../perseus-api.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A mixin that accepts the `apiOptions` prop, and populates any missing values
  * with defaults.
@@ -32,5 +32,5 @@ const ApiOptionsProps = {
     },
 };
 
-module.exports = ApiOptionsProps;
-export default module.exports;
+_module_.exports = ApiOptionsProps;
+export default _module_.exports;

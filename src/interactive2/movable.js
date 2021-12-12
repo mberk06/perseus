@@ -3,11 +3,11 @@ import _interactiveUtilJs from "./interactive-util.js";
 import _underscore from "underscore";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Movable
  *
@@ -288,5 +288,5 @@ _.extend(Movable.prototype, {
     },
 });
 
-module.exports = Movable;
-export default module.exports;
+_module_.exports = Movable;
+export default _module_.exports;

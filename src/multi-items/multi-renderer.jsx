@@ -7,11 +7,11 @@ import _react from "react";
 import _hubbleIndexJs from "../hubble/index.js";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const lens = _hubbleIndexJs;
 const React = _react;
 
@@ -379,5 +379,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = MultiRenderer;
-export default module.exports;
+_module_.exports = MultiRenderer;
+export default _module_.exports;

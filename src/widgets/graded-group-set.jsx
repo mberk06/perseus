@@ -16,11 +16,11 @@ import { StyleSheet, css } from "aphrodite";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -173,7 +173,7 @@ const traverseChildWidgets = function(props, traverseRenderer) {
     };
 };
 
-module.exports = {
+_module_.exports = {
     name: "graded-group-set",
     displayName: "Graded group set (articles only)",
     widget: GradedGroupSet,
@@ -232,4 +232,4 @@ const styles = StyleSheet.create({
         width: "auto",
     },
 });
-export default module.exports;
+export default _module_.exports;

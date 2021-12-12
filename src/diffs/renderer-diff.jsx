@@ -4,11 +4,11 @@ import _textDiffJsx from "./text-diff.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A side by side diff view for Perseus renderers.
  */
@@ -134,5 +134,5 @@ const RendererDiff = React.createClass({
     },
 });
 
-module.exports = RendererDiff;
-export default module.exports;
+_module_.exports = RendererDiff;
+export default _module_.exports;

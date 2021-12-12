@@ -3,11 +3,11 @@ import _traversalJsx from "./traversal.jsx";
 import { findContentNodesInItem, inferItemShape } from "./multi-items.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Identifies whether or not a given perseus item requires the use of a mouse
  * or screen, based on the widgets it contains.
@@ -28,7 +28,7 @@ function traverseRenderer(itemData, widgets) {
     });
 }
 
-module.exports = {
+_module_.exports = {
     // Returns a list of widgets that cause a given perseus item to require
     // the use of a screen or mouse.
     //
@@ -51,4 +51,4 @@ module.exports = {
         return _.uniq(widgets);
     },
 };
-export default module.exports;
+export default _module_.exports;

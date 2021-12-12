@@ -8,11 +8,11 @@ import _react from "react";
 import _classnames from "classnames";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
 const classNames = _classnames;
@@ -239,5 +239,5 @@ const NumberInput = React.createClass({
     },
 });
 
-module.exports = NumberInput;
-export default module.exports;
+_module_.exports = NumberInput;
+export default _module_.exports;

@@ -3,11 +3,11 @@ import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
 import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -75,5 +75,5 @@ var ExampleGraphieWidgetEditor = React.createClass({
     },
 });
 
-module.exports = ExampleGraphieWidgetEditor;
-export default module.exports;
+_module_.exports = ExampleGraphieWidgetEditor;
+export default _module_.exports;

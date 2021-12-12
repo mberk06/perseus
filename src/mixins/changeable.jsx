@@ -3,11 +3,11 @@ import _widgetPropBlacklistJsx from "./widget-prop-blacklist.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Changeable
  *
@@ -102,4 +102,4 @@ export const change = function(newPropsOrSinglePropName, propValue, callback) {
 export const propTypes = {
     onChange: React.PropTypes.func.isRequired,
 };
-export default module.exports;
+export default _module_.exports;

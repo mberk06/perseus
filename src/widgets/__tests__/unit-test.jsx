@@ -1,11 +1,11 @@
 import { widget as UnitWidget, countSigfigs, sigfigPrint } from "../unit.jsx";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-redeclare, no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -121,4 +121,4 @@ describe("Unit Widget Grading", () => {
         );
     });
 });
-export default module.exports;
+export default _module_.exports;

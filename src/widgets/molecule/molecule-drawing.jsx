@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -180,5 +180,5 @@ const styles = {
 
 styles.font = styles.fontSizePx + "px sans";
 
-module.exports = draw;
-export default module.exports;
+_module_.exports = draw;
+export default _module_.exports;

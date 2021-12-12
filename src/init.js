@@ -1,11 +1,11 @@
 import _extraWidgetsJs from "./extra-widgets.js";
 import _widgetsJs from "./widgets.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * This should be called by all clients, specifying whether extra widgets are
  * needed via `loadExtraWidgets`. It is idempotent, so it's not a problem to
@@ -74,5 +74,5 @@ const init = function(options) {
     return widgetsDeferred.then(() => mathJaxDeferred);
 };
 
-module.exports = init;
-export default module.exports;
+_module_.exports = init;
+export default _module_.exports;

@@ -1,10 +1,10 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types */
 
 /**
@@ -69,5 +69,5 @@ InlineIcon.propTypes = {
     title: React.PropTypes.string,
 };
 
-module.exports = InlineIcon;
-export default module.exports;
+_module_.exports = InlineIcon;
+export default _module_.exports;

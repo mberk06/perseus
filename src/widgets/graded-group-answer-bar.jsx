@@ -14,11 +14,11 @@ import _componentsInlineIconJsx from "../components/inline-icon.jsx";
 import _perseusApiJsx from "../perseus-api.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* globals i18n */
 /**
  * Renders answer bar for mobile graded groups. [STATELESS]
@@ -203,5 +203,5 @@ const styles = {
 
 GradedGroupAnswerBar.ANSWER_BAR_STATES = ANSWER_BAR_STATES;
 
-module.exports = GradedGroupAnswerBar;
-export default module.exports;
+_module_.exports = GradedGroupAnswerBar;
+export default _module_.exports;

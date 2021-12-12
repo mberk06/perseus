@@ -6,11 +6,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types, react/prop-types, react/sort-comp */
 
 const React = _react;
@@ -397,5 +397,5 @@ const Graph = React.createClass({
     },
 });
 
-module.exports = Graph;
-export default module.exports;
+_module_.exports = Graph;
+export default _module_.exports;

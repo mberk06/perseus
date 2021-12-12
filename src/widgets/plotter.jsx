@@ -9,11 +9,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, indent, max-lines, no-redeclare, no-unused-vars, no-var, object-curly-spacing, one-var, react/prop-types, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -1076,10 +1076,10 @@ _.extend(Plotter, {
 // We don't need to change any of the original props for static mode
 var staticTransform = _.identity;
 
-module.exports = {
+_module_.exports = {
     name: "plotter",
     displayName: "Plotter",
     widget: Plotter,
     staticTransform: staticTransform,
 };
-export default module.exports;
+export default _module_.exports;

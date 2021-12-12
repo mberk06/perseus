@@ -6,11 +6,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -157,5 +157,5 @@ var MatrixEditor = React.createClass({
     },
 });
 
-module.exports = MatrixEditor;
-export default module.exports;
+_module_.exports = MatrixEditor;
+export default _module_.exports;

@@ -2,11 +2,11 @@ import _mathInput from "@khanacademy/math-input";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -89,5 +89,5 @@ const ProvideKeypad = {
     },
 };
 
-module.exports = ProvideKeypad;
-export default module.exports;
+_module_.exports = ProvideKeypad;
+export default _module_.exports;

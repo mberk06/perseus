@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -173,8 +173,8 @@ function parseTex(tex) {
     return texWithoutFracs.replace("\\%", "%");
 }
 
-module.exports = {
+_module_.exports = {
     parseTex,
     modifyTex,
 };
-export default module.exports;
+export default _module_.exports;

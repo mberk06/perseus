@@ -9,11 +9,11 @@ import _classnames from "classnames";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 /**
  * An article renderer. Articles are long-form pieces of content,
@@ -223,5 +223,5 @@ const ArticleRenderer = React.createClass({
     },
 });
 
-module.exports = ArticleRenderer;
-export default module.exports;
+_module_.exports = ArticleRenderer;
+export default _module_.exports;

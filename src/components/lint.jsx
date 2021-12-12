@@ -383,5 +383,5 @@ const styles = StyleSheet.create({
 
 });
 
-module.exports = Lint;
-export default module.exports;
+_module_.exports = Lint;
+export default _module_.exports;

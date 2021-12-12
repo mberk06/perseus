@@ -70,11 +70,11 @@ const assert = _assert;
 const PerseusMarkdown = _perseusMarkdownJsx;
 import TreeTransformer from "../tree-transformer.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 // TODO(davidflanagan):
 // Come back to this file convert the require() calls to imports
@@ -572,4 +572,4 @@ describe("Individual lint rules tests", () => {
     ]);
 */
 });
-export default module.exports;
+export default _module_.exports;

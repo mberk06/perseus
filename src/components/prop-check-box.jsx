@@ -1,11 +1,11 @@
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
 const React = _react;
@@ -75,5 +75,5 @@ const PropCheckBox = React.createClass({
     },
 });
 
-module.exports = PropCheckBox;
-export default module.exports;
+_module_.exports = PropCheckBox;
+export default _module_.exports;

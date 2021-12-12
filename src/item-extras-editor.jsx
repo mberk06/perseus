@@ -1,11 +1,11 @@
 import _componentsInfoTipJsx from "./components/info-tip.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -156,5 +156,5 @@ var ItemExtrasEditor = React.createClass({
     },
 });
 
-module.exports = ItemExtrasEditor;
-export default module.exports;
+_module_.exports = ItemExtrasEditor;
+export default _module_.exports;

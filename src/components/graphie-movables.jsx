@@ -3,11 +3,11 @@ import _interactive2Js from "../interactive2.js";
 import _graphieClassesJsx from "./graphie-classes.jsx";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 const GraphieClasses = _graphieClassesJsx;
 const Interactive2 = _interactive2Js;
@@ -311,7 +311,7 @@ const Rect = GraphieClasses.createSimpleClass((graphie, props) => {
     );
 });
 
-module.exports = {
+_module_.exports = {
     Arc: Arc,
     Circle: Circle,
     Label: Label,
@@ -326,4 +326,4 @@ module.exports = {
     Sinusoid: Sinusoid,
     Rect: Rect,
 };
-export default module.exports;
+export default _module_.exports;

@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
  exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * These are things that widgets should exclude when serializing themselves.
  *
@@ -14,7 +14,7 @@ var exports = module.exports;
  *
  * This blacklists things that we know don't need to be serialized.
  */
-module.exports = [
+_module_.exports = [
     // standard props "added" by react
     // (technically the renderer still adds them)
     "key",
@@ -38,4 +38,4 @@ module.exports = [
     "trackInteraction",
     "keypadElement",
 ];
-export default module.exports;
+export default _module_.exports;

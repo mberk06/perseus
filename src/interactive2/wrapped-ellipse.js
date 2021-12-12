@@ -3,11 +3,11 @@ import _interactiveUtilJs from "./interactive-util.js";
 import _wrappedDefaultsJs from "./wrapped-defaults.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 const WrappedDefaults = _wrappedDefaultsJs;
 const InteractiveUtil = _interactiveUtilJs;
@@ -69,5 +69,5 @@ const WrappedEllipse = function(graphie, center, radii, options) {
 
 _.extend(WrappedEllipse.prototype,  WrappedDefaults);
 
-module.exports = WrappedEllipse;
-export default module.exports;
+_module_.exports = WrappedEllipse;
+export default _module_.exports;

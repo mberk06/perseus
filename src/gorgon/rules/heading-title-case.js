@@ -1,10 +1,10 @@
 import Rule from "../rule.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 // These are 3-letter and longer words that we would not expect to be
 // capitalized even in a title-case heading.  See
@@ -16,7 +16,7 @@ function isCapitalized(word) {
     return c === c.toUpperCase();
 }
 
-module.exports = Rule.makeRule({
+_module_.exports = Rule.makeRule({
     name: "heading-title-case",
     severity: Rule.Severity.GUIDELINE,
     selector: "heading",
@@ -65,4 +65,4 @@ Only capitalize the first letter and proper nouns.`;
         }
     },
 });
-export default module.exports;
+export default _module_.exports;

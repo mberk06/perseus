@@ -8,11 +8,11 @@ import { StyleSheet, css } from "aphrodite";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -163,5 +163,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = GradedGroupEditor;
-export default module.exports;
+_module_.exports = GradedGroupEditor;
+export default _module_.exports;

@@ -1,7 +1,7 @@
 
-var module = {
+var _module_ = {
   exports: {}
 };
 
-var exports = module.exports;
-export default module.exports;
+var exports = _module_.exports;
+export default _module_.exports;

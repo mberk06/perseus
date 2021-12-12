@@ -8,11 +8,11 @@ import _perseusApiJsx from "../perseus-api.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style, comma-dangle, no-unused-vars, no-var, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -174,10 +174,10 @@ _.extend(ExampleGraphieWidget, {
  * For this widget to work, we must export it.
  * We also must require() this file in src/all-widgets.js
  */
-module.exports = {
+_module_.exports = {
     name: "example-graphie-widget",
     displayName: "Example Graphie Widget",
     hidden: true, // Hides this widget from the Perseus.Editor widget select
     widget: ExampleGraphieWidget,
 };
-export default module.exports;
+export default _module_.exports;

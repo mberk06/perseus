@@ -2,11 +2,11 @@ import _highlightTooltipJsx from "./highlight-tooltip.jsx";
 import _highlightRendererJsx from "./highlight-renderer.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 /**
  * Render a set of highlights. See HighlightRenderer for more details about how
@@ -154,5 +154,5 @@ class HighlightSetRenderer extends React.PureComponent {
     }
 }
 
-module.exports = HighlightSetRenderer;
-export default module.exports;
+_module_.exports = HighlightSetRenderer;
+export default _module_.exports;

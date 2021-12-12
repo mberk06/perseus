@@ -1,14 +1,14 @@
-var module = {
+var _module_ = {
  exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Color constants we use throughout Perseus (originally on KhanUtil).
  *
  * Note that if the color palette changes substantially, it may also need to be
  * updated in khan-exercises and cherry-picked into graphie-to-png's
- * khan-exercises submodule, as graphie-to-png still relies on the palette
+ * khan-exercises sub_module_, as graphie-to-png still relies on the palette
  * provided on KhanUtil.
  */
 const KhanColors = {
@@ -96,5 +96,5 @@ KhanColors.INTERACTING = KhanColors.KA_GREEN;
 KhanColors.INTERACTIVE = KhanColors.KA_GREEN;
 KhanColors.DYNAMIC = KhanColors.BLUE;
 
-module.exports = KhanColors;
-export default module.exports;
+_module_.exports = KhanColors;
+export default _module_.exports;

@@ -4,11 +4,11 @@ import _interactive2MovableLineJs from "./interactive2/movable-line.js";
 import _interactive2MovablePointJsx from "./interactive2/movable-point.jsx";
 import _interactive2MovableJs from "./interactive2/movable.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const Movable = _interactive2MovableJs;
 const MovablePoint = _interactive2MovablePointJsx;
 const MovableLine = _interactive2MovableLineJs;
@@ -79,5 +79,5 @@ const Interactive2 = {
     },
 };
 
-module.exports = Interactive2;
-export default module.exports;
+_module_.exports = Interactive2;
+export default _module_.exports;

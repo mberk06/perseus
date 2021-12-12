@@ -1,10 +1,10 @@
 import Rule from "../rule.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 // Normally we have one rule per file. But since our selector class
 // can't match specific widget types directly, this rule implements
@@ -12,7 +12,7 @@ var exports = module.exports;
 // slightly increase efficiency, but it means that if there is more
 // than one problem with an image widget, the user will only see one
 // problem at a time.
-module.exports = Rule.makeRule({
+_module_.exports = Rule.makeRule({
     name: "image-widget",
     severity: Rule.Severity.BULK_WARNING,
     selector: "widget",
@@ -53,4 +53,4 @@ Don't include math expressions in image captions.`;
         }
     },
 });
-export default module.exports;
+export default _module_.exports;

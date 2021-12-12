@@ -1,11 +1,11 @@
 import _movableHelperMethodsJs from "./movable-helper-methods.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Utility functions for writing Interactive2 movablethings
  */

@@ -4,11 +4,11 @@ import _interactiveUtilJs from "./interactive-util.js";
 import _underscore from "underscore";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Default methods for a wrapped movable.
  */
@@ -88,5 +88,5 @@ const WrappedDefaults = _.extend({
     };
 }));
 
-module.exports = WrappedDefaults;
-export default module.exports;
+_module_.exports = WrappedDefaults;
+export default _module_.exports;

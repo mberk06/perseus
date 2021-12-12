@@ -5,11 +5,11 @@ import _reactDom from "react-dom";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
   * Demonstrates the rendered result of a Perseus question
   *
@@ -260,5 +260,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = RendererDemo;
-export default module.exports;
+_module_.exports = RendererDemo;
+export default _module_.exports;

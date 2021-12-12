@@ -8,11 +8,11 @@ import { StyleSheet, css } from "aphrodite";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types, react/prop-types, react/sort-comp */
 
 const React = _react;
@@ -673,5 +673,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = Sortable;
-export default module.exports;
+_module_.exports = Sortable;
+export default _module_.exports;

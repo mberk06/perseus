@@ -8,11 +8,11 @@ import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -499,5 +499,5 @@ var NumberLineEditor = React.createClass({
     },
 });
 
-module.exports = NumberLineEditor;
-export default module.exports;
+_module_.exports = NumberLineEditor;
+export default _module_.exports;

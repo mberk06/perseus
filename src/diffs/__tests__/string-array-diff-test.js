@@ -1,10 +1,10 @@
 import _stringArrayDiffJsx from "../string-array-diff.jsx";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* global expect */
 
 const stringArrayDiff = _stringArrayDiffJsx;
@@ -80,4 +80,4 @@ describe("string array diff", function() {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

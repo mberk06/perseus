@@ -1,11 +1,11 @@
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
   * Provides a simple styled button
   *
@@ -86,5 +86,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = SimpleButton;
-export default module.exports;
+_module_.exports = SimpleButton;
+export default _module_.exports;

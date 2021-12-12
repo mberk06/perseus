@@ -2,11 +2,11 @@ import { getRelativePosition } from "./util.js";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 /**
  * A tooltip to point to the focus of a highlight.
@@ -150,5 +150,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = HighlightTooltip;
-export default module.exports;
+_module_.exports = HighlightTooltip;
+export default _module_.exports;

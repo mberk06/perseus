@@ -2,11 +2,11 @@ import * as styleConstants from "../../styles/constants.js";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 
 /**
@@ -50,5 +50,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = OptionStatus;
-export default module.exports;
+_module_.exports = OptionStatus;
+export default _module_.exports;

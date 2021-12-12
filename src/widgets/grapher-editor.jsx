@@ -8,11 +8,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-redeclare, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -151,5 +151,5 @@ const GrapherEditor = React.createClass({
     },
 });
 
-module.exports = GrapherEditor;
-export default module.exports;
+_module_.exports = GrapherEditor;
+export default _module_.exports;

@@ -1,15 +1,15 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const devices = {
     PHONE: "phone",
     TABLET: "tablet",
     DESKTOP: "desktop",
 };
 
-module.exports = {
+_module_.exports = {
     devices: devices,
     // How many pixels do we reserve on the right-hand side of a preview
     // for displaying lint indicators? This space needs to be reserved
@@ -19,4 +19,4 @@ module.exports = {
     // space for it in DeviceFramer.
     perseusFrameBorderWidth: 1,
 };
-export default module.exports;
+export default _module_.exports;

@@ -9,11 +9,11 @@ import _perseusApiJsx from "./perseus-api.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 /**
  * An article editor. Articles are long-form pieces of content, composed of
@@ -445,5 +445,5 @@ const ArticleEditor = React.createClass({
     },
 });
 
-module.exports = ArticleEditor;
-export default module.exports;
+_module_.exports = ArticleEditor;
+export default _module_.exports;

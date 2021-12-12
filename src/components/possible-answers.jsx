@@ -1,11 +1,11 @@
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * In review mode (currently only visible in the sat-mission), NumericInput and
  * InputNumber use this component to display the set of correct answers.
@@ -41,5 +41,5 @@ const PossibleAnswers = React.createClass({
     },
 });
 
-module.exports = PossibleAnswers;
-export default module.exports;
+_module_.exports = PossibleAnswers;
+export default _module_.exports;

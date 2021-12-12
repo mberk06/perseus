@@ -16,11 +16,11 @@ import _interactive2Js from "../interactive2.js";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style, comma-dangle, indent, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -608,11 +608,11 @@ var staticTransform = editorProps => {
     });
 };
 
-module.exports = {
+_module_.exports = {
     name: "grapher",
     displayName: "Grapher",
     widget: Grapher,
     transform: propTransform,
     staticTransform: staticTransform,
 };
-export default module.exports;
+export default _module_.exports;

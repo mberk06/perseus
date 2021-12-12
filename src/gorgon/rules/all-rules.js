@@ -30,17 +30,17 @@ import _blockquotedWidgetJs from "./blockquoted-widget.js";
 import _blockquotedMathJs from "./blockquoted-math.js";
 import _absoluteUrlJs from "./absolute-url.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // TODO(davidflanagan):
 // This should probably be converted to use import and to export
 // and object that maps rule names to rules. Also, maybe this should
 // be an auto-generated file with a script that updates it any time
 // we add a new rule?
-module.exports = [
+_module_.exports = [
     _absoluteUrlJs,
     _blockquotedMathJs,
     _blockquotedWidgetJs,
@@ -73,4 +73,4 @@ module.exports = [
     _imageSpacesAroundUrlsJs,
     _imageWidgetJs,
 ];
-export default module.exports;
+export default _module_.exports;

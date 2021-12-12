@@ -2,11 +2,11 @@ import _editorPageJsx from "./editor-page.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -81,5 +81,5 @@ var StatefulEditorPage = React.createClass({
     },
 });
 
-module.exports = StatefulEditorPage;
-export default module.exports;
+_module_.exports = StatefulEditorPage;
+export default _module_.exports;

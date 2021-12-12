@@ -1,10 +1,10 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // Define the shape of the linter context object that is passed through the
 // tree with additional information about what we are checking.
 
@@ -23,4 +23,4 @@ export const linterContextDefault = {
     paths: [],
     stack: [],
 };
-export default module.exports;
+export default _module_.exports;

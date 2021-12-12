@@ -1,12 +1,12 @@
 import Rule from "../rule.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
-module.exports = Rule.makeRule({
+_module_.exports = Rule.makeRule({
     name: "long-paragraph",
     severity: Rule.Severity.GUIDELINE,
     selector: "paragraph",
@@ -17,4 +17,4 @@ This paragraph is ${content.length} characters long.
 Shorten it to 500 characters or fewer.`;
     },
 });
-export default module.exports;
+export default _module_.exports;

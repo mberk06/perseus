@@ -2,11 +2,11 @@ import _kmath from "kmath";
 import _underscore from "underscore";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 const knumber = _kmath.number;
 
@@ -303,5 +303,5 @@ const KhanMath = {
     },
 };
 
-module.exports = KhanMath;
-export default module.exports;
+_module_.exports = KhanMath;
+export default _module_.exports;

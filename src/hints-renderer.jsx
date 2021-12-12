@@ -12,11 +12,11 @@ import { StyleSheet, css } from "aphrodite";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const ReactDOM = _reactDom;
 const classnames = _classnames;
@@ -316,5 +316,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = HintsRenderer;
-export default module.exports;
+_module_.exports = HintsRenderer;
+export default _module_.exports;

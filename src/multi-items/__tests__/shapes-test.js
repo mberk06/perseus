@@ -1,11 +1,11 @@
 import _shapesJs from "../shapes.js";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 const assert = _assert;
 
@@ -52,4 +52,4 @@ describe("shapes.shape", () => {
         assert.equal(shapes.hint, shape.shape.bar);
     });
 });
-export default module.exports;
+export default _module_.exports;

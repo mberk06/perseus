@@ -65,9 +65,9 @@ export const mapObjectFromArray = function(arr, lambda) {
     return result;
 };
 
-module.exports = {
+_module_.exports = {
     pluck: pluck,
     mapObject: mapObject,
     mapObjectFromArray: mapObjectFromArray,
 };
-export default module.exports;
+export default _module_.exports;

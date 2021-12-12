@@ -1,10 +1,10 @@
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-undef, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -25,5 +25,5 @@ var delayedPromise = value => {
     return deferred.promise();
 };
 
-module.exports = delayedPromise;
-export default module.exports;
+_module_.exports = delayedPromise;
+export default _module_.exports;

@@ -4,11 +4,11 @@ import _traversalJsx from "../traversal.jsx";
 import _underscore from "underscore";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 const _ = _underscore;
 
@@ -402,4 +402,4 @@ describe("Traversal", () => {
         assertNonMutative();
     });
 });
-export default module.exports;
+export default _module_.exports;

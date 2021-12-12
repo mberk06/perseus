@@ -11,11 +11,11 @@ import {
     genKey,
 } from "draft-js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 // This provides sensible defaults for editorState, contentState, and selection.
 // This means that if I wanted to insert text at the current cursor location,
@@ -464,7 +464,7 @@ function toggleDecoration(draftData, decoration) {
     return newData;
 }
 
-module.exports = {
+_module_.exports = {
     regexStrategy,
     findPattern,
     replaceSelection,
@@ -476,4 +476,4 @@ module.exports = {
     snapSelectionOutsideEntities,
     toggleDecoration,
 };
-export default module.exports;
+export default _module_.exports;

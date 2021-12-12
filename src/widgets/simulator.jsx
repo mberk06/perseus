@@ -14,11 +14,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import _componentsInfoTipJsx from "../components/info-tip.jsx";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, indent, no-unused-vars, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, space-unary-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -804,11 +804,11 @@ var propTransform = editorProps => {
     return widgetProps;
 };
 
-module.exports = {
+_module_.exports = {
     name: "simulator",
     displayName: "Simulator",
     widget: Simulator,
     transform: propTransform,
     hidden: true,
 };
-export default module.exports;
+export default _module_.exports;

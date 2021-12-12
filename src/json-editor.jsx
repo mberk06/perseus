@@ -1,11 +1,11 @@
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -122,5 +122,5 @@ var JsonEditor = React.createClass({
     },
 });
 
-module.exports = JsonEditor;
-export default module.exports;
+_module_.exports = JsonEditor;
+export default _module_.exports;

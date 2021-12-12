@@ -2,11 +2,11 @@ import _rendererDiffJsx from "./renderer-diff.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A side by side diff view for Perseus articles.
  */
@@ -72,5 +72,5 @@ const ArticleDiff = React.createClass({
     },
 });
 
-module.exports = ArticleDiff;
-export default module.exports;
+_module_.exports = ArticleDiff;
+export default _module_.exports;

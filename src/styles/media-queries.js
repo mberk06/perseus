@@ -9,13 +9,13 @@ import {
     pureXlMin,
 } from "./constants.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
-module.exports = {
+_module_.exports = {
     xs: `@media screen and (max-width: ${pureXsMax})`,
     sm: `@media screen and (min-width: ${pureSmMin}) and ` +
         `(max-width: ${pureSmMax})`,
@@ -33,4 +33,4 @@ module.exports = {
     mdOrLarger: `@media screen and (min-width: ${pureMdMin})`,
     lgOrLarger: `@media screen and (min-width: ${pureLgMin})`,
 };
-export default module.exports;
+export default _module_.exports;

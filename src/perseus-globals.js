@@ -10,11 +10,11 @@ import katex from "katex";
 import classnames from "classnames";
 import _ from "underscore";
 
-var module = {
+var _module_ = {
   exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 // NOTE: We don't import the CSS here. Instead, applications can do it separately:
 //       import "perseus-configured/lib/khan-exercises.css";
@@ -99,4 +99,4 @@ window.Khan = {
   query: { debug: "" },
   imageBase: "/images/",
 };
-export default module.exports;
+export default _module_.exports;

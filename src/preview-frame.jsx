@@ -4,11 +4,11 @@ import _hintRendererJsx from "./hint-renderer.jsx";
 import _itemRendererJsx from "./item-renderer.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
   * Demonstrates the rendered result of a Perseus question within an iframe.
   *
@@ -209,5 +209,5 @@ const PreviewFrame = React.createClass({
     },
 });
 
-module.exports = PreviewFrame;
-export default module.exports;
+_module_.exports = PreviewFrame;
+export default _module_.exports;

@@ -3,11 +3,11 @@ import _movableMockJs from "./movable-mock.js";
 import _underscore from "underscore";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // System requires
 const assert = _assert;
 const _ = _underscore;
@@ -144,4 +144,4 @@ describe("MovablePoint", function() {
     });
 
 });
-export default module.exports;
+export default _module_.exports;

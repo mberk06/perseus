@@ -5,11 +5,11 @@ import _wrappedDefaultsJs from "./wrapped-defaults.js";
 import _interactiveUtilJs from "./interactive-util.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 const InteractiveUtil = _interactiveUtilJs;
 const WrappedDefaults = _wrappedDefaultsJs;
@@ -94,5 +94,5 @@ _.extend(WrappedLine.prototype, WrappedDefaults, {
     },
 });
 
-module.exports = WrappedLine;
-export default module.exports;
+_module_.exports = WrappedLine;
+export default _module_.exports;

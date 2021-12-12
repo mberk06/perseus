@@ -8,11 +8,11 @@ import _underscore from "underscore";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const _ = _underscore;
 
@@ -272,7 +272,7 @@ _.extend(Explanation, {
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "explanation",
     displayName: "Explanation",
     defaultAlignment: "inline",
@@ -280,4 +280,4 @@ module.exports = {
     transform: _.identity,
     isLintable: true,
 };
-export default module.exports;
+export default _module_.exports;

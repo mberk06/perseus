@@ -1,10 +1,10 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Displays the given content in an iframe, isolating it from the parent page
  *
@@ -185,5 +185,5 @@ const IframeContentRenderer = React.createClass({
     },
 });
 
-module.exports = IframeContentRenderer;
-export default module.exports;
+_module_.exports = IframeContentRenderer;
+export default _module_.exports;

@@ -1,10 +1,10 @@
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 
 describe("Polyfill Sanity Checks", () => {
@@ -109,4 +109,4 @@ describe("Polyfill Sanity Checks", () => {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

@@ -1,11 +1,11 @@
 import _textListEditorJsx from "./text-list-editor.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Stub Tag Editor.
  *
@@ -57,5 +57,5 @@ const StubTagEditor = React.createClass({
     },
 });
 
-module.exports = StubTagEditor;
-export default module.exports;
+_module_.exports = StubTagEditor;
+export default _module_.exports;

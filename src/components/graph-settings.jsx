@@ -11,11 +11,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types */
 
 const React = _react;
@@ -623,5 +623,5 @@ const GraphSettings = React.createClass({
     },
 });
 
-module.exports = GraphSettings;
-export default module.exports;
+_module_.exports = GraphSettings;
+export default _module_.exports;

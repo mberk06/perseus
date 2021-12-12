@@ -8,11 +8,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const ReactDOM = _reactDom;
 const _ = _underscore;
@@ -504,7 +504,7 @@ class Passage extends React.Component {
     }
 }
 
-module.exports = {
+_module_.exports = {
     name: "passage",
     displayName: "Passage (SAT only)",
     widget: Passage,
@@ -519,4 +519,4 @@ module.exports = {
     },
     isLintable: true,
 };
-export default module.exports;
+export default _module_.exports;

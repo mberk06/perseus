@@ -16,11 +16,11 @@ import _reactAddonsCreateFragment from "react-addons-create-fragment";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable max-lines, no-console, no-var, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -1179,5 +1179,5 @@ var Editor = React.createClass({
     },
 });
 
-module.exports = Editor;
-export default module.exports;
+_module_.exports = Editor;
+export default _module_.exports;

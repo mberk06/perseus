@@ -8,11 +8,11 @@ import _classnames from "classnames";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const classnames = _classnames;
 const i18n = window.i18n;
@@ -154,5 +154,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = HintRenderer;
-export default module.exports;
+_module_.exports = HintRenderer;
+export default _module_.exports;

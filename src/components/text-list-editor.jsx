@@ -2,11 +2,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 
 const React = _react;
@@ -157,5 +157,5 @@ const TextListEditor = React.createClass({
     },
 });
 
-module.exports = TextListEditor;
-export default module.exports;
+_module_.exports = TextListEditor;
+export default _module_.exports;

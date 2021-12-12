@@ -12,11 +12,11 @@ import _wrappedEllipseJs from "./wrapped-ellipse.js";
 import _movablePointOptionsJs from "./movable-point-options.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Creates and adds a point to the graph that can be dragged around.
  * It allows constraints on its movement and draws when moves happen.
@@ -571,5 +571,5 @@ _.extend(MovablePoint.prototype, {
     },
 });
 
-module.exports = MovablePoint;
-export default module.exports;
+_module_.exports = MovablePoint;
+export default _module_.exports;

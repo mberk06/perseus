@@ -5,11 +5,11 @@ import _react from "react";
 import _util from "util";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 const nodeUtil = _util;
 const React = _react;
@@ -554,4 +554,4 @@ describe("perseus markdown", () => {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

@@ -3,11 +3,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable array-bracket-spacing, comma-dangle, no-undef, no-unused-vars, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -352,11 +352,11 @@ var transformProps = function(editorProps) {
     };
 };
 
-module.exports = {
+_module_.exports = {
     name: "lights-puzzle",
     displayName: "Lights Puzzle",
     hidden: true,
     widget: LightsPuzzle,
     transform: transformProps,
 };
-export default module.exports;
+export default _module_.exports;

@@ -7,11 +7,11 @@ import _perseusJs from "../../perseus.js";
 import _hubbleIndexJs from "../../hubble/index.js";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-unused-vars, no-var, react/jsx-closing-bracket-location */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -291,4 +291,4 @@ describe("Expression Widget", function() {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

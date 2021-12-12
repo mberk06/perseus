@@ -6,11 +6,11 @@ import _rendererJsx from "../../renderer.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* global i18n */
 
 const React = _react;
@@ -488,5 +488,5 @@ _.extend(Radio, {
     },
 });
 
-module.exports = Radio;
-export default module.exports;
+_module_.exports = Radio;
+export default _module_.exports;

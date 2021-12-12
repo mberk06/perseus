@@ -1,11 +1,11 @@
 import _constantsJs from "./constants.js";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A component that displays its contents inside a device frame.
  */
@@ -96,5 +96,5 @@ const DeviceFramer = React.createClass({
     },
 });
 
-module.exports = DeviceFramer;
-export default module.exports;
+_module_.exports = DeviceFramer;
+export default _module_.exports;

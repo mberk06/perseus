@@ -9,11 +9,11 @@ import _react from "react";
 import _classnames from "classnames";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const classNames = _classnames;
 const React = _react;
 const ReactDOM = _reactDom;
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "dropdown",
     displayName: "Drop down",
     defaultAlignment: "inline-block",
@@ -187,4 +187,4 @@ module.exports = {
     widget: Dropdown,
     transform: propTransform,
 };
-export default module.exports;
+export default _module_.exports;

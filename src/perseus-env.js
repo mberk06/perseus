@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Sets up the basic environment for running Perseus in.
  */
@@ -39,4 +39,4 @@ window.Exercises = {
         },
     },
 };
-export default module.exports;
+export default _module_.exports;

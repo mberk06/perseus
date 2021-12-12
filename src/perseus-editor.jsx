@@ -16,11 +16,11 @@ import {
 
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /*
 This is essentially a more advanced `textarea`, using Draft.js
 https://facebook.github.io/draft-js/
@@ -809,5 +809,5 @@ const PerseusEditor = React.createClass({
     },
 });
 
-module.exports = PerseusEditor;
-export default module.exports;
+_module_.exports = PerseusEditor;
+export default _module_.exports;

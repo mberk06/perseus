@@ -4,11 +4,11 @@ import _uiHighlightingUiJsx from "./ui/highlighting-ui.jsx";
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 /**
  * The entry point for highlighting!
@@ -182,5 +182,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = HighlightableContent;
-export default module.exports;
+_module_.exports = HighlightableContent;
+export default _module_.exports;

@@ -3,11 +3,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -101,11 +101,11 @@ _.extend(SimpleMarkdownTester, {
 /**
  * For this widget to work, we must require() this file in src/all-widgets.js
  */
-module.exports = {
+_module_.exports = {
     name: "simple-markdown-tester",
     displayName: "Simple Markdown Tester",
     hidden: true, // Hides this widget from the Perseus.Editor widget select
     widget: SimpleMarkdownTester,
     transform: _.identity,
 };
-export default module.exports;
+export default _module_.exports;

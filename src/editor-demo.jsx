@@ -4,11 +4,11 @@ import _editorPageJsx from "./editor-page.jsx";
 import _statefulEditorPageJsx from "./stateful-editor-page.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
   * Demonstrates the main Perseus editor
   *
@@ -232,5 +232,5 @@ const EditorDemo = React.createClass({
     },
 });
 
-module.exports = EditorDemo;
-export default module.exports;
+_module_.exports = EditorDemo;
+export default _module_.exports;

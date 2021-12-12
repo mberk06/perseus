@@ -12,11 +12,11 @@ import _reactDom from "react-dom";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const _ = _underscore;
 
@@ -339,4 +339,4 @@ describe("Perseus API", function() {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

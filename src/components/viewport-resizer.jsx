@@ -4,11 +4,11 @@ import { devices } from "./constants.js";
 import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A component that displays controls for choosing a viewport size.
  * Renders three buttons: "Phone", "Tablet", and "Desktop".
@@ -72,5 +72,5 @@ const ViewportResizer = React.createClass({
     },
 });
 
-module.exports = ViewportResizer;
-export default module.exports;
+_module_.exports = ViewportResizer;
+export default _module_.exports;

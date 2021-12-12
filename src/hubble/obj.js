@@ -22,4 +22,4 @@ var del = function(obj, monocle) {
     return newObj;
 };
 
-module.exports = { get: get, set: set, mod: mod, del: del };
+_module_.exports = { get: get, set: set, mod: mod, del: del };

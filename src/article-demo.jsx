@@ -3,11 +3,11 @@ import _statefulArticleEditorJsx from "./stateful-article-editor.jsx";
 import _articleEditorJsx from "./article-editor.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Demonstrates the rendered result of a Perseus article
  */
@@ -167,5 +167,5 @@ const ArticleDemo = React.createClass({
     },
 });
 
-module.exports = ArticleDemo;
-export default module.exports;
+_module_.exports = ArticleDemo;
+export default _module_.exports;

@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * These tools allow you to construct arbirtary shapes, by combining simple
  * leaf shapes like `content` and `hint` into composite shapes like
@@ -28,7 +28,7 @@ const buildObjectShape = shape => ({
 const hintsShape = buildArrayShape(hintShape);
 
 
-module.exports = {
+_module_.exports = {
     content: contentShape,
     hint: hintShape,
     hints: hintsShape,
@@ -36,4 +36,4 @@ module.exports = {
     arrayOf: buildArrayShape,
     shape: buildObjectShape,
 };
-export default module.exports;
+export default _module_.exports;

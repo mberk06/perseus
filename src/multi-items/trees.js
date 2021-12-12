@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * This is a TreeMapper that only has mappers specified for its leaf nodes; its
  * array mapper is the identity function.

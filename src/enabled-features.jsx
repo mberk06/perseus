@@ -1,14 +1,14 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 
-module.exports = {
+_module_.exports = {
     propTypes: React.PropTypes.shape({}).isRequired,
     defaults: {},
 };
-export default module.exports;
+export default _module_.exports;

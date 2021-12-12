@@ -2,11 +2,11 @@ import _inlineIconJsx from "./inline-icon.jsx";
 import { iconChevronDown, iconChevronUp } from "../icon-paths.js";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/prop-types, react/sort-comp */
 
 /* A div that shows/hides its children.
@@ -52,5 +52,5 @@ const MoreOptions = React.createClass({
     },
 });
 
-module.exports = MoreOptions;
-export default module.exports;
+_module_.exports = MoreOptions;
+export default _module_.exports;

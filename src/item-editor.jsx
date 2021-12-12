@@ -7,11 +7,11 @@ import _perseusApiJsx from "./perseus-api.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-var, object-curly-spacing, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -145,5 +145,5 @@ var ItemEditor = React.createClass({
     },
 });
 
-module.exports = ItemEditor;
-export default module.exports;
+_module_.exports = ItemEditor;
+export default _module_.exports;

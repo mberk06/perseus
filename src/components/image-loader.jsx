@@ -1,10 +1,10 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Component to display an image (or other React components) while the desired
  * image is loading.
@@ -143,5 +143,5 @@ const ImageLoader = React.createClass({
     },
 });
 
-module.exports = ImageLoader;
-export default module.exports;
+_module_.exports = ImageLoader;
+export default _module_.exports;

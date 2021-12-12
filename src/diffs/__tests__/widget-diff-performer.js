@@ -1,10 +1,10 @@
 import _widgetDiffPerformerJsx from "../widget-diff-performer.jsx";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* global beforeEach, expect */
 
 describe("widget-diff-performer", function() {
@@ -54,4 +54,4 @@ describe("widget-diff-performer", function() {
         expect(addedObj.children[0].status).toBe("added");
     });
 });
-export default module.exports;
+export default _module_.exports;

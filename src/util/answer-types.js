@@ -2,11 +2,11 @@ import _mathJs from "./math.js";
 import _underscore from "underscore";
 import _jquery from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -765,5 +765,5 @@ const KhanAnswerTypes = {
     },
 };
 
-module.exports = KhanAnswerTypes;
-export default module.exports;
+_module_.exports = KhanAnswerTypes;
+export default _module_.exports;

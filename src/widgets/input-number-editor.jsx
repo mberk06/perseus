@@ -5,11 +5,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -247,5 +247,5 @@ const InputNumberEditor = React.createClass({
     },
 });
 
-module.exports = InputNumberEditor;
-export default module.exports;
+_module_.exports = InputNumberEditor;
+export default _module_.exports;

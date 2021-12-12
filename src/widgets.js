@@ -1,10 +1,10 @@
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-console, no-var, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -276,7 +276,7 @@ var Widgets = {
      * for the user.
      *
      * Supported alignments are given as an array of strings in the exports of
-     * a widget's module.
+     * a widget's _module_.
      */
     getSupportedAlignments: function(type) {
         var widgetInfo = widgets[type];
@@ -293,7 +293,7 @@ var Widgets = {
      *
      * The default alignment is given either as a string (called
      * `defaultAlignment`) or a function (called `getDefaultAlignment`) on
-     * the exports of a widget's module.
+     * the exports of a widget's _module_.
      */
     getDefaultAlignment: function(type) {
         var widgetInfo = widgets[type];
@@ -402,5 +402,5 @@ var Widgets = {
     },
 };
 
-module.exports = Widgets;
-export default module.exports;
+_module_.exports = Widgets;
+export default _module_.exports;

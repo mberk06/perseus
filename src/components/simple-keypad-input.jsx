@@ -3,11 +3,11 @@ import _mathInput2 from "@khanacademy/math-input";
 import _mathInput from "@khanacademy/math-input";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A version of the `math-input` subrepo's KeypadInput component that adheres to
  * the same API as Perseus's  MathOuput and NumberInput, allowing it to be
@@ -80,5 +80,5 @@ const SimpleKeypadInput = React.createClass({
     },
 });
 
-module.exports = SimpleKeypadInput;
-export default module.exports;
+_module_.exports = SimpleKeypadInput;
+export default _module_.exports;

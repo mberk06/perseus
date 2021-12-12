@@ -2,11 +2,11 @@ import _smilesParserJsx from "../smiles-parser.jsx";
 import _moleculeLayoutJsx from "../molecule-layout.jsx";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 
 const Layout = _moleculeLayoutJsx;
@@ -157,4 +157,4 @@ describe("Molecule layout", () => {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

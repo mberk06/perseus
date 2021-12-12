@@ -1,10 +1,10 @@
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 /**
  * Tracks the user's current selection, and exposes it to the subtree using the
@@ -137,5 +137,5 @@ class SelectionTracker extends React.PureComponent {
     }
 }
 
-module.exports = SelectionTracker;
-export default module.exports;
+_module_.exports = SelectionTracker;
+export default _module_.exports;

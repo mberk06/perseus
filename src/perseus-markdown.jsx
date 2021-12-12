@@ -5,11 +5,11 @@ import _simpleMarkdown from "simple-markdown";
 import _underscore from "underscore";
 import React from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-var, object-curly-spacing */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -584,7 +584,7 @@ var characterCount = source => {
     return content.length;
 };
 
-module.exports = {
+_module_.exports = {
     characterCount: characterCount,
     traverseContent: traverseContent,
     parse: parse,
@@ -596,4 +596,4 @@ module.exports = {
     ),
     sanitizeUrl: SimpleMarkdown.sanitizeUrl,
 };
-export default module.exports;
+export default _module_.exports;

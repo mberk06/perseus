@@ -3,11 +3,11 @@ import { buildPropTypeForShape } from "../prop-type-builders.js";
 import { treeToItem } from "../items.js";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 const assert = _assert;
 
@@ -132,4 +132,4 @@ describe("buildPropTypeForShape", () => {
         assertPropTypeFails(propType, {b: emptyItem});
     });
 });
-export default module.exports;
+export default _module_.exports;

@@ -4,11 +4,11 @@ import _multirendererEditorJsx from "./multirenderer-editor.jsx";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 
 const MultiRendererEditor = _multirendererEditorJsx;
@@ -227,5 +227,5 @@ const MultiRendererDemo = React.createClass({
     },
 });
 
-module.exports = MultiRendererDemo;
-export default module.exports;
+_module_.exports = MultiRendererDemo;
+export default _module_.exports;

@@ -3,11 +3,11 @@ import _traversalJsx from "./traversal.jsx";
 import { findContentNodesInItem, findHintNodesInItem, inferItemShape } from "./multi-items.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Functions for extracting data from items for use in i18n.
  */
@@ -141,8 +141,8 @@ function findImagesInArticles(perseusContent) {
     return findImagesInRenderers(perseusContent);
 }
 
-module.exports = {
+_module_.exports = {
     findImagesInArticles: findImagesInArticles,
     findImagesInItemData: findImagesInItemData,
 };
-export default module.exports;
+export default _module_.exports;

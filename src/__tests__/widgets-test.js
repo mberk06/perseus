@@ -3,11 +3,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* global beforeEach, notStrictEqual, strictEqual, xit */
 
 const _ = _underscore;
@@ -245,4 +245,4 @@ describe("widgets", function() {
         }
     );
 });
-export default module.exports;
+export default _module_.exports;

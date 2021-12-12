@@ -1,11 +1,11 @@
 import _movableJs from "../movable.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Create a Mocked Movable
  */
@@ -47,5 +47,5 @@ const createMock = function() {
     return movable;
 };
 
-module.exports = createMock;
-export default module.exports;
+_module_.exports = createMock;
+export default _module_.exports;

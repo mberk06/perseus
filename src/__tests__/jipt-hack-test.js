@@ -1,11 +1,11 @@
 import { maybeUnescape, maybeUnescapeAccordingToSource, shouldUnescape } from "../jipt-hack.jsx";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 
 const assertShouldKeepOriginal = function(text) {
@@ -143,4 +143,4 @@ describe("shouldUnescape", () => {
         assert.equal(shouldUnescape("Multiple\nlines\r\nand a\ttab"), false);
     });
 });
-export default module.exports;
+export default _module_.exports;

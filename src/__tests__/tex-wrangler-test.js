@@ -1,11 +1,11 @@
 import { parseTex, modifyTex } from "../tex-wrangler.js";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 
 const whitespaceRegex = /\s/g;
@@ -81,4 +81,4 @@ describe("parseTex", () => {
         assertParsed("\\dfrac{3\\%}{4}", "3% / 4");
     });
 });
-export default module.exports;
+export default _module_.exports;

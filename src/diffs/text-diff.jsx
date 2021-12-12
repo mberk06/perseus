@@ -6,11 +6,11 @@ import _underscore from "underscore";
 import _react from "react";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const classNames = _classnames;
 const React = _react;
 const _ = _underscore;
@@ -185,5 +185,5 @@ const TextDiff = React.createClass({
     },
 });
 
-module.exports = TextDiff;
-export default module.exports;
+_module_.exports = TextDiff;
+export default _module_.exports;

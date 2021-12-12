@@ -1,12 +1,12 @@
 import _editorPerseusJs from "./editor-perseus.js";
 import _nodeRequireJs from "../node/require.js";
 
-var module = {
+var _module_ = {
   exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 _nodeRequireJs;
 
-module.exports = _editorPerseusJs;
-export default module.exports;
+_module_.exports = _editorPerseusJs;
+export default _module_.exports;

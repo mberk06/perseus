@@ -1,10 +1,10 @@
 import _splitDiffJsx from "../split-diff.jsx";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* global beforeEach, expect */
 
 describe("split diff", function() {
@@ -47,4 +47,4 @@ describe("split diff", function() {
         ]);
     });
 });
-export default module.exports;
+export default _module_.exports;

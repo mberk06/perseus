@@ -1,11 +1,11 @@
 import _widgetPropBlacklistJsx from "./widget-prop-blacklist.jsx";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -21,5 +21,5 @@ var EditorJsonify = {
     }
 };
 
-module.exports = EditorJsonify;
-export default module.exports;
+_module_.exports = EditorJsonify;
+export default _module_.exports;

@@ -4,11 +4,11 @@ import _assert from "assert";
 import _widgetsJs from "../widgets.js";
 import _allWidgetsJs from "../all-widgets.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const allWidgets = _allWidgetsJs;
 const Widgets = _widgetsJs;
 Widgets.registerMany(allWidgets);
@@ -165,4 +165,4 @@ describe("i18n", () => {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

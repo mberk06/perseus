@@ -5,11 +5,11 @@ import _wrappedPathJs from "./wrapped-path.js";
 import _wrappedLineJs from "./wrapped-line.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A library of options to pass to add/draw/remove/constraints
  */
@@ -356,7 +356,7 @@ const onMove = {
 onMove.standard = null;
 
 
-module.exports = {
+_module_.exports = {
     add: add,
     modify: modify,
     draw: draw,
@@ -367,4 +367,4 @@ module.exports = {
     onMove: onMove,
     onMoveEnd: {standard: null},
 };
-export default module.exports;
+export default _module_.exports;

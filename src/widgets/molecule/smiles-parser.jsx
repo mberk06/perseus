@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // Regexp defining characters that are valid SMILES characters that this parser
 // can parse.  In addition to serving as a sort of validation, this also keeps
 // out unimplemented features (like cycles and stereochemistry), which use
@@ -294,5 +294,5 @@ function parse(smiles, ctx) {
     }
 }
 
-module.exports = {parse: parse, ParseError: ParseError};
-export default module.exports;
+_module_.exports = {parse: parse, ParseError: ParseError};
+export default _module_.exports;

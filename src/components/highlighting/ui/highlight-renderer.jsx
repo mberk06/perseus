@@ -2,11 +2,11 @@ import { getClientRectsForTextInRange, getRelativePosition, getRelativeRect } fr
 import { StyleSheet, css } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 (function() {
     // @flow
@@ -131,7 +131,7 @@ var exports = module.exports;
         },
     });
 
-    module.exports = HighlightRenderer;
-}).call(module.exports);
+    _module_.exports = HighlightRenderer;
+}).call(_module_.exports);
 
-export default module.exports;
+export default _module_.exports;

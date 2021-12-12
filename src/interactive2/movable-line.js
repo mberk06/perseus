@@ -6,11 +6,11 @@ import _wrappedLineJs from "./wrapped-line.js";
 import _movableLineOptionsJs from "./movable-line-options.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * MovableLine
  */
@@ -291,5 +291,5 @@ _.extend(MovableLine.prototype, {
     },
 });
 
-module.exports = MovableLine;
-export default module.exports;
+_module_.exports = MovableLine;
+export default _module_.exports;

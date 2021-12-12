@@ -14,11 +14,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, max-len, no-undef, no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, space-before-function-paren */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -591,7 +591,7 @@ var staticTransform = editorProps => {
     return widgetProps;
 };
 
-module.exports = {
+_module_.exports = {
     name: "matrix",
     displayName: "Matrix",
     widget: Matrix,
@@ -599,4 +599,4 @@ module.exports = {
     staticTransform: staticTransform,
     isLintable: true,
 };
-export default module.exports;
+export default _module_.exports;

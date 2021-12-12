@@ -2,11 +2,11 @@ import _underscore from "underscore";
 import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -151,7 +151,7 @@ _.extend(ExampleWidget, {
 /**
  * For this widget to work, we must require() this file in src/all-widgets.js
  */
-module.exports = {
+_module_.exports = {
     name: "example-widget",
     displayName: "Example Widget",
 
@@ -162,4 +162,4 @@ module.exports = {
     hidden: true, // Hides this widget from the Perseus.Editor widget select
     widget: ExampleWidget,
 };
-export default module.exports;
+export default _module_.exports;

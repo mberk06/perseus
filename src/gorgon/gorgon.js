@@ -3,11 +3,11 @@ import PerseusMarkdown from "../perseus-markdown.jsx";
 import Rule from "./rule.js";
 import TreeTransformer from "./tree-transformer.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 const allLintRules = _rulesAllRulesJs
     .filter(r => r.severity < Rule.Severity.BULK_WARNING);
@@ -278,10 +278,10 @@ function pushContextStack(context, name) {
 //
 // TODO(davidflanagan): switch from require to import
 //
-module.exports = {
+_module_.exports = {
     runLinter,
     parse: PerseusMarkdown.parse,
     pushContextStack,
     rules: allLintRules,
 };
-export default module.exports;
+export default _module_.exports;

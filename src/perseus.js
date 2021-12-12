@@ -10,11 +10,11 @@ import _basicWidgetsJs from "./basic-widgets.js";
 import _widgetsJs from "./widgets.js";
 import _versionJson from "./version.json";
 
-var module = {
+var _module_ = {
  exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Main entry point
  */

@@ -10,14 +10,14 @@ import {
 import _mediaQueriesJs from "./media-queries.js";
 import { StyleSheet } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const mediaQueries = _mediaQueriesJs;
 
-module.exports = StyleSheet.create({
+_module_.exports = StyleSheet.create({
     perseusInteractive: {
         zIndex: zIndexInteractiveComponent,
         position: "relative",
@@ -130,4 +130,4 @@ module.exports = StyleSheet.create({
         userSelect: 'none',
     },
 });
-export default module.exports;
+export default _module_.exports;

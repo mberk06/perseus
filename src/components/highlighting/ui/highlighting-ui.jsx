@@ -4,11 +4,11 @@ import _highlightTooltipJsx from "./highlight-tooltip.jsx";
 import _highlightSetRendererJsx from "./highlight-set-renderer.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 // @flow
 /**
  * This component, given a set of DOMHighlights, draws highlight rectangles in
@@ -111,5 +111,5 @@ class HighlightingUI extends React.PureComponent {
     }
 }
 
-module.exports = HighlightingUI;
-export default module.exports;
+_module_.exports = HighlightingUI;
+export default _module_.exports;

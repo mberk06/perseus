@@ -4,11 +4,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _mixinsEditorJsonifyJsx from "../mixins/editor-jsonify.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 
 const EditorJsonify = _mixinsEditorJsonifyJsx;
@@ -67,5 +67,5 @@ const MoleculeWidgetEditor = React.createClass({
     },
 });
 
-module.exports = MoleculeWidgetEditor;
-export default module.exports;
+_module_.exports = MoleculeWidgetEditor;
+export default _module_.exports;

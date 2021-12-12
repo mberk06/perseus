@@ -10,11 +10,11 @@ import _underscore from "underscore";
 import _reactComponentsTooltipJsx from "react-components/tooltip.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/sort-comp */
 
 const React = _react;
@@ -245,5 +245,5 @@ const InputWithExamples = React.createClass({
     },
 });
 
-module.exports = InputWithExamples;
-export default module.exports;
+_module_.exports = InputWithExamples;
+export default _module_.exports;

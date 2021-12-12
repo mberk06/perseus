@@ -20,4 +20,4 @@ var del = function(arr, monocle) {
     return newArr;
 };
 
-module.exports = { get: get, set: set, mod: mod, del: del };
+_module_.exports = { get: get, set: set, mod: mod, del: del };

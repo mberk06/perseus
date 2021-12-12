@@ -3,11 +3,11 @@ import _previewFrameJsx from "./preview-frame.jsx";
 import _perseusJs from "./perseus.js";
 import _perseusEnvJs from "./perseus-env.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Loads the Perseus preview frame
  *
@@ -80,4 +80,4 @@ if (window.Khan.mathJaxLoaded) {
 } else {
     afterMathJaxLoad();
 }
-export default module.exports;
+export default _module_.exports;

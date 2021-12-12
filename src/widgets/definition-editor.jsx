@@ -5,11 +5,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const _ = _underscore;
 
@@ -81,5 +81,5 @@ const DefinitionEditor = React.createClass({
     },
 });
 
-module.exports = DefinitionEditor;
-export default module.exports;
+_module_.exports = DefinitionEditor;
+export default _module_.exports;

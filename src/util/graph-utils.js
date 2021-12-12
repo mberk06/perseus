@@ -1,11 +1,11 @@
 import "./interactive.js"; // For side effects
 import _graphieJs from "./graphie.js";
 
-var module = {
+var _module_ = {
  exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A wrapper around graphie.js and interactive.js to make sure interactive.js
  * is always required at the same time as graphie.js. This is because
@@ -17,5 +17,5 @@ var exports = module.exports;
  */
 const GraphUtils = _graphieJs;
 
-module.exports = GraphUtils;
-export default module.exports;
+_module_.exports = GraphUtils;
+export default _module_.exports;

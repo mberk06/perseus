@@ -9,11 +9,11 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * A copy of the ItemRenderer which renders its question renderer and hints
  * renderer normally instead of ReactDOM.render()ing them into elements in the
@@ -386,5 +386,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = ItemRenderer;
-export default module.exports;
+_module_.exports = ItemRenderer;
+export default _module_.exports;

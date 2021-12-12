@@ -1,11 +1,11 @@
 import _traversalJsx from "../traversal.jsx";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -134,5 +134,5 @@ var FixPassageRefs = itemData => {
     });
 };
 
-module.exports = FixPassageRefs;
-export default module.exports;
+_module_.exports = FixPassageRefs;
+export default _module_.exports;

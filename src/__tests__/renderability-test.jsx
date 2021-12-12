@@ -2,11 +2,11 @@ import _itemVersionJs from "../item-version.js";
 import _renderabilityJsx from "../renderability.jsx";
 import _assert from "assert";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const assert = _assert;
 const Renderability = _renderabilityJsx;
 const PerseusItemVersion = _itemVersionJs;
@@ -486,4 +486,4 @@ describe("Renderability", () => {
         });
     });
 });
-export default module.exports;
+export default _module_.exports;

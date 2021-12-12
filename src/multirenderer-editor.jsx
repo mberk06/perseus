@@ -13,11 +13,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const ReactDOM = _reactDom;
 const lens = _hubbleIndexJs;
@@ -1023,5 +1023,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = MultiRendererEditor;
-export default module.exports;
+_module_.exports = MultiRendererEditor;
+export default _module_.exports;

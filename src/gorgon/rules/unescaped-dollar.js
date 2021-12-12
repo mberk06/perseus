@@ -1,16 +1,16 @@
 import Rule from "../rule.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
-module.exports = Rule.makeRule({
+_module_.exports = Rule.makeRule({
     name: "unescaped-dollar",
     severity: Rule.Severity.ERROR,
     selector: "unescapedDollar",
     message: `Unescaped dollar sign:
 Dollar signs must appear in pairs or be escaped as \\$`,
 });
-export default module.exports;
+export default _module_.exports;

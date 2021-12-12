@@ -1,11 +1,11 @@
 import _underscore from "underscore";
 import _libJsdiff from "../../lib/jsdiff";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const jsdiff = _libJsdiff;
 const _ = _underscore;
 
@@ -74,5 +74,5 @@ const stringArrayDiff = function(a, b) {
     };
 };
 
-module.exports = stringArrayDiff;
-export default module.exports;
+_module_.exports = stringArrayDiff;
+export default _module_.exports;

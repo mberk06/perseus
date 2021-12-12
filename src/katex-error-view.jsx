@@ -1,11 +1,11 @@
 import { css, StyleSheet } from "aphrodite";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Displays a collapsable list of KaTeX rendering errors.
  */
@@ -90,5 +90,5 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = KatexErrorView;
-export default module.exports;
+_module_.exports = KatexErrorView;
+export default _module_.exports;

@@ -2,11 +2,11 @@ import _articleEditorJsx from "./article-editor.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 /**
  * Renders an ArticleEditor as a non-controlled component.
@@ -163,5 +163,5 @@ const styles = {
     },
 };
 
-module.exports = StatefulArticleEditor;
-export default module.exports;
+_module_.exports = StatefulArticleEditor;
+export default _module_.exports;

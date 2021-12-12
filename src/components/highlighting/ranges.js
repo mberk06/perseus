@@ -1,8 +1,8 @@
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Given two DOMRange objects, and a choice of start/end point for each, compare
  * the two chosen points. Return -1 if a's comes first in the document, return

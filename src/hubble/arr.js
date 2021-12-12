@@ -41,4 +41,4 @@ lens.prototype.insertAfter = function(lensArr, toInsert) {
 };
 */
 
-module.exports = { get: get, set: set, mod: mod, del: del };
+_module_.exports = { get: get, set: set, mod: mod, del: del };

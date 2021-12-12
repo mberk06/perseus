@@ -11,11 +11,11 @@ import _react from "react";
 import _classnames from "classnames";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const classNames = _classnames;
 const React = _react;
 const ReactDOM = _reactDom;
@@ -578,5 +578,5 @@ const BaseRadio = React.createClass({
     },
 });
 
-module.exports = BaseRadio;
-export default module.exports;
+_module_.exports = BaseRadio;
+export default _module_.exports;

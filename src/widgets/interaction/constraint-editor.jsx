@@ -5,11 +5,11 @@ import _reactComponentsButtonGroupJsx from "react-components/button-group.jsx";
 import _reactComponentsTexJsx from "react-components/tex.jsx";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -131,5 +131,5 @@ class ConstraintEditor extends React.Component {
     }
 }
 
-module.exports = ConstraintEditor;
-export default module.exports;
+_module_.exports = ConstraintEditor;
+export default _module_.exports;

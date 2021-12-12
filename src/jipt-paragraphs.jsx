@@ -1,10 +1,10 @@
 import _simpleMarkdown from "simple-markdown";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Paragraph parsing/splitting for article jipt i18n
  */
@@ -38,8 +38,8 @@ const parseToArray = source => {
 
 const joinFromArray = paragraphs => paragraphs.join("\n\n");
 
-module.exports = {
+_module_.exports = {
     parseToArray: parseToArray,
     joinFromArray: joinFromArray,
 };
-export default module.exports;
+export default _module_.exports;

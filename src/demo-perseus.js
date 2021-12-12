@@ -7,11 +7,11 @@ import _editorDemoJsx from "./editor-demo.jsx";
 import _editorPerseusJs from "./editor-perseus.js";
 import _perseusEnvJs from "./perseus-env.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Loads the Perseus demo pages
  *
@@ -67,4 +67,4 @@ Perseus.init({skipMathJax: false, loadExtraWidgets: true})
             console.error(err); // @Nolint
         }
     );
-export default module.exports;
+export default _module_.exports;

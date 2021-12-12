@@ -3,11 +3,11 @@ import _traversalJsx from "./traversal.jsx";
 import { findContentNodesInItem, inferItemShape } from "./multi-items.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * Calculates whether a perseus item is renderable by a specific
  * perseus-item-data version.
@@ -98,7 +98,7 @@ const isItemRenderableBy = function(itemData, rendererContentVersion) {
     }
 };
 
-module.exports = {
+_module_.exports = {
     isItemRenderableByVersion: isItemRenderableBy,
 };
-export default module.exports;
+export default _module_.exports;

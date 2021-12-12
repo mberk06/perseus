@@ -7,11 +7,11 @@ import _underscore from "underscore";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const _ = _underscore;
 
@@ -433,11 +433,11 @@ _.extend(Definition, {
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "definition",
     displayName: "Definition",
     defaultAlignment: "inline",
     widget: Definition,
     transform: _.identity,
 };
-export default module.exports;
+export default _module_.exports;

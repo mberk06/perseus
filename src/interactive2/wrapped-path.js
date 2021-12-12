@@ -1,11 +1,11 @@
 import _wrappedDefaultsJs from "./wrapped-defaults.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 const WrappedDefaults = _wrappedDefaultsJs;
 
@@ -42,5 +42,5 @@ const WrappedPath = function(graphie, points, options) {
 
 _.extend(WrappedPath.prototype, WrappedDefaults);
 
-module.exports = WrappedPath;
-export default module.exports;
+_module_.exports = WrappedPath;
+export default _module_.exports;

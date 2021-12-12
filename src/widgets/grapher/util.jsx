@@ -3,11 +3,11 @@ import _componentsGraphieJsx from "../../components/graphie.jsx";
 import _utilJs from "../../util.js";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style, comma-dangle, no-var, one-var, space-unary-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */

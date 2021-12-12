@@ -1,10 +1,10 @@
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 
 const UNCHANGED = "unchanged";
@@ -74,5 +74,5 @@ const performDiff = function(before, after, /* optional */ key) {
     }
 };
 
-module.exports = performDiff;
-export default module.exports;
+_module_.exports = performDiff;
+export default _module_.exports;

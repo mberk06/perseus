@@ -13,11 +13,11 @@ import _componentsGraphJsx from "../components/graph.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable brace-style, comma-dangle, indent, max-lines, no-redeclare, no-undef, no-unused-vars, no-var, object-curly-spacing, one-var, prefer-spread, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp, space-infix-ops */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -2670,9 +2670,9 @@ _.extend(InteractiveGraph, {
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "interactive-graph",
     displayName: "Interactive graph",
     widget: InteractiveGraph,
 };
-export default module.exports;
+export default _module_.exports;

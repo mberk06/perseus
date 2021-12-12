@@ -1,13 +1,13 @@
 import Rule from "../rule.js";
 import {getHostname} from "./lint-utils.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
-module.exports = Rule.makeRule({
+_module_.exports = Rule.makeRule({
     name: "absolute-url",
     severity: Rule.Severity.GUIDELINE,
     selector: "link, image",
@@ -26,4 +26,4 @@ Use a relative URL beginning with / instead.`;
         }
     },
 });
-export default module.exports;
+export default _module_.exports;

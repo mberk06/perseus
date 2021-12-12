@@ -1,11 +1,11 @@
 import _kmath from "kmath";
 import _underscore from "underscore";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /**
  * MovableThing convenience methods
  *
@@ -147,5 +147,5 @@ const MovableHelperMethods = {
     },
 };
 
-module.exports = MovableHelperMethods;
-export default module.exports;
+_module_.exports = MovableHelperMethods;
+export default _module_.exports;

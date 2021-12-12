@@ -14,11 +14,11 @@ import _classnames from "classnames";
 import _react from "react";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const React = _react;
 const classNames = _classnames;
 const Changeable = _mixinsChangeableJsx;
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "categorizer",
     displayName: "Categorizer",
     widget: Categorizer,
@@ -316,4 +316,4 @@ module.exports = {
     },
     isLintable: true,
 };
-export default module.exports;
+export default _module_.exports;

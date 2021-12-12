@@ -15,11 +15,11 @@
 /*global $*/
 /*jshint browser:true, node:true */
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
 /* ========================================================================
  * Bootstrap: transition.js v3.3.4
@@ -521,4 +521,4 @@ Zoom.prototype.dispose = function() {
 
 exports.ZoomService = new _ZoomService();
 export let ZoomService = exports.ZoomService;
-export default module.exports;
+export default _module_.exports;

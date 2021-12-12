@@ -1,12 +1,12 @@
 import Rule from "../rule.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 
-module.exports = Rule.makeRule({
+_module_.exports = Rule.makeRule({
     name: "heading-sentence-case",
     severity: Rule.Severity.GUIDELINE,
     selector: "heading",
@@ -14,4 +14,4 @@ module.exports = Rule.makeRule({
     message: `First letter is lowercase:
 the first letter of a heading should be capitalized.`,
 });
-export default module.exports;
+export default _module_.exports;

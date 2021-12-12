@@ -11,11 +11,11 @@ import _underscore from "underscore";
 import _react from "react";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable react/forbid-prop-types */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -337,7 +337,7 @@ const traverseChildWidgets = function(props, traverseRenderer) {
     return _.extend({}, props, traverseRenderer(props));
 };
 
-module.exports = {
+_module_.exports = {
     name: "graded-group",
     displayName: "Graded group (articles only)",
     widget: GradedGroup,
@@ -389,4 +389,4 @@ const styles = StyleSheet.create({
         letterSpacing: 0.8,
     },
 });
-export default module.exports;
+export default _module_.exports;

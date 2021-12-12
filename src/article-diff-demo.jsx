@@ -1,11 +1,11 @@
 import _diffsArticleDiffJsx from "./diffs/article-diff.jsx";
 import { Component } from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const ArticleDiff = _diffsArticleDiffJsx;
 
 class ArticleDiffDemo extends Component {
@@ -212,5 +212,5 @@ const after = [
 ];
 /* eslint-enable max-len */
 
-module.exports = ArticleDiffDemo;
-export default module.exports;
+_module_.exports = ArticleDiffDemo;
+export default _module_.exports;

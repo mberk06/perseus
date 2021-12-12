@@ -12,11 +12,11 @@ import _libJqueryMobileVmouseJs from "../lib/jquery.mobile.vmouse.js";
 import _underscore from "underscore";
 import $ from "jquery";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable max-lines */
 
 /**
@@ -3979,5 +3979,5 @@ _.extend(MovableAngle.prototype, {
     },
 });
 
-module.exports = InteractiveUtils;
-export default module.exports;
+_module_.exports = InteractiveUtils;
+export default _module_.exports;

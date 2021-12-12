@@ -3,11 +3,11 @@ import _mixinsChangeableJsx from "../mixins/changeable.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -110,11 +110,11 @@ _.extend(Video, {
     },
 });
 
-module.exports = {
+_module_.exports = {
     name: "video",
     displayName: "Video",
     defaultAlignment: "block",
     supportedAlignments: ["block", "float-left", "float-right", "full-width"],
     widget: Video,
 };
-export default module.exports;
+export default _module_.exports;

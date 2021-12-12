@@ -10,11 +10,11 @@ import _react from "react";
 import _underscore from "underscore";
 import { StyleSheet, css } from "aphrodite";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const _ = _underscore;
 const React = _react;
 const classNames = _classnames;
@@ -612,5 +612,5 @@ const Choice = React.createClass({
     },
 });
 
-module.exports = Choice;
-export default module.exports;
+_module_.exports = Choice;
+export default _module_.exports;

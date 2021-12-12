@@ -9,15 +9,15 @@ import {
     inferItemShape,
 } from "./multi-items/items.js";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 const MultiRenderer = _multiItemsMultiRendererJsx;
 const shapes = _multiItemsShapesJs;
 
-module.exports = {
+_module_.exports = {
     // Tools for rendering your multi-items
     MultiRenderer,
 
@@ -31,4 +31,4 @@ module.exports = {
     findHintNodesInItem,
     inferItemShape,
 };
-export default module.exports;
+export default _module_.exports;

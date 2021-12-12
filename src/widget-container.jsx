@@ -6,11 +6,11 @@ import _reactDom from "react-dom";
 import _react from "react";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* eslint-disable comma-dangle, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -166,5 +166,5 @@ const WidgetContainer = React.createClass({
     },
 });
 
-module.exports = WidgetContainer;
-export default module.exports;
+_module_.exports = WidgetContainer;
+export default _module_.exports;

@@ -9,11 +9,11 @@ import _jquery from "jquery";
 import _react from "react";
 import _classnames from "classnames";
 
-var module = {
+var _module_ = {
     exports: {}
 };
 
-var exports = module.exports;
+var exports = _module_.exports;
 /* globals KA */
 const classNames = _classnames;
 const React = _react;
@@ -691,5 +691,5 @@ const SvgImage = React.createClass({
     },
 });
 
-module.exports = SvgImage;
-export default module.exports;
+_module_.exports = SvgImage;
+export default _module_.exports;
