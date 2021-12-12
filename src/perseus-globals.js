@@ -1,4 +1,3 @@
-import _reactAddonsCssTransitionGroup from "react-addons-css-transition-group";
 import _reactAddonsPureRenderMixin from "react-addons-pure-render-mixin";
 import $ from "jquery";
 import React from "react";
@@ -43,7 +42,6 @@ window._ = _;
 window.Raphael = undefined;
 
 const PureRenderMixin = _reactAddonsPureRenderMixin;
-const CSSTransitionGroup = _reactAddonsCssTransitionGroup;
 
 window.React = React;
 window.ReactDOM = ReactDOM;
@@ -54,7 +52,6 @@ window["react-dom"] = window.ReactDOM;
 window["classnames"] = window.classNames;
 window["jquery"] = window.jQuery;
 window["react-addons-pure-render-mixin"] = PureRenderMixin;
-window["react-addons-css-transition-group"] = CSSTransitionGroup;
 
 /**
  * Sets up the basic environment for running Perseus in.
