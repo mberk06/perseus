@@ -1,7 +1,5 @@
 // @flow
 import React, {Component} from 'react';
-import 'katex/dist/katex.css';
-import '../lib/perseus.css';
 import ServerItemRenderer from "./server-item-renderer";
 
 

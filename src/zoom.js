@@ -15,7 +15,6 @@
 /*global $*/
 /*jshint browser:true, node:true */
 
-"use strict";;
 var module = {
     exports: {}
 };

@@ -1,4 +1,3 @@
-"use strict";;
 import _componentsHudJsx from "./components/hud.jsx";
 import _iframeContentRendererJsx from "./iframe-content-renderer.jsx";
 import _componentsDeviceFramerJsx from "./components/device-framer.jsx";

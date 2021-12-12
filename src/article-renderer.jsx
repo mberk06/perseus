@@ -1,4 +1,3 @@
-"use strict";;
 import { linterContextProps, linterContextDefault } from "./gorgon/proptypes.js";
 import _gorgonGorgonJs from "./gorgon/gorgon.js";
 import _mixinsProvideKeypadJsx from "./mixins/provide-keypad.jsx";

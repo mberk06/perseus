@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as Perseus from './perseus';
-import "./lib/mathquill/mathquill.css";
+//import "./lib/mathquill/mathquill.css";
+import 'katex/dist/katex.css';
 import "./lib/khan-exercises.css";
 import "./lib/perseus.css";
 

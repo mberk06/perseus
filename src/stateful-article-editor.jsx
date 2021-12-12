@@ -1,4 +1,3 @@
-"use strict";;
 import _articleEditorJsx from "./article-editor.jsx";
 import _underscore from "underscore";
 import _react from "react";
