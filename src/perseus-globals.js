@@ -8,6 +8,7 @@ import mathquill from "mathquill";
 import katex from "katex";
 import classnames from "classnames";
 import _ from "underscore";
+import "./lib/i18n.js"; // side effects
 
 var _module_ = {
   exports: {}
