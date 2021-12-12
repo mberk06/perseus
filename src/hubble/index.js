@@ -137,4 +137,4 @@ lens.prototype.set = function(lensArr, set) {
     return this.mod(lensArr, function() { return set; });
 };
 
-_module_.exports = lens;
+export default lens;
