@@ -8,6 +8,7 @@ import _underscore from "underscore";
 import _jquery from "jquery";
 import _react from "react";
 import _classnames from "classnames";
+import { isLabeledSVG, getLocalizedDataUrl, getSvgUrl, getDataUrl, getRealImageUrl } from "../util/svg-image-utils.js";
 
 var _module_ = {
     exports: {}
@@ -78,35 +79,13 @@ const doJSONP = function(url, options) {
     document.head.appendChild(script);
 };
 
-const svgLabelsRegex = /^web\+graphie\:/;
 const hashRegex = /\/([^/]+)$/;
 
-function isLabeledSVG(url) {
-    return svgLabelsRegex.test(url);
-}
 
 function isImageProbablyPhotograph(imageUrl) {
     // TODO(david): Do an inventory to refine this heuristic. For example, what
     //     % of .png images are illustrations?
     return /\.(jpg|jpeg)$/i.test(imageUrl);
-}
-
-// For each svg+labels, there are two urls we need to download from. This gets
-// the base url without the suffix, and `getSvgUrl` and `getDataUrl` apply
-// appropriate suffixes to get the image and other data
-function getBaseUrl(url) {
-    // Force HTTPS connection unless we're on HTTP, so that IE works.
-    const protocol = window.location.protocol === "http:" ? "http:" : "https:";
-
-    return url.replace(svgLabelsRegex, protocol);
-}
-
-function getSvgUrl(url) {
-    return getBaseUrl(url) + ".svg";
-}
-
-function getDataUrl(url) {
-    return getBaseUrl(url) + "-data.json";
 }
 
 function shouldUseLocalizedData() {
@@ -149,21 +128,6 @@ if (shouldRenderJipt()) {
         }
         return text;
     });
-}
-
-// A regex to split at the last / of a URL, separating the base part from the
-// hash. This is used to create the localized label data URLs.
-const splitHashRegex = /\/(?=[^/]+$)/;
-
-function getLocalizedDataUrl(url) {
-    if (typeof KA !== "undefined") {
-        // Parse out the hash and base so that we can insert the locale
-        // directory in the middle.
-        const [base, hash] = getBaseUrl(url).split(splitHashRegex);
-        return `${base}/${KA.language}/${hash}-data.json`;
-    } else {
-        return getDataUrl(url);
-    }
 }
 
 // Get the hash from the url, which is just the filename
@@ -233,13 +197,7 @@ const SvgImage = React.createClass({
         // Sometimes other components want to download the actual image e.g. to
         // determine its size. Here, we transform an .svg-labels url into the
         // correct image url, and leave normal image urls alone
-        getRealImageUrl: function(url) {
-            if (isLabeledSVG(url)) {
-                return getSvgUrl(url);
-            } else {
-                return url;
-            }
-        },
+        getRealImageUrl: getRealImageUrl,
     },
 
     getDefaultProps: function() {

@@ -1,4 +1,4 @@
-import _componentsSvgImageJsx from "./components/svg-image.jsx";
+import { getRealImageUrl } from "./util/svg-image-utils.js";
 import _utilAnswerTypesJs from "./util/answer-types.js";
 import _underscore from "underscore";
 
@@ -682,9 +682,7 @@ const Util = {
             }
         };
 
-        // Require here to prevent recursive imports
-        var SvgImage = _componentsSvgImageJsx;
-        img.src = SvgImage.getRealImageUrl(url);
+        img.src = getRealImageUrl(url);
     },
 
     textarea: {
