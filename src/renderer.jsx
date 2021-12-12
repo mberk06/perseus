@@ -21,6 +21,7 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 import _jquery from "jquery";
+import NotGorgon from "./not-gorgon.js"; // The i18n linter
 /* eslint-disable max-lines, no-var */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -48,7 +49,6 @@ var Deferred = _deferredJs;
 var preprocessTex = _utilKatexPreprocessJs;
 
 const Gorgon = _gorgonGorgonJs; // The linter engine
-import NotGorgon from "./not-gorgon.js"; // The i18n linter
 
 var module = {
     exports: {}
@@ -296,12 +296,16 @@ var Renderer = React.createClass({
         // TODO(jared): This seems to be a perfect overlap with
         // "shouldComponentUpdate" -- can we just remove this
         // componentWillUpdate and the reuseMarkdown attr?
+
+
+        // TODO(aria): The nextState.notGorgonLintErrors`),` seems to be semantically incorrect?
         this.reuseMarkdown =
             !oldJipt &&
             !newJipt &&
             oldContent === newContent &&
             _.isEqual(this.state.notGorgonLintErrors,
-                nextState.notGorgonLintErrors),
+            // WARN(aria): I changed the , condition here to an &&
+                nextState.notGorgonLintErrors) &&
             // If we are running the linter then we need to know when
             // widgets have changed because we need for force the linter to
             // run when that happens. Note: don't do identity comparison here:

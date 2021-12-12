@@ -5,6 +5,7 @@ import _libRaphaelJs from "../lib/raphael.js";
 import _underscore from "underscore";
 import _kmath2 from "kmath";
 import _kmath from "kmath";
+import $ from "jquery";
 
 var module = {
     exports: {}

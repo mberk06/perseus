@@ -7,6 +7,7 @@ import _graphieClassesJsx from "./graphie-classes.jsx";
 import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
+import $ from "jquery";
 
 var module = {
     exports: {}

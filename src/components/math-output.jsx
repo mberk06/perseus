@@ -4,6 +4,7 @@ import _reactComponentsTexJsx from "react-components/tex.jsx";
 import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
+import $ from "jquery";
 
 var module = {
     exports: {}

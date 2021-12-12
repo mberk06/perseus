@@ -10,6 +10,7 @@ import _kmath from "kmath";
 import _graphieJs from "./graphie.js";
 import _libJqueryMobileVmouseJs from "../lib/jquery.mobile.vmouse.js";
 import _underscore from "underscore";
+import $ from "jquery";
 
 var module = {
     exports: {}

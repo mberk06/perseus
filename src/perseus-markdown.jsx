@@ -3,6 +3,7 @@ import _utilJs from "./util.js";
 import _reactComponentsTexJsx from "react-components/tex.jsx";
 import _simpleMarkdown from "simple-markdown";
 import _underscore from "underscore";
+import React from "react";
 
 var module = {
     exports: {}

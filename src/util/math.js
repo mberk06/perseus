@@ -1,5 +1,6 @@
 import _kmath from "kmath";
 import _underscore from "underscore";
+import $ from "jquery";
 
 var module = {
     exports: {}

@@ -2,6 +2,7 @@ import _kmath from "kmath";
 import _objective_Js from "./objective_.js";
 import _interactiveUtilJs from "./interactive-util.js";
 import _underscore from "underscore";
+import $ from "jquery";
 
 var module = {
     exports: {}

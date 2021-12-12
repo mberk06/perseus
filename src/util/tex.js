@@ -1,4 +1,5 @@
 import _mathJs from "./math.js";
+import $ from "jquery";
 
 var module = {
     exports: {}

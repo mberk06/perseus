@@ -1,4 +1,4 @@
-import _interactiveJs from "./interactive.js";
+import "./interactive.js"; // For side effects
 import _graphieJs from "./graphie.js";
 
 var module = {
@@ -16,7 +16,6 @@ var exports = module.exports;
  * itself.
  */
 const GraphUtils = _graphieJs;
-_interactiveJs; // For side effects
 
 module.exports = GraphUtils;
 export default module.exports;

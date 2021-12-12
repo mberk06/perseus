@@ -6,6 +6,7 @@ import _underscore from "underscore";
 import _reactDom from "react-dom";
 import _react from "react";
 import _classnames from "classnames";
+import $ from "jquery";
 
 var module = {
     exports: {}
