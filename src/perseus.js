@@ -6,23 +6,18 @@ import _itemRendererJsx from "./item-renderer.jsx";
 import _questionRendererJsx from "./question-renderer.jsx";
 import _articleRendererJsx from "./article-renderer.jsx";
 import _initJs from "./init.js";
-import _basicWidgetsJs from "./basic-widgets.js";
-import _widgetsJs from "./widgets.js";
+import initialWidgets from "./all-widgets.js";
+import Widgets from "./widgets.js";
 import _versionJson from "./version.json";
 
-var _module_ = {
- exports: {}
-};
-
-var exports = _module_.exports;
 /**
  * Main entry point
  */
 const version = _versionJson;
 
-const Widgets = _widgetsJs;
-const basicWidgets = _basicWidgetsJs;
-Widgets.registerMany(basicWidgets);
+// TODO(aria): This registers all widgets for now, but we could go back to only
+// registering basic widgets
+Widgets.registerMany(initialWidgets);
 
 export const apiVersion = version.apiVersion;
 export const itemDataVersion = version.itemDataVersion;
