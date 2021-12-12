@@ -1,6 +1,3 @@
 [submodule "lib/mathjax"]
 	path = lib/mathjax
 	url = https://github.com/Khan/khan-MathJax.git
-[submodule "math-input"]
-	path = math-input
-	url = https://github.com/Khan/math-input.git
