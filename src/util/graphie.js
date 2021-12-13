@@ -1,7 +1,7 @@
 import _colors from "./colors";
 import _texJs from "./tex.js";
 import _mathJs from "./math.js";
-import _libRaphaelJs from "../lib/raphael.js";
+import "../lib/raphael.js"; // global Raphael
 import _underscore from "underscore";
 import _kmath2 from "kmath";
 import _kmath from "kmath";
@@ -24,7 +24,6 @@ const _ = _underscore;
 // release
 // http://groups.google.com/group/raphaeljs/browse_thread/thread/c34c75ad8d431544
 /* globals Raphael:false */
-_libRaphaelJs;
 
 const KhanMath = _mathJs;
 const processMath = _texJs.processMath;

@@ -8,7 +8,7 @@ import _kmath3 from "kmath";
 import _kmath2 from "kmath";
 import _kmath from "kmath";
 import _graphieJs from "./graphie.js";
-import _libJqueryMobileVmouseJs from "../lib/jquery.mobile.vmouse.js";
+import "../lib/jquery.mobile.vmouse.js";
 import _underscore from "underscore";
 import $ from "jquery";
 
@@ -29,8 +29,6 @@ var exports = _module_.exports;
 // TODO(emily): This file breaks our line length limits like nobody's business.
 // Figure out how to fix that.
 const _ = _underscore;
-
-_libJqueryMobileVmouseJs;
 
 /* global Raphael:false */
 const GraphUtils = _graphieJs;

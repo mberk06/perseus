@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import ServerItemRenderer from "./server-item-renderer";
+import ServerItemRenderer from "./server-item-renderer.jsx";
 
 
 export default class QuestionRenderer extends Component {
