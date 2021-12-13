@@ -2,11 +2,10 @@
   "name": "perseus",
   "version": "0.1.0",
   "private": true,
-  "source": "src/index.js",
-  "main": "build/perseus.js",
+  "main": "build/perseus.cjs",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c",
+    "build": "rm -rf ./build && rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -63,6 +62,7 @@
     "babel-plugin-transform-commonjs": "^1.1.6",
     "parcel": "^2.0.1",
     "react-scripts": "4.0.3",
-    "rollup": "^2.61.1"
+    "rollup": "^2.61.1",
+    "rollup-plugin-visualizer": "^5.5.2"
   }
 }
