@@ -25,8 +25,14 @@
       "last 1 safari version"
     ]
   },
+  "alias": {
+    "kmath": "./src/node_modules/kmath",
+    "react-components": "./src/node_modules/react-components",
+    "react-addons-create-fragment": "./src/node_modules/react-addons-create-fragment.js"
+  },
   "dependencies": {
     "@khanacademy/math-input": "^0.4.1",
+    "@swc/helpers": "^0.3.2",
     "aphrodite": "^1.2.5",
     "btoa": "^1.2.1",
     "classnames": "^2.3.1",
@@ -35,9 +41,11 @@
     "flow-enums-runtime": "^0.0.6",
     "jquery": "^1.12.4",
     "katex": "^0.15.1",
+    "mathquill": "github:matchu/mathquill-webpack",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-addons-pure-render-mixin": "^15.6.3",
+    "react-dom": "^17.0.2",
     "simple-markdown": "^0.7.3",
     "underscore": "^1.4.4"
   },
@@ -50,7 +58,6 @@
     "@testing-library/user-event": "^12.8.3",
     "babel-plugin-transform-commonjs": "^1.1.6",
     "parcel": "^2.0.1",
-    "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "rollup": "^2.61.1"
   }
