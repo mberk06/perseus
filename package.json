@@ -2,10 +2,10 @@
   "name": "perseus",
   "version": "0.1.0",
   "private": true,
-  "main": "build/perseus.cjs",
+  "main": "perseus.cjs",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf ./build && rollup -c",
+    "build": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -23,11 +23,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "alias": {
-    "kmath": "./src/node_modules/kmath",
-    "react-components": "./src/node_modules/react-components",
-    "react-addons-create-fragment": "./src/node_modules/react-addons-create-fragment.js"
   },
   "dependencies": {
     "@khanacademy/math-input": "^0.4.1",
@@ -60,9 +55,12 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "babel-plugin-transform-commonjs": "^1.1.6",
+    "less": "^4.1.2",
     "parcel": "^2.0.1",
+    "postcss": "^8.4.5",
     "react-scripts": "4.0.3",
     "rollup": "^2.61.1",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-visualizer": "^5.5.2"
   }
 }

@@ -1,6 +1,11 @@
 // TODO(aria): fix up code to not depend on these
 import "./perseus-globals"; // side effects
 
+// Global css
+import 'katex/dist/katex.css';
+import "./lib/khan-exercises.css";
+import "./lib/perseus.css";
+
 import _multiItemsJs from "./multi-items.js";
 import _rendererJsx from "./renderer.jsx";
 import _hintsRendererJsx from "./hints-renderer.jsx";
