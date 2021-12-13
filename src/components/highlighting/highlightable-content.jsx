@@ -9,7 +9,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 /**
  * The entry point for highlighting!
  *

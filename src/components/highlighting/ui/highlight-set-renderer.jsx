@@ -7,7 +7,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 /**
  * Render a set of highlights. See HighlightRenderer for more details about how
  * each highlight is rendered.

@@ -10,7 +10,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 
 /* Component for rendering a letter icon in radio choice */
 

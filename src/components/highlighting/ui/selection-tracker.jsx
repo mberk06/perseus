@@ -5,7 +5,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 /**
  * Tracks the user's current selection, and exposes it to the subtree using the
  * function-as-children pattern.

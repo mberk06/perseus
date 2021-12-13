@@ -121,7 +121,7 @@
  * the Perseus article or exercise that is being linted.
  */
 
-// @flow
+
 import Selector from "./selector.js";
 
 /**

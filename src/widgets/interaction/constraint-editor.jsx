@@ -13,7 +13,7 @@ var exports = _module_.exports;
 /* eslint-disable react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
-// @flow
+
 
 const React = _react;
 const TeX = _reactComponentsTexJsx;

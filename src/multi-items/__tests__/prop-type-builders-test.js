@@ -8,7 +8,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 const assert = _assert;
 
 const shapes = _shapesJs;

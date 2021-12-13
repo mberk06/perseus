@@ -7,7 +7,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 
 /**
  * Renders a circular selection ring around the child.

@@ -1,4 +1,4 @@
-// @flow
+
 import Rule from "./gorgon/rule.js";
 
 /**

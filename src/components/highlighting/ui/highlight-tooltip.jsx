@@ -7,7 +7,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 /**
  * A tooltip to point to the focus of a highlight.
  */

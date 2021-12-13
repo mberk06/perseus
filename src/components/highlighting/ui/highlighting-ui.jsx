@@ -9,7 +9,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 /**
  * This component, given a set of DOMHighlights, draws highlight rectangles in
  * the same absolute position as the highlighted content, as computed by the

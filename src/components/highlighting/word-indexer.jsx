@@ -5,7 +5,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 /**
  * This component, whenever its content updates, traverses the DOM to find
  * semantic words and send the corresponding DOMRanges to the caller via a

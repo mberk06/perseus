@@ -7,7 +7,7 @@ var _module_ = {
 };
 
 var exports = _module_.exports;
-// @flow
+
 
 /**
  * Renders text indicating whether the choice was correct or
