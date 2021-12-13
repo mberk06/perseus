@@ -2,15 +2,16 @@
   "name": "perseus",
   "version": "0.1.0",
   "private": true,
+  "source": "src/index.js",
+  "main": "build/perseus.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "parcel build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-    ]
+    "extends": []
   },
   "browserslist": {
     "production": [
@@ -42,12 +43,15 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@codemod/cli": "^3.1.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "babel-plugin-transform-commonjs": "^1.1.6",
+    "parcel": "^2.0.1",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "rollup": "^2.61.1"
   }
 }
