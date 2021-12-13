@@ -1,6 +1,7 @@
+// Demo page index for create-react-app
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./perseus-globals"; // side effects
 import * as Perseus from './perseus';
 //import "./lib/mathquill/mathquill.css";
 import 'katex/dist/katex.css';

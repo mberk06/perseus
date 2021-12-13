@@ -1,3 +1,6 @@
+// TODO(aria): fix up code to not depend on these
+import "./perseus-globals"; // side effects
+
 import _multiItemsJs from "./multi-items.js";
 import _rendererJsx from "./renderer.jsx";
 import _hintsRendererJsx from "./hints-renderer.jsx";
