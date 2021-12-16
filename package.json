@@ -14,9 +14,14 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      ">=1% in US",
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 safari versions",
+      "last 2 edge versions",
+      "Firefox ESR",
+      "maintained node versions",
+      "not dead"
     ],
     "development": [
       "last 1 chrome version",
@@ -45,6 +50,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "^7.16.0",
+    "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.0",
     "@codemod/cli": "^3.1.2",
     "@rollup/plugin-babel": "^5.3.0",
@@ -55,6 +61,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "babel-plugin-transform-commonjs": "^1.1.6",
+    "browserslist": "^4.19.1",
     "less": "^4.1.2",
     "parcel": "^2.0.1",
     "postcss": "^8.4.5",
