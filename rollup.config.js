@@ -9,7 +9,7 @@ export default {
   input: 'src/perseus.js',
   external: (path) => !path.startsWith('.') && !path.startsWith('/') && !path.endsWith('.css'),
   output: {
-    file: 'perseus.cjs',
+    file: 'perseus.js',
     format: 'cjs',
   },
   plugins: [

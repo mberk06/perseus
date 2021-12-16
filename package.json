@@ -2,7 +2,7 @@
   "name": "perseus",
   "version": "0.1.0",
   "private": true,
-  "main": "perseus.cjs",
+  "main": "perseus.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "rollup -c",
