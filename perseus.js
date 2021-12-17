@@ -261,7 +261,7 @@ var interpolateStringToFragment = function interpolateStringToFragment(str, opti
     */
 
 
-var _$1L = function _(str, options) {
+var _$1K = function _(str, options) {
   // Sometimes we're given an argument that's meant for ngettext().  This
   // happens if the same string is used in both i18n._() and i18n.ngettext()
   // (.g. a = i18n._(foo); b = i18n.ngettext("foo", "bar", count);
@@ -378,7 +378,7 @@ var ngettext = function ngettext(singular, plural, num, options) {
   options = options || {};
   options.num = options.num || num; // Then pass into i18n._ for the actual substitution
 
-  return _$1L(translation, options);
+  return _$1K(translation, options);
 };
 /*
     * Return the ngettext position that matches the given number and locale.
@@ -405,14 +405,14 @@ var ngetpos = function ngetpos(num, lang) {
     */
 
 
-var i18nDoNotTranslate = _$1L;
+var i18nDoNotTranslate = _$1K;
 // bootstrap-daterangepicker (live-editor also uses the global i18n
 // var, but defines its own version of it.)  We export the symbols
 // that they need.
 
 
 window.i18n = {
-  _: _$1L,
+  _: _$1K,
   ngettext: ngettext,
   i18nDoNotTranslate: i18nDoNotTranslate,
   // khan-exercises is the only client of ngetpos (which is emitted
@@ -735,7 +735,6 @@ function getRealImageUrl(url) {
 var _module_$3a = {
   exports: {}
 };
-var _$1K = _underscore__default["default"];
 var knumber$9 = _kmath__default["default"].number;
 var KhanMath$d = {
   // Simplify formulas before display
@@ -955,7 +954,7 @@ var KhanMath$d = {
       }
     }
 
-    if (_$1K(["proper", "improper", "mixed", "fraction"]).contains(format)) {
+    if (["proper", "improper", "mixed", "fraction"].includes(format)) {
       var _fraction = knumber$9.toFraction(number);
 
       var _numerator = Math.abs(_fraction[0]);
@@ -1824,7 +1823,7 @@ var Util$q = {
     return first;
   },
   stringArrayOfSize: function stringArrayOfSize(size) {
-    return _$1I(size).times(function () {
+    return _$1I.times(size, function () {
       return "";
     });
   },
@@ -1865,7 +1864,7 @@ var Util$q = {
    * Returns: [1, 1]
    */
   getGridStep: function getGridStep(range, step, boxSize) {
-    return _$1I(2).times(function (i) {
+    return _$1I.times(2, function (i) {
       var scale = Util$q.scaleFromExtent(range[i], boxSize);
       var gridStep = Util$q.gridStepFromTickStep(step[i], scale);
       return gridStep;
@@ -27908,7 +27907,7 @@ _$16.extend(OldUnitInput, {
       kasCorrect = KAS.compare(guessUnit, answerUnit).equal;
     } else {
       // Are any of the accepted units the same as what the user entered?
-      kasCorrect = _$16(rubric.acceptingUnits).any(unit => {
+      kasCorrect = rubric.acceptingUnits.some(unit => {
         var thisAnswerUnit = primUnits(KAS.unitParse(unit).unit.simplify());
         return KAS.compare(thisAnswerUnit, guessUnit // TODO(joel) - make this work as intended.
         // { form: true }
@@ -32153,7 +32152,7 @@ var Table$1 = React$1u.createClass({
     var defaultRows = 4;
     var defaultColumns = 1;
 
-    var blankAnswers = _$10(defaultRows).times(function () {
+    var blankAnswers = _$10.times(defaultRows, function () {
       return Util$e.stringArrayOfSize(defaultColumns);
     });
 
@@ -32218,10 +32217,10 @@ var Table$1 = React$1u.createClass({
           linterContext: this.props.linterContext
         }));
       }
-    }))), /*#__PURE__*/React$1u.createElement("tbody", null, _$10(rows).times(r => {
+    }))), /*#__PURE__*/React$1u.createElement("tbody", null, _$10.times(rows, r => {
       return /*#__PURE__*/React$1u.createElement("tr", {
         key: r
-      }, _$10(columns).times(c => {
+      }, _$10.times(columns, c => {
         return /*#__PURE__*/React$1u.createElement("td", {
           key: c
         }, /*#__PURE__*/React$1u.createElement(InputComponent, {
@@ -32307,8 +32306,8 @@ var Table$1 = React$1u.createClass({
 
     var inputPaths = [];
 
-    _$10(rows).times(r => {
-      _$10(columns).times(c => {
+    _$10.times(rows, r => {
+      _$10.times(columns, c => {
         var inputPath = getInputPath$1(r, c);
         inputPaths.push(inputPath);
       });
@@ -32413,7 +32412,7 @@ var propTransform$5 = editorProps => {
   var rows = editorProps.answers.length;
   var columns = editorProps.answers[0].length;
 
-  var blankAnswers = _$10(rows).times(function () {
+  var blankAnswers = _$10.times(rows, function () {
     return Util$e.stringArrayOfSize(columns);
   });
 
@@ -34274,7 +34273,7 @@ var Editor$b = React$1r.createClass({
      */
 
 
-    _$$(files).chain().map(function (file) {
+    _$$.chain(files).map(function (file) {
       if (!file.type.match("image.*")) {
         return null;
       }
@@ -34551,7 +34550,7 @@ var Editor$b = React$1r.createClass({
   getSaveWarnings: function getSaveWarnings() {
     var widgetIds = _$$.intersection(this.widgetIds, _$$.keys(this.refs));
 
-    var warnings = _$$(widgetIds).chain().map(id => {
+    var warnings = _$$.chain(widgetIds).map(id => {
       var issuesFunc = this.refs[id].getSaveWarnings;
       var issues = issuesFunc ? issuesFunc() : [];
       return _$$.map(issues, issue => id + ": " + issue);
@@ -34813,7 +34812,7 @@ var TableEditor = React$1q.createClass({
     var defaultRows = 4;
     var defaultColumns = 1;
 
-    var blankAnswers = _$_(defaultRows).times(function () {
+    var blankAnswers = _$_.times(defaultRows, function () {
       return Util$c.stringArrayOfSize(defaultColumns);
     });
 
@@ -34874,7 +34873,7 @@ var TableEditor = React$1q.createClass({
     if (rows <= oldRows) {
       answers.length = rows;
     } else {
-      _$_(rows - oldRows).times(function () {
+      _$_.times(rows - oldRows, function () {
         answers.push(Util$c.stringArrayOfSize(oldColumns));
       });
     }
@@ -34884,7 +34883,7 @@ var TableEditor = React$1q.createClass({
       if (columns <= oldColumns) {
         array.length = columns;
       } else {
-        _$_(columns - oldColumns).times(function () {
+        _$_.times(columns - oldColumns, function () {
           array.push("");
         });
       }
@@ -38696,7 +38695,7 @@ var Plotter$1 = React$1e.createClass({
     dotTicks[i] = [];
     var n = Math.round(c.dimY / c.scaleY) + 1;
 
-    _$S(n).times(function (j) {
+    _$S.times(n, function (j) {
       j -= 1;
       var midY = (j + 0.5) * c.scaleY;
       var leftX = x - c.picBoxWidth / 2;
@@ -43272,9 +43271,8 @@ var NumberLine = React$Y.createClass({
     return x;
   },
   _renderNumberLinePoint: function _renderNumberLinePoint(props) {
-    var isOpen = _$J(["lt", "gt"]).contains(props.rel); // In static mode the point's fill and stroke is blue to signify that
+    var isOpen = ["lt", "gt"].includes(props.rel); // In static mode the point's fill and stroke is blue to signify that
     // it can't be interacted with.
-
 
     var fill;
 
@@ -43338,8 +43336,7 @@ var NumberLine = React$Y.createClass({
     });
   },
   _getInequalityEndpoint: function _getInequalityEndpoint(props) {
-    var isGreater = _$J(["ge", "gt"]).contains(props.rel);
-
+    var isGreater = ["ge", "gt"].includes(props.rel);
     var widthInPixels = 400;
     var range = props.range;
     var scale = (range[1] - range[0]) / widthInPixels;
@@ -43424,7 +43421,7 @@ var NumberLine = React$Y.createClass({
     }), /*#__PURE__*/React$Y.createElement("input", {
       type: "button",
       className: "simple-button",
-      value: _$J(["le", "ge"]).contains(this.props.rel) ? i18n._("Make circle open") : i18n._("Make circle filled"),
+      value: ["le", "ge"].includes(this.props.rel) ? i18n._("Make circle open") : i18n._("Make circle filled"),
       onClick: this.handleToggleStrict
     }));
     var tickCtrl;
@@ -43931,7 +43928,7 @@ _2$1.extend(Measurer, {
 
 var propUpgrades$2 = {
   1: v0props => {
-    var v1props = _2$1(v0props).chain().omit("imageUrl", "imageTop", "imageLeft").extend({
+    var v1props = _2$1.chain(v0props).omit("imageUrl", "imageTop", "imageLeft").extend({
       image: {
         url: v0props.imageUrl,
         top: v0props.imageTop,
@@ -44322,10 +44319,10 @@ var getMatrixSize$1 = function getMatrixSize(matrix) {
   var matrixSize = [1, 1]; // We need to find the widest row and tallest column to get the correct
   // matrix size.
 
-  _$F(matrix).each((matrixRow, row) => {
+  _$F.each(matrix, (matrixRow, row) => {
     var rowWidth = 0;
 
-    _$F(matrixRow).each((matrixCol, col) => {
+    _$F.each(matrixRow, (matrixCol, col) => {
       if (matrixCol != null && matrixCol.toString().length) {
         rowWidth = col + 1;
       }
@@ -44428,12 +44425,12 @@ var Matrix$1 = React$S.createClass({
         height: bracketHeight,
         left: bracketOffset
       }
-    }), _$F(maxRows).times(row => {
+    }), _$F.times(maxRows, row => {
       var rowVals = this.props.answers[row];
       return /*#__PURE__*/React$S.createElement("div", {
         className: "matrix-row",
         key: row
-      }, _$F(maxCols).times(col => {
+      }, _$F.times(maxCols, col => {
         var outside = row > highlightedRow || col > highlightedCol;
         var inputProps = {
           className: outside ? "outside" : "inside",
@@ -44528,8 +44525,8 @@ var Matrix$1 = React$S.createClass({
     var maxRows = this.props.matrixBoardSize[0];
     var maxCols = this.props.matrixBoardSize[1];
 
-    _$F(maxRows).times(row => {
-      _$F(maxCols).times(col => {
+    _$F.times(maxRows, row => {
+      _$F.times(maxCols, col => {
         var inputPath = getInputPath(row, col);
         inputPaths.push(inputPath);
       });
@@ -44660,8 +44657,8 @@ _$F.extend(Matrix$1, {
     var hasEmptyCell = false;
     var incorrect = false;
 
-    _$F(suppliedSize[0]).times(row => {
-      _$F(suppliedSize[1]).times(col => {
+    _$F.times(suppliedSize[0], row => {
+      _$F.times(suppliedSize[1], col => {
         if (supplied[row][col] == null || supplied[row][col].toString().length === 0) {
           hasEmptyCell = true;
         }
@@ -44708,7 +44705,7 @@ _$F.extend(Matrix$1, {
 
 var propTransform$3 = editorProps => {
   // Remove answers before passing to widget
-  var blankAnswers = _$F(editorProps.matrixBoardSize[0]).times(function () {
+  var blankAnswers = _$F.times(editorProps.matrixBoardSize[0], function () {
     return stringArrayOfSize(editorProps.matrixBoardSize[1]);
   });
 
@@ -44764,10 +44761,10 @@ var getMatrixSize = function getMatrixSize(matrix) {
   var matrixSize = [1, 1]; // We need to find the widest row and tallest column to get the correct
   // matrix size.
 
-  _$E(matrix).each((matrixRow, row) => {
+  _$E.each(matrix, (matrixRow, row) => {
     var rowWidth = 0;
 
-    _$E(matrixRow).each((matrixCol, col) => {
+    _$E.each(matrixRow, (matrixCol, col) => {
       if (matrixCol != null && matrixCol.toString().length) {
         rowWidth = col + 1;
       }
@@ -44862,8 +44859,8 @@ var MatrixEditor = React$R.createClass({
     if (range[0] !== null && range[1] !== null) {
       range = [Math.round(Math.min(Math.max(range[0], 1), MAX_BOARD_SIZE)), Math.round(Math.min(Math.max(range[1], 1), MAX_BOARD_SIZE))];
 
-      var answers = _$E(Math.min(range[0], matrixSize[0])).times(row => {
-        return _$E(Math.min(range[1], matrixSize[1])).times(col => {
+      var answers = _$E.times(Math.min(range[0], matrixSize[0]), row => {
+        return _$E.times(Math.min(range[1], matrixSize[1]), col => {
           return this.props.answers[row][col];
         });
       });
@@ -47787,9 +47784,8 @@ var TexButtons$3 = React$M.createClass({
     // practice, they will be ordered as listed above.
     var sortedButtonSets = _$z.sortBy(this.props.sets, setName => _$z.keys(buttonSets).indexOf(setName));
 
-    var buttons = _$z(sortedButtonSets).map(setName => buttonSets[setName]);
-
-    var buttonRows = _$z(buttons).map(row => row.map(symbGen => {
+    var buttons = sortedButtonSets.map(setName => buttonSets[setName]);
+    var buttonRows = buttons.map(row => row.map(symbGen => {
       // create a (component, thing we should send to mathquill) pair
       var symbol = symbGen(this.props);
       return /*#__PURE__*/React$M.createElement("button", {
@@ -47800,14 +47796,12 @@ var TexButtons$3 = React$M.createClass({
         type: "button"
       }, symbol[0]);
     }));
-
-    var buttonPopup = _$z(buttonRows).map((row, i) => {
+    var buttonPopup = buttonRows.map((row, i) => {
       return /*#__PURE__*/React$M.createElement("div", {
         className: "clearfix tex-button-row",
         key: this.props.sets[i]
       }, row);
     });
-
     return /*#__PURE__*/React$M.createElement("div", {
       className: "".concat(this.props.className, " preview-measure")
     }, buttonPopup);
@@ -47954,7 +47948,7 @@ var MathInput$4 = React$L.createClass({
   insert: function insert(value) {
     var input = this.mathField();
 
-    if (_$y(value).isFunction()) {
+    if (_$y.isFunction(value)) {
       value(input);
     } else if (value[0] === "\\") {
       input.cmd(value).focus();
@@ -50016,7 +50010,7 @@ var ImageEditor = React$D.createClass({
   removeLabel: function removeLabel(labelIndex, e) {
     e.preventDefault();
 
-    var labels = _$u(this.props.labels).clone();
+    var labels = _$u.clone(this.props.labels);
 
     labels.splice(labelIndex, 1);
     this.props.onChange({
@@ -54010,7 +54004,7 @@ var DropdownEditor = React$m.createClass({
   removeChoice: function removeChoice(choiceIndex, e) {
     e.preventDefault();
 
-    var choices = _$g(this.props.choices).clone();
+    var choices = _$g.clone(this.props.choices);
 
     choices.splice(choiceIndex, 1);
     this.props.onChange({
@@ -55502,7 +55496,7 @@ _$9.extend(Expression$1, {
       // parsing the solution answer, not the student answer, and we
       // don't want a solution to work if the student is using a
       // different language but not in english.
-      KAS.parse(answer.value, rubric).expr, _$9({}).extend(options, {
+      KAS.parse(answer.value, rubric).expr, _$9.extend({}, options, {
         simplify: answer.simplify,
         form: answer.form
       }));
@@ -55512,7 +55506,7 @@ _$9.extend(Expression$1, {
     var result;
     var matchingAnswer;
     var allEmpty = true;
-    var foundMatch = !!_$9(rubric.answerForms).find(answer => {
+    var foundMatch = !!rubric.answerForms.find(answer => {
       var validate = createValidator(answer); // save these because they'll be needed if this answer matches
 
       result = validate(state);
@@ -55776,7 +55770,7 @@ var ExpressionEditor = React$e.createClass({
     if (this.props.answerForms.length === 0) {
       isTex = true;
     } else {
-      isTex = _$8(this.props.answerForms).any(form => {
+      isTex = this.props.answerForms.some(form => {
         var {
           value
         } = form; // only TeX has backslashes and curly braces
@@ -55828,7 +55822,7 @@ var ExpressionEditor = React$e.createClass({
       className: "answer-options-list"
     }); // checkboxes to choose which sets of input buttons are shown
 
-    var buttonSetChoices = _$8(TexButtons.buttonSets).map((set, name) => {
+    var buttonSetChoices = TexButtons.buttonSets.map((set, name) => {
       // The first one gets special cased to always be checked, disabled,
       // and float left.
       var isFirst = name === "basic";
@@ -55844,7 +55838,6 @@ var ExpressionEditor = React$e.createClass({
         onChange: () => this.handleButtonSet(name)
       }), name);
     });
-
     buttonSetChoices.splice(1, 1, /*#__PURE__*/React$e.createElement("label", {
       key: "show-div"
     }, /*#__PURE__*/React$e.createElement("input", {
@@ -55892,9 +55885,9 @@ var ExpressionEditor = React$e.createClass({
     "key"];
     var serializables = ["answerForms", "buttonSets", "functions", "times"];
     var answerForms = this.props.answerForms.map(form => {
-      return _$8(form).pick(formSerializables);
+      return _$8.pick(form, formSerializables);
     });
-    return lens(this.props).set(["answerForms"], answerForms).mod([], props => _$8(props).pick(serializables)).freeze();
+    return lens(this.props).set(["answerForms"], answerForms).mod([], props => _$8.pick(props, serializables)).freeze();
   },
   getSaveWarnings: function getSaveWarnings() {
     var issues = [];
@@ -55902,7 +55895,7 @@ var ExpressionEditor = React$e.createClass({
     if (this.props.answerForms.length === 0) {
       issues.push("No answers specified");
     } else {
-      var hasCorrect = !!_$8(this.props.answerForms).find(form => {
+      var hasCorrect = !!this.props.answerForms.find(form => {
         return form.considered === "correct";
       });
 
@@ -55910,7 +55903,7 @@ var ExpressionEditor = React$e.createClass({
         issues.push("No correct answer specified");
       }
 
-      _$8(this.props.answerForms).each((form, ix) => {
+      this.props.answerForms.forEach((form, ix) => {
         if (this.props.value === "") {
           issues.push("Answer ".concat(ix + 1, " is empty"));
         } else {
@@ -55927,7 +55920,6 @@ var ExpressionEditor = React$e.createClass({
       //   - unreachable answers (how??)
       //   - specific answers following unspecific answers
       //   - incorrect answers as the final form
-
     }
 
     return issues;
@@ -55966,27 +55958,24 @@ var ExpressionEditor = React$e.createClass({
     });
   },
   handleReorder: function handleReorder(components) {
-    var answerForms = _$8(components).map(component => {
-      var form = _$8(component.props).pick("considered", "form", "simplify", "value");
+    var answerForms = components.map(component => {
+      var form = _$8.pick(component.props, "considered", "form", "simplify", "value");
 
       form.key = component.key;
       return form;
     });
-
     this.change({
       answerForms
     });
   },
   // called when the selected buttonset changes
   handleButtonSet: function handleButtonSet(changingName) {
-    var buttonSetNames = _$8(TexButtons.buttonSets).keys(); // Filter to preserve order - using .union and .difference would always
+    var buttonSetNames = Object.keys(TexButtons.buttonSets); // Filter to preserve order - using .union and .difference would always
     // move the last added button set to the end.
 
-
-    var buttonSets = _$8(buttonSetNames).filter(set => {
-      return _$8(this.props.buttonSets).contains(set) !== (set === changingName);
+    var buttonSets = buttonSetNames.filter(set => {
+      return _$8.contains(this.props.buttonSets, set) !== (set === changingName);
     });
-
     this.props.onChange({
       buttonSets
     });
@@ -55998,7 +55987,7 @@ var ExpressionEditor = React$e.createClass({
     // must be one!) feel free to change it.
     var keep, remove;
 
-    if (_$8(this.props.buttonSets).contains("basic+div")) {
+    if (_$8.contains(this.props.buttonSets, "basic+div")) {
       keep = "basic";
       remove = "basic+div";
     } else {
@@ -56006,7 +55995,7 @@ var ExpressionEditor = React$e.createClass({
       remove = "basic";
     }
 
-    var buttonSets = _$8(this.props.buttonSets).reject(set => set === remove).concat(keep);
+    var buttonSets = _$8.reject(this.props.buttonSets, set => set === remove).concat(keep);
 
     this.change("buttonSets", buttonSets);
   },
@@ -56023,8 +56012,7 @@ var ExpressionEditor = React$e.createClass({
 }); // Find the next element in arr after val, wrapping around to the first.
 
 var findNextIn = function findNextIn(arr, val) {
-  var ix = _$8(arr).indexOf(val);
-
+  var ix = arr.indexOf(val);
   ix = (ix + 1) % arr.length;
   return arr[ix];
 };
