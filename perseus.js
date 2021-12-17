@@ -5079,7 +5079,7 @@ var PureRenderMixin = _reactAddonsPureRenderMixin__default["default"];
 var React$2c = _react__default["default"];
 var ReactDOM$D = _reactDom__default["default"];
 var createReactClass$8 = _createReactClass__default["default"];
-var PropTypes$9 = _propTypes__default["default"];
+var PropTypes$8 = _propTypes__default["default"];
 var katex$1 = _katex__default["default"];
 var katexA11y = _katexA11yJs;
 var pendingScripts = [];
@@ -5151,11 +5151,11 @@ var srOnly = {
 var TeX$9 = createReactClass$8({
   displayName: "TeX",
   propTypes: {
-    children: PropTypes$9.node,
-    katexOptions: PropTypes$9.any,
-    onClick: PropTypes$9.func,
-    onRender: PropTypes$9.func,
-    style: PropTypes$9.any
+    children: PropTypes$8.node,
+    katexOptions: PropTypes$8.any,
+    onClick: PropTypes$8.func,
+    onRender: PropTypes$8.func,
+    style: PropTypes$8.any
   },
   mixins: [PureRenderMixin],
   getDefaultProps: function getDefaultProps() {
@@ -27547,7 +27547,7 @@ var module$8 = {
 };
 var React$1P = _react__default["default"];
 var createReactClass$7 = _createReactClass__default["default"];
-var PropTypes$8 = _propTypes__default["default"];
+var PropTypes$7 = _propTypes__default["default"];
 /* You know when you want to propagate input to a parent...
  * but then that parent does something with the input...
  * then changing the props of the input...
@@ -27564,10 +27564,10 @@ var PropTypes$8 = _propTypes__default["default"];
 var BlurInput$6 = createReactClass$7({
   displayName: "BlurInput",
   propTypes: {
-    className: PropTypes$8.string,
-    style: PropTypes$8.any,
-    value: PropTypes$8.string.isRequired,
-    onChange: PropTypes$8.func.isRequired
+    className: PropTypes$7.string,
+    style: PropTypes$7.any,
+    value: PropTypes$7.string.isRequired,
+    onChange: PropTypes$7.func.isRequired
   },
   getInitialState: function getInitialState() {
     return {
@@ -27606,7 +27606,7 @@ var module$7 = {
 };
 var React$1O = _react__default["default"];
 var createReactClass$6 = _createReactClass__default["default"];
-var PropTypes$7 = _propTypes__default["default"];
+var PropTypes$6 = _propTypes__default["default"];
 var colors = {
   grayLight: '#aaa',
   basicBorderColor: '#ccc',
@@ -27664,7 +27664,7 @@ var questionMark = 'data:image/png;base64,' + 'iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKC
 var InfoTip$p = createReactClass$6({
   displayName: "InfoTip",
   propTypes: {
-    children: PropTypes$7.node
+    children: PropTypes$6.node
   },
   getInitialState: function getInitialState() {
     return {
@@ -32325,19 +32325,19 @@ var module$5 = {
 var React$1B = _react__default["default"];
 var ReactDOM$m = _reactDom__default["default"];
 var createReactClass$5 = _createReactClass__default["default"];
-var PropTypes$6 = _propTypes__default["default"];
+var PropTypes$5 = _propTypes__default["default"];
 var styles$k = _stylesJs;
 var ButtonGroup$8 = createReactClass$5({
   displayName: "ButtonGroup",
   propTypes: {
-    value: PropTypes$6.any,
-    buttons: PropTypes$6.arrayOf(PropTypes$6.shape({
-      value: PropTypes$6.any.isRequired,
-      content: PropTypes$6.node,
-      title: PropTypes$6.string
+    value: PropTypes$5.any,
+    buttons: PropTypes$5.arrayOf(PropTypes$5.shape({
+      value: PropTypes$5.any.isRequired,
+      content: PropTypes$5.node,
+      title: PropTypes$5.string
     })).isRequired,
-    onChange: PropTypes$6.func.isRequired,
-    allowEmpty: PropTypes$6.bool
+    onChange: PropTypes$5.func.isRequired,
+    allowEmpty: PropTypes$5.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -35435,17 +35435,17 @@ var module$4 = {
 
 var React$1v = _react__default["default"];
 var createReactClass$4 = _createReactClass__default["default"];
-var PropTypes$5 = _propTypes__default["default"];
+var PropTypes$4 = _propTypes__default["default"];
 var DragTarget$1 = createReactClass$4({
   displayName: "DragTarget",
   propTypes: {
     // All props not listed here are forwarded to the root element without
     // modification.
-    onDrop: PropTypes$5.func.isRequired,
-    component: PropTypes$5.any,
+    onDrop: PropTypes$4.func.isRequired,
+    component: PropTypes$4.any,
     // component type
-    shouldDragHighlight: PropTypes$5.func,
-    style: PropTypes$5.any
+    shouldDragHighlight: PropTypes$4.func,
+    style: PropTypes$4.any
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -43827,8 +43827,8 @@ var ApiClassNames$7 = _perseusApiJsx.ClassNames;
 var PlaceholderCard = createReactClass({
   displayName: "PlaceholderCard",
   propTypes: {
-    width: PropTypes$4.number.isRequired,
-    height: PropTypes$4.number.isRequired
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired
   },
   render: function render() {
     return /*#__PURE__*/React$11.createElement("div", {
@@ -43854,27 +43854,25 @@ var DragHintCard = createReactClass({
     }));
   }
 });
-var PropTypes$4 = {
-  position: PropTypes$4.shape({
-    left: PropTypes$4.number,
-    top: PropTypes$4.number
-  })
-};
+var PropTypes_position = PropTypes.shape({
+  left: PropTypes.number,
+  top: PropTypes.number
+});
 var Card = createReactClass({
   displayName: "Card",
   propTypes: {
-    floating: PropTypes$4.bool.isRequired,
-    animating: PropTypes$4.bool,
-    width: PropTypes$4.number,
-    stack: PropTypes$4.bool,
-    onMouseDown: PropTypes$4.func,
-    onMouseMove: PropTypes$4.func,
-    onMouseUp: PropTypes$4.func,
+    floating: PropTypes.bool.isRequired,
+    animating: PropTypes.bool,
+    width: PropTypes.number,
+    stack: PropTypes.bool,
+    onMouseDown: PropTypes.func,
+    onMouseMove: PropTypes.func,
+    onMouseUp: PropTypes.func,
     // Used only for floating/animating cards
-    startMouse: PropTypes$4.position,
-    startOffset: PropTypes$4.position,
-    animateTo: PropTypes$4.position,
-    onAnimationEnd: PropTypes$4.func,
+    startMouse: PropTypes_position,
+    startOffset: PropTypes_position,
+    animateTo: PropTypes_position,
+    onAnimationEnd: PropTypes.func,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -44004,12 +44002,12 @@ var NORMAL = "normal",
 var Orderer = createReactClass({
   displayName: "Orderer",
   propTypes: {
-    correctOptions: PropTypes$4.array,
-    current: PropTypes$4.array,
-    height: PropTypes$4.oneOf([NORMAL, AUTO]),
-    layout: PropTypes$4.oneOf([HORIZONTAL, VERTICAL]),
-    options: PropTypes$4.array,
-    trackInteraction: PropTypes$4.func.isRequired,
+    correctOptions: PropTypes.array,
+    current: PropTypes.array,
+    height: PropTypes.oneOf([NORMAL, AUTO]),
+    layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+    options: PropTypes.array,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
