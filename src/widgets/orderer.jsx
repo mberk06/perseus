@@ -55,12 +55,10 @@ var DragHintCard = createReactClass({
     },
 });
 
-var PropTypes = {
-    position: PropTypes.shape({
+var PropTypes_position = PropTypes.shape({
         left: PropTypes.number,
         top: PropTypes.number,
-    }),
-};
+    });
 
 var Card = createReactClass({
     propTypes: {
@@ -74,9 +72,9 @@ var Card = createReactClass({
         onMouseUp: PropTypes.func,
 
         // Used only for floating/animating cards
-        startMouse: PropTypes.position,
-        startOffset: PropTypes.position,
-        animateTo: PropTypes.position,
+        startMouse: PropTypes_position,
+        startOffset: PropTypes_position,
+        animateTo: PropTypes_position,
         onAnimationEnd: PropTypes.func,
         linterContext: linterContextProps,
     },
