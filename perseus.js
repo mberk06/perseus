@@ -47774,7 +47774,7 @@ var buttonSets = {
     key: "geq"
   }, "\\geq"), "\\geq"]]
 };
-var buttonSetsType = React$M.PropTypes.arrayOf(React$M.PropTypes.oneOf(_$z(buttonSets).keys()));
+var buttonSetsType = React$M.PropTypes.arrayOf(React$M.PropTypes.oneOf(Object.keys(buttonSets)));
 var TexButtons$3 = React$M.createClass({
   displayName: "TexButtons",
   propTypes: {
