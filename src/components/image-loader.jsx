@@ -17,8 +17,6 @@ var exports = _module_.exports;
 
 const React = _react;
 
-const {PropTypes} = React;
-
 const Status = {
     PENDING: "pending",
     LOADING: "loading",
