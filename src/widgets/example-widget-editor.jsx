@@ -20,7 +20,7 @@ var EditorJsonify = _mixinsEditorJsonifyJsx;
  * This is the widget's editor. This is what shows up on the left side
  * of the screen in the demo. Only the question writer sees this.
  */
-var ExampleWidgetEditor = React.createClass({
+var ExampleWidgetEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

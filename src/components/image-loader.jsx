@@ -26,11 +26,11 @@ const Status = {
     FAILED: "failed",
 };
 
-const ImageLoader = React.createClass({
+const ImageLoader = createReactClass({
     propTypes: {
-        children: React.PropTypes.oneOfType([
-            React.PropTypes.arrayOf(React.PropTypes.node),
-            React.PropTypes.node,
+        children: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.node),
+            PropTypes.node,
         ]),
         imgProps: PropTypes.any,
         onError: PropTypes.func,

@@ -36,54 +36,54 @@ const focusedStyleMixin = {
 const intermediateCheckboxPadding = `16px 16px`;
 const intermediateCheckboxPaddingPhone = `12px 16px`;
 
-const Choice = React.createClass({
+const Choice = createReactClass({
     propTypes: {
         // TODO(kevinb) use Options.propTypes from perseus-api.jsx
         // This change will also require make sure that item-renderer.jsx and
         // server-item-renderer.jsx have appropriate defaults for apiOptions
         // because many of the properties on Options.propTypes are required.
-        apiOptions: React.PropTypes.shape({
-            satStyling: React.PropTypes.bool,
-            isMobile: React.PropTypes.bool,
-            styling: React.PropTypes.shape({
-                radioStyleVersion: React.PropTypes.oneOf([
+        apiOptions: PropTypes.shape({
+            satStyling: PropTypes.bool,
+            isMobile: PropTypes.bool,
+            styling: PropTypes.shape({
+                radioStyleVersion: PropTypes.oneOf([
                     "intermediate",
                     "final",
                 ]),
-                primaryProductColor: React.PropTypes.string,
+                primaryProductColor: PropTypes.string,
             }),
-            readOnly: React.PropTypes.bool,
+            readOnly: PropTypes.bool,
         }),
-        checked: React.PropTypes.bool,
-        className: React.PropTypes.string,
-        rationale: React.PropTypes.node,
-        content: React.PropTypes.node,
-        correct: React.PropTypes.bool,
-        deselectEnabled: React.PropTypes.bool,
-        disabled: React.PropTypes.bool,
-        editMode: React.PropTypes.bool,
-        groupName: React.PropTypes.string,
-        isLastChoice: React.PropTypes.bool, // Needed for border styling
+        checked: PropTypes.bool,
+        className: PropTypes.string,
+        rationale: PropTypes.node,
+        content: PropTypes.node,
+        correct: PropTypes.bool,
+        deselectEnabled: PropTypes.bool,
+        disabled: PropTypes.bool,
+        editMode: PropTypes.bool,
+        groupName: PropTypes.string,
+        isLastChoice: PropTypes.bool, // Needed for border styling
         // This indicates the position of the choice relative to others
         // (so that we can display a nice little (A), (B), etc. next to it)
         // Also used to generate an id for each input.
-        pos: React.PropTypes.number,
-        reviewMode: React.PropTypes.bool,
-        showRationale: React.PropTypes.bool,
-        showCorrectness: React.PropTypes.bool,
-        type: React.PropTypes.string,
+        pos: PropTypes.number,
+        reviewMode: PropTypes.bool,
+        showRationale: PropTypes.bool,
+        showCorrectness: PropTypes.bool,
+        type: PropTypes.string,
 
         // Indicates whether the user has "crossed out" this choice, meaning
         // that they don't think it's correct. This value does not affect
         // scoring or other behavior; it's just a note for the user's
         // reference.
-        crossedOut: React.PropTypes.bool,
+        crossedOut: PropTypes.bool,
 
         // A callback indicating that this choice has changed. Its argument is
         // an object with two keys: `checked` and `crossedOut`. Each contains a
         // boolean value specifying the new checked and crossed-out value of
         // this choice.
-        onChange: React.PropTypes.func,
+        onChange: PropTypes.func,
     },
 
     statics: {

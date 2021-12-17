@@ -35,21 +35,21 @@ const exclamationIcon = {
     width: 12,
 };
 
-const Lint = React.createClass({
+const Lint = createReactClass({
     propTypes: {
         // The children are the linty content we're highlighting
-        children: React.PropTypes.node,
+        children: PropTypes.node,
         // Inline lint is highlighted differently than block lint.
-        inline: React.PropTypes.bool,
+        inline: PropTypes.bool,
         // This is the text that appears in the tooltip
-        message: React.PropTypes.string.isRequired,
+        message: PropTypes.string.isRequired,
         // This is used as the fragment id (hash) in the URL of the link
-        ruleName: React.PropTypes.string.isRequired,
+        ruleName: PropTypes.string.isRequired,
         // Lint warnings inside tables are handled specially
-        insideTable: React.PropTypes.bool.isRequired,
+        insideTable: PropTypes.bool.isRequired,
         // How important this lint message is for the editor. Severity goes
         // from 1 (indicating an error) to 4 (offline reporting only)
-        severity: React.PropTypes.number,
+        severity: PropTypes.number,
     },
 
     getInitialState: function() {

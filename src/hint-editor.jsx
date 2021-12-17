@@ -40,14 +40,14 @@ const IframeContentRenderer = _iframeContentRendererJsx;
  *  ~ the "remove this hint" box
  *  ~ the move hint up/down arrows
  */
-var HintEditor = React.createClass({
+var HintEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        className: React.PropTypes.string,
-        imageUploader: React.PropTypes.func,
-        showMoveButtons: React.PropTypes.bool,
-        showRemoveButton: React.PropTypes.bool,
-        showTitle: React.PropTypes.bool,
+        className: PropTypes.string,
+        imageUploader: PropTypes.func,
+        showMoveButtons: PropTypes.bool,
+        showRemoveButton: PropTypes.bool,
+        showTitle: PropTypes.bool,
     },
 
     getDefaultProps: function() {
@@ -137,13 +137,13 @@ var HintEditor = React.createClass({
 });
 
 /* A single hint-row containing a hint editor and preview */
-var CombinedHintEditor = React.createClass({
+var CombinedHintEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        deviceType: React.PropTypes.string.isRequired,
-        frameSource: React.PropTypes.string.isRequired,
-        imageUploader: React.PropTypes.func,
-        highlightLint: React.PropTypes.bool,
+        deviceType: PropTypes.string.isRequired,
+        frameSource: PropTypes.string.isRequired,
+        imageUploader: PropTypes.func,
+        highlightLint: PropTypes.bool,
     },
 
     getDefaultProps: function() {
@@ -244,13 +244,13 @@ var CombinedHintEditor = React.createClass({
  *  ~ All the hint previews
  *  ~ The "add a hint" button
  */
-var CombinedHintsEditor = React.createClass({
+var CombinedHintsEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        deviceType: React.PropTypes.string.isRequired,
-        frameSource: React.PropTypes.string.isRequired,
-        imageUploader: React.PropTypes.func,
-        highlightLint: React.PropTypes.bool,
+        deviceType: PropTypes.string.isRequired,
+        frameSource: PropTypes.string.isRequired,
+        imageUploader: PropTypes.func,
+        highlightLint: PropTypes.bool,
     },
 
     statics: {

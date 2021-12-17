@@ -31,17 +31,17 @@ var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
 var updateQueryString = _utilJs.updateQueryString;
 
 /* This renders the iframe and handles validation via window.postMessage */
-var Iframe = React.createClass({
+var Iframe = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        width: React.PropTypes.string,
-        height: React.PropTypes.string,
-        url: React.PropTypes.string,
-        settings: React.PropTypes.array,
-        status: React.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
-        message: React.PropTypes.string,
-        allowFullScreen: React.PropTypes.bool,
-        allowTopNavigation: React.PropTypes.bool,
+        width: PropTypes.string,
+        height: PropTypes.string,
+        url: PropTypes.string,
+        settings: PropTypes.array,
+        status: PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
+        message: PropTypes.string,
+        allowFullScreen: PropTypes.bool,
+        allowTopNavigation: PropTypes.bool,
     },
 
     getDefaultProps: function() {

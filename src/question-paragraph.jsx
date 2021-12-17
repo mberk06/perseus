@@ -11,7 +11,7 @@ var exports = _module_.exports;
 
 var React = _react;
 
-var QuestionParagraph = React.createClass({
+var QuestionParagraph = createReactClass({
     render: function() {
         var className = this.props.className
             ? "paragraph " + this.props.className

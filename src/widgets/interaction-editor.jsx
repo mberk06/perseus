@@ -59,12 +59,12 @@ var defaultInteractionProps = {
 //
 // TODO(eater): Factor this out
 //
-const PointEditor = React.createClass({
+const PointEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        coordX: React.PropTypes.string,
-        coordY: React.PropTypes.string,
-        color: React.PropTypes.string,
+        coordX: PropTypes.string,
+        coordY: PropTypes.string,
+        color: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -119,17 +119,17 @@ const PointEditor = React.createClass({
 //
 // TODO(eater): Factor this out
 //
-var LineEditor = React.createClass({
+var LineEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        startX: React.PropTypes.string,
-        startY: React.PropTypes.string,
-        endX: React.PropTypes.string,
-        endY: React.PropTypes.string,
-        color: React.PropTypes.string,
-        strokeDasharray: React.PropTypes.string,
-        arrows: React.PropTypes.string,
-        strokeWidth: React.PropTypes.number,
+        startX: PropTypes.string,
+        startY: PropTypes.string,
+        endX: PropTypes.string,
+        endY: PropTypes.string,
+        color: PropTypes.string,
+        strokeDasharray: PropTypes.string,
+        arrows: PropTypes.string,
+        strokeWidth: PropTypes.number,
     },
 
     getDefaultProps: function() {
@@ -228,14 +228,14 @@ var LineEditor = React.createClass({
 // TODO(eater): Factor this out
 // TODO(eater): Rethink how constraints are represented
 //
-var MovablePointEditor = React.createClass({
+var MovablePointEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        startX: React.PropTypes.string,
-        startY: React.PropTypes.string,
-        constraint: React.PropTypes.string,
-        snap: React.PropTypes.number,
-        constraintFn: React.PropTypes.string,
+        startX: PropTypes.string,
+        startY: PropTypes.string,
+        constraint: PropTypes.string,
+        snap: PropTypes.number,
+        constraintFn: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -300,16 +300,16 @@ var MovablePointEditor = React.createClass({
 // TODO(eater): Factor this out
 // TODO(eater): Rethink how constraints are represented
 //
-var MovableLineEditor = React.createClass({
+var MovableLineEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        startX: React.PropTypes.string,
-        startY: React.PropTypes.string,
-        endX: React.PropTypes.string,
-        endY: React.PropTypes.string,
-        constraint: React.PropTypes.string,
-        snap: React.PropTypes.number,
-        constraintFn: React.PropTypes.string,
+        startX: PropTypes.string,
+        startY: PropTypes.string,
+        endX: PropTypes.string,
+        endY: PropTypes.string,
+        constraint: PropTypes.string,
+        snap: PropTypes.number,
+        constraintFn: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -404,15 +404,15 @@ var MovableLineEditor = React.createClass({
 //
 // TODO(eater): Factor this out
 //
-var FunctionEditor = React.createClass({
+var FunctionEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        value: React.PropTypes.string,
-        rangeMin: React.PropTypes.string,
-        rangeMax: React.PropTypes.string,
-        color: React.PropTypes.string,
-        strokeDashArray: React.PropTypes.string,
-        strokeWidth: React.PropTypes.number,
+        value: PropTypes.string,
+        rangeMin: PropTypes.string,
+        rangeMax: PropTypes.string,
+        color: PropTypes.string,
+        strokeDashArray: PropTypes.string,
+        strokeWidth: PropTypes.number,
     },
 
     getDefaultProps: function() {
@@ -495,16 +495,16 @@ var FunctionEditor = React.createClass({
 //
 // TODO(eater): Factor this out
 //
-var ParametricEditor = React.createClass({
+var ParametricEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        x: React.PropTypes.string,
-        y: React.PropTypes.string,
-        rangeMin: React.PropTypes.string,
-        rangeMax: React.PropTypes.string,
-        color: React.PropTypes.string,
-        strokeDashArray: React.PropTypes.string,
-        strokeWidth: React.PropTypes.number,
+        x: PropTypes.string,
+        y: PropTypes.string,
+        rangeMin: PropTypes.string,
+        rangeMax: PropTypes.string,
+        color: PropTypes.string,
+        strokeDashArray: PropTypes.string,
+        strokeWidth: PropTypes.number,
     },
 
     getDefaultProps: function() {
@@ -598,13 +598,13 @@ var ParametricEditor = React.createClass({
 // TODO(eater): Factor this out maybe?
 // TODO(eater): Add text direction
 //
-var LabelEditor = React.createClass({
+var LabelEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        color: React.PropTypes.string,
-        coordX: React.PropTypes.string,
-        coordY: React.PropTypes.string,
-        label: React.PropTypes.string,
+        color: PropTypes.string,
+        coordX: PropTypes.string,
+        coordY: PropTypes.string,
+        label: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -669,14 +669,14 @@ var LabelEditor = React.createClass({
 //
 // TODO(eater): Factor this out maybe?
 //
-var RectangleEditor = React.createClass({
+var RectangleEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        color: React.PropTypes.string,
-        coordX: React.PropTypes.string,
-        coordY: React.PropTypes.string,
-        height: React.PropTypes.string,
-        width: React.PropTypes.string,
+        color: PropTypes.string,
+        coordX: PropTypes.string,
+        coordY: PropTypes.string,
+        height: PropTypes.string,
+        width: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -750,12 +750,12 @@ var RectangleEditor = React.createClass({
     },
 });
 
-var InteractionEditor = React.createClass({
+var InteractionEditor = createReactClass({
     // TODO(eater): Make more better
     propTypes: {
         ...Changeable.propTypes,
-        elements: React.PropTypes.arrayOf(React.PropTypes.object),
-        graph: React.PropTypes.objectOf(React.PropTypes.any),
+        elements: PropTypes.arrayOf(PropTypes.object),
+        graph: PropTypes.objectOf(PropTypes.any),
     },
 
     getDefaultProps: function() {

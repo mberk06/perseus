@@ -23,14 +23,14 @@ var ApiOptions = _perseusApiJsx.Options;
 var Changeable = _mixinsChangeableJsx;
 var Renderer = _rendererJsx;
 
-var Group = React.createClass({
+var Group = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        content: React.PropTypes.string,
-        widgets: React.PropTypes.object,
-        images: React.PropTypes.object,
-        icon: React.PropTypes.object,
-        reviewModeRubric: React.PropTypes.object,
+        content: PropTypes.string,
+        widgets: PropTypes.object,
+        images: PropTypes.object,
+        icon: PropTypes.object,
+        reviewModeRubric: PropTypes.object,
         linterContext: linterContextProps,
     },
 

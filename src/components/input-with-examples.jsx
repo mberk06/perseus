@@ -36,24 +36,24 @@ const MATH = "math";
 const TEXT = "text";
 const TEX = "tex";
 
-const InputWithExamples = React.createClass({
+const InputWithExamples = createReactClass({
     propTypes: {
-        type: React.PropTypes.oneOf([MATH, TEXT, TEX]),
-        value: React.PropTypes.string,
-        onChange: React.PropTypes.func.isRequired,
-        className: React.PropTypes.string,
-        examples: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-        shouldShowExamples: React.PropTypes.bool,
-        convertDotToTimes: React.PropTypes.bool,
-        buttonSet: React.PropTypes.string,
-        buttonsVisible: React.PropTypes.oneOf(["always", "never", "focused"]),
-        labelText: React.PropTypes.string,
-        onFocus: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
-        disabled: React.PropTypes.bool,
+        type: PropTypes.oneOf([MATH, TEXT, TEX]),
+        value: PropTypes.string,
+        onChange: PropTypes.func.isRequired,
+        className: PropTypes.string,
+        examples: PropTypes.arrayOf(PropTypes.string).isRequired,
+        shouldShowExamples: PropTypes.bool,
+        convertDotToTimes: PropTypes.bool,
+        buttonSet: PropTypes.string,
+        buttonsVisible: PropTypes.oneOf(["always", "never", "focused"]),
+        labelText: PropTypes.string,
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        disabled: PropTypes.bool,
 
         // A unique string identifying this InputWithExamples
-        id: React.PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
         linterContext: linterContextProps,
     },
 

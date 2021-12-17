@@ -23,13 +23,13 @@ var NORMAL = "normal",
     HORIZONTAL = "horizontal",
     VERTICAL = "vertical";
 
-const OrdererEditor = React.createClass({
+const OrdererEditor = createReactClass({
     propTypes: {
-        correctOptions: React.PropTypes.array,
-        otherOptions: React.PropTypes.array,
-        height: React.PropTypes.oneOf([NORMAL, AUTO]),
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        onChange: React.PropTypes.func.isRequired,
+        correctOptions: PropTypes.array,
+        otherOptions: PropTypes.array,
+        height: PropTypes.oneOf([NORMAL, AUTO]),
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        onChange: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

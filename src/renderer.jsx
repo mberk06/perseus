@@ -170,32 +170,32 @@ InteractionTracker.prototype._track = function(extraData) {
  */
 InteractionTracker.prototype._noop = function() {};
 
-var Renderer = React.createClass({
+var Renderer = createReactClass({
     propTypes: {
         ...ApiOptionsProps.propTypes,
-        alwaysUpdate: React.PropTypes.bool,
-        findExternalWidgets: React.PropTypes.func,
-        highlightedWidgets: React.PropTypes.arrayOf(React.PropTypes.any),
-        ignoreMissingWidgets: React.PropTypes.bool,
-        images: React.PropTypes.any,
+        alwaysUpdate: PropTypes.bool,
+        findExternalWidgets: PropTypes.func,
+        highlightedWidgets: PropTypes.arrayOf(PropTypes.any),
+        ignoreMissingWidgets: PropTypes.bool,
+        images: PropTypes.any,
         keypadElement: keypadElementPropType,
-        onInteractWithWidget: React.PropTypes.func,
-        onRender: React.PropTypes.func,
-        problemNum: React.PropTypes.number,
-        questionCompleted: React.PropTypes.bool,
-        reviewMode: React.PropTypes.bool,
+        onInteractWithWidget: PropTypes.func,
+        onRender: PropTypes.func,
+        problemNum: PropTypes.number,
+        questionCompleted: PropTypes.bool,
+        reviewMode: PropTypes.bool,
 
-        serializedState: React.PropTypes.any,
+        serializedState: PropTypes.any,
         // Callback which is called when serialized state changes with the new
         // serialized state.
-        onSerializedStateUpdated: React.PropTypes.func,
+        onSerializedStateUpdated: PropTypes.func,
 
         // If linterContext.highlightLint is true, then content will be passed
         // to the linter and any warnings will be highlighted in the rendered
         // output.
         linterContext: linterContextProps,
 
-        legacyPerseusLint: React.PropTypes.arrayOf(React.PropTypes.string),
+        legacyPerseusLint: PropTypes.arrayOf(PropTypes.string),
     },
 
     getDefaultProps: function() {

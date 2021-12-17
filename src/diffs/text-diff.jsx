@@ -40,9 +40,9 @@ const classFor = function(entry, ifAdded, ifRemoved) {
     }
 };
 
-const ImageDiffSide = React.createClass({
+const ImageDiffSide = createReactClass({
     propTypes: {
-        images: React.PropTypes.arrayOf(React.PropTypes.shape({})).isRequired,
+        images: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 
     },
 
@@ -69,11 +69,11 @@ const ImageDiffSide = React.createClass({
     },
 });
 
-const TextDiff = React.createClass({
+const TextDiff = createReactClass({
     propTypes: {
-        after: React.PropTypes.string,
-        before: React.PropTypes.string,
-        title: React.PropTypes.string.isRequired,
+        after: PropTypes.string,
+        before: PropTypes.string,
+        title: PropTypes.string.isRequired,
     },
 
     getDefaultProps: function() {

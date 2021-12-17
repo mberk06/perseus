@@ -41,17 +41,17 @@ function getUrlFromProgramID(programID) {
 
 /* This renders the scratchpad in an iframe and handles validation via
  * window.postMessage */
-var CSProgram = React.createClass({
+var CSProgram = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        programID: React.PropTypes.string,
-        width: React.PropTypes.number,
-        height: React.PropTypes.number,
-        settings: React.PropTypes.array,
-        showEditor: React.PropTypes.bool,
-        showButtons: React.PropTypes.bool,
-        status: React.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
-        message: React.PropTypes.string,
+        programID: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
+        settings: PropTypes.array,
+        showEditor: PropTypes.bool,
+        showButtons: PropTypes.bool,
+        status: PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
+        message: PropTypes.string,
     },
 
     getDefaultProps: function() {

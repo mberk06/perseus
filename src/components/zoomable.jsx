@@ -16,10 +16,10 @@ const ReactDOM = _reactDom;
 
 const Deferred = _deferredJs;
 
-const Zoomable = React.createClass({
+const Zoomable = createReactClass({
     propTypes: {
-        animateHeight: React.PropTypes.bool,
-        children: React.PropTypes.element.isRequired,
+        animateHeight: PropTypes.bool,
+        children: PropTypes.element.isRequired,
 
         /**
          * Optional function that allows customizations in zooming.
@@ -29,15 +29,15 @@ const Zoomable = React.createClass({
          *
          * @return {Object} bounds object with `width` and `height` properties
          */
-        computeChildBounds: React.PropTypes.func,
+        computeChildBounds: PropTypes.func,
 
         // If this prop is specified, we wait until the deferred is resolved
         // before measuring the child element.  This is necessary in cases
         // where the child size depends on whether or not resources, such as
         // fonts, have been loaded.
-        readyToMeasureDeferred: React.PropTypes.shape({
-            then: React.PropTypes.func.isRequired,
-            reject: React.PropTypes.func.isRequired,
+        readyToMeasureDeferred: PropTypes.shape({
+            then: PropTypes.func.isRequired,
+            reject: PropTypes.func.isRequired,
         }).isRequired,
     },
 

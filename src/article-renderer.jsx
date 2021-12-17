@@ -32,28 +32,28 @@ const ProvideKeypad = _mixinsProvideKeypadJsx;
 
 const Gorgon = _gorgonGorgonJs;
 
-const rendererProps = React.PropTypes.shape({
-    content: React.PropTypes.string,
-    widgets: React.PropTypes.object,
-    images: React.PropTypes.object,
+const rendererProps = PropTypes.shape({
+    content: PropTypes.string,
+    widgets: PropTypes.object,
+    images: PropTypes.object,
 });
 
-const ArticleRenderer = React.createClass({
+const ArticleRenderer = createReactClass({
     propTypes: {
         ...ProvideKeypad.propTypes,
-        apiOptions: React.PropTypes.shape({
-            onFocusChange: React.PropTypes.func,
-            isMobile: React.PropTypes.bool,
+        apiOptions: PropTypes.shape({
+            onFocusChange: PropTypes.func,
+            isMobile: PropTypes.bool,
         }),
-        json: React.PropTypes.oneOfType([
+        json: PropTypes.oneOfType([
             rendererProps,
-            React.PropTypes.arrayOf(rendererProps),
+            PropTypes.arrayOf(rendererProps),
         ]).isRequired,
 
         // Whether to use the new Bibliotron styles for articles
-        useNewStyles: React.PropTypes.bool,
+        useNewStyles: PropTypes.bool,
         linterContext: linterContextProps,
-        legacyPerseusLint: React.PropTypes.arrayOf(React.PropTypes.string),
+        legacyPerseusLint: PropTypes.arrayOf(PropTypes.string),
     },
 
     getDefaultProps() {

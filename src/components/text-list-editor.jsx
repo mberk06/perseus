@@ -24,11 +24,11 @@ function getTextWidth(text) {
     return textWidthCache[text];
 }
 
-const TextListEditor = React.createClass({
+const TextListEditor = createReactClass({
     propTypes: {
-        options: React.PropTypes.array,
-        layout: React.PropTypes.string,
-        onChange: React.PropTypes.func.isRequired,
+        options: PropTypes.array,
+        layout: PropTypes.string,
+        onChange: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

@@ -53,9 +53,9 @@ var CIRCLE_LABEL_STYLE = {
     textAlign: "center",
 };
 
-var RefStart = React.createClass({
+var RefStart = createReactClass({
     propTypes: {
-        refContent: React.PropTypes.node.isRequired,
+        refContent: PropTypes.node.isRequired,
     },
 
     render: function() {
@@ -67,7 +67,7 @@ var RefStart = React.createClass({
     },
 });
 
-var RefEnd = React.createClass({
+var RefEnd = createReactClass({
     render: function() {
         return <span style={REF_STYLE}>_</span>;
     },

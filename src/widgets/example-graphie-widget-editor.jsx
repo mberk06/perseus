@@ -23,7 +23,7 @@ var ExampleGraphieWidget = _exampleGraphieWidgetJsx.widget;
  * This is the widget's editor. This is what shows up on the left side
  * of the screen in the demo page. Only the question writer sees this.
  */
-var ExampleGraphieWidgetEditor = React.createClass({
+var ExampleGraphieWidgetEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

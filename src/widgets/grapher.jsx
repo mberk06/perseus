@@ -63,7 +63,7 @@ var typeSelectorStyle = {
 };
 
 /* Graphing interface. */
-var FunctionGrapher = React.createClass({
+var FunctionGrapher = createReactClass({
     _coords: function(props) {
         // Coords are usually based on props, but should fall back to the
         // model's default whenever they're not provided (if there's a model)
@@ -88,16 +88,16 @@ var FunctionGrapher = React.createClass({
 
     propTypes: {
         ...Changeable.propTypes,
-        flexibleType: React.PropTypes.bool,
-        graph: React.PropTypes.any,
-        hideHairlines: React.PropTypes.func,
-        isMobile: React.PropTypes.bool,
-        model: React.PropTypes.any,
-        onChange: React.PropTypes.func,
-        setDrawingAreaAvailable: React.PropTypes.func,
-        showHairlines: React.PropTypes.func,
-        showTooltips: React.PropTypes.bool,
-        static: React.PropTypes.bool,
+        flexibleType: PropTypes.bool,
+        graph: PropTypes.any,
+        hideHairlines: PropTypes.func,
+        isMobile: PropTypes.bool,
+        model: PropTypes.any,
+        onChange: PropTypes.func,
+        setDrawingAreaAvailable: PropTypes.func,
+        showHairlines: PropTypes.func,
+        showTooltips: PropTypes.bool,
+        static: PropTypes.bool,
     },
 
     getDefaultProps: function() {
@@ -333,17 +333,17 @@ var FunctionGrapher = React.createClass({
 });
 
 /* Widget and editor. */
-var Grapher = React.createClass({
+var Grapher = createReactClass({
     propTypes: {
-        apiOptions: React.PropTypes.any,
-        availableTypes: React.PropTypes.arrayOf(React.PropTypes.any),
+        apiOptions: PropTypes.any,
+        availableTypes: PropTypes.arrayOf(PropTypes.any),
         containerSizeClass: containerSizeClassPropType.isRequired,
-        graph: React.PropTypes.any,
-        markings: React.PropTypes.string,
-        onChange: React.PropTypes.func,
-        plot: React.PropTypes.any,
-        static: React.PropTypes.bool,
-        trackInteraction: React.PropTypes.func.isRequired,
+        graph: PropTypes.any,
+        markings: PropTypes.string,
+        onChange: PropTypes.func,
+        plot: PropTypes.any,
+        static: PropTypes.bool,
+        trackInteraction: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

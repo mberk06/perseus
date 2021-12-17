@@ -23,12 +23,12 @@ var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
 
 var EN_DASH = "\u2013";
 
-var PassageRef = React.createClass({
+var PassageRef = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        passageNumber: React.PropTypes.number,
-        referenceNumber: React.PropTypes.number,
-        summaryText: React.PropTypes.string,
+        passageNumber: PropTypes.number,
+        referenceNumber: PropTypes.number,
+        summaryText: PropTypes.string,
     },
 
     getDefaultProps: function() {

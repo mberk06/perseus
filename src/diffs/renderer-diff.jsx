@@ -20,10 +20,10 @@ const TextDiff = _textDiffJsx;
 const WidgetDiff = _widgetDiffJsx;
 const Widgets = _widgetsJs;
 
-const rendererProps = React.PropTypes.shape({
-    content: React.PropTypes.string,
-    images: React.PropTypes.object,
-    widgets: React.PropTypes.object,
+const rendererProps = PropTypes.shape({
+    content: PropTypes.string,
+    images: PropTypes.object,
+    widgets: PropTypes.object,
 });
 
 // In diffs, only show the widgetInfo props that can change
@@ -50,7 +50,7 @@ const filterWidgetInfo = function(widgetInfo, showAlignmentOptions) {
 };
 
 
-const RendererDiff = React.createClass({
+const RendererDiff = createReactClass({
     propTypes: {
         // The "after" props of the renderer. Will be displayed on the right.
         after: rendererProps,
@@ -59,14 +59,14 @@ const RendererDiff = React.createClass({
         before: rendererProps,
 
         // If true, show widget alignment options in the diff.
-        showAlignmentOptions: React.PropTypes.bool,
+        showAlignmentOptions: PropTypes.bool,
 
         // If true, render a horizontal rule after this diff.
-        showSeparator: React.PropTypes.bool,
+        showSeparator: PropTypes.bool,
 
         // The heading to render above the side by side diff.
         // (In a code review tool this would be the filename.)
-        title: React.PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
     },
 
     getDefaultProps: function() {

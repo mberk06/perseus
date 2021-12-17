@@ -23,12 +23,12 @@ const InfoTip = _componentsInfoTipJsx;
 const NumberInput = _componentsNumberInputJsx;
 const TextInput = _componentsTextInputJsx;
 
-const PassageRefEditor = React.createClass({
+const PassageRefEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        passageNumber: React.PropTypes.number,
-        referenceNumber: React.PropTypes.number,
-        summaryText: React.PropTypes.string,
+        passageNumber: PropTypes.number,
+        referenceNumber: PropTypes.number,
+        summaryText: PropTypes.string,
     },
 
     getDefaultProps: function() {

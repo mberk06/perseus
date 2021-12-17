@@ -32,13 +32,13 @@ const sharedStyles = _stylesSharedJs;
 
 const Gorgon = _gorgonGorgonJs;
 
-const HintsRenderer = React.createClass({
+const HintsRenderer = createReactClass({
     propTypes: {
         ...ApiOptionsProps.propTypes,
-        className: React.PropTypes.string,
-        hints: React.PropTypes.arrayOf(React.PropTypes.any),
-        hintsVisible: React.PropTypes.number,
-        findExternalWidgets: React.PropTypes.func,
+        className: PropTypes.string,
+        hints: PropTypes.arrayOf(PropTypes.any),
+        hintsVisible: PropTypes.number,
+        findExternalWidgets: PropTypes.func,
         linterContext: linterContextProps,
     },
 

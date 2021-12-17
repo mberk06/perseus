@@ -12,15 +12,15 @@ const React = _react;
 
 const ReactDOM = _reactDom;
 
-const TextInput = React.createClass({
+const TextInput = createReactClass({
     propTypes: {
-        value: React.PropTypes.string,
-        onChange: React.PropTypes.func.isRequired,
-        className: React.PropTypes.string,
-        labelText: React.PropTypes.string,
-        onFocus: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
-        disabled: React.PropTypes.bool,
+        value: PropTypes.string,
+        onChange: PropTypes.func.isRequired,
+        className: PropTypes.string,
+        labelText: PropTypes.string,
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        disabled: PropTypes.bool,
     },
 
     getDefaultProps: function() {

@@ -23,11 +23,11 @@ const TextListEditor = _componentsTextListEditorJsx;
 const HORIZONTAL = "horizontal";
 const VERTICAL = "vertical";
 
-const SorterEditor = React.createClass({
+const SorterEditor = createReactClass({
     propTypes: {
-        correct: React.PropTypes.array,
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        padding: React.PropTypes.bool,
+        correct: PropTypes.array,
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        padding: PropTypes.bool,
     },
 
     getDefaultProps: function() {

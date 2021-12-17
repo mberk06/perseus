@@ -25,14 +25,14 @@ const AFTER = "after";
 
 const UNCHANGED = "unchanged";
 
-const DiffSide = React.createClass({
+const DiffSide = createReactClass({
     propTypes: {
-        className: React.PropTypes.string.isRequired,
-        depth: React.PropTypes.number.isRequired,
-        propKey: React.PropTypes.string.isRequired,
-        showKey: React.PropTypes.bool.isRequired,
-        side: React.PropTypes.oneOf([BEFORE, AFTER]).isRequired,
-        value: React.PropTypes.string,
+        className: PropTypes.string.isRequired,
+        depth: PropTypes.number.isRequired,
+        propKey: PropTypes.string.isRequired,
+        showKey: PropTypes.bool.isRequired,
+        side: PropTypes.oneOf([BEFORE, AFTER]).isRequired,
+        value: PropTypes.string,
     },
 
     render: function() {
@@ -52,10 +52,10 @@ const DiffSide = React.createClass({
     },
 });
 
-const CollapsedRow = React.createClass({
+const CollapsedRow = createReactClass({
     propTypes: {
-        depth: React.PropTypes.number,
-        onClick: React.PropTypes.func.isRequired,
+        depth: PropTypes.number,
+        onClick: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {
@@ -88,16 +88,16 @@ const CollapsedRow = React.createClass({
 });
 
 // Component representing a single property that may be nested.
-const DiffEntry = React.createClass({
+const DiffEntry = createReactClass({
     propTypes: {
-        depth: React.PropTypes.number,
-        entry: React.PropTypes.shape({
-            after: React.PropTypes.string,
-            before: React.PropTypes.string,
-            children: React.PropTypes.array,
-            key: React.PropTypes.string,
+        depth: PropTypes.number,
+        entry: PropTypes.shape({
+            after: PropTypes.string,
+            before: PropTypes.string,
+            children: PropTypes.array,
+            key: PropTypes.string,
         }),
-        expanded: React.PropTypes.bool,
+        expanded: PropTypes.bool,
     },
 
     getDefaultProps: function() {
@@ -193,13 +193,13 @@ const DiffEntry = React.createClass({
 });
 
 // For image widgets, show the actual image
-const ImageWidgetDiff = React.createClass({
+const ImageWidgetDiff = createReactClass({
     propTypes: {
-        after: React.PropTypes.shape({
-            options: React.PropTypes.object,
+        after: PropTypes.shape({
+            options: PropTypes.object,
         }).isRequired,
-        before: React.PropTypes.shape({
-            options: React.PropTypes.object,
+        before: PropTypes.shape({
+            options: PropTypes.object,
         }).isRequired,
     },
 
@@ -238,16 +238,16 @@ const ImageWidgetDiff = React.createClass({
     },
 });
 
-const WidgetDiff = React.createClass({
+const WidgetDiff = createReactClass({
     propTypes: {
-        after: React.PropTypes.shape({
-            options: React.PropTypes.object,
+        after: PropTypes.shape({
+            options: PropTypes.object,
         }),
-        before: React.PropTypes.shape({
-            options: React.PropTypes.object,
+        before: PropTypes.shape({
+            options: PropTypes.object,
         }),
-        title: React.PropTypes.string.isRequired,
-        type: React.PropTypes.string,
+        title: PropTypes.string.isRequired,
+        type: PropTypes.string,
     },
 
     getDefaultProps: function() {

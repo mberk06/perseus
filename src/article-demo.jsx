@@ -25,9 +25,9 @@ const defaultArticle = [
     },
 ];
 
-const ArticleDemo = React.createClass({
+const ArticleDemo = createReactClass({
     propTypes: {
-        content: React.PropTypes.any.isRequired,
+        content: PropTypes.any.isRequired,
     },
 
     getDefaultProps() {

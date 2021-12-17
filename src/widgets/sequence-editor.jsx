@@ -21,7 +21,7 @@ const ApiOptions = _perseusApiJsx.Options;
 const Editor = _editorJsx;
 const InlineIcon = _componentsInlineIconJsx;
 
-var StepControlButton = React.createClass({
+var StepControlButton = createReactClass({
     render: function() {
         return (
             <a
@@ -43,17 +43,17 @@ var StepControlButton = React.createClass({
     },
 });
 
-const SequenceEditor = React.createClass({
+const SequenceEditor = createReactClass({
     propTypes: {
-        json: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                content: React.PropTypes.string,
-                widgets: React.PropTypes.object,
-                images: React.PropTypes.object,
+        json: PropTypes.arrayOf(
+            PropTypes.shape({
+                content: PropTypes.string,
+                widgets: PropTypes.object,
+                images: PropTypes.object,
             })
         ),
         apiOptions: ApiOptions.propTypes,
-        onChange: React.PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

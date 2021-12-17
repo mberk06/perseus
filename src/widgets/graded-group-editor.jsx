@@ -26,13 +26,13 @@ const Editor = _editorJsx;
 const TextInput = _componentsTextInputJsx;
 const InlineIcon = _componentsInlineIconJsx;
 
-const GradedGroupEditor = React.createClass({
+const GradedGroupEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        title: React.PropTypes.string,
-        content: React.PropTypes.string,
-        widgets: React.PropTypes.object,
-        images: React.PropTypes.object,
+        title: PropTypes.string,
+        content: PropTypes.string,
+        widgets: PropTypes.object,
+        images: PropTypes.object,
         apiOptions: ApiOptions.propTypes,
     },
 

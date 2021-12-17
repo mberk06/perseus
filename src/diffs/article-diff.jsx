@@ -16,24 +16,24 @@ const _ = _underscore;
 
 const RendererDiff = _rendererDiffJsx;
 
-const rendererProps = React.PropTypes.shape({
-    content: React.PropTypes.string,
-    images: React.PropTypes.object,
-    widgets: React.PropTypes.object,
+const rendererProps = PropTypes.shape({
+    content: PropTypes.string,
+    images: PropTypes.object,
+    widgets: PropTypes.object,
 });
 
 
-const ArticleDiff = React.createClass({
+const ArticleDiff = createReactClass({
     propTypes: {
         // TODO(alex): Check whether we still have any Perseus articles whose
         // top-level json is an object, not an array. If not, simplify here.
-        after: React.PropTypes.oneOfType([
+        after: PropTypes.oneOfType([
             rendererProps,
-            React.PropTypes.arrayOf(rendererProps),
+            PropTypes.arrayOf(rendererProps),
         ]).isRequired,
-        before: React.PropTypes.oneOfType([
+        before: PropTypes.oneOfType([
             rendererProps,
-            React.PropTypes.arrayOf(rendererProps),
+            PropTypes.arrayOf(rendererProps),
         ]).isRequired,
     },
 

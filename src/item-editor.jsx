@@ -26,14 +26,14 @@ var DeviceFramer = _componentsDeviceFramerJsx;
 var ITEM_DATA_VERSION = _versionJson.itemDataVersion;
 const IframeContentRenderer = _iframeContentRendererJsx;
 
-var ItemEditor = React.createClass({
+var ItemEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        deviceType: React.PropTypes.string,
-        frameSource: React.PropTypes.string.isRequired,
-        gradeMessage: React.PropTypes.string,
-        imageUploader: React.PropTypes.func,
-        wasAnswered: React.PropTypes.bool,
+        deviceType: PropTypes.string,
+        frameSource: PropTypes.string.isRequired,
+        gradeMessage: PropTypes.string,
+        imageUploader: PropTypes.func,
+        wasAnswered: PropTypes.bool,
     },
 
     getDefaultProps: function() {

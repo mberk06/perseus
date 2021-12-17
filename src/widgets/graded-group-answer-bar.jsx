@@ -51,17 +51,17 @@ const ANSWER_BAR_STATES = {
     CORRECT: Symbol("CORRECT"),
 };
 
-const GradedGroupAnswerBar = React.createClass({
+const GradedGroupAnswerBar = createReactClass({
     propTypes: {
         // TODO(kevinb) update to oneOf once we update to 15.2
-        answerBarState: React.PropTypes.any.isRequired,
+        answerBarState: PropTypes.any.isRequired,
         apiOptions: ApiOptions.propTypes,
-        onCheckAnswer: React.PropTypes.func.isRequired,
+        onCheckAnswer: PropTypes.func.isRequired,
 
         // The function to call when clicking "Next question" after correctly
         // answering one graded group out of a set. If this is null, the
         // "Next question" button will not appear.
-        onNextQuestion: React.PropTypes.func,
+        onNextQuestion: PropTypes.func,
     },
 
     render() {

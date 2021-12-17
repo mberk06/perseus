@@ -48,12 +48,12 @@ var defaultBoxSize = 400;
 var maxSampleSize = 1000;
 var maxTrials = 5000;
 
-var Histogram = React.createClass({
+var Histogram = createReactClass({
     propTypes: {
-        data: React.PropTypes.arrayOf(React.PropTypes.number),
-        xAxisLabel: React.PropTypes.string,
-        yAxisLabel: React.PropTypes.string,
-        box: React.PropTypes.arrayOf(React.PropTypes.number),
+        data: PropTypes.arrayOf(PropTypes.number),
+        xAxisLabel: PropTypes.string,
+        yAxisLabel: PropTypes.string,
+        box: PropTypes.arrayOf(PropTypes.number),
     },
 
     getDefaultProps: function() {
@@ -405,20 +405,20 @@ var Histogram = React.createClass({
     },
 });
 
-var Simulator = React.createClass({
+var Simulator = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        data: React.PropTypes.arrayOf(React.PropTypes.number),
-        numTrials: React.PropTypes.number,
-        proportionLabel: React.PropTypes.string,
-        proportionOrPercentage: React.PropTypes.string,
-        randomSeed: React.PropTypes.number,
-        sampleSize: React.PropTypes.number,
-        trackInteraction: React.PropTypes.func.isRequired,
-        userProportion: React.PropTypes.number,
-        xAxisLabel: React.PropTypes.string,
-        yAxisLabel: React.PropTypes.string,
+        data: PropTypes.arrayOf(PropTypes.number),
+        numTrials: PropTypes.number,
+        proportionLabel: PropTypes.string,
+        proportionOrPercentage: PropTypes.string,
+        randomSeed: PropTypes.number,
+        sampleSize: PropTypes.number,
+        trackInteraction: PropTypes.func.isRequired,
+        userProportion: PropTypes.number,
+        xAxisLabel: PropTypes.string,
+        yAxisLabel: PropTypes.string,
     },
 
     getInitialState: function() {

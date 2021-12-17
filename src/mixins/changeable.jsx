@@ -100,6 +100,6 @@ export const change = function(newPropsOrSinglePropName, propValue, callback) {
 };
 
 export const propTypes = {
-    onChange: React.PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 export default _module_.exports;

@@ -24,13 +24,13 @@ const {KeypadInput} = _mathInput.components;
 const {KeypadTypes} = _mathInput2.consts;
 const {keypadElementPropType} = _mathInput3.propTypes;
 
-const SimpleKeypadInput = React.createClass({
+const SimpleKeypadInput = createReactClass({
     propTypes: {
         keypadElement: keypadElementPropType,
-        onFocus: React.PropTypes.func,
-        value: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number,
+        onFocus: PropTypes.func,
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
         ]),
     },
 

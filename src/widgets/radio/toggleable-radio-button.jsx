@@ -28,19 +28,19 @@ const _ = _underscore;
  *   handleKeyDown (A), handleClick (B), handleChange (B), handleKeyUp (B)
  * - Clicking with mac screenreader: handleClick, handleChange
  */
-const ToggleableRadioButton = React.createClass({
+const ToggleableRadioButton = createReactClass({
     propTypes: {
         // Whether the radio button should be checked or unchecked (this is a
         // controlled component).
-        checked: React.PropTypes.bool.isRequired,
+        checked: PropTypes.bool.isRequired,
 
         // A ref function to attach to the <input> element.
-        inputRef: React.PropTypes.func,
+        inputRef: PropTypes.func,
 
         // A function that will be called whenever the radio button is checked
         // or unchecked. It's possible for this to be called twice for a single
         // checking or unchecking.
-        onChecked: React.PropTypes.func.isRequired,
+        onChecked: PropTypes.func.isRequired,
     },
 
     handleClick: function(event) {

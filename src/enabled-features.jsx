@@ -8,7 +8,7 @@ var exports = _module_.exports;
 const React = _react;
 
 _module_.exports = {
-    propTypes: React.PropTypes.shape({}).isRequired,
+    propTypes: PropTypes.shape({}).isRequired,
     defaults: {},
 };
 export default _module_.exports;

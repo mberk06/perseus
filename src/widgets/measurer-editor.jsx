@@ -33,23 +33,23 @@ const defaultImage = {
     left: 0,
 };
 
-const MeasurerEditor = React.createClass({
+const MeasurerEditor = createReactClass({
     className: "perseus-widget-measurer",
 
     propTypes: {
         ...Changeable.propTypes,
-        box: React.PropTypes.arrayOf(React.PropTypes.number),
-        image: React.PropTypes.shape({
-            url: React.PropTypes.string,
-            top: React.PropTypes.number,
-            left: React.PropTypes.number,
+        box: PropTypes.arrayOf(PropTypes.number),
+        image: PropTypes.shape({
+            url: PropTypes.string,
+            top: PropTypes.number,
+            left: PropTypes.number,
         }),
-        showProtractor: React.PropTypes.bool,
-        showRuler: React.PropTypes.bool,
-        rulerLabel: React.PropTypes.string,
-        rulerTicks: React.PropTypes.number,
-        rulerPixels: React.PropTypes.number,
-        rulerLength: React.PropTypes.number,
+        showProtractor: PropTypes.bool,
+        showRuler: PropTypes.bool,
+        rulerLabel: PropTypes.string,
+        rulerTicks: PropTypes.number,
+        rulerPixels: PropTypes.number,
+        rulerLength: PropTypes.number,
     },
 
     getDefaultProps: function() {

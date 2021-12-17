@@ -24,11 +24,11 @@ const React = _react;
 const TextListEditor = _textListEditorJsx;
 const EMPTY_ARRAY = [];
 
-const StubTagEditor = React.createClass({
+const StubTagEditor = createReactClass({
     propTypes: {
-        value: React.PropTypes.arrayOf(React.PropTypes.string),
-        onChange: React.PropTypes.func.isRequired,
-        showTitle: React.PropTypes.bool.isRequired,
+        value: PropTypes.arrayOf(PropTypes.string),
+        onChange: PropTypes.func.isRequired,
+        showTitle: PropTypes.bool.isRequired,
     },
 
     getDefaultProps: function() {

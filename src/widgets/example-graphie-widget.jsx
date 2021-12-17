@@ -42,13 +42,13 @@ var kpoint = _kmath2.point;
  * in the demo, and is what is visible to users, and where
  * users enter their answers.
  */
-var ExampleGraphieWidget = React.createClass({
+var ExampleGraphieWidget = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
 
-        graph: React.PropTypes.object.isRequired,
-        coord: React.PropTypes.arrayOf(React.PropTypes.number),
+        graph: PropTypes.object.isRequired,
+        coord: PropTypes.arrayOf(PropTypes.number),
     },
 
     getDefaultProps: function() {

@@ -30,43 +30,43 @@ var JsonEditor = _jsonEditorJsx;
 var ViewportResizer = _componentsViewportResizerJsx;
 const HUD = _componentsHudJsx;
 
-var EditorPage = React.createClass({
+var EditorPage = createReactClass({
     propTypes: {
         ...ApiOptionsProps.propTypes,
 
-        answerArea: React.PropTypes.any, // related to the question
+        answerArea: PropTypes.any, // related to the question
 
-        developerMode: React.PropTypes.bool,
+        developerMode: PropTypes.bool,
 
         // Source HTML for the iframe to render
-        frameSource: React.PropTypes.string.isRequired,
+        frameSource: PropTypes.string.isRequired,
 
-        hints: React.PropTypes.any, // related to the question
+        hints: PropTypes.any, // related to the question
 
         // A function which takes a file object (guaranteed to be an image) and
         // a callback, then calls the callback with the url where the image
         // will be hosted. Image drag and drop is disabled when imageUploader
         // is null.
-        imageUploader: React.PropTypes.func,
+        imageUploader: PropTypes.func,
 
         // Part of the question
-        itemDataVersion: React.PropTypes.shape({
-            major: React.PropTypes.number,
-            minor: React.PropTypes.number,
+        itemDataVersion: PropTypes.shape({
+            major: PropTypes.number,
+            minor: PropTypes.number,
         }),
 
         // Whether the question is displaying as JSON or if it is
         // showing the editor itself with the rendering
-        jsonMode: React.PropTypes.bool,
+        jsonMode: PropTypes.bool,
 
         // A function which is called with the new JSON blob of content
-        onChange: React.PropTypes.func,
+        onChange: PropTypes.func,
 
-        onPreviewDeviceChange: React.PropTypes.func,
-        previewDevice: React.PropTypes.string,
+        onPreviewDeviceChange: PropTypes.func,
+        previewDevice: PropTypes.string,
 
         // Initial value of the question being edited
-        question: React.PropTypes.any,
+        question: PropTypes.any,
     },
 
     getDefaultProps: function() {

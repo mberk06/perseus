@@ -10,12 +10,6 @@ import classnames from "classnames";
 import _ from "underscore";
 import "./lib/i18n.js"; // side effects
 
-var _module_ = {
-  exports: {}
-};
-
-var exports = _module_.exports;
-
 // NOTE: We don't import the CSS here. Instead, applications can do it separately:
 //       import "perseus-configured/lib/khan-exercises.css";
 //       import "perseus-configured/lib/perseus.css";
@@ -24,9 +18,9 @@ var exports = _module_.exports;
 // Add some backfills to make React 17 behave like old-style React.
 // TODO: Update Perseus to use these libraries directly, instead. They're not perfect
 //       backfills and I'm not sure how reliable this is!
-React.createClass = createReactClass;
-React.PropTypes = PropTypes;
-React.DOM = {
+window.createReactClass = createReactClass;
+window.PropTypes = PropTypes;
+window.ReactDOMtags = {
   span: props => React.createElement("span", props),
   input: props => React.createElement("input", props),
 };
@@ -97,4 +91,3 @@ window.Khan = {
   query: { debug: "" },
   imageBase: "/images/",
 };
-export default _module_.exports;

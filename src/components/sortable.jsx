@@ -35,11 +35,11 @@ const ANIMATING = "animating";
 const DISABLED = "disabled";
 
 // A placeholder that appears in the sortable whenever an item is dragged.
-const Placeholder = React.createClass({
+const Placeholder = createReactClass({
     propTypes: {
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired,
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired,
     },
 
     render: function() {
@@ -67,18 +67,18 @@ const Placeholder = React.createClass({
 //
 // Usual flow:      Static -> Dragging -> Animating -> Static
 // [Dis|en]abling:  Static|Dragging|Animating -> Disabled -> Static
-const Draggable = React.createClass({
+const Draggable = createReactClass({
     propTypes: {
-        content: React.PropTypes.string.isRequired,
-        endPosition: React.PropTypes.object.isRequired,
-        includePadding: React.PropTypes.bool,
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        onAnimationEnd: React.PropTypes.func.isRequired,
-        onMouseDown: React.PropTypes.func.isRequired,
-        onMouseMove: React.PropTypes.func.isRequired,
-        onMouseUp: React.PropTypes.func.isRequired,
-        onRender: React.PropTypes.func.isRequired,
-        type: React.PropTypes.oneOf([STATIC, DRAGGING, ANIMATING, DISABLED]),
+        content: PropTypes.string.isRequired,
+        endPosition: PropTypes.object.isRequired,
+        includePadding: PropTypes.bool,
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        onAnimationEnd: PropTypes.func.isRequired,
+        onMouseDown: PropTypes.func.isRequired,
+        onMouseMove: PropTypes.func.isRequired,
+        onMouseUp: PropTypes.func.isRequired,
+        onRender: PropTypes.func.isRequired,
+        type: PropTypes.oneOf([STATIC, DRAGGING, ANIMATING, DISABLED]),
         linterContext: linterContextProps,
     },
 
@@ -301,16 +301,16 @@ const Draggable = React.createClass({
 });
 
 // The main sortable component.
-const Sortable = React.createClass({
+const Sortable = createReactClass({
     propTypes: {
-        constraints: React.PropTypes.object,
-        disabled: React.PropTypes.bool,
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        margin: React.PropTypes.number,
-        onChange: React.PropTypes.func,
-        onMeasure: React.PropTypes.func,
-        options: React.PropTypes.array.isRequired,
-        padding: React.PropTypes.bool,
+        constraints: PropTypes.object,
+        disabled: PropTypes.bool,
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        margin: PropTypes.number,
+        onChange: PropTypes.func,
+        onMeasure: PropTypes.func,
+        options: PropTypes.array.isRequired,
+        padding: PropTypes.bool,
         linterContext: linterContextProps,
     },
 

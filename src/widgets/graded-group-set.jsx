@@ -31,11 +31,11 @@ const ApiOptions = _perseusApiJsx.Options;
 const Changeable = _mixinsChangeableJsx;
 const GradedGroup = _gradedGroupJsx.widget;
 
-const Indicators = React.createClass({
+const Indicators = createReactClass({
     propTypes: {
-        currentGroup: React.PropTypes.number.isRequired,
-        numGroups: React.PropTypes.number.isRequired,
-        onChangeCurrentGroup: React.PropTypes.func.isRequired,
+        currentGroup: PropTypes.number.isRequired,
+        numGroups: PropTypes.number.isRequired,
+        onChangeCurrentGroup: PropTypes.func.isRequired,
     },
     render() {
         const items = [];
@@ -62,12 +62,12 @@ const Indicators = React.createClass({
 
 // TODO(jared): find a better name for this :) and for GradedGroup; the names
 // are currently a little confusing.
-const GradedGroupSet = React.createClass({
+const GradedGroupSet = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        gradedGroups: React.PropTypes.array,
-        trackInteraction: React.PropTypes.func.isRequired,
+        gradedGroups: PropTypes.array,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

@@ -38,33 +38,33 @@ var BAR = "bar",
     DOTPLOT = "dotplot";
 
 const widgetPropTypes = {
-    type: React.PropTypes.oneOf([BAR, LINE, PIC, HISTOGRAM, DOTPLOT]),
-    labels: React.PropTypes.arrayOf(React.PropTypes.string),
-    categories: React.PropTypes.arrayOf(
-        React.PropTypes.oneOfType([
-            React.PropTypes.number,
-            React.PropTypes.string,
+    type: PropTypes.oneOf([BAR, LINE, PIC, HISTOGRAM, DOTPLOT]),
+    labels: PropTypes.arrayOf(PropTypes.string),
+    categories: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string,
         ])
     ),
 
-    scaleY: React.PropTypes.number,
-    maxY: React.PropTypes.number,
-    snapsPerLine: React.PropTypes.number,
+    scaleY: PropTypes.number,
+    maxY: PropTypes.number,
+    snapsPerLine: PropTypes.number,
 
-    picSize: React.PropTypes.number,
-    pixBoxHeight: React.PropTypes.number,
-    picUrl: React.PropTypes.string,
+    picSize: PropTypes.number,
+    pixBoxHeight: PropTypes.number,
+    picUrl: PropTypes.string,
 
-    plotDimensions: React.PropTypes.arrayOf(React.PropTypes.number),
-    labelInterval: React.PropTypes.number,
-    starting: React.PropTypes.arrayOf(React.PropTypes.number),
-    static: React.PropTypes.bool,
+    plotDimensions: PropTypes.arrayOf(PropTypes.number),
+    labelInterval: PropTypes.number,
+    starting: PropTypes.arrayOf(PropTypes.number),
+    static: PropTypes.bool,
 };
 
-var Plotter = React.createClass({
+var Plotter = createReactClass({
     propTypes: {
-        onChange: React.PropTypes.func.isRequired,
-        trackInteraction: React.PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
+        trackInteraction: PropTypes.func.isRequired,
         // TODO(alex): Figure out why lint chokes on this line
         // ...widgetPropTypes,
     },

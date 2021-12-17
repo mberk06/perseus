@@ -42,11 +42,11 @@ function numSteps(range, step) {
     return Math.floor((range[1] - range[0]) / step);
 }
 
-const GraphSettings = React.createClass({
+const GraphSettings = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        editableSettings: React.PropTypes.arrayOf(
-            React.PropTypes.oneOf([
+        editableSettings: PropTypes.arrayOf(
+            PropTypes.oneOf([
                 "canvas",
                 "graph",
                 "snap",
@@ -54,25 +54,25 @@ const GraphSettings = React.createClass({
                 "measure",
             ])
         ),
-        box: React.PropTypes.arrayOf(React.PropTypes.number),
-        labels: React.PropTypes.arrayOf(React.PropTypes.string),
-        range: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.number)
+        box: PropTypes.arrayOf(PropTypes.number),
+        labels: PropTypes.arrayOf(PropTypes.string),
+        range: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.number)
         ),
-        step: React.PropTypes.arrayOf(React.PropTypes.number),
-        gridStep: React.PropTypes.arrayOf(React.PropTypes.number),
-        snapStep: React.PropTypes.arrayOf(React.PropTypes.number),
-        valid: React.PropTypes.oneOfType([
-            React.PropTypes.bool,
-            React.PropTypes.string,
+        step: PropTypes.arrayOf(PropTypes.number),
+        gridStep: PropTypes.arrayOf(PropTypes.number),
+        snapStep: PropTypes.arrayOf(PropTypes.number),
+        valid: PropTypes.oneOfType([
+            PropTypes.bool,
+            PropTypes.string,
         ]),
-        backgroundImage: React.PropTypes.object,
-        markings: React.PropTypes.oneOf(["graph", "grid", "none"]),
-        showProtractor: React.PropTypes.bool,
-        showRuler: React.PropTypes.bool,
-        showTooltips: React.PropTypes.bool,
-        rulerLabel: React.PropTypes.string,
-        rulerTicks: React.PropTypes.number,
+        backgroundImage: PropTypes.object,
+        markings: PropTypes.oneOf(["graph", "grid", "none"]),
+        showProtractor: PropTypes.bool,
+        showRuler: PropTypes.bool,
+        showTooltips: PropTypes.bool,
+        rulerLabel: PropTypes.string,
+        rulerTicks: PropTypes.number,
     },
 
     getDefaultProps: function() {

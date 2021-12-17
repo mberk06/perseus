@@ -21,10 +21,10 @@ var Changeable = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
 var Renderer = _rendererJsx;
 
-var PassageRefTarget = React.createClass({
+var PassageRefTarget = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        content: React.PropTypes.string,
+        content: PropTypes.string,
         linterContext: linterContextProps,
     },
 

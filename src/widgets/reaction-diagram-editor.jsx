@@ -21,12 +21,12 @@ const EditorJsonify = _mixinsEditorJsonifyJsx;
 const NumberInput = _componentsNumberInputJsx;
 const TextInput = _componentsTextInputJsx;
 
-var ReactionDiagramWidgetEditor = React.createClass({
+var ReactionDiagramWidgetEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        rotationAngle: React.PropTypes.arrayOf(React.PropTypes.number),
-        separators: React.PropTypes.arrayOf(React.PropTypes.object),
-        smiles: React.PropTypes.arrayOf(React.PropTypes.string),
+        rotationAngle: PropTypes.arrayOf(PropTypes.number),
+        separators: PropTypes.arrayOf(PropTypes.object),
+        smiles: PropTypes.arrayOf(PropTypes.string),
     },
 
     getDefaultProps: function() {

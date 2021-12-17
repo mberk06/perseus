@@ -27,15 +27,15 @@ var Editor = _editorJsx;
 var InlineIcon = _componentsInlineIconJsx;
 var PropCheckBox = _componentsPropCheckBoxJsx;
 
-var ChoiceEditor = React.createClass({
+var ChoiceEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
 
-        choice: React.PropTypes.object,
-        showDelete: React.PropTypes.bool,
-        onClueChange: React.PropTypes.func,
-        onContentChange: React.PropTypes.func,
-        onDelete: React.PropTypes.func,
+        choice: PropTypes.object,
+        showDelete: PropTypes.bool,
+        onClueChange: PropTypes.func,
+        onContentChange: PropTypes.func,
+        onDelete: PropTypes.func,
     },
 
     render: function() {
@@ -99,29 +99,29 @@ var ChoiceEditor = React.createClass({
     },
 });
 
-var RadioEditor = React.createClass({
+var RadioEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        choices: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                content: React.PropTypes.string,
-                clue: React.PropTypes.string,
-                correct: React.PropTypes.bool,
+        choices: PropTypes.arrayOf(
+            PropTypes.shape({
+                content: PropTypes.string,
+                clue: PropTypes.string,
+                correct: PropTypes.bool,
             })
         ),
-        displayCount: React.PropTypes.number,
-        randomize: React.PropTypes.bool,
-        hasNoneOfTheAbove: React.PropTypes.bool,
-        multipleSelect: React.PropTypes.bool,
-        countChoices: React.PropTypes.bool,
+        displayCount: PropTypes.number,
+        randomize: PropTypes.bool,
+        hasNoneOfTheAbove: PropTypes.bool,
+        multipleSelect: PropTypes.bool,
+        countChoices: PropTypes.bool,
 
         // TODO(kevinb): DEPRECATED: This is be used to force deselectEnabled
         // behavior on mobile but not on desktop.  When enabled, the user can
         // deselect a radio input by tapping on it again.
-        deselectEnabled: React.PropTypes.bool,
+        deselectEnabled: PropTypes.bool,
 
-        static: React.PropTypes.bool,
+        static: PropTypes.bool,
     },
 
     getDefaultProps: function() {

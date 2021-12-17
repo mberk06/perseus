@@ -29,13 +29,13 @@ const React = _react;
 
 const MIN_VIEWPORT_HEIGHT = 480;
 
-const FixedToResponsive = React.createClass({
+const FixedToResponsive = createReactClass({
     propTypes: {
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired,
-        className: React.PropTypes.string,
-        constrainHeight: React.PropTypes.bool,
-        allowFullBleed: React.PropTypes.bool,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired,
+        className: PropTypes.string,
+        constrainHeight: PropTypes.bool,
+        allowFullBleed: PropTypes.bool,
     },
 
     getDefaultProps: function() {

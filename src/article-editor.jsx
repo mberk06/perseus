@@ -31,17 +31,17 @@ const DeviceFramer = _componentsDeviceFramerJsx;
 const IframeContentRenderer = _iframeContentRendererJsx;
 const HUD = _componentsHudJsx;
 
-const rendererProps = React.PropTypes.shape({
-    content: React.PropTypes.string,
-    widgets: React.PropTypes.object,
-    images: React.PropTypes.object,
+const rendererProps = PropTypes.shape({
+    content: PropTypes.string,
+    widgets: PropTypes.object,
+    images: PropTypes.object,
 });
 
-const SectionControlButton = React.createClass({
+const SectionControlButton = createReactClass({
     propTypes: {
-        icon: React.PropTypes.shape(InlineIcon.propTypes).isRequired,
-        onClick: React.PropTypes.func.isRequired,
-        title: React.PropTypes.string.isRequired,
+        icon: PropTypes.shape(InlineIcon.propTypes).isRequired,
+        onClick: PropTypes.func.isRequired,
+        title: PropTypes.string.isRequired,
     },
     render: function() {
         const {icon, onClick, title} = this.props;
@@ -66,21 +66,21 @@ const SectionControlButton = React.createClass({
     },
 });
 
-const ArticleEditor = React.createClass({
+const ArticleEditor = createReactClass({
     propTypes: {
-        apiOptions: React.PropTypes.shape({}),
-        contentPaths: React.PropTypes.arrayOf(React.PropTypes.string),
-        frameSource: React.PropTypes.string.isRequired,
-        imageUploader: React.PropTypes.func,
-        json: React.PropTypes.oneOfType([
+        apiOptions: PropTypes.shape({}),
+        contentPaths: PropTypes.arrayOf(PropTypes.string),
+        frameSource: PropTypes.string.isRequired,
+        imageUploader: PropTypes.func,
+        json: PropTypes.oneOfType([
             rendererProps,
-            React.PropTypes.arrayOf(rendererProps),
+            PropTypes.arrayOf(rendererProps),
         ]),
-        mode: React.PropTypes.oneOf(["diff", "edit", "json", "preview"]),
-        onChange: React.PropTypes.func.isRequired,
-        screen: React.PropTypes.oneOf(["phone", "tablet", "desktop"]),
-        sectionImageUploadGenerator: React.PropTypes.func,
-        useNewStyles: React.PropTypes.bool,
+        mode: PropTypes.oneOf(["diff", "edit", "json", "preview"]),
+        onChange: PropTypes.func.isRequired,
+        screen: PropTypes.oneOf(["phone", "tablet", "desktop"]),
+        sectionImageUploadGenerator: PropTypes.func,
+        useNewStyles: PropTypes.bool,
     },
 
     getDefaultProps: function() {

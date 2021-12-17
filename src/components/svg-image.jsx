@@ -138,7 +138,7 @@ function getUrlHash(url) {
 }
 
 function defaultPreloader() {
-    return React.DOM.span({
+    return ReactDOMtags.span({
         style: {
             background: "url(/images/spinner.gif) no-repeat",
             backgroundPosition: "center",
@@ -150,25 +150,25 @@ function defaultPreloader() {
     });
 }
 
-const SvgImage = React.createClass({
+const SvgImage = createReactClass({
     propTypes: {
-        allowFullBleed: React.PropTypes.bool,
-        alt: React.PropTypes.string,
-        constrainHeight: React.PropTypes.bool,
+        allowFullBleed: PropTypes.bool,
+        alt: PropTypes.string,
+        constrainHeight: PropTypes.bool,
 
-        extraGraphie: React.PropTypes.shape({
-            box: React.PropTypes.array.isRequired,
-            range: React.PropTypes.array.isRequired,
-            labels: React.PropTypes.array.isRequired,
+        extraGraphie: PropTypes.shape({
+            box: PropTypes.array.isRequired,
+            range: PropTypes.array.isRequired,
+            labels: PropTypes.array.isRequired,
         }),
 
-        height: React.PropTypes.number,
+        height: PropTypes.number,
 
         // When the DOM updates to replace the preloader with the image, or
         // vice-versa, we trigger this callback.
-        onUpdate: React.PropTypes.func,
+        onUpdate: PropTypes.func,
 
-        preloader: React.PropTypes.func,
+        preloader: PropTypes.func,
 
         // By default, this component attempts to be responsive whenever
         // possible (specifically, when width and height are passed in).
@@ -177,20 +177,20 @@ const SvgImage = React.createClass({
         // The difference is that forcing via this prop will result in
         // explicit width and height styles being set on the rendered
         // component.
-        responsive: React.PropTypes.bool,
+        responsive: PropTypes.bool,
 
-        scale: React.PropTypes.number,
-        src: React.PropTypes.string.isRequired,
-        title: React.PropTypes.string,
-        trackInteraction: React.PropTypes.func,
-        width: React.PropTypes.number,
+        scale: PropTypes.number,
+        src: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        trackInteraction: PropTypes.func,
+        width: PropTypes.number,
 
         // Whether clicking this image will allow it to be fully zoomed in to
         // its original size on click, and allow the user to scroll in that
         // state. This also does some hacky viewport meta tag changing to
         // ensure this works on mobile devices, so I (david@) don't recommend
         // enabling this on desktop yet.
-        zoomToFullSizeOnMobile: React.PropTypes.bool,
+        zoomToFullSizeOnMobile: PropTypes.bool,
     },
 
     statics: {

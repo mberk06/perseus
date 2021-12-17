@@ -104,13 +104,13 @@ var formExamples = {
     },
 };
 
-var InputNumber = React.createClass({
+var InputNumber = createReactClass({
     propTypes: {
-        answerType: React.PropTypes.oneOf(Object.keys(answerTypes)),
-        currentValue: React.PropTypes.string,
+        answerType: PropTypes.oneOf(Object.keys(answerTypes)),
+        currentValue: PropTypes.string,
         keypadElement: keypadElementPropType,
-        reviewModeRubric: React.PropTypes.object,
-        widgetId: React.PropTypes.string.isRequired,
+        reviewModeRubric: PropTypes.object,
+        widgetId: PropTypes.string.isRequired,
         linterContext: linterContextProps,
     },
 

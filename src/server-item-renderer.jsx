@@ -32,9 +32,9 @@ const ProvideKeypad = _mixinsProvideKeypadJsx;
 const Renderer = _rendererJsx;
 const Util = _utilJs;
 
-const RP = React.PropTypes;
+const RP = PropTypes;
 
-const ItemRenderer = React.createClass({
+const ItemRenderer = createReactClass({
     propTypes: {
         ...ProvideKeypad.propTypes,
         apiOptions: RP.any,

@@ -71,7 +71,7 @@ var captionAlignments = [
     "above left",
 ];
 
-const ImageEditor = React.createClass({
+const ImageEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

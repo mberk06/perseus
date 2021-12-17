@@ -104,19 +104,19 @@ var insertBraces = value => {
 };
 
 // The new, MathQuill input expression widget
-var Expression = React.createClass({
+var Expression = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
         buttonSets: TexButtons.buttonSetsType,
-        buttonsVisible: React.PropTypes.oneOf(["always", "never", "focused"]),
-        functions: React.PropTypes.arrayOf(React.PropTypes.string),
+        buttonsVisible: PropTypes.oneOf(["always", "never", "focused"]),
+        functions: PropTypes.arrayOf(PropTypes.string),
         keypadConfiguration: keypadConfigurationPropType,
         keypadElement: keypadElementPropType,
-        times: React.PropTypes.bool,
-        trackInteraction: React.PropTypes.func.isRequired,
-        value: React.PropTypes.string,
-        widgetId: React.PropTypes.string.isRequired,
+        times: PropTypes.bool,
+        trackInteraction: PropTypes.func.isRequired,
+        value: PropTypes.string,
+        widgetId: PropTypes.string.isRequired,
         linterContext: linterContextProps,
     },
 

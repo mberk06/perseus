@@ -30,25 +30,25 @@ const assert = _interactive2InteractiveUtilJs.assert;
 const GraphUtils = _utilGraphUtilsJs;
 const createGraphie = GraphUtils.createGraphie;
 
-const Graphie = React.createClass({
+const Graphie = createReactClass({
     propTypes: {
-        addMouseLayer: React.PropTypes.bool,
-        box: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
-        children: React.PropTypes.node,
-        isMobile: React.PropTypes.bool,
-        onClick: React.PropTypes.func,
-        onMouseDown: React.PropTypes.func,
-        onMouseMove: React.PropTypes.func,
-        onMouseUp: React.PropTypes.func,
-        options: React.PropTypes.shape({
-            snapStep: React.PropTypes.arrayOf(React.PropTypes.number),
+        addMouseLayer: PropTypes.bool,
+        box: PropTypes.arrayOf(PropTypes.number).isRequired,
+        children: PropTypes.node,
+        isMobile: PropTypes.bool,
+        onClick: PropTypes.func,
+        onMouseDown: PropTypes.func,
+        onMouseMove: PropTypes.func,
+        onMouseUp: PropTypes.func,
+        options: PropTypes.shape({
+            snapStep: PropTypes.arrayOf(PropTypes.number),
         }),
-        range: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.number)
+        range: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.number)
         ),
-        responsive: React.PropTypes.bool,
-        setDrawingAreaAvailable: React.PropTypes.func,
-        setup: React.PropTypes.func.isRequired,
+        responsive: PropTypes.bool,
+        setDrawingAreaAvailable: PropTypes.func,
+        setup: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

@@ -25,15 +25,15 @@ var shuffle = _utilJs.shuffle;
 var HORIZONTAL = "horizontal",
     VERTICAL = "vertical";
 
-var Sorter = React.createClass({
+var Sorter = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        correct: React.PropTypes.array,
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        onChange: React.PropTypes.func,
-        padding: React.PropTypes.bool,
-        problemNum: React.PropTypes.number,
-        trackInteraction: React.PropTypes.func.isRequired,
+        correct: PropTypes.array,
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        onChange: PropTypes.func,
+        padding: PropTypes.bool,
+        problemNum: PropTypes.number,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

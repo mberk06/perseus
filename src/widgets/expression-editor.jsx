@@ -36,11 +36,11 @@ var Expression = _expressionJsx.Expression;
 // An answer can be considered correct, wrong, or ungraded.
 var CONSIDERED = ["correct", "wrong", "ungraded"];
 
-var answerFormType = React.PropTypes.shape({
-    considered: React.PropTypes.oneOf(CONSIDERED).isRequired,
-    value: React.PropTypes.string.isRequired,
-    form: React.PropTypes.bool.isRequired,
-    simplify: React.PropTypes.bool.isRequired,
+var answerFormType = PropTypes.shape({
+    considered: PropTypes.oneOf(CONSIDERED).isRequired,
+    value: PropTypes.string.isRequired,
+    form: PropTypes.bool.isRequired,
+    simplify: PropTypes.bool.isRequired,
 });
 
 // Pick a key that isn't currently used by an answer in answerForms
@@ -65,13 +65,13 @@ var _makeNewKey = answerForms => {
   return usedKeys.length;
 };
 
-var ExpressionEditor = React.createClass({
+var ExpressionEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        answerForms: React.PropTypes.arrayOf(answerFormType),
-        times: React.PropTypes.bool,
+        answerForms: PropTypes.arrayOf(answerFormType),
+        times: PropTypes.bool,
         buttonSets: TexButtons.buttonSetsType,
-        functions: React.PropTypes.arrayOf(React.PropTypes.string),
+        functions: PropTypes.arrayOf(PropTypes.string),
     },
 
     getDefaultProps: function() {
@@ -433,20 +433,20 @@ var findNextIn = function(arr, val) {
     return arr[ix];
 };
 
-var AnswerOption = React.createClass({
+var AnswerOption = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        considered: React.PropTypes.oneOf(CONSIDERED).isRequired,
-        expressionProps: React.PropTypes.object.isRequired,
+        considered: PropTypes.oneOf(CONSIDERED).isRequired,
+        expressionProps: PropTypes.object.isRequired,
 
         // Must the answer have the same form as this answer.
-        form: React.PropTypes.bool.isRequired,
+        form: PropTypes.bool.isRequired,
 
         // Must the answer be simplified.
-        simplify: React.PropTypes.bool.isRequired,
+        simplify: PropTypes.bool.isRequired,
 
-        onChange: React.PropTypes.func.isRequired,
-        onDelete: React.PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
+        onDelete: PropTypes.func.isRequired,
     },
 
     getInitialState: function() {

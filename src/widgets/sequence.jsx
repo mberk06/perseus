@@ -26,18 +26,18 @@ const InlineIcon = _componentsInlineIconJsx;
 var Renderer = _rendererJsx;
 var Util = _utilJs;
 
-var Sequence = React.createClass({
+var Sequence = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        json: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                content: React.PropTypes.string,
-                images: React.PropTypes.object,
-                widgets: React.PropTypes.object,
+        json: PropTypes.arrayOf(
+            PropTypes.shape({
+                content: PropTypes.string,
+                images: PropTypes.object,
+                widgets: PropTypes.object,
             })
         ),
-        trackInteraction: React.PropTypes.func.isRequired,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

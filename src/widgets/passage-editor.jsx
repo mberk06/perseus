@@ -25,13 +25,13 @@ const Editor = _editorJsx;
 const InfoTip = _componentsInfoTipJsx;
 const PropCheckBox = _componentsPropCheckBoxJsx;
 
-const PassageEditor = React.createClass({
+const PassageEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        passageTitle: React.PropTypes.string,
-        passageText: React.PropTypes.string,
-        footnotes: React.PropTypes.string,
-        showLineNumbers: React.PropTypes.bool,
+        passageTitle: PropTypes.string,
+        passageText: PropTypes.string,
+        footnotes: PropTypes.string,
+        showLineNumbers: PropTypes.bool,
     },
 
     getDefaultProps: function() {

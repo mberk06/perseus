@@ -16,12 +16,12 @@ const truth = () => true;
 /* A minor abstraction on top of NumberInput for ranges
  *
  */
-const RangeInput = React.createClass({
+const RangeInput = createReactClass({
     propTypes: {
-        value: React.PropTypes.array.isRequired,
-        onChange: React.PropTypes.func.isRequired,
-        placeholder: React.PropTypes.array,
-        checkValidity: React.PropTypes.func,
+        value: PropTypes.array.isRequired,
+        onChange: PropTypes.func.isRequired,
+        placeholder: PropTypes.array,
+        checkValidity: PropTypes.func,
     },
 
     getDefaultProps: function() {

@@ -31,11 +31,11 @@ const captureScratchpadTouchStart = _utilJs
 
 const Choice = _choiceJsx;
 
-const ChoiceNoneAbove = React.createClass({
+const ChoiceNoneAbove = createReactClass({
     propTypes: {
-        className: React.PropTypes.string,
-        content: React.PropTypes.node,
-        showContent: React.PropTypes.bool,
+        className: PropTypes.string,
+        content: PropTypes.node,
+        showContent: PropTypes.bool,
     },
 
     getDefaultProps: function() {
@@ -66,51 +66,51 @@ const ChoiceNoneAbove = React.createClass({
     },
 });
 
-const ChoicesType = React.PropTypes.arrayOf(
-    React.PropTypes.shape({
+const ChoicesType = PropTypes.arrayOf(
+    PropTypes.shape({
         // Indicates whether this choice is checked.
-        checked: React.PropTypes.bool,
+        checked: PropTypes.bool,
 
         // Indicates whether the user has "crossed out" this choice, meaning
         // that they don't think it's correct. This value does not affect
         // scoring or other behavior; it's just a note for the user's
         // reference.
-        crossedOut: React.PropTypes.bool,
+        crossedOut: PropTypes.bool,
 
-        content: React.PropTypes.node,
-        rationale: React.PropTypes.node,
-        hasRationale: React.PropTypes.bool,
-        showRationale: React.PropTypes.bool,
-        showCorrectness: React.PropTypes.bool,
-        correct: React.PropTypes.bool,
-        originalIndex: React.PropTypes.number,
-        isNoneOfTheAbove: React.PropTypes.bool,
+        content: PropTypes.node,
+        rationale: PropTypes.node,
+        hasRationale: PropTypes.bool,
+        showRationale: PropTypes.bool,
+        showCorrectness: PropTypes.bool,
+        correct: PropTypes.bool,
+        originalIndex: PropTypes.number,
+        isNoneOfTheAbove: PropTypes.bool,
     })
 );
 
 const radioBorderColor = styleConstants.radioBorderColor;
 
-const BaseRadio = React.createClass({
+const BaseRadio = createReactClass({
     propTypes: {
-        apiOptions: React.PropTypes.shape({
-            readOnly: React.PropTypes.bool,
-            satStyling: React.PropTypes.bool,
-            isMobile: React.PropTypes.bool,
-            styling: React.PropTypes.shape({
-                radioStyleVersion: React.PropTypes.oneOf([
+        apiOptions: PropTypes.shape({
+            readOnly: PropTypes.bool,
+            satStyling: PropTypes.bool,
+            isMobile: PropTypes.bool,
+            styling: PropTypes.shape({
+                radioStyleVersion: PropTypes.oneOf([
                     "intermediate",
                     "final",
                 ]),
             }),
         }),
         choices: ChoicesType,
-        deselectEnabled: React.PropTypes.bool,
-        editMode: React.PropTypes.bool,
-        labelWrap: React.PropTypes.bool,
-        countChoices: React.PropTypes.bool,
-        numCorrect: React.PropTypes.number,
-        multipleSelect: React.PropTypes.bool,
-        reviewModeRubric: React.PropTypes.shape({
+        deselectEnabled: PropTypes.bool,
+        editMode: PropTypes.bool,
+        labelWrap: PropTypes.bool,
+        countChoices: PropTypes.bool,
+        numCorrect: PropTypes.number,
+        multipleSelect: PropTypes.bool,
+        reviewModeRubric: PropTypes.shape({
             choices: ChoicesType,
         }),
 
@@ -118,7 +118,7 @@ const BaseRadio = React.createClass({
         // an object with two keys: `checked` and `crossedOut`. Each contains
         // an array of boolean values, specifying the new checked and
         // crossed-out value of each choice.
-        onChange: React.PropTypes.func,
+        onChange: PropTypes.func,
     },
 
     statics: {

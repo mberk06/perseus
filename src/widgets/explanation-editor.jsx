@@ -30,14 +30,14 @@ var defaultExplanationProps = {
     widgets: {},
 };
 
-var ExplanationEditor = React.createClass({
+var ExplanationEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        showPrompt: React.PropTypes.string,
-        hidePrompt: React.PropTypes.string,
-        explanation: React.PropTypes.string,
-        widgets: React.PropTypes.object,
-        apiOptions: React.PropTypes.any,
+        showPrompt: PropTypes.string,
+        hidePrompt: PropTypes.string,
+        explanation: PropTypes.string,
+        widgets: PropTypes.object,
+        apiOptions: PropTypes.any,
     },
 
     getDefaultProps: function() {

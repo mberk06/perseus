@@ -64,7 +64,7 @@ const initAnswer = status => {
     };
 };
 
-const NumericInputEditor = React.createClass({
+const NumericInputEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

@@ -40,10 +40,10 @@ const defaultQuestion = {
     hints: [],
 };
 
-const RendererDemo = React.createClass({
+const RendererDemo = createReactClass({
     propTypes: {
-        problemNum: React.PropTypes.number,
-        question: React.PropTypes.any.isRequired,
+        problemNum: PropTypes.number,
+        question: PropTypes.any.isRequired,
     },
 
     getDefaultProps: function() {

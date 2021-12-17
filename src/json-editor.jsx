@@ -13,7 +13,7 @@ var exports = _module_.exports;
 var React = _react;
 const _ = _underscore;
 
-var JsonEditor = React.createClass({
+var JsonEditor = createReactClass({
     getInitialState: function() {
         return {
             currentValue: JSON.stringify(this.props.value, null, 4),

@@ -38,10 +38,10 @@ const defaultQuestion = {
     hints: [],
 };
 
-const EditorDemo = React.createClass({
+const EditorDemo = createReactClass({
     propTypes: {
-        problemNum: React.PropTypes.number,
-        question: React.PropTypes.any.isRequired,
+        problemNum: PropTypes.number,
+        question: PropTypes.any.isRequired,
     },
 
     getDefaultProps: function() {

@@ -84,12 +84,12 @@ var defaultInteractionProps = {
     elements: [],
 };
 
-var Interaction = React.createClass({
+var Interaction = createReactClass({
     // TODO(eater): Make more better
     propTypes: {
         ...Changeable.propTypes,
-        graph: React.PropTypes.object,
-        elements: React.PropTypes.arrayOf(React.PropTypes.object),
+        graph: PropTypes.object,
+        elements: PropTypes.arrayOf(PropTypes.object),
     },
 
     getDefaultProps: function() {

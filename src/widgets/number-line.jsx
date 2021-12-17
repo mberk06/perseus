@@ -204,35 +204,35 @@ var TickMarks = Graphie.createSimpleClass((graphie, props) => {
     return results;
 });
 
-var NumberLine = React.createClass({
+var NumberLine = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        range: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
+        range: PropTypes.arrayOf(PropTypes.number).isRequired,
 
-        labelRange: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
-        labelStyle: React.PropTypes.string.isRequired,
-        labelTicks: React.PropTypes.bool.isRequired,
+        labelRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+        labelStyle: PropTypes.string.isRequired,
+        labelTicks: PropTypes.bool.isRequired,
 
-        divisionRange: React.PropTypes.arrayOf(React.PropTypes.number)
+        divisionRange: PropTypes.arrayOf(PropTypes.number)
             .isRequired,
-        numDivisions: React.PropTypes.number.isRequired,
-        snapDivisions: React.PropTypes.number.isRequired,
+        numDivisions: PropTypes.number.isRequired,
+        snapDivisions: PropTypes.number.isRequired,
 
-        isTickCtrl: React.PropTypes.bool.isRequired,
-        isInequality: React.PropTypes.bool.isRequired,
+        isTickCtrl: PropTypes.bool.isRequired,
+        isInequality: PropTypes.bool.isRequired,
 
-        numLinePosition: React.PropTypes.number.isRequired,
-        rel: React.PropTypes.oneOf(["lt", "gt", "le", "ge"]),
+        numLinePosition: PropTypes.number.isRequired,
+        rel: PropTypes.oneOf(["lt", "gt", "le", "ge"]),
 
-        onFocus: React.PropTypes.func.isRequired,
-        onBlur: React.PropTypes.func.isRequired,
-        onChange: React.PropTypes.func.isRequired,
+        onFocus: PropTypes.func.isRequired,
+        onBlur: PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
 
         apiOptions: ApiOptions.propTypes,
         keypadElement: keypadElementPropType,
-        static: React.PropTypes.bool,
-        showTooltips: React.PropTypes.bool,
-        trackInteraction: React.PropTypes.func.isRequired,
+        static: PropTypes.bool,
+        showTooltips: PropTypes.bool,
+        trackInteraction: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

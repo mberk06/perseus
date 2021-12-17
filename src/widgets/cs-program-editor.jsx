@@ -31,11 +31,11 @@ var DEFAULT_HEIGHT = 400;
 /**
  * This is used for editing a name/value pair.
  */
-var PairEditor = React.createClass({
+var PairEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        name: React.PropTypes.string,
-        value: React.PropTypes.string,
+        name: PropTypes.string,
+        value: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -78,13 +78,13 @@ var PairEditor = React.createClass({
 /**
  * This is used for editing a set of name/value pairs.
  */
-var PairsEditor = React.createClass({
+var PairsEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        pairs: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                name: React.PropTypes.string,
-                value: React.PropTypes.string,
+        pairs: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string,
+                value: PropTypes.string,
             })
         ).isRequired,
     },
@@ -147,7 +147,7 @@ function isolateProgramID(programUrl) {
 /**
  * This is the main editor for this widget, to specify all the options.
  */
-var CSProgramEditor = React.createClass({
+var CSProgramEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

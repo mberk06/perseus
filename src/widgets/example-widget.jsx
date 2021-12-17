@@ -24,7 +24,7 @@ var React = _react;
 var Changeable = _mixinsChangeableJsx;
 var _ = _underscore;
 
-var TextInput = React.createClass({
+var TextInput = createReactClass({
     render: function() {
         return (
             <input
@@ -52,10 +52,10 @@ var TextInput = React.createClass({
  * in the demo, and is what is visible to users, and where
  * users enter their answers.
  */
-var ExampleWidget = React.createClass({
+var ExampleWidget = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        value: React.PropTypes.string,
+        value: PropTypes.string,
     },
 
     getDefaultProps: function() {

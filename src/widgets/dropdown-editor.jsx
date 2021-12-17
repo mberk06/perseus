@@ -23,15 +23,15 @@ var InfoTip = _componentsInfoTipJsx;
 var InlineIcon = _componentsInlineIconJsx;
 var EditorJsonify = _mixinsEditorJsonifyJsx;
 
-var DropdownEditor = React.createClass({
+var DropdownEditor = createReactClass({
     propTypes: {
-        choices: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                content: React.PropTypes.string,
-                correct: React.PropTypes.bool,
+        choices: PropTypes.arrayOf(
+            PropTypes.shape({
+                content: PropTypes.string,
+                correct: PropTypes.bool,
             })
         ),
-        placeholder: React.PropTypes.string,
+        placeholder: PropTypes.string,
     },
 
     getDefaultProps: function() {

@@ -20,16 +20,16 @@ const TeX = _reactComponentsTexJsx;
 const ApiClassNames = _perseusApiJsx.ClassNames;
 const ModifyTex = _texWranglerJs.modifyTex;
 
-const MathOutput = React.createClass({
+const MathOutput = createReactClass({
     propTypes: {
-        value: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number,
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
         ]),
-        className: React.PropTypes.string,
-        labelText: React.PropTypes.string,
-        onFocus: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
+        className: PropTypes.string,
+        labelText: PropTypes.string,
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
     },
 
     getDefaultProps: function() {
@@ -121,7 +121,7 @@ const MathOutput = React.createClass({
 
     _bindBlurHandler: function() {
         $(document).bind("vclick." + this.state.selectorNamespace, e => {
-            // Detect whether the target has our React DOM node as a parent
+            // Detect whether the target has our ReactDOMtags.node as a parent
             const $closestWidget = $(e.target).closest(
                 ReactDOM.findDOMNode(this)
             );

@@ -48,7 +48,7 @@ var primUnits = function(expr) {
 //
 // In the future I plan for this to show an example of a thing that would be
 // accepted in that unit.
-var UnitExample = React.createClass({
+var UnitExample = createReactClass({
     render: function() {
         var icon;
         if (this.state.valid) {
@@ -125,13 +125,13 @@ var UnitExample = React.createClass({
     },
 });
 
-const UnitInputEditor = React.createClass({
+const UnitInputEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        value: React.PropTypes.string,
-        acceptingUnits: React.PropTypes.arrayOf(React.PropTypes.string),
-        accepting: React.PropTypes.oneOf([ALL, SOME]),
-        sigfigs: React.PropTypes.number,
+        value: PropTypes.string,
+        acceptingUnits: PropTypes.arrayOf(PropTypes.string),
+        accepting: PropTypes.oneOf([ALL, SOME]),
+        sigfigs: PropTypes.number,
     },
 
     getDefaultProps: function() {

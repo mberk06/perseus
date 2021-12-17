@@ -28,13 +28,13 @@ const Editor = _editorJsx;
 
 const Table = _tableJsx.widget;
 
-const TableEditor = React.createClass({
+const TableEditor = createReactClass({
     propTypes: {
-        rows: React.PropTypes.number,
-        columns: React.PropTypes.number,
-        headers: React.PropTypes.arrayOf(React.PropTypes.string),
-        answers: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.string)
+        rows: PropTypes.number,
+        columns: PropTypes.number,
+        headers: PropTypes.arrayOf(PropTypes.string),
+        answers: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.string)
         ),
     },
 

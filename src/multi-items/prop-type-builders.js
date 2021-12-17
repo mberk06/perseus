@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * Utility functions to build React PropTypes for multi-items and shapes.
+ * Utility functions to build PropTypes for multi-items and shapes.
  *
  * If you're writing new components, though, consider using the Item and Shape
  * Flow types instead.
@@ -13,22 +13,22 @@ import React from "react";
  * Usage: `propTypes: {shape: shapePropType}`.
  */
 export function shapePropType(...args) {
-    const itemShape = React.PropTypes.oneOfType([
-        React.PropTypes.shape({
-            type: React.PropTypes.oneOf(["content"]).isRequired,
+    const itemShape = PropTypes.oneOfType([
+        PropTypes.shape({
+            type: PropTypes.oneOf(["content"]).isRequired,
         }).isRequired,
-        React.PropTypes.shape({
-            type: React.PropTypes.oneOf(["hint"]).isRequired,
+        PropTypes.shape({
+            type: PropTypes.oneOf(["hint"]).isRequired,
         }).isRequired,
-        React.PropTypes.shape({
-            type: React.PropTypes.oneOf(["tags"]).isRequired,
+        PropTypes.shape({
+            type: PropTypes.oneOf(["tags"]).isRequired,
         }).isRequired,
-        React.PropTypes.shape({
-            type: React.PropTypes.oneOf(["object"]).isRequired,
-            shape: React.PropTypes.objectOf(shapePropType),
+        PropTypes.shape({
+            type: PropTypes.oneOf(["object"]).isRequired,
+            shape: PropTypes.objectOf(shapePropType),
         }).isRequired,
-        React.PropTypes.shape({
-            type: React.PropTypes.oneOf(["array"]).isRequired,
+        PropTypes.shape({
+            type: PropTypes.oneOf(["array"]).isRequired,
             elementShape: shapePropType,
         }).isRequired,
     ]);
@@ -43,11 +43,11 @@ export function shapePropType(...args) {
  * Usage: `propTypes: {item: buildPropTypeForShape(myShape)}`
  */
 export function buildPropTypeForShape(shape) {
-    return React.PropTypes.oneOfType([
-        React.PropTypes.shape({
+    return PropTypes.oneOfType([
+        PropTypes.shape({
             _multi: buildTreePropTypeForShape(shape),
         }),
-        React.PropTypes.oneOf([null, undefined]),
+        PropTypes.oneOf([null, undefined]),
     ]);
 }
 
@@ -57,26 +57,26 @@ export function buildPropTypeForShape(shape) {
  */
 function buildTreePropTypeForShape(shape) {
     if (shape.type === "content") {
-        return React.PropTypes.shape({
+        return PropTypes.shape({
             // TODO(mdr): Remove #LegacyContentNode support.
-            __type: React.PropTypes.oneOf(["content", "item"]).isRequired,
-            content: React.PropTypes.string,
-            images: React.PropTypes.objectOf(React.PropTypes.any),
-            widgets: React.PropTypes.objectOf(React.PropTypes.any),
+            __type: PropTypes.oneOf(["content", "item"]).isRequired,
+            content: PropTypes.string,
+            images: PropTypes.objectOf(PropTypes.any),
+            widgets: PropTypes.objectOf(PropTypes.any),
         });
     } else if (shape.type === "hint") {
-        return React.PropTypes.shape({
-            __type: React.PropTypes.oneOf(["hint"]).isRequired,
-            content: React.PropTypes.string,
-            images: React.PropTypes.objectOf(React.PropTypes.any),
-            widgets: React.PropTypes.objectOf(React.PropTypes.any),
-            replace: React.PropTypes.bool,
+        return PropTypes.shape({
+            __type: PropTypes.oneOf(["hint"]).isRequired,
+            content: PropTypes.string,
+            images: PropTypes.objectOf(PropTypes.any),
+            widgets: PropTypes.objectOf(PropTypes.any),
+            replace: PropTypes.bool,
         });
     } else if (shape.type === "tags") {
-        return React.PropTypes.arrayOf(React.PropTypes.string.isRequired);
+        return PropTypes.arrayOf(PropTypes.string.isRequired);
     } else if (shape.type === "array") {
         const elementPropType = buildTreePropTypeForShape(shape.elementShape);
-        return React.PropTypes.arrayOf(elementPropType.isRequired);
+        return PropTypes.arrayOf(elementPropType.isRequired);
     } else if (shape.type === "object") {
         const valueShapes = shape.shape;
         const propTypeShape = {};
@@ -84,7 +84,7 @@ function buildTreePropTypeForShape(shape) {
             propTypeShape[key] =
                 buildTreePropTypeForShape(valueShapes[key]).isRequired;
         });
-        return React.PropTypes.shape(propTypeShape);
+        return PropTypes.shape(propTypeShape);
     } else {
         throw new Error(`unexpected shape type ${shape.type}`);
     }

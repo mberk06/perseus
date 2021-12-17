@@ -23,9 +23,9 @@ var EditorPage = _editorPageJsx;
  * changes. With StatefulEditorPage changes are stored in state so you can
  * query them with serialize.
  */
-var StatefulEditorPage = React.createClass({
+var StatefulEditorPage = createReactClass({
     propTypes: {
-        componentClass: React.PropTypes.func,
+        componentClass: PropTypes.func,
     },
 
     getDefaultProps: function() {

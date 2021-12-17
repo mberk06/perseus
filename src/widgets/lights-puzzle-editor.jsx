@@ -82,10 +82,10 @@ var flipTilesPredicate = (oldCells, predicate) => {
 };
 
 // A single glowy cell
-var Tile = React.createClass({
+var Tile = createReactClass({
     propTypes: {
-        value: React.PropTypes.bool.isRequired,
-        size: React.PropTypes.number.isRequired,
+        value: PropTypes.bool.isRequired,
+        size: PropTypes.number.isRequired,
     },
 
     render: function() {
@@ -104,12 +104,12 @@ var Tile = React.createClass({
 });
 
 // A grid of glowy cells
-var TileGrid = React.createClass({
+var TileGrid = createReactClass({
     propTypes: {
-        cells: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.bool)
+        cells: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.bool)
         ).isRequired,
-        size: React.PropTypes.number.isRequired,
+        size: PropTypes.number.isRequired,
     },
 
     render: function() {
@@ -142,14 +142,14 @@ var TileGrid = React.createClass({
 });
 
 // The widget editor
-const LightsPuzzleEditor = React.createClass({
+const LightsPuzzleEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        startCells: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.bool)
+        startCells: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.bool)
         ),
-        flipPattern: React.PropTypes.string.isRequired,
-        gradeIncompleteAsWrong: React.PropTypes.bool.isRequired,
+        flipPattern: PropTypes.string.isRequired,
+        gradeIncompleteAsWrong: PropTypes.bool.isRequired,
     },
 
     getDefaultProps: function() {

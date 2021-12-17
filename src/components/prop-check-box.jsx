@@ -15,9 +15,9 @@ const _ = _underscore;
  * renderer's onChange method, and gets the prop name
  * dynamically from its props list
  */
-const PropCheckBox = React.createClass({
+const PropCheckBox = createReactClass({
     propTypes: {
-        labelAlignment: React.PropTypes.oneOf(["left", "right"]),
+        labelAlignment: PropTypes.oneOf(["left", "right"]),
     },
 
     DEFAULT_PROPS: {

@@ -20,13 +20,13 @@ const ButtonGroup = _reactComponentsButtonGroupJsx;
 
 const InlineIcon = _inlineIconJsx;
 
-const ViewportResizer = React.createClass({
+const ViewportResizer = createReactClass({
     propTypes: {
         // The current device type that is selected.
-        deviceType: React.PropTypes.string.isRequired,
+        deviceType: PropTypes.string.isRequired,
         // A callback that is passed (width, height) as the dimensions of the
         // viewport to resize to.
-        onViewportSizeChanged: React.PropTypes.func.isRequired,
+        onViewportSizeChanged: PropTypes.func.isRequired,
     },
 
     handleChange: function(value) {

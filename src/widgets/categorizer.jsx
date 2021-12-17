@@ -33,19 +33,19 @@ const Util = _utilJs;
 const mediaQueries = _stylesMediaQueriesJs;
 const sharedStyles = _stylesSharedJs;
 
-const Categorizer = React.createClass({
+const Categorizer = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
 
         // List of categories (across the top)
-        categories: React.PropTypes.arrayOf(React.PropTypes.string),
+        categories: PropTypes.arrayOf(PropTypes.string),
         // List of items that are being categorized (along the left side)
-        items: React.PropTypes.arrayOf(React.PropTypes.string),
-        trackInteraction: React.PropTypes.func.isRequired,
+        items: PropTypes.arrayOf(PropTypes.string),
+        trackInteraction: PropTypes.func.isRequired,
         // Ordered list of correct answers, mapping items to categories thusly:
         //   values[<items_index>] == <categories_index>
-        values: React.PropTypes.arrayOf(React.PropTypes.number),
+        values: PropTypes.arrayOf(PropTypes.number),
         linterContext: linterContextProps,
     },
 

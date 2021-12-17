@@ -11,12 +11,12 @@ var exports = _module_.exports;
  */
 const React = _react;
 
-const KatexErrorView = React.createClass({
+const KatexErrorView = createReactClass({
     propTypes: {
-        errorList: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                math: React.PropTypes.string.isRequired,
-                message: React.PropTypes.string.isRequired,
+        errorList: PropTypes.arrayOf(
+            PropTypes.shape({
+                math: PropTypes.string.isRequired,
+                message: PropTypes.string.isRequired,
             })
         ).isRequired,
     },

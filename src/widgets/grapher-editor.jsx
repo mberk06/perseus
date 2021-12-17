@@ -28,7 +28,7 @@ const MultiButtonGroup = _reactComponentsMultiButtonGroupJsx;
 
 const Grapher = _grapherJsx.widget;
 
-const GrapherEditor = React.createClass({
+const GrapherEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

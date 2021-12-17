@@ -21,17 +21,17 @@ const TexButtons = _texButtonsJsx;
 
 // TODO(alex): Package MathQuill
 const MathQuill = window.MathQuill;
-const PT = React.PropTypes;
+const PT = PropTypes;
 
 // A WYSIWYG math input that calls `onChange(LaTeX-string)`
-const MathInput = React.createClass({
+const MathInput = createReactClass({
     propTypes: {
         value: PT.string,
         onChange: PT.func.isRequired,
         convertDotToTimes: PT.bool,
         buttonsVisible: PT.oneOf(["always", "never", "focused"]),
         buttonSets: TexButtons.buttonSetsType.isRequired,
-        labelText: React.PropTypes.string,
+        labelText: PropTypes.string,
         onFocus: PT.func,
         onBlur: PT.func,
     },

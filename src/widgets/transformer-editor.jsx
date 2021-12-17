@@ -156,7 +156,7 @@ var defaultTransformerProps = {
     },
 };
 
-const ToolSettings = React.createClass({
+const ToolSettings = createReactClass({
     getDefaultProps: function() {
         return {
             allowFixed: true,
@@ -209,7 +209,7 @@ const ToolSettings = React.createClass({
     },
 });
 
-var TransformationExplorerSettings = React.createClass({
+var TransformationExplorerSettings = createReactClass({
     render: function() {
         return (
             <div className="transformer-settings">
@@ -743,7 +743,7 @@ var ShapeTypes = {
     },
 };
 
-var TransformationsShapeEditor = React.createClass({
+var TransformationsShapeEditor = createReactClass({
     render: function() {
         return (
             <div>
@@ -842,7 +842,7 @@ var TransformationsShapeEditor = React.createClass({
     },
 });
 
-var TransformerEditor = React.createClass({
+var TransformerEditor = createReactClass({
     // TODO (jack): These should be refactored into a nice object at the top
     // so that we don't have all this duplication
     getDefaultProps: function() {

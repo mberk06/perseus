@@ -33,29 +33,29 @@ var bound = (x, gt, lt) => Math.min(Math.max(x, gt), lt);
 
 var EN_DASH = "\u2013";
 
-var NumberLineEditor = React.createClass({
+var NumberLineEditor = createReactClass({
     propTypes: {
-        range: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
+        range: PropTypes.arrayOf(PropTypes.number).isRequired,
 
-        labelRange: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
-        labelStyle: React.PropTypes.string.isRequired,
-        labelTicks: React.PropTypes.bool,
+        labelRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+        labelStyle: PropTypes.string.isRequired,
+        labelTicks: PropTypes.bool,
 
-        divisionRange: React.PropTypes.arrayOf(React.PropTypes.number)
+        divisionRange: PropTypes.arrayOf(PropTypes.number)
             .isRequired,
-        numDivisions: React.PropTypes.number.isRequired,
-        snapDivisions: React.PropTypes.number,
+        numDivisions: PropTypes.number.isRequired,
+        snapDivisions: PropTypes.number,
 
-        tickStep: React.PropTypes.number,
-        correctRel: React.PropTypes.oneOf(["lt", "gt", "le", "ge", "eq"]),
-        correctX: React.PropTypes.number,
-        initialX: React.PropTypes.number,
-        isTickCtrl: React.PropTypes.bool,
+        tickStep: PropTypes.number,
+        correctRel: PropTypes.oneOf(["lt", "gt", "le", "ge", "eq"]),
+        correctX: PropTypes.number,
+        initialX: PropTypes.number,
+        isTickCtrl: PropTypes.bool,
 
-        onChange: React.PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
 
-        static: React.PropTypes.bool,
-        showTooltips: React.PropTypes.bool,
+        static: PropTypes.bool,
+        showTooltips: PropTypes.bool,
     },
 
     getDefaultProps: function() {

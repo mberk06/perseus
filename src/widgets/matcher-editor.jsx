@@ -20,13 +20,13 @@ var InfoTip = _componentsInfoTipJsx;
 var PropCheckBox = _componentsPropCheckBoxJsx;
 var TextListEditor = _componentsTextListEditorJsx;
 
-var MatcherEditor = React.createClass({
+var MatcherEditor = createReactClass({
     propTypes: {
-        left: React.PropTypes.array,
-        right: React.PropTypes.array,
-        labels: React.PropTypes.array,
-        orderMatters: React.PropTypes.bool,
-        padding: React.PropTypes.bool,
+        left: PropTypes.array,
+        right: PropTypes.array,
+        labels: PropTypes.array,
+        orderMatters: PropTypes.bool,
+        padding: PropTypes.bool,
     },
 
     getDefaultProps: function() {

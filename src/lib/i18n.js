@@ -177,7 +177,7 @@ var _ = function (str, options) {
     *   </$_>
     *
     * which react/jsx compiles to:
-    *   $_({textbox: React.DOM.input({type: "text"}),
+    *   $_({textbox: ReactDOMtags.input({type: "text"}),
     *       "Please enter a number: %(textbox)s")
     *
     * Note: this is not a full react component to avoid complex handling of

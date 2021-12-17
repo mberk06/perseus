@@ -16,7 +16,7 @@ const React = _react;
 
 const InlineIcon = _inlineIconJsx;
 
-const MoreOptions = React.createClass({
+const MoreOptions = createReactClass({
     getDefaultProps: function() {
         return {
             show: false,

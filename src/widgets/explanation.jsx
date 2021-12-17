@@ -29,15 +29,15 @@ const defaultExplanationProps = {
     linterContext: linterContextDefault,
 };
 
-const Explanation = React.createClass({
+const Explanation = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: PerseusApi.Options.propTypes,
-        explanation: React.PropTypes.string,
-        hidePrompt: React.PropTypes.string,
-        showPrompt: React.PropTypes.string,
-        trackInteraction: React.PropTypes.func.isRequired,
-        widgets: React.PropTypes.object,
+        explanation: PropTypes.string,
+        hidePrompt: PropTypes.string,
+        showPrompt: PropTypes.string,
+        trackInteraction: PropTypes.func.isRequired,
+        widgets: PropTypes.object,
         linterContext: linterContextProps,
     },
 

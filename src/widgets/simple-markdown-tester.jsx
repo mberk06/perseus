@@ -21,10 +21,10 @@ var PerseusMarkdown = _perseusMarkdownJsx;
 var mdParse = PerseusMarkdown.parse;
 var mdOutput = PerseusMarkdown.basicOutput;
 
-var SimpleMarkdownTester = React.createClass({
+var SimpleMarkdownTester = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        value: React.PropTypes.string,
+        value: PropTypes.string,
     },
 
     getDefaultProps: function() {

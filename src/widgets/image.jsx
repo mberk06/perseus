@@ -55,39 +55,39 @@ const editorAlignments = ["block", "full-width"];
 
 const DEFAULT_ALIGNMENT = "block";
 
-var ImageWidget = React.createClass({
+var ImageWidget = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        alignment: React.PropTypes.oneOf(supportedAlignments),
-        alt: React.PropTypes.string,
+        alignment: PropTypes.oneOf(supportedAlignments),
+        alt: PropTypes.string,
         apiOptions: ApiOptions.propTypes,
         // TODO(alex): Rename to something else, e.g. "image", perhaps flatten
-        backgroundImage: React.PropTypes.shape({
-            url: React.PropTypes.string,
-            width: React.PropTypes.number,
-            height: React.PropTypes.number,
+        backgroundImage: PropTypes.shape({
+            url: PropTypes.string,
+            width: PropTypes.number,
+            height: PropTypes.number,
         }),
 
-        box: React.PropTypes.arrayOf(React.PropTypes.number),
+        box: PropTypes.arrayOf(PropTypes.number),
 
-        caption: React.PropTypes.string,
+        caption: PropTypes.string,
 
         // TODO(alex): Convert uses of this widget's labeling functionality to
         // SvgImage wherever possible (almost certainly requires a backfill)
-        labels: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                content: React.PropTypes.string,
-                coordinates: React.PropTypes.arrayOf(React.PropTypes.number),
-                alignment: React.PropTypes.string,
+        labels: PropTypes.arrayOf(
+            PropTypes.shape({
+                content: PropTypes.string,
+                coordinates: PropTypes.arrayOf(PropTypes.number),
+                alignment: PropTypes.string,
             })
         ),
 
-        range: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.number)
+        range: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.number)
         ),
 
-        title: React.PropTypes.string,
-        trackInteraction: React.PropTypes.func.isRequired,
+        title: PropTypes.string,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

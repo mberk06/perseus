@@ -377,7 +377,7 @@ var TransformOps = {
     },
 
     /* A react representation of this transform object */
-    ListItem: React.createClass({
+    ListItem: createReactClass({
         render: function() {
             if (this.props.mode === "dynamic") {
                 return (
@@ -506,7 +506,7 @@ var Transformations = {
                 "Translation by %(vector)s"
             );
         },
-        Input: React.createClass({
+        Input: createReactClass({
             getInitialState: function() {
                 return {
                     vector: this.props.vector || [null, null],
@@ -640,7 +640,7 @@ var Transformations = {
                 "Rotation by %(degrees)s about %(point)s"
             );
         },
-        Input: React.createClass({
+        Input: createReactClass({
             getInitialState: function() {
                 return {
                     center: this.props.center || [null, null],
@@ -800,7 +800,7 @@ var Transformations = {
                 "Reflection over the line from %(point1)s to %(point2)s"
             );
         },
-        Input: React.createClass({
+        Input: createReactClass({
             getInitialState: function() {
                 return {
                     line: this.props.line || [[null, null], [null, null]],
@@ -965,7 +965,7 @@ var Transformations = {
                 "Dilation of scale %(scale)s about %(point)s"
             );
         },
-        Input: React.createClass({
+        Input: createReactClass({
             getInitialState: function() {
                 return {
                     center: this.props.center || [null, null],
@@ -1517,7 +1517,7 @@ var ShapeTypes = {
 
 var TransformationListItem = TransformOps.ListItem;
 
-var TransformationList = React.createClass({
+var TransformationList = createReactClass({
     render: function() {
         if (this.props.mode === "static") {
             return <span />; // don't render anything
@@ -1572,7 +1572,7 @@ var TransformationList = React.createClass({
     },
 });
 
-var ToolButton = React.createClass({
+var ToolButton = createReactClass({
     render: function() {
         var classes = this.props.toggled
             ? "simple-button exercise-orange toggled highlighted-tool-button"
@@ -1592,7 +1592,7 @@ var ToolButton = React.createClass({
     },
 });
 
-var ToolsBar = React.createClass({
+var ToolsBar = createReactClass({
     getInitialState: function() {
         return {
             selected: null,
@@ -1655,7 +1655,7 @@ var ToolsBar = React.createClass({
     },
 });
 
-var AddTransformBar = React.createClass({
+var AddTransformBar = createReactClass({
     render: function() {
         var tools = _.map(
             Transformations,
@@ -1701,11 +1701,11 @@ var AddTransformBar = React.createClass({
     },
 });
 
-var Transformer = React.createClass({
+var Transformer = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
         keypadElement: keypadElementPropType,
-        trackInteraction: React.PropTypes.func.isRequired,
+        trackInteraction: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

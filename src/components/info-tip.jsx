@@ -17,7 +17,7 @@ const React = _react;
 
 const ReactComponentsInfoTip = _reactComponentsInfoTipJsx;
 
-const InfoTip = React.createClass({
+const InfoTip = createReactClass({
     getInitialState: function() {
         return {
             didMount: false,

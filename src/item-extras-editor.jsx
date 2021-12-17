@@ -14,14 +14,14 @@ var React = _react;
 
 var InfoTip = _componentsInfoTipJsx;
 
-var ItemExtrasEditor = React.createClass({
+var ItemExtrasEditor = createReactClass({
     propTypes: {
-        calculator: React.PropTypes.bool,
-        chi2Table: React.PropTypes.bool,
-        onChange: React.PropTypes.func.isRequired,
-        periodicTable: React.PropTypes.bool,
-        tTable: React.PropTypes.bool,
-        zTable: React.PropTypes.bool,
+        calculator: PropTypes.bool,
+        chi2Table: PropTypes.bool,
+        onChange: PropTypes.func.isRequired,
+        periodicTable: PropTypes.bool,
+        tTable: PropTypes.bool,
+        zTable: PropTypes.bool,
     },
 
     getDefaultProps: function() {

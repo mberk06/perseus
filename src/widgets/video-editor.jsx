@@ -40,11 +40,11 @@ function getSlugFromUrl(url) {
 /**
  * This is the main editor for this widget, to specify all the options.
  */
-const VideoEditor = React.createClass({
+const VideoEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        location: React.PropTypes.string,
-        onChange: React.PropTypes.func,
+        location: PropTypes.string,
+        onChange: PropTypes.func,
     },
 
     getDefaultProps: function() {

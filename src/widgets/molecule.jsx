@@ -22,11 +22,11 @@ const ParseError = SmilesParser.ParseError;
 
 const borderSize = 30;
 
-const Molecule = React.createClass({
+const Molecule = createReactClass({
     propTypes: {
-        id: React.PropTypes.string.isRequired,
-        rotationAngle: React.PropTypes.number,
-        smiles: React.PropTypes.string,
+        id: PropTypes.string.isRequired,
+        rotationAngle: PropTypes.number,
+        smiles: PropTypes.string,
     },
 
     getInitialState: function() {
@@ -129,11 +129,11 @@ const Molecule = React.createClass({
     },
 });
 
-const MoleculeWidget = React.createClass({
+const MoleculeWidget = createReactClass({
     propTypes: {
-        rotationAngle: React.PropTypes.number,
-        smiles: React.PropTypes.string,
-        widgetId: React.PropTypes.string,
+        rotationAngle: PropTypes.number,
+        smiles: PropTypes.string,
+        widgetId: PropTypes.string,
     },
 
     getDefaultProps: function() {

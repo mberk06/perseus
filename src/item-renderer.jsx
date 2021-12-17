@@ -31,9 +31,9 @@ const Util = _utilJs;
 
 const Gorgon = _gorgonGorgonJs;
 
-const RP = React.PropTypes;
+const RP = PropTypes;
 
-const ItemRenderer = React.createClass({
+const ItemRenderer = createReactClass({
     propTypes: {
         ...ProvideKeypad.propTypes,
         // defaults are set in `this.update()` so as to adhere to
@@ -69,11 +69,11 @@ const ItemRenderer = React.createClass({
         onShowZTable: RP.func,
 
         problemNum: RP.number,
-        reviewMode: React.PropTypes.bool,
+        reviewMode: PropTypes.bool,
         savedState: RP.any,
         workAreaSelector: RP.string,
         linterContext: linterContextProps,
-        legacyPerseusLint: React.PropTypes.arrayOf(React.PropTypes.string),
+        legacyPerseusLint: PropTypes.arrayOf(PropTypes.string),
     },
 
     getDefaultProps: function() {

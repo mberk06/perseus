@@ -52,7 +52,7 @@ const validateParse = function(parsed, expected) {
 const htmlThroughReact = function(parsed) {
     const output = PerseusMarkdown.basicOutput(parsed);
     const rawHtml = ReactDOMServer.renderToStaticMarkup(
-        React.DOM.div(null, output)
+        ReactDOMtags.div(null, output)
     );
     const innerHtml = rawHtml
         .replace(/^<div>/, '')

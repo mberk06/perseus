@@ -30,14 +30,14 @@ const { Keypad } = _mathInput.components;
 
 const ProvideKeypad = {
     propTypes: {
-        apiOptions: React.PropTypes.shape({
-            customKeypad: React.PropTypes.bool,
+        apiOptions: PropTypes.shape({
+            customKeypad: PropTypes.bool,
         }),
         // An Aphrodite style object, to be applied to the keypad container.
         // Note that, given our awkward structure of injecting the keypad, this
         // style won't be applied or updated dynamically. Rather, it will only
         // be applied in `componentDidMount`.
-        keypadStyle: React.PropTypes.any,
+        keypadStyle: PropTypes.any,
     },
 
     getInitialState() {

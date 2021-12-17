@@ -26,11 +26,11 @@ const PropCheckBox = _componentsPropCheckBoxJsx;
 /**
  * This is used for editing a name/value pair.
  */
-const PairEditor = React.createClass({
+const PairEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        name: React.PropTypes.string,
-        value: React.PropTypes.string,
+        name: PropTypes.string,
+        value: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -73,13 +73,13 @@ const PairEditor = React.createClass({
 /**
  * This is used for editing a set of name/value pairs.
  */
-var PairsEditor = React.createClass({
+var PairsEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        pairs: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                name: React.PropTypes.string,
-                value: React.PropTypes.string,
+        pairs: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string,
+                value: PropTypes.string,
             })
         ).isRequired,
     },
@@ -126,7 +126,7 @@ var PairsEditor = React.createClass({
 /**
  * This is the main editor for this widget, to specify all the options.
  */
-var IframeEditor = React.createClass({
+var IframeEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

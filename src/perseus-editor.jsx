@@ -89,7 +89,7 @@ const entityStrategy = (contentBlock, callback, type) => contentBlock.findEntity
 const styledBlock = (props, style) => <span {...props} style={style}>
     {props.children}
 </span>;
-styledBlock.propTypes = {children: React.PropTypes.any};
+styledBlock.propTypes = {children: PropTypes.any};
 
 const highlightedBlock = (props, backgroundColor) => styledBlock(props, {backgroundColor});
 
@@ -146,8 +146,8 @@ const headerComponent = props => {
     return React.createElement(`h${headerSize}`, {style}, props.children);
 };
 headerComponent.propTypes = {
-    decoratedText: React.PropTypes.string,
-    children: React.PropTypes.any,
+    decoratedText: PropTypes.string,
+    children: PropTypes.any,
 };
 
 const headerDecorator = {
@@ -197,14 +197,14 @@ const keyBindings = e => {
     state, however what it exposes through its `onChange` is a simple string
     as well as a list of the currently active widgets.
 */
-const PerseusEditor = React.createClass({
+const PerseusEditor = createReactClass({
     propTypes: {
-        onChange: React.PropTypes.func,
-        content: React.PropTypes.string,
-        initialWidgets: React.PropTypes.any,
-        placeholder: React.PropTypes.string,
-        imageUploader: React.PropTypes.func,
-        widgetEnabled: React.PropTypes.bool,
+        onChange: PropTypes.func,
+        content: PropTypes.string,
+        initialWidgets: PropTypes.any,
+        placeholder: PropTypes.string,
+        imageUploader: PropTypes.func,
+        widgetEnabled: PropTypes.bool,
     },
 
     getDefaultProps: () => ({

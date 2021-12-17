@@ -19,12 +19,12 @@ const ApiOptions = _perseusApiJsx.Options;
 const Changeable = _mixinsChangeableJsx;
 const GradedGroupEditor = _gradedGroupEditorJsx;
 
-const GradedGroupSetEditor = React.createClass({
+const GradedGroupSetEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        gradedGroups: React.PropTypes.array,
-        onChange: React.PropTypes.func.isRequired,
+        gradedGroups: PropTypes.array,
+        onChange: PropTypes.func.isRequired,
     },
 
     getDefaultProps() {

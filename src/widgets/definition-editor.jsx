@@ -19,12 +19,12 @@ const EditorJsonify = _mixinsEditorJsonifyJsx;
 const Editor = _editorJsx;
 const TextInput = _componentsTextInputJsx;
 
-const DefinitionEditor = React.createClass({
+const DefinitionEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        togglePrompt: React.PropTypes.string,
-        definition: React.PropTypes.string,
-        apiOptions: React.PropTypes.any,
+        togglePrompt: PropTypes.string,
+        definition: PropTypes.string,
+        apiOptions: PropTypes.any,
     },
 
     getDefaultProps: function() {

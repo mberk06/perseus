@@ -52,10 +52,10 @@ var sigfigPrint = function(num, sigfigs) {
  * shows and hides an error buddy. The error message is only shown after a
 * rolling two second delay, but hidden immediately on further typing.
  */
-var OldUnitInput = React.createClass({
+var OldUnitInput = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        value: React.PropTypes.string,
+        value: PropTypes.string,
     },
 
     getDefaultProps: function() {
@@ -69,7 +69,7 @@ var OldUnitInput = React.createClass({
     render: function() {
         var inputType = this.props.apiOptions.staticRender
             ? React.createFactory(MathOutput)
-            : React.DOM.input;
+            : ReactDOMtags.input;
         var input = inputType({
             onChange: this.handleChange,
             ref: "input",

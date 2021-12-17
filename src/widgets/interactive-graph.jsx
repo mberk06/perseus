@@ -334,10 +334,10 @@ var deprecatedProps = {
     },
 };
 
-var InteractiveGraph = React.createClass({
+var InteractiveGraph = createReactClass({
     propTypes: {
         containerSizeClass: containerSizeClassPropType.isRequired,
-        trackInteraction: React.PropTypes.func.isRequired,
+        trackInteraction: PropTypes.func.isRequired,
     },
 
     getInitialState: function() {

@@ -25,9 +25,9 @@ const HintRenderer = _hintRendererJsx;
 const ArticleRenderer = _articleRendererJsx;
 const TouchEmulator = _libTouchEmulatorJs;
 
-const PreviewFrame = React.createClass({
+const PreviewFrame = createReactClass({
     propTypes: {
-        isMobile: React.PropTypes.bool.isRequired,
+        isMobile: PropTypes.bool.isRequired,
     },
 
     getInitialState: function() {

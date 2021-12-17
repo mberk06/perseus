@@ -38,7 +38,7 @@ var deprecatedProps = {
     },
 };
 
-const InteractiveGraphEditor = React.createClass({
+const InteractiveGraphEditor = createReactClass({
     className: "perseus-widget-interactive-graph",
 
     getDefaultProps: function() {

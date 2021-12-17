@@ -54,17 +54,17 @@ var getMatrixSize = function(matrix) {
     return matrixSize;
 };
 
-var MatrixEditor = React.createClass({
+var MatrixEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        matrixBoardSize: React.PropTypes.arrayOf(React.PropTypes.number)
+        matrixBoardSize: PropTypes.arrayOf(PropTypes.number)
             .isRequired,
-        answers: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.number)
+        answers: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.number)
         ),
-        prefix: React.PropTypes.string,
-        suffix: React.PropTypes.string,
-        cursorPosition: React.PropTypes.arrayOf(React.PropTypes.number),
+        prefix: PropTypes.string,
+        suffix: PropTypes.string,
+        cursorPosition: PropTypes.arrayOf(PropTypes.number),
     },
 
     getDefaultProps: function() {

@@ -18,14 +18,14 @@ const _ = _underscore;
 const RendererDiff = _rendererDiffJsx;
 const WidgetDiff = _widgetDiffJsx;
 
-const itemProps = React.PropTypes.shape({
-    question: React.PropTypes.shape({}).isRequired,
-    answerArea: React.PropTypes.shape({}).isRequired,
-    hints: React.PropTypes.array.isRequired,
+const itemProps = PropTypes.shape({
+    question: PropTypes.shape({}).isRequired,
+    answerArea: PropTypes.shape({}).isRequired,
+    hints: PropTypes.array.isRequired,
 });
 
 
-const ItemDiff = React.createClass({
+const ItemDiff = createReactClass({
     propTypes: {
         after: itemProps.isRequired,
         before: itemProps.isRequired,

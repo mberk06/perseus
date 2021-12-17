@@ -21,13 +21,13 @@ const Changeable = _mixinsChangeableJsx;
 
 const Editor = _editorJsx;
 
-const GroupEditor = React.createClass({
+const GroupEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        content: React.PropTypes.string,
-        widgets: React.PropTypes.object,
-        images: React.PropTypes.object,
-        metadata: React.PropTypes.any,
+        content: PropTypes.string,
+        widgets: PropTypes.object,
+        images: PropTypes.object,
+        metadata: PropTypes.any,
         apiOptions: ApiOptions.propTypes,
     },
 

@@ -26,14 +26,14 @@ const NumberInput = _componentsNumberInputJsx;
 
 const maxTrials = 5000;
 
-const SimulatorEditor = React.createClass({
+const SimulatorEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        xAxisLabel: React.PropTypes.string,
-        yAxisLabel: React.PropTypes.string,
-        numTrials: React.PropTypes.number,
-        proportionLabel: React.PropTypes.string,
-        proportionOrPercentage: React.PropTypes.string,
+        xAxisLabel: PropTypes.string,
+        yAxisLabel: PropTypes.string,
+        numTrials: PropTypes.number,
+        proportionLabel: PropTypes.string,
+        proportionOrPercentage: PropTypes.string,
     },
 
     getDefaultProps: function() {

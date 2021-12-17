@@ -54,20 +54,20 @@ window.addEventListener("message", event => {
     }
 });
 
-const IframeContentRenderer = React.createClass({
+const IframeContentRenderer = createReactClass({
     propTypes: {
         // The HTML content to render to the iframe
-        content: React.PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
 
         // The data-* suffix for passing information to the iframe's JS
-        datasetKey: React.PropTypes.any,
+        datasetKey: PropTypes.any,
 
         // The value of the data-* attribute
-        datasetValue: React.PropTypes.any,
+        datasetValue: PropTypes.any,
 
         // Whether to make the iframe's height match its content's height,
         // used to prevent scrolling inside the iframe.
-        seamless: React.PropTypes.bool,
+        seamless: PropTypes.bool,
     },
 
     componentDidMount: function() {

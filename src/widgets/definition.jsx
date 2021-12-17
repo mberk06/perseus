@@ -20,13 +20,13 @@ const PerseusApi = _perseusApiJsx;
 const Renderer = _rendererJsx;
 const mediaQueries = _stylesMediaQueriesJs;
 
-const Definition = React.createClass({
+const Definition = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: PerseusApi.Options.propTypes,
-        definition: React.PropTypes.string,
-        togglePrompt: React.PropTypes.string,
-        trackInteraction: React.PropTypes.func.isRequired,
+        definition: PropTypes.string,
+        togglePrompt: PropTypes.string,
+        trackInteraction: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

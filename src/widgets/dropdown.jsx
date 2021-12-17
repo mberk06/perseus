@@ -25,14 +25,14 @@ const InlineIcon = _componentsInlineIconJsx;
 
 const dropdownArrowSize = 24;
 
-const Dropdown = React.createClass({
+const Dropdown = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        choices: React.PropTypes.arrayOf(React.PropTypes.string),
-        onChange: React.PropTypes.func.isRequired,
-        placeholder: React.PropTypes.string,
-        selected: React.PropTypes.number,
-        trackInteraction: React.PropTypes.func.isRequired,
+        choices: PropTypes.arrayOf(PropTypes.string),
+        onChange: PropTypes.func.isRequired,
+        placeholder: PropTypes.string,
+        selected: PropTypes.number,
+        trackInteraction: PropTypes.func.isRequired,
     },
 
     getDefaultProps: function() {

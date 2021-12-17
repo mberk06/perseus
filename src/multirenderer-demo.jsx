@@ -14,9 +14,9 @@ const React = _react;
 const MultiRendererEditor = _multirendererEditorJsx;
 const Util = _utilJs;
 
-const DemoLayout = React.createClass({
+const DemoLayout = createReactClass({
     propTypes: {
-        item: React.PropTypes.any.isRequired,
+        item: PropTypes.any.isRequired,
     },
 
     statics: {
@@ -122,9 +122,9 @@ const demoStyles = StyleSheet.create({
     },
 });
 
-const MultiRendererDemo = React.createClass({
+const MultiRendererDemo = createReactClass({
     propTypes: {
-        item: React.PropTypes.any.isRequired,
+        item: PropTypes.any.isRequired,
     },
 
     getDefaultProps() {

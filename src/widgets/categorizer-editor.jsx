@@ -27,14 +27,14 @@ const TextListEditor = _componentsTextListEditorJsx;
 
 const Categorizer = _categorizerJsx.widget;
 
-const CategorizerEditor = React.createClass({
+const CategorizerEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        items: React.PropTypes.arrayOf(React.PropTypes.string),
-        categories: React.PropTypes.arrayOf(React.PropTypes.string),
-        values: React.PropTypes.arrayOf(React.PropTypes.number),
-        randomizeItems: React.PropTypes.bool,
+        items: PropTypes.arrayOf(PropTypes.string),
+        categories: PropTypes.arrayOf(PropTypes.string),
+        values: PropTypes.arrayOf(PropTypes.number),
+        randomizeItems: PropTypes.bool,
     },
 
     getDefaultProps: function() {

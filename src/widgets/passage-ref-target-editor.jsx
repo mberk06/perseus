@@ -18,10 +18,10 @@ const _ = _underscore;
 const Changeable = _mixinsChangeableJsx;
 const EditorJsonify = _mixinsEditorJsonifyJsx;
 
-const PassageRefTargetEditor = React.createClass({
+const PassageRefTargetEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        content: React.PropTypes.string,
+        content: PropTypes.string,
     },
 
     getDefaultProps: function() {

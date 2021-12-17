@@ -64,17 +64,17 @@ var getRefForPath = function(path) {
     return "answer" + row + "," + column;
 };
 
-var Table = React.createClass({
+var Table = createReactClass({
     propTypes: {
-        answers: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.string)
+        answers: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.string)
         ),
-        editableHeaders: React.PropTypes.bool,
+        editableHeaders: PropTypes.bool,
         // The editor to use when editableHeaders is enabled
-        Editor: React.PropTypes.func,
-        headers: React.PropTypes.arrayOf(React.PropTypes.string),
+        Editor: PropTypes.func,
+        headers: PropTypes.arrayOf(PropTypes.string),
         keypadElement: keypadElementPropType,
-        trackInteraction: React.PropTypes.func.isRequired,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

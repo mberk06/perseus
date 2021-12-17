@@ -21,7 +21,7 @@ var React = _react;
 var Changeable = _mixinsChangeableJsx;
 var EditorJsonify = _mixinsEditorJsonifyJsx;
 
-var TextArea = React.createClass({
+var TextArea = createReactClass({
     render: function() {
         return (
             <textarea
@@ -44,7 +44,7 @@ var TextArea = React.createClass({
     },
 });
 
-var SimpleMarkdownTesterEditor = React.createClass({
+var SimpleMarkdownTesterEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
     },

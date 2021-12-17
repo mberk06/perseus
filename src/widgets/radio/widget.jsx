@@ -22,54 +22,54 @@ const Util = _utilJs;
 
 const BaseRadio = _baseRadioJsx;
 
-const Radio = React.createClass({
+const Radio = createReactClass({
     propTypes: {
         apiOptions: BaseRadio.propTypes.apiOptions,
-        choices: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                content: React.PropTypes.string.isRequired,
+        choices: PropTypes.arrayOf(
+            PropTypes.shape({
+                content: PropTypes.string.isRequired,
                 // Clues are called "rationales" in most other places but are
                 // left as "clue"s here to preserve legacy widget data.
-                clue: React.PropTypes.string,
-                correct: React.PropTypes.bool,
-                isNoneOfTheAbove: React.PropTypes.bool,
-                originalIndex: React.PropTypes.number.isRequired,
+                clue: PropTypes.string,
+                correct: PropTypes.bool,
+                isNoneOfTheAbove: PropTypes.bool,
+                originalIndex: PropTypes.number.isRequired,
             }).isRequired
         ).isRequired,
 
-        deselectEnabled: React.PropTypes.bool,
-        displayCount: React.PropTypes.any,
-        findWidgets: React.PropTypes.func,
-        multipleSelect: React.PropTypes.bool,
-        countChoices: React.PropTypes.bool,
-        numCorrect: React.PropTypes.number,
-        onChange: React.PropTypes.func.isRequired,
+        deselectEnabled: PropTypes.bool,
+        displayCount: PropTypes.any,
+        findWidgets: PropTypes.func,
+        multipleSelect: PropTypes.bool,
+        countChoices: PropTypes.bool,
+        numCorrect: PropTypes.number,
+        onChange: PropTypes.func.isRequired,
 
-        questionCompleted: React.PropTypes.bool,
+        questionCompleted: PropTypes.bool,
         reviewModeRubric: BaseRadio.propTypes.reviewModeRubric,
-        trackInteraction: React.PropTypes.func.isRequired,
+        trackInteraction: PropTypes.func.isRequired,
         // values is the legacy choiceState data format
-        values: React.PropTypes.arrayOf(React.PropTypes.bool),
-        choiceStates: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
+        values: PropTypes.arrayOf(PropTypes.bool),
+        choiceStates: PropTypes.arrayOf(
+            PropTypes.shape({
                 // Indicates whether this choice is selected. (Inside
                 // BaseRadio, this is called `checked`.)
-                selected: React.PropTypes.bool,
+                selected: PropTypes.bool,
 
                 // Indicates whether the user has "crossed out" this choice,
                 // meaning that they don't think it's correct. This value does
                 // not affect scoring or other behavior; it's just a note for
                 // the user's reference.
-                crossedOut: React.PropTypes.bool,
+                crossedOut: PropTypes.bool,
 
-                highlighted: React.PropTypes.bool,
-                rationaleShown: React.PropTypes.bool,
-                correctnessShown: React.PropTypes.bool,
-                readOnly: React.PropTypes.bool,
+                highlighted: PropTypes.bool,
+                rationaleShown: PropTypes.bool,
+                correctnessShown: PropTypes.bool,
+                readOnly: PropTypes.bool,
             }).isRequired
         ),
         linterContext: linterContextProps,
-        static: React.PropTypes.bool,
+        static: PropTypes.bool,
     },
 
     getDefaultProps: function() {

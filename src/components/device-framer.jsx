@@ -32,16 +32,16 @@ const SCREEN_SIZES = {
     },
 };
 
-const DeviceFramer = React.createClass({
+const DeviceFramer = createReactClass({
     propTypes: {
-        children: React.PropTypes.element.isRequired,
-        deviceType: React.PropTypes.oneOf([
+        children: PropTypes.element.isRequired,
+        deviceType: PropTypes.oneOf([
             constants.devices.PHONE,
             constants.devices.TABLET,
             constants.devices.DESKTOP,
         ]).isRequired,
         // TODO(kevinb) rename to variableHeight
-        nochrome: React.PropTypes.bool,
+        nochrome: PropTypes.bool,
     },
 
     render: function() {

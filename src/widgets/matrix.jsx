@@ -119,24 +119,24 @@ var getMatrixSize = function(matrix) {
     return matrixSize;
 };
 
-var Matrix = React.createClass({
+var Matrix = createReactClass({
     propTypes: {
-        answers: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(
-                React.PropTypes.oneOfType([
-                    React.PropTypes.string,
-                    React.PropTypes.number,
+        answers: PropTypes.arrayOf(
+            PropTypes.arrayOf(
+                PropTypes.oneOfType([
+                    PropTypes.string,
+                    PropTypes.number,
                 ])
             )
         ),
         apiOptions: ApiOptions.propTypes,
-        cursorPosition: React.PropTypes.arrayOf(React.PropTypes.number),
+        cursorPosition: PropTypes.arrayOf(PropTypes.number),
         keypadElement: keypadElementPropType,
-        matrixBoardSize: React.PropTypes.arrayOf(React.PropTypes.number)
+        matrixBoardSize: PropTypes.arrayOf(PropTypes.number)
             .isRequired,
-        prefix: React.PropTypes.string,
-        suffix: React.PropTypes.string,
-        trackInteraction: React.PropTypes.func.isRequired,
+        prefix: PropTypes.string,
+        suffix: PropTypes.string,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

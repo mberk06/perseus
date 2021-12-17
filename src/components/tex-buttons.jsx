@@ -170,14 +170,14 @@ const buttonSets = {
     ],
 };
 
-const buttonSetsType = React.PropTypes.arrayOf(
-    React.PropTypes.oneOf(Object.keys(buttonSets))
+const buttonSetsType = PropTypes.arrayOf(
+    PropTypes.oneOf(Object.keys(buttonSets))
 );
 
-const TexButtons = React.createClass({
+const TexButtons = createReactClass({
     propTypes: {
         sets: buttonSetsType.isRequired,
-        onInsert: React.PropTypes.func.isRequired,
+        onInsert: PropTypes.func.isRequired,
     },
 
     render: function() {

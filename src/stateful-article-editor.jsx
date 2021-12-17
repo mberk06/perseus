@@ -22,7 +22,7 @@ const _ = _underscore;
 
 const ArticleEditor = _articleEditorJsx;
 
-const StatefulArticleEditor = React.createClass({
+const StatefulArticleEditor = createReactClass({
     getInitialState: function() {
         return Object.assign({}, this.props, {
             mode: "edit",

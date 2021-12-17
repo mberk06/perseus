@@ -51,29 +51,29 @@ function numSteps(range, step) {
     return Math.floor((range[1] - range[0]) / step);
 }
 
-const Graph = React.createClass({
+const Graph = createReactClass({
     propTypes: {
-        box: React.PropTypes.array.isRequired,
-        labels: React.PropTypes.arrayOf(React.PropTypes.string),
-        range: React.PropTypes.arrayOf(
-            React.PropTypes.arrayOf(React.PropTypes.number)
+        box: PropTypes.array.isRequired,
+        labels: PropTypes.arrayOf(PropTypes.string),
+        range: PropTypes.arrayOf(
+            PropTypes.arrayOf(PropTypes.number)
         ),
-        step: React.PropTypes.arrayOf(React.PropTypes.number),
-        gridStep: React.PropTypes.arrayOf(React.PropTypes.number),
-        snapStep: React.PropTypes.arrayOf(React.PropTypes.number),
-        markings: React.PropTypes.string,
-        backgroundImage: React.PropTypes.shape({
-            url: React.PropTypes.string,
+        step: PropTypes.arrayOf(PropTypes.number),
+        gridStep: PropTypes.arrayOf(PropTypes.number),
+        snapStep: PropTypes.arrayOf(PropTypes.number),
+        markings: PropTypes.string,
+        backgroundImage: PropTypes.shape({
+            url: PropTypes.string,
         }),
-        showProtractor: React.PropTypes.bool,
-        showRuler: React.PropTypes.bool,
-        rulerLabel: React.PropTypes.string,
-        rulerTicks: React.PropTypes.number,
-        onGraphieUpdated: React.PropTypes.func,
-        instructions: React.PropTypes.string,
-        onClick: React.PropTypes.func,
-        setDrawingAreaAvailable: React.PropTypes.func,
-        isMobile: React.PropTypes.bool,
+        showProtractor: PropTypes.bool,
+        showRuler: PropTypes.bool,
+        rulerLabel: PropTypes.string,
+        rulerTicks: PropTypes.number,
+        onGraphieUpdated: PropTypes.func,
+        instructions: PropTypes.string,
+        onClick: PropTypes.func,
+        setDrawingAreaAvailable: PropTypes.func,
+        isMobile: PropTypes.bool,
     },
 
     getDefaultProps: function() {

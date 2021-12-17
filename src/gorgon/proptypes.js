@@ -10,11 +10,11 @@ var exports = _module_.exports;
 
 const React = _react;
 
-export const linterContextProps = React.PropTypes.shape({
-    contentType: React.PropTypes.string,
-    highlightLint: React.PropTypes.bool,
-    paths: React.PropTypes.arrayOf(React.PropTypes.string),
-    stack: React.PropTypes.arrayOf(React.PropTypes.string),
+export const linterContextProps = PropTypes.shape({
+    contentType: PropTypes.string,
+    highlightLint: PropTypes.bool,
+    paths: PropTypes.arrayOf(PropTypes.string),
+    stack: PropTypes.arrayOf(PropTypes.string),
 });
 
 export const linterContextDefault = {

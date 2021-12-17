@@ -29,17 +29,17 @@ const seededRNG = _utilJs2.seededRNG;
 
 const HACKY_CSS_CLASSNAME = "perseus-widget-matcher";
 
-const Matcher = React.createClass({
+const Matcher = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        labels: React.PropTypes.array,
-        left: React.PropTypes.array,
-        onChange: React.PropTypes.func,
-        orderMatters: React.PropTypes.bool,
-        padding: React.PropTypes.bool,
-        problemNum: React.PropTypes.number,
-        right: React.PropTypes.array,
-        trackInteraction: React.PropTypes.func.isRequired,
+        labels: PropTypes.array,
+        left: PropTypes.array,
+        onChange: PropTypes.func,
+        orderMatters: PropTypes.bool,
+        padding: PropTypes.bool,
+        problemNum: PropTypes.number,
+        right: PropTypes.array,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

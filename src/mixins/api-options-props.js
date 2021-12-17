@@ -17,7 +17,7 @@ const ApiOptions = _perseusApiJsx.Options;
 const ApiOptionsProps = {
     propTypes: {
         // TODO(mdr): Should this actually be objectOf(any)?
-        apiOptions: React.PropTypes.any,
+        apiOptions: PropTypes.any,
     },
 
     getDefaultProps() {

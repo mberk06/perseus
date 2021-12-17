@@ -18,7 +18,7 @@ export const containerSizeClass = {
     XLARGE: "xlarge",
 };
 
-export const containerSizeClassPropType = React.PropTypes.oneOf(
+export const containerSizeClassPropType = PropTypes.oneOf(
     Object.values(containerSizeClass)
 );
 

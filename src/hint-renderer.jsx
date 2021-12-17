@@ -26,16 +26,16 @@ const mediaQueries = _stylesMediaQueriesJs;
 const Gorgon = _gorgonGorgonJs;
 
 /* Renders just a hint preview */
-const HintRenderer = React.createClass({
+const HintRenderer = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        className: React.PropTypes.string,
-        hint: React.PropTypes.any,
-        lastHint: React.PropTypes.bool,
-        lastRendered: React.PropTypes.bool,
-        pos: React.PropTypes.number,
-        totalHints: React.PropTypes.number,
-        findExternalWidgets: React.PropTypes.func,
+        className: PropTypes.string,
+        hint: PropTypes.any,
+        lastHint: PropTypes.bool,
+        lastRendered: PropTypes.bool,
+        pos: PropTypes.number,
+        totalHints: PropTypes.number,
+        findExternalWidgets: PropTypes.func,
         linterContext: linterContextProps,
     },
 

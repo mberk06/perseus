@@ -9,11 +9,11 @@ var _module_ = {
 var exports = _module_.exports;
 const React = _react;
 
-const HUD = React.createClass({
+const HUD = createReactClass({
     propTypes: {
-        message: React.PropTypes.string.isRequired,
-        enabled: React.PropTypes.bool.isRequired,
-        onClick: React.PropTypes.func.isRequired,
+        message: PropTypes.string.isRequired,
+        enabled: PropTypes.bool.isRequired,
+        onClick: PropTypes.func.isRequired,
     },
 
     // Displays a stylized open eye: lint warnings are visible

@@ -16,11 +16,11 @@ const Changeable = _mixinsChangeableJsx;
 const NumberInput = _componentsNumberInputJsx;
 const TextInput = _componentsTextInputJsx;
 
-const MoleculeWidgetEditor = React.createClass({
+const MoleculeWidgetEditor = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        rotationAngle: React.PropTypes.number,
-        smiles: React.PropTypes.string,
+        rotationAngle: PropTypes.number,
+        smiles: PropTypes.string,
     },
 
     change(...args) {

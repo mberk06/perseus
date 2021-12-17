@@ -14,9 +14,9 @@ var exports = _module_.exports;
 const React = _react;
 const _ = _underscore;
 
-const PossibleAnswers = React.createClass({
+const PossibleAnswers = createReactClass({
     propTypes: {
-        answers: React.PropTypes.arrayOf(React.PropTypes.string),
+        answers: PropTypes.arrayOf(PropTypes.string),
     },
     render: function() {
         // It's redundant to show duplicate answers.

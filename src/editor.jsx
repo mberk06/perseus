@@ -81,7 +81,7 @@ var makeStartWithAParagraphAlways = content => {
     return "\n\n".slice(0, 2 - newlines.length) + content;
 };
 
-var WidgetSelect = React.createClass({
+var WidgetSelect = createReactClass({
     shouldComponentUpdate: function() {
         return false;
     },
@@ -126,23 +126,23 @@ var WidgetSelect = React.createClass({
 // upgrade transforms. Widget editors will always be rendered
 // with all available transforms applied, but the results of those
 // transforms will not be propogated upwards until serialization.
-var WidgetEditor = React.createClass({
+var WidgetEditor = createReactClass({
     propTypes: {
         // Unserialized props
-        id: React.PropTypes.string.isRequired,
-        onChange: React.PropTypes.func.isRequired,
-        onRemove: React.PropTypes.func.isRequired,
+        id: PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired,
+        onRemove: PropTypes.func.isRequired,
         apiOptions: ApiOptions.propTypes,
 
         // Serialized props
-        type: React.PropTypes.string.isRequired,
-        alignment: React.PropTypes.string,
-        static: React.PropTypes.bool,
-        graded: React.PropTypes.bool,
-        options: React.PropTypes.any,
-        version: React.PropTypes.shape({
-            major: React.PropTypes.number.isRequired,
-            minor: React.PropTypes.number.isRequired,
+        type: PropTypes.string.isRequired,
+        alignment: PropTypes.string,
+        static: PropTypes.bool,
+        graded: PropTypes.bool,
+        options: PropTypes.any,
+        version: PropTypes.shape({
+            major: PropTypes.number.isRequired,
+            minor: PropTypes.number.isRequired,
         }),
     },
 
@@ -367,11 +367,11 @@ var imageUrlsFromContent = function(content) {
  * TODO: Clear out all the textarea code and replace with Draft.js once we are
  *       comfortable that it is working well consistently
  */
-var Editor = React.createClass({
+var Editor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
-        imageUploader: React.PropTypes.func,
-        onChange: React.PropTypes.func,
+        imageUploader: PropTypes.func,
+        onChange: PropTypes.func,
     },
 
     getDefaultProps: function() {

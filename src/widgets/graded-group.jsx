@@ -69,26 +69,26 @@ const DEFAULT_INVALID_MESSAGE =
     "It looks like you left something blank or " +
     "entered in an invalid answer.";
 
-const GradedGroup = React.createClass({
+const GradedGroup = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
         apiOptions: ApiOptions.propTypes,
-        content: React.PropTypes.string,
-        hasHint: React.PropTypes.bool,
-        hint: React.PropTypes.object,
-        images: React.PropTypes.object,
-        inGradedGroupSet: React.PropTypes.bool,
-        onBlur: React.PropTypes.func,
-        onFocus: React.PropTypes.func,
+        content: PropTypes.string,
+        hasHint: PropTypes.bool,
+        hint: PropTypes.object,
+        images: PropTypes.object,
+        inGradedGroupSet: PropTypes.bool,
+        onBlur: PropTypes.func,
+        onFocus: PropTypes.func,
 
         // The function to call when clicking "Next question" after correctly
         // answering one graded group out of a set. If this is null, the
         // "Next question" button will not appear.
-        onNextQuestion: React.PropTypes.func,
+        onNextQuestion: PropTypes.func,
 
-        title: React.PropTypes.string,
-        trackInteraction: React.PropTypes.func.isRequired,
-        widgets: React.PropTypes.object,
+        title: PropTypes.string,
+        trackInteraction: PropTypes.func.isRequired,
+        widgets: PropTypes.object,
         linterContext: linterContextProps,
     },
 

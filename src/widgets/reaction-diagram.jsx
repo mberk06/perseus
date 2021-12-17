@@ -10,11 +10,11 @@ const React = _react;
 
 const Molecule = _moleculeJsx.molecule;
 
-const Separator = React.createClass({
+const Separator = createReactClass({
     propTypes: {
         // TODO(colin): figure out and add shape.
-        data: React.PropTypes.any,
-        index: React.PropTypes.number,
+        data: PropTypes.any,
+        index: PropTypes.number,
     },
 
     componentDidMount: function() {
@@ -67,15 +67,15 @@ const Separator = React.createClass({
     },
 });
 
-const ReactionDiagramWidget = React.createClass({
+const ReactionDiagramWidget = createReactClass({
     propTypes: {
         // TODO(colin): at the moment, these must be arrays of two elements;
         // we're limited to a single reaction step.  At some point, add support
         // for more steps in the reaction.
-        rotationAngle: React.PropTypes.arrayOf(React.PropTypes.number),
-        separators: React.PropTypes.arrayOf(React.PropTypes.object),
-        smiles: React.PropTypes.arrayOf(React.PropTypes.string),
-        widgetId: React.PropTypes.string,
+        rotationAngle: PropTypes.arrayOf(PropTypes.number),
+        separators: PropTypes.arrayOf(PropTypes.object),
+        smiles: PropTypes.arrayOf(PropTypes.string),
+        widgetId: PropTypes.string,
     },
 
     getDefaultProps: function() {

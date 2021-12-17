@@ -21,11 +21,11 @@ const ReactDOM = _reactDom;
 
 const Widgets = _widgetsJs;
 
-const WidgetContainer = React.createClass({
+const WidgetContainer = createReactClass({
     propTypes: {
-        shouldHighlight: React.PropTypes.bool.isRequired,
-        type: React.PropTypes.string,
-        initialProps: React.PropTypes.object.isRequired,
+        shouldHighlight: PropTypes.bool.isRequired,
+        type: PropTypes.string,
+        initialProps: PropTypes.object.isRequired,
         linterContext: linterContextProps,
     },
 

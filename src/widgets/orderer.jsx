@@ -24,10 +24,10 @@ var Util = _utilJs;
 
 var ApiClassNames = _perseusApiJsx.ClassNames;
 
-var PlaceholderCard = React.createClass({
+var PlaceholderCard = createReactClass({
     propTypes: {
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired,
     },
 
     render: function() {
@@ -45,7 +45,7 @@ var PlaceholderCard = React.createClass({
     },
 });
 
-var DragHintCard = React.createClass({
+var DragHintCard = createReactClass({
     render: function() {
         return (
             <div className={"card-wrap " + ApiClassNames.INTERACTIVE}>
@@ -56,28 +56,28 @@ var DragHintCard = React.createClass({
 });
 
 var PropTypes = {
-    position: React.PropTypes.shape({
-        left: React.PropTypes.number,
-        top: React.PropTypes.number,
+    position: PropTypes.shape({
+        left: PropTypes.number,
+        top: PropTypes.number,
     }),
 };
 
-var Card = React.createClass({
+var Card = createReactClass({
     propTypes: {
-        floating: React.PropTypes.bool.isRequired,
-        animating: React.PropTypes.bool,
-        width: React.PropTypes.number,
-        stack: React.PropTypes.bool,
+        floating: PropTypes.bool.isRequired,
+        animating: PropTypes.bool,
+        width: PropTypes.number,
+        stack: PropTypes.bool,
 
-        onMouseDown: React.PropTypes.func,
-        onMouseMove: React.PropTypes.func,
-        onMouseUp: React.PropTypes.func,
+        onMouseDown: PropTypes.func,
+        onMouseMove: PropTypes.func,
+        onMouseUp: PropTypes.func,
 
         // Used only for floating/animating cards
         startMouse: PropTypes.position,
         startOffset: PropTypes.position,
         animateTo: PropTypes.position,
-        onAnimationEnd: React.PropTypes.func,
+        onAnimationEnd: PropTypes.func,
         linterContext: linterContextProps,
     },
 
@@ -243,14 +243,14 @@ var NORMAL = "normal",
     HORIZONTAL = "horizontal",
     VERTICAL = "vertical";
 
-var Orderer = React.createClass({
+var Orderer = createReactClass({
     propTypes: {
-        correctOptions: React.PropTypes.array,
-        current: React.PropTypes.array,
-        height: React.PropTypes.oneOf([NORMAL, AUTO]),
-        layout: React.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-        options: React.PropTypes.array,
-        trackInteraction: React.PropTypes.func.isRequired,
+        correctOptions: PropTypes.array,
+        current: PropTypes.array,
+        height: PropTypes.oneOf([NORMAL, AUTO]),
+        layout: PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+        options: PropTypes.array,
+        trackInteraction: PropTypes.func.isRequired,
         linterContext: linterContextProps,
     },
 

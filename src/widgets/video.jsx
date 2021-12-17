@@ -34,11 +34,11 @@ var IS_KA_SITE = /khanacademy\.org/;
 /**
  * Video renderer.
  */
-var Video = React.createClass({
+var Video = createReactClass({
     propTypes: {
         ...Changeable.propTypes,
-        alignment: React.PropTypes.string,
-        location: React.PropTypes.string,
+        alignment: PropTypes.string,
+        location: PropTypes.string,
     },
 
     getUserInput: function() {

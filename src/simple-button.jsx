@@ -13,11 +13,11 @@ var exports = _module_.exports;
 
 const React = _react;
 
-const SimpleButton = React.createClass({
+const SimpleButton = createReactClass({
     propTypes: {
-        children: React.PropTypes.node,
-        color: React.PropTypes.oneOf(["orange", "green"]),
-        onClick: React.PropTypes.func,
+        children: PropTypes.node,
+        color: PropTypes.oneOf(["orange", "green"]),
+        onClick: PropTypes.func,
     },
 
     getDefaultProps: function() {

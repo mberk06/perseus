@@ -42,19 +42,19 @@ const getNumericFormat = KhanMath.getNumericFormat;
  *   increment/decrement integers
  * Optionally takes a size ("mini", "small", "normal")
  */
-const NumberInput = React.createClass({
+const NumberInput = createReactClass({
     propTypes: {
-        value: React.PropTypes.number,
-        format: React.PropTypes.string,
-        placeholder: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number,
+        value: PropTypes.number,
+        format: PropTypes.string,
+        placeholder: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
         ]),
-        onChange: React.PropTypes.func.isRequired,
-        onFormatChange: React.PropTypes.func,
-        checkValidity: React.PropTypes.func,
-        size: React.PropTypes.string,
-        label: React.PropTypes.oneOf(["put your labels outside your inputs!"]),
+        onChange: PropTypes.func.isRequired,
+        onFormatChange: PropTypes.func,
+        checkValidity: PropTypes.func,
+        size: PropTypes.string,
+        label: PropTypes.oneOf(["put your labels outside your inputs!"]),
     },
 
     getDefaultProps: function() {

@@ -46,7 +46,7 @@ const validateParse = (parsed, expected) => {
 var htmlThroughReact = function(parsed) {
     var output = PassageMarkdown.output(parsed);
     var rawHtml = ReactDOMServer.renderToStaticMarkup(
-        React.DOM.div(null, output)
+        ReactDOMtags.div(null, output)
     );
     var innerHtml = rawHtml
         .replace(/^<div>/, '')

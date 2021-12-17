@@ -58,14 +58,14 @@ var answerTypes = {
     },
 };
 
-const InputNumberEditor = React.createClass({
+const InputNumberEditor = createReactClass({
     propTypes: {
-        value: React.PropTypes.number,
-        simplify: React.PropTypes.oneOf(["required", "optional", "enforced"]),
-        size: React.PropTypes.oneOf(["normal", "small"]),
-        inexact: React.PropTypes.bool,
-        maxError: React.PropTypes.number,
-        answerType: React.PropTypes.string,
+        value: PropTypes.number,
+        simplify: PropTypes.oneOf(["required", "optional", "enforced"]),
+        size: PropTypes.oneOf(["normal", "small"]),
+        inexact: PropTypes.bool,
+        maxError: PropTypes.number,
+        answerType: PropTypes.string,
     },
 
     getDefaultProps: function() {

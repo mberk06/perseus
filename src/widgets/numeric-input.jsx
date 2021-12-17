@@ -70,27 +70,27 @@ var formExamples = {
     ),
 };
 
-var NumericInput = React.createClass({
+var NumericInput = createReactClass({
     propTypes: {
-        currentValue: React.PropTypes.string,
-        currentMultipleValues: React.PropTypes.arrayOf(React.PropTypes.string),
-        size: React.PropTypes.oneOf(["normal", "small"]),
+        currentValue: PropTypes.string,
+        currentMultipleValues: PropTypes.arrayOf(PropTypes.string),
+        size: PropTypes.oneOf(["normal", "small"]),
         apiOptions: ApiOptions.propTypes,
-        coefficient: React.PropTypes.bool,
-        answerForms: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                name: React.PropTypes.string.isRequired,
-                simplify: React.PropTypes.oneOf(["required", "optional"])
+        coefficient: PropTypes.bool,
+        answerForms: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                simplify: PropTypes.oneOf(["required", "optional"])
                     .isRequired,
             })
         ),
         keypadElement: keypadElementPropType,
-        labelText: React.PropTypes.string,
-        reviewModeRubric: React.PropTypes.object,
-        trackInteraction: React.PropTypes.func.isRequired,
-        widgetId: React.PropTypes.string.isRequired,
+        labelText: PropTypes.string,
+        reviewModeRubric: PropTypes.object,
+        trackInteraction: PropTypes.func.isRequired,
+        widgetId: PropTypes.string.isRequired,
         linterContext: linterContextProps,
-        multipleNumberInput: React.PropTypes.bool,
+        multipleNumberInput: PropTypes.bool,
     },
 
     getDefaultProps: function() {
