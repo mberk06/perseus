@@ -1,4 +1,5 @@
-import { readdirSync } from 'fs';
+import * as fs from 'fs';
+import * as path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
@@ -6,24 +7,43 @@ import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
 import { visualizer } from 'rollup-plugin-visualizer';
 
-const localModules = readdirSync('src/node_modules').map((dirName) => dirName.replace(/\.js$/, ''));
-console.log(localModules);
+const pwd = path.resolve('.');
+const localModules = fs.readdirSync('src/node_modules')
+    .map(filename => filename.replace(/\.js$/, ''));
 
 export default {
   input: 'src/perseus.js',
-    external: (path) => {
-        if (
-            localModules.includes(path) ||
-            path.startsWith('.') ||
-            path.startsWith('/') ||
-            path.endsWith('.css')
-        ) {
-            // Local files
+    external: (filepath) => 
+    {
+        // TODO(aria): I'm not sure why the paths we're given here are so complex
+        // Would be nice to simplify this.
+
+        if (filepath.startsWith('/')) {
+            filepath = './' + path.relative(pwd, filepath);
+        }
+        filepath = filepath.replace(/^\.\/node_modules\//, '');
+
+        // bundle all requested css into one css file
+        if (filepath.endsWith('.css')) {
             return false;
         }
 
-        // TODO(aria): should i just load package.json here and read its deps?
-        // package.json dependencies
+        // bundle all local files
+        if (filepath.startsWith('.')) {
+            return false;
+        }
+
+        // bundle local modules from src/node_modules
+        if (localModules.includes(filepath.split('/')[0])) {
+            return false;
+        }
+
+        // bundle babel runtime
+        if (filepath.startsWith('@babel/')) {
+            return false
+        }
+
+        // normal? dependency
         return true;
     },
   output: {

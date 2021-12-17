@@ -6,25 +6,17 @@ var _reactAddonsPureRenderMixin = require('react-addons-pure-render-mixin');
 var $$6 = require('jquery');
 var _react = require('react');
 var _reactDom = require('react-dom');
-var createReactClass = require('create-react-class');
-var PropTypes$2 = require('prop-types');
+var _createReactClass = require('create-react-class');
+var _propTypes = require('prop-types');
 var mathquill = require('mathquill');
-var katex$1 = require('katex');
+var _katex = require('katex');
 var _classnames = require('classnames');
 var _underscore = require('underscore');
 var _mathInput = require('@khanacademy/math-input');
 var aphrodite = require('aphrodite');
-var _reactComponentsTexJsx = require('react-components/tex.jsx');
 var _simpleMarkdown = require('simple-markdown');
-var _reactComponentsBlurInputJsx = require('react-components/blur-input.jsx');
-var _reactComponentsInfoTipJsx = require('react-components/info-tip.jsx');
-var _reactComponentsButtonGroupJsx = require('react-components/button-group.jsx');
 var immutable = require('immutable');
 var draftJs = require('draft-js');
-var _reactComponentsDragTargetJsx = require('react-components/drag-target.jsx');
-var _reactComponentsMultiButtonGroupJsx = require('react-components/multi-button-group.jsx');
-var _reactComponentsTooltipJsx = require('react-components/tooltip.jsx');
-var _reactComponentsSortableJsx = require('react-components/sortable.jsx');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -51,22 +43,14 @@ var $__default = /*#__PURE__*/_interopDefaultLegacy($$6);
 var _react__default = /*#__PURE__*/_interopDefaultLegacy(_react);
 var _react__namespace = /*#__PURE__*/_interopNamespace(_react);
 var _reactDom__default = /*#__PURE__*/_interopDefaultLegacy(_reactDom);
-var createReactClass__default = /*#__PURE__*/_interopDefaultLegacy(createReactClass);
-var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes$2);
+var _createReactClass__default = /*#__PURE__*/_interopDefaultLegacy(_createReactClass);
+var _propTypes__default = /*#__PURE__*/_interopDefaultLegacy(_propTypes);
 var mathquill__default = /*#__PURE__*/_interopDefaultLegacy(mathquill);
-var katex__default = /*#__PURE__*/_interopDefaultLegacy(katex$1);
+var _katex__default = /*#__PURE__*/_interopDefaultLegacy(_katex);
 var _classnames__default = /*#__PURE__*/_interopDefaultLegacy(_classnames);
 var _underscore__default = /*#__PURE__*/_interopDefaultLegacy(_underscore);
 var _mathInput__default = /*#__PURE__*/_interopDefaultLegacy(_mathInput);
-var _reactComponentsTexJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsTexJsx);
 var _simpleMarkdown__default = /*#__PURE__*/_interopDefaultLegacy(_simpleMarkdown);
-var _reactComponentsBlurInputJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsBlurInputJsx);
-var _reactComponentsInfoTipJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsInfoTipJsx);
-var _reactComponentsButtonGroupJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsButtonGroupJsx);
-var _reactComponentsDragTargetJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsDragTargetJsx);
-var _reactComponentsMultiButtonGroupJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsMultiButtonGroupJsx);
-var _reactComponentsTooltipJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsTooltipJsx);
-var _reactComponentsSortableJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsSortableJsx);
 
 // Perseus running in local mode depends on $_, which is defined here
 var createFragment$1 = function createFragment(obj) {
@@ -426,14 +410,14 @@ window.$i18nDoNotTranslate = $i18nDoNotTranslate;
 // TODO: Update Perseus to use these libraries directly, instead. They're not perfect
 //       backfills and I'm not sure how reliable this is!
 
-_react__default["default"].createClass = createReactClass__default["default"];
-_react__default["default"].PropTypes = PropTypes__default["default"];
+_react__default["default"].createClass = _createReactClass__default["default"];
+_react__default["default"].PropTypes = _propTypes__default["default"];
 _react__default["default"].DOM = {
   span: props => /*#__PURE__*/_react__default["default"].createElement("span", props),
   input: props => /*#__PURE__*/_react__default["default"].createElement("input", props)
 };
 window.jQuery = window.$ = $__default["default"];
-window.katex = katex__default["default"];
+window.katex = _katex__default["default"];
 window.mathquill = mathquill__default["default"];
 window.classnames = _classnames__default["default"];
 window._ = _underscore__default["default"]; // Perseus bundles its own copy of Raphael but throws if Raphael isn't already
@@ -441,7 +425,7 @@ window._ = _underscore__default["default"]; // Perseus bundles its own copy of R
 // load it in strict mode
 
 window.Raphael = undefined;
-var PureRenderMixin = _reactAddonsPureRenderMixin__default["default"];
+var PureRenderMixin$1 = _reactAddonsPureRenderMixin__default["default"];
 window.React = _react__default["default"];
 window.ReactDOM = _reactDom__default["default"];
 window["underscore"] = window._;
@@ -449,7 +433,7 @@ window["react"] = window.React;
 window["react-dom"] = window.ReactDOM;
 window["classnames"] = window.classNames;
 window["jquery"] = window.jQuery;
-window["react-addons-pure-render-mixin"] = PureRenderMixin;
+window["react-addons-pure-render-mixin"] = PureRenderMixin$1;
 /**
  * Sets up the basic environment for running Perseus in.
  */
@@ -728,7 +712,7 @@ function getRealImageUrl(url) {
   }
 }
 
-var module$6 = {
+var module$g = {
   exports: {}
 };
 /*
@@ -827,10 +811,10 @@ var knumber$c = {
     return [decimal, 1];
   }
 };
-module$6.exports = knumber$c;
-var _numberJs = module$6.exports;
+module$g.exports = knumber$c;
+var _numberJs = module$g.exports;
 
-var module$5 = {
+var module$f = {
   exports: {}
 };
 /*
@@ -1027,10 +1011,10 @@ var kvector$h = {
     });
   }
 };
-module$5.exports = kvector$h;
-var _vectorJs = module$5.exports;
+module$f.exports = kvector$h;
+var _vectorJs = module$f.exports;
 
-var module$4 = {
+var module$e = {
   exports: {}
 };
 /*
@@ -1122,10 +1106,10 @@ _$1K.extend(kpoint$h, {
   ceilTo: kvector$g.ceilTo
 });
 
-module$4.exports = kpoint$h;
-var _pointJs = module$4.exports;
+module$e.exports = kpoint$h;
+var _pointJs = module$e.exports;
 
-var module$3 = {
+var module$d = {
   exports: {}
 };
 /*
@@ -1147,10 +1131,10 @@ var kray$2 = {
     return sameOrigin && codirectional;
   }
 };
-module$3.exports = kray$2;
-var _rayJs = module$3.exports;
+module$d.exports = kray$2;
+var _rayJs = module$d.exports;
 
-var module$2 = {
+var module$c = {
   exports: {}
 };
 /*
@@ -1192,20 +1176,20 @@ var kline$3 = {
     return kvector$e.collinear(v1, line1ToLine2Vector, tolerance);
   }
 };
-module$2.exports = kline$3;
-var _lineJs = module$2.exports;
+module$c.exports = kline$3;
+var _lineJs = module$c.exports;
 
-var module$1 = {
+var module$b = {
   exports: {}
 };
-module$1.exports = {
+module$b.exports = {
   number: _numberJs,
   vector: _vectorJs,
   point: _pointJs,
   line: _lineJs,
   ray: _rayJs
 };
-var _kmath3 = module$1.exports;
+var _kmath3 = module$b.exports;
 
 var _module_$3a = {
   exports: {}
@@ -2991,12 +2975,12 @@ var _objective_Js = {
 
 // tree with additional information about what we are checking.
 
-var React$2a = _react__default["default"];
-var linterContextProps = React$2a.PropTypes.shape({
-  contentType: React$2a.PropTypes.string,
-  highlightLint: React$2a.PropTypes.bool,
-  paths: React$2a.PropTypes.arrayOf(React$2a.PropTypes.string),
-  stack: React$2a.PropTypes.arrayOf(React$2a.PropTypes.string)
+var React$2i = _react__default["default"];
+var linterContextProps = React$2i.PropTypes.shape({
+  contentType: React$2i.PropTypes.string,
+  highlightLint: React$2i.PropTypes.bool,
+  paths: React$2i.PropTypes.arrayOf(React$2i.PropTypes.string),
+  stack: React$2i.PropTypes.arrayOf(React$2i.PropTypes.string)
 });
 var linterContextDefault = {
   contentType: '',
@@ -4192,7 +4176,7 @@ var _module_$2E = {
  *
  */
 
-var React$29 = _react__default["default"];
+var React$2h = _react__default["default"];
 
 var InlineIcon$k = _ref => {
   var {
@@ -4202,7 +4186,7 @@ var InlineIcon$k = _ref => {
     style = {},
     title
   } = _ref;
-  return /*#__PURE__*/React$29.createElement("svg", {
+  return /*#__PURE__*/React$2h.createElement("svg", {
     role: "img",
     "aria-hidden": !title,
     style: _objectSpread2({
@@ -4211,7 +4195,7 @@ var InlineIcon$k = _ref => {
     width: "".concat(width / height, "em"),
     height: "1em",
     viewBox: "0 0 ".concat(width, " ").concat(height)
-  }, !!title && /*#__PURE__*/React$29.createElement("title", null, title), /*#__PURE__*/React$29.createElement("path", {
+  }, !!title && /*#__PURE__*/React$2h.createElement("title", null, title), /*#__PURE__*/React$2h.createElement("path", {
     d: path,
     fill: "currentColor"
   }));
@@ -4219,15 +4203,15 @@ var InlineIcon$k = _ref => {
 
 InlineIcon$k.propTypes = {
   // An SVG path to render.
-  path: React$29.PropTypes.string.isRequired,
+  path: React$2h.PropTypes.string.isRequired,
   // The path's viewBox dimensions.
   // We set the viewport height to 1em and scale the width accordingly.
-  height: React$29.PropTypes.number.isRequired,
-  width: React$29.PropTypes.number.isRequired,
-  style: React$29.PropTypes.object,
+  height: React$2h.PropTypes.number.isRequired,
+  width: React$2h.PropTypes.number.isRequired,
+  style: React$2h.PropTypes.object,
   // A11y description for this icon. If absent, icon is marked
   // aria-hidden=true
-  title: React$29.PropTypes.string
+  title: React$2h.PropTypes.string
 };
 _module_$2E.exports = InlineIcon$k;
 var _componentsInlineIconJsx = _module_$2E.exports;
@@ -4335,8 +4319,8 @@ var checkedColor = kaGreen;
  * to the left of where it belongs.  And if there is more
  **/
 
-var React$28 = _react__default["default"];
-var ReactDOM$z = _reactDom__default["default"];
+var React$2g = _react__default["default"];
+var ReactDOM$E = _reactDom__default["default"];
 var InlineIcon$j = _componentsInlineIconJsx;
 var exclamationIcon = {
   path: "M6 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1z",
@@ -4344,22 +4328,22 @@ var exclamationIcon = {
   height: 12,
   width: 12
 };
-var Lint$1 = React$28.createClass({
+var Lint$1 = React$2g.createClass({
   displayName: "Lint",
   propTypes: {
     // The children are the linty content we're highlighting
-    children: React$28.PropTypes.node,
+    children: React$2g.PropTypes.node,
     // Inline lint is highlighted differently than block lint.
-    inline: React$28.PropTypes.bool,
+    inline: React$2g.PropTypes.bool,
     // This is the text that appears in the tooltip
-    message: React$28.PropTypes.string.isRequired,
+    message: React$2g.PropTypes.string.isRequired,
     // This is used as the fragment id (hash) in the URL of the link
-    ruleName: React$28.PropTypes.string.isRequired,
+    ruleName: React$2g.PropTypes.string.isRequired,
     // Lint warnings inside tables are handled specially
-    insideTable: React$28.PropTypes.bool.isRequired,
+    insideTable: React$2g.PropTypes.bool.isRequired,
     // How important this lint message is for the editor. Severity goes
     // from 1 (indicating an error) to 4 (offline reporting only)
-    severity: React$28.PropTypes.number
+    severity: React$2g.PropTypes.number
   },
   getInitialState: function getInitialState() {
     return {
@@ -4377,7 +4361,7 @@ var Lint$1 = React$28.createClass({
   // borrow a timeout approach from learnstorm-dashboard.jsx and set our
   // state once the component has mounted and we can get what we need.
   getPosition: function getPosition() {
-    var rect = ReactDOM$z.findDOMNode(this).getBoundingClientRect(); // TODO(scottgrant): This is a magic number! We don't know the size
+    var rect = ReactDOM$E.findDOMNode(this).getBoundingClientRect(); // TODO(scottgrant): This is a magic number! We don't know the size
     // of the tooltip at this point, so we're arbitrarily choosing a
     // point at which to flip the tooltip's position.
 
@@ -4394,34 +4378,34 @@ var Lint$1 = React$28.createClass({
     var warningTextStyle;
 
     if (this.props.severity === 1) {
-      severityStyle = styles$n.indicatorError;
+      severityStyle = styles$q.indicatorError;
       warningText = "Error";
-      warningTextStyle = styles$n.publishBlockingError;
+      warningTextStyle = styles$q.publishBlockingError;
     } else if (this.props.severity === 2) {
-      severityStyle = styles$n.indicatorWarning;
+      severityStyle = styles$q.indicatorWarning;
       warningText = "Warning";
-      warningTextStyle = styles$n.warning;
+      warningTextStyle = styles$q.warning;
     } else {
-      severityStyle = styles$n.indicatorGuideline;
+      severityStyle = styles$q.indicatorGuideline;
       warningText = "Recommendation";
-      warningTextStyle = styles$n.warning;
+      warningTextStyle = styles$q.warning;
     }
 
-    return /*#__PURE__*/React$28.createElement("a", {
+    return /*#__PURE__*/React$2g.createElement("a", {
       href: "https://khanacademy.org/r/linter-rules#" + this.props.ruleName,
       target: "lint-help-window",
       className: aphrodite.css(style)
-    }, /*#__PURE__*/React$28.createElement("span", {
-      className: aphrodite.css(styles$n.indicator, severityStyle)
-    }, this.props.severity === 1 && /*#__PURE__*/React$28.createElement(InlineIcon$j, exclamationIcon)), /*#__PURE__*/React$28.createElement("div", {
-      className: aphrodite.css(styles$n.tooltip, tooltipAbove && styles$n.tooltipAbove)
-    }, this.props.message.split("\n\n").map((m, i) => /*#__PURE__*/React$28.createElement("p", {
+    }, /*#__PURE__*/React$2g.createElement("span", {
+      className: aphrodite.css(styles$q.indicator, severityStyle)
+    }, this.props.severity === 1 && /*#__PURE__*/React$2g.createElement(InlineIcon$j, exclamationIcon)), /*#__PURE__*/React$2g.createElement("div", {
+      className: aphrodite.css(styles$q.tooltip, tooltipAbove && styles$q.tooltipAbove)
+    }, this.props.message.split("\n\n").map((m, i) => /*#__PURE__*/React$2g.createElement("p", {
       key: i,
-      className: aphrodite.css(styles$n.tooltipParagraph)
-    }, /*#__PURE__*/React$28.createElement("span", {
+      className: aphrodite.css(styles$q.tooltipParagraph)
+    }, /*#__PURE__*/React$2g.createElement("span", {
       className: aphrodite.css(warningTextStyle)
-    }, warningText, ":", " "), m)), /*#__PURE__*/React$28.createElement("div", {
-      className: aphrodite.css(styles$n.tail, tooltipAbove && styles$n.tailAbove)
+    }, warningText, ":", " "), m)), /*#__PURE__*/React$2g.createElement("div", {
+      className: aphrodite.css(styles$q.tail, tooltipAbove && styles$q.tailAbove)
     })));
   },
   // The main render method surrounds linty content with a block or
@@ -4432,28 +4416,28 @@ var Lint$1 = React$28.createClass({
       // If we're inside a table, then linty nodes just get
       // a simple wrapper that allows them to be highlighted
       if (this.props.inline) {
-        return /*#__PURE__*/React$28.createElement("span", {
+        return /*#__PURE__*/React$2g.createElement("span", {
           "data-lint-inside-table": "true"
         }, this.props.children);
       } else {
-        return /*#__PURE__*/React$28.createElement("div", {
+        return /*#__PURE__*/React$2g.createElement("div", {
           "data-lint-inside-table": "true"
         }, this.props.children);
       }
     } else {
       if (this.props.inline) {
-        return /*#__PURE__*/React$28.createElement("span", {
-          className: aphrodite.css(styles$n.lintContainer)
-        }, this.renderLink(styles$n.inlineHoverTarget), /*#__PURE__*/React$28.createElement("span", null, this.props.children));
+        return /*#__PURE__*/React$2g.createElement("span", {
+          className: aphrodite.css(styles$q.lintContainer)
+        }, this.renderLink(styles$q.inlineHoverTarget), /*#__PURE__*/React$2g.createElement("span", null, this.props.children));
       } else {
-        return /*#__PURE__*/React$28.createElement("div", {
-          className: aphrodite.css(styles$n.lintContainer)
-        }, this.renderLink(styles$n.hoverTarget), /*#__PURE__*/React$28.createElement("div", null, this.props.children));
+        return /*#__PURE__*/React$2g.createElement("div", {
+          className: aphrodite.css(styles$q.lintContainer)
+        }, this.renderLink(styles$q.hoverTarget), /*#__PURE__*/React$2g.createElement("div", null, this.props.children));
       }
     }
   }
 });
-var styles$n = aphrodite.StyleSheet.create({
+var styles$q = aphrodite.StyleSheet.create({
   // This is the class of the outermost element.
   // We use relative positioning so that the lint indicator can be
   // positioned absolutely relative to the position of the linty container.
@@ -4631,6 +4615,770 @@ var styles$n = aphrodite.StyleSheet.create({
   }
 });
 
+var module$a = {
+  exports: {}
+};
+(function () {
+  /**
+   * KaTeX A11y
+   * A library for converting KaTeX math into readable strings.
+   */
+  // NOTE(jeresig): We need to keep this file as pure ES5 to avoid import
+  // problems into webapp.
+
+  /* eslint-disable no-var */
+  var katex = _katex__default["default"];
+  var stringMap = {
+    "(": "left parenthesis",
+    ")": "right parenthesis",
+    "[": "open bracket",
+    "]": "close bracket",
+    "\\{": "left brace",
+    "\\}": "right brace",
+    "\\lvert": "open vertical bar",
+    "\\rvert": "close vertical bar",
+    "|": "vertical bar",
+    "\\uparrow": "up arrow",
+    "\\Uparrow": "up arrow",
+    "\\downarrow": "down arrow",
+    "\\Downarrow": "down arrow",
+    "\\updownarrow": "up down arrow",
+    "\\leftarrow": "left arrow",
+    "\\Leftarrow": "left arrow",
+    "\\rightarrow": "right arrow",
+    "\\Rightarrow": "right arrow",
+    "\\langle": "open angle",
+    "\\rangle": "close angle",
+    "\\lfloor": "open floor",
+    "\\rfloor": "close floor",
+    "\\int": "integral",
+    "\\intop": "integral",
+    "\\lim": "limit",
+    "\\ln": "natural log",
+    "\\log": "log",
+    "\\sin": "sine",
+    "\\cos": "cosine",
+    "\\tan": "tangent",
+    "\\cot": "cotangent",
+    "\\sum": "sum",
+    "/": "slash",
+    ",": "comma",
+    ".": "point",
+    "-": "negative",
+    "+": "plus",
+    "~": "tilde",
+    ":": "colon",
+    "?": "question mark",
+    "'": "apostrophe",
+    "\\%": "percent",
+    " ": "space",
+    "\\ ": "space",
+    "\\$": "dollar sign",
+    "\\angle": "angle",
+    "\\degree": "degree",
+    "\\circ": "circle",
+    "\\vec": "vector",
+    "\\triangle": "triangle",
+    "\\pi": "pi",
+    "\\prime": "prime",
+    "\\infty": "infinity",
+    "\\alpha": "alpha",
+    "\\beta": "beta",
+    "\\gamma": "gamma",
+    "\\omega": "omega",
+    "\\theta": "theta",
+    "\\sigma": "sigma",
+    "\\lambda": "lambda",
+    "\\tau": "tau",
+    "\\Delta": "delta",
+    "\\delta": "delta",
+    "\\mu": "mu",
+    "\\rho": "rho",
+    "\\nabla": "del",
+    "\\ell": "ell",
+    "\\ldots": "dots"
+  };
+  var powerMap = {
+    "\\prime": "prime",
+    "\\degree": "degree",
+    "\\circ": "degree"
+  };
+  var openMap = {
+    "|": "open vertical bar",
+    ".": ""
+  };
+  var closeMap = {
+    "|": "close vertical bar",
+    ".": ""
+  };
+  var binMap = {
+    "+": "plus",
+    "-": "minus",
+    "\\pm": "plus minus",
+    "\\cdot": "dot",
+    "*": "times",
+    "/": "divided by",
+    "\\times": "times",
+    "\\div": "divided by",
+    "\\circ": "circle",
+    "\\bullet": "bullet"
+  };
+  var relMap = {
+    "=": "equals",
+    "\\approx": "approximately equals",
+    "\\neq": "does not equal",
+    "\\ne": "does not equal",
+    "\\geq": "is greater than or equal to",
+    "\\ge": "is greater than or equal to",
+    "\\leq": "is less than or equal to",
+    "\\le": "is less than or equal to",
+    ">": "is greater than",
+    "<": "is less than",
+    "\\leftarrow": "left arrow",
+    "\\Leftarrow": "left arrow",
+    "\\rightarrow": "right arrow",
+    "\\Rightarrow": "right arrow",
+    ":": "colon"
+  };
+
+  var buildString = function buildString(str, type, a11yStrings) {
+    if (!str) {
+      return;
+    }
+
+    var ret;
+
+    if (type === "open") {
+      ret = str in openMap ? openMap[str] : stringMap[str] || str;
+    } else if (type === "close") {
+      ret = str in closeMap ? closeMap[str] : stringMap[str] || str;
+    } else if (type === "bin") {
+      ret = binMap[str] || str;
+    } else if (type === "rel") {
+      ret = relMap[str] || str;
+    } else {
+      ret = stringMap[str] || str;
+    } // If nothing was found and it's not a plain string or number
+
+
+    if (ret === str && !/^\w+$/.test(str)) {
+      // This is likely a case that we'll need to handle
+      throw new Error("KaTeX a11y " + type + " string not found: " + str);
+    } // If the text to add is a number and there is already a string
+    // in the list and the last string is a number then we should
+    // combine them into a single number
+
+
+    if (/^\d+$/.test(ret) && a11yStrings.length > 0 && /^\d+$/.test(a11yStrings[a11yStrings.length - 1])) {
+      a11yStrings[a11yStrings.length - 1] += ret;
+    } else if (ret) {
+      a11yStrings.push(ret);
+    }
+  };
+
+  var buildRegion = function buildRegion(a11yStrings, callback) {
+    var region = [];
+    a11yStrings.push(region);
+    callback(region);
+  };
+
+  var typeHandlers = {
+    accent: function accent(tree, a11yStrings) {
+      buildRegion(a11yStrings, function (a11yStrings) {
+        buildA11yStrings(tree.value.base, a11yStrings);
+        a11yStrings.push("with");
+        buildA11yStrings(tree.value.label, a11yStrings);
+        a11yStrings.push("on top");
+      });
+    },
+    bin: function bin(tree, a11yStrings) {
+      buildString(tree.value, "bin", a11yStrings);
+    },
+    close: function close(tree, a11yStrings) {
+      buildString(tree.value, "close", a11yStrings);
+    },
+    color: function color(tree, a11yStrings) {
+      var color = tree.value.color.replace(/katex-/, "");
+      buildRegion(a11yStrings, function (a11yStrings) {
+        a11yStrings.push("start color " + color);
+        buildA11yStrings(tree.value.value, a11yStrings);
+        a11yStrings.push("end color " + color);
+      });
+    },
+    delimsizing: function delimsizing(tree, a11yStrings) {
+      if (tree.value.value && tree.value.value !== ".") {
+        buildString(tree.value.value, "normal", a11yStrings);
+      }
+    },
+    genfrac: function genfrac(tree, a11yStrings) {
+      buildRegion(a11yStrings, function (a11yStrings) {
+        // NOTE: Not sure if this is a safe assumption
+        // hasBarLine true -> fraction, false -> binomial
+        if (tree.value.hasBarLine) {
+          a11yStrings.push("start fraction");
+          buildString(tree.value.leftDelim, "open", a11yStrings);
+          buildA11yStrings(tree.value.numer, a11yStrings);
+          a11yStrings.push("divided by");
+          buildA11yStrings(tree.value.denom, a11yStrings);
+          buildString(tree.value.rightDelim, "close", a11yStrings);
+          a11yStrings.push("end fraction");
+        } else {
+          a11yStrings.push("start binomial");
+          buildString(tree.value.leftDelim, "open", a11yStrings);
+          buildA11yStrings(tree.value.numer, a11yStrings);
+          a11yStrings.push("over");
+          buildA11yStrings(tree.value.denom, a11yStrings);
+          buildString(tree.value.rightDelim, "close", a11yStrings);
+          a11yStrings.push("end binomial");
+        }
+      });
+    },
+    inner: function inner(tree, a11yStrings) {
+      buildA11yStrings(tree.value, a11yStrings);
+    },
+    katex: function katex(tree, a11yStrings) {
+      a11yStrings.push("KaTeX");
+    },
+    kern: function kern(tree, a11yStrings) {// No op: we don't attempt to present kerning information
+      // to the screen reader.
+    },
+    leftright: function leftright(tree, a11yStrings) {
+      buildRegion(a11yStrings, function (a11yStrings) {
+        buildString(tree.value.left, "open", a11yStrings);
+        buildA11yStrings(tree.value.body, a11yStrings);
+        buildString(tree.value.right, "close", a11yStrings);
+      });
+    },
+    lap: function lap(tree, a11yStrings) {
+      buildA11yStrings(tree.value.body, a11yStrings);
+    },
+    mathord: function mathord(tree, a11yStrings) {
+      buildA11yStrings(tree.value, a11yStrings);
+    },
+    op: function op(tree, a11yStrings) {
+      buildString(tree.value.body, "normal", a11yStrings);
+    },
+    open: function open(tree, a11yStrings) {
+      buildString(tree.value, "open", a11yStrings);
+    },
+    ordgroup: function ordgroup(tree, a11yStrings) {
+      buildA11yStrings(tree.value, a11yStrings);
+    },
+    overline: function overline(tree, a11yStrings) {
+      buildRegion(a11yStrings, function (a11yStrings) {
+        a11yStrings.push("start overline");
+        buildA11yStrings(tree.value.body, a11yStrings);
+        a11yStrings.push("end overline");
+      });
+    },
+    phantom: function phantom(tree, a11yStrings) {
+      a11yStrings.push("empty space");
+    },
+    punct: function punct(tree, a11yStrings) {
+      buildString(tree.value, "punct", a11yStrings);
+    },
+    raisebox: function raisebox(tree, a11yStrings) {
+      buildA11yStrings(tree.value, a11yStrings);
+    },
+    rel: function rel(tree, a11yStrings) {
+      buildString(tree.value, "rel", a11yStrings);
+    },
+    rlap: function rlap(tree, a11yStrings) {
+      buildA11yStrings(tree.value.body, a11yStrings);
+    },
+    rule: function rule(tree, a11yStrings) {
+      // NOTE: Is there something more useful that we can put here?
+      a11yStrings.push("rule");
+    },
+    sizing: function sizing(tree, a11yStrings) {
+      buildA11yStrings(tree.value.value, a11yStrings);
+    },
+    spacing: function spacing(tree, a11yStrings) {
+      a11yStrings.push("space");
+    },
+    styling: function styling(tree, a11yStrings) {
+      // We ignore the styling and just pass through the contents
+      buildA11yStrings(tree.value.value, a11yStrings);
+    },
+    sqrt: function sqrt(tree, a11yStrings) {
+      buildRegion(a11yStrings, function (a11yStrings) {
+        if (tree.value.index) {
+          a11yStrings.push("root");
+          a11yStrings.push("start index");
+          buildA11yStrings(tree.value.index, a11yStrings);
+          a11yStrings.push("end index");
+        }
+
+        a11yStrings.push("square root of");
+        buildA11yStrings(tree.value.body, a11yStrings);
+        a11yStrings.push("end square root");
+      });
+    },
+    supsub: function supsub(tree, a11yStrings) {
+      if (tree.value.base) {
+        buildA11yStrings(tree.value.base, a11yStrings);
+      }
+
+      if (tree.value.sub) {
+        buildRegion(a11yStrings, function (a11yStrings) {
+          a11yStrings.push("start subscript");
+          buildA11yStrings(tree.value.sub, a11yStrings);
+          a11yStrings.push("end subscript");
+        });
+      }
+
+      var sup = tree.value.sup;
+
+      if (sup) {
+        // There are some cases that just read better if we don't have
+        // the extra start/end baggage, so we skip the extra text
+        var newPower = powerMap[sup];
+        var supValue = sup.value; // The value stored inside the sup property is not always
+        // consistent. It could be a string (handled above), an object
+        // with a string property in value, or an array of objects that
+        // have a value property.
+
+        if (!newPower && supValue) {
+          // If supValue is an object and it has a length of 1 we assume
+          // it's an array that has only a single item in it. This is the
+          // case that we care about and we only check that one value.
+          if (typeof supValue === "object" && supValue.length === 1) {
+            newPower = powerMap[supValue[0].value]; // This is the case where it's a string in the value property
+          } else {
+            newPower = powerMap[supValue];
+          }
+        }
+
+        buildRegion(a11yStrings, function (a11yStrings) {
+          if (newPower) {
+            a11yStrings.push(newPower);
+            return;
+          }
+
+          a11yStrings.push("start superscript");
+          buildA11yStrings(tree.value.sup, a11yStrings);
+          a11yStrings.push("end superscript");
+        });
+      }
+    },
+    text: function text(tree, a11yStrings) {
+      if (typeof tree.value !== "string") {
+        buildA11yStrings(tree.value.body, a11yStrings);
+      } else {
+        buildString(tree, "normal", a11yStrings);
+      }
+    },
+    textord: function textord(tree, a11yStrings) {
+      buildA11yStrings(tree.value, a11yStrings);
+    }
+  };
+
+  var buildA11yStrings = function buildA11yStrings(tree, a11yStrings) {
+    a11yStrings = a11yStrings || []; // Handle strings
+
+    if (typeof tree === "string") {
+      buildString(tree, "normal", a11yStrings); // Handle arrays
+    } else if (tree.constructor === Array) {
+      for (var i = 0; i < tree.length; i++) {
+        buildA11yStrings(tree[i], a11yStrings);
+      } // Everything else is assumed to be an object...
+
+    } else {
+      if (!tree.type || !(tree.type in typeHandlers)) {
+        throw new Error("KaTeX a11y un-recognized type: " + tree.type);
+      } else {
+        typeHandlers[tree.type](tree, a11yStrings);
+      }
+    }
+
+    return a11yStrings;
+  };
+
+  var renderStrings = function renderStrings(a11yStrings, a11yNode) {
+    var doc = a11yNode.ownerDocument;
+
+    for (var i = 0; i < a11yStrings.length; i++) {
+      var a11yString = a11yStrings[i];
+
+      if (i > 0) {
+        // Note: We insert commas in (not just spaces) to provide
+        // screen readers with some "breathing room". When inserting the
+        // commas the screen reader knows to pause slightly and it provides
+        // an overall better listening experience.
+        a11yNode.appendChild(doc.createTextNode(", "));
+      }
+
+      if (typeof a11yString === "string") {
+        a11yNode.appendChild(doc.createTextNode(a11yString));
+      } else {
+        var newBaseNode = doc.createElement("span"); // NOTE(jeresig): We may want to add in a tabIndex property
+        // to the node here, in order to support keyboard navigation.
+
+        a11yNode.appendChild(newBaseNode);
+        renderStrings(a11yString, newBaseNode);
+      }
+    }
+  };
+
+  var parseMath = function parseMath(text) {
+    // NOTE: `katex` is a global. We assume it has been imported somehow.
+    //
+    // colorIsTextColor is an option added in KaTeX 0.9.0 for backward
+    // compatibility. It makes \color parse like \textcolor. We use it
+    // in the KA webapp, and need it here because the tests are written
+    // assuming it is set.
+    return katex.__parse(text, {
+      colorIsTextColor: true
+    });
+  };
+
+  var render = function render(text, a11yNode) {
+    var tree = parseMath(text);
+    var a11yStrings = buildA11yStrings(tree);
+    renderStrings(a11yStrings, a11yNode);
+  };
+
+  var flatten = function flatten(array) {
+    var result = [];
+    array.forEach(function (item) {
+      if (Array.isArray(item)) {
+        result = result.concat(flatten(item));
+      } else {
+        result.push(item);
+      }
+    });
+    return result;
+  };
+
+  var renderString = function renderString(text) {
+    var tree = parseMath(text);
+    var a11yStrings = buildA11yStrings(tree);
+    return flatten(a11yStrings).join(", ");
+  };
+
+  if (typeof module$a !== "undefined") {
+    module$a.exports = {
+      render: render,
+      renderString: renderString,
+      parseMath: parseMath
+    };
+  } else {
+    this.katexA11yRender = render;
+  }
+}).call(module$a.exports);
+var _katexA11yJs = module$a.exports;
+
+var module$9 = {
+  exports: {}
+};
+/**
+ * For math rendered using KaTex and/or MathJax. Use me like <TeX>2x + 3</TeX>.
+ */
+
+/* global MathJax */
+
+var PureRenderMixin = _reactAddonsPureRenderMixin__default["default"];
+var React$2f = _react__default["default"];
+var ReactDOM$D = _reactDom__default["default"];
+var createReactClass$7 = _createReactClass__default["default"];
+var PropTypes$9 = _propTypes__default["default"];
+var katex$1 = _katex__default["default"];
+var katexA11y = _katexA11yJs;
+var pendingScripts = [];
+var pendingCallbacks = [];
+var needsProcess = false; // For creating unique element ids required by the aria-describedby attribute
+
+var describedByIdCounter = 0;
+
+var _process = (script, callback) => {
+  pendingScripts.push(script);
+  pendingCallbacks.push(callback);
+
+  if (!needsProcess) {
+    needsProcess = true;
+    setTimeout(doProcess, 0);
+  }
+};
+
+var unProcess = script => {
+  var scriptIndex = pendingScripts.indexOf(script);
+  pendingScripts.splice(scriptIndex, 1);
+  pendingCallbacks.splice(scriptIndex, 1);
+}; // NOTE(aria): Stubbed out now that this is outside of KA
+
+
+var loadMathJax = callback => callback();
+
+var doProcess = () => {
+  loadMathJax(() => {
+    MathJax.Hub.Queue(function () {
+      var oldElementScripts = MathJax.Hub.elementScripts;
+
+      MathJax.Hub.elementScripts = element => pendingScripts;
+
+      try {
+        return MathJax.Hub.Process(null, () => {
+          // Trigger all of the pending callbacks before clearing them
+          // out.
+          for (var callback of pendingCallbacks) {
+            callback();
+          }
+
+          pendingScripts = [];
+          pendingCallbacks = [];
+          needsProcess = false;
+        });
+      } catch (e) {
+        // IE8 requires `catch` in order to use `finally`
+        throw e;
+      } finally {
+        MathJax.Hub.elementScripts = oldElementScripts;
+      }
+    });
+  });
+}; // Make content only visible to screen readers.
+// Both collegeboard.org and Bootstrap 3 use this exact implementation.
+
+
+var srOnly = {
+  border: 0,
+  clip: "rect(0,0,0,0)",
+  height: "1px",
+  margin: "-1px",
+  overflow: "hidden",
+  padding: 0,
+  position: "absolute",
+  width: "1px"
+};
+var TeX$9 = createReactClass$7({
+  displayName: "TeX",
+  propTypes: {
+    children: PropTypes$9.node,
+    katexOptions: PropTypes$9.any,
+    onClick: PropTypes$9.func,
+    onRender: PropTypes$9.func,
+    style: PropTypes$9.any
+  },
+  mixins: [PureRenderMixin],
+  getDefaultProps: function getDefaultProps() {
+    return {
+      katexOptions: {
+        // There was a breaking change in the behavior of \color{}
+        // in KaTeX 0.8.0. KA content relies on the old behavior
+        // so we set this option to retain that old behavior even
+        // though it is not purely compatible with LaTeX.
+        // See https://github.com/Khan/KaTeX/blob/master/README.md
+        // for details on this option.
+        colorIsTextColor: true
+      },
+      // Called after math is rendered or re-rendered
+      onRender: function onRender() {},
+      onClick: null
+    };
+  },
+  // TODO(joshuan): Once we are using React 16.3+,
+  // migrate to getDerivedStateFromProps
+  getInitialState: function getInitialState() {
+    return {
+      mounted: false,
+      katexHtml: this.getKatexHtml(this.props)
+    };
+  },
+  componentDidMount: function componentDidMount() {
+    this._root = ReactDOM$D.findDOMNode(this); // Needed so that the initial client render matches SSR.
+    // eslint-disable-next-line react/no-did-mount-set-state
+
+    this.setState({
+      mounted: true
+    });
+
+    if (this.refs.katex.childElementCount > 0) {
+      // If we already rendered katex in the render function, we don't
+      // need to render anything here.
+      this.props.onRender(this._root);
+      return;
+    }
+
+    var text = this.props.children;
+    this.setScriptText(text);
+    this.process(() => this.props.onRender(this._root));
+  },
+  // TODO(joshuan): If you are updating to React 16.3+, migrate to
+  // getDerivedStateFromProps
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    if (nextProps.children !== this.props.children || JSON.stringify(nextProps.katexOptions) !== JSON.stringify(this.props.katexOptions)) {
+      this.setState({
+        katexHtml: this.getKatexHtml(nextProps)
+      });
+    }
+  },
+  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
+    if (this.props.children !== prevProps.children) {
+      this.maybeUnprocess(); // If we already rendered katex in the render function, we don't
+      // need to render anything here.
+
+      if (this.refs.katex.childElementCount > 0) {
+        if (this.script) {
+          // If we successfully rendered KaTeX, check if there's
+          // lingering MathJax from the last render, and if so remove it.
+          loadMathJax(() => {
+            var jax = MathJax.Hub.getJaxFor(this.script);
+
+            if (jax) {
+              jax.Remove();
+            }
+          });
+        }
+
+        this.props.onRender();
+        return;
+      }
+
+      var newText = this.props.children;
+
+      if (this.script) {
+        loadMathJax(() => {
+          MathJax.Hub.Queue(() => {
+            var jax = MathJax.Hub.getJaxFor(this.script);
+
+            if (jax) {
+              return jax.Text(newText, this.props.onRender);
+            } else {
+              this.setScriptText(newText);
+              this.process(this.props.onRender);
+            }
+          });
+        });
+      } else {
+        this.setScriptText(newText);
+        this.process(this.props.onRender);
+      }
+    }
+  },
+  componentWillUnmount: function componentWillUnmount() {
+    this.maybeUnprocess();
+
+    if (this.script) {
+      loadMathJax(() => {
+        var jax = MathJax.Hub.getJaxFor(this.script);
+
+        if (jax) {
+          jax.Remove();
+        }
+      });
+    }
+  },
+
+  getKatexHtml(props) {
+    // Try to render the math content with KaTeX.
+    // If this fails, componentDidUpdate() will notice and
+    // use MathJAX instead.
+    try {
+      return {
+        __html: katex$1.renderToString(props.children, props.katexOptions)
+      };
+    } catch (e) {
+      // By catching the exception here and returning null
+      // we will fall back to asyncronously rendering with
+      // MathJAX.
+      //
+      // NOTE: formerly we only returned null if the error
+      // was a parse error from Katex and re-threw any other errors.
+      // But https://khanacademy.atlassian.net/browse/CP-879 and
+      // https://khanacademy.atlassian.net/browse/CP-1742 were caused
+      // by regular TypeError exceptions in Katex, so we might as
+      // well fall back to MathJAX in that case as well. (The Katex
+      // bug is fixed in the latest version and will stop happening
+      // when we upgrade webapp to use Katex 1.0.)
+      //
+      // TODO: We could use Raven.captureMessage() to send a message
+      // to Sentry when these errors occur if we want to get serious
+      // about eliminating them. Such a message should include
+      // window.location, props.children (the string of katex source)
+      // and the error itself.
+      return null;
+    }
+  },
+
+  process: function process(callback) {
+    this.hasProcessed = false;
+
+    _process(this.script, () => {
+      this.hasProcessed = true;
+      callback && callback();
+    });
+  },
+  maybeUnprocess: function maybeUnprocess() {
+    // Sometimes, we end up rendering this component with some MathJax-only
+    // math before very quickly switching over to some other math, before
+    // MathJax has had a time to render. We want to remove the previously
+    // queued render so that we don't accidentally render some math that we
+    // don't want displayed.
+    if (this.script && !this.hasProcessed) {
+      unProcess(this.script);
+    }
+  },
+  setScriptText: function setScriptText(text) {
+    if (!this.script) {
+      this.script = document.createElement("script");
+      this.script.type = "math/tex";
+      ReactDOM$D.findDOMNode(this.refs.mathjax).appendChild(this.script);
+    }
+
+    if ("text" in this.script) {
+      // IE8, etc
+      this.script.text = text;
+    } else {
+      this.script.textContent = text;
+    }
+  },
+  render: function render() {
+    var {
+      katexHtml
+    } = this.state; // If we successfully parsed with KaTeX, then try parse the
+    // same math text to an english rendering that can be read
+    // by screen readers. Our katexA11y module is out of date and
+    // not well maintained, so it can not always transform math
+    // into readable english. We ignore any exceptions it throws.
+
+    var katexA11yHtml = null;
+    var describedById = null;
+
+    if (katexHtml) {
+      try {
+        katexA11yHtml = {
+          __html: katexA11y.renderString(this.props.children)
+        }; // The server and the client will not necessarily use the same
+        // ID, and the initial client markup must match the server
+        // markup. Thus, we only add an ID once we've rendered once.
+
+        if (this.state.mounted) {
+          describedById = "katex-".concat(++describedByIdCounter);
+        }
+      } catch (e) {// Nothing
+      }
+    }
+
+    return /*#__PURE__*/React$2f.createElement("span", {
+      style: this.props.style,
+      onClick: this.props.onClick
+    }, /*#__PURE__*/React$2f.createElement("span", {
+      ref: "mathjax"
+    }), /*#__PURE__*/React$2f.createElement("span", {
+      ref: "katex",
+      dangerouslySetInnerHTML: katexHtml,
+      "aria-hidden": !!katexA11yHtml,
+      "aria-describedby": describedById
+    }), /*#__PURE__*/React$2f.createElement("span", {
+      dangerouslySetInnerHTML: katexA11yHtml,
+      id: describedById,
+      style: srOnly
+    }));
+  }
+});
+module$9.exports = TeX$9;
+var _reactComponentsTexJsx = module$9.exports;
+
 var _module_$2D = {
   exports: {}
 };
@@ -4644,7 +5392,7 @@ var _module_$2D = {
 
 var _$1G = _underscore__default["default"];
 var SimpleMarkdown$2 = _simpleMarkdown__default["default"];
-var TeX$8 = _reactComponentsTexJsx__default["default"];
+var TeX$8 = _reactComponentsTexJsx;
 var Util$p = Util$q;
 var Lint = Lint$1;
 /**
@@ -5985,14 +6733,14 @@ var _module_$2z = {
  * Zooms child to fit with tap-to-zoom behavior.
  */
 
-var React$27 = _react__default["default"];
-var ReactDOM$y = _reactDom__default["default"];
+var React$2e = _react__default["default"];
+var ReactDOM$C = _reactDom__default["default"];
 var Deferred$1 = _deferredJs;
-var Zoomable$1 = React$27.createClass({
+var Zoomable$1 = React$2e.createClass({
   displayName: "Zoomable",
   propTypes: {
-    animateHeight: React$27.PropTypes.bool,
-    children: React$27.PropTypes.element.isRequired,
+    animateHeight: React$2e.PropTypes.bool,
+    children: React$2e.PropTypes.element.isRequired,
 
     /**
      * Optional function that allows customizations in zooming.
@@ -6002,14 +6750,14 @@ var Zoomable$1 = React$27.createClass({
      *
      * @return {Object} bounds object with `width` and `height` properties
      */
-    computeChildBounds: React$27.PropTypes.func,
+    computeChildBounds: React$2e.PropTypes.func,
     // If this prop is specified, we wait until the deferred is resolved
     // before measuring the child element.  This is necessary in cases
     // where the child size depends on whether or not resources, such as
     // fonts, have been loaded.
-    readyToMeasureDeferred: React$27.PropTypes.shape({
-      then: React$27.PropTypes.func.isRequired,
-      reject: React$27.PropTypes.func.isRequired
+    readyToMeasureDeferred: React$2e.PropTypes.shape({
+      then: React$2e.PropTypes.func.isRequired,
+      reject: React$2e.PropTypes.func.isRequired
     }).isRequired
   },
 
@@ -6040,7 +6788,7 @@ var Zoomable$1 = React$27.createClass({
   },
 
   componentDidMount() {
-    this._node = ReactDOM$y.findDOMNode(this);
+    this._node = ReactDOM$C.findDOMNode(this);
     this.props.readyToMeasureDeferred.then(() => {
       if (this.isMounted()) {
         this.scaleChildToFit(false);
@@ -6202,7 +6950,7 @@ var Zoomable$1 = React$27.createClass({
       WebkitTapHighlightColor: "transparent"
     }, transitionStyle);
 
-    return /*#__PURE__*/React$27.createElement("span", {
+    return /*#__PURE__*/React$2e.createElement("span", {
       onClick: this.handleClick,
       onClickCapture: this.handleClickIfZoomed,
       onTouchCancelCapture: this.stopPropagationIfZoomed,
@@ -6221,8 +6969,8 @@ var _module_$2y = {
 };
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 
-var React$26 = _react__default["default"];
-var ReactDOM$x = _reactDom__default["default"];
+var React$2d = _react__default["default"];
+var ReactDOM$B = _reactDom__default["default"];
 var _$1F = _underscore__default["default"];
 var textWidthCache = {};
 
@@ -6237,12 +6985,12 @@ function getTextWidth(text) {
   return textWidthCache[text];
 }
 
-var TextListEditor$6 = React$26.createClass({
+var TextListEditor$6 = React$2d.createClass({
   displayName: "TextListEditor",
   propTypes: {
-    options: React$26.PropTypes.array,
-    layout: React$26.PropTypes.string,
-    onChange: React$26.PropTypes.func.isRequired
+    options: React$2d.PropTypes.array,
+    layout: React$2d.PropTypes.string,
+    onChange: React$2d.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -6264,9 +7012,9 @@ var TextListEditor$6 = React$26.createClass({
     var className = ["perseus-text-list-editor", "perseus-clearfix", "layout-" + this.props.layout].join(" ");
 
     var inputs = _$1F.map(this.state.items, function (item, i) {
-      return /*#__PURE__*/React$26.createElement("li", {
+      return /*#__PURE__*/React$2d.createElement("li", {
         key: i
-      }, /*#__PURE__*/React$26.createElement("input", {
+      }, /*#__PURE__*/React$2d.createElement("input", {
         ref: "input_" + i,
         type: "text",
         value: item,
@@ -6278,7 +7026,7 @@ var TextListEditor$6 = React$26.createClass({
       }));
     }, this);
 
-    return /*#__PURE__*/React$26.createElement("ul", {
+    return /*#__PURE__*/React$2d.createElement("ul", {
       className: className
     }, inputs);
   },
@@ -6311,13 +7059,13 @@ var TextListEditor$6 = React$26.createClass({
       if (index === items.length - 1 && (index === 0 || items[focusIndex] !== "")) {
         // ...except for the last one, iff it is the only empty
         // input at the end.
-        ReactDOM$x.findDOMNode(this.refs["input_" + focusIndex]).focus();
+        ReactDOM$B.findDOMNode(this.refs["input_" + focusIndex]).focus();
       } else {
         items.splice(index, 1);
         this.setState({
           items: items
         }, function () {
-          ReactDOM$x.findDOMNode(this.refs["input_" + focusIndex]).focus();
+          ReactDOM$B.findDOMNode(this.refs["input_" + focusIndex]).focus();
         });
       } // Deleting the last character in the second-to-last input
       // removes it
@@ -6346,14 +7094,14 @@ var TextListEditor$6 = React$26.createClass({
 
       if (index === _items2.length - 2) {
         // ...unless the empty input is just below.
-        ReactDOM$x.findDOMNode(this.refs["input_" + _focusIndex]).focus();
+        ReactDOM$B.findDOMNode(this.refs["input_" + _focusIndex]).focus();
       } else {
         _items2.splice(_focusIndex, 0, "");
 
         this.setState({
           items: _items2
         }, function () {
-          ReactDOM$x.findDOMNode(this.refs["input_" + _focusIndex]).focus();
+          ReactDOM$B.findDOMNode(this.refs["input_" + _focusIndex]).focus();
         });
       }
     }
@@ -6379,15 +7127,15 @@ var _module_$2x = {
  * in local demo mode.
  */
 
-var React$25 = _react__default["default"];
+var React$2c = _react__default["default"];
 var TextListEditor$5 = _componentsTextListEditorJsx;
 var EMPTY_ARRAY = [];
-var StubTagEditor = React$25.createClass({
+var StubTagEditor = React$2c.createClass({
   displayName: "StubTagEditor",
   propTypes: {
-    value: React$25.PropTypes.arrayOf(React$25.PropTypes.string),
-    onChange: React$25.PropTypes.func.isRequired,
-    showTitle: React$25.PropTypes.bool.isRequired
+    value: React$2c.PropTypes.arrayOf(React$2c.PropTypes.string),
+    onChange: React$2c.PropTypes.func.isRequired,
+    showTitle: React$2c.PropTypes.bool.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -6396,11 +7144,11 @@ var StubTagEditor = React$25.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$25.createElement("div", null, this.props.showTitle && /*#__PURE__*/React$25.createElement("div", {
+    return /*#__PURE__*/React$2c.createElement("div", null, this.props.showTitle && /*#__PURE__*/React$2c.createElement("div", {
       style: {
         fontSize: 14
       }
-    }, "Tags:"), /*#__PURE__*/React$25.createElement(TextListEditor$5, {
+    }, "Tags:"), /*#__PURE__*/React$2c.createElement(TextListEditor$5, {
       options: this.props.value || EMPTY_ARRAY,
       layout: "vertical",
       onChange: this.props.onChange
@@ -6605,12 +7353,12 @@ var _module_$2w = {
  * with defaults.
  */
 
-var React$24 = _react__default["default"];
+var React$2b = _react__default["default"];
 var ApiOptions$x = _perseusApiJsx.Options;
 var ApiOptionsProps$2 = {
   propTypes: {
     // TODO(mdr): Should this actually be objectOf(any)?
-    apiOptions: React$24.PropTypes.any
+    apiOptions: React$2b.PropTypes.any
   },
 
   getDefaultProps() {
@@ -6977,7 +7725,7 @@ var Widgets$5 = _module_$2v.exports;
 // are coupled to the values in
 // stylesheets/exercise-content-package/articles.less - DRY it up at some point
 
-var React$23 = _react__default["default"];
+var React$2a = _react__default["default"];
 var smMax = 512;
 var mdMax = 688;
 var containerSizeClass = {
@@ -6986,7 +7734,7 @@ var containerSizeClass = {
   LARGE: "large",
   XLARGE: "xlarge"
 };
-var containerSizeClassPropType = React$23.PropTypes.oneOf(Object.values(containerSizeClass));
+var containerSizeClassPropType = React$2a.PropTypes.oneOf(Object.values(containerSizeClass));
 var getClassFromWidth = width => {
   if (!width) {
     return containerSizeClass.MEDIUM;
@@ -7018,15 +7766,15 @@ var _module_$2u = {
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 var classNames$h = _classnames__default["default"];
-var React$22 = _react__default["default"];
-var ReactDOM$w = _reactDom__default["default"];
+var React$29 = _react__default["default"];
+var ReactDOM$A = _reactDom__default["default"];
 var Widgets$3 = Widgets$5;
-var WidgetContainer$1 = React$22.createClass({
+var WidgetContainer$1 = React$29.createClass({
   displayName: "WidgetContainer",
   propTypes: {
-    shouldHighlight: React$22.PropTypes.bool.isRequired,
-    type: React$22.PropTypes.string,
-    initialProps: React$22.PropTypes.object.isRequired,
+    shouldHighlight: React$29.PropTypes.bool.isRequired,
+    type: React$29.PropTypes.string,
+    initialProps: React$29.PropTypes.object.isRequired,
     linterContext: linterContextProps
   },
 
@@ -7051,7 +7799,7 @@ var WidgetContainer$1 = React$22.createClass({
     // Only relay size class changes for mobile right now.  We may want to
     // this for desktop as well at some point in the future.
     if (this.state.widgetProps.apiOptions.isMobile) {
-      var containerWidth = ReactDOM$w.findDOMNode(this).offsetWidth; // NOTE(benkomalo): in the common case, this won't change anything.
+      var containerWidth = ReactDOM$A.findDOMNode(this).offsetWidth; // NOTE(benkomalo): in the common case, this won't change anything.
       // Unfortunately, it will cause a flash and re-layout on mobile,
       // but until we have better SSR or a more drastic way change to our
       // APIs that hints at the available size, we do have to measure DOM
@@ -7077,7 +7825,7 @@ var WidgetContainer$1 = React$22.createClass({
 
     if (WidgetType == null) {
       // Just give up on invalid widget types
-      return /*#__PURE__*/React$22.createElement("div", {
+      return /*#__PURE__*/React$29.createElement("div", {
         className: className
       });
     }
@@ -7123,14 +7871,14 @@ var WidgetContainer$1 = React$22.createClass({
     // after toggling static mode.
 
 
-    return /*#__PURE__*/React$22.createElement("div", {
+    return /*#__PURE__*/React$29.createElement("div", {
       className: className,
       style: isStatic ? staticContainerStyles : {}
-    }, /*#__PURE__*/React$22.createElement(WidgetType, _extends({}, this.state.widgetProps, {
+    }, /*#__PURE__*/React$29.createElement(WidgetType, _extends({}, this.state.widgetProps, {
       linterContext: linterContext,
       containerSizeClass: this.state.sizeClass,
       ref: "widget"
-    })), isStatic && /*#__PURE__*/React$22.createElement("div", {
+    })), isStatic && /*#__PURE__*/React$29.createElement("div", {
       style: staticOverlayStyles
     }));
   },
@@ -7841,28 +8589,28 @@ var _module_$2s = {
  * not introduce a wrapper element, which makes styling easier.
  */
 
-var React$21 = _react__default["default"];
+var React$28 = _react__default["default"];
 var {
-  PropTypes: PropTypes$1
-} = React$21;
+  PropTypes: PropTypes$8
+} = React$28;
 var Status = {
   PENDING: "pending",
   LOADING: "loading",
   LOADED: "loaded",
   FAILED: "failed"
 };
-var ImageLoader$1 = React$21.createClass({
+var ImageLoader$1 = React$28.createClass({
   displayName: "ImageLoader",
   propTypes: {
-    children: React$21.PropTypes.oneOfType([React$21.PropTypes.arrayOf(React$21.PropTypes.node), React$21.PropTypes.node]),
-    imgProps: PropTypes$1.any,
-    onError: PropTypes$1.func,
-    onLoad: PropTypes$1.func,
+    children: React$28.PropTypes.oneOfType([React$28.PropTypes.arrayOf(React$28.PropTypes.node), React$28.PropTypes.node]),
+    imgProps: PropTypes$8.any,
+    onError: PropTypes$8.func,
+    onLoad: PropTypes$8.func,
     // When the DOM updates to replace the preloader with the image, or
     // vice-versa, we trigger this callback.
-    onUpdate: PropTypes$1.func,
-    preloader: PropTypes$1.func,
-    src: PropTypes$1.string
+    onUpdate: PropTypes$8.func,
+    preloader: PropTypes$8.func,
+    src: PropTypes$8.string
   },
   getInitialState: function getInitialState(props) {
     return {
@@ -7943,7 +8691,7 @@ var ImageLoader$1 = React$21.createClass({
       }
     }
 
-    return /*#__PURE__*/React$21.createElement("img", props);
+    return /*#__PURE__*/React$28.createElement("img", props);
   },
   render: function render() {
     switch (this.state.status) {
@@ -19976,8 +20724,8 @@ var kpoint$7 = _kmath3.point;
 var kvector$4 = _kmath3.vector;
 var KhanColors$b = _utilColorsJs;
 var processMath = _utilTexJs.processMath;
-var React$20 = _react__default["default"];
-var ReactDOM$v = _reactDom__default["default"];
+var React$27 = _react__default["default"];
+var ReactDOM$z = _reactDom__default["default"];
 var InlineIcon$i = _componentsInlineIconJsx; // State parameters that should be converted into an array of
 // functions
 
@@ -20153,11 +20901,11 @@ _$1q.extend(MovablePoint$7.prototype, {
 
     var showTrashTooltip = () => {
       this._showTooltip(container => {
-        ReactDOM$v.render( /*#__PURE__*/React$20.createElement("span", {
+        ReactDOM$z.render( /*#__PURE__*/React$27.createElement("span", {
           style: {
             fontSize: "2em"
           }
-        }, /*#__PURE__*/React$20.createElement(InlineIcon$i, _extends({}, iconTrash, {
+        }, /*#__PURE__*/React$27.createElement(InlineIcon$i, _extends({}, iconTrash, {
           style: {
             position: "static",
             color: KhanColors$b.INTERACTIVE,
@@ -21122,8 +21870,8 @@ var _graphieMovablesJsx = _module_$29.exports;
 var _module_$28 = {
   exports: {}
 };
-var React$1$ = _react__default["default"];
-var ReactDOM$u = _reactDom__default["default"];
+var React$26 = _react__default["default"];
+var ReactDOM$y = _reactDom__default["default"];
 var _$1m = _underscore__default["default"];
 var GraphieClasses = _graphieClassesJsx;
 var Movables = _graphieMovablesJsx;
@@ -21133,24 +21881,24 @@ var nestedMap = Util$q.nestedMap;
 var assert$5 = InteractiveUtil$7.assert;
 var GraphUtils$4 = _utilGraphUtilsJs;
 var createGraphie = GraphUtils$4.createGraphie;
-var Graphie$7 = React$1$.createClass({
+var Graphie$7 = React$26.createClass({
   displayName: "Graphie",
   propTypes: {
-    addMouseLayer: React$1$.PropTypes.bool,
-    box: React$1$.PropTypes.arrayOf(React$1$.PropTypes.number).isRequired,
-    children: React$1$.PropTypes.node,
-    isMobile: React$1$.PropTypes.bool,
-    onClick: React$1$.PropTypes.func,
-    onMouseDown: React$1$.PropTypes.func,
-    onMouseMove: React$1$.PropTypes.func,
-    onMouseUp: React$1$.PropTypes.func,
-    options: React$1$.PropTypes.shape({
-      snapStep: React$1$.PropTypes.arrayOf(React$1$.PropTypes.number)
+    addMouseLayer: React$26.PropTypes.bool,
+    box: React$26.PropTypes.arrayOf(React$26.PropTypes.number).isRequired,
+    children: React$26.PropTypes.node,
+    isMobile: React$26.PropTypes.bool,
+    onClick: React$26.PropTypes.func,
+    onMouseDown: React$26.PropTypes.func,
+    onMouseMove: React$26.PropTypes.func,
+    onMouseUp: React$26.PropTypes.func,
+    options: React$26.PropTypes.shape({
+      snapStep: React$26.PropTypes.arrayOf(React$26.PropTypes.number)
     }),
-    range: React$1$.PropTypes.arrayOf(React$1$.PropTypes.arrayOf(React$1$.PropTypes.number)),
-    responsive: React$1$.PropTypes.bool,
-    setDrawingAreaAvailable: React$1$.PropTypes.func,
-    setup: React$1$.PropTypes.func.isRequired
+    range: React$26.PropTypes.arrayOf(React$26.PropTypes.arrayOf(React$26.PropTypes.number)),
+    responsive: React$26.PropTypes.bool,
+    setDrawingAreaAvailable: React$26.PropTypes.func,
+    setup: React$26.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -21228,7 +21976,7 @@ var Graphie$7 = React$1$.createClass({
   _setupGraphie: function _setupGraphie() {
     this._removeMovables();
 
-    var graphieDiv = ReactDOM$u.findDOMNode(this.refs.graphieDiv);
+    var graphieDiv = ReactDOM$y.findDOMNode(this.refs.graphieDiv);
     $__default["default"](graphieDiv).empty();
     var graphie = this._graphie = createGraphie(graphieDiv); // This has to be called before addMouseLayer. You can re-init
     // with graphInit later if you prefer
@@ -21400,9 +22148,9 @@ var Graphie$7 = React$1$.createClass({
     });
   },
   render: function render() {
-    return /*#__PURE__*/React$1$.createElement("div", {
+    return /*#__PURE__*/React$26.createElement("div", {
       className: "graphie-container"
-    }, /*#__PURE__*/React$1$.createElement("div", {
+    }, /*#__PURE__*/React$26.createElement("div", {
       className: "graphie",
       ref: "graphieDiv"
     }));
@@ -21439,16 +22187,16 @@ var _module_$27 = {
  */
 
 var classNames$g = _classnames__default["default"];
-var React$1_ = _react__default["default"];
+var React$25 = _react__default["default"];
 var MIN_VIEWPORT_HEIGHT = 480;
-var FixedToResponsive$2 = React$1_.createClass({
+var FixedToResponsive$2 = React$25.createClass({
   displayName: "FixedToResponsive",
   propTypes: {
-    width: React$1_.PropTypes.number.isRequired,
-    height: React$1_.PropTypes.number.isRequired,
-    className: React$1_.PropTypes.string,
-    constrainHeight: React$1_.PropTypes.bool,
-    allowFullBleed: React$1_.PropTypes.bool
+    width: React$25.PropTypes.number.isRequired,
+    height: React$25.PropTypes.number.isRequired,
+    className: React$25.PropTypes.string,
+    constrainHeight: React$25.PropTypes.bool,
+    allowFullBleed: React$25.PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -21498,7 +22246,7 @@ var FixedToResponsive$2 = React$1_.createClass({
     //     (fixed height / fixed width) * display width = display height
     // Based on http://refills.bourbon.io/components/#video && medium.com
 
-    var spacer = /*#__PURE__*/React$1_.createElement("div", {
+    var spacer = /*#__PURE__*/React$25.createElement("div", {
       style: {
         paddingBottom: (1 / aspectRatio).toFixed(4) * 100 + "%"
       }
@@ -21524,14 +22272,14 @@ var FixedToResponsive$2 = React$1_.createClass({
       maxHeight: height
     };
     var className = classNames$g("fixed-to-responsive", this.props.className);
-    var container = /*#__PURE__*/React$1_.createElement("div", {
+    var container = /*#__PURE__*/React$25.createElement("div", {
       className: className,
       style: style
     }, spacer, this.props.children);
     var shouldFullBleed = this.props.allowFullBleed && this.state.viewportWidth && width >= this.state.viewportWidth;
 
     if (shouldFullBleed) {
-      return /*#__PURE__*/React$1_.createElement("div", {
+      return /*#__PURE__*/React$25.createElement("div", {
         style: {
           marginLeft: negativePhoneMargin,
           marginRight: negativePhoneMargin
@@ -21551,7 +22299,7 @@ var _module_$26 = {
 /* globals KA */
 
 var classNames$f = _classnames__default["default"];
-var React$1Z = _react__default["default"];
+var React$24 = _react__default["default"];
 var $$4 = $__default["default"];
 var _$1l = _underscore__default["default"];
 var FixedToResponsive$1 = _componentsFixedToResponsiveJsx;
@@ -21664,7 +22412,7 @@ function getUrlHash(url) {
 }
 
 function defaultPreloader() {
-  return React$1Z.DOM.span({
+  return React$24.DOM.span({
     style: {
       background: "url(/images/spinner.gif) no-repeat",
       backgroundPosition: "center",
@@ -21676,22 +22424,22 @@ function defaultPreloader() {
   });
 }
 
-var SvgImage$6 = React$1Z.createClass({
+var SvgImage$6 = React$24.createClass({
   displayName: "SvgImage",
   propTypes: {
-    allowFullBleed: React$1Z.PropTypes.bool,
-    alt: React$1Z.PropTypes.string,
-    constrainHeight: React$1Z.PropTypes.bool,
-    extraGraphie: React$1Z.PropTypes.shape({
-      box: React$1Z.PropTypes.array.isRequired,
-      range: React$1Z.PropTypes.array.isRequired,
-      labels: React$1Z.PropTypes.array.isRequired
+    allowFullBleed: React$24.PropTypes.bool,
+    alt: React$24.PropTypes.string,
+    constrainHeight: React$24.PropTypes.bool,
+    extraGraphie: React$24.PropTypes.shape({
+      box: React$24.PropTypes.array.isRequired,
+      range: React$24.PropTypes.array.isRequired,
+      labels: React$24.PropTypes.array.isRequired
     }),
-    height: React$1Z.PropTypes.number,
+    height: React$24.PropTypes.number,
     // When the DOM updates to replace the preloader with the image, or
     // vice-versa, we trigger this callback.
-    onUpdate: React$1Z.PropTypes.func,
-    preloader: React$1Z.PropTypes.func,
+    onUpdate: React$24.PropTypes.func,
+    preloader: React$24.PropTypes.func,
     // By default, this component attempts to be responsive whenever
     // possible (specifically, when width and height are passed in).
     // You can expliclty force unresponsive behavior by *either*
@@ -21699,18 +22447,18 @@ var SvgImage$6 = React$1Z.createClass({
     // The difference is that forcing via this prop will result in
     // explicit width and height styles being set on the rendered
     // component.
-    responsive: React$1Z.PropTypes.bool,
-    scale: React$1Z.PropTypes.number,
-    src: React$1Z.PropTypes.string.isRequired,
-    title: React$1Z.PropTypes.string,
-    trackInteraction: React$1Z.PropTypes.func,
-    width: React$1Z.PropTypes.number,
+    responsive: React$24.PropTypes.bool,
+    scale: React$24.PropTypes.number,
+    src: React$24.PropTypes.string.isRequired,
+    title: React$24.PropTypes.string,
+    trackInteraction: React$24.PropTypes.func,
+    width: React$24.PropTypes.number,
     // Whether clicking this image will allow it to be fully zoomed in to
     // its original size on click, and allow the user to scroll in that
     // state. This also does some hacky viewport meta tag changing to
     // ensure this works on mobile devices, so I (david@) don't recommend
     // enabling this on desktop yet.
-    zoomToFullSizeOnMobile: React$1Z.PropTypes.bool
+    zoomToFullSizeOnMobile: React$24.PropTypes.bool
   },
   statics: {
     // Sometimes other components want to download the actual image e.g. to
@@ -21984,7 +22732,7 @@ var SvgImage$6 = React$1Z.createClass({
     var extraGraphie;
 
     if (this.props.extraGraphie && this.props.extraGraphie.labels.length) {
-      extraGraphie = /*#__PURE__*/React$1Z.createElement(Graphie$6, {
+      extraGraphie = /*#__PURE__*/React$24.createElement(Graphie$6, {
         box: this.props.extraGraphie.box,
         range: this.props.extraGraphie.range,
         options: {
@@ -22008,13 +22756,13 @@ var SvgImage$6 = React$1Z.createClass({
           "svg-image": true
         });
         imageProps.onClick = this._handleZoomClick;
-        return /*#__PURE__*/React$1Z.createElement(FixedToResponsive$1, {
+        return /*#__PURE__*/React$24.createElement(FixedToResponsive$1, {
           className: wrapperClasses,
           width: width,
           height: height,
           constrainHeight: this.props.constrainHeight,
           allowFullBleed: this.props.allowFullBleed && isImageProbablyPhotograph(imageSrc)
-        }, /*#__PURE__*/React$1Z.createElement(ImageLoader, {
+        }, /*#__PURE__*/React$24.createElement(ImageLoader, {
           src: imageSrc,
           imgProps: imageProps,
           preloader: preloader,
@@ -22022,7 +22770,7 @@ var SvgImage$6 = React$1Z.createClass({
         }), extraGraphie);
       } else {
         imageProps.style = dimensions;
-        return /*#__PURE__*/React$1Z.createElement(ImageLoader, {
+        return /*#__PURE__*/React$24.createElement(ImageLoader, {
           src: imageSrc,
           preloader: preloader,
           imgProps: imageProps,
@@ -22047,7 +22795,7 @@ var SvgImage$6 = React$1Z.createClass({
       }
 
       var scale = [40 * this.props.scale, 40 * this.props.scale];
-      graphie = /*#__PURE__*/React$1Z.createElement(Graphie$6, {
+      graphie = /*#__PURE__*/React$24.createElement(Graphie$6, {
         ref: "graphie",
         box: box,
         scale: scale,
@@ -22060,12 +22808,12 @@ var SvgImage$6 = React$1Z.createClass({
     }
 
     if (responsive) {
-      return /*#__PURE__*/React$1Z.createElement(FixedToResponsive$1, {
+      return /*#__PURE__*/React$24.createElement(FixedToResponsive$1, {
         className: "svg-image",
         width: width,
         height: height,
         constrainHeight: this.props.constrainHeight
-      }, /*#__PURE__*/React$1Z.createElement(ImageLoader, {
+      }, /*#__PURE__*/React$24.createElement(ImageLoader, {
         src: imageUrl,
         onLoad: this.onImageLoad,
         onUpdate: this.props.onUpdate,
@@ -22074,10 +22822,10 @@ var SvgImage$6 = React$1Z.createClass({
       }), graphie, extraGraphie);
     } else {
       imageProps.style = dimensions;
-      return /*#__PURE__*/React$1Z.createElement("div", {
+      return /*#__PURE__*/React$24.createElement("div", {
         className: "unresponsive-svg-image",
         style: dimensions
-      }, /*#__PURE__*/React$1Z.createElement(ImageLoader, {
+      }, /*#__PURE__*/React$24.createElement(ImageLoader, {
         src: imageUrl,
         onLoad: this.onImageLoad,
         onUpdate: this.props.onUpdate,
@@ -22099,14 +22847,14 @@ var _module_$25 = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1Y = _react__default["default"];
-var QuestionParagraph$1 = React$1Y.createClass({
+var React$23 = _react__default["default"];
+var QuestionParagraph$1 = React$23.createClass({
   displayName: "QuestionParagraph",
   render: function render() {
     var className = this.props.className ? "paragraph " + this.props.className : "paragraph"; // For perseus-article just-in-place-translation (jipt), we need
     // to attach some metadata to top-level QuestionParagraphs:
 
-    return /*#__PURE__*/React$1Y.createElement("div", {
+    return /*#__PURE__*/React$23.createElement("div", {
       className: className,
       "data-perseus-component-index": this.props.translationIndex,
       "data-perseus-paragraph-index": this.props.paragraphIndex
@@ -22262,15 +23010,15 @@ class NotGorgon {
 /* globals KA */
 
 var $$3 = $__default["default"];
-var React$1X = _react__default["default"];
-var ReactDOM$t = _reactDom__default["default"];
+var React$22 = _react__default["default"];
+var ReactDOM$x = _reactDom__default["default"];
 var _$1k = _underscore__default["default"];
 var classNames$e = _classnames__default["default"];
 var JiptParagraphs = _jiptParagraphsJsx;
 var PerseusMarkdown$3 = _perseusMarkdownJsx;
 var QuestionParagraph = _questionParagraphJsx;
 var SvgImage$5 = _componentsSvgImageJsx;
-var TeX$7 = _reactComponentsTexJsx__default["default"];
+var TeX$7 = _reactComponentsTexJsx;
 var WidgetContainer = _widgetContainerJsx;
 var Widgets$2 = Widgets$5;
 var Util$m = Util$q;
@@ -22402,29 +23150,29 @@ InteractionTracker.prototype._track = function (extraData) {
 
 InteractionTracker.prototype._noop = function () {};
 
-var Renderer$n = React$1X.createClass({
+var Renderer$n = React$22.createClass({
   displayName: "Renderer",
   propTypes: _objectSpread2(_objectSpread2({}, ApiOptionsProps$1.propTypes), {}, {
-    alwaysUpdate: React$1X.PropTypes.bool,
-    findExternalWidgets: React$1X.PropTypes.func,
-    highlightedWidgets: React$1X.PropTypes.arrayOf(React$1X.PropTypes.any),
-    ignoreMissingWidgets: React$1X.PropTypes.bool,
-    images: React$1X.PropTypes.any,
+    alwaysUpdate: React$22.PropTypes.bool,
+    findExternalWidgets: React$22.PropTypes.func,
+    highlightedWidgets: React$22.PropTypes.arrayOf(React$22.PropTypes.any),
+    ignoreMissingWidgets: React$22.PropTypes.bool,
+    images: React$22.PropTypes.any,
     keypadElement: keypadElementPropType$8,
-    onInteractWithWidget: React$1X.PropTypes.func,
-    onRender: React$1X.PropTypes.func,
-    problemNum: React$1X.PropTypes.number,
-    questionCompleted: React$1X.PropTypes.bool,
-    reviewMode: React$1X.PropTypes.bool,
-    serializedState: React$1X.PropTypes.any,
+    onInteractWithWidget: React$22.PropTypes.func,
+    onRender: React$22.PropTypes.func,
+    problemNum: React$22.PropTypes.number,
+    questionCompleted: React$22.PropTypes.bool,
+    reviewMode: React$22.PropTypes.bool,
+    serializedState: React$22.PropTypes.any,
     // Callback which is called when serialized state changes with the new
     // serialized state.
-    onSerializedStateUpdated: React$1X.PropTypes.func,
+    onSerializedStateUpdated: React$22.PropTypes.func,
     // If linterContext.highlightLint is true, then content will be passed
     // to the linter and any warnings will be highlighted in the rendered
     // output.
     linterContext: linterContextProps,
-    legacyPerseusLint: React$1X.PropTypes.arrayOf(React$1X.PropTypes.string)
+    legacyPerseusLint: React$22.PropTypes.arrayOf(React$22.PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -22465,7 +23213,7 @@ var Renderer$n = React$1X.createClass({
   componentDidMount: function componentDidMount() {
     this.handleRender({});
     this._currentFocus = null;
-    this._rootNode = ReactDOM$t.findDOMNode(this);
+    this._rootNode = ReactDOM$x.findDOMNode(this);
     this._isMounted = true; // TODO(emily): actually make the serializedState prop work like a
     // controlled prop, instead of manually calling .restoreSerializedState
     // at the right times.
@@ -22639,7 +23387,7 @@ var Renderer$n = React$1X.createClass({
       // worry about using this widget key and ref:
 
 
-      return /*#__PURE__*/React$1X.createElement(WidgetContainer, {
+      return /*#__PURE__*/React$22.createElement(WidgetContainer, {
         ref: "container:" + id,
         key: "container:" + id,
         type: type,
@@ -23025,7 +23773,7 @@ var Renderer$n = React$1X.createClass({
         });
       }
 
-      return /*#__PURE__*/React$1X.createElement(QuestionParagraph, {
+      return /*#__PURE__*/React$22.createElement(QuestionParagraph, {
         key: state.key,
         className: className,
         translationIndex: this.translationIndex,
@@ -23088,7 +23836,7 @@ var Renderer$n = React$1X.createClass({
         // reasons). Instead we just notify the
         // hopefully-content-creator that they need to change the
         // widget id.
-        return /*#__PURE__*/React$1X.createElement("span", {
+        return /*#__PURE__*/React$22.createElement("span", {
           key: state.key,
           className: "renderer-widget-error"
         }, "Widget [[", "\u2603", " ", node.id, "]] already exists.");
@@ -23130,7 +23878,7 @@ var Renderer$n = React$1X.createClass({
         }
       };
 
-      var content = /*#__PURE__*/React$1X.createElement(TeX$7, {
+      var content = /*#__PURE__*/React$22.createElement(TeX$7, {
         onRender: onRender,
         onResourceLoaded: onRender
       }, preprocessTex$1(node.content));
@@ -23191,22 +23939,22 @@ var Renderer$n = React$1X.createClass({
           };
         };
 
-        return /*#__PURE__*/React$1X.createElement("div", {
+        return /*#__PURE__*/React$22.createElement("div", {
           key: state.key,
           className: "perseus-block-math",
           style: outerStyle
-        }, /*#__PURE__*/React$1X.createElement("div", {
+        }, /*#__PURE__*/React$22.createElement("div", {
           className: "perseus-block-math-inner",
           style: _objectSpread2(_objectSpread2({}, innerStyle), horizontalPadding)
-        }, /*#__PURE__*/React$1X.createElement(Zoomable, {
+        }, /*#__PURE__*/React$22.createElement(Zoomable, {
           readyToMeasureDeferred: deferred,
           computeChildBounds: computeMathBounds
         }, content)));
       } else {
-        return /*#__PURE__*/React$1X.createElement("div", {
+        return /*#__PURE__*/React$22.createElement("div", {
           key: state.key,
           className: "perseus-block-math"
-        }, /*#__PURE__*/React$1X.createElement("div", {
+        }, /*#__PURE__*/React$22.createElement("div", {
           className: "perseus-block-math-inner",
           style: innerStyle
         }, content));
@@ -23219,17 +23967,17 @@ var Renderer$n = React$1X.createClass({
       var tex = node.content.replace(/\{align[*]?\}/g, "{aligned}"); // We render math here instead of in perseus-markdown.jsx
       // because we need to pass it our onRender callback.
 
-      return /*#__PURE__*/React$1X.createElement("span", {
+      return /*#__PURE__*/React$22.createElement("span", {
         key: state.key,
         style: {
           // If math is directly next to text, don't let it
           // wrap to the next line
           whiteSpace: "nowrap"
         }
-      }, /*#__PURE__*/React$1X.createElement("span", null), /*#__PURE__*/React$1X.createElement(TeX$7, {
+      }, /*#__PURE__*/React$22.createElement("span", null), /*#__PURE__*/React$22.createElement(TeX$7, {
         onRender: this.props.onRender,
         onResourceLoaded: this.props.onRender
-      }, tex), /*#__PURE__*/React$1X.createElement("span", null));
+      }, tex), /*#__PURE__*/React$22.createElement("span", null));
     } else if (node.type === "image") {
       if (imagePlaceholder) {
         return imagePlaceholder;
@@ -23247,7 +23995,7 @@ var Renderer$n = React$1X.createClass({
       // TODO(alex): Make tables themselves responsive.
 
       var responsive = !state.inTable;
-      return /*#__PURE__*/React$1X.createElement(SvgImage$5, _extends({
+      return /*#__PURE__*/React$22.createElement(SvgImage$5, _extends({
         key: state.key,
         src: PerseusMarkdown$3.sanitizeUrl(node.target),
         alt: node.alt,
@@ -23295,16 +24043,16 @@ var Renderer$n = React$1X.createClass({
         paddingLeft: 0,
         paddingRight: 0
       };
-      var wrappedOutput = /*#__PURE__*/React$1X.createElement("div", {
+      var wrappedOutput = /*#__PURE__*/React$22.createElement("div", {
         style: _objectSpread2(_objectSpread2({}, _innerStyle), {}, {
           overflowX: "auto"
         })
-      }, /*#__PURE__*/React$1X.createElement(Zoomable, {
+      }, /*#__PURE__*/React$22.createElement(Zoomable, {
         animateHeight: true
       }, output)); // TODO(benkomalo): how should we deal with tappable items inside
       // of tables?
 
-      return /*#__PURE__*/React$1X.createElement("div", {
+      return /*#__PURE__*/React$22.createElement("div", {
         style: _outerStyle
       }, wrappedOutput);
     } else {
@@ -23318,7 +24066,7 @@ var Renderer$n = React$1X.createClass({
     var oldOnRender = prevProps.onRender; // In the common case of no callback specified, avoid this work.
 
     if (onRender !== noopOnRender || oldOnRender !== noopOnRender) {
-      var $images = $$3(ReactDOM$t.findDOMNode(this)).find("img"); // Fire callback on image load...
+      var $images = $$3(ReactDOM$x.findDOMNode(this)).find("img"); // Fire callback on image load...
 
       if (oldOnRender !== noopOnRender) {
         $images.off("load", oldOnRender);
@@ -23406,7 +24154,7 @@ var Renderer$n = React$1X.createClass({
     if (getNode) {
       return getNode(interWidgetPath);
     } else if (interWidgetPath.length === 0) {
-      return ReactDOM$t.findDOMNode(widget);
+      return ReactDOM$x.findDOMNode(widget);
     }
   },
   getGrammarTypeForPath: function getGrammarTypeForPath(path) {
@@ -23753,7 +24501,7 @@ var Renderer$n = React$1X.createClass({
         // Persues.TranslationComponent registry so that when jipt
         // calls its before_dom_insert we can lookup this component by
         // this attribute and render the text with markdown.
-        return /*#__PURE__*/React$1X.createElement("div", {
+        return /*#__PURE__*/React$22.createElement("div", {
           "data-perseus-component-index": this.translationIndex
         }, content);
       }
@@ -23801,7 +24549,7 @@ var Renderer$n = React$1X.createClass({
       [ApiClassNames$d.RESPONSIVE_RENDERER]: true,
       [ApiClassNames$d.TWO_COLUMN_RENDERER]: this._isTwoColumn
     });
-    this.lastRenderedMarkdown = /*#__PURE__*/React$1X.createElement("div", {
+    this.lastRenderedMarkdown = /*#__PURE__*/React$22.createElement("div", {
       className: className
     }, markdownContents);
     return this.lastRenderedMarkdown;
@@ -23931,7 +24679,7 @@ var _stylesSharedJs = _module_$21.exports;
 var _module_$20 = {
   exports: {}
 };
-var React$1W = _react__default["default"];
+var React$21 = _react__default["default"];
 var classnames$1 = _classnames__default["default"];
 var i18n$2 = window.i18n;
 var Renderer$m = _rendererJsx;
@@ -23940,17 +24688,17 @@ var mediaQueries$7 = _stylesMediaQueriesJs;
 var Gorgon$5 = _gorgonGorgonJs;
 /* Renders just a hint preview */
 
-var HintRenderer$1 = React$1W.createClass({
+var HintRenderer$1 = React$21.createClass({
   displayName: "HintRenderer",
   propTypes: {
     apiOptions: ApiOptions$w.propTypes,
-    className: React$1W.PropTypes.string,
-    hint: React$1W.PropTypes.any,
-    lastHint: React$1W.PropTypes.bool,
-    lastRendered: React$1W.PropTypes.bool,
-    pos: React$1W.PropTypes.number,
-    totalHints: React$1W.PropTypes.number,
-    findExternalWidgets: React$1W.PropTypes.func,
+    className: React$21.PropTypes.string,
+    hint: React$21.PropTypes.any,
+    lastHint: React$21.PropTypes.bool,
+    lastRendered: React$21.PropTypes.bool,
+    pos: React$21.PropTypes.number,
+    totalHints: React$21.PropTypes.number,
+    findExternalWidgets: React$21.PropTypes.func,
     linterContext: linterContextProps
   },
 
@@ -23979,7 +24727,7 @@ var HintRenderer$1 = React$1W.createClass({
     var {
       isMobile
     } = apiOptions;
-    var classNames = classnames$1(!isMobile && "perseus-hint-renderer", isMobile && aphrodite.css(styles$m.newHint), isMobile && lastRendered && aphrodite.css(styles$m.lastRenderedNewHint), lastHint && "last-hint", lastRendered && "last-rendered", className); // TODO(charlie): Allowing `staticRender` here would require that we
+    var classNames = classnames$1(!isMobile && "perseus-hint-renderer", isMobile && aphrodite.css(styles$p.newHint), isMobile && lastRendered && aphrodite.css(styles$p.lastRenderedNewHint), lastHint && "last-hint", lastRendered && "last-rendered", className); // TODO(charlie): Allowing `staticRender` here would require that we
     // extend `HintsRenderer` and `HintRenderer` to implement the full
     // "input' API, so that clients could access the static inputs. Allowing
     // `customKeypad` would require that we extend `ItemRenderer` to support
@@ -23992,20 +24740,20 @@ var HintRenderer$1 = React$1W.createClass({
       staticRender: false
     });
 
-    return /*#__PURE__*/React$1W.createElement("div", {
+    return /*#__PURE__*/React$21.createElement("div", {
       className: classNames,
       tabIndex: "-1"
-    }, !apiOptions.isMobile && /*#__PURE__*/React$1W.createElement("span", {
+    }, !apiOptions.isMobile && /*#__PURE__*/React$21.createElement("span", {
       className: "perseus-sr-only"
     }, i18n$2._("Hint #%(pos)s", {
       pos: pos + 1
-    })), !apiOptions.isMobile && !apiOptions.satStyling && totalHints && pos != null && /*#__PURE__*/React$1W.createElement("span", {
+    })), !apiOptions.isMobile && !apiOptions.satStyling && totalHints && pos != null && /*#__PURE__*/React$21.createElement("span", {
       className: "perseus-hint-label",
       style: {
         display: "block",
         color: apiOptions.hintProgressColor
       }
-    }, "".concat(pos + 1, " / ").concat(totalHints)), /*#__PURE__*/React$1W.createElement(Renderer$m, {
+    }, "".concat(pos + 1, " / ").concat(totalHints)), /*#__PURE__*/React$21.createElement(Renderer$m, {
       ref: "renderer",
       widgets: hint.widgets,
       content: hint.content || "",
@@ -24016,7 +24764,7 @@ var HintRenderer$1 = React$1W.createClass({
     }));
   }
 });
-var styles$m = aphrodite.StyleSheet.create({
+var styles$p = aphrodite.StyleSheet.create({
   newHint: {
     marginBottom: 1.5 * baseUnitPx,
     borderLeftColor: gray97,
@@ -24047,8 +24795,8 @@ var _hintRendererJsx = _module_$20.exports;
 var _module_$1$ = {
   exports: {}
 };
-var React$1V = _react__default["default"];
-var ReactDOM$s = _reactDom__default["default"];
+var React$20 = _react__default["default"];
+var ReactDOM$w = _reactDom__default["default"];
 var classnames = _classnames__default["default"];
 var _$1j = _underscore__default["default"];
 var i18n$1 = window.i18n;
@@ -24058,13 +24806,13 @@ var ApiOptionsProps = _mixinsApiOptionsPropsJs;
 var mediaQueries$6 = _stylesMediaQueriesJs;
 var sharedStyles$3 = _stylesSharedJs;
 var Gorgon$4 = _gorgonGorgonJs;
-var HintsRenderer$4 = React$1V.createClass({
+var HintsRenderer$4 = React$20.createClass({
   displayName: "HintsRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ApiOptionsProps.propTypes), {}, {
-    className: React$1V.PropTypes.string,
-    hints: React$1V.PropTypes.arrayOf(React$1V.PropTypes.any),
-    hintsVisible: React$1V.PropTypes.number,
-    findExternalWidgets: React$1V.PropTypes.func,
+    className: React$20.PropTypes.string,
+    hints: React$20.PropTypes.arrayOf(React$20.PropTypes.any),
+    hintsVisible: React$20.PropTypes.number,
+    findExternalWidgets: React$20.PropTypes.func,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -24083,7 +24831,7 @@ var HintsRenderer$4 = React$1V.createClass({
 
     if (prevProps.hintsVisible < this.props.hintsVisible) {
       var pos = this.props.hintsVisible - 1;
-      ReactDOM$s.findDOMNode(this.refs["hintRenderer" + pos]).focus();
+      ReactDOM$w.findDOMNode(this.refs["hintRenderer" + pos]).focus();
     }
   },
   _hintsVisible: function _hintsVisible() {
@@ -24157,7 +24905,7 @@ var HintsRenderer$4 = React$1V.createClass({
     this.props.hints.slice(0, hintsVisible).forEach((hint, i) => {
       var lastHint = i === this.props.hints.length - 1 && !/\*\*/.test(hint.content);
       var lastRendered = i === hintsVisible - 1;
-      var renderer = /*#__PURE__*/React$1V.createElement(HintRenderer, {
+      var renderer = /*#__PURE__*/React$20.createElement(HintRenderer, {
         lastHint: lastHint,
         lastRendered: lastRendered,
         hint: hint,
@@ -24178,28 +24926,28 @@ var HintsRenderer$4 = React$1V.createClass({
     });
     var showGetAnotherHint = apiOptions.getAnotherHint && hintsVisible > 0 && hintsVisible < this.props.hints.length;
     var hintRatioCopy = "(".concat(hintsVisible, "/").concat(this.props.hints.length, ")");
-    var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$l.mobileHintStylesHintsRenderer));
-    return /*#__PURE__*/React$1V.createElement("div", {
+    var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$o.mobileHintStylesHintsRenderer));
+    return /*#__PURE__*/React$20.createElement("div", {
       className: classNames
-    }, apiOptions.isMobile && hintsVisible > 0 && /*#__PURE__*/React$1V.createElement("div", {
-      className: aphrodite.css(styles$l.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
-    }, i18n$1._("Hints")), hints, showGetAnotherHint && /*#__PURE__*/React$1V.createElement("button", {
+    }, apiOptions.isMobile && hintsVisible > 0 && /*#__PURE__*/React$20.createElement("div", {
+      className: aphrodite.css(styles$o.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
+    }, i18n$1._("Hints")), hints, showGetAnotherHint && /*#__PURE__*/React$20.createElement("button", {
       rel: "button",
-      className: aphrodite.css(styles$l.linkButton, styles$l.getAnotherHintButton, apiOptions.isMobile && styles$l.mobileHintStylesGetAnotherHintButton),
+      className: aphrodite.css(styles$o.linkButton, styles$o.getAnotherHintButton, apiOptions.isMobile && styles$o.mobileHintStylesGetAnotherHintButton),
       onClick: evt => {
         evt.preventDefault();
         evt.stopPropagation();
         apiOptions.getAnotherHint();
       }
-    }, /*#__PURE__*/React$1V.createElement("span", {
-      className: aphrodite.css(styles$l.plusText, apiOptions.isMobile && styles$l.mobileHintStylesPlusText)
-    }, "+"), /*#__PURE__*/React$1V.createElement("span", {
-      className: aphrodite.css(styles$l.getAnotherHintText)
+    }, /*#__PURE__*/React$20.createElement("span", {
+      className: aphrodite.css(styles$o.plusText, apiOptions.isMobile && styles$o.mobileHintStylesPlusText)
+    }, "+"), /*#__PURE__*/React$20.createElement("span", {
+      className: aphrodite.css(styles$o.getAnotherHintText)
     }, i18n$1._("Get another hint"), " ", hintRatioCopy)));
   }
 });
 var hintIndentation = baseUnitPx + hintBorderWidth;
-var styles$l = aphrodite.StyleSheet.create({
+var styles$o = aphrodite.StyleSheet.create({
   rendererMargins: {
     marginTop: baseUnitPx
   },
@@ -24558,12 +25306,12 @@ var _module_$1_ = {
   exports: {}
 };
 var lens$2 = lens$3;
-var React$1U = _react__default["default"];
+var React$1$ = _react__default["default"];
 var HintsRenderer$3 = _hintsRendererJsx;
 var Renderer$l = _rendererJsx;
 var Util$l = Util$q;
 
-class MultiRenderer$1 extends React$1U.Component {
+class MultiRenderer$1 extends React$1$.Component {
   constructor(props) {
     super(props);
 
@@ -24660,7 +25408,7 @@ class MultiRenderer$1 extends React$1U.Component {
 
     var handleSerializedState = state => this._handleSerializedStateUpdated(path, state);
 
-    data.makeRenderer = () => /*#__PURE__*/React$1U.createElement(Renderer$l, _extends({}, this._getRendererProps(), content, {
+    data.makeRenderer = () => /*#__PURE__*/React$1$.createElement(Renderer$l, _extends({}, this._getRendererProps(), content, {
       ref: refFunc,
       findExternalWidgets: findExternalWidgets,
       serializedState: this.props.serializedState ? lens$2(this.props.serializedState).get(path) : null,
@@ -24693,7 +25441,7 @@ class MultiRenderer$1 extends React$1U.Component {
       findExternalWidgets,
       // _annotateRendererArray() needs this
       ref: null,
-      makeRenderer: () => /*#__PURE__*/React$1U.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
+      makeRenderer: () => /*#__PURE__*/React$1$.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
         findExternalWidgets: findExternalWidgets,
         hints: [hint]
       }))
@@ -24879,7 +25627,7 @@ class MultiRenderer$1 extends React$1U.Component {
       var hintRendererDatas = rendererDatas;
       renderers = [...renderers];
 
-      renderers.firstN = n => /*#__PURE__*/React$1U.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
+      renderers.firstN = n => /*#__PURE__*/React$1$.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
         findExternalWidgets: hintRendererDatas[0] ? hintRendererDatas[0].findExternalWidgets : undefined,
         hints: hintRendererDatas.map(d => d.hint),
         hintsVisible: n
@@ -24903,8 +25651,8 @@ class MultiRenderer$1 extends React$1U.Component {
 
   render() {
     if (this.state.renderError) {
-      return /*#__PURE__*/React$1U.createElement("div", {
-        className: aphrodite.css(styles$k.error)
+      return /*#__PURE__*/React$1$.createElement("div", {
+        className: aphrodite.css(styles$n.error)
       }, "Error rendering: ", String(this.state.renderError));
     } // Pass the renderer tree to the `children` function, which will
     // determine the actual content of this component.
@@ -24917,7 +25665,7 @@ class MultiRenderer$1 extends React$1U.Component {
 
 }
 
-var styles$k = aphrodite.StyleSheet.create({
+var styles$n = aphrodite.StyleSheet.create({
   error: {
     color: "red"
   }
@@ -24965,21 +25713,21 @@ var _module_$1Y = {
  * extend a `ProvideKeypad` component instead of using this mixin.
  */
 
-var React$1T = _react__default["default"];
-var ReactDOM$r = _reactDom__default["default"];
+var React$1_ = _react__default["default"];
+var ReactDOM$v = _reactDom__default["default"];
 var {
   Keypad
 } = _mathInput__default["default"].components;
 var ProvideKeypad$3 = {
   propTypes: {
-    apiOptions: React$1T.PropTypes.shape({
-      customKeypad: React$1T.PropTypes.bool
+    apiOptions: React$1_.PropTypes.shape({
+      customKeypad: React$1_.PropTypes.bool
     }),
     // An Aphrodite style object, to be applied to the keypad container.
     // Note that, given our awkward structure of injecting the keypad, this
     // style won't be applied or updated dynamically. Rather, it will only
     // be applied in `componentDidMount`.
-    keypadStyle: React$1T.PropTypes.any
+    keypadStyle: React$1_.PropTypes.any
   },
 
   getInitialState() {
@@ -24995,7 +25743,7 @@ var ProvideKeypad$3 = {
       // on-demand in the future.
       this._keypadContainer = document.createElement('div');
       document.body.appendChild(this._keypadContainer);
-      ReactDOM$r.render( /*#__PURE__*/React$1T.createElement(Keypad, {
+      ReactDOM$v.render( /*#__PURE__*/React$1_.createElement(Keypad, {
         onElementMounted: element => {
           this.setState({
             keypadElement: element
@@ -25011,7 +25759,7 @@ var ProvideKeypad$3 = {
 
   componentWillUnmount() {
     if (this._keypadContainer) {
-      ReactDOM$r.unmountComponentAtNode(this._keypadContainer);
+      ReactDOM$v.unmountComponentAtNode(this._keypadContainer);
 
       if (this._keypadContainer.parentNode) {
         // Note ChildNode.remove() isn't available in older Android
@@ -25043,16 +25791,16 @@ var _module_$1X = {
  * exercise.
  */
 
-var React$1S = _react__default["default"];
-var ReactDOM$q = _reactDom__default["default"];
+var React$1Z = _react__default["default"];
+var ReactDOM$u = _reactDom__default["default"];
 var _$1i = _underscore__default["default"];
 var ApiOptions$v = _perseusApiJsx.Options;
 var HintsRenderer$2 = _hintsRendererJsx;
 var ProvideKeypad$2 = _mixinsProvideKeypadJsx;
 var Renderer$k = _rendererJsx;
 var Util$k = Util$q;
-var RP$1 = React$1S.PropTypes;
-var ItemRenderer$2 = React$1S.createClass({
+var RP$1 = React$1Z.PropTypes;
+var ItemRenderer$2 = React$1Z.createClass({
   displayName: "ItemRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ProvideKeypad$2.propTypes), {}, {
     apiOptions: RP$1.any,
@@ -25132,7 +25880,7 @@ var ItemRenderer$2 = React$1S.createClass({
     });
 
     if (this.props.apiOptions.onFocusChange != null) {
-      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocus, didFocusInput && keypadElement && ReactDOM$q.findDOMNode(keypadElement));
+      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocus, didFocusInput && keypadElement && ReactDOM$u.findDOMNode(keypadElement));
     }
 
     if (keypadElement) {
@@ -25309,7 +26057,7 @@ var ItemRenderer$2 = React$1S.createClass({
       onFocusChange: this._handleFocusChange
     });
 
-    var questionRenderer = /*#__PURE__*/React$1S.createElement(Renderer$k, _extends({
+    var questionRenderer = /*#__PURE__*/React$1Z.createElement(Renderer$k, _extends({
       keypadElement: this.keypadElement(),
       problemNum: this.props.problemNum,
       onInteractWithWidget: this.handleInteractWithWidget,
@@ -25319,22 +26067,22 @@ var ItemRenderer$2 = React$1S.createClass({
       reviewMode: this.props.reviewMode,
       ref: elem => this.questionRenderer = elem
     }, this.props.item.question));
-    var hintsRenderer = /*#__PURE__*/React$1S.createElement(HintsRenderer$2, {
+    var hintsRenderer = /*#__PURE__*/React$1Z.createElement(HintsRenderer$2, {
       hints: this.props.item.hints,
       hintsVisible: this.props.hintsVisible,
       apiOptions: apiOptions,
       ref: elem => this.hintsRenderer = elem
     });
-    return /*#__PURE__*/React$1S.createElement("div", null, /*#__PURE__*/React$1S.createElement("div", null, questionRenderer), /*#__PURE__*/React$1S.createElement("div", {
+    return /*#__PURE__*/React$1Z.createElement("div", null, /*#__PURE__*/React$1Z.createElement("div", null, questionRenderer), /*#__PURE__*/React$1Z.createElement("div", {
       className: // Avoid adding any horizontal padding when applying the
       // mobile hint styles, which are flush to the left.
       // NOTE(charlie): We may still want to apply this
       // padding for desktop exercises.
-      !apiOptions.isMobile && aphrodite.css(styles$j.hintsContainer)
+      !apiOptions.isMobile && aphrodite.css(styles$m.hintsContainer)
     }, hintsRenderer));
   }
 });
-var styles$j = aphrodite.StyleSheet.create({
+var styles$m = aphrodite.StyleSheet.create({
   hintsContainer: {
     marginLeft: 50
   }
@@ -25351,8 +26099,8 @@ var _module_$1W = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1R = _react__default["default"];
-var ReactDOM$p = _reactDom__default["default"];
+var React$1Y = _react__default["default"];
+var ReactDOM$t = _reactDom__default["default"];
 var _$1h = _underscore__default["default"];
 var ApiOptions$u = _perseusApiJsx.Options;
 var HintsRenderer$1 = _hintsRendererJsx;
@@ -25360,8 +26108,8 @@ var Renderer$j = _rendererJsx;
 var ProvideKeypad$1 = _mixinsProvideKeypadJsx;
 var Util$j = Util$q;
 var Gorgon$3 = _gorgonGorgonJs;
-var RP = React$1R.PropTypes;
-var ItemRenderer$1 = React$1R.createClass({
+var RP = React$1Y.PropTypes;
+var ItemRenderer$1 = React$1Y.createClass({
   displayName: "ItemRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ProvideKeypad$1.propTypes), {}, {
     // defaults are set in `this.update()` so as to adhere to
@@ -25395,11 +26143,11 @@ var ItemRenderer$1 = React$1R.createClass({
     onShowTTable: RP.func,
     onShowZTable: RP.func,
     problemNum: RP.number,
-    reviewMode: React$1R.PropTypes.bool,
+    reviewMode: React$1Y.PropTypes.bool,
     savedState: RP.any,
     workAreaSelector: RP.string,
     linterContext: linterContextProps,
-    legacyPerseusLint: React$1R.PropTypes.arrayOf(React$1R.PropTypes.string)
+    legacyPerseusLint: React$1Y.PropTypes.arrayOf(React$1Y.PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -25440,8 +26188,8 @@ var ItemRenderer$1 = React$1R.createClass({
   },
   componentWillUnmount: function componentWillUnmount() {
     ProvideKeypad$1.componentWillUnmount.call(this);
-    ReactDOM$p.unmountComponentAtNode(document.querySelector(this.props.workAreaSelector));
-    ReactDOM$p.unmountComponentAtNode(document.querySelector(this.props.hintsAreaSelector));
+    ReactDOM$t.unmountComponentAtNode(document.querySelector(this.props.workAreaSelector));
+    ReactDOM$t.unmountComponentAtNode(document.querySelector(this.props.hintsAreaSelector));
 
     if (this.props.controlPeripherals) {
       var answerArea = this.props.item.answerArea || {};
@@ -25481,7 +26229,7 @@ var ItemRenderer$1 = React$1R.createClass({
     // TODO(alpert): Figure out how to clean this up somehow
 
 
-    this.questionRenderer = ReactDOM$p.render( /*#__PURE__*/React$1R.createElement(Renderer$j, _extends({
+    this.questionRenderer = ReactDOM$t.render( /*#__PURE__*/React$1Y.createElement(Renderer$j, _extends({
       keypadElement: this.keypadElement(),
       problemNum: this.props.problemNum,
       onInteractWithWidget: this.handleInteractWithWidget,
@@ -25494,7 +26242,7 @@ var ItemRenderer$1 = React$1R.createClass({
     }, this.props.item.question, {
       legacyPerseusLint: this.props.legacyPerseusLint
     })), document.querySelector(this.props.workAreaSelector));
-    this.hintsRenderer = ReactDOM$p.render( /*#__PURE__*/React$1R.createElement(HintsRenderer$1, {
+    this.hintsRenderer = ReactDOM$t.render( /*#__PURE__*/React$1Y.createElement(HintsRenderer$1, {
       hints: this.props.item.hints,
       hintsVisible: this.state.hintsVisible,
       apiOptions: apiOptions,
@@ -25560,7 +26308,7 @@ var ItemRenderer$1 = React$1R.createClass({
     });
 
     if (this.props.apiOptions.onFocusChange != null) {
-      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocus, didFocusInput && keypadElement && ReactDOM$p.findDOMNode(keypadElement));
+      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocus, didFocusInput && keypadElement && ReactDOM$t.findDOMNode(keypadElement));
     }
 
     if (keypadElement) {
@@ -25741,7 +26489,7 @@ var ItemRenderer$1 = React$1R.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$1R.createElement("div", null);
+    return /*#__PURE__*/React$1Y.createElement("div", null);
   }
 });
 _module_$1W.exports = ItemRenderer$1;
@@ -25787,8 +26535,8 @@ var _module_$1V = {
  * composed of multiple (Renderer) sections concatenated together.
  */
 
-var React$1Q = _react__default["default"];
-var ReactDOM$o = _reactDom__default["default"];
+var React$1X = _react__default["default"];
+var ReactDOM$s = _reactDom__default["default"];
 var classNames$d = _classnames__default["default"];
 var Util$i = Util$q;
 var ApiOptions$t = _perseusApiJsx.Options;
@@ -25796,23 +26544,23 @@ var ApiClassNames$c = _perseusApiJsx.ClassNames;
 var Renderer$i = _rendererJsx;
 var ProvideKeypad = _mixinsProvideKeypadJsx;
 var Gorgon$2 = _gorgonGorgonJs;
-var rendererProps = React$1Q.PropTypes.shape({
-  content: React$1Q.PropTypes.string,
-  widgets: React$1Q.PropTypes.object,
-  images: React$1Q.PropTypes.object
+var rendererProps = React$1X.PropTypes.shape({
+  content: React$1X.PropTypes.string,
+  widgets: React$1X.PropTypes.object,
+  images: React$1X.PropTypes.object
 });
-var ArticleRenderer$1 = React$1Q.createClass({
+var ArticleRenderer$1 = React$1X.createClass({
   displayName: "ArticleRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ProvideKeypad.propTypes), {}, {
-    apiOptions: React$1Q.PropTypes.shape({
-      onFocusChange: React$1Q.PropTypes.func,
-      isMobile: React$1Q.PropTypes.bool
+    apiOptions: React$1X.PropTypes.shape({
+      onFocusChange: React$1X.PropTypes.func,
+      isMobile: React$1X.PropTypes.bool
     }),
-    json: React$1Q.PropTypes.oneOfType([rendererProps, React$1Q.PropTypes.arrayOf(rendererProps)]).isRequired,
+    json: React$1X.PropTypes.oneOfType([rendererProps, React$1X.PropTypes.arrayOf(rendererProps)]).isRequired,
     // Whether to use the new Bibliotron styles for articles
-    useNewStyles: React$1Q.PropTypes.bool,
+    useNewStyles: React$1X.PropTypes.bool,
     linterContext: linterContextProps,
-    legacyPerseusLint: React$1Q.PropTypes.arrayOf(React$1Q.PropTypes.string)
+    legacyPerseusLint: React$1X.PropTypes.arrayOf(React$1X.PropTypes.string)
   }),
 
   getDefaultProps() {
@@ -25872,7 +26620,7 @@ var ArticleRenderer$1 = React$1Q.createClass({
     }
 
     if (this.props.apiOptions.onFocusChange != null) {
-      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocusPath, didFocusInput && keypadElement && ReactDOM$o.findDOMNode(keypadElement));
+      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocusPath, didFocusInput && keypadElement && ReactDOM$s.findDOMNode(keypadElement));
     }
 
     if (keypadElement) {
@@ -25929,10 +26677,10 @@ var ArticleRenderer$1 = React$1Q.createClass({
 
     var sections = this._sections().map((section, i) => {
       var refForSection = "section-".concat(i);
-      return /*#__PURE__*/React$1Q.createElement("div", {
+      return /*#__PURE__*/React$1X.createElement("div", {
         key: i,
         className: "clearfix"
-      }, /*#__PURE__*/React$1Q.createElement(Renderer$i, _extends({}, section, {
+      }, /*#__PURE__*/React$1X.createElement(Renderer$i, _extends({}, section, {
         ref: refForSection,
         key: i,
         key_: i,
@@ -25950,7 +26698,7 @@ var ArticleRenderer$1 = React$1Q.createClass({
       })));
     });
 
-    return /*#__PURE__*/React$1Q.createElement("div", {
+    return /*#__PURE__*/React$1X.createElement("div", {
       className: classes
     }, sections);
   }
@@ -26016,7 +26764,7 @@ var _module_$1S = {
  * this.props.onChange with the modified props.
  */
 
-var React$1P = _react__default["default"];
+var React$1W = _react__default["default"];
 var _$1f = _underscore__default["default"];
 var WIDGET_PROP_BLACKLIST$2 = _mixinsWidgetPropBlacklistJsx;
 var USAGE = "Usage:\n" + "  this.change({propName: 5}, callback);\n" + "  this.change(\"propName\", 5, callback);\n" + "  this.change(\"propName\")";
@@ -26086,7 +26834,7 @@ var change = function change(newPropsOrSinglePropName, propValue, callback) {
   }
 };
 ({
-  onChange: React$1P.PropTypes.func.isRequired
+  onChange: React$1W.PropTypes.func.isRequired
 });
 var _mixinsChangeableJsx = _module_$1S.exports;
 
@@ -26102,13 +26850,13 @@ var _mixinsChangeableJsx = _module_$1S.exports;
  * sees this.
  */
 
-var React$1O = _react__default["default"];
+var React$1V = _react__default["default"];
 var Changeable$P = _mixinsChangeableJsx;
 var EditorJsonify$n = _mixinsEditorJsonifyJsx;
-var TextArea = React$1O.createClass({
+var TextArea = React$1V.createClass({
   displayName: "TextArea",
   render: function render() {
-    return /*#__PURE__*/React$1O.createElement("textarea", {
+    return /*#__PURE__*/React$1V.createElement("textarea", {
       ref: "input",
       value: this.props.value || "",
       onChange: this.changeValue
@@ -26124,7 +26872,7 @@ var TextArea = React$1O.createClass({
     this.props.onChange(e.target.value);
   }
 });
-React$1O.createClass({
+React$1V.createClass({
   displayName: "SimpleMarkdownTesterEditor",
   propTypes: _objectSpread2({}, Changeable$P.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -26133,7 +26881,7 @@ React$1O.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$1O.createElement("div", null, /*#__PURE__*/React$1O.createElement("label", null, /*#__PURE__*/React$1O.createElement("div", null, "Simple markdown contents:"), /*#__PURE__*/React$1O.createElement("div", null, /*#__PURE__*/React$1O.createElement(TextArea, {
+    return /*#__PURE__*/React$1V.createElement("div", null, /*#__PURE__*/React$1V.createElement("label", null, /*#__PURE__*/React$1V.createElement("div", null, "Simple markdown contents:"), /*#__PURE__*/React$1V.createElement("div", null, /*#__PURE__*/React$1V.createElement(TextArea, {
       value: this.props.value,
       onChange: this.change("value"),
       ref: "input"
@@ -26165,16 +26913,16 @@ React$1O.createClass({
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1N = _react__default["default"];
+var React$1U = _react__default["default"];
 var _$1e = _underscore__default["default"];
 var Changeable$O = _mixinsChangeableJsx;
 var PerseusMarkdown$2 = _perseusMarkdownJsx;
 var mdParse = PerseusMarkdown$2.parse;
 var mdOutput = PerseusMarkdown$2.basicOutput;
-var SimpleMarkdownTester = React$1N.createClass({
+var SimpleMarkdownTester = React$1U.createClass({
   displayName: "SimpleMarkdownTester",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$O.propTypes), {}, {
-    value: React$1N.PropTypes.string
+    value: React$1U.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -26196,7 +26944,7 @@ var SimpleMarkdownTester = React$1N.createClass({
   render: function render() {
     var parsed = mdParse(this.props.value);
     var output = mdOutput(parsed);
-    return /*#__PURE__*/React$1N.createElement("div", null, output);
+    return /*#__PURE__*/React$1U.createElement("div", null, output);
   },
 
   /**
@@ -26265,7 +27013,7 @@ _$1e.extend(SimpleMarkdownTester, {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1M = _react__default["default"];
+var React$1T = _react__default["default"];
 var Changeable$N = _mixinsChangeableJsx;
 var EditorJsonify$m = _mixinsEditorJsonifyJsx;
 /**
@@ -26273,7 +27021,7 @@ var EditorJsonify$m = _mixinsEditorJsonifyJsx;
  * of the screen in the demo. Only the question writer sees this.
  */
 
-React$1M.createClass({
+React$1T.createClass({
   displayName: "ExampleWidgetEditor",
   propTypes: _objectSpread2({}, Changeable$N.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -26287,7 +27035,7 @@ React$1M.createClass({
     });
   },
   render: function render() {
-    return /*#__PURE__*/React$1M.createElement("div", null, /*#__PURE__*/React$1M.createElement("label", null, "Correct answer:", /*#__PURE__*/React$1M.createElement("input", {
+    return /*#__PURE__*/React$1T.createElement("div", null, /*#__PURE__*/React$1T.createElement("label", null, "Correct answer:", /*#__PURE__*/React$1T.createElement("input", {
       value: this.props.correct,
       onChange: this.handleAnswerChange,
       ref: "input"
@@ -26328,13 +27076,13 @@ React$1M.createClass({
  * TODO(jack): Add more comments
  */
 
-var React$1L = _react__default["default"];
+var React$1S = _react__default["default"];
 var Changeable$M = _mixinsChangeableJsx;
 var _$1d = _underscore__default["default"];
-var TextInput$b = React$1L.createClass({
+var TextInput$b = React$1S.createClass({
   displayName: "TextInput",
   render: function render() {
-    return /*#__PURE__*/React$1L.createElement("input", {
+    return /*#__PURE__*/React$1S.createElement("input", {
       ref: "input",
       value: this.props.value || "",
       onChange: this.changeValue
@@ -26356,10 +27104,10 @@ var TextInput$b = React$1L.createClass({
  * users enter their answers.
  */
 
-var ExampleWidget = React$1L.createClass({
+var ExampleWidget = React$1S.createClass({
   displayName: "ExampleWidget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$M.propTypes), {}, {
-    value: React$1L.PropTypes.string
+    value: React$1S.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -26379,7 +27127,7 @@ var ExampleWidget = React$1L.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$1L.createElement(TextInput$b, {
+    return /*#__PURE__*/React$1S.createElement(TextInput$b, {
       ref: "input",
       value: this.props.value,
       onChange: this.change("value")
@@ -26490,7 +27238,7 @@ var _module_$1Q = {
  * TODO(jack): Add more comments
  */
 
-var React$1K = _react__default["default"];
+var React$1R = _react__default["default"];
 var _$1b = _underscore__default["default"];
 var ApiOptions$s = _perseusApiJsx.Options;
 var Util$h = Util$q;
@@ -26506,12 +27254,12 @@ var kpoint$5 = _kmath3.point;
  * users enter their answers.
  */
 
-var ExampleGraphieWidget$1 = React$1K.createClass({
+var ExampleGraphieWidget$1 = React$1R.createClass({
   displayName: "ExampleGraphieWidget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$L.propTypes), {}, {
     apiOptions: ApiOptions$s.propTypes,
-    graph: React$1K.PropTypes.object.isRequired,
-    coord: React$1K.PropTypes.arrayOf(React$1K.PropTypes.number)
+    graph: React$1R.PropTypes.object.isRequired,
+    coord: React$1R.PropTypes.arrayOf(React$1R.PropTypes.number)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -26535,14 +27283,14 @@ var ExampleGraphieWidget$1 = React$1K.createClass({
     return WidgetJsonifyDeprecated$5.getUserInput.call(this);
   },
   render: function render() {
-    return /*#__PURE__*/React$1K.createElement(Graphie$5, {
+    return /*#__PURE__*/React$1R.createElement(Graphie$5, {
       ref: "graphie",
       box: this.props.graph.box,
       range: this.props.graph.range,
       options: this.props.graph,
       setup: this.setupGraphie,
       setDrawingAreaAvailable: this.props.apiOptions.setDrawingAreaAvailable
-    }, /*#__PURE__*/React$1K.createElement(MovablePoint$4, {
+    }, /*#__PURE__*/React$1R.createElement(MovablePoint$4, {
       pointSize: 5,
       coord: this.props.coord || [0, 0],
       constraints: [MovablePoint$4.constraints.snap(), MovablePoint$4.constraints.bound()],
@@ -26638,7 +27386,7 @@ var _exampleGraphieWidgetJsx = _module_$1Q.exports;
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1J = _react__default["default"];
+var React$1Q = _react__default["default"];
 var Changeable$K = _mixinsChangeableJsx;
 var EditorJsonify$l = _mixinsEditorJsonifyJsx;
 var ExampleGraphieWidget = _exampleGraphieWidgetJsx.widget;
@@ -26647,7 +27395,7 @@ var ExampleGraphieWidget = _exampleGraphieWidgetJsx.widget;
  * of the screen in the demo page. Only the question writer sees this.
  */
 
-React$1J.createClass({
+React$1Q.createClass({
   displayName: "ExampleGraphieWidgetEditor",
   propTypes: _objectSpread2({}, Changeable$K.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -26667,7 +27415,7 @@ React$1J.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$1J.createElement("div", null, /*#__PURE__*/React$1J.createElement(ExampleGraphieWidget, {
+    return /*#__PURE__*/React$1Q.createElement("div", null, /*#__PURE__*/React$1Q.createElement(ExampleGraphieWidget, {
       graph: this.props.graph,
       coord: this.props.correct,
       onChange: this.handleChange,
@@ -26697,6 +27445,169 @@ React$1J.createClass({
 
 });
 
+var module$8 = {
+  exports: {}
+};
+var React$1P = _react__default["default"];
+var createReactClass$6 = _createReactClass__default["default"];
+var PropTypes$7 = _propTypes__default["default"];
+/* You know when you want to propagate input to a parent...
+ * but then that parent does something with the input...
+ * then changing the props of the input...
+ * on every keystroke...
+ * so if some input is invalid or incomplete...
+ * the input gets reset or otherwise effed...
+ *
+ * This is the solution.
+ *
+ * Enough melodrama. Its an input that only sends changes
+ * to its parent on blur.
+ */
+
+var BlurInput$6 = createReactClass$6({
+  displayName: "BlurInput",
+  propTypes: {
+    className: PropTypes$7.string,
+    style: PropTypes$7.any,
+    value: PropTypes$7.string.isRequired,
+    onChange: PropTypes$7.func.isRequired
+  },
+  getInitialState: function getInitialState() {
+    return {
+      value: this.props.value
+    };
+  },
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    this.setState({
+      value: nextProps.value
+    });
+  },
+  handleChange: function handleChange(e) {
+    this.setState({
+      value: e.target.value
+    });
+  },
+  handleBlur: function handleBlur(e) {
+    this.props.onChange(e.target.value);
+  },
+  render: function render() {
+    return /*#__PURE__*/React$1P.createElement("input", {
+      className: this.props.className,
+      style: this.props.style,
+      type: "text",
+      value: this.state.value,
+      onChange: this.handleChange,
+      onBlur: this.handleBlur
+    });
+  }
+});
+module$8.exports = BlurInput$6;
+var _reactComponentsBlurInputJsx = module$8.exports;
+
+var module$7 = {
+  exports: {}
+};
+var React$1O = _react__default["default"];
+var createReactClass$5 = _createReactClass__default["default"];
+var PropTypes$6 = _propTypes__default["default"];
+var colors = {
+  grayLight: '#aaa',
+  basicBorderColor: '#ccc',
+  white: '#fff'
+};
+var triangleBeforeAfter = {
+  borderBottom: '9px solid transparent',
+  borderTop: '9px solid transparent',
+  content: '" "',
+  height: '0',
+  position: 'absolute',
+  top: '0',
+  width: '0'
+};
+var styles$l = aphrodite.StyleSheet.create({
+  infoTip: {
+    display: 'inline-block',
+    marginLeft: '5px',
+    position: 'relative'
+  },
+  infoTipContainer: {
+    position: 'absolute',
+    top: '-12px',
+    left: '22px',
+    zIndex: '1000'
+  },
+  infoTipTriangle: {
+    height: '10px',
+    left: '0',
+    position: 'absolute',
+    top: '8px',
+    width: '0',
+    zIndex: '1',
+    ':before': Object.assign({}, triangleBeforeAfter, {
+      borderRight: '9px solid #bbb',
+      right: '0'
+    }),
+    ':after': Object.assign({}, triangleBeforeAfter, {
+      borderRight: "9px solid ".concat(colors.white),
+      right: '-1px'
+    })
+  },
+  verticalShadow: {
+    border: "1px solid ".concat(colors.basicBorderColor),
+    boxShadow: "0 1px 3px ".concat(colors.basicBorderColor),
+    borderBottom: "1px solid ".concat(colors.grayLight)
+  },
+  infoTipContentContainer: {
+    background: colors.white,
+    padding: '5px 10px',
+    width: '240px'
+  }
+});
+var questionMark = 'data:image/png;base64,' + 'iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBB' + 'ZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/' + 'eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+' + 'IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2Jl' + 'IFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAg' + 'ICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5' + 'LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9' + 'IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHht' + 'bG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3Vy' + 'Y2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHht' + 'cE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2N2M3NTAxYS04YmVlLTQ0M2Mt' + 'YmRiNS04OGM2N2IxN2NhYzEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUJCRTk4' + 'Qjc4NjAwMTFFMzg3QUJDNEI4Mzk2QTRGQkQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5p' + 'aWQ6OUJCRTk4QjY4NjAwMTFFMzg3QUJDNEI4Mzk2QTRGQkQiIHhtcDpDcmVhdG9yVG9v' + 'bD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRG' + 'cm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NGE5ZDI0OTMtODk1NC00OGFkLTlh' + 'MTgtZDAwM2MwYWNjNDJlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY3Yzc1MDFh' + 'LThiZWUtNDQzYy1iZGI1LTg4YzY3YjE3Y2FjMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4g' + 'PC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pqm89uYAAADM' + 'SURBVHjaXJA9DoJAEIUH1M4TUHIFsCMGen9OwCGw1YRGW2ntKel0exsojHIBC0ouQAyU' + 'viFDstmXfNmZeS+zm7XSNCXRFiRgJf0bXIHixpbhGdxBBJYC1w/xaA424MhNEATkui71' + 'fU9KqfEU78UbD9PdbJRlOdae55GmhIP+1NV1TcMwkOM41DSNHvRtMhTHMRVFQW3b6mOL' + 'gx99kue5GRp/gIOZuZGvNpTNwjD8oliANU+qqqKu6/TQBdymN57AHjzBT+B6Jx79BRgA' + 'vc49kQA4yxgAAAAASUVORK5CYII=';
+var InfoTip$p = createReactClass$5({
+  displayName: "InfoTip",
+  propTypes: {
+    children: PropTypes$6.node
+  },
+  getInitialState: function getInitialState() {
+    return {
+      hover: false
+    };
+  },
+  handleMouseEnter: function handleMouseEnter() {
+    this.setState({
+      hover: true
+    });
+  },
+  handleMouseLeave: function handleMouseLeave() {
+    this.setState({
+      hover: false
+    });
+  },
+  render: function render() {
+    return /*#__PURE__*/React$1O.createElement("div", {
+      className: aphrodite.css(styles$l.infoTip)
+    }, /*#__PURE__*/React$1O.createElement("img", {
+      width: 10,
+      height: 10,
+      src: questionMark,
+      onMouseEnter: this.handleMouseEnter,
+      onMouseLeave: this.handleMouseLeave
+    }), /*#__PURE__*/React$1O.createElement("div", {
+      className: aphrodite.css(styles$l.infoTipContainer),
+      style: {
+        display: this.state.hover ? 'block' : 'none'
+      }
+    }, /*#__PURE__*/React$1O.createElement("div", {
+      className: aphrodite.css(styles$l.infoTipTriangle)
+    }), /*#__PURE__*/React$1O.createElement("div", {
+      className: aphrodite.css(styles$l.verticalShadow, styles$l.infoTipContentContainer)
+    }, this.props.children)));
+  }
+});
+module$7.exports = InfoTip$p;
+var _reactComponentsInfoTipJsx = module$7.exports;
+
 var _module_$1P = {
   exports: {}
 };
@@ -26707,9 +27618,9 @@ var _module_$1P = {
  * two sets of generated classnames will not match.)
  */
 
-var React$1I = _react__default["default"];
-var ReactComponentsInfoTip = _reactComponentsInfoTipJsx__default["default"];
-var InfoTip$o = React$1I.createClass({
+var React$1N = _react__default["default"];
+var ReactComponentsInfoTip = _reactComponentsInfoTipJsx;
+var InfoTip$o = React$1N.createClass({
   displayName: "InfoTip",
   getInitialState: function getInitialState() {
     return {
@@ -26725,9 +27636,9 @@ var InfoTip$o = React$1I.createClass({
   },
   render: function render() {
     if (this.state.didMount) {
-      return /*#__PURE__*/React$1I.createElement(ReactComponentsInfoTip, this.props);
+      return /*#__PURE__*/React$1N.createElement(ReactComponentsInfoTip, this.props);
     } else {
-      return /*#__PURE__*/React$1I.createElement("div", null);
+      return /*#__PURE__*/React$1N.createElement("div", null);
     }
   }
 });
@@ -26743,11 +27654,11 @@ var _module_$1O = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1H = _react__default["default"];
+var React$1M = _react__default["default"];
 var Changeable$J = _mixinsChangeableJsx;
 var EditorJsonify$k = _mixinsEditorJsonifyJsx;
 var InfoTip$n = _componentsInfoTipJsx;
-var BlurInput$5 = _reactComponentsBlurInputJsx__default["default"];
+var BlurInput$5 = _reactComponentsBlurInputJsx;
 var KA_VIDEO_URL = /khanacademy\.org\/.*\/v\/(.*)$/;
 /**
  * Turns Khan Academy URLs into the KA slugs, if possible. Any other URLs are
@@ -26768,11 +27679,11 @@ function getSlugFromUrl(url) {
  */
 
 
-var VideoEditor = React$1H.createClass({
+var VideoEditor = React$1M.createClass({
   displayName: "VideoEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$J.propTypes), {}, {
-    location: React$1H.PropTypes.string,
-    onChange: React$1H.PropTypes.func
+    location: React$1M.PropTypes.string,
+    onChange: React$1M.PropTypes.func
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -26798,14 +27709,14 @@ var VideoEditor = React$1H.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$1H.createElement("div", null, /*#__PURE__*/React$1H.createElement("label", null, "URL or KA Video Slug:", " ", /*#__PURE__*/React$1H.createElement(BlurInput$5, {
+    return /*#__PURE__*/React$1M.createElement("div", null, /*#__PURE__*/React$1M.createElement("label", null, "URL or KA Video Slug:", " ", /*#__PURE__*/React$1M.createElement(BlurInput$5, {
       name: "location",
       value: this.props.location,
       style: {
         width: 290
       },
       onChange: this._handleUrlChange
-    }), /*#__PURE__*/React$1H.createElement(InfoTip$n, null, "You can paste any URL here. KA video URLs will be converted to just the slug.")));
+    }), /*#__PURE__*/React$1M.createElement(InfoTip$n, null, "You can paste any URL here. KA video URLs will be converted to just the slug.")));
   }
 });
 _module_$1O.exports = VideoEditor;
@@ -26824,7 +27735,7 @@ var _module_$1N = {
  * This is a video widget for embedding videos in articles.
  */
 
-var React$1G = _react__default["default"];
+var React$1L = _react__default["default"];
 var _$1a = _underscore__default["default"];
 var Changeable$I = _mixinsChangeableJsx;
 var FixedToResponsive = _componentsFixedToResponsiveJsx; // Current default is 720p, based on the typical videos we upload currently
@@ -26838,11 +27749,11 @@ var IS_KA_SITE$1 = /khanacademy\.org/;
  * Video renderer.
  */
 
-var Video = React$1G.createClass({
+var Video = React$1L.createClass({
   displayName: "Video",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$I.propTypes), {}, {
-    alignment: React$1G.PropTypes.string,
-    location: React$1G.PropTypes.string
+    alignment: React$1L.PropTypes.string,
+    location: React$1L.PropTypes.string
   }),
   getUserInput: function getUserInput() {
     return null;
@@ -26863,7 +27774,7 @@ var Video = React$1G.createClass({
     var location = this.props.location;
 
     if (!location) {
-      return /*#__PURE__*/React$1G.createElement("div", null);
+      return /*#__PURE__*/React$1L.createElement("div", null);
     }
 
     var url;
@@ -26882,14 +27793,14 @@ var Video = React$1G.createClass({
       url = url.replace("{hostname}", embedHostname);
     }
 
-    return /*#__PURE__*/React$1G.createElement(FixedToResponsive // @Nolint this is fine, the linter is wrong
+    return /*#__PURE__*/React$1L.createElement(FixedToResponsive // @Nolint this is fine, the linter is wrong
     , {
       width: DEFAULT_WIDTH$1,
       height: DEFAULT_HEIGHT$1 // The key is here for the benefit of the editor, to ensure that
       // any changes cause a re-rendering of the frame.
       ,
       key: location + this.props.alignment
-    }, /*#__PURE__*/React$1G.createElement("iframe", {
+    }, /*#__PURE__*/React$1L.createElement("iframe", {
       className: "perseus-video-widget",
       sandbox: "allow-same-origin allow-scripts",
       width: DEFAULT_WIDTH$1,
@@ -27418,8 +28329,8 @@ var _module_$1M = {
 /* eslint-disable react/prop-types, react/sort-comp */
 
 var classNames$c = _classnames__default["default"];
-var React$1F = _react__default["default"];
-var ReactDOM$n = _reactDom__default["default"];
+var React$1K = _react__default["default"];
+var ReactDOM$r = _reactDom__default["default"];
 var _$19 = _underscore__default["default"];
 var firstNumericalParse$1 = Util$q.firstNumericalParse;
 var captureScratchpadTouchStart$3 = Util$q.captureScratchpadTouchStart;
@@ -27441,17 +28352,17 @@ var getNumericFormat = KhanMath$6.getNumericFormat;
  * Optionally takes a size ("mini", "small", "normal")
  */
 
-var NumberInput$j = React$1F.createClass({
+var NumberInput$j = React$1K.createClass({
   displayName: "NumberInput",
   propTypes: {
-    value: React$1F.PropTypes.number,
-    format: React$1F.PropTypes.string,
-    placeholder: React$1F.PropTypes.oneOfType([React$1F.PropTypes.string, React$1F.PropTypes.number]),
-    onChange: React$1F.PropTypes.func.isRequired,
-    onFormatChange: React$1F.PropTypes.func,
-    checkValidity: React$1F.PropTypes.func,
-    size: React$1F.PropTypes.string,
-    label: React$1F.PropTypes.oneOf(["put your labels outside your inputs!"])
+    value: React$1K.PropTypes.number,
+    format: React$1K.PropTypes.string,
+    placeholder: React$1K.PropTypes.oneOfType([React$1K.PropTypes.string, React$1K.PropTypes.number]),
+    onChange: React$1K.PropTypes.func.isRequired,
+    onFormatChange: React$1K.PropTypes.func,
+    checkValidity: React$1K.PropTypes.func,
+    size: React$1K.PropTypes.string,
+    label: React$1K.PropTypes.oneOf(["put your labels outside your inputs!"])
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -27481,7 +28392,7 @@ var NumberInput$j = React$1F.createClass({
       classes = classes + " " + this.props.className;
     }
 
-    return /*#__PURE__*/React$1F.createElement("input", _extends({}, this.props, {
+    return /*#__PURE__*/React$1K.createElement("input", _extends({}, this.props, {
       className: classes,
       type: "text",
       ref: "input",
@@ -27505,12 +28416,12 @@ var NumberInput$j = React$1F.createClass({
    * If empty, it returns the placeholder (if it is a number) or null
    */
   getValue: function getValue() {
-    return this.parseInputValue(ReactDOM$n.findDOMNode(this.refs.input).value);
+    return this.parseInputValue(ReactDOM$r.findDOMNode(this.refs.input).value);
   },
 
   /* Return the current string value of this input */
   getStringValue: function getStringValue() {
-    return ReactDOM$n.findDOMNode(this.refs.input).value.toString();
+    return ReactDOM$r.findDOMNode(this.refs.input).value.toString();
   },
   parseInputValue: function parseInputValue(value) {
     if (value === "") {
@@ -27524,23 +28435,23 @@ var NumberInput$j = React$1F.createClass({
 
   /* Set text input focus to this input */
   focus: function focus() {
-    ReactDOM$n.findDOMNode(this.refs.input).focus();
+    ReactDOM$r.findDOMNode(this.refs.input).focus();
 
     this._handleFocus();
   },
   blur: function blur() {
-    ReactDOM$n.findDOMNode(this.refs.input).blur();
+    ReactDOM$r.findDOMNode(this.refs.input).blur();
 
     this._handleBlur();
   },
   setSelectionRange: function setSelectionRange(selectionStart, selectionEnd) {
-    ReactDOM$n.findDOMNode(this).setSelectionRange(selectionStart, selectionEnd);
+    ReactDOM$r.findDOMNode(this).setSelectionRange(selectionStart, selectionEnd);
   },
   getSelectionStart: function getSelectionStart() {
-    return ReactDOM$n.findDOMNode(this).selectionStart;
+    return ReactDOM$r.findDOMNode(this).selectionStart;
   },
   getSelectionEnd: function getSelectionEnd() {
-    return ReactDOM$n.findDOMNode(this).selectionEnd;
+    return ReactDOM$r.findDOMNode(this).selectionEnd;
   },
   _checkValidity: function _checkValidity(value) {
     if (value == null) {
@@ -27607,7 +28518,7 @@ var NumberInput$j = React$1F.createClass({
     }
   },
   _setValue: function _setValue(val, format) {
-    $__default["default"](ReactDOM$n.findDOMNode(this.refs.input)).val(toNumericString(val, format));
+    $__default["default"](ReactDOM$r.findDOMNode(this.refs.input)).val(toNumericString(val, format));
   }
 });
 _module_$1M.exports = NumberInput$j;
@@ -27626,7 +28537,7 @@ var _module_$1L = {
 // TODO(joel): Allow sigfigs within a range rather than an exact expected
 // value?
 
-var React$1E = _react__default["default"];
+var React$1J = _react__default["default"];
 var _$18 = _underscore__default["default"];
 var Changeable$H = _mixinsChangeableJsx;
 var EditorJsonify$j = _mixinsEditorJsonifyJsx;
@@ -27650,22 +28561,22 @@ var primUnits$1 = function primUnits(expr) {
 // accepted in that unit.
 
 
-var UnitExample = React$1E.createClass({
+var UnitExample = React$1J.createClass({
   displayName: "UnitExample",
   render: function render() {
     var icon;
 
     if (this.state.valid) {
-      icon = /*#__PURE__*/React$1E.createElement("span", null, /*#__PURE__*/React$1E.createElement("span", {
+      icon = /*#__PURE__*/React$1J.createElement("span", null, /*#__PURE__*/React$1J.createElement("span", {
         className: "unit-example-okay"
-      }, /*#__PURE__*/React$1E.createElement(InlineIcon$h, iconOk)), this.state.solvedExample);
+      }, /*#__PURE__*/React$1J.createElement(InlineIcon$h, iconOk)), this.state.solvedExample);
     } else {
-      icon = /*#__PURE__*/React$1E.createElement("span", {
+      icon = /*#__PURE__*/React$1J.createElement("span", {
         className: "unit-example-not-okay"
-      }, /*#__PURE__*/React$1E.createElement(InlineIcon$h, iconRemove));
+      }, /*#__PURE__*/React$1J.createElement(InlineIcon$h, iconRemove));
     }
 
-    return /*#__PURE__*/React$1E.createElement("div", null, icon, " ", this.props.name);
+    return /*#__PURE__*/React$1J.createElement("div", null, icon, " ", this.props.name);
   },
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
     this._checkValidity(nextProps);
@@ -27713,13 +28624,13 @@ var UnitExample = React$1E.createClass({
     });
   }
 });
-var UnitInputEditor = React$1E.createClass({
+var UnitInputEditor = React$1J.createClass({
   displayName: "UnitInputEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$H.propTypes), {}, {
-    value: React$1E.PropTypes.string,
-    acceptingUnits: React$1E.PropTypes.arrayOf(React$1E.PropTypes.string),
-    accepting: React$1E.PropTypes.oneOf([ALL$1, SOME]),
-    sigfigs: React$1E.PropTypes.number
+    value: React$1J.PropTypes.string,
+    acceptingUnits: React$1J.PropTypes.arrayOf(React$1J.PropTypes.string),
+    accepting: React$1J.PropTypes.oneOf([ALL$1, SOME]),
+    sigfigs: React$1J.PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -27737,42 +28648,42 @@ var UnitInputEditor = React$1E.createClass({
     var acceptingElem = null;
 
     if (accepting === SOME) {
-      var unitsArr = acceptingUnits.map((name, i) => /*#__PURE__*/React$1E.createElement(UnitExample, {
+      var unitsArr = acceptingUnits.map((name, i) => /*#__PURE__*/React$1J.createElement(UnitExample, {
         name: name,
         original: this.original || null,
         sigfigs: this.props.sigfigs,
         key: i
       }));
-      acceptingElem = /*#__PURE__*/React$1E.createElement("div", null, /*#__PURE__*/React$1E.createElement("input", {
+      acceptingElem = /*#__PURE__*/React$1J.createElement("div", null, /*#__PURE__*/React$1J.createElement("input", {
         type: "text",
         defaultValue: acceptingUnits.join(", "),
         onChange: this.handleAcceptingUnitsChange
       }), " ", "(comma-separated)", unitsArr);
     }
 
-    return /*#__PURE__*/React$1E.createElement("div", {
+    return /*#__PURE__*/React$1J.createElement("div", {
       className: "unit-editor"
-    }, /*#__PURE__*/React$1E.createElement("div", null, /*#__PURE__*/React$1E.createElement("input", {
+    }, /*#__PURE__*/React$1J.createElement("div", null, /*#__PURE__*/React$1J.createElement("input", {
       value: this.props.value,
       className: "unit-editor-canonical",
       onBlur: this._handleBlur,
       onKeyPress: this._handleBlur,
       onChange: this.onChange
-    }), " ", this.parsed ? /*#__PURE__*/React$1E.createElement("span", {
+    }), " ", this.parsed ? /*#__PURE__*/React$1J.createElement("span", {
       className: "unit-example-okay"
-    }, /*#__PURE__*/React$1E.createElement(InlineIcon$h, iconOk)) : /*#__PURE__*/React$1E.createElement("span", {
+    }, /*#__PURE__*/React$1J.createElement(InlineIcon$h, iconOk)) : /*#__PURE__*/React$1J.createElement("span", {
       className: "unit-example-not-okay"
-    }, /*#__PURE__*/React$1E.createElement(InlineIcon$h, iconRemove))), /*#__PURE__*/React$1E.createElement("div", null, "Significant Figures:", " ", /*#__PURE__*/React$1E.createElement(NumberInput$i, {
+    }, /*#__PURE__*/React$1J.createElement(InlineIcon$h, iconRemove))), /*#__PURE__*/React$1J.createElement("div", null, "Significant Figures:", " ", /*#__PURE__*/React$1J.createElement(NumberInput$i, {
       value: this.props.sigfigs,
       onChange: this.handleSigfigChange,
       checkValidity: this._checkSigfigValidity,
       useArrowKeys: true
-    })), /*#__PURE__*/React$1E.createElement("div", null, /*#__PURE__*/React$1E.createElement("label", null, /*#__PURE__*/React$1E.createElement("input", {
+    })), /*#__PURE__*/React$1J.createElement("div", null, /*#__PURE__*/React$1J.createElement("label", null, /*#__PURE__*/React$1J.createElement("input", {
       type: "radio",
       name: this.groupId,
       onChange: () => this._setAccepting(ALL$1),
       checked: this.props.accepting === ALL$1
-    }), " Any equivalent unit "), /*#__PURE__*/React$1E.createElement("label", null, /*#__PURE__*/React$1E.createElement("input", {
+    }), " Any equivalent unit "), /*#__PURE__*/React$1J.createElement("label", null, /*#__PURE__*/React$1J.createElement("input", {
       type: "radio",
       name: this.groupId,
       onChange: () => this._setAccepting(SOME),
@@ -28034,20 +28945,20 @@ var _module_$1J = {
 };
 /* eslint-disable react/sort-comp */
 
-var React$1D = _react__default["default"];
-var ReactDOM$m = _reactDom__default["default"];
+var React$1I = _react__default["default"];
+var ReactDOM$q = _reactDom__default["default"];
 var _$17 = _underscore__default["default"];
-var TeX$6 = _reactComponentsTexJsx__default["default"];
+var TeX$6 = _reactComponentsTexJsx;
 var ApiClassNames$b = _perseusApiJsx.ClassNames;
 var ModifyTex = _texWranglerJs.modifyTex;
-var MathOutput$7 = React$1D.createClass({
+var MathOutput$7 = React$1I.createClass({
   displayName: "MathOutput",
   propTypes: {
-    value: React$1D.PropTypes.oneOfType([React$1D.PropTypes.string, React$1D.PropTypes.number]),
-    className: React$1D.PropTypes.string,
-    labelText: React$1D.PropTypes.string,
-    onFocus: React$1D.PropTypes.func,
-    onBlur: React$1D.PropTypes.func
+    value: React$1I.PropTypes.oneOfType([React$1I.PropTypes.string, React$1I.PropTypes.number]),
+    className: React$1I.PropTypes.string,
+    labelText: React$1I.PropTypes.string,
+    onFocus: React$1I.PropTypes.func,
+    onBlur: React$1I.PropTypes.func
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -28091,15 +29002,15 @@ var MathOutput$7 = React$1D.createClass({
     var divStyle = {
       textAlign: "center"
     };
-    return /*#__PURE__*/React$1D.createElement("span", {
+    return /*#__PURE__*/React$1I.createElement("span", {
       ref: "input",
       className: this._getInputClassName(),
       "aria-label": this.props.labelText,
       onMouseDown: this.focus,
       onTouchStart: this.focus
-    }, /*#__PURE__*/React$1D.createElement("div", {
+    }, /*#__PURE__*/React$1I.createElement("div", {
       style: divStyle
-    }, /*#__PURE__*/React$1D.createElement(TeX$6, null, this._getDisplayValue(this.props.value))));
+    }, /*#__PURE__*/React$1I.createElement(TeX$6, null, this._getDisplayValue(this.props.value))));
   },
   getValue: function getValue() {
     return this.props.value;
@@ -28129,7 +29040,7 @@ var MathOutput$7 = React$1D.createClass({
   _bindBlurHandler: function _bindBlurHandler() {
     $__default["default"](document).bind("vclick." + this.state.selectorNamespace, e => {
       // Detect whether the target has our React DOM node as a parent
-      var $closestWidget = $__default["default"](e.target).closest(ReactDOM$m.findDOMNode(this));
+      var $closestWidget = $__default["default"](e.target).closest(ReactDOM$q.findDOMNode(this));
 
       if (!$closestWidget.length) {
         this.blur();
@@ -28160,8 +29071,8 @@ var _module_$1I = {
 // value?
 
 var lens$1 = lens$3;
-var React$1C = _react__default["default"];
-var ReactDOM$l = _reactDom__default["default"];
+var React$1H = _react__default["default"];
+var ReactDOM$p = _reactDom__default["default"];
 var _$16 = _underscore__default["default"];
 var ApiClassNames$a = _perseusApiJsx.ClassNames;
 var ApiOptions$r = _perseusApiJsx.Options;
@@ -28187,10 +29098,10 @@ var sigfigPrint = function sigfigPrint(num, sigfigs) {
  */
 
 
-var OldUnitInput = React$1C.createClass({
+var OldUnitInput = React$1H.createClass({
   displayName: "OldUnitInput",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$G.propTypes), {}, {
-    value: React$1C.PropTypes.string
+    value: React$1H.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -28200,7 +29111,7 @@ var OldUnitInput = React$1C.createClass({
   },
   // TODO(joel) think about showing the error buddy
   render: function render() {
-    var inputType = this.props.apiOptions.staticRender ? React$1C.createFactory(MathOutput$6) : React$1C.DOM.input;
+    var inputType = this.props.apiOptions.staticRender ? React$1H.createFactory(MathOutput$6) : React$1H.DOM.input;
     var input = inputType({
       onChange: this.handleChange,
       ref: "input",
@@ -28209,9 +29120,9 @@ var OldUnitInput = React$1C.createClass({
       onFocus: this.handleFocus,
       onBlur: this.handleBlur
     });
-    return /*#__PURE__*/React$1C.createElement("div", {
+    return /*#__PURE__*/React$1H.createElement("div", {
       className: "old-unit-input"
-    }, input, /*#__PURE__*/React$1C.createElement("div", {
+    }, input, /*#__PURE__*/React$1H.createElement("div", {
       ref: "error",
       className: "error",
       style: {
@@ -28225,7 +29136,7 @@ var OldUnitInput = React$1C.createClass({
       return;
     }
 
-    var $error = $(ReactDOM$l.findDOMNode(this.refs.error));
+    var $error = $(ReactDOM$p.findDOMNode(this.refs.error));
 
     if (!$error.is(":visible")) {
       $error.css({
@@ -28238,7 +29149,7 @@ var OldUnitInput = React$1C.createClass({
     }
   },
   _hideError: function _hideError() {
-    var $error = $(ReactDOM$l.findDOMNode(this.refs.error));
+    var $error = $(ReactDOM$p.findDOMNode(this.refs.error));
 
     if ($error.is(":visible")) {
       $error.animate({
@@ -28299,13 +29210,13 @@ var OldUnitInput = React$1C.createClass({
     return [[]];
   },
   focusInputPath: function focusInputPath(inputPath) {
-    ReactDOM$l.findDOMNode(this.refs.input).focus();
+    ReactDOM$p.findDOMNode(this.refs.input).focus();
   },
   handleFocus: function handleFocus() {
     this.props.onFocus([]);
   },
   blurInputPath: function blurInputPath(inputPath) {
-    ReactDOM$l.findDOMNode(this.refs.input).blur();
+    ReactDOM$p.findDOMNode(this.refs.input).blur();
   },
   setInputValue: function setInputValue(path, newValue, cb) {
     this.props.onChange({
@@ -28313,7 +29224,7 @@ var OldUnitInput = React$1C.createClass({
     }, cb);
   },
   getDOMNodeForPath: function getDOMNodeForPath() {
-    return ReactDOM$l.findDOMNode(this.refs.input);
+    return ReactDOM$p.findDOMNode(this.refs.input);
   },
   getGrammarTypeForPath: function getGrammarTypeForPath(inputPath) {
     return "unit";
@@ -28434,7 +29345,7 @@ var _module_$1H = {
  * interface to `math-input`'s MathInput component.
  */
 
-var React$1B = _react__default["default"];
+var React$1G = _react__default["default"];
 var {
   KeypadInput: KeypadInput$1
 } = _mathInput__default["default"].components;
@@ -28444,12 +29355,12 @@ var {
 var {
   keypadElementPropType: keypadElementPropType$7
 } = _mathInput__default["default"].propTypes;
-var SimpleKeypadInput$6 = React$1B.createClass({
+var SimpleKeypadInput$6 = React$1G.createClass({
   displayName: "SimpleKeypadInput",
   propTypes: {
     keypadElement: keypadElementPropType$7,
-    onFocus: React$1B.PropTypes.func,
-    value: React$1B.PropTypes.oneOfType([React$1B.PropTypes.string, React$1B.PropTypes.number])
+    onFocus: React$1G.PropTypes.func,
+    value: React$1G.PropTypes.oneOfType([React$1G.PropTypes.string, React$1G.PropTypes.number])
   },
 
   focus() {
@@ -28477,7 +29388,7 @@ var SimpleKeypadInput$6 = React$1B.createClass({
     } = _this$props,
         rest = _objectWithoutProperties(_this$props, _excluded$2);
 
-    return /*#__PURE__*/React$1B.createElement(KeypadInput$1, _extends({
+    return /*#__PURE__*/React$1G.createElement(KeypadInput$1, _extends({
       ref: "input",
       keypadElement: keypadElement,
       onFocus: () => {
@@ -28506,8 +29417,8 @@ var _module_$1G = {
 };
 /* eslint-disable react/forbid-prop-types, react/prop-types, react/sort-comp */
 
-var React$1A = _react__default["default"];
-var ReactDOM$k = _reactDom__default["default"];
+var React$1F = _react__default["default"];
+var ReactDOM$o = _reactDom__default["default"];
 var _$15 = _underscore__default["default"];
 var Util$g = Util$q;
 var GraphUtils$3 = _utilGraphUtilsJs;
@@ -28540,28 +29451,28 @@ function numSteps$2(range, step) {
   return Math.floor((range[1] - range[0]) / step);
 }
 
-var Graph$3 = React$1A.createClass({
+var Graph$3 = React$1F.createClass({
   displayName: "Graph",
   propTypes: {
-    box: React$1A.PropTypes.array.isRequired,
-    labels: React$1A.PropTypes.arrayOf(React$1A.PropTypes.string),
-    range: React$1A.PropTypes.arrayOf(React$1A.PropTypes.arrayOf(React$1A.PropTypes.number)),
-    step: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    gridStep: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    snapStep: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    markings: React$1A.PropTypes.string,
-    backgroundImage: React$1A.PropTypes.shape({
-      url: React$1A.PropTypes.string
+    box: React$1F.PropTypes.array.isRequired,
+    labels: React$1F.PropTypes.arrayOf(React$1F.PropTypes.string),
+    range: React$1F.PropTypes.arrayOf(React$1F.PropTypes.arrayOf(React$1F.PropTypes.number)),
+    step: React$1F.PropTypes.arrayOf(React$1F.PropTypes.number),
+    gridStep: React$1F.PropTypes.arrayOf(React$1F.PropTypes.number),
+    snapStep: React$1F.PropTypes.arrayOf(React$1F.PropTypes.number),
+    markings: React$1F.PropTypes.string,
+    backgroundImage: React$1F.PropTypes.shape({
+      url: React$1F.PropTypes.string
     }),
-    showProtractor: React$1A.PropTypes.bool,
-    showRuler: React$1A.PropTypes.bool,
-    rulerLabel: React$1A.PropTypes.string,
-    rulerTicks: React$1A.PropTypes.number,
-    onGraphieUpdated: React$1A.PropTypes.func,
-    instructions: React$1A.PropTypes.string,
-    onClick: React$1A.PropTypes.func,
-    setDrawingAreaAvailable: React$1A.PropTypes.func,
-    isMobile: React$1A.PropTypes.bool
+    showProtractor: React$1F.PropTypes.bool,
+    showRuler: React$1F.PropTypes.bool,
+    rulerLabel: React$1F.PropTypes.string,
+    rulerTicks: React$1F.PropTypes.number,
+    onGraphieUpdated: React$1F.PropTypes.func,
+    instructions: React$1F.PropTypes.string,
+    onClick: React$1F.PropTypes.func,
+    setDrawingAreaAvailable: React$1F.PropTypes.func,
+    isMobile: React$1F.PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -28589,7 +29500,7 @@ var Graph$3 = React$1A.createClass({
 
     if (imageData.url) {
       var scale = this.props.box[0] / interactiveSizes.defaultBoxSize;
-      image = /*#__PURE__*/React$1A.createElement(SvgImage$3, {
+      image = /*#__PURE__*/React$1F.createElement(SvgImage$3, {
         src: imageData.url,
         width: imageData.width,
         height: imageData.height,
@@ -28600,7 +29511,7 @@ var Graph$3 = React$1A.createClass({
       image = null;
     }
 
-    return /*#__PURE__*/React$1A.createElement("div", {
+    return /*#__PURE__*/React$1F.createElement("div", {
       className: "graphie-container above-scratchpad",
       style: {
         width: this.props.box[0],
@@ -28609,7 +29520,7 @@ var Graph$3 = React$1A.createClass({
       onMouseOut: this.onMouseOut,
       onMouseOver: this.onMouseOver,
       onClick: this.onClick
-    }, image, /*#__PURE__*/React$1A.createElement("div", {
+    }, image, /*#__PURE__*/React$1F.createElement("div", {
       className: "graphie",
       ref: "graphieDiv"
     }));
@@ -28678,7 +29589,7 @@ var Graph$3 = React$1A.createClass({
       return;
     }
 
-    var graphieDiv = ReactDOM$k.findDOMNode(this.refs.graphieDiv);
+    var graphieDiv = ReactDOM$o.findDOMNode(this.refs.graphieDiv);
     $(graphieDiv).empty();
     var labels = this.props.labels;
     var range = this.props.range;
@@ -28844,14 +29755,14 @@ var _module_$1F = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1z = _react__default["default"];
-var ReactDOM$j = _reactDom__default["default"];
+var React$1E = _react__default["default"];
+var ReactDOM$n = _reactDom__default["default"];
 var _$14 = _underscore__default["default"];
 var Graph$2 = _componentsGraphJsx;
 var InlineIcon$g = _componentsInlineIconJsx;
 var NumberInput$h = _componentsNumberInputJsx;
 var MathOutput$5 = _componentsMathOutputJsx;
-var TeX$5 = _reactComponentsTexJsx__default["default"];
+var TeX$5 = _reactComponentsTexJsx;
 var SimpleKeypadInput$5 = _componentsSimpleKeypadInputJsx;
 var ApiOptions$q = _perseusApiJsx.Options;
 var {
@@ -29014,11 +29925,11 @@ function stringFromFraction(number) {
 }
 
 function texFromPoint(point) {
-  return [/*#__PURE__*/React$1z.createElement(TeX$5, null, "("), stringFromDecimal(point[0]), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), stringFromDecimal(point[1]), /*#__PURE__*/React$1z.createElement(TeX$5, null, ")")];
+  return [/*#__PURE__*/React$1E.createElement(TeX$5, null, "("), stringFromDecimal(point[0]), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), stringFromDecimal(point[1]), /*#__PURE__*/React$1E.createElement(TeX$5, null, ")")];
 }
 
 function texFromVector(vector) {
-  return [/*#__PURE__*/React$1z.createElement(TeX$5, null, "\\langle"), stringFromDecimal(vector[0]), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), stringFromDecimal(vector[1]), /*#__PURE__*/React$1z.createElement(TeX$5, null, "\\rangle")];
+  return [/*#__PURE__*/React$1E.createElement(TeX$5, null, "\\langle"), stringFromDecimal(vector[0]), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), stringFromDecimal(vector[1]), /*#__PURE__*/React$1E.createElement(TeX$5, null, "\\rangle")];
 }
 
 function texFromAngleDeg(angleDeg) {
@@ -29135,14 +30046,14 @@ var TransformOps = {
   },
 
   /* A react representation of this transform object */
-  ListItem: React$1z.createClass({
+  ListItem: React$1E.createClass({
     displayName: "ListItem",
     render: function render() {
       if (this.props.mode === "dynamic") {
-        return /*#__PURE__*/React$1z.createElement("div", null, TransformOps.toTeX(this.props.transform));
+        return /*#__PURE__*/React$1E.createElement("div", null, TransformOps.toTeX(this.props.transform));
       } else if (this.props.mode === "interactive") {
         var TransformClass = Transformations[this.props.transform.type].Input;
-        return /*#__PURE__*/React$1z.createElement(TransformClass, _extends({
+        return /*#__PURE__*/React$1E.createElement(TransformClass, _extends({
           ref: "transform",
           onChange: this.handleChange,
           onFocus: this.props.onFocus,
@@ -29193,7 +30104,7 @@ var TransformOps = {
       this._getComponentAtPath(path).blur();
     },
     getDOMNodeForPath: function getDOMNodeForPath(path) {
-      return ReactDOM$j.findDOMNode(this._getComponentAtPath(path));
+      return ReactDOM$n.findDOMNode(this._getComponentAtPath(path));
     },
     getGrammarTypeForPath: function getGrammarTypeForPath(path) {
       return "number";
@@ -29255,7 +30166,7 @@ var Transformations = {
         vector: texFromVector(transform.vector)
       }, "Translation by %(vector)s");
     },
-    Input: React$1z.createClass({
+    Input: React$1E.createClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -29271,7 +30182,7 @@ var Transformations = {
       },
       render: function render() {
         var InputComponent = inputComponentForApiOptions(this.props.apiOptions);
-        var vector = [/*#__PURE__*/React$1z.createElement(TeX$5, null, "\\langle"), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        var vector = [/*#__PURE__*/React$1E.createElement(TeX$5, null, "\\langle"), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "x",
           placeholder: 0,
           value: this.state.vector[0],
@@ -29287,7 +30198,7 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "x"),
           onBlur: _$14.partial(this.props.onBlur, "x"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "y",
           placeholder: 0,
           value: this.state.vector[1],
@@ -29303,8 +30214,8 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "y"),
           onBlur: _$14.partial(this.props.onBlur, "y"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, "\\rangle")];
-        return /*#__PURE__*/React$1z.createElement("div", null, $_({
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, "\\rangle")];
+        return /*#__PURE__*/React$1E.createElement("div", null, $_({
           vector: vector
         }, "Translation by %(vector)s"));
       },
@@ -29374,7 +30285,7 @@ var Transformations = {
         point: texFromPoint(transform.center)
       }, "Rotation by %(degrees)s about %(point)s");
     },
-    Input: React$1z.createClass({
+    Input: React$1E.createClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -29392,7 +30303,7 @@ var Transformations = {
       },
       render: function render() {
         var InputComponent = inputComponentForApiOptions(this.props.apiOptions);
-        var point = [/*#__PURE__*/React$1z.createElement(TeX$5, null, "("), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        var point = [/*#__PURE__*/React$1E.createElement(TeX$5, null, "("), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "centerX",
           placeholder: 0,
           value: this.state.center[0],
@@ -29408,7 +30319,7 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "centerX"),
           onBlur: _$14.partial(this.props.onBlur, "centerX"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "centerY",
           placeholder: 0,
           value: this.state.center[1],
@@ -29424,8 +30335,8 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "centerY"),
           onBlur: _$14.partial(this.props.onBlur, "centerY"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ")")];
-        var degrees = [/*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ")")];
+        var degrees = [/*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "angleDeg",
           placeholder: 0,
           value: this.state.angleDeg,
@@ -29446,7 +30357,7 @@ var Transformations = {
           point,
           degrees
         }, "Rotation about %(point)s by %(degrees)s");
-        return /*#__PURE__*/React$1z.createElement("div", null, text);
+        return /*#__PURE__*/React$1E.createElement("div", null, text);
       },
       value: function value() {
         var angleDeg = this.refs.angleDeg.getValue();
@@ -29524,7 +30435,7 @@ var Transformations = {
         point2: texFromPoint(point2)
       }, "Reflection over the line from %(point1)s to %(point2)s");
     },
-    Input: React$1z.createClass({
+    Input: React$1E.createClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -29540,7 +30451,7 @@ var Transformations = {
       },
       render: function render() {
         var InputComponent = inputComponentForApiOptions(this.props.apiOptions);
-        var point1 = [/*#__PURE__*/React$1z.createElement(TeX$5, null, "("), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        var point1 = [/*#__PURE__*/React$1E.createElement(TeX$5, null, "("), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "x1",
           value: this.state.line[0][0],
           useArrowKeys: true,
@@ -29548,7 +30459,7 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "x1"),
           onBlur: _$14.partial(this.props.onBlur, "x1"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "y1",
           value: this.state.line[0][1],
           useArrowKeys: true,
@@ -29556,8 +30467,8 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "y1"),
           onBlur: _$14.partial(this.props.onBlur, "y1"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ")")];
-        var point2 = [/*#__PURE__*/React$1z.createElement(TeX$5, null, "("), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ")")];
+        var point2 = [/*#__PURE__*/React$1E.createElement(TeX$5, null, "("), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "x2",
           value: this.state.line[1][0],
           useArrowKeys: true,
@@ -29565,7 +30476,7 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "x2"),
           onBlur: _$14.partial(this.props.onBlur, "x2"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "y2",
           value: this.state.line[1][1],
           useArrowKeys: true,
@@ -29573,8 +30484,8 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "y2"),
           onBlur: _$14.partial(this.props.onBlur, "y2"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ")")];
-        return /*#__PURE__*/React$1z.createElement("div", null, $_({
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ")")];
+        return /*#__PURE__*/React$1E.createElement("div", null, $_({
           point1,
           point2
         }, "Reflection over the line from " + "%(point1)s to %(point2)s"));
@@ -29662,7 +30573,7 @@ var Transformations = {
         point: texFromPoint(transform.center)
       }, "Dilation of scale %(scale)s about %(point)s");
     },
-    Input: React$1z.createClass({
+    Input: React$1E.createClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -29680,7 +30591,7 @@ var Transformations = {
       },
       render: function render() {
         var InputComponent = inputComponentForApiOptions(this.props.apiOptions);
-        var point = [/*#__PURE__*/React$1z.createElement(TeX$5, null, "("), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        var point = [/*#__PURE__*/React$1E.createElement(TeX$5, null, "("), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "x",
           placeholder: 0,
           value: this.state.center[0],
@@ -29696,7 +30607,7 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "x"),
           onBlur: _$14.partial(this.props.onBlur, "x"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ", {}"), /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "y",
           placeholder: 0,
           value: this.state.center[1],
@@ -29712,8 +30623,8 @@ var Transformations = {
           onFocus: _$14.partial(this.props.onFocus, "y"),
           onBlur: _$14.partial(this.props.onBlur, "y"),
           keypadElement: this.props.keypadElement
-        }), /*#__PURE__*/React$1z.createElement(TeX$5, null, ")")];
-        var scale = /*#__PURE__*/React$1z.createElement(InputComponent, {
+        }), /*#__PURE__*/React$1E.createElement(TeX$5, null, ")")];
+        var scale = /*#__PURE__*/React$1E.createElement(InputComponent, {
           ref: "scale",
           placeholder: 1,
           value: this.state.scale,
@@ -29729,7 +30640,7 @@ var Transformations = {
           onBlur: _$14.partial(this.props.onBlur, "scale"),
           keypadElement: this.props.keypadElement
         });
-        return /*#__PURE__*/React$1z.createElement("div", null, $_({
+        return /*#__PURE__*/React$1E.createElement("div", null, $_({
           point,
           scale
         }, "Dilation about %(point)s by %(scale)s"));
@@ -30171,15 +31082,15 @@ var ShapeTypes$1 = {
   }
 };
 var TransformationListItem = TransformOps.ListItem;
-var TransformationList = React$1z.createClass({
+var TransformationList = React$1E.createClass({
   displayName: "TransformationList",
   render: function render() {
     if (this.props.mode === "static") {
-      return /*#__PURE__*/React$1z.createElement("span", null); // don't render anything
+      return /*#__PURE__*/React$1E.createElement("span", null); // don't render anything
     }
 
     var transformationList = _$14.map(this.props.transformations, function (transform, i) {
-      return /*#__PURE__*/React$1z.createElement(TransformationListItem, {
+      return /*#__PURE__*/React$1E.createElement(TransformationListItem, {
         ref: "transformation" + i,
         key: "transformation" + i,
         transform: transform,
@@ -30192,7 +31103,7 @@ var TransformationList = React$1z.createClass({
       });
     }, this);
 
-    return /*#__PURE__*/React$1z.createElement("div", {
+    return /*#__PURE__*/React$1E.createElement("div", {
       className: "perseus-transformation-list"
     }, transformationList);
   },
@@ -30215,11 +31126,11 @@ var TransformationList = React$1z.createClass({
     }
   }
 });
-var ToolButton = React$1z.createClass({
+var ToolButton = React$1E.createClass({
   displayName: "ToolButton",
   render: function render() {
     var classes = this.props.toggled ? "simple-button exercise-orange toggled highlighted-tool-button" : "simple-button";
-    return /*#__PURE__*/React$1z.createElement("button", {
+    return /*#__PURE__*/React$1E.createElement("button", {
       type: "button",
       className: classes,
       disabled: this.props.disabled,
@@ -30228,7 +31139,7 @@ var ToolButton = React$1z.createClass({
     }, this.props.children);
   }
 });
-var ToolsBar = React$1z.createClass({
+var ToolsBar = React$1E.createClass({
   displayName: "ToolsBar",
   getInitialState: function getInitialState() {
     return {
@@ -30238,7 +31149,7 @@ var ToolsBar = React$1z.createClass({
   render: function render() {
     var tools = _$14.map(Transformations, function (tool, type) {
       if (this.props.enabled[type]) {
-        return /*#__PURE__*/React$1z.createElement(ToolButton, {
+        return /*#__PURE__*/React$1E.createElement(ToolButton, {
           key: type,
           disabled: this.props.apiOptions.readOnly,
           toggled: this.state.selected === type,
@@ -30247,17 +31158,17 @@ var ToolsBar = React$1z.createClass({
       }
     }, this);
 
-    return /*#__PURE__*/React$1z.createElement("div", {
+    return /*#__PURE__*/React$1E.createElement("div", {
       className: "transformer-tools-bar"
-    }, /*#__PURE__*/React$1z.createElement("span", {
+    }, /*#__PURE__*/React$1E.createElement("span", {
       className: "simple-button-group"
-    }, tools), /*#__PURE__*/React$1z.createElement("button", {
+    }, tools), /*#__PURE__*/React$1E.createElement("button", {
       className: "transformer-undo-button simple-button",
       type: "button",
       disabled: this.props.apiOptions.readOnly,
       onClick: this.props.onUndoClick,
       onTouchStart: captureScratchpadTouchStart$2
-    }, /*#__PURE__*/React$1z.createElement(InlineIcon$g, iconUndo), " " + i18n._("Undo")), /*#__PURE__*/React$1z.createElement("div", {
+    }, /*#__PURE__*/React$1E.createElement(InlineIcon$g, iconUndo), " " + i18n._("Undo")), /*#__PURE__*/React$1E.createElement("div", {
       className: "clear"
     }));
   },
@@ -30276,29 +31187,29 @@ var ToolsBar = React$1z.createClass({
     }
   }
 });
-var AddTransformBar = React$1z.createClass({
+var AddTransformBar = React$1E.createClass({
   displayName: "AddTransformBar",
   render: function render() {
     var tools = _$14.map(Transformations, function (tool, type) {
       if (this.props.enabled[type]) {
-        return /*#__PURE__*/React$1z.createElement(ToolButton, {
+        return /*#__PURE__*/React$1E.createElement(ToolButton, {
           key: type,
           toggled: false,
           disabled: this.props.apiOptions.readOnly,
           onClick: this.changeSelected.bind(this, type)
-        }, /*#__PURE__*/React$1z.createElement(InlineIcon$g, iconPlus), " ", tool.nounName);
+        }, /*#__PURE__*/React$1E.createElement(InlineIcon$g, iconPlus), " ", tool.nounName);
       }
     }, this);
 
-    return /*#__PURE__*/React$1z.createElement("div", {
+    return /*#__PURE__*/React$1E.createElement("div", {
       className: "transformer-tools-bar"
-    }, tools, /*#__PURE__*/React$1z.createElement("button", {
+    }, tools, /*#__PURE__*/React$1E.createElement("button", {
       className: "transformer-undo-button simple-button",
       type: "button",
       onClick: this.props.onUndoClick,
       disabled: this.props.apiOptions.readOnly,
       onTouchStart: captureScratchpadTouchStart$2
-    }, /*#__PURE__*/React$1z.createElement(InlineIcon$g, iconUndo), " " + i18n._("Undo")), /*#__PURE__*/React$1z.createElement("div", {
+    }, /*#__PURE__*/React$1E.createElement(InlineIcon$g, iconUndo), " " + i18n._("Undo")), /*#__PURE__*/React$1E.createElement("div", {
       className: "clear"
     }));
   },
@@ -30308,12 +31219,12 @@ var AddTransformBar = React$1z.createClass({
     }
   }
 });
-var Transformer$1 = React$1z.createClass({
+var Transformer$1 = React$1E.createClass({
   displayName: "Transformer",
   propTypes: {
     apiOptions: ApiOptions$q.propTypes,
     keypadElement: keypadElementPropType$6,
-    trackInteraction: React$1z.PropTypes.func.isRequired
+    trackInteraction: React$1E.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return _$14.defaults({
@@ -30332,11 +31243,11 @@ var Transformer$1 = React$1z.createClass({
     // lets us specify it in the same place the graph's width is
     // specified.
 
-    var toolsBar = /*#__PURE__*/React$1z.createElement("div", {
+    var toolsBar = /*#__PURE__*/React$1E.createElement("div", {
       style: {
         width: graph.box[0]
       }
-    }, /*#__PURE__*/React$1z.createElement(ToolsBarClass, {
+    }, /*#__PURE__*/React$1E.createElement(ToolsBarClass, {
       ref: "toolsBar",
       enabled: pluckObject(this.props.tools, "enabled"),
       apiOptions: this.props.apiOptions,
@@ -30344,9 +31255,9 @@ var Transformer$1 = React$1z.createClass({
       removeTool: this.removeTool,
       onUndoClick: this.handleUndoClick
     }));
-    return /*#__PURE__*/React$1z.createElement("div", {
+    return /*#__PURE__*/React$1E.createElement("div", {
       className: "perseus-widget " + "perseus-widget-transformer"
-    }, /*#__PURE__*/React$1z.createElement(Graph$2, {
+    }, /*#__PURE__*/React$1E.createElement(Graph$2, {
       ref: "graph",
       box: graph.box,
       range: graph.range,
@@ -30358,11 +31269,11 @@ var Transformer$1 = React$1z.createClass({
       showProtractor: graph.showProtractor,
       onGraphieUpdated: this.setupGraphie,
       setDrawingAreaAvailable: this.props.apiOptions.setDrawingAreaAvailable
-    }), !interactiveToolsMode && "Add transformations below:", this.props.graphMode === "static" && [/*#__PURE__*/React$1z.createElement("br", {
+    }), !interactiveToolsMode && "Add transformations below:", this.props.graphMode === "static" && [/*#__PURE__*/React$1E.createElement("br", {
       key: "static-br"
-    }), /*#__PURE__*/React$1z.createElement("em", {
+    }), /*#__PURE__*/React$1E.createElement("em", {
       key: "static-nomove"
-    }, " ", "Note: For this question, the shape will not move.", " ")], interactiveToolsMode && toolsBar, /*#__PURE__*/React$1z.createElement(TransformationList, {
+    }, " ", "Note: For this question, the shape will not move.", " ")], interactiveToolsMode && toolsBar, /*#__PURE__*/React$1E.createElement(TransformationList, {
       ref: "transformationList",
       mode: this.props.listMode,
       transformations: this.props.transformations,
@@ -31142,17 +32053,17 @@ var _module_$1E = {
 };
 /* eslint-disable react/prop-types, react/sort-comp */
 
-var React$1y = _react__default["default"];
+var React$1D = _react__default["default"];
 var _$13 = _underscore__default["default"];
 /* A checkbox that syncs its value to props using the
  * renderer's onChange method, and gets the prop name
  * dynamically from its props list
  */
 
-var PropCheckBox$f = React$1y.createClass({
+var PropCheckBox$f = React$1D.createClass({
   displayName: "PropCheckBox",
   propTypes: {
-    labelAlignment: React$1y.PropTypes.oneOf(["left", "right"])
+    labelAlignment: React$1D.PropTypes.oneOf(["left", "right"])
   },
   DEFAULT_PROPS: {
     label: null,
@@ -31178,7 +32089,7 @@ var PropCheckBox$f = React$1y.createClass({
   },
   render: function render() {
     var propName = this.propName();
-    return /*#__PURE__*/React$1y.createElement("label", null, this._labelAlignLeft() && this.props.label, /*#__PURE__*/React$1y.createElement("input", {
+    return /*#__PURE__*/React$1D.createElement("label", null, this._labelAlignLeft() && this.props.label, /*#__PURE__*/React$1D.createElement("input", {
       type: "checkbox",
       checked: this.props[propName],
       onChange: this.toggle
@@ -31199,7 +32110,7 @@ var _module_$1D = {
 };
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 
-var React$1x = _react__default["default"];
+var React$1C = _react__default["default"];
 var NumberInput$g = _componentsNumberInputJsx;
 
 var truth = () => true;
@@ -31208,13 +32119,13 @@ var truth = () => true;
  */
 
 
-var RangeInput$6 = React$1x.createClass({
+var RangeInput$6 = React$1C.createClass({
   displayName: "RangeInput",
   propTypes: {
-    value: React$1x.PropTypes.array.isRequired,
-    onChange: React$1x.PropTypes.func.isRequired,
-    placeholder: React$1x.PropTypes.array,
-    checkValidity: React$1x.PropTypes.func
+    value: React$1C.PropTypes.array.isRequired,
+    onChange: React$1C.PropTypes.func.isRequired,
+    placeholder: React$1C.PropTypes.array,
+    checkValidity: React$1C.PropTypes.func
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -31226,14 +32137,14 @@ var RangeInput$6 = React$1x.createClass({
 
     var _checkValidity = this.props.checkValidity || truth;
 
-    return /*#__PURE__*/React$1x.createElement("div", {
+    return /*#__PURE__*/React$1C.createElement("div", {
       className: "range-input"
-    }, /*#__PURE__*/React$1x.createElement(NumberInput$g, _extends({}, this.props, {
+    }, /*#__PURE__*/React$1C.createElement(NumberInput$g, _extends({}, this.props, {
       value: value[0],
       checkValidity: val => _checkValidity([val, value[1]]),
       onChange: this.onChange.bind(this, 0),
       placeholder: this.props.placeholder[0]
-    })), /*#__PURE__*/React$1x.createElement(NumberInput$g, _extends({}, this.props, {
+    })), /*#__PURE__*/React$1C.createElement(NumberInput$g, _extends({}, this.props, {
       value: value[1],
       checkValidity: val => _checkValidity([value[0], val]),
       onChange: this.onChange.bind(this, 1),
@@ -31253,20 +32164,142 @@ var RangeInput$6 = React$1x.createClass({
 _module_$1D.exports = RangeInput$6;
 var _componentsRangeInputJsx = _module_$1D.exports;
 
+var module$6 = {
+  exports: {}
+};
+var button = aphrodite.StyleSheet.create({
+  buttonStyle: {
+    backgroundColor: 'white',
+    border: '1px solid #ccc',
+    borderLeft: '0',
+    cursor: 'pointer',
+    margin: '0',
+    padding: '5px 10px',
+    position: 'relative',
+    // for hover
+    ':first-child': {
+      borderLeft: '1px solid #ccc',
+      borderTopLeftRadius: '3px',
+      borderBottomLeftRadius: '3px'
+    },
+    ':last-child': {
+      borderRight: '1px solid #ccc',
+      borderTopRightRadius: '3px',
+      borderBottomRightRadius: '3px'
+    },
+    ':hover': {
+      backgroundColor: '#ccc'
+    },
+    ':focus': {
+      zIndex: '2'
+    }
+  },
+  selectedStyle: {
+    backgroundColor: '#ddd'
+  }
+});
+module$6.exports = {
+  button: button
+};
+var _stylesJs = module$6.exports;
+
+var module$5 = {
+  exports: {}
+};
+/* ButtonGroup is an aesthetically pleasing group of buttons.
+ *
+ * The class requires these properties:
+ *   buttons - an array of objects with keys:
+ *     "value": this is the value returned when the button is selected
+ *     "content": this is the JSX shown within the button, typically a string
+ *         that gets rendered as the button's display text
+ *     "title": this is the title-text shown on hover
+ *   onChange - a function that is provided with the updated value
+ *     (which it then is responsible for updating)
+ *
+ * The class has these optional properties:
+ *   value - the initial value of the button selected, defaults to null.
+ *   allowEmpty - if false, exactly one button _must_ be selected; otherwise
+ *     it defaults to true and _at most_ one button (0 or 1) may be selected.
+ *
+ * Requires stylesheets/perseus-admin-package/editor.less to look nice.
+ */
+
+var React$1B = _react__default["default"];
+var ReactDOM$m = _reactDom__default["default"];
+var createReactClass$4 = _createReactClass__default["default"];
+var PropTypes$5 = _propTypes__default["default"];
+var styles$k = _stylesJs;
+var ButtonGroup$8 = createReactClass$4({
+  displayName: "ButtonGroup",
+  propTypes: {
+    value: PropTypes$5.any,
+    buttons: PropTypes$5.arrayOf(PropTypes$5.shape({
+      value: PropTypes$5.any.isRequired,
+      content: PropTypes$5.node,
+      title: PropTypes$5.string
+    })).isRequired,
+    onChange: PropTypes$5.func.isRequired,
+    allowEmpty: PropTypes$5.bool
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      value: null,
+      allowEmpty: true
+    };
+  },
+  focus: function focus() {
+    ReactDOM$m.findDOMNode(this).focus();
+    return true;
+  },
+  toggleSelect: function toggleSelect(newValue) {
+    var value = this.props.value;
+
+    if (this.props.allowEmpty) {
+      // Select the new button or unselect if it's already selected
+      this.props.onChange(value !== newValue ? newValue : null);
+    } else {
+      this.props.onChange(newValue);
+    }
+  },
+  render: function render() {
+    var value = this.props.value;
+    var buttons = this.props.buttons.map((button, i) => {
+      return /*#__PURE__*/React$1B.createElement("button", {
+        title: button.title,
+        type: "button",
+        id: "" + i,
+        ref: "button" + i,
+        key: "" + i,
+        className: aphrodite.css(styles$k.button.buttonStyle, button.value === value && styles$k.button.selectedStyle),
+        onClick: this.toggleSelect.bind(this, button.value)
+      }, button.content || "" + button.value);
+    });
+    var outerStyle = {
+      display: 'inline-block'
+    };
+    return /*#__PURE__*/React$1B.createElement("div", {
+      style: outerStyle
+    }, buttons);
+  }
+});
+module$5.exports = ButtonGroup$8;
+var _reactComponentsButtonGroupJsx = module$5.exports;
+
 var _module_$1C = {
   exports: {}
 };
 /* eslint-disable react/forbid-prop-types */
 
-var React$1w = _react__default["default"];
-var ReactDOM$i = _reactDom__default["default"];
+var React$1A = _react__default["default"];
+var ReactDOM$l = _reactDom__default["default"];
 var _$12 = _underscore__default["default"];
 var Changeable$F = _mixinsChangeableJsx;
-var ButtonGroup$7 = _reactComponentsButtonGroupJsx__default["default"];
+var ButtonGroup$7 = _reactComponentsButtonGroupJsx;
 var InfoTip$m = _componentsInfoTipJsx;
 var PropCheckBox$e = _componentsPropCheckBoxJsx;
 var RangeInput$5 = _componentsRangeInputJsx;
-var TeX$4 = _reactComponentsTexJsx__default["default"];
+var TeX$4 = _reactComponentsTexJsx;
 var Util$f = Util$q;
 var KhanMath$4 = _utilMathJs;
 var defaultBackgroundImage$5 = {
@@ -31279,24 +32312,24 @@ function numSteps$1(range, step) {
   return Math.floor((range[1] - range[0]) / step);
 }
 
-var GraphSettings$4 = React$1w.createClass({
+var GraphSettings$4 = React$1A.createClass({
   displayName: "GraphSettings",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$F.propTypes), {}, {
-    editableSettings: React$1w.PropTypes.arrayOf(React$1w.PropTypes.oneOf(["canvas", "graph", "snap", "image", "measure"])),
-    box: React$1w.PropTypes.arrayOf(React$1w.PropTypes.number),
-    labels: React$1w.PropTypes.arrayOf(React$1w.PropTypes.string),
-    range: React$1w.PropTypes.arrayOf(React$1w.PropTypes.arrayOf(React$1w.PropTypes.number)),
-    step: React$1w.PropTypes.arrayOf(React$1w.PropTypes.number),
-    gridStep: React$1w.PropTypes.arrayOf(React$1w.PropTypes.number),
-    snapStep: React$1w.PropTypes.arrayOf(React$1w.PropTypes.number),
-    valid: React$1w.PropTypes.oneOfType([React$1w.PropTypes.bool, React$1w.PropTypes.string]),
-    backgroundImage: React$1w.PropTypes.object,
-    markings: React$1w.PropTypes.oneOf(["graph", "grid", "none"]),
-    showProtractor: React$1w.PropTypes.bool,
-    showRuler: React$1w.PropTypes.bool,
-    showTooltips: React$1w.PropTypes.bool,
-    rulerLabel: React$1w.PropTypes.string,
-    rulerTicks: React$1w.PropTypes.number
+    editableSettings: React$1A.PropTypes.arrayOf(React$1A.PropTypes.oneOf(["canvas", "graph", "snap", "image", "measure"])),
+    box: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
+    labels: React$1A.PropTypes.arrayOf(React$1A.PropTypes.string),
+    range: React$1A.PropTypes.arrayOf(React$1A.PropTypes.arrayOf(React$1A.PropTypes.number)),
+    step: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
+    gridStep: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
+    snapStep: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
+    valid: React$1A.PropTypes.oneOfType([React$1A.PropTypes.bool, React$1A.PropTypes.string]),
+    backgroundImage: React$1A.PropTypes.object,
+    markings: React$1A.PropTypes.oneOf(["graph", "grid", "none"]),
+    showProtractor: React$1A.PropTypes.bool,
+    showRuler: React$1A.PropTypes.bool,
+    showTooltips: React$1A.PropTypes.bool,
+    rulerLabel: React$1A.PropTypes.string,
+    rulerTicks: React$1A.PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -31378,7 +32411,7 @@ var GraphSettings$4 = React$1w.createClass({
       }, this.changeGraph);
     };
 
-    var url = ReactDOM$i.findDOMNode(this.refs["bg-url"]).value;
+    var url = ReactDOM$l.findDOMNode(this.refs["bg-url"]).value;
 
     if (url) {
       Util$f.getImageSize(url, (width, height) => {
@@ -31392,7 +32425,7 @@ var GraphSettings$4 = React$1w.createClass({
   },
   renderLabelChoices: function renderLabelChoices(choices) {
     return _$12.map(choices, function (nameAndValue) {
-      return /*#__PURE__*/React$1w.createElement("option", {
+      return /*#__PURE__*/React$1A.createElement("option", {
         value: nameAndValue[1]
       }, nameAndValue[0]);
     });
@@ -31613,73 +32646,73 @@ var GraphSettings$4 = React$1w.createClass({
   },
   render: function render() {
     var scale = [KhanMath$4.roundTo(2, Util$f.scaleFromExtent(this.props.range[0], this.props.box[0])), KhanMath$4.roundTo(2, Util$f.scaleFromExtent(this.props.range[1], this.props.box[1]))];
-    return /*#__PURE__*/React$1w.createElement("div", null, _$12.contains(this.props.editableSettings, "canvas") && /*#__PURE__*/React$1w.createElement("div", {
+    return /*#__PURE__*/React$1A.createElement("div", null, _$12.contains(this.props.editableSettings, "canvas") && /*#__PURE__*/React$1A.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, "Canvas size (x,y pixels)", /*#__PURE__*/React$1w.createElement(RangeInput$5, {
+    }, "Canvas size (x,y pixels)", /*#__PURE__*/React$1A.createElement(RangeInput$5, {
       value: this.props.box,
       onChange: box => {
         this.change({
           box: box
         });
       }
-    })), /*#__PURE__*/React$1w.createElement("div", {
+    })), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, "Scale (px per div):", " ", /*#__PURE__*/React$1w.createElement(TeX$4, null, "(" + scale[0] + ", " + scale[1] + ")"))), _$12.contains(this.props.editableSettings, "graph") && /*#__PURE__*/React$1w.createElement("div", {
+    }, "Scale (px per div):", " ", /*#__PURE__*/React$1A.createElement(TeX$4, null, "(" + scale[0] + ", " + scale[1] + ")"))), _$12.contains(this.props.editableSettings, "graph") && /*#__PURE__*/React$1A.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-left-col"
-    }, " ", "x Label", /*#__PURE__*/React$1w.createElement("input", {
+    }, " ", "x Label", /*#__PURE__*/React$1A.createElement("input", {
       type: "text",
       className: "graph-settings-axis-label",
       ref: "labels-0",
       onChange: e => this.changeLabel(0, e),
       value: this.state.labelsTextbox[0]
-    })), /*#__PURE__*/React$1w.createElement("div", {
+    })), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-right-col"
-    }, "y Label", /*#__PURE__*/React$1w.createElement("input", {
+    }, "y Label", /*#__PURE__*/React$1A.createElement("input", {
       type: "text",
       className: "graph-settings-axis-label",
       ref: "labels-1",
       onChange: e => this.changeLabel(1, e),
       value: this.state.labelsTextbox[1]
-    }))), /*#__PURE__*/React$1w.createElement("div", {
+    }))), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "x Range", /*#__PURE__*/React$1w.createElement(RangeInput$5, {
+    }, "x Range", /*#__PURE__*/React$1A.createElement(RangeInput$5, {
       value: this.state.rangeTextbox[0],
       onChange: vals => this.changeRange(0, vals)
-    })), /*#__PURE__*/React$1w.createElement("div", {
+    })), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-right-col"
-    }, "y Range", /*#__PURE__*/React$1w.createElement(RangeInput$5, {
+    }, "y Range", /*#__PURE__*/React$1A.createElement(RangeInput$5, {
       value: this.state.rangeTextbox[1],
       onChange: vals => this.changeRange(1, vals)
-    }))), /*#__PURE__*/React$1w.createElement("div", {
+    }))), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "Tick Step", /*#__PURE__*/React$1w.createElement(RangeInput$5, {
+    }, "Tick Step", /*#__PURE__*/React$1A.createElement(RangeInput$5, {
       value: this.state.stepTextbox,
       onChange: this.changeStep
-    })), /*#__PURE__*/React$1w.createElement("div", {
+    })), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-right-col"
-    }, "Grid Step", /*#__PURE__*/React$1w.createElement(RangeInput$5, {
+    }, "Grid Step", /*#__PURE__*/React$1A.createElement(RangeInput$5, {
       value: this.state.gridStepTextbox,
       onChange: this.changeGridStep
-    }))), _$12.contains(this.props.editableSettings, "snap") && /*#__PURE__*/React$1w.createElement("div", {
+    }))), _$12.contains(this.props.editableSettings, "snap") && /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "Snap Step", /*#__PURE__*/React$1w.createElement(RangeInput$5, {
+    }, "Snap Step", /*#__PURE__*/React$1A.createElement(RangeInput$5, {
       value: this.state.snapStepTextbox,
       onChange: this.changeSnapStep
-    }))), /*#__PURE__*/React$1w.createElement("div", {
+    }))), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1w.createElement("label", null, "Markings: "), /*#__PURE__*/React$1w.createElement(ButtonGroup$7, {
+    }, /*#__PURE__*/React$1A.createElement("label", null, "Markings: "), /*#__PURE__*/React$1A.createElement(ButtonGroup$7, {
       value: this.props.markings,
       allowEmpty: false,
       buttons: [{
@@ -31693,15 +32726,15 @@ var GraphSettings$4 = React$1w.createClass({
         content: "None"
       }],
       onChange: this.change("markings")
-    })), /*#__PURE__*/React$1w.createElement("div", {
+    })), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-left-col"
-    }, /*#__PURE__*/React$1w.createElement(PropCheckBox$e, {
+    }, /*#__PURE__*/React$1A.createElement(PropCheckBox$e, {
       label: "Show tooltips",
       showTooltips: this.props.showTooltips,
       onChange: this.change
-    }))), _$12.contains(this.props.editableSettings, "image") && /*#__PURE__*/React$1w.createElement("div", {
+    }))), _$12.contains(this.props.editableSettings, "image") && /*#__PURE__*/React$1A.createElement("div", {
       className: "image-settings"
-    }, /*#__PURE__*/React$1w.createElement("div", null, "Background image:"), /*#__PURE__*/React$1w.createElement("div", null, "Url:", " ", /*#__PURE__*/React$1w.createElement("input", {
+    }, /*#__PURE__*/React$1A.createElement("div", null, "Background image:"), /*#__PURE__*/React$1A.createElement("div", null, "Url:", " ", /*#__PURE__*/React$1A.createElement("input", {
       type: "text",
       className: "graph-settings-background-url",
       ref: "bg-url",
@@ -31716,36 +32749,36 @@ var GraphSettings$4 = React$1w.createClass({
       },
       onKeyPress: this.changeBackgroundUrl,
       onBlur: this.changeBackgroundUrl
-    }), /*#__PURE__*/React$1w.createElement(InfoTip$m, null, /*#__PURE__*/React$1w.createElement("p", null, "Create an image in graphie, or use the \"Add image\" function to create a background.")))), _$12.contains(this.props.editableSettings, "measure") && /*#__PURE__*/React$1w.createElement("div", {
+    }), /*#__PURE__*/React$1A.createElement(InfoTip$m, null, /*#__PURE__*/React$1A.createElement("p", null, "Create an image in graphie, or use the \"Add image\" function to create a background.")))), _$12.contains(this.props.editableSettings, "measure") && /*#__PURE__*/React$1A.createElement("div", {
       className: "misc-settings"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1w.createElement("div", {
+    }, /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-left-col"
-    }, /*#__PURE__*/React$1w.createElement(PropCheckBox$e, {
+    }, /*#__PURE__*/React$1A.createElement(PropCheckBox$e, {
       label: "Show ruler",
       showRuler: this.props.showRuler,
       onChange: this.change
-    })), /*#__PURE__*/React$1w.createElement("div", {
+    })), /*#__PURE__*/React$1A.createElement("div", {
       className: "perseus-widget-right-col"
-    }, /*#__PURE__*/React$1w.createElement(PropCheckBox$e, {
+    }, /*#__PURE__*/React$1A.createElement(PropCheckBox$e, {
       label: "Show protractor",
       showProtractor: this.props.showProtractor,
       onChange: this.change
-    }))), this.props.showRuler && /*#__PURE__*/React$1w.createElement("div", null, /*#__PURE__*/React$1w.createElement("div", null, /*#__PURE__*/React$1w.createElement("label", null, " ", "Ruler label:", " ", /*#__PURE__*/React$1w.createElement("select", {
+    }))), this.props.showRuler && /*#__PURE__*/React$1A.createElement("div", null, /*#__PURE__*/React$1A.createElement("div", null, /*#__PURE__*/React$1A.createElement("label", null, " ", "Ruler label:", " ", /*#__PURE__*/React$1A.createElement("select", {
       onChange: this.changeRulerLabel,
       value: this.props.rulerLabel
-    }, /*#__PURE__*/React$1w.createElement("option", {
+    }, /*#__PURE__*/React$1A.createElement("option", {
       value: ""
-    }, "None"), /*#__PURE__*/React$1w.createElement("optgroup", {
+    }, "None"), /*#__PURE__*/React$1A.createElement("optgroup", {
       label: "Metric"
-    }, this.renderLabelChoices([["milimeters", "mm"], ["centimeters", "cm"], ["meters", "m"], ["kilometers", "km"]])), /*#__PURE__*/React$1w.createElement("optgroup", {
+    }, this.renderLabelChoices([["milimeters", "mm"], ["centimeters", "cm"], ["meters", "m"], ["kilometers", "km"]])), /*#__PURE__*/React$1A.createElement("optgroup", {
       label: "Imperial"
-    }, this.renderLabelChoices([["inches", "in"], ["feet", "ft"], ["yards", "yd"], ["miles", "mi"]]))))), /*#__PURE__*/React$1w.createElement("div", null, /*#__PURE__*/React$1w.createElement("label", null, " ", "Ruler ticks:", " ", /*#__PURE__*/React$1w.createElement("select", {
+    }, this.renderLabelChoices([["inches", "in"], ["feet", "ft"], ["yards", "yd"], ["miles", "mi"]]))))), /*#__PURE__*/React$1A.createElement("div", null, /*#__PURE__*/React$1A.createElement("label", null, " ", "Ruler ticks:", " ", /*#__PURE__*/React$1A.createElement("select", {
       onChange: this.changeRulerTicks,
       value: this.props.rulerTicks
     }, _$12.map([1, 2, 4, 8, 10, 16], function (n) {
-      return /*#__PURE__*/React$1w.createElement("option", {
+      return /*#__PURE__*/React$1A.createElement("option", {
         value: n
       }, n);
     })))))));
@@ -31763,7 +32796,7 @@ var _module_$1B = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1v = _react__default["default"];
+var React$1z = _react__default["default"];
 var _$11 = _underscore__default["default"];
 var ApiOptions$p = _perseusApiJsx.Options;
 var Graph$1 = _componentsGraphJsx;
@@ -31883,7 +32916,7 @@ var defaultTransformerProps = {
     transformations: []
   }
 };
-var ToolSettings = React$1v.createClass({
+var ToolSettings = React$1z.createClass({
   displayName: "ToolSettings",
   getDefaultProps: function getDefaultProps() {
     return {
@@ -31891,19 +32924,19 @@ var ToolSettings = React$1v.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$1v.createElement("div", null, this.props.name, ": ", " ", /*#__PURE__*/React$1v.createElement(PropCheckBox$d, {
+    return /*#__PURE__*/React$1z.createElement("div", null, this.props.name, ": ", " ", /*#__PURE__*/React$1z.createElement(PropCheckBox$d, {
       label: "enabled:",
       enabled: this.props.settings.enabled,
       onChange: this.props.onChange
-    }), " ", this.props.settings.enabled && /*#__PURE__*/React$1v.createElement(PropCheckBox$d, {
+    }), " ", this.props.settings.enabled && /*#__PURE__*/React$1z.createElement(PropCheckBox$d, {
       label: "required:",
       required: this.props.settings.required,
       onChange: this.props.onChange
-    }), this.props.settings.enabled && /*#__PURE__*/React$1v.createElement(InfoTip$l, null, "'Required' will only grade the answer as correct if the student has used at least one such transformation."), " ", this.props.allowFixed && this.props.settings.enabled && /*#__PURE__*/React$1v.createElement(PropCheckBox$d, {
+    }), this.props.settings.enabled && /*#__PURE__*/React$1z.createElement(InfoTip$l, null, "'Required' will only grade the answer as correct if the student has used at least one such transformation."), " ", this.props.allowFixed && this.props.settings.enabled && /*#__PURE__*/React$1z.createElement(PropCheckBox$d, {
       label: "fixed:",
       fixed: this.props.settings.constraints.fixed,
       onChange: this.changeConstraints
-    }), this.props.allowFixed && this.props.settings.enabled && /*#__PURE__*/React$1v.createElement(InfoTip$l, null, "Enable 'fixed' to prevent the student from repositioning the tool. The tool will appear in the position at which it is placed in the editor below."));
+    }), this.props.allowFixed && this.props.settings.enabled && /*#__PURE__*/React$1z.createElement(InfoTip$l, null, "Enable 'fixed' to prevent the student from repositioning the tool. The tool will appear in the position at which it is placed in the editor below."));
   },
   changeConstraints: function changeConstraints(changed) {
     var newConstraints = _$11.extend({}, this.props.constraints, changed);
@@ -31913,40 +32946,40 @@ var ToolSettings = React$1v.createClass({
     });
   }
 });
-var TransformationExplorerSettings = React$1v.createClass({
+var TransformationExplorerSettings = React$1z.createClass({
   displayName: "TransformationExplorerSettings",
   render: function render() {
-    return /*#__PURE__*/React$1v.createElement("div", {
+    return /*#__PURE__*/React$1z.createElement("div", {
       className: "transformer-settings"
-    }, /*#__PURE__*/React$1v.createElement("div", null, " ", "Mode:", " ", /*#__PURE__*/React$1v.createElement("select", {
+    }, /*#__PURE__*/React$1z.createElement("div", null, " ", "Mode:", " ", /*#__PURE__*/React$1z.createElement("select", {
       value: this.getMode(),
       onChange: this.changeMode
-    }, /*#__PURE__*/React$1v.createElement("option", {
+    }, /*#__PURE__*/React$1z.createElement("option", {
       value: "interactive,dynamic"
-    }, " ", "Exploration with text", " "), /*#__PURE__*/React$1v.createElement("option", {
+    }, " ", "Exploration with text", " "), /*#__PURE__*/React$1z.createElement("option", {
       value: "interactive,static"
-    }, " ", "Exploration without text", " "), /*#__PURE__*/React$1v.createElement("option", {
+    }, " ", "Exploration without text", " "), /*#__PURE__*/React$1z.createElement("option", {
       value: "dynamic,interactive"
-    }, " ", "Formal with movement", " "), /*#__PURE__*/React$1v.createElement("option", {
+    }, " ", "Formal with movement", " "), /*#__PURE__*/React$1z.createElement("option", {
       value: "static,interactive"
-    }, " ", "Formal without movement", " ")), /*#__PURE__*/React$1v.createElement(InfoTip$l, null, /*#__PURE__*/React$1v.createElement("ul", null, /*#__PURE__*/React$1v.createElement("li", null, /*#__PURE__*/React$1v.createElement("b", null, "Exploration:"), " Students create transformations with tools on the graph.", " "), /*#__PURE__*/React$1v.createElement("li", null, /*#__PURE__*/React$1v.createElement("b", null, "Formal with movement:"), " Students specify transformations mathematically in the transformation list. Graph shows the results of these transformations.", " "), /*#__PURE__*/React$1v.createElement("li", null, /*#__PURE__*/React$1v.createElement("b", null, "Formal without movement:"), " Students specify transformations mathematically in the transformation list. Graph does not update.", " ")))), /*#__PURE__*/React$1v.createElement(ToolSettings, {
+    }, " ", "Formal without movement", " ")), /*#__PURE__*/React$1z.createElement(InfoTip$l, null, /*#__PURE__*/React$1z.createElement("ul", null, /*#__PURE__*/React$1z.createElement("li", null, /*#__PURE__*/React$1z.createElement("b", null, "Exploration:"), " Students create transformations with tools on the graph.", " "), /*#__PURE__*/React$1z.createElement("li", null, /*#__PURE__*/React$1z.createElement("b", null, "Formal with movement:"), " Students specify transformations mathematically in the transformation list. Graph shows the results of these transformations.", " "), /*#__PURE__*/React$1z.createElement("li", null, /*#__PURE__*/React$1z.createElement("b", null, "Formal without movement:"), " Students specify transformations mathematically in the transformation list. Graph does not update.", " ")))), /*#__PURE__*/React$1z.createElement(ToolSettings, {
       name: "Translations",
       settings: this.props.tools.translation,
       allowFixed: false,
       onChange: this.changeHandlerFor("translation")
-    }), /*#__PURE__*/React$1v.createElement(ToolSettings, {
+    }), /*#__PURE__*/React$1z.createElement(ToolSettings, {
       name: "Rotations",
       settings: this.props.tools.rotation,
       onChange: this.changeHandlerFor("rotation")
-    }), /*#__PURE__*/React$1v.createElement(ToolSettings, {
+    }), /*#__PURE__*/React$1z.createElement(ToolSettings, {
       name: "Reflections",
       settings: this.props.tools.reflection,
       onChange: this.changeHandlerFor("reflection")
-    }), /*#__PURE__*/React$1v.createElement(ToolSettings, {
+    }), /*#__PURE__*/React$1z.createElement(ToolSettings, {
       name: "Dilations",
       settings: this.props.tools.dilation,
       onChange: this.changeHandlerFor("dilation")
-    }), /*#__PURE__*/React$1v.createElement(PropCheckBox$d, {
+    }), /*#__PURE__*/React$1z.createElement(PropCheckBox$d, {
       label: "Draw Solution:",
       drawSolutionShape: this.props.drawSolutionShape,
       onChange: this.props.onChange
@@ -32369,10 +33402,10 @@ var ShapeTypes = {
     equal: kpoint$3.equal
   }
 };
-var TransformationsShapeEditor = React$1v.createClass({
+var TransformationsShapeEditor = React$1z.createClass({
   displayName: "TransformationsShapeEditor",
   render: function render() {
-    return /*#__PURE__*/React$1v.createElement("div", null, /*#__PURE__*/React$1v.createElement(Graph$1, {
+    return /*#__PURE__*/React$1z.createElement("div", null, /*#__PURE__*/React$1z.createElement(Graph$1, {
       ref: "graph",
       box: this.props.graph.box,
       range: this.props.graph.range,
@@ -32382,29 +33415,29 @@ var TransformationsShapeEditor = React$1v.createClass({
       markings: this.props.graph.markings,
       backgroundImage: this.props.graph.backgroundImage,
       onGraphieUpdated: this.setupGraphie
-    }), /*#__PURE__*/React$1v.createElement("select", {
+    }), /*#__PURE__*/React$1z.createElement("select", {
       key: "type-select",
       value: this.getTypeString(this.props.shape.type),
       onChange: this.changeType
-    }, /*#__PURE__*/React$1v.createElement("option", {
+    }, /*#__PURE__*/React$1z.createElement("option", {
       value: "polygon-3"
-    }, "Triangle"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Triangle"), /*#__PURE__*/React$1z.createElement("option", {
       value: "polygon-4"
-    }, "Quadrilateral"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Quadrilateral"), /*#__PURE__*/React$1z.createElement("option", {
       value: "polygon-5"
-    }, "Pentagon"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Pentagon"), /*#__PURE__*/React$1z.createElement("option", {
       value: "polygon-6"
-    }, "Hexagon"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Hexagon"), /*#__PURE__*/React$1z.createElement("option", {
       value: "line"
-    }, "Line"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Line"), /*#__PURE__*/React$1z.createElement("option", {
       value: "line,line"
-    }, "2 lines"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "2 lines"), /*#__PURE__*/React$1z.createElement("option", {
       value: "lineSegment"
-    }, "Line segment"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Line segment"), /*#__PURE__*/React$1z.createElement("option", {
       value: "lineSegment,lineSegment"
-    }, " ", "2 line segments", " "), /*#__PURE__*/React$1v.createElement("option", {
+    }, " ", "2 line segments", " "), /*#__PURE__*/React$1z.createElement("option", {
       value: "angle"
-    }, "Angle"), /*#__PURE__*/React$1v.createElement("option", {
+    }, "Angle"), /*#__PURE__*/React$1z.createElement("option", {
       value: "circle"
     }, "Circle")));
   },
@@ -32464,7 +33497,7 @@ var TransformationsShapeEditor = React$1v.createClass({
     });
   }
 });
-var TransformerEditor = React$1v.createClass({
+var TransformerEditor = React$1z.createClass({
   displayName: "TransformerEditor",
   // TODO (jack): These should be refactored into a nice object at the top
   // so that we don't have all this duplication
@@ -32477,11 +33510,11 @@ var TransformerEditor = React$1v.createClass({
     // box, for example
     var graph = _$11.extend(defaultGraphProps(this.props.graph, 340), this.props.graph);
 
-    return /*#__PURE__*/React$1v.createElement("div", null, /*#__PURE__*/React$1v.createElement("div", null, /*#__PURE__*/React$1v.createElement(PropCheckBox$d, {
+    return /*#__PURE__*/React$1z.createElement("div", null, /*#__PURE__*/React$1z.createElement("div", null, /*#__PURE__*/React$1z.createElement(PropCheckBox$d, {
       label: "Grade empty answers as wrong:",
       gradeEmpty: this.props.gradeEmpty,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$1v.createElement(InfoTip$l, null, /*#__PURE__*/React$1v.createElement("p", null, "We generally do not grade empty answers. This usually works well, but sometimes can result in giving away part of an answer in a multi-part question."), /*#__PURE__*/React$1v.createElement("p", null, "If this is a multi-part question (there is another widget), you probably want to enable this option. Otherwise, you should leave it disabled."), /*#__PURE__*/React$1v.createElement("p", null, "Confused? Talk to Elizabeth."))), /*#__PURE__*/React$1v.createElement("div", null, "Graph settings:"), /*#__PURE__*/React$1v.createElement(GraphSettings$3, {
+    }), /*#__PURE__*/React$1z.createElement(InfoTip$l, null, /*#__PURE__*/React$1z.createElement("p", null, "We generally do not grade empty answers. This usually works well, but sometimes can result in giving away part of an answer in a multi-part question."), /*#__PURE__*/React$1z.createElement("p", null, "If this is a multi-part question (there is another widget), you probably want to enable this option. Otherwise, you should leave it disabled."), /*#__PURE__*/React$1z.createElement("p", null, "Confused? Talk to Elizabeth."))), /*#__PURE__*/React$1z.createElement("div", null, "Graph settings:"), /*#__PURE__*/React$1z.createElement(GraphSettings$3, {
       box: graph.box,
       labels: graph.labels,
       range: graph.range,
@@ -32492,20 +33525,20 @@ var TransformerEditor = React$1v.createClass({
       markings: graph.markings,
       showProtractor: graph.showProtractor,
       onChange: this.changeGraph
-    }), /*#__PURE__*/React$1v.createElement("div", null, "Transformation settings:"), /*#__PURE__*/React$1v.createElement(TransformationExplorerSettings, {
+    }), /*#__PURE__*/React$1z.createElement("div", null, "Transformation settings:"), /*#__PURE__*/React$1z.createElement(TransformationExplorerSettings, {
       ref: "transformationSettings",
       graphMode: this.props.graphMode,
       listMode: this.props.listMode,
       tools: this.props.tools,
       drawSolutionShape: this.props.drawSolutionShape,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$1v.createElement("div", null, "Starting location:"), /*#__PURE__*/React$1v.createElement(TransformationsShapeEditor, {
+    }), /*#__PURE__*/React$1z.createElement("div", null, "Starting location:"), /*#__PURE__*/React$1z.createElement(TransformationsShapeEditor, {
       ref: "shapeEditor",
       graph: graph,
       shape: this.props.starting.shape,
       onChange: this.changeStarting,
       setDrawingAreaAvailable: this.props.apiOptions.setDrawingAreaAvailable
-    }), /*#__PURE__*/React$1v.createElement("div", null, "Solution transformations:"), /*#__PURE__*/React$1v.createElement(Transformer, {
+    }), /*#__PURE__*/React$1z.createElement("div", null, "Solution transformations:"), /*#__PURE__*/React$1z.createElement(Transformer, {
       ref: "explorer",
       graph: graph,
       graphMode: this.props.graphMode,
@@ -32568,8 +33601,8 @@ var _module_$1A = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1u = _react__default["default"];
-var ReactDOM$h = _reactDom__default["default"];
+var React$1y = _react__default["default"];
+var ReactDOM$k = _reactDom__default["default"];
 var _$10 = _underscore__default["default"];
 var MathOutput$4 = _componentsMathOutputJsx;
 var SimpleKeypadInput$4 = _componentsSimpleKeypadInputJsx;
@@ -32611,16 +33644,16 @@ var getRefForPath$1 = function getRefForPath(path) {
   return "answer" + row + "," + column;
 };
 
-var Table$1 = React$1u.createClass({
+var Table$1 = React$1y.createClass({
   displayName: "Table",
   propTypes: {
-    answers: React$1u.PropTypes.arrayOf(React$1u.PropTypes.arrayOf(React$1u.PropTypes.string)),
-    editableHeaders: React$1u.PropTypes.bool,
+    answers: React$1y.PropTypes.arrayOf(React$1y.PropTypes.arrayOf(React$1y.PropTypes.string)),
+    editableHeaders: React$1y.PropTypes.bool,
     // The editor to use when editableHeaders is enabled
-    Editor: React$1u.PropTypes.func,
-    headers: React$1u.PropTypes.arrayOf(React$1u.PropTypes.string),
+    Editor: React$1y.PropTypes.func,
+    headers: React$1y.PropTypes.arrayOf(React$1y.PropTypes.string),
     keypadElement: keypadElementPropType$5,
-    trackInteraction: React$1u.PropTypes.func.isRequired,
+    trackInteraction: React$1y.PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -32671,13 +33704,13 @@ var Table$1 = React$1u.createClass({
       inputStyle = {};
     }
 
-    return /*#__PURE__*/React$1u.createElement("table", {
+    return /*#__PURE__*/React$1y.createElement("table", {
       className: "perseus-widget-table-of-values non-markdown"
-    }, /*#__PURE__*/React$1u.createElement("thead", null, /*#__PURE__*/React$1u.createElement("tr", null, _$10.map(headers, (header, i) => {
+    }, /*#__PURE__*/React$1y.createElement("thead", null, /*#__PURE__*/React$1y.createElement("tr", null, _$10.map(headers, (header, i) => {
       if (this.props.editableHeaders) {
-        return /*#__PURE__*/React$1u.createElement("th", {
+        return /*#__PURE__*/React$1y.createElement("th", {
           key: i
-        }, /*#__PURE__*/React$1u.createElement(this.props.Editor, {
+        }, /*#__PURE__*/React$1y.createElement(this.props.Editor, {
           ref: "columnHeader" + i,
           apiOptions: this.props.apiOptions,
           content: header,
@@ -32685,20 +33718,20 @@ var Table$1 = React$1u.createClass({
           onChange: _$10.partial(this.onHeaderChange, i)
         }));
       } else {
-        return /*#__PURE__*/React$1u.createElement("th", {
+        return /*#__PURE__*/React$1y.createElement("th", {
           key: i
-        }, /*#__PURE__*/React$1u.createElement(Renderer$h, {
+        }, /*#__PURE__*/React$1y.createElement(Renderer$h, {
           content: header,
           linterContext: this.props.linterContext
         }));
       }
-    }))), /*#__PURE__*/React$1u.createElement("tbody", null, _$10.times(rows, r => {
-      return /*#__PURE__*/React$1u.createElement("tr", {
+    }))), /*#__PURE__*/React$1y.createElement("tbody", null, _$10.times(rows, r => {
+      return /*#__PURE__*/React$1y.createElement("tr", {
         key: r
       }, _$10.times(columns, c => {
-        return /*#__PURE__*/React$1u.createElement("td", {
+        return /*#__PURE__*/React$1y.createElement("td", {
           key: c
-        }, /*#__PURE__*/React$1u.createElement(InputComponent, {
+        }, /*#__PURE__*/React$1y.createElement(InputComponent, {
           ref: getRefForPath$1(getInputPath$1(r, c)),
           type: "text",
           value: this.props.answers[r][c],
@@ -32755,7 +33788,7 @@ var Table$1 = React$1u.createClass({
     } else if (this.props.apiOptions.staticRender) {
       inputComponent.focus();
     } else {
-      ReactDOM$h.findDOMNode(inputComponent).focus();
+      ReactDOM$k.findDOMNode(inputComponent).focus();
     }
   },
   blurInputPath: function blurInputPath(path) {
@@ -32767,12 +33800,12 @@ var Table$1 = React$1u.createClass({
     } else if (this.props.apiOptions.staticRender) {
       inputComponent.blur();
     } else {
-      ReactDOM$h.findDOMNode(inputComponent).blur();
+      ReactDOM$k.findDOMNode(inputComponent).blur();
     }
   },
   getDOMNodeForPath: function getDOMNodeForPath(path) {
     var inputID = getRefForPath$1(path);
-    return ReactDOM$h.findDOMNode(this.refs[inputID]);
+    return ReactDOM$k.findDOMNode(this.refs[inputID]);
   },
   getInputPaths: function getInputPaths() {
     var rows = this._getRows();
@@ -33373,7 +34406,7 @@ TODO(samiskin): Make tasks such as "addWidget" and "updateWidget" not functions
                 fully replacess the old editor).
 */
 
-var React$1t = _react__default["default"];
+var React$1x = _react__default["default"];
 var Widgets$1 = Widgets$5;
 var DraftUtils = _draftUtilsJs; // This controls the minimum time between when updates for the parent
 // component are generated.  The best time for this number sort of depends
@@ -33410,12 +34443,12 @@ var headerRegExp = /^ *(#{1,6})([^\n]+)$/g;
 
 var entityStrategy = (contentBlock, callback, type) => contentBlock.findEntityRanges(char => char.getEntity() && draftJs.Entity.get(char.getEntity()).type === type, callback);
 
-var styledBlock = (props, style) => /*#__PURE__*/React$1t.createElement("span", _extends({}, props, {
+var styledBlock = (props, style) => /*#__PURE__*/React$1x.createElement("span", _extends({}, props, {
   style: style
 }), props.children);
 
 styledBlock.propTypes = {
-  children: React$1t.PropTypes.any
+  children: React$1x.PropTypes.any
 };
 
 var highlightedBlock = (props, backgroundColor) => styledBlock(props, {
@@ -33514,14 +34547,14 @@ var headerComponent = props => {
   var style = {
     marginBottom: 0
   };
-  return React$1t.createElement("h".concat(headerSize), {
+  return React$1x.createElement("h".concat(headerSize), {
     style
   }, props.children);
 };
 
 headerComponent.propTypes = {
-  decoratedText: React$1t.PropTypes.string,
-  children: React$1t.PropTypes.any
+  decoratedText: React$1x.PropTypes.string,
+  children: React$1x.PropTypes.any
 };
 var headerDecorator = {
   strategy: function strategy() {
@@ -33567,15 +34600,15 @@ var keyBindings = e => {
 */
 
 
-var PerseusEditor$1 = React$1t.createClass({
+var PerseusEditor$1 = React$1x.createClass({
   displayName: "PerseusEditor",
   propTypes: {
-    onChange: React$1t.PropTypes.func,
-    content: React$1t.PropTypes.string,
-    initialWidgets: React$1t.PropTypes.any,
-    placeholder: React$1t.PropTypes.string,
-    imageUploader: React$1t.PropTypes.func,
-    widgetEnabled: React$1t.PropTypes.bool
+    onChange: React$1x.PropTypes.func,
+    content: React$1x.PropTypes.string,
+    initialWidgets: React$1x.PropTypes.any,
+    placeholder: React$1x.PropTypes.string,
+    imageUploader: React$1x.PropTypes.func,
+    widgetEnabled: React$1x.PropTypes.bool
   },
   getDefaultProps: () => ({
     onChange: () => {},
@@ -34165,14 +35198,14 @@ var PerseusEditor$1 = React$1t.createClass({
   },
 
   render() {
-    return /*#__PURE__*/React$1t.createElement("div", {
+    return /*#__PURE__*/React$1x.createElement("div", {
       onCopy: this._handleCopy,
       onCut: this._handleCopy,
       onDragStart: this._handleCopy,
       style: {
         fontSize: "".concat(this.state.fontSizePercentage, "%")
       }
-    }, /*#__PURE__*/React$1t.createElement(draftJs.Editor, {
+    }, /*#__PURE__*/React$1x.createElement(draftJs.Editor, {
       ref: e => this.editor = e,
       editorState: this.state.editorState,
       onChange: editorState => this._handleChange({
@@ -34201,13 +35234,13 @@ var _module_$1x = {
  * Displays a collapsable list of KaTeX rendering errors.
  */
 
-var React$1s = _react__default["default"];
-var KatexErrorView$1 = React$1s.createClass({
+var React$1w = _react__default["default"];
+var KatexErrorView$1 = React$1w.createClass({
   displayName: "KatexErrorView",
   propTypes: {
-    errorList: React$1s.PropTypes.arrayOf(React$1s.PropTypes.shape({
-      math: React$1s.PropTypes.string.isRequired,
-      message: React$1s.PropTypes.string.isRequired
+    errorList: React$1w.PropTypes.arrayOf(React$1w.PropTypes.shape({
+      math: React$1w.PropTypes.string.isRequired,
+      message: React$1w.PropTypes.string.isRequired
     })).isRequired
   },
 
@@ -34232,30 +35265,30 @@ var KatexErrorView$1 = React$1s.createClass({
     } = this.state; // TODO(riley) replace with SVG icons
 
     var disclosureClass = showErrors ? "icon-chevron-down" : "icon-chevron-right";
-    return /*#__PURE__*/React$1s.createElement("div", {
-      className: aphrodite.css(styles$i.errorContainer)
-    }, /*#__PURE__*/React$1s.createElement("div", {
-      className: aphrodite.css(styles$i.title),
+    return /*#__PURE__*/React$1w.createElement("div", {
+      className: aphrodite.css(styles$j.errorContainer)
+    }, /*#__PURE__*/React$1w.createElement("div", {
+      className: aphrodite.css(styles$j.title),
       onClick: this.handleToggleKatexErrors
-    }, /*#__PURE__*/React$1s.createElement("i", {
+    }, /*#__PURE__*/React$1w.createElement("i", {
       className: disclosureClass,
       style: {
         fontSize: 14
       }
-    }), "\xA0 KaTeX Errors (", errorList.length, ")"), showErrors && /*#__PURE__*/React$1s.createElement("div", {
-      className: aphrodite.css(styles$i.errorExplanation)
-    }, "These errors will cause your LaTeX to load really slowly for the student. Please fix them if you can. If you can\u2019t because KaTeX doesn\u2019t support the feature you need, please message Cam."), showErrors && errorList.map((e, index) => /*#__PURE__*/React$1s.createElement("div", {
-      className: aphrodite.css(styles$i.error),
+    }), "\xA0 KaTeX Errors (", errorList.length, ")"), showErrors && /*#__PURE__*/React$1w.createElement("div", {
+      className: aphrodite.css(styles$j.errorExplanation)
+    }, "These errors will cause your LaTeX to load really slowly for the student. Please fix them if you can. If you can\u2019t because KaTeX doesn\u2019t support the feature you need, please message Cam."), showErrors && errorList.map((e, index) => /*#__PURE__*/React$1w.createElement("div", {
+      className: aphrodite.css(styles$j.error),
       key: index
-    }, /*#__PURE__*/React$1s.createElement("div", {
+    }, /*#__PURE__*/React$1w.createElement("div", {
       style: {
         color: "red"
       }
-    }, e.math), /*#__PURE__*/React$1s.createElement("div", null, e.message))));
+    }, e.math), /*#__PURE__*/React$1w.createElement("div", null, e.message))));
   }
 
 });
-var styles$i = aphrodite.StyleSheet.create({
+var styles$j = aphrodite.StyleSheet.create({
   title: {
     backgroundColor: "#eee",
     fontSize: "1.25em",
@@ -34276,6 +35309,105 @@ var styles$i = aphrodite.StyleSheet.create({
 _module_$1x.exports = KatexErrorView$1;
 var _katexErrorViewJsx = _module_$1x.exports;
 
+var module$4 = {
+  exports: {}
+};
+/* This component makes its children a drag target. Example:
+ *
+ *     <DragTarget onDrop={this.handleDrop}>Drag to me</DragTarget>
+ *
+ *     ...
+ *
+ *     handleDrop: function(e) {
+ *         this.addImages(e.nativeEvent.dataTransfer.files);
+ *     }
+ *
+ * Now "Drag to me" will be a drag target - when something is dragged over it,
+ * the element will become partially transparent as a visual indicator that
+ * it's a target.
+ */
+// TODO(joel) - indicate before the hover is over the target that it's possible
+// to drag into the target. This would (I think) require a high level handler -
+// like on Perseus itself, waiting for onDragEnter, then passing down the
+// event. Sounds like a pain. Possible workaround - create a div covering the
+// entire page...
+//
+// Other extensions:
+// * custom styles for global drag and dragOver
+// * only respond to certain types of drags (only images for instance)!
+
+var React$1v = _react__default["default"];
+var createReactClass$3 = _createReactClass__default["default"];
+var PropTypes$4 = _propTypes__default["default"];
+var DragTarget$1 = createReactClass$3({
+  displayName: "DragTarget",
+  propTypes: {
+    // All props not listed here are forwarded to the root element without
+    // modification.
+    onDrop: PropTypes$4.func.isRequired,
+    component: PropTypes$4.any,
+    // component type
+    shouldDragHighlight: PropTypes$4.func,
+    style: PropTypes$4.any
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      component: "div",
+      shouldDragHighlight: () => true
+    };
+  },
+  getInitialState: function getInitialState() {
+    return {
+      dragHover: false
+    };
+  },
+  handleDrop: function handleDrop(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.setState({
+      dragHover: false
+    });
+    this.props.onDrop(e);
+  },
+  handleDragEnd: function handleDragEnd() {
+    this.setState({
+      dragHover: false
+    });
+  },
+  handleDragOver: function handleDragOver(e) {
+    e.preventDefault();
+  },
+  handleDragLeave: function handleDragLeave() {
+    this.setState({
+      dragHover: false
+    });
+  },
+  handleDragEnter: function handleDragEnter(e) {
+    this.setState({
+      dragHover: this.props.shouldDragHighlight(e)
+    });
+  },
+  render: function render() {
+    var opacity = this.state.dragHover ? {
+      "opacity": 0.3
+    } : {};
+    var Component = this.props.component;
+    var forwardProps = Object.assign({}, this.props);
+    delete forwardProps.component;
+    delete forwardProps.shouldDragHighlight;
+    return /*#__PURE__*/React$1v.createElement(Component, _extends({}, forwardProps, {
+      style: Object.assign({}, this.props.style, opacity),
+      onDrop: this.handleDrop,
+      onDragEnd: this.handleDragEnd,
+      onDragOver: this.handleDragOver,
+      onDragEnter: this.handleDragEnter,
+      onDragLeave: this.handleDragLeave
+    }));
+  }
+});
+module$4.exports = DragTarget$1;
+var _reactComponentsDragTargetJsx = module$4.exports;
+
 var createFragment = function createFragment(obj) {
   return React.createElement(React.Fragment, null, Object.keys(obj).map(key => React.createElement(React.Fragment, {
     key: key
@@ -34293,13 +35425,13 @@ var _module_$1w = {
 
 /* globals katex */
 
-var React$1r = _react__default["default"];
-var ReactDOM$g = _reactDom__default["default"];
+var React$1u = _react__default["default"];
+var ReactDOM$j = _reactDom__default["default"];
 var ReactCreateFragment = createFragment;
 var $$2 = $__default["default"];
 var _$$ = _underscore__default["default"];
 var ApiOptions$n = _perseusApiJsx.Options;
-var DragTarget = _reactComponentsDragTargetJsx__default["default"];
+var DragTarget = _reactComponentsDragTargetJsx;
 var InlineIcon$f = _componentsInlineIconJsx;
 var KatexErrorView = _katexErrorViewJsx;
 var PerseusMarkdown$1 = _perseusMarkdownJsx;
@@ -34343,7 +35475,7 @@ var makeStartWithAParagraphAlways = content => {
   return "\n\n".slice(0, 2 - newlines.length) + content;
 };
 
-var WidgetSelect = React$1r.createClass({
+var WidgetSelect = React$1u.createClass({
   displayName: "WidgetSelect",
   shouldComponentUpdate: function shouldComponentUpdate() {
     return false;
@@ -34369,15 +35501,15 @@ var WidgetSelect = React$1r.createClass({
     });
 
     var addWidgetString = "Add a widget\u2026";
-    return /*#__PURE__*/React$1r.createElement("select", {
+    return /*#__PURE__*/React$1u.createElement("select", {
       value: "",
       onChange: this.handleChange
-    }, /*#__PURE__*/React$1r.createElement("option", {
+    }, /*#__PURE__*/React$1u.createElement("option", {
       value: ""
-    }, addWidgetString), /*#__PURE__*/React$1r.createElement("option", {
+    }, addWidgetString), /*#__PURE__*/React$1u.createElement("option", {
       disabled: true
     }, "--"), _$$.map(orderedWidgetNames, name => {
-      return /*#__PURE__*/React$1r.createElement("option", {
+      return /*#__PURE__*/React$1u.createElement("option", {
         key: name,
         value: name
       }, widgets[name].displayName);
@@ -34388,23 +35520,23 @@ var WidgetSelect = React$1r.createClass({
 // with all available transforms applied, but the results of those
 // transforms will not be propogated upwards until serialization.
 
-var WidgetEditor = React$1r.createClass({
+var WidgetEditor = React$1u.createClass({
   displayName: "WidgetEditor",
   propTypes: {
     // Unserialized props
-    id: React$1r.PropTypes.string.isRequired,
-    onChange: React$1r.PropTypes.func.isRequired,
-    onRemove: React$1r.PropTypes.func.isRequired,
+    id: React$1u.PropTypes.string.isRequired,
+    onChange: React$1u.PropTypes.func.isRequired,
+    onRemove: React$1u.PropTypes.func.isRequired,
     apiOptions: ApiOptions$n.propTypes,
     // Serialized props
-    type: React$1r.PropTypes.string.isRequired,
-    alignment: React$1r.PropTypes.string,
-    static: React$1r.PropTypes.bool,
-    graded: React$1r.PropTypes.bool,
-    options: React$1r.PropTypes.any,
-    version: React$1r.PropTypes.shape({
-      major: React$1r.PropTypes.number.isRequired,
-      minor: React$1r.PropTypes.number.isRequired
+    type: React$1u.PropTypes.string.isRequired,
+    alignment: React$1u.PropTypes.string,
+    static: React$1u.PropTypes.bool,
+    graded: React$1u.PropTypes.bool,
+    options: React$1u.PropTypes.any,
+    version: React$1u.PropTypes.shape({
+      major: React$1u.PropTypes.number.isRequired,
+      minor: React$1u.PropTypes.number.isRequired
     })
   },
   getInitialState: function getInitialState() {
@@ -34470,40 +35602,40 @@ var WidgetEditor = React$1r.createClass({
 
     var supportsStaticMode = Widgets.supportsStaticMode(widgetInfo.type);
     var isUngradedEnabled = widgetInfo.type === "transformer";
-    var gradedPropBox = /*#__PURE__*/React$1r.createElement(PropCheckBox$c, {
+    var gradedPropBox = /*#__PURE__*/React$1u.createElement(PropCheckBox$c, {
       label: "Graded:",
       graded: widgetInfo.graded,
       onChange: this.props.onChange
     });
-    return /*#__PURE__*/React$1r.createElement("div", {
+    return /*#__PURE__*/React$1u.createElement("div", {
       className: "perseus-widget-editor"
-    }, /*#__PURE__*/React$1r.createElement("div", {
+    }, /*#__PURE__*/React$1u.createElement("div", {
       className: "perseus-widget-editor-title " + (this.state.showWidget ? "open" : "closed")
-    }, /*#__PURE__*/React$1r.createElement("a", {
+    }, /*#__PURE__*/React$1u.createElement("a", {
       className: "perseus-widget-editor-title-id",
       href: "#",
       onClick: this._toggleWidget
-    }, this.props.id, this.state.showWidget ? /*#__PURE__*/React$1r.createElement(InlineIcon$f, iconChevronDown) : /*#__PURE__*/React$1r.createElement(InlineIcon$f, iconChevronRight)), supportsStaticMode && /*#__PURE__*/React$1r.createElement("input", {
+    }, this.props.id, this.state.showWidget ? /*#__PURE__*/React$1u.createElement(InlineIcon$f, iconChevronDown) : /*#__PURE__*/React$1u.createElement(InlineIcon$f, iconChevronRight)), supportsStaticMode && /*#__PURE__*/React$1u.createElement("input", {
       type: "button",
       onClick: this._toggleStatic,
       className: "simple-button--small",
       value: widgetInfo.static ? "Unset as static" : "Set as static"
-    }), supportedAlignments.length > 1 && /*#__PURE__*/React$1r.createElement("select", {
+    }), supportedAlignments.length > 1 && /*#__PURE__*/React$1u.createElement("select", {
       className: "alignment",
       value: widgetInfo.alignment,
       onChange: this._handleAlignmentChange
-    }, supportedAlignments.map(alignment => /*#__PURE__*/React$1r.createElement("option", {
+    }, supportedAlignments.map(alignment => /*#__PURE__*/React$1u.createElement("option", {
       key: alignment
-    }, alignment))), /*#__PURE__*/React$1r.createElement("a", {
+    }, alignment))), /*#__PURE__*/React$1u.createElement("a", {
       href: "#",
       className: "remove-widget " + "simple-button simple-button--small orange",
       onClick: e => {
         e.preventDefault();
         this.props.onRemove();
       }
-    }, /*#__PURE__*/React$1r.createElement(InlineIcon$f, iconTrash))), /*#__PURE__*/React$1r.createElement("div", {
+    }, /*#__PURE__*/React$1u.createElement(InlineIcon$f, iconTrash))), /*#__PURE__*/React$1u.createElement("div", {
       className: "perseus-widget-editor-content " + (this.state.showWidget ? "enter" : "leave")
-    }, isUngradedEnabled && gradedPropBox, /*#__PURE__*/React$1r.createElement(Ed, _extends({
+    }, isUngradedEnabled && gradedPropBox, /*#__PURE__*/React$1u.createElement(Ed, _extends({
       ref: "widget",
       onChange: this._handleWidgetChange,
       static: widgetInfo.static,
@@ -34585,12 +35717,12 @@ var imageUrlsFromContent = function imageUrlsFromContent(content) {
  */
 
 
-var Editor$b = React$1r.createClass({
+var Editor$b = React$1u.createClass({
   displayName: "Editor",
   propTypes: {
     apiOptions: ApiOptions$n.propTypes,
-    imageUploader: React$1r.PropTypes.func,
-    onChange: React$1r.PropTypes.func
+    imageUploader: React$1u.PropTypes.func,
+    onChange: React$1u.PropTypes.func
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -34616,7 +35748,7 @@ var Editor$b = React$1r.createClass({
       return;
     }
 
-    return /*#__PURE__*/React$1r.createElement(WidgetEditor, _extends({
+    return /*#__PURE__*/React$1u.createElement(WidgetEditor, _extends({
       ref: id,
       id: id,
       type: type,
@@ -34698,12 +35830,12 @@ var Editor$b = React$1r.createClass({
     this._sizeImages(this.props);
 
     if (!this.props.apiOptions.useDraftEditor) {
-      $$2(ReactDOM$g.findDOMNode(this.refs.textarea)).on("copy cut", this._maybeCopyWidgets).on("paste", this._maybePasteWidgets);
+      $$2(ReactDOM$j.findDOMNode(this.refs.textarea)).on("copy cut", this._maybeCopyWidgets).on("paste", this._maybePasteWidgets);
     }
   },
   componentDidUpdate: function componentDidUpdate(prevProps) {
     // TODO(alpert): Maybe fix React so this isn't necessary
-    var textarea = ReactDOM$g.findDOMNode(this.refs.textarea);
+    var textarea = ReactDOM$j.findDOMNode(this.refs.textarea);
     textarea.value = this.props.content; // This can't be in componentWillReceiveProps because that's happening
     // during the middle of our parent's render.
 
@@ -34781,7 +35913,7 @@ var Editor$b = React$1r.createClass({
     });
   },
   handleChange: function handleChange() {
-    var textarea = ReactDOM$g.findDOMNode(this.refs.textarea);
+    var textarea = ReactDOM$j.findDOMNode(this.refs.textarea);
     this.props.onChange({
       content: textarea.value
     });
@@ -34790,7 +35922,7 @@ var Editor$b = React$1r.createClass({
     // Tab-completion of widgets. For example, to insert an image:
     // type `[[im`, then tab.
     if (e.key === "Tab") {
-      var textarea = ReactDOM$g.findDOMNode(this.refs.textarea);
+      var textarea = ReactDOM$j.findDOMNode(this.refs.textarea);
       var word = Util$d.textarea.getWordBeforeCursor(textarea);
       var matches = word.string.toLowerCase().match(shortcutRegexp);
 
@@ -34924,7 +36056,7 @@ var Editor$b = React$1r.createClass({
     return safeWidgetMapping;
   },
   _addWidgetToContent: function _addWidgetToContent(oldContent, cursorRange, widgetType) {
-    var textarea = ReactDOM$g.findDOMNode(this.refs.textarea); // Note: we have to use _.map here instead of Array::map
+    var textarea = ReactDOM$j.findDOMNode(this.refs.textarea); // Note: we have to use _.map here instead of Array::map
     // because the results of a .match might be null if no
     // widgets were found.
 
@@ -35040,11 +36172,11 @@ var Editor$b = React$1r.createClass({
     return warnings;
   },
   focus: function focus() {
-    ReactDOM$g.findDOMNode(this.refs.textarea).focus();
+    ReactDOM$j.findDOMNode(this.refs.textarea).focus();
   },
   focusAndMoveToEnd: function focusAndMoveToEnd() {
     this.focus();
-    var textarea = ReactDOM$g.findDOMNode(this.refs.textarea);
+    var textarea = ReactDOM$j.findDOMNode(this.refs.textarea);
     textarea.selectionStart = textarea.value.length;
     textarea.selectionEnd = textarea.value.length;
   },
@@ -35061,7 +36193,7 @@ var Editor$b = React$1r.createClass({
     if (this.props.showWordCount) {
       var numChars = PerseusMarkdown$1.characterCount(this.props.content);
       var numWords = Math.floor(numChars / 6);
-      wordCountDisplay = /*#__PURE__*/React$1r.createElement("span", {
+      wordCountDisplay = /*#__PURE__*/React$1u.createElement("span", {
         className: "perseus-editor-word-count",
         title: "~" + commafyInteger(numWords) + " words (" + commafyInteger(numChars) + " characters)"
       }, commafyInteger(numWords));
@@ -35108,7 +36240,7 @@ var Editor$b = React$1r.createClass({
           widgets[id] = this.getWidgetEditor(id, type);
           var classes = (duplicate || !widgets[id] ? "error " : "") + (selected ? "selected " : "");
           var key = duplicate ? i : id;
-          underlayPieces.push( /*#__PURE__*/React$1r.createElement("b", {
+          underlayPieces.push( /*#__PURE__*/React$1u.createElement("b", {
             className: classes,
             key: key
           }, pieces[i]));
@@ -35128,35 +36260,35 @@ var Editor$b = React$1r.createClass({
 
 
       this.widgetIds = _$$.keys(widgets);
-      widgetsDropDown = /*#__PURE__*/React$1r.createElement(WidgetSelect, {
+      widgetsDropDown = /*#__PURE__*/React$1u.createElement(WidgetSelect, {
         ref: "widgetSelect",
         onChange: this._addWidget
       });
       var insertTemplateString = "Insert template\u2026";
-      templatesDropDown = /*#__PURE__*/React$1r.createElement("select", {
+      templatesDropDown = /*#__PURE__*/React$1u.createElement("select", {
         onChange: this.addTemplate
-      }, /*#__PURE__*/React$1r.createElement("option", {
+      }, /*#__PURE__*/React$1u.createElement("option", {
         value: ""
-      }, insertTemplateString), /*#__PURE__*/React$1r.createElement("option", {
+      }, insertTemplateString), /*#__PURE__*/React$1u.createElement("option", {
         disabled: true
-      }, "--"), /*#__PURE__*/React$1r.createElement("option", {
+      }, "--"), /*#__PURE__*/React$1u.createElement("option", {
         value: "table"
-      }, "Table"), /*#__PURE__*/React$1r.createElement("option", {
+      }, "Table"), /*#__PURE__*/React$1u.createElement("option", {
         value: "titledTable"
-      }, "Titled table"), /*#__PURE__*/React$1r.createElement("option", {
+      }, "Titled table"), /*#__PURE__*/React$1u.createElement("option", {
         value: "alignment"
-      }, "Aligned equations"), /*#__PURE__*/React$1r.createElement("option", {
+      }, "Aligned equations"), /*#__PURE__*/React$1u.createElement("option", {
         value: "piecewise"
-      }, "Piecewise function"), /*#__PURE__*/React$1r.createElement("option", {
+      }, "Piecewise function"), /*#__PURE__*/React$1u.createElement("option", {
         disabled: true
-      }, "--"), /*#__PURE__*/React$1r.createElement("option", {
+      }, "--"), /*#__PURE__*/React$1u.createElement("option", {
         value: "allWidgets"
       }, "All widgets (for testing)"));
 
       if (!this.props.immutableWidgets) {
-        widgetsAndTemplates = /*#__PURE__*/React$1r.createElement("div", {
+        widgetsAndTemplates = /*#__PURE__*/React$1u.createElement("div", {
           className: "perseus-editor-widgets"
-        }, /*#__PURE__*/React$1r.createElement("div", {
+        }, /*#__PURE__*/React$1u.createElement("div", {
           className: "perseus-editor-widgets-selectors"
         }, widgetsDropDown, templatesDropDown, wordCountDisplay), ReactCreateFragment(widgets)); // Prevent word count from being displayed elsewhere
 
@@ -35168,14 +36300,14 @@ var Editor$b = React$1r.createClass({
     // with a newline.
 
 
-    underlayPieces.push( /*#__PURE__*/React$1r.createElement("br", {
+    underlayPieces.push( /*#__PURE__*/React$1u.createElement("br", {
       key: "end"
     }));
-    var completeTextarea = [/*#__PURE__*/React$1r.createElement("div", {
+    var completeTextarea = [/*#__PURE__*/React$1u.createElement("div", {
       className: "perseus-textarea-underlay",
       ref: "underlay",
       key: "underlay"
-    }, underlayPieces), /*#__PURE__*/React$1r.createElement("textarea", {
+    }, underlayPieces), /*#__PURE__*/React$1u.createElement("textarea", {
       ref: "textarea",
       key: "textarea",
       onChange: this.handleChange,
@@ -35186,7 +36318,7 @@ var Editor$b = React$1r.createClass({
     })];
 
     if (this.props.apiOptions.useDraftEditor) {
-      completeTextarea = /*#__PURE__*/React$1r.createElement(PerseusEditor, {
+      completeTextarea = /*#__PURE__*/React$1u.createElement(PerseusEditor, {
         ref: "textarea",
         onChange: this.props.onChange,
         content: this.props.content,
@@ -35200,12 +36332,12 @@ var Editor$b = React$1r.createClass({
     var textareaWrapper;
 
     if (this.props.imageUploader) {
-      textareaWrapper = /*#__PURE__*/React$1r.createElement(DragTarget, {
+      textareaWrapper = /*#__PURE__*/React$1u.createElement(DragTarget, {
         onDrop: this.handleDrop,
         className: "perseus-textarea-pair"
       }, completeTextarea);
     } else {
-      textareaWrapper = /*#__PURE__*/React$1r.createElement("div", {
+      textareaWrapper = /*#__PURE__*/React$1u.createElement("div", {
         className: "perseus-textarea-pair"
       }, completeTextarea);
     }
@@ -35218,13 +36350,13 @@ var Editor$b = React$1r.createClass({
       padding: 4,
       backgroundColor: "pink"
     };
-    return /*#__PURE__*/React$1r.createElement("div", {
+    return /*#__PURE__*/React$1u.createElement("div", {
       className: "perseus-single-editor " + (this.props.className || "")
-    }, textareaWrapper, katexErrorList.length > 0 && /*#__PURE__*/React$1r.createElement(KatexErrorView, {
+    }, textareaWrapper, katexErrorList.length > 0 && /*#__PURE__*/React$1u.createElement(KatexErrorView, {
       errorList: katexErrorList
-    }), this.props.warnNoPrompt && noPrompt && /*#__PURE__*/React$1r.createElement("div", {
+    }), this.props.warnNoPrompt && noPrompt && /*#__PURE__*/React$1u.createElement("div", {
       style: warningStyle
-    }, "Graded Groups should contain a prompt"), this.props.warnNoWidgets && noWidgets && /*#__PURE__*/React$1r.createElement("div", {
+    }, "Graded Groups should contain a prompt"), this.props.warnNoWidgets && noWidgets && /*#__PURE__*/React$1u.createElement("div", {
       style: warningStyle
     }, "Graded Groups should contain at least one widget"), wordCountDisplay, widgetsAndTemplates);
   },
@@ -35273,21 +36405,21 @@ var _module_$1v = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1q = _react__default["default"];
-var ReactDOM$f = _reactDom__default["default"];
+var React$1t = _react__default["default"];
+var ReactDOM$i = _reactDom__default["default"];
 var _$_ = _underscore__default["default"];
 var Util$c = Util$q;
 var InfoTip$k = _componentsInfoTipJsx;
 var NumberInput$f = _componentsNumberInputJsx;
 var Editor$a = _editorJsx;
 var Table = _widgetsTableJsx.widget;
-var TableEditor = React$1q.createClass({
+var TableEditor = React$1t.createClass({
   displayName: "TableEditor",
   propTypes: {
-    rows: React$1q.PropTypes.number,
-    columns: React$1q.PropTypes.number,
-    headers: React$1q.PropTypes.arrayOf(React$1q.PropTypes.string),
-    answers: React$1q.PropTypes.arrayOf(React$1q.PropTypes.arrayOf(React$1q.PropTypes.string))
+    rows: React$1t.PropTypes.number,
+    columns: React$1t.PropTypes.number,
+    headers: React$1t.PropTypes.arrayOf(React$1t.PropTypes.string),
+    answers: React$1t.PropTypes.arrayOf(React$1t.PropTypes.arrayOf(React$1t.PropTypes.string))
   },
   getDefaultProps: function getDefaultProps() {
     var defaultRows = 4;
@@ -35305,7 +36437,7 @@ var TableEditor = React$1q.createClass({
     };
   },
   focus: function focus() {
-    ReactDOM$f.findDOMNode(this.refs.numberOfColumns).focus();
+    ReactDOM$i.findDOMNode(this.refs.numberOfColumns).focus();
   },
   render: function render() {
     var tableProps = _$_.pick(this.props, "headers", "answers", "onChange", "apiOptions");
@@ -35318,9 +36450,9 @@ var TableEditor = React$1q.createClass({
       trackInteraction: () => {}
     });
 
-    return /*#__PURE__*/React$1q.createElement("div", null, /*#__PURE__*/React$1q.createElement("div", {
+    return /*#__PURE__*/React$1t.createElement("div", null, /*#__PURE__*/React$1t.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1q.createElement("label", null, "Number of columns:", " ", /*#__PURE__*/React$1q.createElement(NumberInput$f, {
+    }, /*#__PURE__*/React$1t.createElement("label", null, "Number of columns:", " ", /*#__PURE__*/React$1t.createElement(NumberInput$f, {
       ref: "numberOfColumns",
       value: this.props.columns,
       onChange: val => {
@@ -35329,9 +36461,9 @@ var TableEditor = React$1q.createClass({
         }
       },
       useArrowKeys: true
-    }))), /*#__PURE__*/React$1q.createElement("div", {
+    }))), /*#__PURE__*/React$1t.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$1q.createElement("label", null, "Number of rows:", " ", /*#__PURE__*/React$1q.createElement(NumberInput$f, {
+    }, /*#__PURE__*/React$1t.createElement("label", null, "Number of rows:", " ", /*#__PURE__*/React$1t.createElement(NumberInput$f, {
       ref: "numberOfRows",
       value: this.props.rows,
       onChange: val => {
@@ -35340,7 +36472,7 @@ var TableEditor = React$1q.createClass({
         }
       },
       useArrowKeys: true
-    }))), /*#__PURE__*/React$1q.createElement("div", null, " ", "Table of answers:", " ", /*#__PURE__*/React$1q.createElement(InfoTip$k, null, /*#__PURE__*/React$1q.createElement("p", null, "The student has to fill out all cells in the table. For partially filled tables create a table using the template, and insert text input boxes as desired."))), /*#__PURE__*/React$1q.createElement("div", null, /*#__PURE__*/React$1q.createElement(Table, tableProps)));
+    }))), /*#__PURE__*/React$1t.createElement("div", null, " ", "Table of answers:", " ", /*#__PURE__*/React$1t.createElement(InfoTip$k, null, /*#__PURE__*/React$1t.createElement("p", null, "The student has to fill out all cells in the table. For partially filled tables create a table using the template, and insert text input boxes as desired."))), /*#__PURE__*/React$1t.createElement("div", null, /*#__PURE__*/React$1t.createElement(Table, tableProps)));
   },
   onSizeInput: function onSizeInput(numRawRows, numRawColumns) {
     var rows = +numRawRows || 0;
@@ -35402,19 +36534,19 @@ var _module_$1u = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1p = _react__default["default"];
+var React$1s = _react__default["default"];
 var _$Z = _underscore__default["default"];
 var InfoTip$j = _componentsInfoTipJsx;
 var PropCheckBox$b = _componentsPropCheckBoxJsx;
 var TextListEditor$4 = _componentsTextListEditorJsx;
 var HORIZONTAL$4 = "horizontal";
 var VERTICAL$4 = "vertical";
-var SorterEditor = React$1p.createClass({
+var SorterEditor = React$1s.createClass({
   displayName: "SorterEditor",
   propTypes: {
-    correct: React$1p.PropTypes.array,
-    layout: React$1p.PropTypes.oneOf([HORIZONTAL$4, VERTICAL$4]),
-    padding: React$1p.PropTypes.bool
+    correct: React$1s.PropTypes.array,
+    layout: React$1s.PropTypes.oneOf([HORIZONTAL$4, VERTICAL$4]),
+    padding: React$1s.PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -35425,7 +36557,7 @@ var SorterEditor = React$1p.createClass({
   },
   render: function render() {
     var editor = this;
-    return /*#__PURE__*/React$1p.createElement("div", null, /*#__PURE__*/React$1p.createElement("div", null, " ", "Correct answer:", " ", /*#__PURE__*/React$1p.createElement(InfoTip$j, null, /*#__PURE__*/React$1p.createElement("p", null, "Enter the correct answer (in the correct order) here. The preview on the right will have the cards in a randomized order, which is how the student will see them."))), /*#__PURE__*/React$1p.createElement(TextListEditor$4, {
+    return /*#__PURE__*/React$1s.createElement("div", null, /*#__PURE__*/React$1s.createElement("div", null, " ", "Correct answer:", " ", /*#__PURE__*/React$1s.createElement(InfoTip$j, null, /*#__PURE__*/React$1s.createElement("p", null, "Enter the correct answer (in the correct order) here. The preview on the right will have the cards in a randomized order, which is how the student will see them."))), /*#__PURE__*/React$1s.createElement(TextListEditor$4, {
       options: this.props.correct,
       onChange: function onChange(options, cb) {
         editor.props.onChange({
@@ -35433,18 +36565,18 @@ var SorterEditor = React$1p.createClass({
         }, cb);
       },
       layout: this.props.layout
-    }), /*#__PURE__*/React$1p.createElement("div", null, /*#__PURE__*/React$1p.createElement("label", null, " ", "Layout:", " ", /*#__PURE__*/React$1p.createElement("select", {
+    }), /*#__PURE__*/React$1s.createElement("div", null, /*#__PURE__*/React$1s.createElement("label", null, " ", "Layout:", " ", /*#__PURE__*/React$1s.createElement("select", {
       value: this.props.layout,
       onChange: this.onLayoutChange
-    }, /*#__PURE__*/React$1p.createElement("option", {
+    }, /*#__PURE__*/React$1s.createElement("option", {
       value: HORIZONTAL$4
-    }, "Horizontal"), /*#__PURE__*/React$1p.createElement("option", {
+    }, "Horizontal"), /*#__PURE__*/React$1s.createElement("option", {
       value: VERTICAL$4
-    }, "Vertical"))), /*#__PURE__*/React$1p.createElement(InfoTip$j, null, /*#__PURE__*/React$1p.createElement("p", null, "Use the horizontal layout for short text and small images. The vertical layout is best for longer text and larger images."))), /*#__PURE__*/React$1p.createElement("div", null, /*#__PURE__*/React$1p.createElement(PropCheckBox$b, {
+    }, "Vertical"))), /*#__PURE__*/React$1s.createElement(InfoTip$j, null, /*#__PURE__*/React$1s.createElement("p", null, "Use the horizontal layout for short text and small images. The vertical layout is best for longer text and larger images."))), /*#__PURE__*/React$1s.createElement("div", null, /*#__PURE__*/React$1s.createElement(PropCheckBox$b, {
       label: "Padding:",
       padding: this.props.padding,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$1p.createElement(InfoTip$j, null, /*#__PURE__*/React$1p.createElement("p", null, "Padding is good for text, but not needed for images."))));
+    }), /*#__PURE__*/React$1s.createElement(InfoTip$j, null, /*#__PURE__*/React$1s.createElement("p", null, "Padding is good for text, but not needed for images."))));
   },
   onLayoutChange: function onLayoutChange(e) {
     this.props.onChange({
@@ -35463,8 +36595,8 @@ var _module_$1t = {
 };
 /* eslint-disable react/forbid-prop-types, react/prop-types, react/sort-comp */
 
-var React$1o = _react__default["default"];
-var ReactDOM$e = _reactDom__default["default"];
+var React$1r = _react__default["default"];
+var ReactDOM$h = _reactDom__default["default"];
 var _$Y = _underscore__default["default"];
 var Util$b = Util$q;
 var Renderer$g = _rendererJsx;
@@ -35477,18 +36609,18 @@ var DRAGGING = "dragging";
 var ANIMATING = "animating";
 var DISABLED = "disabled"; // A placeholder that appears in the sortable whenever an item is dragged.
 
-var Placeholder = React$1o.createClass({
+var Placeholder = React$1r.createClass({
   displayName: "Placeholder",
   propTypes: {
-    layout: React$1o.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
-    width: React$1o.PropTypes.number.isRequired,
-    height: React$1o.PropTypes.number.isRequired
+    layout: React$1r.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
+    width: React$1r.PropTypes.number.isRequired,
+    height: React$1r.PropTypes.number.isRequired
   },
   render: function render() {
     var {
       layout
     } = this.props;
-    var className = aphrodite.css(styles$h.card, styles$h.placeholder, layout === HORIZONTAL$3 && styles$h.horizontalCard);
+    var className = aphrodite.css(styles$i.card, styles$i.placeholder, layout === HORIZONTAL$3 && styles$i.horizontalCard);
     var style = {
       width: this.props.width,
       height: this.props.height
@@ -35498,7 +36630,7 @@ var Placeholder = React$1o.createClass({
       style.margin = this.props.margin;
     }
 
-    return /*#__PURE__*/React$1o.createElement("li", {
+    return /*#__PURE__*/React$1r.createElement("li", {
       className: className,
       style: style
     });
@@ -35512,19 +36644,19 @@ var Placeholder = React$1o.createClass({
 // Usual flow:      Static -> Dragging -> Animating -> Static
 // [Dis|en]abling:  Static|Dragging|Animating -> Disabled -> Static
 
-var Draggable = React$1o.createClass({
+var Draggable = React$1r.createClass({
   displayName: "Draggable",
   propTypes: {
-    content: React$1o.PropTypes.string.isRequired,
-    endPosition: React$1o.PropTypes.object.isRequired,
-    includePadding: React$1o.PropTypes.bool,
-    layout: React$1o.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
-    onAnimationEnd: React$1o.PropTypes.func.isRequired,
-    onMouseDown: React$1o.PropTypes.func.isRequired,
-    onMouseMove: React$1o.PropTypes.func.isRequired,
-    onMouseUp: React$1o.PropTypes.func.isRequired,
-    onRender: React$1o.PropTypes.func.isRequired,
-    type: React$1o.PropTypes.oneOf([STATIC, DRAGGING, ANIMATING, DISABLED]),
+    content: React$1r.PropTypes.string.isRequired,
+    endPosition: React$1r.PropTypes.object.isRequired,
+    includePadding: React$1r.PropTypes.bool,
+    layout: React$1r.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
+    onAnimationEnd: React$1r.PropTypes.func.isRequired,
+    onMouseDown: React$1r.PropTypes.func.isRequired,
+    onMouseMove: React$1r.PropTypes.func.isRequired,
+    onMouseUp: React$1r.PropTypes.func.isRequired,
+    onRender: React$1r.PropTypes.func.isRequired,
+    type: React$1r.PropTypes.oneOf([STATIC, DRAGGING, ANIMATING, DISABLED]),
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -35575,7 +36707,7 @@ var Draggable = React$1o.createClass({
     // in CSS. Hence the hacky tacking on of manual classNames.
     // See sortable.less for details.
 
-    var className = aphrodite.css(styles$h.card, styles$h.draggable, layout === HORIZONTAL$3 && styles$h.horizontalCard, layout === VERTICAL$3 && styles$h.verticalCard, type === DRAGGING && styles$h.dragging, type === ANIMATING && styles$h.animating, type === DISABLED && styles$h.disabled, !includePadding && styles$h.unpaddedCard) + " " + ApiClassNames$9.INTERACTIVE + " perseus-sortable-draggable";
+    var className = aphrodite.css(styles$i.card, styles$i.draggable, layout === HORIZONTAL$3 && styles$i.horizontalCard, layout === VERTICAL$3 && styles$i.verticalCard, type === DRAGGING && styles$i.dragging, type === ANIMATING && styles$i.animating, type === DISABLED && styles$i.disabled, !includePadding && styles$i.unpaddedCard) + " " + ApiClassNames$9.INTERACTIVE + " perseus-sortable-draggable";
 
     if (!includePadding) {
       className += " perseus-sortable-draggable-unpadded";
@@ -35603,7 +36735,7 @@ var Draggable = React$1o.createClass({
       style.margin = this.props.margin;
     }
 
-    return /*#__PURE__*/React$1o.createElement("li", {
+    return /*#__PURE__*/React$1r.createElement("li", {
       className: className,
       style: style,
       onMouseDown: this.onMouseDown,
@@ -35611,7 +36743,7 @@ var Draggable = React$1o.createClass({
       onTouchMove: this.onMouseMove,
       onTouchEnd: this.onMouseUp,
       onTouchCancel: this.onMouseUp
-    }, /*#__PURE__*/React$1o.createElement(Renderer$g, {
+    }, /*#__PURE__*/React$1r.createElement(Renderer$g, {
       content: this.props.content,
       linterContext: Gorgon$1.pushContextStack(this.props.linterContext, 'draggable'),
       onRender: this.props.onRender
@@ -35626,14 +36758,14 @@ var Draggable = React$1o.createClass({
       // Start animating
       var current = this.getCurrentPosition();
       var duration = 15 * Math.sqrt(Math.sqrt(Math.pow(this.props.endPosition.left - current.left, 2) + Math.pow(this.props.endPosition.top - current.top, 2)));
-      $(ReactDOM$e.findDOMNode(this)).animate(this.props.endPosition, {
+      $(ReactDOM$h.findDOMNode(this)).animate(this.props.endPosition, {
         duration: Math.max(duration, 1),
         // Animating -> Static
         complete: this.props.onAnimationEnd
       });
     } else if (this.props.type === STATIC) {
       // Ensure that any animations are done
-      $(ReactDOM$e.findDOMNode(this)).finish();
+      $(ReactDOM$h.findDOMNode(this)).finish();
     }
   },
   bindMouseMoveUp: function bindMouseMoveUp() {
@@ -35660,7 +36792,7 @@ var Draggable = React$1o.createClass({
 
     if (loc) {
       this.setState({
-        startPosition: $(ReactDOM$e.findDOMNode(this)).position(),
+        startPosition: $(ReactDOM$h.findDOMNode(this)).position(),
         startMouse: loc,
         mouse: loc
       }, function () {
@@ -35700,17 +36832,17 @@ var Draggable = React$1o.createClass({
   }
 }); // The main sortable component.
 
-var Sortable$2 = React$1o.createClass({
+var Sortable$2 = React$1r.createClass({
   displayName: "Sortable",
   propTypes: {
-    constraints: React$1o.PropTypes.object,
-    disabled: React$1o.PropTypes.bool,
-    layout: React$1o.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
-    margin: React$1o.PropTypes.number,
-    onChange: React$1o.PropTypes.func,
-    onMeasure: React$1o.PropTypes.func,
-    options: React$1o.PropTypes.array.isRequired,
-    padding: React$1o.PropTypes.bool,
+    constraints: React$1r.PropTypes.object,
+    disabled: React$1r.PropTypes.bool,
+    layout: React$1r.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
+    margin: React$1r.PropTypes.number,
+    onChange: React$1r.PropTypes.func,
+    onMeasure: React$1r.PropTypes.func,
+    options: React$1r.PropTypes.array.isRequired,
+    padding: React$1r.PropTypes.bool,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -35781,7 +36913,7 @@ var Sortable$2 = React$1o.createClass({
     var items = _$Y.clone(this.state.items);
 
     var $items = _$Y.map(items, function (item) {
-      return $(ReactDOM$e.findDOMNode(this.refs[item.key]));
+      return $(ReactDOM$h.findDOMNode(this.refs[item.key]));
     }, this);
 
     var widths = _$Y.invoke($items, "outerWidth");
@@ -35837,7 +36969,7 @@ var Sortable$2 = React$1o.createClass({
     } = this.props; // We need to keep backwards compatbility with rules specified directly
     // in CSS. See sortable.less for details.
 
-    var className = aphrodite.css(styles$h.sortable) + " perseus-sortable";
+    var className = aphrodite.css(styles$i.sortable) + " perseus-sortable";
 
     _$Y.each(this.state.items, function (item, i, items) {
       var isLast = i === items.length - 1;
@@ -35850,7 +36982,7 @@ var Sortable$2 = React$1o.createClass({
         margin = "0 0 " + this.props.margin + "px 0"; // bottom
       }
 
-      cards.push( /*#__PURE__*/React$1o.createElement(Draggable, {
+      cards.push( /*#__PURE__*/React$1r.createElement(Draggable, {
         content: item.option,
         key: item.key,
         type: item.type,
@@ -35873,7 +37005,7 @@ var Sortable$2 = React$1o.createClass({
       }));
 
       if (item.type === DRAGGING || item.type === ANIMATING) {
-        cards.push( /*#__PURE__*/React$1o.createElement(Placeholder, {
+        cards.push( /*#__PURE__*/React$1r.createElement(Placeholder, {
           key: "placeholder_" + item.key,
           ref: "placeholder_" + item.key,
           width: item.width,
@@ -35884,7 +37016,7 @@ var Sortable$2 = React$1o.createClass({
       }
     }, this);
 
-    return /*#__PURE__*/React$1o.createElement("ul", {
+    return /*#__PURE__*/React$1r.createElement("ul", {
       className: className
     }, cards);
   },
@@ -35904,8 +37036,8 @@ var Sortable$2 = React$1o.createClass({
   },
   onMouseMove: function onMouseMove(key) {
     // Dragging: Rearrange items based on draggable's position
-    var $draggable = $(ReactDOM$e.findDOMNode(this.refs[key]));
-    var $sortable = $(ReactDOM$e.findDOMNode(this));
+    var $draggable = $(ReactDOM$h.findDOMNode(this.refs[key]));
+    var $sortable = $(ReactDOM$h.findDOMNode(this));
 
     var items = _$Y.clone(this.state.items);
 
@@ -35962,7 +37094,7 @@ var Sortable$2 = React$1o.createClass({
     var items = _$Y.map(this.state.items, function (item) {
       if (item.key === key) {
         item.type = ANIMATING;
-        item.endPosition = $(ReactDOM$e.findDOMNode(this.refs["placeholder_" + key])).position();
+        item.endPosition = $(ReactDOM$h.findDOMNode(this.refs["placeholder_" + key])).position();
       }
 
       return item;
@@ -35994,7 +37126,7 @@ var Sortable$2 = React$1o.createClass({
     return _$Y.pluck(this.state.items, "option");
   }
 });
-var styles$h = aphrodite.StyleSheet.create({
+var styles$i = aphrodite.StyleSheet.create({
   sortable: {
     boxSizing: "border-box",
     float: "left",
@@ -36054,23 +37186,23 @@ var _module_$1s = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1n = _react__default["default"];
+var React$1q = _react__default["default"];
 var _$X = _underscore__default["default"];
 var Sortable$1 = _componentsSortableJsx;
 var ApiOptions$m = _perseusApiJsx.Options;
 var shuffle$2 = Util$q.shuffle;
 var HORIZONTAL$2 = "horizontal",
     VERTICAL$2 = "vertical";
-var Sorter = React$1n.createClass({
+var Sorter = React$1q.createClass({
   displayName: "Sorter",
   propTypes: {
     apiOptions: ApiOptions$m.propTypes,
-    correct: React$1n.PropTypes.array,
-    layout: React$1n.PropTypes.oneOf([HORIZONTAL$2, VERTICAL$2]),
-    onChange: React$1n.PropTypes.func,
-    padding: React$1n.PropTypes.bool,
-    problemNum: React$1n.PropTypes.number,
-    trackInteraction: React$1n.PropTypes.func.isRequired,
+    correct: React$1q.PropTypes.array,
+    layout: React$1q.PropTypes.oneOf([HORIZONTAL$2, VERTICAL$2]),
+    onChange: React$1q.PropTypes.func,
+    padding: React$1q.PropTypes.bool,
+    problemNum: React$1q.PropTypes.number,
+    trackInteraction: React$1q.PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -36088,9 +37220,9 @@ var Sorter = React$1n.createClass({
     /* ensurePermuted */
     true);
     var marginPx = this.props.apiOptions.isMobile ? 8 : 5;
-    return /*#__PURE__*/React$1n.createElement("div", {
+    return /*#__PURE__*/React$1q.createElement("div", {
       className: "perseus-widget-sorter perseus-clearfix"
-    }, /*#__PURE__*/React$1n.createElement(Sortable$1, {
+    }, /*#__PURE__*/React$1q.createElement(Sortable$1, {
       options: options,
       layout: this.props.layout,
       margin: marginPx,
@@ -36146,21 +37278,21 @@ var _module_$1r = {
 
 /* globals i18n */
 
-var React$1m = _react__default["default"];
+var React$1p = _react__default["default"];
 var _$W = _underscore__default["default"];
 var Changeable$E = _mixinsChangeableJsx;
 var EditorJsonify$i = _mixinsEditorJsonifyJsx;
 var InfoTip$i = _componentsInfoTipJsx;
 var NumberInput$e = _componentsNumberInputJsx;
 var maxTrials = 5000;
-var SimulatorEditor = React$1m.createClass({
+var SimulatorEditor = React$1p.createClass({
   displayName: "SimulatorEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$E.propTypes), {}, {
-    xAxisLabel: React$1m.PropTypes.string,
-    yAxisLabel: React$1m.PropTypes.string,
-    numTrials: React$1m.PropTypes.number,
-    proportionLabel: React$1m.PropTypes.string,
-    proportionOrPercentage: React$1m.PropTypes.string
+    xAxisLabel: React$1p.PropTypes.string,
+    yAxisLabel: React$1p.PropTypes.string,
+    numTrials: React$1p.PropTypes.number,
+    proportionLabel: React$1p.PropTypes.string,
+    proportionOrPercentage: React$1p.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -36172,40 +37304,40 @@ var SimulatorEditor = React$1m.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$1m.createElement("div", {
+    return /*#__PURE__*/React$1p.createElement("div", {
       className: "perseus-widget-simulator"
-    }, /*#__PURE__*/React$1m.createElement("div", null, i18n._("X-Axis Label"), ":", /*#__PURE__*/React$1m.createElement("input", {
+    }, /*#__PURE__*/React$1p.createElement("div", null, i18n._("X-Axis Label"), ":", /*#__PURE__*/React$1p.createElement("input", {
       type: "text",
       className: "graph-settings-axis-label",
       value: this.props.xAxisLabel,
       onChange: _$W.partial(this.handleTargetValueChange, "xAxisLabel")
-    })), /*#__PURE__*/React$1m.createElement("div", null, i18n._("Y-Axis Label"), ":", /*#__PURE__*/React$1m.createElement("input", {
+    })), /*#__PURE__*/React$1p.createElement("div", null, i18n._("Y-Axis Label"), ":", /*#__PURE__*/React$1p.createElement("input", {
       type: "text",
       className: "graph-settings-axis-label",
       value: this.props.yAxisLabel,
       onChange: _$W.partial(this.handleTargetValueChange, "yAxisLabel")
-    })), /*#__PURE__*/React$1m.createElement("div", null, i18n._('"True Proportion" Label'), ":", /*#__PURE__*/React$1m.createElement("input", {
+    })), /*#__PURE__*/React$1p.createElement("div", null, i18n._('"True Proportion" Label'), ":", /*#__PURE__*/React$1p.createElement("input", {
       type: "text",
       className: "graph-settings-axis-label",
       value: this.props.proportionLabel,
       onChange: _$W.partial(this.handleTargetValueChange, "proportionLabel")
-    }), /*#__PURE__*/React$1m.createElement(InfoTip$i, null, /*#__PURE__*/React$1m.createElement("p", null, "This text will be displayed next to the box in which the user enters the sample proportion for their simulation. For example, if your question is about surveying for approval ratings, you might want this to say \"Sample approval rating\"."))), /*#__PURE__*/React$1m.createElement("div", null, i18n._("Proportion or Percentage"), ":", /*#__PURE__*/React$1m.createElement("select", {
+    }), /*#__PURE__*/React$1p.createElement(InfoTip$i, null, /*#__PURE__*/React$1p.createElement("p", null, "This text will be displayed next to the box in which the user enters the sample proportion for their simulation. For example, if your question is about surveying for approval ratings, you might want this to say \"Sample approval rating\"."))), /*#__PURE__*/React$1p.createElement("div", null, i18n._("Proportion or Percentage"), ":", /*#__PURE__*/React$1p.createElement("select", {
       className: "perseus-widget-dropdown",
       value: this.props.proportionOrPercentage,
       onChange: _$W.partial(this.handleTargetValueChange, "proportionOrPercentage")
-    }, /*#__PURE__*/React$1m.createElement("option", {
+    }, /*#__PURE__*/React$1p.createElement("option", {
       key: "proportion",
       value: "proportion"
-    }, "Proportion"), /*#__PURE__*/React$1m.createElement("option", {
+    }, "Proportion"), /*#__PURE__*/React$1p.createElement("option", {
       key: "percentage",
       value: "percentage"
-    }, "Percentage")), /*#__PURE__*/React$1m.createElement(InfoTip$i, null, /*#__PURE__*/React$1m.createElement("p", null, "Do you want the user to describe their simulation in terms of a proportion or a percentage?"))), /*#__PURE__*/React$1m.createElement("div", null, i18n._("Number of trials"), ":", /*#__PURE__*/React$1m.createElement(NumberInput$e, {
+    }, "Percentage")), /*#__PURE__*/React$1p.createElement(InfoTip$i, null, /*#__PURE__*/React$1p.createElement("p", null, "Do you want the user to describe their simulation in terms of a proportion or a percentage?"))), /*#__PURE__*/React$1p.createElement("div", null, i18n._("Number of trials"), ":", /*#__PURE__*/React$1p.createElement(NumberInput$e, {
       value: this.props.numTrials,
       checkValidity: val => {
         return val >= 0 && val <= maxTrials;
       },
       onChange: this.change("numTrials")
-    }), /*#__PURE__*/React$1m.createElement(InfoTip$i, null, /*#__PURE__*/React$1m.createElement("p", null, "This controls the number of trials used in the simulation. For example, if you set this to 50, then the survey will be conducted 50 times. Warning: setting this too high (i.e., greater than 5000 or so) will freeze the page."))));
+    }), /*#__PURE__*/React$1p.createElement(InfoTip$i, null, /*#__PURE__*/React$1p.createElement("p", null, "This controls the number of trials used in the simulation. For example, if you set this to 50, then the survey will be conducted 50 times. Warning: setting this too high (i.e., greater than 5000 or so) will freeze the page."))));
   },
 
   change() {
@@ -36240,8 +37372,8 @@ var _module_$1q = {
 /* globals $_, i18n */
 
 var InfoTip$h = _componentsInfoTipJsx;
-var React$1l = _react__default["default"];
-var ReactDOM$d = _reactDom__default["default"];
+var React$1o = _react__default["default"];
+var ReactDOM$g = _reactDom__default["default"];
 var _$V = _underscore__default["default"];
 var Changeable$D = _mixinsChangeableJsx;
 var ApiOptions$l = _perseusApiJsx.Options;
@@ -36264,13 +37396,13 @@ var KhanColors$6 = _utilColorsJs;
 var KhanMath$3 = _utilMathJs;
 var defaultBoxSize$2 = 400;
 var maxSampleSize = 1000;
-var Histogram = React$1l.createClass({
+var Histogram = React$1o.createClass({
   displayName: "Histogram",
   propTypes: {
-    data: React$1l.PropTypes.arrayOf(React$1l.PropTypes.number),
-    xAxisLabel: React$1l.PropTypes.string,
-    yAxisLabel: React$1l.PropTypes.string,
-    box: React$1l.PropTypes.arrayOf(React$1l.PropTypes.number)
+    data: React$1o.PropTypes.arrayOf(React$1o.PropTypes.number),
+    xAxisLabel: React$1o.PropTypes.string,
+    yAxisLabel: React$1o.PropTypes.string,
+    box: React$1o.PropTypes.arrayOf(React$1o.PropTypes.number)
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -36308,7 +37440,7 @@ var Histogram = React$1l.createClass({
 
 
     var invisiblePointForCoord = (coord, i) => {
-      return /*#__PURE__*/React$1l.createElement(MovablePoint$3, {
+      return /*#__PURE__*/React$1o.createElement(MovablePoint$3, {
         key: i,
         static: true,
         coord: coord,
@@ -36319,7 +37451,7 @@ var Histogram = React$1l.createClass({
       });
     };
 
-    return /*#__PURE__*/React$1l.createElement(MovableLine$2, {
+    return /*#__PURE__*/React$1o.createElement(MovableLine$2, {
       onMove: this.handleMouseInteraction
     }, _$V.map(coords, invisiblePointForCoord));
   },
@@ -36361,7 +37493,7 @@ var Histogram = React$1l.createClass({
           stroke: KhanColors$6.RED
         }
       };
-      return /*#__PURE__*/React$1l.createElement(Arc, options);
+      return /*#__PURE__*/React$1o.createElement(Arc, options);
     };
 
     var plotAboveCircle = () => {
@@ -36378,7 +37510,7 @@ var Histogram = React$1l.createClass({
           stroke: KhanColors$6.BLUE
         }
       };
-      return /*#__PURE__*/React$1l.createElement(Arc, options);
+      return /*#__PURE__*/React$1o.createElement(Arc, options);
     }; // Plot the label below the circle
 
 
@@ -36398,7 +37530,7 @@ var Histogram = React$1l.createClass({
           fontSize: "12px"
         }
       };
-      return /*#__PURE__*/React$1l.createElement(Label$1, options);
+      return /*#__PURE__*/React$1o.createElement(Label$1, options);
     };
 
     return [proportionBelow > 0 && plotBelowCircle(), proportionBelow < 1 && plotAboveCircle(), plotLabel()];
@@ -36427,7 +37559,7 @@ var Histogram = React$1l.createClass({
         stroke: isBelow ? KhanColors$6.RED : KhanColors$6.BLUE
       };
       var coords = [[i, 0], [i, count], [i + barWidth, count], [i + barWidth, 0]];
-      return /*#__PURE__*/React$1l.createElement(Path, {
+      return /*#__PURE__*/React$1o.createElement(Path, {
         key: i,
         coords: coords,
         style: style
@@ -36456,7 +37588,7 @@ var Histogram = React$1l.createClass({
     };
     var origin = [range[0][0], 0];
     var bottomRight = [range[0][1], 0];
-    return /*#__PURE__*/React$1l.createElement(Graphie$4, {
+    return /*#__PURE__*/React$1o.createElement(Graphie$4, {
       box: options.box,
       range: options.range,
       options: options,
@@ -36464,7 +37596,7 @@ var Histogram = React$1l.createClass({
       onMouseMove: this.handleMouseInteraction,
       onMouseDown: this.handleMouseInteraction,
       setDrawingAreaAvailable: this.props.setDrawingAreaAvailable
-    }, /*#__PURE__*/React$1l.createElement(Line$2, {
+    }, /*#__PURE__*/React$1o.createElement(Line$2, {
       start: origin,
       end: bottomRight,
       style: axisStyle
@@ -36570,20 +37702,20 @@ var Histogram = React$1l.createClass({
     return xRange[0] + (xRange[1] - xRange[0]) / 3;
   }
 });
-var Simulator = React$1l.createClass({
+var Simulator = React$1o.createClass({
   displayName: "Simulator",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$D.propTypes), {}, {
     apiOptions: ApiOptions$l.propTypes,
-    data: React$1l.PropTypes.arrayOf(React$1l.PropTypes.number),
-    numTrials: React$1l.PropTypes.number,
-    proportionLabel: React$1l.PropTypes.string,
-    proportionOrPercentage: React$1l.PropTypes.string,
-    randomSeed: React$1l.PropTypes.number,
-    sampleSize: React$1l.PropTypes.number,
-    trackInteraction: React$1l.PropTypes.func.isRequired,
-    userProportion: React$1l.PropTypes.number,
-    xAxisLabel: React$1l.PropTypes.string,
-    yAxisLabel: React$1l.PropTypes.string
+    data: React$1o.PropTypes.arrayOf(React$1o.PropTypes.number),
+    numTrials: React$1o.PropTypes.number,
+    proportionLabel: React$1o.PropTypes.string,
+    proportionOrPercentage: React$1o.PropTypes.string,
+    randomSeed: React$1o.PropTypes.number,
+    sampleSize: React$1o.PropTypes.number,
+    trackInteraction: React$1o.PropTypes.func.isRequired,
+    userProportion: React$1o.PropTypes.number,
+    xAxisLabel: React$1o.PropTypes.string,
+    yAxisLabel: React$1o.PropTypes.string
   }),
   getInitialState: function getInitialState() {
     return {
@@ -36633,7 +37765,7 @@ var Simulator = React$1l.createClass({
 
     var style = this.state.invalidInput ? highlightStyle : unhighlightStyle;
     var InputComponent = this.props.apiOptions.staticRender ? MathOutput$3 : NumberInput$d;
-    var proportionInput = /*#__PURE__*/React$1l.createElement("div", null, /*#__PURE__*/React$1l.createElement(InputComponent, {
+    var proportionInput = /*#__PURE__*/React$1o.createElement("div", null, /*#__PURE__*/React$1o.createElement(InputComponent, {
       ref: "userProportion",
       style: style,
       value: this.calculateDisplayProportion(),
@@ -36642,8 +37774,8 @@ var Simulator = React$1l.createClass({
       onChange: this.handleUserProportionChange,
       onFocus: () => this.props.onFocus(["userProportion"]),
       onBlur: () => this.props.onBlur(["userProportion"])
-    }), /*#__PURE__*/React$1l.createElement(InfoTip$h, null, /*#__PURE__*/React$1l.createElement("p", null, "This controls the proportion or percentage that will be used in your simulation.")));
-    var sampleSizeInput = /*#__PURE__*/React$1l.createElement("div", null, /*#__PURE__*/React$1l.createElement(InputComponent, {
+    }), /*#__PURE__*/React$1o.createElement(InfoTip$h, null, /*#__PURE__*/React$1o.createElement("p", null, "This controls the proportion or percentage that will be used in your simulation.")));
+    var sampleSizeInput = /*#__PURE__*/React$1o.createElement("div", null, /*#__PURE__*/React$1o.createElement(InputComponent, {
       ref: "sampleSize",
       style: style,
       value: this.props.sampleSize,
@@ -36652,21 +37784,21 @@ var Simulator = React$1l.createClass({
       onChange: this.handleSampleSizeChange,
       onFocus: () => this.props.onFocus(["sampleSize"]),
       onBlur: () => this.props.onBlur(["sampleSize"])
-    }), /*#__PURE__*/React$1l.createElement(InfoTip$h, null, /*#__PURE__*/React$1l.createElement("p", null, "This controls the sample size that will be used in your simulation. For example, if you set this to 100, then for each trial, responses from 100 participants will be simulated.")));
-    var numTrialsDisplay = /*#__PURE__*/React$1l.createElement("div", {
+    }), /*#__PURE__*/React$1o.createElement(InfoTip$h, null, /*#__PURE__*/React$1o.createElement("p", null, "This controls the sample size that will be used in your simulation. For example, if you set this to 100, then for each trial, responses from 100 participants will be simulated.")));
+    var numTrialsDisplay = /*#__PURE__*/React$1o.createElement("div", {
       style: {
         textAlign: "right"
       }
-    }, /*#__PURE__*/React$1l.createElement("b", null, this.props.numTrials), /*#__PURE__*/React$1l.createElement(InfoTip$h, null, /*#__PURE__*/React$1l.createElement("p", null, "This is the number of trials used in the simulation. For example, if set to 50, then the survey will be conducted 50 times."))); // Generates a table from a set of titles and values.
+    }, /*#__PURE__*/React$1o.createElement("b", null, this.props.numTrials), /*#__PURE__*/React$1o.createElement(InfoTip$h, null, /*#__PURE__*/React$1o.createElement("p", null, "This is the number of trials used in the simulation. For example, if set to 50, then the survey will be conducted 50 times."))); // Generates a table from a set of titles and values.
 
     var generateTable = contents => {
-      var header = /*#__PURE__*/React$1l.createElement("thead", null, /*#__PURE__*/React$1l.createElement("tr", null, /*#__PURE__*/React$1l.createElement("th", null, "Parameter"), /*#__PURE__*/React$1l.createElement("th", null, "Value")));
-      var body = /*#__PURE__*/React$1l.createElement("tbody", null, _$V.map(contents, (row, i) => {
-        return /*#__PURE__*/React$1l.createElement("tr", {
+      var header = /*#__PURE__*/React$1o.createElement("thead", null, /*#__PURE__*/React$1o.createElement("tr", null, /*#__PURE__*/React$1o.createElement("th", null, "Parameter"), /*#__PURE__*/React$1o.createElement("th", null, "Value")));
+      var body = /*#__PURE__*/React$1o.createElement("tbody", null, _$V.map(contents, (row, i) => {
+        return /*#__PURE__*/React$1o.createElement("tr", {
           key: i
-        }, /*#__PURE__*/React$1l.createElement("td", null, row.title), /*#__PURE__*/React$1l.createElement("td", null, row.value));
+        }, /*#__PURE__*/React$1o.createElement("td", null, row.title), /*#__PURE__*/React$1o.createElement("td", null, row.value));
       }));
-      return /*#__PURE__*/React$1l.createElement("table", null, header, body);
+      return /*#__PURE__*/React$1o.createElement("table", null, header, body);
     }; // Contents for the table to-be generated
 
 
@@ -36684,7 +37816,7 @@ var Simulator = React$1l.createClass({
     var buttonStyle = {
       margin: "20px 0"
     };
-    var startButton = /*#__PURE__*/React$1l.createElement("button", {
+    var startButton = /*#__PURE__*/React$1o.createElement("button", {
       className: "simple-button",
       style: buttonStyle,
       disabled: this.props.apiOptions.readOnly,
@@ -36694,15 +37826,15 @@ var Simulator = React$1l.createClass({
     var histogramStyle = {
       paddingBottom: this.props.data ? 40 : 0
     };
-    var histogram = /*#__PURE__*/React$1l.createElement("div", {
+    var histogram = /*#__PURE__*/React$1o.createElement("div", {
       style: histogramStyle
-    }, /*#__PURE__*/React$1l.createElement(Histogram, {
+    }, /*#__PURE__*/React$1o.createElement(Histogram, {
       data: this.props.data,
       xAxisLabel: this.props.xAxisLabel,
       yAxisLabel: this.props.yAxisLabel,
       setDrawingAreaAvailable: this.props.apiOptions.setDrawingAreaAvailable
     }));
-    return /*#__PURE__*/React$1l.createElement("div", null, generateTable(contents), startButton, histogram);
+    return /*#__PURE__*/React$1o.createElement("div", null, generateTable(contents), startButton, histogram);
   },
   calculateDisplayProportion: function calculateDisplayProportion() {
     var userProportion = this.props.userProportion; // If we want to display as a percentage, multiply proportion by 100.0.
@@ -36827,7 +37959,7 @@ var Simulator = React$1l.createClass({
 
     var inputID = _$V.head(path);
 
-    return ReactDOM$d.findDOMNode(this.refs[inputID]);
+    return ReactDOM$g.findDOMNode(this.refs[inputID]);
   },
   getGrammarTypeForPath: function getGrammarTypeForPath(path) {
     assert$2(path.length > 0);
@@ -36886,34 +38018,34 @@ var _module_$1p = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1k = _react__default["default"];
+var React$1n = _react__default["default"];
 var _$U = _underscore__default["default"];
 var ApiOptions$k = _perseusApiJsx.Options;
 var Editor$9 = _editorJsx;
 var InlineIcon$e = _componentsInlineIconJsx;
-var StepControlButton = React$1k.createClass({
+var StepControlButton = React$1n.createClass({
   displayName: "StepControlButton",
   render: function render() {
-    return /*#__PURE__*/React$1k.createElement("a", {
+    return /*#__PURE__*/React$1n.createElement("a", {
       href: "#",
       className: "step-control-button " + "simple-button " + "simple-button--small " + "orange",
       onClick: e => {
         e.preventDefault();
         this.props.onClick();
       }
-    }, /*#__PURE__*/React$1k.createElement(InlineIcon$e, this.props.icon));
+    }, /*#__PURE__*/React$1n.createElement(InlineIcon$e, this.props.icon));
   }
 });
-var SequenceEditor = React$1k.createClass({
+var SequenceEditor = React$1n.createClass({
   displayName: "SequenceEditor",
   propTypes: {
-    json: React$1k.PropTypes.arrayOf(React$1k.PropTypes.shape({
-      content: React$1k.PropTypes.string,
-      widgets: React$1k.PropTypes.object,
-      images: React$1k.PropTypes.object
+    json: React$1n.PropTypes.arrayOf(React$1n.PropTypes.shape({
+      content: React$1n.PropTypes.string,
+      widgets: React$1n.PropTypes.object,
+      images: React$1n.PropTypes.object
     })),
     apiOptions: ApiOptions$k.propTypes,
-    onChange: React$1k.PropTypes.func.isRequired
+    onChange: React$1n.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -36925,27 +38057,27 @@ var SequenceEditor = React$1k.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$1k.createElement("div", {
+    return /*#__PURE__*/React$1n.createElement("div", {
       className: "perseus-sequence-editor"
     }, _$U.map(this.props.json, (json, i) => {
-      return /*#__PURE__*/React$1k.createElement("div", {
+      return /*#__PURE__*/React$1n.createElement("div", {
         key: i
-      }, "Step ", i + 1, /*#__PURE__*/React$1k.createElement("div", {
+      }, "Step ", i + 1, /*#__PURE__*/React$1n.createElement("div", {
         style: {
           display: "inline-block",
           float: "right"
         }
-      }, i + 1 < this.props.json.length && /*#__PURE__*/React$1k.createElement(StepControlButton, {
+      }, i + 1 < this.props.json.length && /*#__PURE__*/React$1n.createElement(StepControlButton, {
         icon: iconCircleArrowDown,
         onClick: () => {
           this._handleMoveStepLater(i);
         }
-      }), i > 0 && /*#__PURE__*/React$1k.createElement(StepControlButton, {
+      }), i > 0 && /*#__PURE__*/React$1n.createElement(StepControlButton, {
         icon: iconCircleArrowUp,
         onClick: () => {
           this._handleMoveStepEarlier(i);
         }
-      }), /*#__PURE__*/React$1k.createElement(StepControlButton, {
+      }), /*#__PURE__*/React$1n.createElement(StepControlButton, {
         icon: iconTrash,
         onClick: () => {
           var msg = "Are you sure you " + "want to remove step " + (i + 1) + "?";
@@ -36954,12 +38086,12 @@ var SequenceEditor = React$1k.createClass({
             this._handleRemoveStep(i);
           }
         }
-      }), /*#__PURE__*/React$1k.createElement(StepControlButton, {
+      }), /*#__PURE__*/React$1n.createElement(StepControlButton, {
         icon: iconPlus,
         onClick: () => {
           this._handleAddStepAfter(i);
         }
-      })), /*#__PURE__*/React$1k.createElement(Editor$9, {
+      })), /*#__PURE__*/React$1n.createElement(Editor$9, {
         ref: "editor" + i,
         apiOptions: this.props.apiOptions,
         content: json.content,
@@ -37054,23 +38186,23 @@ var _module_$1o = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1j = _react__default["default"];
+var React$1m = _react__default["default"];
 var _$T = _underscore__default["default"];
 var ApiOptions$j = _perseusApiJsx.Options;
 var Changeable$C = _mixinsChangeableJsx;
 var InlineIcon$d = _componentsInlineIconJsx;
 var Renderer$f = _rendererJsx;
 var Util$9 = Util$q;
-var Sequence = React$1j.createClass({
+var Sequence = React$1m.createClass({
   displayName: "Sequence",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$C.propTypes), {}, {
     apiOptions: ApiOptions$j.propTypes,
-    json: React$1j.PropTypes.arrayOf(React$1j.PropTypes.shape({
-      content: React$1j.PropTypes.string,
-      images: React$1j.PropTypes.object,
-      widgets: React$1j.PropTypes.object
+    json: React$1m.PropTypes.arrayOf(React$1m.PropTypes.shape({
+      content: React$1m.PropTypes.string,
+      images: React$1m.PropTypes.object,
+      widgets: React$1m.PropTypes.object
     })),
-    trackInteraction: React$1j.PropTypes.func.isRequired,
+    trackInteraction: React$1m.PropTypes.func.isRequired,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -37092,7 +38224,7 @@ var Sequence = React$1j.createClass({
     return nextProps !== this.props || nextState !== this.state;
   },
   render: function render() {
-    var icon = /*#__PURE__*/React$1j.createElement(InlineIcon$d, _extends({}, iconOk, {
+    var icon = /*#__PURE__*/React$1m.createElement(InlineIcon$d, _extends({}, iconOk, {
       style: {
         color: "green"
       }
@@ -37117,9 +38249,9 @@ var Sequence = React$1j.createClass({
       };
     });
 
-    return /*#__PURE__*/React$1j.createElement("div", {
+    return /*#__PURE__*/React$1m.createElement("div", {
       className: "perseus-sequence"
-    }, /*#__PURE__*/React$1j.createElement(Renderer$f, {
+    }, /*#__PURE__*/React$1m.createElement(Renderer$f, {
       ref: "renderer",
       content: content,
       widgets: widgets,
@@ -37190,18 +38322,18 @@ var _module_$1n = {
 };
 /* eslint-disable react/sort-comp */
 
-var React$1i = _react__default["default"];
-var ReactDOM$c = _reactDom__default["default"];
-var TextInput$a = React$1i.createClass({
+var React$1l = _react__default["default"];
+var ReactDOM$f = _reactDom__default["default"];
+var TextInput$a = React$1l.createClass({
   displayName: "TextInput",
   propTypes: {
-    value: React$1i.PropTypes.string,
-    onChange: React$1i.PropTypes.func.isRequired,
-    className: React$1i.PropTypes.string,
-    labelText: React$1i.PropTypes.string,
-    onFocus: React$1i.PropTypes.func,
-    onBlur: React$1i.PropTypes.func,
-    disabled: React$1i.PropTypes.bool
+    value: React$1l.PropTypes.string,
+    onChange: React$1l.PropTypes.func.isRequired,
+    className: React$1l.PropTypes.string,
+    labelText: React$1l.PropTypes.string,
+    onFocus: React$1l.PropTypes.func,
+    onBlur: React$1l.PropTypes.func,
+    disabled: React$1l.PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -37216,32 +38348,32 @@ var TextInput$a = React$1i.createClass({
     } = _this$props,
         props = _objectWithoutProperties(_this$props, _excluded$1);
 
-    return /*#__PURE__*/React$1i.createElement("input", _extends({}, props, {
+    return /*#__PURE__*/React$1l.createElement("input", _extends({}, props, {
       type: "text",
       "aria-label": labelText,
       onChange: e => this.props.onChange(e.target.value)
     }));
   },
   focus: function focus() {
-    ReactDOM$c.findDOMNode(this).focus();
+    ReactDOM$f.findDOMNode(this).focus();
   },
   blur: function blur() {
-    ReactDOM$c.findDOMNode(this).blur();
+    ReactDOM$f.findDOMNode(this).blur();
   },
   getValue: function getValue() {
-    return ReactDOM$c.findDOMNode(this).value;
+    return ReactDOM$f.findDOMNode(this).value;
   },
   getStringValue: function getStringValue() {
-    return ReactDOM$c.findDOMNode(this).value.toString();
+    return ReactDOM$f.findDOMNode(this).value.toString();
   },
   setSelectionRange: function setSelectionRange(selectionStart, selectionEnd) {
-    ReactDOM$c.findDOMNode(this).setSelectionRange(selectionStart, selectionEnd);
+    ReactDOM$f.findDOMNode(this).setSelectionRange(selectionStart, selectionEnd);
   },
   getSelectionStart: function getSelectionStart() {
-    return ReactDOM$c.findDOMNode(this).selectionStart;
+    return ReactDOM$f.findDOMNode(this).selectionStart;
   },
   getSelectionEnd: function getSelectionEnd() {
-    return ReactDOM$c.findDOMNode(this).selectionEnd;
+    return ReactDOM$f.findDOMNode(this).selectionEnd;
   }
 });
 _module_$1n.exports = TextInput$a;
@@ -37256,17 +38388,17 @@ var _module_$1m = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1h = _react__default["default"];
+var React$1k = _react__default["default"];
 var Changeable$B = _mixinsChangeableJsx;
 var EditorJsonify$h = _mixinsEditorJsonifyJsx;
 var NumberInput$c = _componentsNumberInputJsx;
 var TextInput$9 = _componentsTextInputJsx;
-var ReactionDiagramWidgetEditor = React$1h.createClass({
+var ReactionDiagramWidgetEditor = React$1k.createClass({
   displayName: "ReactionDiagramWidgetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$B.propTypes), {}, {
-    rotationAngle: React$1h.PropTypes.arrayOf(React$1h.PropTypes.number),
-    separators: React$1h.PropTypes.arrayOf(React$1h.PropTypes.object),
-    smiles: React$1h.PropTypes.arrayOf(React$1h.PropTypes.string)
+    rotationAngle: React$1k.PropTypes.arrayOf(React$1k.PropTypes.number),
+    separators: React$1k.PropTypes.arrayOf(React$1k.PropTypes.object),
+    smiles: React$1k.PropTypes.arrayOf(React$1k.PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -37324,22 +38456,22 @@ var ReactionDiagramWidgetEditor = React$1h.createClass({
 
   render: function render() {
     // TODO(colin): use styling instead of &nbsp hacks.
-    return /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("label", null, "LHS SMILES:\xA0", /*#__PURE__*/React$1h.createElement(TextInput$9, {
+    return /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("label", null, "LHS SMILES:\xA0", /*#__PURE__*/React$1k.createElement(TextInput$9, {
       onChange: this.updateMolecule(0),
       value: this.props.smiles[0]
-    }))), /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("label", null, "LHS Rotation (deg):\xA0", /*#__PURE__*/React$1h.createElement(NumberInput$c, {
+    }))), /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("label", null, "LHS Rotation (deg):\xA0", /*#__PURE__*/React$1k.createElement(NumberInput$c, {
       onChange: this.updateRotation(0),
       value: this.props.rotationAngle[0]
-    }))), /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("label", null, "RHS SMILES:\xA0", /*#__PURE__*/React$1h.createElement(TextInput$9, {
+    }))), /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("label", null, "RHS SMILES:\xA0", /*#__PURE__*/React$1k.createElement(TextInput$9, {
       onChange: this.updateMolecule(1),
       value: this.props.smiles[1]
-    }))), /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("label", null, "RHS Rotation (deg):\xA0", /*#__PURE__*/React$1h.createElement(NumberInput$c, {
+    }))), /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("label", null, "RHS Rotation (deg):\xA0", /*#__PURE__*/React$1k.createElement(NumberInput$c, {
       onChange: this.updateRotation(1),
       value: this.props.rotationAngle[1]
-    }))), /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("label", null, "Top of arrow text:\xA0", /*#__PURE__*/React$1h.createElement(TextInput$9, {
+    }))), /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("label", null, "Top of arrow text:\xA0", /*#__PURE__*/React$1k.createElement(TextInput$9, {
       onChange: this.updateSeparators(0, "topText"),
       value: this.props.separators[0].topText
-    }))), /*#__PURE__*/React$1h.createElement("div", null, /*#__PURE__*/React$1h.createElement("label", null, "Bottom of arrow text:\xA0", /*#__PURE__*/React$1h.createElement(TextInput$9, {
+    }))), /*#__PURE__*/React$1k.createElement("div", null, /*#__PURE__*/React$1k.createElement("label", null, "Bottom of arrow text:\xA0", /*#__PURE__*/React$1k.createElement(TextInput$9, {
       onChange: this.updateSeparators(0, "bottomText"),
       value: this.props.separators[0].bottomText
     }))));
@@ -38028,9 +39160,9 @@ function drawText(ctx, item) {
     return;
   }
 
-  ctx.fillStyle = styles$g.fgColor;
-  ctx.font = styles$g.font;
-  ctx.fillText(item.value, item.pos[0] - styles$g.fontSizePx / 2 + 1, item.pos[1] + styles$g.fontSizePx / 2);
+  ctx.fillStyle = styles$h.fgColor;
+  ctx.font = styles$h.font;
+  ctx.fillText(item.value, item.pos[0] - styles$h.fontSizePx / 2 + 1, item.pos[1] + styles$h.fontSizePx / 2);
 }
 /**
  * Draw a double line into a 2D canvas drawing context.
@@ -38052,15 +39184,15 @@ function drawText(ctx, item) {
 function drawDoubleLine(ctx, item) {
   // Outer line that forms both of the bond lines.
   var path = new Path2D();
-  ctx.lineWidth = 5 * styles$g.lineWidth;
-  ctx.strokeStyle = styles$g.fgColor;
+  ctx.lineWidth = 5 * styles$h.lineWidth;
+  ctx.strokeStyle = styles$h.fgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path); // Inner white line that separates the two bond lines.
 
   path = new Path2D();
-  ctx.lineWidth = 3 * styles$g.lineWidth;
-  ctx.strokeStyle = styles$g.bgColor;
+  ctx.lineWidth = 3 * styles$h.lineWidth;
+  ctx.strokeStyle = styles$h.bgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path);
@@ -38087,15 +39219,15 @@ function drawTripleLine(ctx, item) {
   // functions.
   // Outer line that will form the two outer bond lines.
   var path = new Path2D();
-  ctx.lineWidth = 7 * styles$g.lineWidth;
-  ctx.strokeStyle = styles$g.fgColor;
+  ctx.lineWidth = 7 * styles$h.lineWidth;
+  ctx.strokeStyle = styles$h.fgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path); // Middle white line that separates the bonds
 
   path = new Path2D();
-  ctx.lineWidth = 5 * styles$g.lineWidth;
-  ctx.strokeStyle = styles$g.bgColor;
+  ctx.lineWidth = 5 * styles$h.lineWidth;
+  ctx.strokeStyle = styles$h.bgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path); // Inner line that forms the middle bond line.
@@ -38117,8 +39249,8 @@ function drawTripleLine(ctx, item) {
 
 function drawLine(ctx, item) {
   var path = new Path2D();
-  ctx.lineWidth = styles$g.lineWidth;
-  ctx.strokeStyle = styles$g.fgColor;
+  ctx.lineWidth = styles$h.lineWidth;
+  ctx.strokeStyle = styles$h.fgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path);
@@ -38174,13 +39306,13 @@ function draw$1(ctx, items) {
   items.sort(compareElements).forEach(drawItem(ctx));
 }
 
-var styles$g = {
+var styles$h = {
   bgColor: "rgb(255, 255, 255)",
   fgColor: "rgb(0, 0, 0)",
   fontSizePx: 12,
   lineWidth: 1
 };
-styles$g.font = styles$g.fontSizePx + "px sans";
+styles$h.font = styles$h.fontSizePx + "px sans";
 _module_$1k.exports = draw$1;
 var _moleculeMoleculeDrawingJsx = _module_$1k.exports;
 
@@ -38193,18 +39325,18 @@ var _module_$1j = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1g = _react__default["default"];
+var React$1j = _react__default["default"];
 var draw = _moleculeMoleculeDrawingJsx;
 var SmilesParser = _moleculeSmilesParserJsx;
 var parse$1 = SmilesParser.parse;
 var ParseError = SmilesParser.ParseError;
 var borderSize = 30;
-var Molecule$1 = React$1g.createClass({
+var Molecule$1 = React$1j.createClass({
   displayName: "Molecule",
   propTypes: {
-    id: React$1g.PropTypes.string.isRequired,
-    rotationAngle: React$1g.PropTypes.number,
-    smiles: React$1g.PropTypes.string
+    id: React$1j.PropTypes.string.isRequired,
+    rotationAngle: React$1j.PropTypes.number,
+    smiles: React$1j.PropTypes.string
   },
   getInitialState: function getInitialState() {
     return {
@@ -38272,29 +39404,29 @@ var Molecule$1 = React$1g.createClass({
   render: function render() {
     // TODO(colin): escape the punctuation in the SMILES alt text for
     // screen readers?
-    var content = /*#__PURE__*/React$1g.createElement("canvas", {
+    var content = /*#__PURE__*/React$1j.createElement("canvas", {
       className: "molecule-canvas",
       id: this.props.id + "-molecule",
       ref: "canvas"
     }, "A molecular structure drawing. SMILES notation:", this.props.smiles, ".");
 
     if (this.state.error) {
-      content = /*#__PURE__*/React$1g.createElement("div", {
+      content = /*#__PURE__*/React$1j.createElement("div", {
         className: "error"
       }, this.state.error);
     }
 
-    return /*#__PURE__*/React$1g.createElement("div", {
+    return /*#__PURE__*/React$1j.createElement("div", {
       className: "molecule-canvas"
     }, content);
   }
 });
-var MoleculeWidget = React$1g.createClass({
+var MoleculeWidget = React$1j.createClass({
   displayName: "MoleculeWidget",
   propTypes: {
-    rotationAngle: React$1g.PropTypes.number,
-    smiles: React$1g.PropTypes.string,
-    widgetId: React$1g.PropTypes.string
+    rotationAngle: React$1j.PropTypes.number,
+    smiles: React$1j.PropTypes.string,
+    widgetId: React$1j.PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -38324,7 +39456,7 @@ var MoleculeWidget = React$1g.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$1g.createElement(Molecule$1, {
+    return /*#__PURE__*/React$1j.createElement(Molecule$1, {
       id: this.props.widgetId,
       smiles: this.props.smiles,
       rotationAngle: this.props.rotationAngle
@@ -38343,14 +39475,14 @@ var _widgetsMoleculeJsx = _module_$1j.exports;
 var _module_$1i = {
   exports: {}
 };
-var React$1f = _react__default["default"];
+var React$1i = _react__default["default"];
 var Molecule = _widgetsMoleculeJsx.molecule;
-var Separator = React$1f.createClass({
+var Separator = React$1i.createClass({
   displayName: "Separator",
   propTypes: {
     // TODO(colin): figure out and add shape.
-    data: React$1f.PropTypes.any,
-    index: React$1f.PropTypes.number
+    data: React$1i.PropTypes.any,
+    index: React$1i.PropTypes.number
   },
   componentDidMount: function componentDidMount() {
     this.drawArrow();
@@ -38377,30 +39509,30 @@ var Separator = React$1f.createClass({
     ctx.stroke(path);
   },
   render: function render() {
-    return /*#__PURE__*/React$1f.createElement("div", {
+    return /*#__PURE__*/React$1i.createElement("div", {
       className: "arrow-container"
-    }, /*#__PURE__*/React$1f.createElement("div", {
+    }, /*#__PURE__*/React$1i.createElement("div", {
       className: "above-text"
-    }, this.props.data.topText), /*#__PURE__*/React$1f.createElement("canvas", {
+    }, this.props.data.topText), /*#__PURE__*/React$1i.createElement("canvas", {
       height: "30",
       id: "arrowCanvas" + this.props.index,
       ref: "arrowCanvas" + this.props.index,
       width: this.arrowLength
-    }, "Reaction arrow pointing to the right."), /*#__PURE__*/React$1f.createElement("div", {
+    }, "Reaction arrow pointing to the right."), /*#__PURE__*/React$1i.createElement("div", {
       className: "below-text"
     }, this.props.data.bottomText));
   }
 });
-var ReactionDiagramWidget = React$1f.createClass({
+var ReactionDiagramWidget = React$1i.createClass({
   displayName: "ReactionDiagramWidget",
   propTypes: {
     // TODO(colin): at the moment, these must be arrays of two elements;
     // we're limited to a single reaction step.  At some point, add support
     // for more steps in the reaction.
-    rotationAngle: React$1f.PropTypes.arrayOf(React$1f.PropTypes.number),
-    separators: React$1f.PropTypes.arrayOf(React$1f.PropTypes.object),
-    smiles: React$1f.PropTypes.arrayOf(React$1f.PropTypes.string),
-    widgetId: React$1f.PropTypes.string
+    rotationAngle: React$1i.PropTypes.arrayOf(React$1i.PropTypes.number),
+    separators: React$1i.PropTypes.arrayOf(React$1i.PropTypes.object),
+    smiles: React$1i.PropTypes.arrayOf(React$1i.PropTypes.string),
+    widgetId: React$1i.PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -38434,19 +39566,19 @@ var ReactionDiagramWidget = React$1f.createClass({
     return true;
   },
   render: function render() {
-    return /*#__PURE__*/React$1f.createElement("div", {
+    return /*#__PURE__*/React$1i.createElement("div", {
       className: "reaction",
       ref: "reaction"
     }, this.props.smiles.map((s, i) => {
       var id = this.props.widgetId + "-" + i;
-      return /*#__PURE__*/React$1f.createElement("div", {
+      return /*#__PURE__*/React$1i.createElement("div", {
         key: id,
         className: "molecule-container"
-      }, /*#__PURE__*/React$1f.createElement(Molecule, {
+      }, /*#__PURE__*/React$1i.createElement(Molecule, {
         id: id,
         rotationAngle: this.props.rotationAngle[i],
         smiles: s
-      }), i === this.props.smiles.length - 1 ? null : /*#__PURE__*/React$1f.createElement(Separator, {
+      }), i === this.props.smiles.length - 1 ? null : /*#__PURE__*/React$1i.createElement(Separator, {
         data: this.props.separators[i],
         index: i
       }));
@@ -38470,8 +39602,8 @@ var _module_$1h = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1e = _react__default["default"];
-var ReactDOM$b = _reactDom__default["default"];
+var React$1h = _react__default["default"];
+var ReactDOM$e = _reactDom__default["default"];
 var _$S = _underscore__default["default"];
 var ApiClassNames$8 = _perseusApiJsx.ClassNames;
 var deepEq$1 = Util$q.deepEq;
@@ -38486,25 +39618,25 @@ var BAR$1 = "bar",
     HISTOGRAM$1 = "histogram",
     DOTPLOT$1 = "dotplot";
 ({
-  type: React$1e.PropTypes.oneOf([BAR$1, LINE$1, PIC$1, HISTOGRAM$1, DOTPLOT$1]),
-  labels: React$1e.PropTypes.arrayOf(React$1e.PropTypes.string),
-  categories: React$1e.PropTypes.arrayOf(React$1e.PropTypes.oneOfType([React$1e.PropTypes.number, React$1e.PropTypes.string])),
-  scaleY: React$1e.PropTypes.number,
-  maxY: React$1e.PropTypes.number,
-  snapsPerLine: React$1e.PropTypes.number,
-  picSize: React$1e.PropTypes.number,
-  pixBoxHeight: React$1e.PropTypes.number,
-  picUrl: React$1e.PropTypes.string,
-  plotDimensions: React$1e.PropTypes.arrayOf(React$1e.PropTypes.number),
-  labelInterval: React$1e.PropTypes.number,
-  starting: React$1e.PropTypes.arrayOf(React$1e.PropTypes.number),
-  static: React$1e.PropTypes.bool
+  type: React$1h.PropTypes.oneOf([BAR$1, LINE$1, PIC$1, HISTOGRAM$1, DOTPLOT$1]),
+  labels: React$1h.PropTypes.arrayOf(React$1h.PropTypes.string),
+  categories: React$1h.PropTypes.arrayOf(React$1h.PropTypes.oneOfType([React$1h.PropTypes.number, React$1h.PropTypes.string])),
+  scaleY: React$1h.PropTypes.number,
+  maxY: React$1h.PropTypes.number,
+  snapsPerLine: React$1h.PropTypes.number,
+  picSize: React$1h.PropTypes.number,
+  pixBoxHeight: React$1h.PropTypes.number,
+  picUrl: React$1h.PropTypes.string,
+  plotDimensions: React$1h.PropTypes.arrayOf(React$1h.PropTypes.number),
+  labelInterval: React$1h.PropTypes.number,
+  starting: React$1h.PropTypes.arrayOf(React$1h.PropTypes.number),
+  static: React$1h.PropTypes.bool
 });
-var Plotter$1 = React$1e.createClass({
+var Plotter$1 = React$1h.createClass({
   displayName: "Plotter",
   propTypes: {
-    onChange: React$1e.PropTypes.func.isRequired,
-    trackInteraction: React$1e.PropTypes.func.isRequired // TODO(alex): Figure out why lint chokes on this line
+    onChange: React$1h.PropTypes.func.isRequired,
+    trackInteraction: React$1h.PropTypes.func.isRequired // TODO(alex): Figure out why lint chokes on this line
     // ...widgetPropTypes,
 
   },
@@ -38545,7 +39677,7 @@ var Plotter$1 = React$1e.createClass({
     var style = {
       marginBottom: this.props.labels[0] ? paddingForBottomLabel : 0
     };
-    return /*#__PURE__*/React$1e.createElement("div", {
+    return /*#__PURE__*/React$1h.createElement("div", {
       className: "perseus-widget-plotter graphie " + ApiClassNames$8.INTERACTIVE,
       ref: "graphieDiv",
       style: style
@@ -38575,7 +39707,7 @@ var Plotter$1 = React$1e.createClass({
   setupGraphie: function setupGraphie(prevState) {
     var self = this;
     self.shouldSetupGraphie = false;
-    var graphieDiv = ReactDOM$b.findDOMNode(self.refs.graphieDiv);
+    var graphieDiv = ReactDOM$e.findDOMNode(self.refs.graphieDiv);
     $(graphieDiv).empty();
     var graphie = GraphUtils$2.createGraphie(graphieDiv); // TODO(jakesandlund): It's not the react way to hang
     // something off the component object, but since graphie
@@ -39320,10 +40452,10 @@ var _module_$1g = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1d = _react__default["default"];
-var ReactDOM$a = _reactDom__default["default"];
+var React$1g = _react__default["default"];
+var ReactDOM$d = _reactDom__default["default"];
 var _$R = _underscore__default["default"];
-var BlurInput$4 = _reactComponentsBlurInputJsx__default["default"];
+var BlurInput$4 = _reactComponentsBlurInputJsx;
 var InfoTip$g = _componentsInfoTipJsx;
 var NumberInput$b = _componentsNumberInputJsx;
 var RangeInput$4 = _componentsRangeInputJsx;
@@ -39355,26 +40487,26 @@ var editorDefaults = {
   snapsPerLine: 2
 };
 var widgetPropTypes = {
-  type: React$1d.PropTypes.oneOf([BAR, LINE, PIC, HISTOGRAM, DOTPLOT]),
-  labels: React$1d.PropTypes.arrayOf(React$1d.PropTypes.string),
-  categories: React$1d.PropTypes.arrayOf(React$1d.PropTypes.oneOfType([React$1d.PropTypes.number, React$1d.PropTypes.string])),
-  scaleY: React$1d.PropTypes.number,
-  maxY: React$1d.PropTypes.number,
-  snapsPerLine: React$1d.PropTypes.number,
-  picSize: React$1d.PropTypes.number,
-  pixBoxHeight: React$1d.PropTypes.number,
-  picUrl: React$1d.PropTypes.string,
-  plotDimensions: React$1d.PropTypes.arrayOf(React$1d.PropTypes.number),
-  labelInterval: React$1d.PropTypes.number,
-  starting: React$1d.PropTypes.arrayOf(React$1d.PropTypes.number),
-  correct: React$1d.PropTypes.arrayOf(React$1d.PropTypes.number),
-  static: React$1d.PropTypes.bool,
-  onChange: React$1d.PropTypes.func
+  type: React$1g.PropTypes.oneOf([BAR, LINE, PIC, HISTOGRAM, DOTPLOT]),
+  labels: React$1g.PropTypes.arrayOf(React$1g.PropTypes.string),
+  categories: React$1g.PropTypes.arrayOf(React$1g.PropTypes.oneOfType([React$1g.PropTypes.number, React$1g.PropTypes.string])),
+  scaleY: React$1g.PropTypes.number,
+  maxY: React$1g.PropTypes.number,
+  snapsPerLine: React$1g.PropTypes.number,
+  picSize: React$1g.PropTypes.number,
+  pixBoxHeight: React$1g.PropTypes.number,
+  picUrl: React$1g.PropTypes.string,
+  plotDimensions: React$1g.PropTypes.arrayOf(React$1g.PropTypes.number),
+  labelInterval: React$1g.PropTypes.number,
+  starting: React$1g.PropTypes.arrayOf(React$1g.PropTypes.number),
+  correct: React$1g.PropTypes.arrayOf(React$1g.PropTypes.number),
+  static: React$1g.PropTypes.bool,
+  onChange: React$1g.PropTypes.func
 };
 
 var formatNumber = num => "$" + knumber$4.round(num, 2) + "$";
 
-var PlotterEditor = React$1d.createClass({
+var PlotterEditor = React$1g.createClass({
   displayName: "PlotterEditor",
   propTypes: widgetPropTypes,
   getDefaultProps: function getDefaultProps() {
@@ -39429,79 +40561,79 @@ var PlotterEditor = React$1d.createClass({
       trackInteraction: () => {}
     }, this.props);
 
-    return /*#__PURE__*/React$1d.createElement("div", {
+    return /*#__PURE__*/React$1g.createElement("div", {
       className: "perseus-widget-plotter-editor"
-    }, /*#__PURE__*/React$1d.createElement("div", null, "Chart type:", " ", _$R.map([BAR, LINE, PIC, HISTOGRAM, DOTPLOT], function (type) {
-      return /*#__PURE__*/React$1d.createElement("label", {
+    }, /*#__PURE__*/React$1g.createElement("div", null, "Chart type:", " ", _$R.map([BAR, LINE, PIC, HISTOGRAM, DOTPLOT], function (type) {
+      return /*#__PURE__*/React$1g.createElement("label", {
         key: type
-      }, /*#__PURE__*/React$1d.createElement("input", {
+      }, /*#__PURE__*/React$1g.createElement("input", {
         type: "radio",
         name: "chart-type",
         checked: this.props.type === type,
         onChange: _$R.partial(this.changeType, type)
       }), type);
-    }, this)), /*#__PURE__*/React$1d.createElement("div", null, "Labels:", " ", _$R.map(["x", "y"], function (axis, i) {
-      return /*#__PURE__*/React$1d.createElement("label", {
+    }, this)), /*#__PURE__*/React$1g.createElement("div", null, "Labels:", " ", _$R.map(["x", "y"], function (axis, i) {
+      return /*#__PURE__*/React$1g.createElement("label", {
         key: axis
-      }, axis + ":", /*#__PURE__*/React$1d.createElement("input", {
+      }, axis + ":", /*#__PURE__*/React$1g.createElement("input", {
         type: "text",
         onChange: _$R.partial(this.changeLabel, i),
         defaultValue: this.props.labels[i]
       }));
-    }, this)), setFromScale && /*#__PURE__*/React$1d.createElement("div", {
+    }, this)), setFromScale && /*#__PURE__*/React$1g.createElement("div", {
       className: "set-from-scale-box"
-    }, /*#__PURE__*/React$1d.createElement("span", {
+    }, /*#__PURE__*/React$1g.createElement("span", {
       className: "categories-title"
-    }, "Set Categories From Scale"), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Tick Step:", " ", /*#__PURE__*/React$1d.createElement(NumberInput$b, {
+    }, "Set Categories From Scale"), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Tick Step:", " ", /*#__PURE__*/React$1g.createElement(NumberInput$b, {
       placeholder: 1,
       useArrowKeys: true,
       value: this.state.tickStep,
       onChange: this.handleChangeTickStep
-    })), /*#__PURE__*/React$1d.createElement(InfoTip$g, null, /*#__PURE__*/React$1d.createElement("p", null, "The difference between adjacent ticks."))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Range:", " ", /*#__PURE__*/React$1d.createElement(RangeInput$4, {
+    })), /*#__PURE__*/React$1g.createElement(InfoTip$g, null, /*#__PURE__*/React$1g.createElement("p", null, "The difference between adjacent ticks."))), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Range:", " ", /*#__PURE__*/React$1g.createElement(RangeInput$4, {
       placeholder: [0, 10],
       useArrowKeys: true,
       value: [this.state.minX, this.state.maxX],
       onChange: this.handleChangeRange
-    }))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("button", {
+    }))), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("button", {
       onClick: this.setCategoriesFromScale
-    }, "Set Categories", " "))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Label Interval:", " ", /*#__PURE__*/React$1d.createElement(NumberInput$b, {
+    }, "Set Categories", " "))), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Label Interval:", " ", /*#__PURE__*/React$1g.createElement(NumberInput$b, {
       useArrowKeys: true,
       value: this.props.labelInterval,
       onChange: this.changeLabelInterval
-    })), /*#__PURE__*/React$1d.createElement(InfoTip$g, null, /*#__PURE__*/React$1d.createElement("p", null, "Which ticks to display the labels for. For instance, setting this to \"4\" will only show every 4th label (plus the last one)"))), this.props.type === PIC && /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Picture:", " ", /*#__PURE__*/React$1d.createElement(BlurInput$4, {
+    })), /*#__PURE__*/React$1g.createElement(InfoTip$g, null, /*#__PURE__*/React$1g.createElement("p", null, "Which ticks to display the labels for. For instance, setting this to \"4\" will only show every 4th label (plus the last one)"))), this.props.type === PIC && /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Picture:", " ", /*#__PURE__*/React$1g.createElement(BlurInput$4, {
       className: "pic-url",
       value: this.props.picUrl,
       onChange: this.changePicUrl
-    }), /*#__PURE__*/React$1d.createElement(InfoTip$g, null, /*#__PURE__*/React$1d.createElement("p", null, "Use the default picture of Earth, or insert the URL for a different picture using the \"Add image\" function."))), this.state.pic && this.state.pic.width !== this.state.pic.height && /*#__PURE__*/React$1d.createElement("p", {
+    }), /*#__PURE__*/React$1g.createElement(InfoTip$g, null, /*#__PURE__*/React$1g.createElement("p", null, "Use the default picture of Earth, or insert the URL for a different picture using the \"Add image\" function."))), this.state.pic && this.state.pic.width !== this.state.pic.height && /*#__PURE__*/React$1g.createElement("p", {
       className: "warning"
-    }, /*#__PURE__*/React$1d.createElement("b", null, "Warning"), ": You are using a picture which is not square. This means the image will get distorted. You should probably crop it to be square.")), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Categories:", " ", /*#__PURE__*/React$1d.createElement(TextListEditor$3, {
+    }, /*#__PURE__*/React$1g.createElement("b", null, "Warning"), ": You are using a picture which is not square. This means the image will get distorted. You should probably crop it to be square.")), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Categories:", " ", /*#__PURE__*/React$1g.createElement(TextListEditor$3, {
       ref: "categories",
       layout: "horizontal",
       options: this.props.categories,
       onChange: this.changeCategories
-    }))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Scale (y):", " ", /*#__PURE__*/React$1d.createElement("input", {
+    }))), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Scale (y):", " ", /*#__PURE__*/React$1g.createElement("input", {
       type: "text",
       onChange: this.changeScale,
       defaultValue: this.props.scaleY
-    }))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Max y:", " ", /*#__PURE__*/React$1d.createElement("input", {
+    }))), /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Max y:", " ", /*#__PURE__*/React$1g.createElement("input", {
       type: "text",
       ref: "maxY",
       onChange: this.changeMax,
       defaultValue: this.props.maxY
-    }))), canChangeSnaps && /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Snaps per line:", " ", /*#__PURE__*/React$1d.createElement("input", {
+    }))), canChangeSnaps && /*#__PURE__*/React$1g.createElement("div", null, /*#__PURE__*/React$1g.createElement("label", null, "Snaps per line:", " ", /*#__PURE__*/React$1g.createElement("input", {
       type: "text",
       onChange: this.changeSnaps,
       defaultValue: this.props.snapsPerLine
-    })), /*#__PURE__*/React$1d.createElement(InfoTip$g, null, /*#__PURE__*/React$1d.createElement("p", null, "Creates the specified number of divisions between the horizontal lines. Fewer snaps between lines makes the graph easier for the student to create correctly."))), /*#__PURE__*/React$1d.createElement("div", null, "Editing values:", " ", _$R.map(["correct", "starting"], function (editing) {
-      return /*#__PURE__*/React$1d.createElement("label", {
+    })), /*#__PURE__*/React$1g.createElement(InfoTip$g, null, /*#__PURE__*/React$1g.createElement("p", null, "Creates the specified number of divisions between the horizontal lines. Fewer snaps between lines makes the graph easier for the student to create correctly."))), /*#__PURE__*/React$1g.createElement("div", null, "Editing values:", " ", _$R.map(["correct", "starting"], function (editing) {
+      return /*#__PURE__*/React$1g.createElement("label", {
         key: editing
-      }, /*#__PURE__*/React$1d.createElement("input", {
+      }, /*#__PURE__*/React$1g.createElement("input", {
         type: "radio",
         name: "editing",
         checked: this.state.editing === editing,
         onChange: _$R.partial(this.changeEditing, editing)
       }), editing);
-    }, this), /*#__PURE__*/React$1d.createElement(InfoTip$g, null, /*#__PURE__*/React$1d.createElement("p", null, "Use this toggle to switch between editing the correct answer (what the student will be graded on) and the starting values (what the student will see plotted when they start the problem). Note: These cannot be the same."), /*#__PURE__*/React$1d.createElement("p", null, "In static mode, the starting values are rendered out to the displayed widget."))), /*#__PURE__*/React$1d.createElement(Plotter, _extends({}, props, {
+    }, this), /*#__PURE__*/React$1g.createElement(InfoTip$g, null, /*#__PURE__*/React$1g.createElement("p", null, "Use this toggle to switch between editing the correct answer (what the student will be graded on) and the starting values (what the student will see plotted when they start the problem). Note: These cannot be the same."), /*#__PURE__*/React$1g.createElement("p", null, "In static mode, the starting values are rendered out to the displayed widget."))), /*#__PURE__*/React$1g.createElement(Plotter, _extends({}, props, {
       starting: this.props[this.state.editing],
       onChange: this.handlePlotterChange
     })));
@@ -39551,7 +40683,7 @@ var PlotterEditor = React$1d.createClass({
     }
 
     if (categories) {
-      ReactDOM$a.findDOMNode(this.refs.categories).value = categories.join(", ");
+      ReactDOM$d.findDOMNode(this.refs.categories).value = categories.join(", ");
     }
   },
   changeLabel: function changeLabel(i, e) {
@@ -39601,7 +40733,7 @@ var PlotterEditor = React$1d.createClass({
       correct: _$R.map(this.props.correct, scale),
       starting: _$R.map(this.props.starting, scale)
     });
-    ReactDOM$a.findDOMNode(this.refs.maxY).value = maxY;
+    ReactDOM$d.findDOMNode(this.refs.maxY).value = maxY;
   },
   changeMax: function changeMax(e) {
     this.props.onChange({
@@ -39635,7 +40767,7 @@ var PlotterEditor = React$1d.createClass({
     categories = _$R.map(categories, num => num + min);
     categories = _$R.map(categories, formatNumber);
     this.changeCategories(categories);
-    ReactDOM$a.findDOMNode(this.refs.categories).value = categories.join(", ");
+    ReactDOM$d.findDOMNode(this.refs.categories).value = categories.join(", ");
   },
   serialize: function serialize() {
     var json = _$R.pick(this.props, "correct", "starting", "type", "labels", "categories", "scaleY", "maxY", "snapsPerLine", "labelInterval");
@@ -39659,13 +40791,13 @@ var _module_$1f = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1c = _react__default["default"];
+var React$1f = _react__default["default"];
 var Changeable$A = _mixinsChangeableJsx;
 var EditorJsonify$g = _mixinsEditorJsonifyJsx;
-var PassageRefTargetEditor = React$1c.createClass({
+var PassageRefTargetEditor = React$1f.createClass({
   displayName: "PassageRefTargetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$A.propTypes), {}, {
-    content: React$1c.PropTypes.string
+    content: React$1f.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -39682,7 +40814,7 @@ var PassageRefTargetEditor = React$1c.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$1c.createElement("div", null, "Content:", /*#__PURE__*/React$1c.createElement("input", {
+    return /*#__PURE__*/React$1f.createElement("div", null, "Content:", /*#__PURE__*/React$1f.createElement("input", {
       type: "text",
       value: this.props.content,
       onChange: this.handleContentChange
@@ -39711,15 +40843,15 @@ var _module_$1e = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1b = _react__default["default"];
+var React$1e = _react__default["default"];
 var _$Q = _underscore__default["default"];
 var Changeable$z = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated$4 = _mixinsWidgetJsonifyDeprecatedJsx;
 var Renderer$e = _rendererJsx;
-var PassageRefTarget = React$1b.createClass({
+var PassageRefTarget = React$1e.createClass({
   displayName: "PassageRefTarget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$z.propTypes), {}, {
-    content: React$1b.PropTypes.string,
+    content: React$1e.PropTypes.string,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -39732,7 +40864,7 @@ var PassageRefTarget = React$1b.createClass({
     return WidgetJsonifyDeprecated$4.getUserInput.call(this);
   },
   render: function render() {
-    return /*#__PURE__*/React$1b.createElement(Renderer$e, {
+    return /*#__PURE__*/React$1e.createElement(Renderer$e, {
       content: this.props.content,
       inline: true,
       apiOptions: this.props.apiOptions,
@@ -39790,18 +40922,18 @@ var _module_$1d = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1a = _react__default["default"];
+var React$1d = _react__default["default"];
 var Changeable$y = _mixinsChangeableJsx;
 var EditorJsonify$f = _mixinsEditorJsonifyJsx;
 var InfoTip$f = _componentsInfoTipJsx;
 var NumberInput$a = _componentsNumberInputJsx;
 var TextInput$8 = _componentsTextInputJsx;
-var PassageRefEditor = React$1a.createClass({
+var PassageRefEditor = React$1d.createClass({
   displayName: "PassageRefEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$y.propTypes), {}, {
-    passageNumber: React$1a.PropTypes.number,
-    referenceNumber: React$1a.PropTypes.number,
-    summaryText: React$1a.PropTypes.string
+    passageNumber: React$1d.PropTypes.number,
+    referenceNumber: React$1d.PropTypes.number,
+    summaryText: React$1d.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -39820,16 +40952,16 @@ var PassageRefEditor = React$1a.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$1a.createElement("div", null, /*#__PURE__*/React$1a.createElement("div", null, /*#__PURE__*/React$1a.createElement("label", null, "Passage Number: ", /*#__PURE__*/React$1a.createElement(NumberInput$a, {
+    return /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Passage Number: ", /*#__PURE__*/React$1d.createElement(NumberInput$a, {
       value: this.props.passageNumber,
       onChange: this.change("passageNumber")
-    }))), /*#__PURE__*/React$1a.createElement("div", null, /*#__PURE__*/React$1a.createElement("label", null, "Reference Number: ", /*#__PURE__*/React$1a.createElement(NumberInput$a, {
+    }))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Reference Number: ", /*#__PURE__*/React$1d.createElement(NumberInput$a, {
       value: this.props.referenceNumber,
       onChange: this.change("referenceNumber")
-    }))), /*#__PURE__*/React$1a.createElement("div", null, /*#__PURE__*/React$1a.createElement("label", null, "Summary Text: ", /*#__PURE__*/React$1a.createElement(TextInput$8, {
+    }))), /*#__PURE__*/React$1d.createElement("div", null, /*#__PURE__*/React$1d.createElement("label", null, "Summary Text: ", /*#__PURE__*/React$1d.createElement(TextInput$8, {
       value: this.props.summaryText,
       onChange: this.change("summaryText")
-    }), /*#__PURE__*/React$1a.createElement(InfoTip$f, null, /*#__PURE__*/React$1a.createElement("p", null, "Short summary of the referenced section. This will be included in parentheses and quotes automatically."), /*#__PURE__*/React$1a.createElement("p", null, "Ex: The start ... the end")))));
+    }), /*#__PURE__*/React$1d.createElement(InfoTip$f, null, /*#__PURE__*/React$1d.createElement("p", null, "Short summary of the referenced section. This will be included in parentheses and quotes automatically."), /*#__PURE__*/React$1d.createElement("p", null, "Ex: The start ... the end")))));
   },
 
   serialize() {
@@ -39851,18 +40983,18 @@ var _module_$1c = {
 
 /* globals $_ */
 
-var React$19 = _react__default["default"];
+var React$1c = _react__default["default"];
 var _$P = _underscore__default["default"];
 var Changeable$x = _mixinsChangeableJsx;
 var PerseusMarkdown = _perseusMarkdownJsx;
 var WidgetJsonifyDeprecated$3 = _mixinsWidgetJsonifyDeprecatedJsx;
 var EN_DASH$2 = "\u2013";
-var PassageRef$1 = React$19.createClass({
+var PassageRef$1 = React$1c.createClass({
   displayName: "PassageRef",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$x.propTypes), {}, {
-    passageNumber: React$19.PropTypes.number,
-    referenceNumber: React$19.PropTypes.number,
-    summaryText: React$19.PropTypes.string
+    passageNumber: React$1c.PropTypes.number,
+    referenceNumber: React$1c.PropTypes.number,
+    summaryText: React$1c.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -39905,14 +41037,14 @@ var PassageRef$1 = React$19.createClass({
 
     if (this.props.summaryText) {
       var summaryTree = PerseusMarkdown.parseInline(this.props.summaryText);
-      summaryOutput = /*#__PURE__*/React$19.createElement("span", {
+      summaryOutput = /*#__PURE__*/React$1c.createElement("span", {
         "aria-hidden": true
       }, " ", "(\u201C", PerseusMarkdown.basicOutput(summaryTree), "\u201D)");
     } else {
       summaryOutput = null;
     }
 
-    return /*#__PURE__*/React$19.createElement("span", null, lineRangeOutput, summaryOutput, lineRange && /*#__PURE__*/React$19.createElement("div", {
+    return /*#__PURE__*/React$1c.createElement("span", null, lineRangeOutput, summaryOutput, lineRange && /*#__PURE__*/React$1c.createElement("div", {
       className: "perseus-sr-only"
     }, this.state.content));
   },
@@ -40002,19 +41134,19 @@ var _module_$1b = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$18 = _react__default["default"];
+var React$1b = _react__default["default"];
 var Changeable$w = _mixinsChangeableJsx;
 var EditorJsonify$e = _mixinsEditorJsonifyJsx;
 var Editor$8 = _editorJsx;
 var InfoTip$e = _componentsInfoTipJsx;
 var PropCheckBox$a = _componentsPropCheckBoxJsx;
-var PassageEditor = React$18.createClass({
+var PassageEditor = React$1b.createClass({
   displayName: "PassageEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$w.propTypes), {}, {
-    passageTitle: React$18.PropTypes.string,
-    passageText: React$18.PropTypes.string,
-    footnotes: React$18.PropTypes.string,
-    showLineNumbers: React$18.PropTypes.bool
+    passageTitle: React$1b.PropTypes.string,
+    passageText: React$1b.PropTypes.string,
+    footnotes: React$1b.PropTypes.string,
+    showLineNumbers: React$1b.PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -40034,7 +41166,7 @@ var PassageEditor = React$18.createClass({
   },
 
   render: function render() {
-    var passageEditor = /*#__PURE__*/React$18.createElement(Editor$8, {
+    var passageEditor = /*#__PURE__*/React$1b.createElement(Editor$8, {
       ref: "passage-editor",
       apiOptions: this.props.apiOptions,
       content: this.props.passageText,
@@ -40047,7 +41179,7 @@ var PassageEditor = React$18.createClass({
       },
       showWordCount: true
     });
-    var footnotesEditor = /*#__PURE__*/React$18.createElement(Editor$8, {
+    var footnotesEditor = /*#__PURE__*/React$1b.createElement(Editor$8, {
       ref: "passage-footnotes-editor",
       apiOptions: this.props.apiOptions,
       content: this.props.footnotes,
@@ -40059,16 +41191,16 @@ var PassageEditor = React$18.createClass({
         });
       }
     });
-    return /*#__PURE__*/React$18.createElement("div", {
+    return /*#__PURE__*/React$1b.createElement("div", {
       className: "perseus-widget-passage-editor"
-    }, /*#__PURE__*/React$18.createElement("div", {
+    }, /*#__PURE__*/React$1b.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$18.createElement(PropCheckBox$a, {
+    }, /*#__PURE__*/React$1b.createElement(PropCheckBox$a, {
       label: "Show line numbers",
       labelAlignment: "right",
       showLineNumbers: this.props.showLineNumbers,
       onChange: this.props.onChange
-    })), /*#__PURE__*/React$18.createElement("div", null, "Passage title:", /*#__PURE__*/React$18.createElement(InfoTip$e, null, /*#__PURE__*/React$18.createElement("p", null, "An optional title that will appear directly above the passage in the same font style. (E.g. Passage 1)")), /*#__PURE__*/React$18.createElement("div", null, /*#__PURE__*/React$18.createElement("input", {
+    })), /*#__PURE__*/React$1b.createElement("div", null, "Passage title:", /*#__PURE__*/React$1b.createElement(InfoTip$e, null, /*#__PURE__*/React$1b.createElement("p", null, "An optional title that will appear directly above the passage in the same font style. (E.g. Passage 1)")), /*#__PURE__*/React$1b.createElement("div", null, /*#__PURE__*/React$1b.createElement("input", {
       type: "text",
       defaultValue: this.props.passageTitle,
       onChange: e => {
@@ -40076,7 +41208,7 @@ var PassageEditor = React$18.createClass({
           passageTitle: e.target.value
         });
       }
-    }))), /*#__PURE__*/React$18.createElement("div", null, "Passage Text:", passageEditor), /*#__PURE__*/React$18.createElement("div", null, "Footnotes:", /*#__PURE__*/React$18.createElement(InfoTip$e, null, /*#__PURE__*/React$18.createElement("p", null, "To add footnotes, add ^ characters where they belong in the passage. Then, add ^ in the footnotes area to reference the footnotes in the passage.")), footnotesEditor));
+    }))), /*#__PURE__*/React$1b.createElement("div", null, "Passage Text:", passageEditor), /*#__PURE__*/React$1b.createElement("div", null, "Footnotes:", /*#__PURE__*/React$1b.createElement(InfoTip$e, null, /*#__PURE__*/React$1b.createElement("p", null, "To add footnotes, add ^ characters where they belong in the passage. Then, add ^ in the footnotes area to reference the footnotes in the passage.")), footnotesEditor));
   },
 
   serialize() {
@@ -40098,7 +41230,7 @@ var _module_$1a = {
 
 /* globals $_ */
 
-var React$17 = _react__default["default"];
+var React$1a = _react__default["default"];
 var SimpleMarkdown = _simpleMarkdown__default["default"];
 var _$O = _underscore__default["default"];
 var START_REF_PREFIX = "start-ref-";
@@ -40134,13 +41266,13 @@ var CIRCLE_LABEL_STYLE = {
   borderRadius: "50%",
   textAlign: "center"
 };
-var RefStart = React$17.createClass({
+var RefStart = React$1a.createClass({
   displayName: "RefStart",
   propTypes: {
-    refContent: React$17.PropTypes.node.isRequired
+    refContent: React$1a.PropTypes.node.isRequired
   },
   render: function render() {
-    return /*#__PURE__*/React$17.createElement("span", {
+    return /*#__PURE__*/React$1a.createElement("span", {
       style: REF_STYLE
     }, "_");
   },
@@ -40148,10 +41280,10 @@ var RefStart = React$17.createClass({
     return this.props.refContent;
   }
 });
-var RefEnd = React$17.createClass({
+var RefEnd = React$1a.createClass({
   displayName: "RefEnd",
   render: function render() {
-    return /*#__PURE__*/React$17.createElement("span", {
+    return /*#__PURE__*/React$1a.createElement("span", {
       style: REF_STYLE
     }, "_");
   }
@@ -40184,7 +41316,7 @@ var rules = {
       return footnote;
     },
     react: (node, output, state) => {
-      return /*#__PURE__*/React$17.createElement("sup", {
+      return /*#__PURE__*/React$1a.createElement("sup", {
         key: state.key
       }, node.text);
     }
@@ -40267,7 +41399,7 @@ var rules = {
 
 
       var refContent = output(node.refContent, {});
-      return /*#__PURE__*/React$17.createElement(RefStart, {
+      return /*#__PURE__*/React$1a.createElement(RefStart, {
         ref: START_REF_PREFIX + node.ref,
         key: START_REF_PREFIX + node.ref,
         refContent: refContent
@@ -40291,7 +41423,7 @@ var rules = {
     },
     react: (node, output, state) => {
       if (node.ref != null) {
-        return /*#__PURE__*/React$17.createElement(RefEnd, {
+        return /*#__PURE__*/React$1a.createElement(RefEnd, {
           ref: END_REF_PREFIX + node.ref,
           key: END_REF_PREFIX + node.ref
         });
@@ -40317,14 +41449,14 @@ var rules = {
       };
     },
     react: (node, output, state) => {
-      return [/*#__PURE__*/React$17.createElement("span", {
+      return [/*#__PURE__*/React$1a.createElement("span", {
         key: "visual-square",
         className: "perseus-passage-square-label",
         style: LABEL_OUTER_STYLE,
         "aria-hidden": "true"
-      }, /*#__PURE__*/React$17.createElement("span", {
+      }, /*#__PURE__*/React$1a.createElement("span", {
         style: SQUARE_LABEL_STYLE
-      }, node.content)), /*#__PURE__*/React$17.createElement("span", {
+      }, node.content)), /*#__PURE__*/React$1a.createElement("span", {
         key: "alt-text",
         className: "perseus-sr-only"
       }, $_({
@@ -40342,14 +41474,14 @@ var rules = {
       };
     },
     react: (node, output, state) => {
-      return [/*#__PURE__*/React$17.createElement("span", {
+      return [/*#__PURE__*/React$1a.createElement("span", {
         key: "visual-circle",
         className: "perseus-passage-circle-label",
         style: LABEL_OUTER_STYLE,
         "aria-hidden": true
-      }, /*#__PURE__*/React$17.createElement("span", {
+      }, /*#__PURE__*/React$1a.createElement("span", {
         style: CIRCLE_LABEL_STYLE
-      }, node.content)), /*#__PURE__*/React$17.createElement("span", {
+      }, node.content)), /*#__PURE__*/React$1a.createElement("span", {
         key: "alt-text",
         className: "perseus-sr-only"
       }, $_({
@@ -40371,11 +41503,11 @@ var rules = {
       };
     },
     react: (node, output, state) => {
-      return [/*#__PURE__*/React$17.createElement("span", {
+      return [/*#__PURE__*/React$1a.createElement("span", {
         key: "visual-brackets",
         className: "perseus-passage-bracket-label",
         "aria-hidden": "true"
-      }, "[", node.content, "]"), /*#__PURE__*/React$17.createElement("span", {
+      }, "[", node.content, "]"), /*#__PURE__*/React$1a.createElement("span", {
         key: "alt-text",
         className: "perseus-sr-only"
       }, $_({
@@ -40392,7 +41524,7 @@ var rules = {
       };
     },
     react: (node, output, state) => {
-      return [/*#__PURE__*/React$17.createElement("span", {
+      return [/*#__PURE__*/React$1a.createElement("span", {
         className: "perseus-highlight"
       }, node.content)];
     }
@@ -40406,7 +41538,7 @@ var rules = {
       };
     },
     react: (node, output, state) => {
-      return [/*#__PURE__*/React$17.createElement("span", {
+      return [/*#__PURE__*/React$1a.createElement("span", {
         className: "perseus-review-highlight"
       }, node.content)];
     }
@@ -40417,7 +41549,7 @@ var rules = {
   del: SimpleMarkdown.defaultRules.del,
   text: _objectSpread2(_objectSpread2({}, SimpleMarkdown.defaultRules.text), {}, {
     react(node, output, state) {
-      return /*#__PURE__*/React$17.createElement("span", {
+      return /*#__PURE__*/React$1a.createElement("span", {
         key: state.key
       }, node.content);
     }
@@ -40905,9 +42037,9 @@ var _module_$19 = {
  * them amenable to binary search - see `findBoundaryWordIndex` in ranges.js.
  */
 
-var React$16 = _react__default["default"];
+var React$19 = _react__default["default"];
 
-class WordIndexer$1 extends React$16.PureComponent {
+class WordIndexer$1 extends React$19.PureComponent {
   /* eslint-enable react/sort-comp */
   componentDidMount() {
     this._sendWordsUpdate();
@@ -41009,7 +42141,7 @@ class WordIndexer$1 extends React$16.PureComponent {
   }
 
   render() {
-    return /*#__PURE__*/React$16.createElement("div", {
+    return /*#__PURE__*/React$19.createElement("div", {
       ref: container => this._container = container
     }, this.props.children);
   }
@@ -41027,9 +42159,9 @@ var _module_$18 = {
  * function-as-children pattern.
  */
 
-var React$15 = _react__default["default"];
+var React$18 = _react__default["default"];
 
-class SelectionTracker$1 extends React$15.PureComponent {
+class SelectionTracker$1 extends React$18.PureComponent {
   constructor() {
     super(...arguments);
 
@@ -41177,7 +42309,7 @@ class SelectionTracker$1 extends React$15.PureComponent {
       trackedSelection
     } = this.state;
     var userIsMouseSelecting = mouseState === "down-and-selecting";
-    return this.props.children && /*#__PURE__*/React$15.createElement("div", null, this.props.children(trackedSelection, userIsMouseSelecting));
+    return this.props.children && /*#__PURE__*/React$18.createElement("div", null, this.props.children(trackedSelection, userIsMouseSelecting));
   }
 
 }
@@ -41327,9 +42459,9 @@ var _module_$17 = {
  * A tooltip to point to the focus of a highlight.
  */
 
-var React$14 = _react__default["default"];
+var React$17 = _react__default["default"];
 
-class HighlightTooltip$2 extends React$14.PureComponent {
+class HighlightTooltip$2 extends React$17.PureComponent {
   _getPosition() {
     var {
       focusNode,
@@ -41375,8 +42507,8 @@ class HighlightTooltip$2 extends React$14.PureComponent {
       return null;
     }
 
-    return /*#__PURE__*/React$14.createElement("div", {
-      className: aphrodite.css(styles$f.tooltip),
+    return /*#__PURE__*/React$17.createElement("div", {
+      className: aphrodite.css(styles$g.tooltip),
       onClick: this.props.onClick,
       onMouseEnter: this.props.onMouseEnter,
       onMouseLeave: this.props.onMouseLeave,
@@ -41385,16 +42517,16 @@ class HighlightTooltip$2 extends React$14.PureComponent {
         top: position.top,
         zIndex: this.props.zIndex
       }
-    }, /*#__PURE__*/React$14.createElement("div", {
-      className: aphrodite.css(styles$f.label)
-    }, this.props.label), /*#__PURE__*/React$14.createElement("div", {
-      className: aphrodite.css(styles$f.arrow)
+    }, /*#__PURE__*/React$17.createElement("div", {
+      className: aphrodite.css(styles$g.label)
+    }, this.props.label), /*#__PURE__*/React$17.createElement("div", {
+      className: aphrodite.css(styles$g.arrow)
     }));
   }
 
 }
 
-var styles$f = aphrodite.StyleSheet.create({
+var styles$g = aphrodite.StyleSheet.create({
   tooltip: {
     // Positioning.
     //
@@ -41594,11 +42726,11 @@ var _module_$15 = {
  * on each HighlightRenderer.
  */
 
-var React$13 = _react__default["default"];
+var React$16 = _react__default["default"];
 var HighlightRenderer = _highlightRendererJsx;
 var HighlightTooltip$1 = _highlightTooltipJsx;
 
-class HighlightSetRenderer$1 extends React$13.PureComponent {
+class HighlightSetRenderer$1 extends React$16.PureComponent {
   constructor() {
     super(...arguments);
 
@@ -41689,7 +42821,7 @@ class HighlightSetRenderer$1 extends React$13.PureComponent {
     }
 
     var hoveredHighlight = this.props.highlights[hoveredHighlightKey];
-    return /*#__PURE__*/React$13.createElement(HighlightTooltip$1, {
+    return /*#__PURE__*/React$16.createElement(HighlightTooltip$1, {
       label: i18n._("Remove highlight"),
       focusNode: hoveredHighlight.domRange.endContainer,
       focusOffset: hoveredHighlight.domRange.endOffset,
@@ -41706,7 +42838,7 @@ class HighlightSetRenderer$1 extends React$13.PureComponent {
   }
 
   render() {
-    return /*#__PURE__*/React$13.createElement("div", null, Object.keys(this.props.highlights).map(key => /*#__PURE__*/React$13.createElement(HighlightRenderer, {
+    return /*#__PURE__*/React$16.createElement("div", null, Object.keys(this.props.highlights).map(key => /*#__PURE__*/React$16.createElement(HighlightRenderer, {
       ref: r => {
         if (r) {
           this._highlightRenderers[key] = r;
@@ -41745,12 +42877,12 @@ var _module_$14 = {
  *     `HighlightingUI`.
  */
 
-var React$12 = _react__default["default"];
+var React$15 = _react__default["default"];
 var HighlightSetRenderer = _highlightSetRendererJsx;
 var HighlightTooltip = _highlightTooltipJsx;
 var SelectionTracker = _selectionTrackerJsx;
 
-class HighlightingUI$1 extends React$12.PureComponent {
+class HighlightingUI$1 extends React$15.PureComponent {
   _handleAddHighlight(highlightToAdd) {
     this.props.onAddHighlight(highlightToAdd); // Deselect the newly-highlighted text, by collapsing the selection
     // to the end of the range.
@@ -41794,10 +42926,10 @@ class HighlightingUI$1 extends React$12.PureComponent {
   }
 
   render() {
-    return /*#__PURE__*/React$12.createElement(SelectionTracker, {
+    return /*#__PURE__*/React$15.createElement(SelectionTracker, {
       buildHighlight: this.props.buildHighlight,
       enabled: this.props.editable
-    }, (trackedSelection, userIsMouseSelecting) => /*#__PURE__*/React$12.createElement("div", null, /*#__PURE__*/React$12.createElement(HighlightSetRenderer, {
+    }, (trackedSelection, userIsMouseSelecting) => /*#__PURE__*/React$15.createElement("div", null, /*#__PURE__*/React$15.createElement(HighlightSetRenderer, {
       editable:
       /* An existing highlight is editable when the
        * component is in editable mode, and there's no
@@ -41807,7 +42939,7 @@ class HighlightingUI$1 extends React$12.PureComponent {
       offsetParent: this.props.offsetParent,
       onRemoveHighlight: this.props.onRemoveHighlight,
       zIndexes: this.props.zIndexes
-    }), this._selectionIsValid(trackedSelection) && !userIsMouseSelecting && /*#__PURE__*/React$12.createElement(HighlightTooltip, {
+    }), this._selectionIsValid(trackedSelection) && !userIsMouseSelecting && /*#__PURE__*/React$15.createElement(HighlightTooltip, {
       label: i18n._("Add highlight"),
       onClick: () => this._handleAddHighlight(trackedSelection.proposedHighlight),
       focusNode: trackedSelection.focusNode,
@@ -41840,11 +42972,11 @@ var _module_$13 = {
  * down to this component. Easy peasy!
  */
 
-var React$11 = _react__default["default"];
+var React$14 = _react__default["default"];
 var HighlightingUI = _uiHighlightingUiJsx;
 var WordIndexer = _wordIndexerJsx;
 
-class HighlightableContent$1 extends React$11.PureComponent {
+class HighlightableContent$1 extends React$14.PureComponent {
   constructor() {
     super(...arguments);
 
@@ -41931,10 +43063,10 @@ class HighlightableContent$1 extends React$11.PureComponent {
 
     var buildHighlight = r => this._buildHighlight(r);
 
-    return /*#__PURE__*/React$11.createElement("div", {
-      className: aphrodite.css(styles$e.container),
+    return /*#__PURE__*/React$14.createElement("div", {
+      className: aphrodite.css(styles$f.container),
       ref: container => this._container = container
-    }, /*#__PURE__*/React$11.createElement("div", null, this.props.enabled && this._container && this._content && /*#__PURE__*/React$11.createElement(HighlightingUI, {
+    }, /*#__PURE__*/React$14.createElement("div", null, this.props.enabled && this._container && this._content && /*#__PURE__*/React$14.createElement(HighlightingUI, {
       buildHighlight: buildHighlight,
       contentNode: this._content,
       editable: this.props.editable,
@@ -41949,17 +43081,17 @@ class HighlightableContent$1 extends React$11.PureComponent {
       },
       onAddHighlight: this._handleAddHighlight,
       onRemoveHighlight: this._handleRemoveHighlight
-    })), /*#__PURE__*/React$11.createElement("div", {
-      className: aphrodite.css(styles$e.content),
+    })), /*#__PURE__*/React$14.createElement("div", {
+      className: aphrodite.css(styles$f.content),
       ref: content => this._content = content
-    }, /*#__PURE__*/React$11.createElement(WordIndexer, {
+    }, /*#__PURE__*/React$14.createElement(WordIndexer, {
       onWordsUpdate: this._handleWordsUpdate
     }, this.props.children)));
   }
 
 }
 
-var styles$e = aphrodite.StyleSheet.create({
+var styles$f = aphrodite.StyleSheet.create({
   // We render content with z-index 1, and highlights with z-index 0, so that
   // content will receive the browser's native pointer events. (Highlights
   // have their own magic code to manage hover detection, despite being
@@ -41994,8 +43126,8 @@ var _componentsHighlightingHighlightableContentJsx = _module_$13.exports;
 var _module_$12 = {
   exports: {}
 };
-var React$10 = _react__default["default"];
-var ReactDOM$9 = _reactDom__default["default"];
+var React$13 = _react__default["default"];
+var ReactDOM$c = _reactDom__default["default"];
 var _$N = _underscore__default["default"];
 var $$1 = $__default["default"];
 var HighlightableContent = _componentsHighlightingHighlightableContentJsx;
@@ -42005,7 +43137,7 @@ var PassageMarkdown = _passagePassageMarkdownJsx; // A fake paragraph to measure
 // the line height often ends up being a fractional number of pixels close to
 // 22 pixels.
 
-class LineHeightMeasurer extends React$10.Component {
+class LineHeightMeasurer extends React$13.Component {
   measureLineHeight() {
     if (typeof this._cachedLineHeight !== "number") {
       this.forceMeasureLineHeight();
@@ -42025,19 +43157,19 @@ class LineHeightMeasurer extends React$10.Component {
   }
 
   render() {
-    return /*#__PURE__*/React$10.createElement("div", {
-      className: aphrodite.css(styles$d.measurer)
-    }, /*#__PURE__*/React$10.createElement("div", null, /*#__PURE__*/React$10.createElement("div", {
+    return /*#__PURE__*/React$13.createElement("div", {
+      className: aphrodite.css(styles$e.measurer)
+    }, /*#__PURE__*/React$13.createElement("div", null, /*#__PURE__*/React$13.createElement("div", {
       ref: e => this.$body = $$1(e),
       className: "paragraph"
-    }), /*#__PURE__*/React$10.createElement("div", {
+    }), /*#__PURE__*/React$13.createElement("div", {
       ref: e => this.$end = $$1(e)
     })));
   }
 
 }
 
-var styles$d = aphrodite.StyleSheet.create({
+var styles$e = aphrodite.StyleSheet.create({
   measurer: {
     position: "absolute",
     width: "100%",
@@ -42046,7 +43178,7 @@ var styles$d = aphrodite.StyleSheet.create({
   }
 });
 
-class Passage extends React$10.Component {
+class Passage extends React$13.Component {
   constructor() {
     super(...arguments);
 
@@ -42136,7 +43268,7 @@ class Passage extends React$10.Component {
   }
 
   _measureLines() {
-    var $renderer = $$1(ReactDOM$9.findDOMNode(this.refs.content));
+    var $renderer = $$1(ReactDOM$c.findDOMNode(this.refs.content));
     var contentsHeight = $renderer.height();
 
     var lineHeight = this._getLineHeight();
@@ -42191,7 +43323,7 @@ class Passage extends React$10.Component {
       return null;
     }
 
-    var $ref = $$1(ReactDOM$9.findDOMNode(ref)); // We really care about the first text after the ref, not the
+    var $ref = $$1(ReactDOM$c.findDOMNode(ref)); // We really care about the first text after the ref, not the
     // ref element itself:
 
     var $refText = $ref.next();
@@ -42214,7 +43346,7 @@ class Passage extends React$10.Component {
       return null;
     }
 
-    var $ref = $$1(ReactDOM$9.findDOMNode(ref)); // We really care about the last text before the ref, not the
+    var $ref = $$1(ReactDOM$c.findDOMNode(ref)); // We really care about the last text before the ref, not the
     // ref element itself:
 
     var $refText = $ref.prev();
@@ -42244,7 +43376,7 @@ class Passage extends React$10.Component {
   }
 
   _convertPosToLineNumber(absoluteVPos) {
-    var $content = $$1(ReactDOM$9.findDOMNode(this.refs.content));
+    var $content = $$1(ReactDOM$c.findDOMNode(this.refs.content));
     var relativeVPos = absoluteVPos - $content.offset().top;
 
     var lineHeight = this._getLineHeight();
@@ -42334,7 +43466,7 @@ class Passage extends React$10.Component {
     }
 
     var parsedInstructions = PassageMarkdown.parse(instructions);
-    return /*#__PURE__*/React$10.createElement("div", {
+    return /*#__PURE__*/React$13.createElement("div", {
       className: "perseus-widget-passage-instructions"
     }, PassageMarkdown.output(parsedInstructions));
   }
@@ -42353,14 +43485,14 @@ class Passage extends React$10.Component {
     var enabled = this.state.stylesAreApplied; // Highlights are read-only in review mode.
 
     var editable = !this.props.reviewModeRubric;
-    return /*#__PURE__*/React$10.createElement(HighlightableContent, {
+    return /*#__PURE__*/React$13.createElement(HighlightableContent, {
       editable: editable,
       enabled: enabled,
       onSerializedHighlightsUpdate: this._handleSerializedHighlightsUpdate,
       serializedHighlights: this.props.highlights
-    }, /*#__PURE__*/React$10.createElement("div", {
+    }, /*#__PURE__*/React$13.createElement("div", {
       ref: "content"
-    }, /*#__PURE__*/React$10.createElement(LineHeightMeasurer, {
+    }, /*#__PURE__*/React$13.createElement(LineHeightMeasurer, {
       ref: e => this._lineHeightMeasurer = e
     }), PassageMarkdown.output(parsed)));
   }
@@ -42389,12 +43521,12 @@ class Passage extends React$10.Component {
       // in earlier passages.
       lineNumbers = _$N.range(1, nLines + 1).map(lineN => {
         if (lineN === 4 && nLines > 4) {
-          return /*#__PURE__*/React$10.createElement("span", {
+          return /*#__PURE__*/React$13.createElement("span", {
             key: "line-marker",
             className: "line-marker"
           }, "Line");
         } else {
-          return /*#__PURE__*/React$10.createElement("span", {
+          return /*#__PURE__*/React$13.createElement("span", {
             key: lineN
           }, lineN + this.state.startLineNumbersAfter);
         }
@@ -42408,36 +43540,36 @@ class Passage extends React$10.Component {
     var parsedContent = PassageMarkdown.parse(this.props.passageText, parseState); // Check if the title has any non-empty text in it.
 
     var hasTitle = /\S/.test(this.props.passageTitle);
-    return /*#__PURE__*/React$10.createElement("div", null, /*#__PURE__*/React$10.createElement("div", {
+    return /*#__PURE__*/React$13.createElement("div", null, /*#__PURE__*/React$13.createElement("div", {
       className: "perseus-widget-passage-container"
-    }, this._renderInstructions(parseState), /*#__PURE__*/React$10.createElement("div", {
+    }, this._renderInstructions(parseState), /*#__PURE__*/React$13.createElement("div", {
       className: "perseus-widget-passage"
-    }, hasTitle && /*#__PURE__*/React$10.createElement("h3", {
+    }, hasTitle && /*#__PURE__*/React$13.createElement("h3", {
       className: "passage-title"
-    }, /*#__PURE__*/React$10.createElement(Renderer$d, {
+    }, /*#__PURE__*/React$13.createElement(Renderer$d, {
       content: this.props.passageTitle,
       linterContext: this.props.linterContext
-    })), lineNumbers && /*#__PURE__*/React$10.createElement("div", {
+    })), lineNumbers && /*#__PURE__*/React$13.createElement("div", {
       className: "line-numbers",
       "aria-hidden": true
-    }, lineNumbers), !hasTitle && /*#__PURE__*/React$10.createElement("h3", {
+    }, lineNumbers), !hasTitle && /*#__PURE__*/React$13.createElement("h3", {
       className: "perseus-sr-only"
-    }, i18n._("Beginning of reading passage.")), /*#__PURE__*/React$10.createElement("div", {
+    }, i18n._("Beginning of reading passage.")), /*#__PURE__*/React$13.createElement("div", {
       className: "passage-text"
     }, this.shouldRenderJipt() ?
     /*#__PURE__*/
     // If we're in JIPT mode, just pass off our
     // content to a <Renderer /> which knows how
     // to handle rendering JIPT text.
-    React$10.createElement(Renderer$d, {
+    React$13.createElement(Renderer$d, {
       content: this.props.passageText
-    }) : this._renderContent(parsedContent)), this._hasFootnotes() && [/*#__PURE__*/React$10.createElement("h4", {
+    }) : this._renderContent(parsedContent)), this._hasFootnotes() && [/*#__PURE__*/React$13.createElement("h4", {
       key: "footnote-start",
       className: "perseus-sr-only"
-    }, i18n._("Beginning of reading passage footnotes.")), /*#__PURE__*/React$10.createElement("div", {
+    }, i18n._("Beginning of reading passage footnotes.")), /*#__PURE__*/React$13.createElement("div", {
       key: "footnotes",
       className: "footnotes"
-    }, this._renderFootnotes())], /*#__PURE__*/React$10.createElement("div", {
+    }, this._renderFootnotes())], /*#__PURE__*/React$13.createElement("div", {
       className: "perseus-sr-only"
     }, i18n._("End of reading passage.")))));
   }
@@ -42473,7 +43605,7 @@ var _module_$11 = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$$ = _react__default["default"];
+var React$12 = _react__default["default"];
 var _$M = _underscore__default["default"];
 var InfoTip$d = _componentsInfoTipJsx;
 var TextListEditor$2 = _componentsTextListEditorJsx;
@@ -42481,14 +43613,14 @@ var NORMAL$1 = "normal",
     AUTO$1 = "auto",
     HORIZONTAL$1 = "horizontal",
     VERTICAL$1 = "vertical";
-var OrdererEditor = React$$.createClass({
+var OrdererEditor = React$12.createClass({
   displayName: "OrdererEditor",
   propTypes: {
-    correctOptions: React$$.PropTypes.array,
-    otherOptions: React$$.PropTypes.array,
-    height: React$$.PropTypes.oneOf([NORMAL$1, AUTO$1]),
-    layout: React$$.PropTypes.oneOf([HORIZONTAL$1, VERTICAL$1]),
-    onChange: React$$.PropTypes.func.isRequired
+    correctOptions: React$12.PropTypes.array,
+    otherOptions: React$12.PropTypes.array,
+    height: React$12.PropTypes.oneOf([NORMAL$1, AUTO$1]),
+    layout: React$12.PropTypes.oneOf([HORIZONTAL$1, VERTICAL$1]),
+    onChange: React$12.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -42503,31 +43635,31 @@ var OrdererEditor = React$$.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$$.createElement("div", {
+    return /*#__PURE__*/React$12.createElement("div", {
       className: "perseus-widget-orderer"
-    }, /*#__PURE__*/React$$.createElement("div", null, " ", "Correct answer:", " ", /*#__PURE__*/React$$.createElement(InfoTip$d, null, /*#__PURE__*/React$$.createElement("p", null, "Place the cards in the correct order. The same card can be used more than once in the answer but will only be displayed once at the top of a stack of identical cards."))), /*#__PURE__*/React$$.createElement(TextListEditor$2, {
+    }, /*#__PURE__*/React$12.createElement("div", null, " ", "Correct answer:", " ", /*#__PURE__*/React$12.createElement(InfoTip$d, null, /*#__PURE__*/React$12.createElement("p", null, "Place the cards in the correct order. The same card can be used more than once in the answer but will only be displayed once at the top of a stack of identical cards."))), /*#__PURE__*/React$12.createElement(TextListEditor$2, {
       options: _$M.pluck(this.props.correctOptions, "content"),
       onChange: this.onOptionsChange.bind(this, "correctOptions"),
       layout: this.props.layout
-    }), /*#__PURE__*/React$$.createElement("div", null, " ", "Other cards:", " ", /*#__PURE__*/React$$.createElement(InfoTip$d, null, /*#__PURE__*/React$$.createElement("p", null, "Create cards that are not part of the answer."))), /*#__PURE__*/React$$.createElement(TextListEditor$2, {
+    }), /*#__PURE__*/React$12.createElement("div", null, " ", "Other cards:", " ", /*#__PURE__*/React$12.createElement(InfoTip$d, null, /*#__PURE__*/React$12.createElement("p", null, "Create cards that are not part of the answer."))), /*#__PURE__*/React$12.createElement(TextListEditor$2, {
       options: _$M.pluck(this.props.otherOptions, "content"),
       onChange: this.onOptionsChange.bind(this, "otherOptions"),
       layout: this.props.layout
-    }), /*#__PURE__*/React$$.createElement("div", null, /*#__PURE__*/React$$.createElement("label", null, " ", "Layout:", " ", /*#__PURE__*/React$$.createElement("select", {
+    }), /*#__PURE__*/React$12.createElement("div", null, /*#__PURE__*/React$12.createElement("label", null, " ", "Layout:", " ", /*#__PURE__*/React$12.createElement("select", {
       value: this.props.layout,
       onChange: this.onLayoutChange
-    }, /*#__PURE__*/React$$.createElement("option", {
+    }, /*#__PURE__*/React$12.createElement("option", {
       value: HORIZONTAL$1
-    }, "Horizontal"), /*#__PURE__*/React$$.createElement("option", {
+    }, "Horizontal"), /*#__PURE__*/React$12.createElement("option", {
       value: VERTICAL$1
-    }, "Vertical"))), /*#__PURE__*/React$$.createElement(InfoTip$d, null, /*#__PURE__*/React$$.createElement("p", null, "Use the horizontal layout for short text and small images. The vertical layout is best for longer text (e.g. proofs)."))), /*#__PURE__*/React$$.createElement("div", null, /*#__PURE__*/React$$.createElement("label", null, " ", "Height:", " ", /*#__PURE__*/React$$.createElement("select", {
+    }, "Vertical"))), /*#__PURE__*/React$12.createElement(InfoTip$d, null, /*#__PURE__*/React$12.createElement("p", null, "Use the horizontal layout for short text and small images. The vertical layout is best for longer text (e.g. proofs)."))), /*#__PURE__*/React$12.createElement("div", null, /*#__PURE__*/React$12.createElement("label", null, " ", "Height:", " ", /*#__PURE__*/React$12.createElement("select", {
       value: this.props.height,
       onChange: this.onHeightChange
-    }, /*#__PURE__*/React$$.createElement("option", {
+    }, /*#__PURE__*/React$12.createElement("option", {
       value: NORMAL$1
-    }, "Normal"), /*#__PURE__*/React$$.createElement("option", {
+    }, "Normal"), /*#__PURE__*/React$12.createElement("option", {
       value: AUTO$1
-    }, "Automatic"))), /*#__PURE__*/React$$.createElement(InfoTip$d, null, /*#__PURE__*/React$$.createElement("p", null, "Use \"Normal\" for text, \"Automatic\" for images."))));
+    }, "Automatic"))), /*#__PURE__*/React$12.createElement(InfoTip$d, null, /*#__PURE__*/React$12.createElement("p", null, "Use \"Normal\" for text, \"Automatic\" for images."))));
   },
   onOptionsChange: function onOptionsChange(whichOptions, options, cb) {
     var props = {};
@@ -42589,25 +43721,25 @@ var _module_$10 = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$_ = _react__default["default"];
-var ReactDOM$8 = _reactDom__default["default"];
+var React$11 = _react__default["default"];
+var ReactDOM$b = _reactDom__default["default"];
 var _$L = _underscore__default["default"];
 var Renderer$c = _rendererJsx;
 var Util$8 = Util$q;
 var ApiClassNames$7 = _perseusApiJsx.ClassNames;
-var PlaceholderCard = React$_.createClass({
+var PlaceholderCard = React$11.createClass({
   displayName: "PlaceholderCard",
   propTypes: {
-    width: React$_.PropTypes.number.isRequired,
-    height: React$_.PropTypes.number.isRequired
+    width: React$11.PropTypes.number.isRequired,
+    height: React$11.PropTypes.number.isRequired
   },
   render: function render() {
-    return /*#__PURE__*/React$_.createElement("div", {
+    return /*#__PURE__*/React$11.createElement("div", {
       className: "card-wrap " + ApiClassNames$7.INTERACTIVE,
       style: {
         width: this.props.width
       }
-    }, /*#__PURE__*/React$_.createElement("div", {
+    }, /*#__PURE__*/React$11.createElement("div", {
       className: "card placeholder",
       style: {
         height: this.props.height
@@ -42615,37 +43747,37 @@ var PlaceholderCard = React$_.createClass({
     }));
   }
 });
-var DragHintCard = React$_.createClass({
+var DragHintCard = React$11.createClass({
   displayName: "DragHintCard",
   render: function render() {
-    return /*#__PURE__*/React$_.createElement("div", {
+    return /*#__PURE__*/React$11.createElement("div", {
       className: "card-wrap " + ApiClassNames$7.INTERACTIVE
-    }, /*#__PURE__*/React$_.createElement("div", {
+    }, /*#__PURE__*/React$11.createElement("div", {
       className: "card drag-hint"
     }));
   }
 });
-var PropTypes = {
-  position: React$_.PropTypes.shape({
-    left: React$_.PropTypes.number,
-    top: React$_.PropTypes.number
+var PropTypes$3 = {
+  position: React$11.PropTypes.shape({
+    left: React$11.PropTypes.number,
+    top: React$11.PropTypes.number
   })
 };
-var Card = React$_.createClass({
+var Card = React$11.createClass({
   displayName: "Card",
   propTypes: {
-    floating: React$_.PropTypes.bool.isRequired,
-    animating: React$_.PropTypes.bool,
-    width: React$_.PropTypes.number,
-    stack: React$_.PropTypes.bool,
-    onMouseDown: React$_.PropTypes.func,
-    onMouseMove: React$_.PropTypes.func,
-    onMouseUp: React$_.PropTypes.func,
+    floating: React$11.PropTypes.bool.isRequired,
+    animating: React$11.PropTypes.bool,
+    width: React$11.PropTypes.number,
+    stack: React$11.PropTypes.bool,
+    onMouseDown: React$11.PropTypes.func,
+    onMouseMove: React$11.PropTypes.func,
+    onMouseUp: React$11.PropTypes.func,
     // Used only for floating/animating cards
-    startMouse: PropTypes.position,
-    startOffset: PropTypes.position,
-    animateTo: PropTypes.position,
-    onAnimationEnd: React$_.PropTypes.func,
+    startMouse: PropTypes$3.position,
+    startOffset: PropTypes$3.position,
+    animateTo: PropTypes$3.position,
+    onAnimationEnd: React$11.PropTypes.func,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -42686,7 +43818,7 @@ var Card = React$_.createClass({
     var rendererProps = _$L.pick(this.props, "content");
 
     var onMouseDown = this.props.animating ? $.noop : this.onMouseDown;
-    return /*#__PURE__*/React$_.createElement("div", {
+    return /*#__PURE__*/React$11.createElement("div", {
       className: "card-wrap " + ApiClassNames$7.INTERACTIVE,
       style: style,
       onMouseDown: onMouseDown,
@@ -42694,9 +43826,9 @@ var Card = React$_.createClass({
       onTouchMove: this.onMouseMove,
       onTouchEnd: this.onMouseUp,
       onTouchCancel: this.onMouseUp
-    }, /*#__PURE__*/React$_.createElement("div", {
+    }, /*#__PURE__*/React$11.createElement("div", {
       className: className.join(" ")
-    }, /*#__PURE__*/React$_.createElement(Renderer$c, _extends({}, rendererProps, {
+    }, /*#__PURE__*/React$11.createElement(Renderer$c, _extends({}, rendererProps, {
       linterContext: this.props.linterContext
     }))));
   },
@@ -42719,7 +43851,7 @@ var Card = React$_.createClass({
       // needs to travel. (Why sqrt? Just because it looks nice -- with a
       // linear scale, far things take too long to come back.)
       var ms = 15 * Math.sqrt(Math.sqrt(Math.pow(this.props.animateTo.left - this.props.startOffset.left, 2) + Math.pow(this.props.animateTo.top - this.props.startOffset.top, 2)));
-      $(ReactDOM$8.findDOMNode(this)).animate(this.props.animateTo, Math.max(ms, 1), this.props.onAnimationEnd);
+      $(ReactDOM$b.findDOMNode(this)).animate(this.props.animateTo, Math.max(ms, 1), this.props.onAnimationEnd);
     }
   },
   componentWillUnmount: function componentWillUnmount() {
@@ -42772,15 +43904,15 @@ var NORMAL = "normal",
     AUTO = "auto",
     HORIZONTAL = "horizontal",
     VERTICAL = "vertical";
-var Orderer = React$_.createClass({
+var Orderer = React$11.createClass({
   displayName: "Orderer",
   propTypes: {
-    correctOptions: React$_.PropTypes.array,
-    current: React$_.PropTypes.array,
-    height: React$_.PropTypes.oneOf([NORMAL, AUTO]),
-    layout: React$_.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-    options: React$_.PropTypes.array,
-    trackInteraction: React$_.PropTypes.func.isRequired,
+    correctOptions: React$11.PropTypes.array,
+    current: React$11.PropTypes.array,
+    height: React$11.PropTypes.oneOf([NORMAL, AUTO]),
+    layout: React$11.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
+    options: React$11.PropTypes.array,
+    trackInteraction: React$11.PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -42809,7 +43941,7 @@ var Orderer = React$_.createClass({
   },
   render: function render() {
     // This is the card we are currently dragging
-    var dragging = this.state.dragging && /*#__PURE__*/React$_.createElement(Card, {
+    var dragging = this.state.dragging && /*#__PURE__*/React$11.createElement(Card, {
       ref: "dragging",
       floating: true,
       content: this.state.dragContent,
@@ -42823,7 +43955,7 @@ var Orderer = React$_.createClass({
       linterContext: this.props.linterContext
     }); // This is the card that is currently animating
 
-    var animating = this.state.animating && /*#__PURE__*/React$_.createElement(Card, {
+    var animating = this.state.animating && /*#__PURE__*/React$11.createElement(Card, {
       floating: true,
       animating: true,
       content: this.state.dragContent,
@@ -42836,7 +43968,7 @@ var Orderer = React$_.createClass({
     }); // This is the list of draggable, rearrangable cards
 
     var sortableCards = _$L.map(this.state.current, function (opt, i) {
-      return /*#__PURE__*/React$_.createElement(Card, {
+      return /*#__PURE__*/React$11.createElement(Card, {
         ref: "sortable" + i,
         fakeRef: "sortable" + i,
         floating: false,
@@ -42849,7 +43981,7 @@ var Orderer = React$_.createClass({
     }, this);
 
     if (this.state.placeholderIndex != null) {
-      var placeholder = /*#__PURE__*/React$_.createElement(PlaceholderCard, {
+      var placeholder = /*#__PURE__*/React$11.createElement(PlaceholderCard, {
         ref: "placeholder",
         width: this.state.dragWidth,
         height: this.state.dragHeight,
@@ -42861,17 +43993,17 @@ var Orderer = React$_.createClass({
     var anySortableCards = sortableCards.length > 0;
     sortableCards.push(dragging, animating); // If there are no cards in the list, then add a "hint" card
 
-    var sortable = /*#__PURE__*/React$_.createElement("div", {
+    var sortable = /*#__PURE__*/React$11.createElement("div", {
       className: "perseus-clearfix draggable-box"
-    }, !anySortableCards && /*#__PURE__*/React$_.createElement(DragHintCard, null), /*#__PURE__*/React$_.createElement("div", {
+    }, !anySortableCards && /*#__PURE__*/React$11.createElement(DragHintCard, null), /*#__PURE__*/React$11.createElement("div", {
       ref: "dragList"
     }, sortableCards)); // This is the bank of stacks of cards
 
-    var bank = /*#__PURE__*/React$_.createElement("div", {
+    var bank = /*#__PURE__*/React$11.createElement("div", {
       ref: "bank",
       className: "bank perseus-clearfix"
     }, _$L.map(this.props.options, (opt, i) => {
-      return /*#__PURE__*/React$_.createElement(Card, {
+      return /*#__PURE__*/React$11.createElement(Card, {
         ref: "bank" + i,
         floating: false,
         content: opt.content,
@@ -42883,13 +44015,13 @@ var Orderer = React$_.createClass({
         onMouseUp: this.onRelease
       });
     }, this));
-    return /*#__PURE__*/React$_.createElement("div", {
+    return /*#__PURE__*/React$11.createElement("div", {
       className: "draggy-boxy-thing orderer " + "height-" + this.props.height + " " + "layout-" + this.props.layout + " " + "above-scratchpad blank-background " + "perseus-clearfix " + ApiClassNames$7.INTERACTIVE,
       ref: "orderer"
     }, bank, sortable);
   },
   onClick: function onClick(type, index, loc, draggable) {
-    var $draggable = $(ReactDOM$8.findDOMNode(draggable));
+    var $draggable = $(ReactDOM$b.findDOMNode(draggable));
     var list = this.state.current.slice();
     var opt;
     var placeholderIndex = null;
@@ -42955,7 +44087,7 @@ var Orderer = React$_.createClass({
     // TODO(alpert): Update mouse position once more before animating?
 
 
-    var offset = $(ReactDOM$8.findDOMNode(draggable)).position();
+    var offset = $(ReactDOM$b.findDOMNode(draggable)).position();
     var finalOffset = null;
 
     if (inCardBank) {
@@ -42963,13 +44095,13 @@ var Orderer = React$_.createClass({
       // one with the same content
       _$L.each(this.props.options, function (opt, i) {
         if (opt.content === this.state.dragContent) {
-          var card = ReactDOM$8.findDOMNode(this.refs["bank" + i]);
+          var card = ReactDOM$b.findDOMNode(this.refs["bank" + i]);
           finalOffset = $(card).position();
         }
       }, this);
     } else if (this.refs.placeholder != null) {
       // Otherwise, go to the position that the placeholder is at
-      finalOffset = $(ReactDOM$8.findDOMNode(this.refs.placeholder)).position();
+      finalOffset = $(ReactDOM$b.findDOMNode(this.refs.placeholder)).position();
     }
 
     if (finalOffset == null) {
@@ -43010,18 +44142,18 @@ var Orderer = React$_.createClass({
   findCorrectIndex: function findCorrectIndex(draggable, list) {
     // Find the correct index for a card given the current cards.
     var isHorizontal = this.props.layout === HORIZONTAL,
-        $dragList = $(ReactDOM$8.findDOMNode(this.refs.dragList)),
+        $dragList = $(ReactDOM$b.findDOMNode(this.refs.dragList)),
         leftEdge = $dragList.offset().left,
         topEdge = $dragList.offset().top,
-        midWidth = $(ReactDOM$8.findDOMNode(draggable)).offset().left - leftEdge,
-        midHeight = $(ReactDOM$8.findDOMNode(draggable)).offset().top - topEdge,
+        midWidth = $(ReactDOM$b.findDOMNode(draggable)).offset().left - leftEdge,
+        midHeight = $(ReactDOM$b.findDOMNode(draggable)).offset().top - topEdge,
         index = 0,
         sumWidth = 0,
         sumHeight = 0;
 
     if (isHorizontal) {
       _$L.each(list, function (opt, i) {
-        var card = ReactDOM$8.findDOMNode(this.refs["sortable" + i]);
+        var card = ReactDOM$b.findDOMNode(this.refs["sortable" + i]);
         var outerWidth = $(card).outerWidth(true);
 
         if (midWidth > sumWidth + outerWidth / 2) {
@@ -43032,7 +44164,7 @@ var Orderer = React$_.createClass({
       }, this);
     } else {
       _$L.each(list, function (opt, i) {
-        var card = ReactDOM$8.findDOMNode(this.refs["sortable" + i]);
+        var card = ReactDOM$b.findDOMNode(this.refs["sortable" + i]);
         var outerHeight = $(card).outerHeight(true);
 
         if (midHeight > sumHeight + outerHeight / 2) {
@@ -43051,14 +44183,14 @@ var Orderer = React$_.createClass({
     }
 
     var isHorizontal = this.props.layout === HORIZONTAL,
-        $draggable = $(ReactDOM$8.findDOMNode(draggable)),
-        $bank = $(ReactDOM$8.findDOMNode(this.refs.bank)),
+        $draggable = $(ReactDOM$b.findDOMNode(draggable)),
+        $bank = $(ReactDOM$b.findDOMNode(this.refs.bank)),
         draggableOffset = $draggable.offset(),
         bankOffset = $bank.offset(),
         draggableHeight = $draggable.outerHeight(true),
         bankHeight = $bank.outerHeight(true),
         bankWidth = $bank.outerWidth(true),
-        dragList = ReactDOM$8.findDOMNode(this.refs.dragList);
+        dragList = ReactDOM$b.findDOMNode(this.refs.dragList);
         $(dragList).width();
         var draggableWidth = $draggable.outerWidth(true);
 
@@ -43117,10 +44249,10 @@ var _module_$$ = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$Z = _react__default["default"];
+var React$10 = _react__default["default"];
 var _$K = _underscore__default["default"];
 var EditorJsonify$d = _mixinsEditorJsonifyJsx;
-var ButtonGroup$6 = _reactComponentsButtonGroupJsx__default["default"];
+var ButtonGroup$6 = _reactComponentsButtonGroupJsx;
 var InfoTip$c = _componentsInfoTipJsx;
 var NumberInput$9 = _componentsNumberInputJsx;
 var PropCheckBox$9 = _componentsPropCheckBoxJsx;
@@ -43130,24 +44262,24 @@ var knumber$3 = _kmath3.number;
 var bound$1 = (x, gt, lt) => Math.min(Math.max(x, gt), lt);
 
 var EN_DASH$1 = "\u2013";
-var NumberLineEditor = React$Z.createClass({
+var NumberLineEditor = React$10.createClass({
   displayName: "NumberLineEditor",
   propTypes: {
-    range: React$Z.PropTypes.arrayOf(React$Z.PropTypes.number).isRequired,
-    labelRange: React$Z.PropTypes.arrayOf(React$Z.PropTypes.number).isRequired,
-    labelStyle: React$Z.PropTypes.string.isRequired,
-    labelTicks: React$Z.PropTypes.bool,
-    divisionRange: React$Z.PropTypes.arrayOf(React$Z.PropTypes.number).isRequired,
-    numDivisions: React$Z.PropTypes.number.isRequired,
-    snapDivisions: React$Z.PropTypes.number,
-    tickStep: React$Z.PropTypes.number,
-    correctRel: React$Z.PropTypes.oneOf(["lt", "gt", "le", "ge", "eq"]),
-    correctX: React$Z.PropTypes.number,
-    initialX: React$Z.PropTypes.number,
-    isTickCtrl: React$Z.PropTypes.bool,
-    onChange: React$Z.PropTypes.func.isRequired,
-    static: React$Z.PropTypes.bool,
-    showTooltips: React$Z.PropTypes.bool
+    range: React$10.PropTypes.arrayOf(React$10.PropTypes.number).isRequired,
+    labelRange: React$10.PropTypes.arrayOf(React$10.PropTypes.number).isRequired,
+    labelStyle: React$10.PropTypes.string.isRequired,
+    labelTicks: React$10.PropTypes.bool,
+    divisionRange: React$10.PropTypes.arrayOf(React$10.PropTypes.number).isRequired,
+    numDivisions: React$10.PropTypes.number.isRequired,
+    snapDivisions: React$10.PropTypes.number,
+    tickStep: React$10.PropTypes.number,
+    correctRel: React$10.PropTypes.oneOf(["lt", "gt", "le", "ge", "eq"]),
+    correctX: React$10.PropTypes.number,
+    initialX: React$10.PropTypes.number,
+    isTickCtrl: React$10.PropTypes.bool,
+    onChange: React$10.PropTypes.func.isRequired,
+    static: React$10.PropTypes.bool,
+    showTooltips: React$10.PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -43289,24 +44421,24 @@ var NumberLineEditor = React$Z.createClass({
       content: "\u2078\u2044\u2084",
       title: "Non-reduced"
     }];
-    return /*#__PURE__*/React$Z.createElement("div", {
+    return /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-number-line-editor"
-    }, /*#__PURE__*/React$Z.createElement("div", {
+    }, /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, "Correct x", " ", /*#__PURE__*/React$Z.createElement("select", {
+    }, "Correct x", " ", /*#__PURE__*/React$10.createElement("select", {
       value: this.props.correctRel,
       onChange: this.onChangeRelation
-    }, /*#__PURE__*/React$Z.createElement("option", {
+    }, /*#__PURE__*/React$10.createElement("option", {
       value: "eq"
-    }, " = "), /*#__PURE__*/React$Z.createElement("option", {
+    }, " = "), /*#__PURE__*/React$10.createElement("option", {
       value: "lt"
-    }, " < "), /*#__PURE__*/React$Z.createElement("option", {
+    }, " < "), /*#__PURE__*/React$10.createElement("option", {
       value: "gt"
-    }, " > "), /*#__PURE__*/React$Z.createElement("option", {
+    }, " > "), /*#__PURE__*/React$10.createElement("option", {
       value: "le"
-    }, " \u2264 "), /*#__PURE__*/React$Z.createElement("option", {
+    }, " \u2264 "), /*#__PURE__*/React$10.createElement("option", {
       value: "ge"
-    }, " \u2265 ")), " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    }, " \u2265 ")), " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: this.props.correctX,
       format: this.props.labelStyle,
       onChange: this.onNumChange.bind(this, "correctX"),
@@ -43314,9 +44446,9 @@ var NumberLineEditor = React$Z.createClass({
       placeholder: "answer",
       size: "normal",
       useArrowKeys: true
-    }), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This is the correct answer. The answer is validated (as right or wrong) by using only the end position of the point and the relation (=, <, >, \u2264, \u2265)."))), /*#__PURE__*/React$Z.createElement("div", {
+    }), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This is the correct answer. The answer is validated (as right or wrong) by using only the end position of the point and the relation (=, <, >, \u2264, \u2265)."))), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, this.props.static ? /*#__PURE__*/React$Z.createElement("label", null, "Range:") : /*#__PURE__*/React$Z.createElement("label", null, "Position:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    }, this.props.static ? /*#__PURE__*/React$10.createElement("label", null, "Range:") : /*#__PURE__*/React$10.createElement("label", null, "Position:", " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: this.props.initialX,
       format: this.props.labelStyle,
       onChange: this.onNumChange.bind(this, "initialX"),
@@ -43327,59 +44459,59 @@ var NumberLineEditor = React$Z.createClass({
       useArrowKeys: true
     }), " \u2208 "
     /* element of (little E) symbol @Nolint */
-    ), /*#__PURE__*/React$Z.createElement(RangeInput$3, {
+    ), /*#__PURE__*/React$10.createElement(RangeInput$3, {
       value: range,
       onChange: this.onRangeChange,
       format: this.props.labelStyle,
       useArrowKeys: true
-    }), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This controls the initial position of the point along the number line and the", /*#__PURE__*/React$Z.createElement("strong", null, "range"), ", the position of the endpoints of the number line. Setting the range constrains the position of the answer and the labels."), /*#__PURE__*/React$Z.createElement("p", null, "In static mode, the initial position of the point is determined by Correct x instead of position."))), /*#__PURE__*/React$Z.createElement("div", {
+    }), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This controls the initial position of the point along the number line and the", /*#__PURE__*/React$10.createElement("strong", null, "range"), ", the position of the endpoints of the number line. Setting the range constrains the position of the answer and the labels."), /*#__PURE__*/React$10.createElement("p", null, "In static mode, the initial position of the point is determined by Correct x instead of position."))), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$Z.createElement("div", {
+    }, /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "Labels:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    }, "Labels:", " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: labelRange[0],
       placeholder: range[0],
       format: this.props.labelStyle,
       checkValidity: val => val >= range[0] && val <= range[1],
       onChange: this.onLabelRangeChange.bind(this, 0),
       useArrowKeys: true
-    }), /*#__PURE__*/React$Z.createElement("span", null, " & "), /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    }), /*#__PURE__*/React$10.createElement("span", null, " & "), /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: labelRange[1],
       placeholder: range[1],
       format: this.props.labelStyle,
       checkValidity: val => val >= range[0] && val <= range[1],
       onChange: this.onLabelRangeChange.bind(this, 1),
       useArrowKeys: true
-    }), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This controls the position of the left / right labels. By default, the labels are set by the range ", /*#__PURE__*/React$Z.createElement("br", null), /*#__PURE__*/React$Z.createElement("strong", null, "Note:"), " Ensure that the labels line up with the tick marks, or it may be confusing for users.")))), /*#__PURE__*/React$Z.createElement("div", {
+    }), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This controls the position of the left / right labels. By default, the labels are set by the range ", /*#__PURE__*/React$10.createElement("br", null), /*#__PURE__*/React$10.createElement("strong", null, "Note:"), " Ensure that the labels line up with the tick marks, or it may be confusing for users.")))), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, "Style:", " ", /*#__PURE__*/React$Z.createElement(ButtonGroup$6, {
+    }, "Style:", " ", /*#__PURE__*/React$10.createElement(ButtonGroup$6, {
       allowEmpty: false,
       value: this.props.labelStyle,
       buttons: labelStyleEditorButtons,
       onChange: this.onLabelStyleChange
-    }), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This controls the styling of the labels for the two main labels as well as all the tick mark labels, if applicable. Your choices are decimal, improper fractions, mixed fractions, and non-reduced fractions."))), /*#__PURE__*/React$Z.createElement("div", {
+    }), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This controls the styling of the labels for the two main labels as well as all the tick mark labels, if applicable. Your choices are decimal, improper fractions, mixed fractions, and non-reduced fractions."))), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, !this.props.static && /*#__PURE__*/React$Z.createElement("div", {
+    }, !this.props.static && /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-left-col"
-    }, /*#__PURE__*/React$Z.createElement(PropCheckBox$9, {
+    }, /*#__PURE__*/React$10.createElement(PropCheckBox$9, {
       label: "Show tick controller",
       isTickCtrl: this.props.isTickCtrl,
       onChange: this.props.onChange
-    })), /*#__PURE__*/React$Z.createElement("div", {
+    })), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-right-col"
-    }, /*#__PURE__*/React$Z.createElement(PropCheckBox$9, {
+    }, /*#__PURE__*/React$10.createElement(PropCheckBox$9, {
       label: "Show label ticks",
       labelTicks: this.props.labelTicks,
       onChange: this.props.onChange
-    }))), /*#__PURE__*/React$Z.createElement("div", {
+    }))), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, !this.props.static && /*#__PURE__*/React$Z.createElement(PropCheckBox$9, {
+    }, !this.props.static && /*#__PURE__*/React$10.createElement(PropCheckBox$9, {
       label: "Show tooltips",
       showTooltips: this.props.showTooltips,
       onChange: this.props.onChange
-    })), /*#__PURE__*/React$Z.createElement("div", {
+    })), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, isTickCtrl && /*#__PURE__*/React$Z.createElement("span", null, /*#__PURE__*/React$Z.createElement("label", null, "Start num divisions at", " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    }, isTickCtrl && /*#__PURE__*/React$10.createElement("span", null, /*#__PURE__*/React$10.createElement("label", null, "Start num divisions at", " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: this.props.numDivisions || null,
       format: "decimal",
       onChange: this.onNumDivisionsChange,
@@ -43388,7 +44520,7 @@ var NumberLineEditor = React$Z.createClass({
       },
       placeholder: width / this.props.tickStep,
       useArrowKeys: true
-    })), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This controls the number (and position) of the tick marks. The number of divisions is constrained to", " " + divisionRange[0] + EN_DASH$1 + divisionRange[1], ".", /*#__PURE__*/React$Z.createElement("br", null), /*#__PURE__*/React$Z.createElement("strong", null, "Note:"), " The user will be able to specify the number of divisions in a number input."))), !isTickCtrl && /*#__PURE__*/React$Z.createElement("span", null, /*#__PURE__*/React$Z.createElement("label", null, "Num divisions:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    })), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This controls the number (and position) of the tick marks. The number of divisions is constrained to", " " + divisionRange[0] + EN_DASH$1 + divisionRange[1], ".", /*#__PURE__*/React$10.createElement("br", null), /*#__PURE__*/React$10.createElement("strong", null, "Note:"), " The user will be able to specify the number of divisions in a number input."))), !isTickCtrl && /*#__PURE__*/React$10.createElement("span", null, /*#__PURE__*/React$10.createElement("label", null, "Num divisions:", " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: this.props.numDivisions || null,
       format: "decimal",
       onChange: this.onNumDivisionsChange,
@@ -43397,7 +44529,7 @@ var NumberLineEditor = React$Z.createClass({
       },
       placeholder: width / this.props.tickStep,
       useArrowKeys: true
-    })), " ", /*#__PURE__*/React$Z.createElement("label", null, "or tick step:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    })), " ", /*#__PURE__*/React$10.createElement("label", null, "or tick step:", " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: this.props.tickStep || null,
       format: this.props.labelStyle,
       onChange: this.onTickStepChange,
@@ -43406,15 +44538,15 @@ var NumberLineEditor = React$Z.createClass({
       },
       placeholder: width / this.props.numDivisions,
       useArrowKeys: true
-    })), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This controls the number (and position) of the tick marks; you can either set the number of divisions (2 divisions would split the entire range in two halves), or the tick step (the distance between ticks) and the other value will be updated accordingly.", " ", /*#__PURE__*/React$Z.createElement("br", null), /*#__PURE__*/React$Z.createElement("strong", null, "Note:"), " There is no check to see if labels coordinate with the tick marks, which may be confusing for users if the blue labels and black ticks are off-step.")))), /*#__PURE__*/React$Z.createElement("div", {
+    })), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This controls the number (and position) of the tick marks; you can either set the number of divisions (2 divisions would split the entire range in two halves), or the tick step (the distance between ticks) and the other value will be updated accordingly.", " ", /*#__PURE__*/React$10.createElement("br", null), /*#__PURE__*/React$10.createElement("strong", null, "Note:"), " There is no check to see if labels coordinate with the tick marks, which may be confusing for users if the blue labels and black ticks are off-step.")))), /*#__PURE__*/React$10.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$Z.createElement("label", null, "Snap increments per tick:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$9, {
+    }, /*#__PURE__*/React$10.createElement("label", null, "Snap increments per tick:", " ", /*#__PURE__*/React$10.createElement(NumberInput$9, {
       value: snapDivisions,
       checkValidity: val => val > 0,
       format: this.props.labelStyle,
       onChange: this.onNumChange.bind(this, "snapDivisions"),
       useArrowKeys: true
-    })), /*#__PURE__*/React$Z.createElement(InfoTip$c, null, /*#__PURE__*/React$Z.createElement("p", null, "This determines the number of different places the point will snap between two adjacent tick marks.", " ", /*#__PURE__*/React$Z.createElement("br", null), /*#__PURE__*/React$Z.createElement("strong", null, "Note:"), "Ensure the required number of snap increments is provided to answer the question."))));
+    })), /*#__PURE__*/React$10.createElement(InfoTip$c, null, /*#__PURE__*/React$10.createElement("p", null, "This determines the number of different places the point will snap between two adjacent tick marks.", " ", /*#__PURE__*/React$10.createElement("br", null), /*#__PURE__*/React$10.createElement("strong", null, "Note:"), "Ensure the required number of snap increments is provided to answer the question."))));
   }
 });
 _module_$$.exports = NumberLineEditor;
@@ -43431,8 +44563,8 @@ var _module_$_ = {
 
 /* globals i18n, $_ */
 
-var React$Y = _react__default["default"];
-var ReactDOM$7 = _reactDom__default["default"];
+var React$$ = _react__default["default"];
+var ReactDOM$a = _reactDom__default["default"];
 var _$J = _underscore__default["default"];
 var Changeable$v = _mixinsChangeableJsx;
 var NumberInput$8 = _componentsNumberInputJsx;
@@ -43577,28 +44709,28 @@ var TickMarks = Graphie$3.createSimpleClass((graphie, props) => {
   });
   return results;
 });
-var NumberLine = React$Y.createClass({
+var NumberLine = React$$.createClass({
   displayName: "NumberLine",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$v.propTypes), {}, {
-    range: React$Y.PropTypes.arrayOf(React$Y.PropTypes.number).isRequired,
-    labelRange: React$Y.PropTypes.arrayOf(React$Y.PropTypes.number).isRequired,
-    labelStyle: React$Y.PropTypes.string.isRequired,
-    labelTicks: React$Y.PropTypes.bool.isRequired,
-    divisionRange: React$Y.PropTypes.arrayOf(React$Y.PropTypes.number).isRequired,
-    numDivisions: React$Y.PropTypes.number.isRequired,
-    snapDivisions: React$Y.PropTypes.number.isRequired,
-    isTickCtrl: React$Y.PropTypes.bool.isRequired,
-    isInequality: React$Y.PropTypes.bool.isRequired,
-    numLinePosition: React$Y.PropTypes.number.isRequired,
-    rel: React$Y.PropTypes.oneOf(["lt", "gt", "le", "ge"]),
-    onFocus: React$Y.PropTypes.func.isRequired,
-    onBlur: React$Y.PropTypes.func.isRequired,
-    onChange: React$Y.PropTypes.func.isRequired,
+    range: React$$.PropTypes.arrayOf(React$$.PropTypes.number).isRequired,
+    labelRange: React$$.PropTypes.arrayOf(React$$.PropTypes.number).isRequired,
+    labelStyle: React$$.PropTypes.string.isRequired,
+    labelTicks: React$$.PropTypes.bool.isRequired,
+    divisionRange: React$$.PropTypes.arrayOf(React$$.PropTypes.number).isRequired,
+    numDivisions: React$$.PropTypes.number.isRequired,
+    snapDivisions: React$$.PropTypes.number.isRequired,
+    isTickCtrl: React$$.PropTypes.bool.isRequired,
+    isInequality: React$$.PropTypes.bool.isRequired,
+    numLinePosition: React$$.PropTypes.number.isRequired,
+    rel: React$$.PropTypes.oneOf(["lt", "gt", "le", "ge"]),
+    onFocus: React$$.PropTypes.func.isRequired,
+    onBlur: React$$.PropTypes.func.isRequired,
+    onChange: React$$.PropTypes.func.isRequired,
     apiOptions: ApiOptions$i.propTypes,
     keypadElement: keypadElementPropType$4,
-    static: React$Y.PropTypes.bool,
-    showTooltips: React$Y.PropTypes.bool,
-    trackInteraction: React$Y.PropTypes.func.isRequired
+    static: React$$.PropTypes.bool,
+    showTooltips: React$$.PropTypes.bool,
+    trackInteraction: React$$.PropTypes.func.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -43698,7 +44830,7 @@ var NumberLine = React$Y.createClass({
   },
   getDOMNodeForPath: function getDOMNodeForPath(inputPath) {
     if (inputPath.length === 1) {
-      return ReactDOM$7.findDOMNode(this.refs[inputPath[0]]);
+      return ReactDOM$a.findDOMNode(this.refs[inputPath[0]]);
     }
   },
   getGrammarTypeForPath: function getGrammarTypeForPath(inputPath) {
@@ -43723,7 +44855,7 @@ var NumberLine = React$Y.createClass({
       tickStep: width / this.props.numDivisions
     });
 
-    return /*#__PURE__*/React$Y.createElement(Graphie$3, {
+    return /*#__PURE__*/React$$.createElement(Graphie$3, {
       ref: "graphie" // HACK(emily): We key this graphie on the label style because
       // when the label style changes we want to resize the graphie,
       // which isn't doable without throwing away the graphie and
@@ -43738,7 +44870,7 @@ var NumberLine = React$Y.createClass({
       setup: this._setupGraphie,
       setDrawingAreaAvailable: this.props.apiOptions.setDrawingAreaAvailable,
       isMobile: this.props.apiOptions.isMobile
-    }, /*#__PURE__*/React$Y.createElement(TickMarks, _extends({}, _$J.pick(props, ["range", "numDivisions", "labelTicks", "labelStyle", "labelRange", "tickStep"]), {
+    }, /*#__PURE__*/React$$.createElement(TickMarks, _extends({}, _$J.pick(props, ["range", "numDivisions", "labelTicks", "labelStyle", "labelRange", "tickStep"]), {
       isMobile: this.props.apiOptions.isMobile
     })), this._renderInequality(props), this._renderNumberLinePoint(props));
   },
@@ -43778,7 +44910,7 @@ var NumberLine = React$Y.createClass({
       stroke: KhanColors$4.INTERACTIVE,
       "fill-opacity": isOpen ? 0 : 1
     } : {};
-    return /*#__PURE__*/React$Y.createElement(MovablePoint$2, {
+    return /*#__PURE__*/React$$.createElement(MovablePoint$2, {
       ref: "numberLinePoint",
       pointSize: 6,
       coord: [props.numLinePosition, 0],
@@ -43837,7 +44969,7 @@ var NumberLine = React$Y.createClass({
         strokeWidth: 3.5
       };
       var isGreater = ["ge", "gt"].includes(props.rel);
-      return /*#__PURE__*/React$Y.createElement(Line$1 // We shift the line to either side of the dot so they don't
+      return /*#__PURE__*/React$$.createElement(Line$1 // We shift the line to either side of the dot so they don't
       // intersect
       , {
         start: [(isGreater ? 0.4 : -0.4) + props.numLinePosition, 0],
@@ -43894,12 +45026,12 @@ var NumberLine = React$Y.createClass({
     var divisionRange = this.props.divisionRange;
     var divRangeString = divisionRange[0] + EN_DASH + divisionRange[1];
     var invalidNumDivisions = this.props.numDivisions < divisionRange[0] || this.props.numDivisions > divisionRange[1];
-    var inequalityControls = /*#__PURE__*/React$Y.createElement("div", null, /*#__PURE__*/React$Y.createElement("input", {
+    var inequalityControls = /*#__PURE__*/React$$.createElement("div", null, /*#__PURE__*/React$$.createElement("input", {
       type: "button",
       className: "simple-button",
       value: i18n._("Switch direction"),
       onClick: this.handleReverse
-    }), /*#__PURE__*/React$Y.createElement("input", {
+    }), /*#__PURE__*/React$$.createElement("input", {
       type: "button",
       className: "simple-button",
       value: ["le", "ge"].includes(this.props.rel) ? i18n._("Make circle open") : i18n._("Make circle filled"),
@@ -43918,7 +45050,7 @@ var NumberLine = React$Y.createClass({
         Input = NumberInput$8;
       }
 
-      tickCtrl = /*#__PURE__*/React$Y.createElement("label", null, i18n._("Number of divisions:"), " ", /*#__PURE__*/React$Y.createElement(Input, {
+      tickCtrl = /*#__PURE__*/React$$.createElement("label", null, i18n._("Number of divisions:"), " ", /*#__PURE__*/React$$.createElement(Input, {
         ref: "tick-ctrl",
         value: this.state.numDivisionsEmpty ? null : this.props.numDivisions || divisionRange[0],
         checkValidity: val => val >= divisionRange[0] && val <= divisionRange[1],
@@ -43930,11 +45062,11 @@ var NumberLine = React$Y.createClass({
       }));
     }
 
-    return /*#__PURE__*/React$Y.createElement("div", {
+    return /*#__PURE__*/React$$.createElement("div", {
       className: "perseus-widget " + "perseus-widget-interactive-number-line"
-    }, tickCtrl, !this.isValid() ? /*#__PURE__*/React$Y.createElement("div", {
+    }, tickCtrl, !this.isValid() ? /*#__PURE__*/React$$.createElement("div", {
       className: "perseus-error"
-    }, "Invalid number line configuration.") : this.props.isTickCtrl && invalidNumDivisions ? /*#__PURE__*/React$Y.createElement("div", {
+    }, "Invalid number line configuration.") : this.props.isTickCtrl && invalidNumDivisions ? /*#__PURE__*/React$$.createElement("div", {
       className: "perseus-error"
     }, $_({
       divRangeString: divRangeString
@@ -44047,16 +45179,16 @@ var _widgetsNumberLineJsx = _module_$_.exports;
 var _module_$Z = {
   exports: {}
 };
-var React$X = _react__default["default"];
+var React$_ = _react__default["default"];
 var EditorJsonify$c = _mixinsEditorJsonifyJsx;
 var Changeable$u = _mixinsChangeableJsx;
 var NumberInput$7 = _componentsNumberInputJsx;
 var TextInput$7 = _componentsTextInputJsx;
-var MoleculeWidgetEditor = React$X.createClass({
+var MoleculeWidgetEditor = React$_.createClass({
   displayName: "MoleculeWidgetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$u.propTypes), {}, {
-    rotationAngle: React$X.PropTypes.number,
-    smiles: React$X.PropTypes.string
+    rotationAngle: React$_.PropTypes.number,
+    smiles: React$_.PropTypes.string
   }),
 
   change() {
@@ -44083,10 +45215,10 @@ var MoleculeWidgetEditor = React$X.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$X.createElement("div", null, /*#__PURE__*/React$X.createElement("div", null, /*#__PURE__*/React$X.createElement("label", null, "SMILES:\xA0", /*#__PURE__*/React$X.createElement(TextInput$7, {
+    return /*#__PURE__*/React$_.createElement("div", null, /*#__PURE__*/React$_.createElement("div", null, /*#__PURE__*/React$_.createElement("label", null, "SMILES:\xA0", /*#__PURE__*/React$_.createElement(TextInput$7, {
       onChange: this.updateMolecule,
       value: this.props.smiles
-    }))), /*#__PURE__*/React$X.createElement("div", null, /*#__PURE__*/React$X.createElement("label", null, "Rotation (deg):\xA0", /*#__PURE__*/React$X.createElement(NumberInput$7, {
+    }))), /*#__PURE__*/React$_.createElement("div", null, /*#__PURE__*/React$_.createElement("label", null, "Rotation (deg):\xA0", /*#__PURE__*/React$_.createElement(NumberInput$7, {
       onChange: this.updateRotation,
       value: this.props.rotationAngle
     }))));
@@ -44104,7 +45236,7 @@ var _module_$Y = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$W = _react__default["default"];
+var React$Z = _react__default["default"];
 var _$I = _underscore__default["default"];
 var Changeable$t = _mixinsChangeableJsx;
 var EditorJsonify$b = _mixinsEditorJsonifyJsx;
@@ -44117,22 +45249,22 @@ var defaultImage$1 = {
   top: 0,
   left: 0
 };
-var MeasurerEditor = React$W.createClass({
+var MeasurerEditor = React$Z.createClass({
   displayName: "MeasurerEditor",
   className: "perseus-widget-measurer",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$t.propTypes), {}, {
-    box: React$W.PropTypes.arrayOf(React$W.PropTypes.number),
-    image: React$W.PropTypes.shape({
-      url: React$W.PropTypes.string,
-      top: React$W.PropTypes.number,
-      left: React$W.PropTypes.number
+    box: React$Z.PropTypes.arrayOf(React$Z.PropTypes.number),
+    image: React$Z.PropTypes.shape({
+      url: React$Z.PropTypes.string,
+      top: React$Z.PropTypes.number,
+      left: React$Z.PropTypes.number
     }),
-    showProtractor: React$W.PropTypes.bool,
-    showRuler: React$W.PropTypes.bool,
-    rulerLabel: React$W.PropTypes.string,
-    rulerTicks: React$W.PropTypes.number,
-    rulerPixels: React$W.PropTypes.number,
-    rulerLength: React$W.PropTypes.number
+    showProtractor: React$Z.PropTypes.bool,
+    showRuler: React$Z.PropTypes.bool,
+    rulerLabel: React$Z.PropTypes.string,
+    rulerTicks: React$Z.PropTypes.number,
+    rulerPixels: React$Z.PropTypes.number,
+    rulerLength: React$Z.PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -44149,71 +45281,71 @@ var MeasurerEditor = React$W.createClass({
   render: function render() {
     var image = _$I.extend({}, defaultImage$1, this.props.image);
 
-    return /*#__PURE__*/React$W.createElement("div", {
+    return /*#__PURE__*/React$Z.createElement("div", {
       className: "perseus-widget-measurer"
-    }, /*#__PURE__*/React$W.createElement("div", null, "Image displayed under protractor and/or ruler:"), /*#__PURE__*/React$W.createElement("div", null, "URL:", " ", /*#__PURE__*/React$W.createElement("input", {
+    }, /*#__PURE__*/React$Z.createElement("div", null, "Image displayed under protractor and/or ruler:"), /*#__PURE__*/React$Z.createElement("div", null, "URL:", " ", /*#__PURE__*/React$Z.createElement("input", {
       type: "text",
       className: "perseus-widget-measurer-url",
       ref: "image-url",
       defaultValue: image.url,
       onChange: this._changeUrl
-    }), /*#__PURE__*/React$W.createElement(InfoTip$b, null, /*#__PURE__*/React$W.createElement("p", null, "Create an image in graphie, or use the \"Add image\" function to create a background."))), image.url && /*#__PURE__*/React$W.createElement("div", {
+    }), /*#__PURE__*/React$Z.createElement(InfoTip$b, null, /*#__PURE__*/React$Z.createElement("p", null, "Create an image in graphie, or use the \"Add image\" function to create a background."))), image.url && /*#__PURE__*/React$Z.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$W.createElement("label", {
+    }, /*#__PURE__*/React$Z.createElement("label", {
       className: "perseus-widget-left-col"
-    }, "Pixels from top:", " ", /*#__PURE__*/React$W.createElement(NumberInput$6, {
+    }, "Pixels from top:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$6, {
       placeholder: 0,
       onChange: this._changeTop,
       value: image.top,
       useArrowKeys: true
-    })), /*#__PURE__*/React$W.createElement("label", {
+    })), /*#__PURE__*/React$Z.createElement("label", {
       className: "perseus-widget-right-col"
-    }, "Pixels from left:", " ", /*#__PURE__*/React$W.createElement(NumberInput$6, {
+    }, "Pixels from left:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$6, {
       placeholder: 0,
       onChange: this._changeLeft,
       value: image.left,
       useArrowKeys: true
-    }))), /*#__PURE__*/React$W.createElement("div", null, "Containing area [width, height]:", " ", /*#__PURE__*/React$W.createElement(RangeInput$2, {
+    }))), /*#__PURE__*/React$Z.createElement("div", null, "Containing area [width, height]:", " ", /*#__PURE__*/React$Z.createElement(RangeInput$2, {
       onChange: this.change("box"),
       value: this.props.box,
       useArrowKeys: true
-    })), /*#__PURE__*/React$W.createElement("div", {
+    })), /*#__PURE__*/React$Z.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$W.createElement("div", {
+    }, /*#__PURE__*/React$Z.createElement("div", {
       className: "perseus-widget-left-col"
-    }, /*#__PURE__*/React$W.createElement(PropCheckBox$8, {
+    }, /*#__PURE__*/React$Z.createElement(PropCheckBox$8, {
       label: "Show ruler",
       showRuler: this.props.showRuler,
       onChange: this.props.onChange
-    })), /*#__PURE__*/React$W.createElement("div", {
+    })), /*#__PURE__*/React$Z.createElement("div", {
       className: "perseus-widget-right-col"
-    }, /*#__PURE__*/React$W.createElement(PropCheckBox$8, {
+    }, /*#__PURE__*/React$Z.createElement(PropCheckBox$8, {
       label: "Show protractor",
       showProtractor: this.props.showProtractor,
       onChange: this.props.onChange
-    }))), this.props.showRuler && /*#__PURE__*/React$W.createElement("div", null, /*#__PURE__*/React$W.createElement("div", null, /*#__PURE__*/React$W.createElement("label", null, " ", "Ruler label:", " ", /*#__PURE__*/React$W.createElement("select", {
+    }))), this.props.showRuler && /*#__PURE__*/React$Z.createElement("div", null, /*#__PURE__*/React$Z.createElement("div", null, /*#__PURE__*/React$Z.createElement("label", null, " ", "Ruler label:", " ", /*#__PURE__*/React$Z.createElement("select", {
       onChange: e => this.change("rulerLabel", e.target.value),
       value: this.props.rulerLabel
-    }, /*#__PURE__*/React$W.createElement("option", {
+    }, /*#__PURE__*/React$Z.createElement("option", {
       value: ""
-    }, "None"), /*#__PURE__*/React$W.createElement("optgroup", {
+    }, "None"), /*#__PURE__*/React$Z.createElement("optgroup", {
       label: "Metric"
-    }, this.renderLabelChoices([["milimeters", "mm"], ["centimeters", "cm"], ["meters", "m"], ["kilometers", "km"]])), /*#__PURE__*/React$W.createElement("optgroup", {
+    }, this.renderLabelChoices([["milimeters", "mm"], ["centimeters", "cm"], ["meters", "m"], ["kilometers", "km"]])), /*#__PURE__*/React$Z.createElement("optgroup", {
       label: "Imperial"
-    }, this.renderLabelChoices([["inches", "in"], ["feet", "ft"], ["yards", "yd"], ["miles", "mi"]]))))), /*#__PURE__*/React$W.createElement("div", null, /*#__PURE__*/React$W.createElement("label", null, " ", "Ruler ticks:", " ", /*#__PURE__*/React$W.createElement("select", {
+    }, this.renderLabelChoices([["inches", "in"], ["feet", "ft"], ["yards", "yd"], ["miles", "mi"]]))))), /*#__PURE__*/React$Z.createElement("div", null, /*#__PURE__*/React$Z.createElement("label", null, " ", "Ruler ticks:", " ", /*#__PURE__*/React$Z.createElement("select", {
       onChange: e => this.change("rulerTicks", +e.target.value),
       value: this.props.rulerTicks
     }, _$I.map([1, 2, 4, 8, 10, 16], function (n) {
-      return /*#__PURE__*/React$W.createElement("option", {
+      return /*#__PURE__*/React$Z.createElement("option", {
         key: n,
         value: n
       }, n);
-    })))), /*#__PURE__*/React$W.createElement("div", null, /*#__PURE__*/React$W.createElement("label", null, "Ruler pixels per unit:", " ", /*#__PURE__*/React$W.createElement(NumberInput$6, {
+    })))), /*#__PURE__*/React$Z.createElement("div", null, /*#__PURE__*/React$Z.createElement("label", null, "Ruler pixels per unit:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$6, {
       placeholder: 40,
       onChange: this.change("rulerPixels"),
       value: this.props.rulerPixels,
       useArrowKeys: true
-    }))), /*#__PURE__*/React$W.createElement("div", null, /*#__PURE__*/React$W.createElement("label", null, "Ruler length in units:", " ", /*#__PURE__*/React$W.createElement(NumberInput$6, {
+    }))), /*#__PURE__*/React$Z.createElement("div", null, /*#__PURE__*/React$Z.createElement("label", null, "Ruler length in units:", " ", /*#__PURE__*/React$Z.createElement(NumberInput$6, {
       placeholder: 10,
       onChange: this.change("rulerLength"),
       value: this.props.rulerLength,
@@ -44247,7 +45379,7 @@ var MeasurerEditor = React$W.createClass({
   renderLabelChoices: function renderLabelChoices(choices) {
     return _$I.map(choices, function (nameAndValue) {
       var [name, value] = nameAndValue;
-      return /*#__PURE__*/React$W.createElement("option", {
+      return /*#__PURE__*/React$Z.createElement("option", {
         key: value,
         value: value
       }, name);
@@ -44271,8 +45403,8 @@ var _module_$X = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$V = _react__default["default"];
-var ReactDOM$6 = _reactDom__default["default"];
+var React$Y = _react__default["default"];
+var ReactDOM$9 = _reactDom__default["default"];
 var _2$1 = _underscore__default["default"];
 var ApiOptions$h = _perseusApiJsx.Options;
 var GraphUtils$1 = _utilGraphUtilsJs;
@@ -44281,24 +45413,24 @@ var defaultImage = {
   top: 0,
   left: 0
 };
-var Measurer = React$V.createClass({
+var Measurer = React$Y.createClass({
   displayName: "Measurer",
   propTypes: {
     apiOptions: ApiOptions$h.propTypes,
-    box: React$V.PropTypes.arrayOf(React$V.PropTypes.number),
-    image: React$V.PropTypes.shape({
-      url: React$V.PropTypes.string,
-      top: React$V.PropTypes.number,
-      left: React$V.PropTypes.number
+    box: React$Y.PropTypes.arrayOf(React$Y.PropTypes.number),
+    image: React$Y.PropTypes.shape({
+      url: React$Y.PropTypes.string,
+      top: React$Y.PropTypes.number,
+      left: React$Y.PropTypes.number
     }),
-    showProtractor: React$V.PropTypes.bool,
-    protractorX: React$V.PropTypes.number,
-    protractorY: React$V.PropTypes.number,
-    showRuler: React$V.PropTypes.bool,
-    rulerLabel: React$V.PropTypes.string,
-    rulerTicks: React$V.PropTypes.number,
-    rulerPixels: React$V.PropTypes.number,
-    rulerLength: React$V.PropTypes.number
+    showProtractor: React$Y.PropTypes.bool,
+    protractorX: React$Y.PropTypes.number,
+    protractorY: React$Y.PropTypes.number,
+    showRuler: React$Y.PropTypes.bool,
+    rulerLabel: React$Y.PropTypes.string,
+    rulerTicks: React$Y.PropTypes.number,
+    rulerPixels: React$Y.PropTypes.number,
+    rulerLength: React$Y.PropTypes.number
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -44320,19 +45452,19 @@ var Measurer = React$V.createClass({
   render: function render() {
     var image = _2$1.extend({}, defaultImage, this.props.image);
 
-    return /*#__PURE__*/React$V.createElement("div", {
+    return /*#__PURE__*/React$Y.createElement("div", {
       className: "perseus-widget perseus-widget-measurer " + "graphie-container above-scratchpad",
       style: {
         width: this.props.box[0],
         height: this.props.box[1]
       }
-    }, image.url && /*#__PURE__*/React$V.createElement("img", {
+    }, image.url && /*#__PURE__*/React$Y.createElement("img", {
       src: image.url,
       style: {
         top: image.top,
         left: image.left
       }
-    }), /*#__PURE__*/React$V.createElement("div", {
+    }), /*#__PURE__*/React$Y.createElement("div", {
       className: "graphie",
       ref: "graphieDiv"
     }));
@@ -44350,7 +45482,7 @@ var Measurer = React$V.createClass({
     }
   },
   setupGraphie: function setupGraphie() {
-    var graphieDiv = ReactDOM$6.findDOMNode(this.refs.graphieDiv);
+    var graphieDiv = ReactDOM$9.findDOMNode(this.refs.graphieDiv);
     $(graphieDiv).empty();
     var graphie = this.graphie = GraphUtils$1.createGraphie(graphieDiv);
     var scale = [40, 40];
@@ -44441,19 +45573,19 @@ var _module_$W = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$U = _react__default["default"];
+var React$X = _react__default["default"];
 var _$H = _underscore__default["default"];
 var InfoTip$a = _componentsInfoTipJsx;
 var PropCheckBox$7 = _componentsPropCheckBoxJsx;
 var TextListEditor$1 = _componentsTextListEditorJsx;
-var MatcherEditor = React$U.createClass({
+var MatcherEditor = React$X.createClass({
   displayName: "MatcherEditor",
   propTypes: {
-    left: React$U.PropTypes.array,
-    right: React$U.PropTypes.array,
-    labels: React$U.PropTypes.array,
-    orderMatters: React$U.PropTypes.bool,
-    padding: React$U.PropTypes.bool
+    left: React$X.PropTypes.array,
+    right: React$X.PropTypes.array,
+    labels: React$X.PropTypes.array,
+    orderMatters: React$X.PropTypes.bool,
+    padding: React$X.PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -44465,11 +45597,11 @@ var MatcherEditor = React$U.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$U.createElement("div", {
+    return /*#__PURE__*/React$X.createElement("div", {
       className: "perseus-matcher-editor"
-    }, /*#__PURE__*/React$U.createElement("div", null, " ", "Correct answer:", " ", /*#__PURE__*/React$U.createElement(InfoTip$a, null, /*#__PURE__*/React$U.createElement("p", null, "Enter the correct answers here. The preview on the right will show the cards in a randomized order, which is how the student will see them."))), /*#__PURE__*/React$U.createElement("div", {
+    }, /*#__PURE__*/React$X.createElement("div", null, " ", "Correct answer:", " ", /*#__PURE__*/React$X.createElement(InfoTip$a, null, /*#__PURE__*/React$X.createElement("p", null, "Enter the correct answers here. The preview on the right will show the cards in a randomized order, which is how the student will see them."))), /*#__PURE__*/React$X.createElement("div", {
       className: "perseus-clearfix"
-    }, /*#__PURE__*/React$U.createElement(TextListEditor$1, {
+    }, /*#__PURE__*/React$X.createElement(TextListEditor$1, {
       options: this.props.left,
       onChange: (options, cb) => {
         this.props.onChange({
@@ -44477,7 +45609,7 @@ var MatcherEditor = React$U.createClass({
         }, cb);
       },
       layout: "vertical"
-    }), /*#__PURE__*/React$U.createElement(TextListEditor$1, {
+    }), /*#__PURE__*/React$X.createElement(TextListEditor$1, {
       options: this.props.right,
       onChange: (options, cb) => {
         this.props.onChange({
@@ -44485,23 +45617,23 @@ var MatcherEditor = React$U.createClass({
         }, cb);
       },
       layout: "vertical"
-    })), /*#__PURE__*/React$U.createElement("span", null, " ", "Labels:", " ", /*#__PURE__*/React$U.createElement(InfoTip$a, null, /*#__PURE__*/React$U.createElement("p", null, "These are entirely optional."))), /*#__PURE__*/React$U.createElement("div", null, /*#__PURE__*/React$U.createElement("input", {
+    })), /*#__PURE__*/React$X.createElement("span", null, " ", "Labels:", " ", /*#__PURE__*/React$X.createElement(InfoTip$a, null, /*#__PURE__*/React$X.createElement("p", null, "These are entirely optional."))), /*#__PURE__*/React$X.createElement("div", null, /*#__PURE__*/React$X.createElement("input", {
       type: "text",
       defaultValue: this.props.labels[0],
       onChange: this.onLabelChange.bind(this, 0)
-    }), /*#__PURE__*/React$U.createElement("input", {
+    }), /*#__PURE__*/React$X.createElement("input", {
       type: "text",
       defaultValue: this.props.labels[1],
       onChange: this.onLabelChange.bind(this, 1)
-    })), /*#__PURE__*/React$U.createElement("div", null, /*#__PURE__*/React$U.createElement(PropCheckBox$7, {
+    })), /*#__PURE__*/React$X.createElement("div", null, /*#__PURE__*/React$X.createElement(PropCheckBox$7, {
       label: "Order of the matched pairs matters:",
       orderMatters: this.props.orderMatters,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$U.createElement(InfoTip$a, null, /*#__PURE__*/React$U.createElement("p", null, "With this option enabled, only the order provided above will be treated as correct. This is useful when ordering is significant, such as in the context of a proof."), /*#__PURE__*/React$U.createElement("p", null, "If disabled, pairwise matching is sufficient. To make this clear, the left column becomes fixed in the provided order and only the cards in the right column can be moved."))), /*#__PURE__*/React$U.createElement("div", null, /*#__PURE__*/React$U.createElement(PropCheckBox$7, {
+    }), /*#__PURE__*/React$X.createElement(InfoTip$a, null, /*#__PURE__*/React$X.createElement("p", null, "With this option enabled, only the order provided above will be treated as correct. This is useful when ordering is significant, such as in the context of a proof."), /*#__PURE__*/React$X.createElement("p", null, "If disabled, pairwise matching is sufficient. To make this clear, the left column becomes fixed in the provided order and only the cards in the right column can be moved."))), /*#__PURE__*/React$X.createElement("div", null, /*#__PURE__*/React$X.createElement(PropCheckBox$7, {
       label: "Padding:",
       padding: this.props.padding,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$U.createElement(InfoTip$a, null, /*#__PURE__*/React$U.createElement("p", null, "Padding is good for text, but not needed for images."))));
+    }), /*#__PURE__*/React$X.createElement(InfoTip$a, null, /*#__PURE__*/React$X.createElement("p", null, "Padding is good for text, but not needed for images."))));
   },
   onLabelChange: function onLabelChange(index, e) {
     var labels = _$H.clone(this.props.labels);
@@ -44534,7 +45666,7 @@ var _module_$V = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$T = _react__default["default"];
+var React$W = _react__default["default"];
 var _$G = _underscore__default["default"];
 var Renderer$b = _rendererJsx;
 var Sortable = _componentsSortableJsx;
@@ -44542,18 +45674,18 @@ var ApiOptions$g = _perseusApiJsx.Options;
 var shuffle$1 = Util$q.shuffle;
 var seededRNG = Util$q.seededRNG;
 var HACKY_CSS_CLASSNAME = "perseus-widget-matcher";
-var Matcher = React$T.createClass({
+var Matcher = React$W.createClass({
   displayName: "Matcher",
   propTypes: {
     apiOptions: ApiOptions$g.propTypes,
-    labels: React$T.PropTypes.array,
-    left: React$T.PropTypes.array,
-    onChange: React$T.PropTypes.func,
-    orderMatters: React$T.PropTypes.bool,
-    padding: React$T.PropTypes.bool,
-    problemNum: React$T.PropTypes.number,
-    right: React$T.PropTypes.array,
-    trackInteraction: React$T.PropTypes.func.isRequired,
+    labels: React$W.PropTypes.array,
+    left: React$W.PropTypes.array,
+    onChange: React$W.PropTypes.func,
+    orderMatters: React$W.PropTypes.bool,
+    padding: React$W.PropTypes.bool,
+    problemNum: React$W.PropTypes.number,
+    right: React$W.PropTypes.array,
+    trackInteraction: React$W.PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -44598,25 +45730,25 @@ var Matcher = React$T.createClass({
       height: _$G.max([this.state.leftHeight, this.state.rightHeight])
     };
     var cellMarginPx = this.props.apiOptions.isMobile ? 8 : 5;
-    return /*#__PURE__*/React$T.createElement("table", {
-      className: aphrodite.css(styles$c.widget) + " " + HACKY_CSS_CLASSNAME
-    }, /*#__PURE__*/React$T.createElement("tbody", null, showLabels && /*#__PURE__*/React$T.createElement("tr", {
-      className: aphrodite.css(styles$c.row)
-    }, /*#__PURE__*/React$T.createElement("th", {
-      className: aphrodite.css(styles$c.column, styles$c.columnLabel)
-    }, /*#__PURE__*/React$T.createElement(Renderer$b, {
+    return /*#__PURE__*/React$W.createElement("table", {
+      className: aphrodite.css(styles$d.widget) + " " + HACKY_CSS_CLASSNAME
+    }, /*#__PURE__*/React$W.createElement("tbody", null, showLabels && /*#__PURE__*/React$W.createElement("tr", {
+      className: aphrodite.css(styles$d.row)
+    }, /*#__PURE__*/React$W.createElement("th", {
+      className: aphrodite.css(styles$d.column, styles$d.columnLabel)
+    }, /*#__PURE__*/React$W.createElement(Renderer$b, {
       content: this.props.labels[0] || "...",
       linterContext: this.props.linterContext
-    })), /*#__PURE__*/React$T.createElement("th", {
-      className: aphrodite.css(styles$c.column, styles$c.columnRight, styles$c.columnLabel)
-    }, /*#__PURE__*/React$T.createElement(Renderer$b, {
+    })), /*#__PURE__*/React$W.createElement("th", {
+      className: aphrodite.css(styles$d.column, styles$d.columnRight, styles$d.columnLabel)
+    }, /*#__PURE__*/React$W.createElement(Renderer$b, {
       content: this.props.labels[1] || "...",
       linterContext: this.props.linterContext
-    }))), /*#__PURE__*/React$T.createElement("tr", {
-      className: aphrodite.css(styles$c.row)
-    }, /*#__PURE__*/React$T.createElement("td", {
-      className: aphrodite.css(styles$c.column)
-    }, /*#__PURE__*/React$T.createElement(Sortable, {
+    }))), /*#__PURE__*/React$W.createElement("tr", {
+      className: aphrodite.css(styles$d.row)
+    }, /*#__PURE__*/React$W.createElement("td", {
+      className: aphrodite.css(styles$d.column)
+    }, /*#__PURE__*/React$W.createElement(Sortable, {
       options: left,
       layout: "vertical",
       padding: this.props.padding,
@@ -44627,9 +45759,9 @@ var Matcher = React$T.createClass({
       margin: cellMarginPx,
       linterContext: this.props.linterContext,
       ref: "left"
-    })), /*#__PURE__*/React$T.createElement("td", {
-      className: aphrodite.css(styles$c.column, styles$c.columnRight)
-    }, /*#__PURE__*/React$T.createElement(Sortable, {
+    })), /*#__PURE__*/React$W.createElement("td", {
+      className: aphrodite.css(styles$d.column, styles$d.columnRight)
+    }, /*#__PURE__*/React$W.createElement(Sortable, {
       options: right,
       layout: "vertical",
       padding: this.props.padding,
@@ -44685,7 +45817,7 @@ _$G.extend(Matcher, {
 
 var padding = 5;
 var border = "1px solid #444";
-var styles$c = aphrodite.StyleSheet.create({
+var styles$d = aphrodite.StyleSheet.create({
   widget: {
     paddingTop: padding,
     maxWidth: "100%",
@@ -44729,8 +45861,8 @@ var _module_$U = {
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 var classNames$b = _classnames__default["default"];
-var React$S = _react__default["default"];
-var ReactDOM$5 = _reactDom__default["default"];
+var React$V = _react__default["default"];
+var ReactDOM$8 = _reactDom__default["default"];
 var _$F = _underscore__default["default"];
 var NumberInput$5 = _componentsNumberInputJsx;
 var Renderer$a = _rendererJsx;
@@ -44820,17 +45952,17 @@ var getMatrixSize$1 = function getMatrixSize(matrix) {
   return matrixSize;
 };
 
-var Matrix$1 = React$S.createClass({
+var Matrix$1 = React$V.createClass({
   displayName: "Matrix",
   propTypes: {
-    answers: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.oneOfType([React$S.PropTypes.string, React$S.PropTypes.number]))),
+    answers: React$V.PropTypes.arrayOf(React$V.PropTypes.arrayOf(React$V.PropTypes.oneOfType([React$V.PropTypes.string, React$V.PropTypes.number]))),
     apiOptions: ApiOptions$f.propTypes,
-    cursorPosition: React$S.PropTypes.arrayOf(React$S.PropTypes.number),
+    cursorPosition: React$V.PropTypes.arrayOf(React$V.PropTypes.number),
     keypadElement: keypadElementPropType$3,
-    matrixBoardSize: React$S.PropTypes.arrayOf(React$S.PropTypes.number).isRequired,
-    prefix: React$S.PropTypes.string,
-    suffix: React$S.PropTypes.string,
-    trackInteraction: React$S.PropTypes.func.isRequired,
+    matrixBoardSize: React$V.PropTypes.arrayOf(React$V.PropTypes.number).isRequired,
+    prefix: React$V.PropTypes.string,
+    suffix: React$V.PropTypes.string,
+    trackInteraction: React$V.PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -44886,21 +46018,21 @@ var Matrix$1 = React$S.createClass({
       "static-mode": this.props.static,
       "the-matrix": this.state.enterTheMatrix >= 5
     });
-    return /*#__PURE__*/React$S.createElement("div", {
+    return /*#__PURE__*/React$V.createElement("div", {
       className: className
-    }, this.props.prefix && /*#__PURE__*/React$S.createElement("div", {
+    }, this.props.prefix && /*#__PURE__*/React$V.createElement("div", {
       className: "matrix-prefix"
-    }, /*#__PURE__*/React$S.createElement(Renderer$a, {
+    }, /*#__PURE__*/React$V.createElement(Renderer$a, {
       content: this.props.prefix,
       linterContext: this.props.linterContext
-    })), /*#__PURE__*/React$S.createElement("div", {
+    })), /*#__PURE__*/React$V.createElement("div", {
       className: "matrix-input"
-    }, /*#__PURE__*/React$S.createElement("div", {
+    }, /*#__PURE__*/React$V.createElement("div", {
       className: "matrix-bracket bracket-left",
       style: {
         height: bracketHeight
       }
-    }), /*#__PURE__*/React$S.createElement("div", {
+    }), /*#__PURE__*/React$V.createElement("div", {
       className: "matrix-bracket bracket-right",
       style: {
         height: bracketHeight,
@@ -44908,7 +46040,7 @@ var Matrix$1 = React$S.createClass({
       }
     }), _$F.times(maxRows, row => {
       var rowVals = this.props.answers[row];
-      return /*#__PURE__*/React$S.createElement("div", {
+      return /*#__PURE__*/React$V.createElement("div", {
         className: "matrix-row",
         key: row
       }, _$F.times(maxCols, col => {
@@ -44976,27 +46108,27 @@ var Matrix$1 = React$S.createClass({
             boxSizing: "border-box",
             backgroundColor: outside ? "#f3f3f3" : "#fff"
           };
-          MatrixInput = /*#__PURE__*/React$S.createElement(SimpleKeypadInput$2, _extends({}, inputProps, {
+          MatrixInput = /*#__PURE__*/React$V.createElement(SimpleKeypadInput$2, _extends({}, inputProps, {
             style: style,
             scrollable: true,
             keypadElement: this.props.keypadElement
           }));
         } else if (this.props.apiOptions.staticRender) {
-          MatrixInput = /*#__PURE__*/React$S.createElement(MathOutput$1, inputProps);
+          MatrixInput = /*#__PURE__*/React$V.createElement(MathOutput$1, inputProps);
         } else if (this.props.numericInput) {
-          MatrixInput = /*#__PURE__*/React$S.createElement(NumberInput$5, inputProps);
+          MatrixInput = /*#__PURE__*/React$V.createElement(NumberInput$5, inputProps);
         } else {
-          MatrixInput = /*#__PURE__*/React$S.createElement(TextInput$6, inputProps);
+          MatrixInput = /*#__PURE__*/React$V.createElement(TextInput$6, inputProps);
         }
 
-        return /*#__PURE__*/React$S.createElement("span", {
+        return /*#__PURE__*/React$V.createElement("span", {
           key: col,
           className: "matrix-input-field"
         }, MatrixInput);
       }));
-    })), this.props.suffix && /*#__PURE__*/React$S.createElement("div", {
+    })), this.props.suffix && /*#__PURE__*/React$V.createElement("div", {
       className: "matrix-suffix"
-    }, /*#__PURE__*/React$S.createElement(Renderer$a, {
+    }, /*#__PURE__*/React$V.createElement(Renderer$a, {
       content: this.props.suffix,
       linterContext: this.props.linterContext
     })));
@@ -45042,7 +46174,7 @@ var Matrix$1 = React$S.createClass({
   },
   getDOMNodeForPath: function getDOMNodeForPath(inputPath) {
     var inputID = getRefForPath(inputPath);
-    return ReactDOM$5.findDOMNode(this.refs[inputID]);
+    return ReactDOM$8.findDOMNode(this.refs[inputID]);
   },
   setInputValue: function setInputValue(inputPath, value, callback) {
     var row = getRowFromPath(inputPath);
@@ -45227,7 +46359,7 @@ var _module_$T = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$R = _react__default["default"];
+var React$U = _react__default["default"];
 var _$E = _underscore__default["default"];
 var Changeable$s = _mixinsChangeableJsx;
 var EditorJsonify$a = _mixinsEditorJsonifyJsx;
@@ -45262,14 +46394,14 @@ var getMatrixSize = function getMatrixSize(matrix) {
   return matrixSize;
 };
 
-var MatrixEditor = React$R.createClass({
+var MatrixEditor = React$U.createClass({
   displayName: "MatrixEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$s.propTypes), {}, {
-    matrixBoardSize: React$R.PropTypes.arrayOf(React$R.PropTypes.number).isRequired,
-    answers: React$R.PropTypes.arrayOf(React$R.PropTypes.arrayOf(React$R.PropTypes.number)),
-    prefix: React$R.PropTypes.string,
-    suffix: React$R.PropTypes.string,
-    cursorPosition: React$R.PropTypes.arrayOf(React$R.PropTypes.number)
+    matrixBoardSize: React$U.PropTypes.arrayOf(React$U.PropTypes.number).isRequired,
+    answers: React$U.PropTypes.arrayOf(React$U.PropTypes.arrayOf(React$U.PropTypes.number)),
+    prefix: React$U.PropTypes.string,
+    suffix: React$U.PropTypes.string,
+    cursorPosition: React$U.PropTypes.arrayOf(React$U.PropTypes.number)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45288,20 +46420,20 @@ var MatrixEditor = React$R.createClass({
       trackInteraction: () => {}
     }, this.props);
 
-    return /*#__PURE__*/React$R.createElement("div", {
+    return /*#__PURE__*/React$U.createElement("div", {
       className: "perseus-matrix-editor"
-    }, /*#__PURE__*/React$R.createElement("div", {
+    }, /*#__PURE__*/React$U.createElement("div", {
       className: "perseus-widget-row"
-    }, " ", "Max matrix size:", " ", /*#__PURE__*/React$R.createElement(RangeInput$1, {
+    }, " ", "Max matrix size:", " ", /*#__PURE__*/React$U.createElement(RangeInput$1, {
       value: this.props.matrixBoardSize,
       onChange: this.onMatrixBoardSizeChange,
       format: this.props.labelStyle,
       useArrowKeys: true
-    })), /*#__PURE__*/React$R.createElement("div", {
+    })), /*#__PURE__*/React$U.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$R.createElement(Matrix, matrixProps)), /*#__PURE__*/React$R.createElement("div", {
+    }, /*#__PURE__*/React$U.createElement(Matrix, matrixProps)), /*#__PURE__*/React$U.createElement("div", {
       className: "perseus-widget-row"
-    }, " ", "Matrix prefix:", " ", /*#__PURE__*/React$R.createElement(Editor$7, {
+    }, " ", "Matrix prefix:", " ", /*#__PURE__*/React$U.createElement(Editor$7, {
       ref: "prefix",
       apiOptions: this.props.apiOptions,
       content: this.props.prefix,
@@ -45311,9 +46443,9 @@ var MatrixEditor = React$R.createClass({
           prefix: newProps.content
         });
       }
-    })), /*#__PURE__*/React$R.createElement("div", {
+    })), /*#__PURE__*/React$U.createElement("div", {
       className: "perseus-widget-row"
-    }, " ", "Matrix suffix:", " ", /*#__PURE__*/React$R.createElement(Editor$7, {
+    }, " ", "Matrix suffix:", " ", /*#__PURE__*/React$U.createElement(Editor$7, {
       ref: "suffix",
       apiOptions: this.props.apiOptions,
       content: this.props.suffix,
@@ -45370,7 +46502,7 @@ var _module_$S = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$Q = _react__default["default"];
+var React$T = _react__default["default"];
 var _$D = _underscore__default["default"];
 var Changeable$r = _mixinsChangeableJsx;
 var EditorJsonify$9 = _mixinsEditorJsonifyJsx;
@@ -45424,11 +46556,11 @@ var flipTilesPredicate$1 = (oldCells, predicate) => {
 }; // A single glowy cell
 
 
-var Tile$1 = React$Q.createClass({
+var Tile$1 = React$T.createClass({
   displayName: "Tile",
   propTypes: {
-    value: React$Q.PropTypes.bool.isRequired,
-    size: React$Q.PropTypes.number.isRequired
+    value: React$T.PropTypes.bool.isRequired,
+    size: React$T.PropTypes.number.isRequired
   },
   render: function render() {
     var color = this.props.value ? "#55dd55" : "#115511";
@@ -45439,7 +46571,7 @@ var Tile$1 = React$Q.createClass({
       backgroundColor: color
     });
 
-    return /*#__PURE__*/React$Q.createElement("div", {
+    return /*#__PURE__*/React$T.createElement("div", {
       style: style,
       onClick: this._flip
     });
@@ -45449,25 +46581,25 @@ var Tile$1 = React$Q.createClass({
   }
 }); // A grid of glowy cells
 
-var TileGrid$1 = React$Q.createClass({
+var TileGrid$1 = React$T.createClass({
   displayName: "TileGrid",
   propTypes: {
-    cells: React$Q.PropTypes.arrayOf(React$Q.PropTypes.arrayOf(React$Q.PropTypes.bool)).isRequired,
-    size: React$Q.PropTypes.number.isRequired
+    cells: React$T.PropTypes.arrayOf(React$T.PropTypes.arrayOf(React$T.PropTypes.bool)).isRequired,
+    size: React$T.PropTypes.number.isRequired
   },
   render: function render() {
-    return /*#__PURE__*/React$Q.createElement("div", {
+    return /*#__PURE__*/React$T.createElement("div", {
       style: TABLE_STYLE$1,
       className: "no-select"
     }, _$D.map(this.props.cells, (row, y) => {
-      return /*#__PURE__*/React$Q.createElement("div", {
+      return /*#__PURE__*/React$T.createElement("div", {
         key: y,
         style: ROW_STYLE$1
       }, _$D.map(row, (cell, x) => {
-        return /*#__PURE__*/React$Q.createElement("div", {
+        return /*#__PURE__*/React$T.createElement("div", {
           key: x,
           style: CELL_STYLE$1
-        }, /*#__PURE__*/React$Q.createElement(Tile$1, {
+        }, /*#__PURE__*/React$T.createElement(Tile$1, {
           value: cell,
           size: this.props.size,
           onChange: _$D.partial(this.props.onChange, y, x)
@@ -45477,12 +46609,12 @@ var TileGrid$1 = React$Q.createClass({
   }
 }); // The widget editor
 
-var LightsPuzzleEditor = React$Q.createClass({
+var LightsPuzzleEditor = React$T.createClass({
   displayName: "LightsPuzzleEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$r.propTypes), {}, {
-    startCells: React$Q.PropTypes.arrayOf(React$Q.PropTypes.arrayOf(React$Q.PropTypes.bool)),
-    flipPattern: React$Q.PropTypes.string.isRequired,
-    gradeIncompleteAsWrong: React$Q.PropTypes.bool.isRequired
+    startCells: React$T.PropTypes.arrayOf(React$T.PropTypes.arrayOf(React$T.PropTypes.bool)),
+    flipPattern: React$T.PropTypes.string.isRequired,
+    gradeIncompleteAsWrong: React$T.PropTypes.bool.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45511,30 +46643,30 @@ var LightsPuzzleEditor = React$Q.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$Q.createElement("div", null, /*#__PURE__*/React$Q.createElement("div", null, "Width:", /*#__PURE__*/React$Q.createElement(NumberInput$4, {
+    return /*#__PURE__*/React$T.createElement("div", null, /*#__PURE__*/React$T.createElement("div", null, "Width:", /*#__PURE__*/React$T.createElement(NumberInput$4, {
       value: this._width(),
       placeholder: 5,
       onChange: this._changeWidth
-    }), ", ", "Height:", /*#__PURE__*/React$Q.createElement(NumberInput$4, {
+    }), ", ", "Height:", /*#__PURE__*/React$T.createElement(NumberInput$4, {
       value: this._height(),
       placeholder: 5,
       onChange: this._changeHeight
-    })), /*#__PURE__*/React$Q.createElement("div", null, "Flip pattern:", /*#__PURE__*/React$Q.createElement("select", {
+    })), /*#__PURE__*/React$T.createElement("div", null, "Flip pattern:", /*#__PURE__*/React$T.createElement("select", {
       value: this.props.flipPattern,
       onChange: this._handlePatternChange
     }, _$D.map(_$D.keys(PATTERNS$1), (pattern, i) => {
-      return /*#__PURE__*/React$Q.createElement("option", {
+      return /*#__PURE__*/React$T.createElement("option", {
         value: pattern,
         key: i
       }, pattern);
-    }))), /*#__PURE__*/React$Q.createElement("div", null, "Grade incomplete puzzles as wrong:", " ", /*#__PURE__*/React$Q.createElement(PropCheckBox$6, {
+    }))), /*#__PURE__*/React$T.createElement("div", null, "Grade incomplete puzzles as wrong:", " ", /*#__PURE__*/React$T.createElement(PropCheckBox$6, {
       gradeIncompleteAsWrong: this.props.gradeIncompleteAsWrong,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$Q.createElement(InfoTip$9, null, "By default, incomplete puzzles are graded as empty.")), /*#__PURE__*/React$Q.createElement("div", null, "Starting configuration:"), /*#__PURE__*/React$Q.createElement("div", {
+    }), /*#__PURE__*/React$T.createElement(InfoTip$9, null, "By default, incomplete puzzles are graded as empty.")), /*#__PURE__*/React$T.createElement("div", null, "Starting configuration:"), /*#__PURE__*/React$T.createElement("div", {
       style: {
         overflowX: "auto"
       }
-    }, /*#__PURE__*/React$Q.createElement(TileGrid$1, {
+    }, /*#__PURE__*/React$T.createElement(TileGrid$1, {
       cells: this.props.startCells,
       size: 50,
       onChange: this._switchTile
@@ -45591,7 +46723,7 @@ var _module_$R = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$P = _react__default["default"];
+var React$S = _react__default["default"];
 var _$C = _underscore__default["default"];
 var Changeable$q = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated$2 = _mixinsWidgetJsonifyDeprecatedJsx;
@@ -45631,11 +46763,11 @@ var PATTERNS = {
 };
 
 
-var Tile = React$P.createClass({
+var Tile = React$S.createClass({
   displayName: "Tile",
   propTypes: {
-    value: React$P.PropTypes.bool.isRequired,
-    size: React$P.PropTypes.number.isRequired
+    value: React$S.PropTypes.bool.isRequired,
+    size: React$S.PropTypes.number.isRequired
   },
   render: function render() {
     var color = this.props.value ? "#55dd55" : "#115511";
@@ -45646,7 +46778,7 @@ var Tile = React$P.createClass({
       backgroundColor: color
     });
 
-    return /*#__PURE__*/React$P.createElement("div", {
+    return /*#__PURE__*/React$S.createElement("div", {
       style: style,
       onClick: this._flip
     });
@@ -45656,25 +46788,25 @@ var Tile = React$P.createClass({
   }
 }); // A grid of glowy cells
 
-var TileGrid = React$P.createClass({
+var TileGrid = React$S.createClass({
   displayName: "TileGrid",
   propTypes: {
-    cells: React$P.PropTypes.arrayOf(React$P.PropTypes.arrayOf(React$P.PropTypes.bool)).isRequired,
-    size: React$P.PropTypes.number.isRequired
+    cells: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.bool)).isRequired,
+    size: React$S.PropTypes.number.isRequired
   },
   render: function render() {
-    return /*#__PURE__*/React$P.createElement("div", {
+    return /*#__PURE__*/React$S.createElement("div", {
       style: TABLE_STYLE,
       className: "no-select"
     }, _$C.map(this.props.cells, (row, y) => {
-      return /*#__PURE__*/React$P.createElement("div", {
+      return /*#__PURE__*/React$S.createElement("div", {
         key: y,
         style: ROW_STYLE
       }, _$C.map(row, (cell, x) => {
-        return /*#__PURE__*/React$P.createElement("div", {
+        return /*#__PURE__*/React$S.createElement("div", {
           key: x,
           style: CELL_STYLE
-        }, /*#__PURE__*/React$P.createElement(Tile, {
+        }, /*#__PURE__*/React$S.createElement(Tile, {
           value: cell,
           size: this.props.size,
           onChange: _$C.partial(this.props.onChange, y, x)
@@ -45707,13 +46839,13 @@ var flipTilesPattern = (oldCells, tileY, tileX, pattern) => {
 }; // The lights puzzle widget
 
 
-var LightsPuzzle = React$P.createClass({
+var LightsPuzzle = React$S.createClass({
   displayName: "LightsPuzzle",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$q.propTypes), {}, {
-    cells: React$P.PropTypes.arrayOf(React$P.PropTypes.arrayOf(React$P.PropTypes.bool)),
-    startCells: React$P.PropTypes.arrayOf(React$P.PropTypes.arrayOf(React$P.PropTypes.bool)),
-    flipPattern: React$P.PropTypes.string.isRequired,
-    moveCount: React$P.PropTypes.number.isRequired
+    cells: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.bool)),
+    startCells: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.bool)),
+    flipPattern: React$S.PropTypes.string.isRequired,
+    moveCount: React$S.PropTypes.number.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45731,24 +46863,24 @@ var LightsPuzzle = React$P.createClass({
 
     var tileSize = MAIN_TILE_SIZE;
     var pxWidth = width * (tileSize + 2 * CELL_PADDING);
-    return /*#__PURE__*/React$P.createElement("div", null, /*#__PURE__*/React$P.createElement(TileGrid, {
+    return /*#__PURE__*/React$S.createElement("div", null, /*#__PURE__*/React$S.createElement(TileGrid, {
       cells: this.props.cells,
       size: tileSize,
       onChange: this._flipTile
-    }), /*#__PURE__*/React$P.createElement("div", {
+    }), /*#__PURE__*/React$S.createElement("div", {
       style: {
         width: pxWidth
       }
-    }, /*#__PURE__*/React$P.createElement("div", {
+    }, /*#__PURE__*/React$S.createElement("div", {
       style: MOVE_COUNT_STYLE
-    }, "Moves: ", this.props.moveCount), /*#__PURE__*/React$P.createElement("div", {
+    }, "Moves: ", this.props.moveCount), /*#__PURE__*/React$S.createElement("div", {
       style: RESET_BUTTON_STYLE
-    }, /*#__PURE__*/React$P.createElement("input", {
+    }, /*#__PURE__*/React$S.createElement("input", {
       type: "button",
       value: "Reset",
       onClick: this._reset,
       className: "simple-button"
-    }))), /*#__PURE__*/React$P.createElement("div", {
+    }))), /*#__PURE__*/React$S.createElement("div", {
       className: "clearfix"
     }));
   },
@@ -45876,7 +47008,7 @@ var _module_$Q = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$O = _react__default["default"];
+var React$R = _react__default["default"];
 var _$B = _underscore__default["default"];
 var Graph = _componentsGraphJsx;
 var InfoTip$8 = _componentsInfoTipJsx;
@@ -46143,11 +47275,11 @@ var deprecatedProps$1 = {
     };
   }
 };
-var InteractiveGraph$1 = React$O.createClass({
+var InteractiveGraph$1 = React$R.createClass({
   displayName: "InteractiveGraph",
   propTypes: {
     containerSizeClass: containerSizeClassPropType.isRequired,
-    trackInteraction: React$O.PropTypes.func.isRequired
+    trackInteraction: React$R.PropTypes.func.isRequired
   },
   getInitialState: function getInitialState() {
     return {
@@ -46199,7 +47331,7 @@ var InteractiveGraph$1 = React$O.createClass({
     var extraOptions;
 
     if (this.props.flexibleType) {
-      typeSelect = /*#__PURE__*/React$O.createElement("select", {
+      typeSelect = /*#__PURE__*/React$R.createElement("select", {
         value: this.props.graph.type,
         onChange: e => {
           var type = e.target.value;
@@ -46209,30 +47341,30 @@ var InteractiveGraph$1 = React$O.createClass({
             }
           });
         }
-      }, /*#__PURE__*/React$O.createElement("option", {
+      }, /*#__PURE__*/React$R.createElement("option", {
         value: "linear"
-      }, "Linear function"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Linear function"), /*#__PURE__*/React$R.createElement("option", {
         value: "quadratic"
-      }, "Quadratic function"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Quadratic function"), /*#__PURE__*/React$R.createElement("option", {
         value: "sinusoid"
-      }, "Sinusoid function"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Sinusoid function"), /*#__PURE__*/React$R.createElement("option", {
         value: "circle"
-      }, "Circle"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Circle"), /*#__PURE__*/React$R.createElement("option", {
         value: "point"
-      }, "Point(s)"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Point(s)"), /*#__PURE__*/React$R.createElement("option", {
         value: "linear-system"
-      }, "Linear System"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Linear System"), /*#__PURE__*/React$R.createElement("option", {
         value: "polygon"
-      }, "Polygon"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Polygon"), /*#__PURE__*/React$R.createElement("option", {
         value: "segment"
-      }, "Line Segment(s)"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Line Segment(s)"), /*#__PURE__*/React$R.createElement("option", {
         value: "ray"
-      }, "Ray"), /*#__PURE__*/React$O.createElement("option", {
+      }, "Ray"), /*#__PURE__*/React$R.createElement("option", {
         value: "angle"
       }, "Angle"));
 
       if (this.props.graph.type === "point") {
-        extraOptions = /*#__PURE__*/React$O.createElement("select", {
+        extraOptions = /*#__PURE__*/React$R.createElement("select", {
           key: "point-select",
           value: this.props.graph.numPoints || 1,
           onChange: e => {
@@ -46247,14 +47379,14 @@ var InteractiveGraph$1 = React$O.createClass({
             });
           }
         }, _$B.map(_$B.range(1, 7), function (n) {
-          return /*#__PURE__*/React$O.createElement("option", {
+          return /*#__PURE__*/React$R.createElement("option", {
             value: n
           }, n, " point", n > 1 && "s");
-        }), /*#__PURE__*/React$O.createElement("option", {
+        }), /*#__PURE__*/React$R.createElement("option", {
           value: UNLIMITED
         }, "unlimited"));
       } else if (this.props.graph.type === "polygon") {
-        extraOptions = /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("select", {
+        extraOptions = /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("select", {
           key: "polygon-select",
           value: this.props.graph.numSides || 3,
           onChange: e => {
@@ -46275,12 +47407,12 @@ var InteractiveGraph$1 = React$O.createClass({
             });
           }
         }, _$B.map(_$B.range(3, 13), function (n) {
-          return /*#__PURE__*/React$O.createElement("option", {
+          return /*#__PURE__*/React$R.createElement("option", {
             value: n
           }, n, " sides");
-        }), /*#__PURE__*/React$O.createElement("option", {
+        }), /*#__PURE__*/React$R.createElement("option", {
           value: UNLIMITED
-        }, "unlimited sides"))), /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, " ", "Snap to", " ", /*#__PURE__*/React$O.createElement("select", {
+        }, "unlimited sides"))), /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, " ", "Snap to", " ", /*#__PURE__*/React$R.createElement("select", {
           key: "polygon-snap",
           value: this.props.graph.snapTo,
           onChange: e => {
@@ -46293,23 +47425,23 @@ var InteractiveGraph$1 = React$O.createClass({
               graph: graph
             });
           }
-        }, /*#__PURE__*/React$O.createElement("option", {
+        }, /*#__PURE__*/React$R.createElement("option", {
           value: "grid"
-        }, "grid"), this.props.graph.numSides !== UNLIMITED && [/*#__PURE__*/React$O.createElement("option", {
+        }, "grid"), this.props.graph.numSides !== UNLIMITED && [/*#__PURE__*/React$R.createElement("option", {
           value: "angles"
-        }, " ", "interior angles", " "), /*#__PURE__*/React$O.createElement("option", {
+        }, " ", "interior angles", " "), /*#__PURE__*/React$R.createElement("option", {
           value: "sides"
-        }, " ", "side measures", " ")])), /*#__PURE__*/React$O.createElement(InfoTip$8, null, /*#__PURE__*/React$O.createElement("p", null, "These options affect the movement of the vertex points. The grid option will guide the points to the nearest half step along the grid."), /*#__PURE__*/React$O.createElement("p", null, "The interior angle and side measure options guide the points to the nearest whole angle or side"), " ", "measure respectively.", " ")), /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, "Show angle measures:", " ", /*#__PURE__*/React$O.createElement("input", {
+        }, " ", "side measures", " ")])), /*#__PURE__*/React$R.createElement(InfoTip$8, null, /*#__PURE__*/React$R.createElement("p", null, "These options affect the movement of the vertex points. The grid option will guide the points to the nearest half step along the grid."), /*#__PURE__*/React$R.createElement("p", null, "The interior angle and side measure options guide the points to the nearest whole angle or side"), " ", "measure respectively.", " ")), /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, "Show angle measures:", " ", /*#__PURE__*/React$R.createElement("input", {
           type: "checkbox",
           checked: this.props.graph.showAngles,
           onChange: this.toggleShowAngles
-        })), /*#__PURE__*/React$O.createElement(InfoTip$8, null, /*#__PURE__*/React$O.createElement("p", null, "Displays the interior angle measures."))), /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, "Show side measures:", " ", /*#__PURE__*/React$O.createElement("input", {
+        })), /*#__PURE__*/React$R.createElement(InfoTip$8, null, /*#__PURE__*/React$R.createElement("p", null, "Displays the interior angle measures."))), /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, "Show side measures:", " ", /*#__PURE__*/React$R.createElement("input", {
           type: "checkbox",
           checked: this.props.graph.showSides,
           onChange: this.toggleShowSides
-        })), /*#__PURE__*/React$O.createElement(InfoTip$8, null, /*#__PURE__*/React$O.createElement("p", null, "Displays the side lengths."))));
+        })), /*#__PURE__*/React$R.createElement(InfoTip$8, null, /*#__PURE__*/React$R.createElement("p", null, "Displays the side lengths."))));
       } else if (this.props.graph.type === "segment") {
-        extraOptions = /*#__PURE__*/React$O.createElement("select", {
+        extraOptions = /*#__PURE__*/React$R.createElement("select", {
           key: "segment-select",
           value: this.props.graph.numSegments || 1,
           onChange: e => {
@@ -46323,17 +47455,17 @@ var InteractiveGraph$1 = React$O.createClass({
             });
           }
         }, _$B.map(_$B.range(1, 7), function (n) {
-          return /*#__PURE__*/React$O.createElement("option", {
+          return /*#__PURE__*/React$R.createElement("option", {
             value: n
           }, n, " segment", n > 1 && "s");
         }));
       } else if (this.props.graph.type === "angle") {
         var allowReflexAngles = defaultVal(this.props.graph.allowReflexAngles, true);
-        extraOptions = /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, "Show angle measure:", " ", /*#__PURE__*/React$O.createElement("input", {
+        extraOptions = /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, "Show angle measure:", " ", /*#__PURE__*/React$R.createElement("input", {
           type: "checkbox",
           checked: this.props.graph.showAngles,
           onChange: this.toggleShowAngles
-        }))), /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, "Allow reflex angles:", " ", /*#__PURE__*/React$O.createElement("input", {
+        }))), /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, "Allow reflex angles:", " ", /*#__PURE__*/React$R.createElement("input", {
           type: "checkbox",
           checked: allowReflexAngles,
           onChange: newVal => {
@@ -46345,7 +47477,7 @@ var InteractiveGraph$1 = React$O.createClass({
               })
             });
           }
-        })), /*#__PURE__*/React$O.createElement(InfoTip$8, null, /*#__PURE__*/React$O.createElement("p", null, "Reflex angles are angles with a measure greater than 180 degrees."), /*#__PURE__*/React$O.createElement("p", null, "By default, these should remain enabled."))), /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, "Snap to increments of", " ", /*#__PURE__*/React$O.createElement(NumberInput$3, {
+        })), /*#__PURE__*/React$R.createElement(InfoTip$8, null, /*#__PURE__*/React$R.createElement("p", null, "Reflex angles are angles with a measure greater than 180 degrees."), /*#__PURE__*/React$R.createElement("p", null, "By default, these should remain enabled."))), /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, "Snap to increments of", " ", /*#__PURE__*/React$R.createElement(NumberInput$3, {
           key: "degree-snap",
           placeholder: 1,
           value: this.props.graph.snapDegrees,
@@ -46357,7 +47489,7 @@ var InteractiveGraph$1 = React$O.createClass({
               })
             });
           }
-        }), " ", "degrees", " ")), /*#__PURE__*/React$O.createElement("div", null, /*#__PURE__*/React$O.createElement("label", null, " ", "With an offset of", " ", /*#__PURE__*/React$O.createElement(NumberInput$3, {
+        }), " ", "degrees", " ")), /*#__PURE__*/React$R.createElement("div", null, /*#__PURE__*/React$R.createElement("label", null, " ", "With an offset of", " ", /*#__PURE__*/React$R.createElement(NumberInput$3, {
           key: "angle-offset",
           placeholder: 0,
           value: this.props.graph.angleOffsetDeg,
@@ -46390,13 +47522,13 @@ var InteractiveGraph$1 = React$O.createClass({
     var gridStep = this.props.gridStep || Util$7.getGridStep(this.props.range, this.props.step, box[0]);
     var snapStep = this.props.snapStep || Util$7.snapStepFromGridStep(gridStep);
     var isMobile = this.props.apiOptions.isMobile;
-    return /*#__PURE__*/React$O.createElement("div", {
+    return /*#__PURE__*/React$R.createElement("div", {
       className: "perseus-widget " + "perseus-widget-interactive-graph",
       style: {
         width: box[0],
         height: this.props.flexibleType ? "auto" : box[1]
       }
-    }, /*#__PURE__*/React$O.createElement(Graph, {
+    }, /*#__PURE__*/React$R.createElement(Graph, {
       instructions: instructions,
       ref: "graph",
       box: box,
@@ -47947,7 +49079,7 @@ var _module_$P = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$N = _react__default["default"];
+var React$Q = _react__default["default"];
 var _$A = _underscore__default["default"];
 var Util$6 = Util$q;
 var DeprecationMixin = Util$6.DeprecationMixin;
@@ -47964,7 +49096,7 @@ var deprecatedProps = {
     };
   }
 };
-var InteractiveGraphEditor = React$N.createClass({
+var InteractiveGraphEditor = React$Q.createClass({
   displayName: "InteractiveGraphEditor",
   className: "perseus-widget-interactive-graph",
   getDefaultProps: function getDefaultProps() {
@@ -48034,7 +49166,7 @@ var InteractiveGraphEditor = React$N.createClass({
           });
         }
       };
-      graph = /*#__PURE__*/React$N.createElement(InteractiveGraph, _extends({}, graphProps, {
+      graph = /*#__PURE__*/React$Q.createElement(InteractiveGraph, _extends({}, graphProps, {
         containerSizeClass: sizeClass,
         apiOptions: _objectSpread2(_objectSpread2({}, this.props.apiOptions), {}, {
           isMobile: false
@@ -48042,14 +49174,14 @@ var InteractiveGraphEditor = React$N.createClass({
       }));
       equationString = InteractiveGraph.getEquationString(graphProps);
     } else {
-      graph = /*#__PURE__*/React$N.createElement("div", {
+      graph = /*#__PURE__*/React$Q.createElement("div", {
         className: "perseus-error"
       }, this.props.valid);
     }
 
-    return /*#__PURE__*/React$N.createElement("div", {
+    return /*#__PURE__*/React$Q.createElement("div", {
       className: "perseus-widget-interactive-graph"
-    }, /*#__PURE__*/React$N.createElement("div", null, "Correct answer", " ", /*#__PURE__*/React$N.createElement(InfoTip$7, null, /*#__PURE__*/React$N.createElement("p", null, "Graph the correct answer in the graph below and ensure the equation or point coordinates displayed represent the correct answer.")), " ", ": ", equationString), /*#__PURE__*/React$N.createElement(GraphSettings$2, {
+    }, /*#__PURE__*/React$Q.createElement("div", null, "Correct answer", " ", /*#__PURE__*/React$Q.createElement(InfoTip$7, null, /*#__PURE__*/React$Q.createElement("p", null, "Graph the correct answer in the graph below and ensure the equation or point coordinates displayed represent the correct answer.")), " ", ": ", equationString), /*#__PURE__*/React$Q.createElement(GraphSettings$2, {
       box: getInteractiveBoxFromSizeClass(sizeClass),
       range: this.props.range,
       labels: this.props.labels,
@@ -48065,29 +49197,29 @@ var InteractiveGraphEditor = React$N.createClass({
       rulerLabel: this.props.rulerLabel,
       rulerTicks: this.props.rulerTicks,
       onChange: this.props.onChange
-    }), this.props.correct.type === "polygon" && /*#__PURE__*/React$N.createElement("div", {
+    }), this.props.correct.type === "polygon" && /*#__PURE__*/React$Q.createElement("div", {
       className: "type-settings"
-    }, /*#__PURE__*/React$N.createElement("label", null, " ", "Student answer must", " ", /*#__PURE__*/React$N.createElement("select", {
+    }, /*#__PURE__*/React$Q.createElement("label", null, " ", "Student answer must", " ", /*#__PURE__*/React$Q.createElement("select", {
       value: this.props.correct.match,
       onChange: this.changeMatchType
-    }, /*#__PURE__*/React$N.createElement("option", {
+    }, /*#__PURE__*/React$Q.createElement("option", {
       value: "exact"
-    }, "match exactly"), /*#__PURE__*/React$N.createElement("option", {
+    }, "match exactly"), /*#__PURE__*/React$Q.createElement("option", {
       value: "congruent"
-    }, "be congruent"), /*#__PURE__*/React$N.createElement("option", {
+    }, "be congruent"), /*#__PURE__*/React$Q.createElement("option", {
       value: "approx"
-    }, "be approximately congruent"), /*#__PURE__*/React$N.createElement("option", {
+    }, "be approximately congruent"), /*#__PURE__*/React$Q.createElement("option", {
       value: "similar"
-    }, "be similar"))), /*#__PURE__*/React$N.createElement(InfoTip$7, null, /*#__PURE__*/React$N.createElement("ul", null, /*#__PURE__*/React$N.createElement("li", null, /*#__PURE__*/React$N.createElement("p", null, /*#__PURE__*/React$N.createElement("b", null, "Match Exactly:"), " Match exactly in size, orientation, and location on the grid even if it is not shown in the background.")), /*#__PURE__*/React$N.createElement("li", null, /*#__PURE__*/React$N.createElement("p", null, /*#__PURE__*/React$N.createElement("b", null, "Be Congruent:"), " Be congruent in size and shape, but can be located anywhere on the grid.")), /*#__PURE__*/React$N.createElement("li", null, /*#__PURE__*/React$N.createElement("p", null, /*#__PURE__*/React$N.createElement("b", null, "Be Approximately Congruent:"), " Be exactly similar, and congruent in size and shape to within 0.1 units, but can be located anywhere on the grid.", " ", /*#__PURE__*/React$N.createElement("em", null, "Use this with snapping to angle measure."))), /*#__PURE__*/React$N.createElement("li", null, /*#__PURE__*/React$N.createElement("p", null, /*#__PURE__*/React$N.createElement("b", null, "Be Similar:"), " Be similar with matching interior angles, and side measures that are matching or a multiple of the correct side measures. The figure can be located anywhere on the grid."))))), this.props.correct.type === "angle" && /*#__PURE__*/React$N.createElement("div", {
+    }, "be similar"))), /*#__PURE__*/React$Q.createElement(InfoTip$7, null, /*#__PURE__*/React$Q.createElement("ul", null, /*#__PURE__*/React$Q.createElement("li", null, /*#__PURE__*/React$Q.createElement("p", null, /*#__PURE__*/React$Q.createElement("b", null, "Match Exactly:"), " Match exactly in size, orientation, and location on the grid even if it is not shown in the background.")), /*#__PURE__*/React$Q.createElement("li", null, /*#__PURE__*/React$Q.createElement("p", null, /*#__PURE__*/React$Q.createElement("b", null, "Be Congruent:"), " Be congruent in size and shape, but can be located anywhere on the grid.")), /*#__PURE__*/React$Q.createElement("li", null, /*#__PURE__*/React$Q.createElement("p", null, /*#__PURE__*/React$Q.createElement("b", null, "Be Approximately Congruent:"), " Be exactly similar, and congruent in size and shape to within 0.1 units, but can be located anywhere on the grid.", " ", /*#__PURE__*/React$Q.createElement("em", null, "Use this with snapping to angle measure."))), /*#__PURE__*/React$Q.createElement("li", null, /*#__PURE__*/React$Q.createElement("p", null, /*#__PURE__*/React$Q.createElement("b", null, "Be Similar:"), " Be similar with matching interior angles, and side measures that are matching or a multiple of the correct side measures. The figure can be located anywhere on the grid."))))), this.props.correct.type === "angle" && /*#__PURE__*/React$Q.createElement("div", {
       className: "type-settings"
-    }, /*#__PURE__*/React$N.createElement("div", null, /*#__PURE__*/React$N.createElement("label", null, " ", "Student answer must", " ", /*#__PURE__*/React$N.createElement("select", {
+    }, /*#__PURE__*/React$Q.createElement("div", null, /*#__PURE__*/React$Q.createElement("label", null, " ", "Student answer must", " ", /*#__PURE__*/React$Q.createElement("select", {
       value: this.props.correct.match,
       onChange: this.changeMatchType
-    }, /*#__PURE__*/React$N.createElement("option", {
+    }, /*#__PURE__*/React$Q.createElement("option", {
       value: "exact"
-    }, "match exactly"), /*#__PURE__*/React$N.createElement("option", {
+    }, "match exactly"), /*#__PURE__*/React$Q.createElement("option", {
       value: "congruent"
-    }, "be congruent"))), /*#__PURE__*/React$N.createElement(InfoTip$7, null, /*#__PURE__*/React$N.createElement("p", null, "Congruency requires only that the angle measures are the same. An exact match implies congruency, but also requires that the angles have the same orientation and that the vertices are in the same position.")))), graph);
+    }, "be congruent"))), /*#__PURE__*/React$Q.createElement(InfoTip$7, null, /*#__PURE__*/React$Q.createElement("p", null, "Congruency requires only that the angle measures are the same. An exact match implies congruency, but also requires that the angles have the same orientation and that the vertices are in the same position.")))), graph);
   },
   changeMatchType: function changeMatchType(e) {
     var correct = _$A.extend({}, this.props.correct, {
@@ -48133,9 +49265,9 @@ var _module_$O = {
 };
 /* eslint-disable react/prop-types, react/sort-comp */
 
-var React$M = _react__default["default"];
+var React$P = _react__default["default"];
 var _$z = _underscore__default["default"];
-var TeX$3 = _reactComponentsTexJsx__default["default"];
+var TeX$3 = _reactComponentsTexJsx;
 var prettyBig = {
   fontSize: "150%"
 };
@@ -48149,26 +49281,26 @@ var symbStyle = {
 // Also, it's useful for things which might look different depending on the
 // props.
 
-var basic = [() => [/*#__PURE__*/React$M.createElement("span", {
+var basic = [() => [/*#__PURE__*/React$P.createElement("span", {
   key: "plus",
   style: slightlyBig
-}, "+"), "+"], () => [/*#__PURE__*/React$M.createElement("span", {
+}, "+"), "+"], () => [/*#__PURE__*/React$P.createElement("span", {
   key: "minus",
   style: prettyBig
 }, "-"), "-"], // TODO(joel) - display as \cdot when appropriate
 props => {
   if (props.convertDotToTimes) {
-    return [/*#__PURE__*/React$M.createElement(TeX$3, {
+    return [/*#__PURE__*/React$P.createElement(TeX$3, {
       key: "times",
       style: prettyBig
     }, "\\times"), "\\times"];
   } else {
-    return [/*#__PURE__*/React$M.createElement(TeX$3, {
+    return [/*#__PURE__*/React$P.createElement(TeX$3, {
       key: "times",
       style: prettyBig
     }, "\\cdot"), "\\cdot"];
   }
-}, () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+}, () => [/*#__PURE__*/React$P.createElement(TeX$3, {
   key: "frac",
   style: prettyBig
 }, "\\frac{□}{□}"), // If there's something in the input that can become part of a
@@ -48184,31 +49316,31 @@ input => {
 }]];
 var buttonSets = {
   basic,
-  "basic+div": basic.concat([() => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  "basic+div": basic.concat([() => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "div"
   }, "\\div"), "\\div"]]),
-  trig: [() => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  trig: [() => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "sin"
-  }, "\\sin"), "\\sin"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\sin"), "\\sin"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "cos"
-  }, "\\cos"), "\\cos"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\cos"), "\\cos"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "tan"
-  }, "\\tan"), "\\tan"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\tan"), "\\tan"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "theta",
     style: symbStyle
-  }, "\\theta"), "\\theta"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\theta"), "\\theta"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "pi",
     style: symbStyle
   }, "\\phi"), "\\phi"]],
-  prealgebra: [() => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  prealgebra: [() => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "sqrt"
   }, "\\sqrt{x}"), "\\sqrt"], // TODO(joel) - how does desmos do this?
-  () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "nthroot"
   }, "\\sqrt[3]{x}"), input => {
     input.typedText("nthroot3");
     input.keystroke("Right");
-  }], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "pow",
     style: slightlyBig
   }, "\u25A1^a"), input => {
@@ -48220,15 +49352,15 @@ var buttonSets = {
     if (input.latex() === contents) {
       input.typedText("a^b");
     }
-  }], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "pi",
     style: slightlyBig
   }, "\\pi"), "\\pi"]],
-  logarithms: [() => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  logarithms: [() => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "log"
-  }, "\\log"), "\\log"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\log"), "\\log"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "ln"
-  }, "\\ln"), "\\ln"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\ln"), "\\ln"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "log_b"
   }, "\\log_b"), input => {
     input.typedText("log_");
@@ -48237,27 +49369,27 @@ var buttonSets = {
     input.keystroke("Left");
     input.keystroke("Left");
   }]],
-  "basic relations": [() => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  "basic relations": [() => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "eq"
-  }, "="), "="], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "="), "="], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "lt"
-  }, "\\lt"), "\\lt"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\lt"), "\\lt"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "gt"
   }, "\\gt"), "\\gt"]],
-  "advanced relations": [() => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  "advanced relations": [() => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "neq"
-  }, "\\neq"), "\\neq"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\neq"), "\\neq"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "leq"
-  }, "\\leq"), "\\leq"], () => [/*#__PURE__*/React$M.createElement(TeX$3, {
+  }, "\\leq"), "\\leq"], () => [/*#__PURE__*/React$P.createElement(TeX$3, {
     key: "geq"
   }, "\\geq"), "\\geq"]]
 };
-var buttonSetsType = React$M.PropTypes.arrayOf(React$M.PropTypes.oneOf(Object.keys(buttonSets)));
-var TexButtons$3 = React$M.createClass({
+var buttonSetsType = React$P.PropTypes.arrayOf(React$P.PropTypes.oneOf(Object.keys(buttonSets)));
+var TexButtons$3 = React$P.createClass({
   displayName: "TexButtons",
   propTypes: {
     sets: buttonSetsType.isRequired,
-    onInsert: React$M.PropTypes.func.isRequired
+    onInsert: React$P.PropTypes.func.isRequired
   },
   render: function render() {
     // Always show buttonSets in the same order. Note: Technically it's ok
@@ -48269,7 +49401,7 @@ var TexButtons$3 = React$M.createClass({
     var buttonRows = buttons.map(row => row.map(symbGen => {
       // create a (component, thing we should send to mathquill) pair
       var symbol = symbGen(this.props);
-      return /*#__PURE__*/React$M.createElement("button", {
+      return /*#__PURE__*/React$P.createElement("button", {
         onClick: () => this.props.onInsert(symbol[1]),
         className: "tex-button",
         key: symbol[0].key,
@@ -48278,12 +49410,12 @@ var TexButtons$3 = React$M.createClass({
       }, symbol[0]);
     }));
     var buttonPopup = buttonRows.map((row, i) => {
-      return /*#__PURE__*/React$M.createElement("div", {
+      return /*#__PURE__*/React$P.createElement("div", {
         className: "clearfix tex-button-row",
         key: this.props.sets[i]
       }, row);
     });
-    return /*#__PURE__*/React$M.createElement("div", {
+    return /*#__PURE__*/React$P.createElement("div", {
       className: "".concat(this.props.className, " preview-measure")
     }, buttonPopup);
   },
@@ -48301,25 +49433,25 @@ var _module_$N = {
 /* eslint-disable react/prop-types, react/sort-comp */
 
 var classNames$a = _classnames__default["default"];
-var React$L = _react__default["default"];
-var ReactDOM$4 = _reactDom__default["default"];
+var React$O = _react__default["default"];
+var ReactDOM$7 = _reactDom__default["default"];
 var _$y = _underscore__default["default"];
 var TexButtons$2 = _componentsTexButtonsJsx; // TODO(alex): Package MathQuill
 
 var MathQuill = window.MathQuill;
-var PT = React$L.PropTypes; // A WYSIWYG math input that calls `onChange(LaTeX-string)`
+var PT$1 = React$O.PropTypes; // A WYSIWYG math input that calls `onChange(LaTeX-string)`
 
-var MathInput$4 = React$L.createClass({
+var MathInput$4 = React$O.createClass({
   displayName: "MathInput",
   propTypes: {
-    value: PT.string,
-    onChange: PT.func.isRequired,
-    convertDotToTimes: PT.bool,
-    buttonsVisible: PT.oneOf(["always", "never", "focused"]),
+    value: PT$1.string,
+    onChange: PT$1.func.isRequired,
+    convertDotToTimes: PT$1.bool,
+    buttonsVisible: PT$1.oneOf(["always", "never", "focused"]),
     buttonSets: TexButtons$2.buttonSetsType.isRequired,
-    labelText: React$L.PropTypes.string,
-    onFocus: PT.func,
-    onBlur: PT.func
+    labelText: React$O.PropTypes.string,
+    onFocus: PT$1.func,
+    onBlur: PT$1.func
   },
   render: function render() {
     var className = classNames$a({
@@ -48337,7 +49469,7 @@ var MathInput$4 = React$L.createClass({
     var buttons = null;
 
     if (this._shouldShowButtons()) {
-      buttons = /*#__PURE__*/React$L.createElement(TexButtons$2, {
+      buttons = /*#__PURE__*/React$O.createElement(TexButtons$2, {
         sets: this.props.buttonSets,
         className: "math-input-buttons absolute",
         convertDotToTimes: this.props.convertDotToTimes,
@@ -48345,21 +49477,21 @@ var MathInput$4 = React$L.createClass({
       });
     }
 
-    return /*#__PURE__*/React$L.createElement("div", {
+    return /*#__PURE__*/React$O.createElement("div", {
       style: {
         display: "inline-block"
       }
-    }, /*#__PURE__*/React$L.createElement("div", {
+    }, /*#__PURE__*/React$O.createElement("div", {
       style: {
         display: "inline-block"
       }
-    }, /*#__PURE__*/React$L.createElement("span", {
+    }, /*#__PURE__*/React$O.createElement("span", {
       className: className,
       ref: "mathinput",
       "aria-label": this.props.labelText,
       onFocus: this.handleFocus,
       onBlur: this.handleBlur
-    })), /*#__PURE__*/React$L.createElement("div", {
+    })), /*#__PURE__*/React$O.createElement("div", {
       style: {
         position: "relative"
       }
@@ -48380,7 +49512,7 @@ var MathInput$4 = React$L.createClass({
     // }
   },
   handleMouseDown: function handleMouseDown(event) {
-    var focused = ReactDOM$4.findDOMNode(this).contains(event.target);
+    var focused = ReactDOM$7.findDOMNode(this).contains(event.target);
     this.mouseDown = focused;
 
     if (!focused) {
@@ -48448,7 +49580,7 @@ var MathInput$4 = React$L.createClass({
     // MathQuill object for that node. It is stable - will always return
     // the same object when called on the same DOM node.
 
-    return MQ.MathField(ReactDOM$4.findDOMNode(this.refs.mathinput), options);
+    return MQ.MathField(ReactDOM$7.findDOMNode(this.refs.mathinput), options);
   },
   componentWillUnmount: function componentWillUnmount() {
     window.removeEventListener("mousedown", this.handleMouseDown);
@@ -48521,7 +49653,7 @@ var MathInput$4 = React$L.createClass({
           // This handler is called when the user presses the enter
           // key. Since this isn't an actual <input> element, we have
           // to manually trigger the usually automatic form submit.
-          $__default["default"](ReactDOM$4.findDOMNode(this.refs.mathinput)).submit();
+          $__default["default"](ReactDOM$7.findDOMNode(this.refs.mathinput)).submit();
         },
         upOutOf: mathField => {
           // This handler is called when the user presses the up
@@ -48567,10 +49699,10 @@ var _module_$M = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$K = _react__default["default"];
+var React$N = _react__default["default"];
 var InlineIcon$c = _componentsInlineIconJsx;
 
-class ElementContainer$1 extends React$K.Component {
+class ElementContainer$1 extends React$N.Component {
   constructor(props) {
     super(props);
 
@@ -48587,23 +49719,23 @@ class ElementContainer$1 extends React$K.Component {
   }
 
   render() {
-    return /*#__PURE__*/React$K.createElement("div", {
+    return /*#__PURE__*/React$N.createElement("div", {
       className: "perseus-interaction-element"
-    }, /*#__PURE__*/React$K.createElement("a", {
+    }, /*#__PURE__*/React$N.createElement("a", {
       href: "#",
       className: "perseus-interaction-element-title " + (this.state.show ? "open" : "closed"),
       onClick: this.toggle
-    }, this.state.show ? /*#__PURE__*/React$K.createElement(InlineIcon$c, iconChevronDown) : /*#__PURE__*/React$K.createElement(InlineIcon$c, iconChevronRight), this.props.title), /*#__PURE__*/React$K.createElement("div", {
+    }, this.state.show ? /*#__PURE__*/React$N.createElement(InlineIcon$c, iconChevronDown) : /*#__PURE__*/React$N.createElement(InlineIcon$c, iconChevronRight), this.props.title), /*#__PURE__*/React$N.createElement("div", {
       className: "perseus-interaction-element-content " + (this.state.show ? "enter" : "leave")
-    }, this.props.children, (this.props.onUp != null || this.props.onDown != null || this.props.onDelete != null) && /*#__PURE__*/React$K.createElement("div", {
+    }, this.props.children, (this.props.onUp != null || this.props.onDown != null || this.props.onDelete != null) && /*#__PURE__*/React$N.createElement("div", {
       className: "edit-controls"
-    }, this.props.onUp != null && /*#__PURE__*/React$K.createElement("button", {
+    }, this.props.onUp != null && /*#__PURE__*/React$N.createElement("button", {
       onClick: this.props.onUp
-    }, /*#__PURE__*/React$K.createElement(InlineIcon$c, iconCircleArrowUp)), this.props.onDown != null && /*#__PURE__*/React$K.createElement("button", {
+    }, /*#__PURE__*/React$N.createElement(InlineIcon$c, iconCircleArrowUp)), this.props.onDown != null && /*#__PURE__*/React$N.createElement("button", {
       onClick: this.props.onDown
-    }, /*#__PURE__*/React$K.createElement(InlineIcon$c, iconCircleArrowDown)), this.props.onDelete != null && /*#__PURE__*/React$K.createElement("button", {
+    }, /*#__PURE__*/React$N.createElement(InlineIcon$c, iconCircleArrowDown)), this.props.onDelete != null && /*#__PURE__*/React$N.createElement("button", {
       onClick: this.props.onDelete
-    }, /*#__PURE__*/React$K.createElement(InlineIcon$c, iconTrash)))));
+    }, /*#__PURE__*/React$N.createElement(InlineIcon$c, iconTrash)))));
   }
 
 }
@@ -48625,29 +49757,29 @@ var _module_$L = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var ButtonGroup$5 = _reactComponentsButtonGroupJsx__default["default"];
-var React$J = _react__default["default"];
+var ButtonGroup$5 = _reactComponentsButtonGroupJsx;
+var React$M = _react__default["default"];
 
-class DashPicker$1 extends React$J.Component {
+class DashPicker$1 extends React$M.Component {
   render() {
-    return /*#__PURE__*/React$J.createElement(ButtonGroup$5, {
+    return /*#__PURE__*/React$M.createElement(ButtonGroup$5, {
       value: this.props.value,
       allowEmpty: false,
       buttons: [{
         value: "",
-        content: /*#__PURE__*/React$J.createElement("span", null, "\u2014")
+        content: /*#__PURE__*/React$M.createElement("span", null, "\u2014")
       }, {
         value: "-",
-        content: /*#__PURE__*/React$J.createElement("span", null, "\u2013\u2013\u2013")
+        content: /*#__PURE__*/React$M.createElement("span", null, "\u2013\u2013\u2013")
       }, {
         value: "- ",
-        content: /*#__PURE__*/React$J.createElement("span", null, "\u2013\xA0\xA0\u2013")
+        content: /*#__PURE__*/React$M.createElement("span", null, "\u2013\xA0\xA0\u2013")
       }, {
         value: ".",
-        content: /*#__PURE__*/React$J.createElement("span", null, "\xB7\xB7\xB7\xB7")
+        content: /*#__PURE__*/React$M.createElement("span", null, "\xB7\xB7\xB7\xB7")
       }, {
         value: ". ",
-        content: /*#__PURE__*/React$J.createElement("span", null, "\xB7 \xB7 \xB7")
+        content: /*#__PURE__*/React$M.createElement("span", null, "\xB7 \xB7 \xB7")
       }],
       onChange: this.props.onChange
     });
@@ -48671,13 +49803,13 @@ var _module_$K = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$I = _react__default["default"];
-var TeX$2 = _reactComponentsTexJsx__default["default"];
-var ButtonGroup$4 = _reactComponentsButtonGroupJsx__default["default"];
+var React$L = _react__default["default"];
+var TeX$2 = _reactComponentsTexJsx;
+var ButtonGroup$4 = _reactComponentsButtonGroupJsx;
 var MathInput$3 = _componentsMathInputJsx;
 var NumberInput$2 = _componentsNumberInputJsx;
 
-class ConstraintEditor$1 extends React$I.Component {
+class ConstraintEditor$1 extends React$L.Component {
   constructor() {
     var _this;
 
@@ -48694,9 +49826,9 @@ class ConstraintEditor$1 extends React$I.Component {
   }
 
   render() {
-    return /*#__PURE__*/React$I.createElement("div", null, /*#__PURE__*/React$I.createElement("div", {
+    return /*#__PURE__*/React$L.createElement("div", null, /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, "Constraint:", " ", /*#__PURE__*/React$I.createElement(ButtonGroup$4, {
+    }, "Constraint:", " ", /*#__PURE__*/React$L.createElement(ButtonGroup$4, {
       value: this.props.constraint,
       allowEmpty: false,
       buttons: [{
@@ -48713,59 +49845,59 @@ class ConstraintEditor$1 extends React$I.Component {
         content: "y="
       }],
       onChange: this.change("constraint")
-    })), this.props.constraint === "snap" && /*#__PURE__*/React$I.createElement("div", {
+    })), this.props.constraint === "snap" && /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, "Snap:", " ", /*#__PURE__*/React$I.createElement(NumberInput$2, {
+    }, "Snap:", " ", /*#__PURE__*/React$L.createElement(NumberInput$2, {
       value: this.props.snap,
       placeholder: 0,
       onChange: this.change("snap")
-    })), this.props.constraint === "x" && /*#__PURE__*/React$I.createElement("div", {
+    })), this.props.constraint === "x" && /*#__PURE__*/React$L.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$I.createElement("div", {
+    }, /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$I.createElement(TeX$2, null, "x="), " ", /*#__PURE__*/React$I.createElement(MathInput$3, {
+    }, /*#__PURE__*/React$L.createElement(TeX$2, null, "x="), " ", /*#__PURE__*/React$L.createElement(MathInput$3, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.constraintFn,
       onChange: this.change("constraintFn")
-    }))), this.props.constraint === "y" && /*#__PURE__*/React$I.createElement("div", {
+    }))), this.props.constraint === "y" && /*#__PURE__*/React$L.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$I.createElement("div", {
+    }, /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$I.createElement(TeX$2, null, "y="), " ", /*#__PURE__*/React$I.createElement(MathInput$3, {
+    }, /*#__PURE__*/React$L.createElement(TeX$2, null, "y="), " ", /*#__PURE__*/React$L.createElement(MathInput$3, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.constraintFn,
       onChange: this.change("constraintFn")
-    }))), "Ensure these are set so nothing can be dragged off the canvas:", /*#__PURE__*/React$I.createElement("div", {
+    }))), "Ensure these are set so nothing can be dragged off the canvas:", /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$I.createElement("div", {
+    }, /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$I.createElement(TeX$2, null, "x \\in \\Large["), " ", /*#__PURE__*/React$I.createElement(MathInput$3, {
+    }, /*#__PURE__*/React$L.createElement(TeX$2, null, "x \\in \\Large["), " ", /*#__PURE__*/React$L.createElement(MathInput$3, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.constraintXMin,
       onChange: this.change("constraintXMin")
-    }), /*#__PURE__*/React$I.createElement(TeX$2, null, ", "), " ", /*#__PURE__*/React$I.createElement(MathInput$3, {
+    }), /*#__PURE__*/React$L.createElement(TeX$2, null, ", "), " ", /*#__PURE__*/React$L.createElement(MathInput$3, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.constraintXMax,
       onChange: this.change("constraintXMax")
-    }), " ", /*#__PURE__*/React$I.createElement(TeX$2, null, "\\Large]"))), /*#__PURE__*/React$I.createElement("div", {
+    }), " ", /*#__PURE__*/React$L.createElement(TeX$2, null, "\\Large]"))), /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$I.createElement("div", {
+    }, /*#__PURE__*/React$L.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$I.createElement(TeX$2, null, "y \\in \\Large["), " ", /*#__PURE__*/React$I.createElement(MathInput$3, {
+    }, /*#__PURE__*/React$L.createElement(TeX$2, null, "y \\in \\Large["), " ", /*#__PURE__*/React$L.createElement(MathInput$3, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.constraintYMin,
       onChange: this.change("constraintYMin")
-    }), /*#__PURE__*/React$I.createElement(TeX$2, null, ", "), " ", /*#__PURE__*/React$I.createElement(MathInput$3, {
+    }), /*#__PURE__*/React$L.createElement(TeX$2, null, ", "), " ", /*#__PURE__*/React$L.createElement(MathInput$3, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.constraintYMax,
       onChange: this.change("constraintYMax")
-    }), " ", /*#__PURE__*/React$I.createElement(TeX$2, null, "\\Large]"))));
+    }), " ", /*#__PURE__*/React$L.createElement(TeX$2, null, "\\Large]"))));
   }
 
 }
@@ -48792,23 +49924,23 @@ var _module_$J = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var ButtonGroup$3 = _reactComponentsButtonGroupJsx__default["default"];
-var React$H = _react__default["default"];
+var ButtonGroup$3 = _reactComponentsButtonGroupJsx;
+var React$K = _react__default["default"];
 var _$x = _underscore__default["default"];
 var KhanColors$2 = _utilColorsJs;
 var COLORS = [KhanColors$2.BLACK, KhanColors$2.BLUE, KhanColors$2.GREEN, KhanColors$2.PINK, KhanColors$2.PURPLE, KhanColors$2.RED, KhanColors$2.GRAY];
 var LIGHT_COLORS = [KhanColors$2.LIGHT_BLUE, KhanColors$2.LIGHT_ORANGE, KhanColors$2.LIGHT_PINK, KhanColors$2.LIGHT_GREEN, KhanColors$2.LIGHT_PURPLE, KhanColors$2.LIGHT_RED, "#fff"];
 
-class ColorPicker$1 extends React$H.Component {
+class ColorPicker$1 extends React$K.Component {
   render() {
     var colors = this.props.lightColors ? LIGHT_COLORS : COLORS;
-    return /*#__PURE__*/React$H.createElement(ButtonGroup$3, {
+    return /*#__PURE__*/React$K.createElement(ButtonGroup$3, {
       value: this.props.value,
       allowEmpty: false,
       buttons: _$x.map(colors, color => {
         return {
           value: color,
-          content: /*#__PURE__*/React$H.createElement("span", null, /*#__PURE__*/React$H.createElement("span", {
+          content: /*#__PURE__*/React$K.createElement("span", null, /*#__PURE__*/React$K.createElement("span", {
             className: "colorpicker-circle",
             style: {
               background: color
@@ -48839,20 +49971,20 @@ var _module_$I = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var ButtonGroup$2 = _reactComponentsButtonGroupJsx__default["default"];
-var React$G = _react__default["default"];
+var ButtonGroup$2 = _reactComponentsButtonGroupJsx;
+var React$J = _react__default["default"];
 
-class ArrowPicker$1 extends React$G.Component {
+class ArrowPicker$1 extends React$J.Component {
   render() {
-    return /*#__PURE__*/React$G.createElement(ButtonGroup$2, {
+    return /*#__PURE__*/React$J.createElement(ButtonGroup$2, {
       value: this.props.value,
       allowEmpty: false,
       buttons: [{
         value: "",
-        content: /*#__PURE__*/React$G.createElement("span", null, "\u2014")
+        content: /*#__PURE__*/React$J.createElement("span", null, "\u2014")
       }, {
         value: "->",
-        content: /*#__PURE__*/React$G.createElement("span", null, "\u2192")
+        content: /*#__PURE__*/React$J.createElement("span", null, "\u2192")
       }
       /*
       TODO(eater): fix khan-exercises so these are supported
@@ -48882,7 +50014,7 @@ var _module_$H = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$F = _react__default["default"];
+var React$I = _react__default["default"];
 var _$w = _underscore__default["default"];
 var Changeable$p = _mixinsChangeableJsx;
 var EditorJsonify$8 = _mixinsEditorJsonifyJsx;
@@ -48894,7 +50026,7 @@ var ElementContainer = _interactionElementContainerJsx;
 var GraphSettings$1 = _componentsGraphSettingsJsx;
 var MathInput$2 = _componentsMathInputJsx;
 var NumberInput$1 = _componentsNumberInputJsx;
-var TeX$1 = _reactComponentsTexJsx__default["default"];
+var TeX$1 = _reactComponentsTexJsx;
 var TextInput$5 = _componentsTextInputJsx;
 var KhanColors$1 = _utilColorsJs;
 var defaultInteractionProps$1 = {
@@ -48913,12 +50045,12 @@ var defaultInteractionProps$1 = {
 // TODO(eater): Factor this out
 //
 
-var PointEditor = React$F.createClass({
+var PointEditor = React$I.createClass({
   displayName: "PointEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    coordX: React$F.PropTypes.string,
-    coordY: React$F.PropTypes.string,
-    color: React$F.PropTypes.string
+    coordX: React$I.PropTypes.string,
+    coordY: React$I.PropTypes.string,
+    color: React$I.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -48928,23 +50060,23 @@ var PointEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Coordinate: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Coordinate: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.coordX,
       onChange: this.change("coordX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.coordY,
       onChange: this.change("coordY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(ColorPicker, {
+    }, /*#__PURE__*/React$I.createElement(ColorPicker, {
       value: this.props.color,
       onChange: this.change("color")
     })));
@@ -48968,17 +50100,17 @@ var PointEditor = React$F.createClass({
 // TODO(eater): Factor this out
 //
 
-var LineEditor = React$F.createClass({
+var LineEditor = React$I.createClass({
   displayName: "LineEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    startX: React$F.PropTypes.string,
-    startY: React$F.PropTypes.string,
-    endX: React$F.PropTypes.string,
-    endY: React$F.PropTypes.string,
-    color: React$F.PropTypes.string,
-    strokeDasharray: React$F.PropTypes.string,
-    arrows: React$F.PropTypes.string,
-    strokeWidth: React$F.PropTypes.number
+    startX: React$I.PropTypes.string,
+    startY: React$I.PropTypes.string,
+    endX: React$I.PropTypes.string,
+    endY: React$I.PropTypes.string,
+    color: React$I.PropTypes.string,
+    strokeDasharray: React$I.PropTypes.string,
+    arrows: React$I.PropTypes.string,
+    strokeWidth: React$I.PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -48993,50 +50125,50 @@ var LineEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Start: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Start: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.startX,
       onChange: this.change("startX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.startY,
       onChange: this.change("startY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "End: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "End: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.endX,
       onChange: this.change("endX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.endY,
       onChange: this.change("endY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(ColorPicker, {
+    }, /*#__PURE__*/React$I.createElement(ColorPicker, {
       value: this.props.color,
       onChange: this.change("color")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(DashPicker, {
+    }, /*#__PURE__*/React$I.createElement(DashPicker, {
       value: this.props.strokeDasharray,
       onChange: this.change("strokeDasharray")
-    }), "\xA0 \xA0", /*#__PURE__*/React$F.createElement(ArrowPicker, {
+    }), "\xA0 \xA0", /*#__PURE__*/React$I.createElement(ArrowPicker, {
       value: this.props.arrows,
       onChange: this.change("arrows")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "Width:", " ", /*#__PURE__*/React$F.createElement(NumberInput$1, {
+    }, "Width:", " ", /*#__PURE__*/React$I.createElement(NumberInput$1, {
       value: this.props.strokeWidth,
       placeholder: 2,
       onChange: this.change("strokeWidth")
@@ -49062,14 +50194,14 @@ var LineEditor = React$F.createClass({
 // TODO(eater): Rethink how constraints are represented
 //
 
-var MovablePointEditor = React$F.createClass({
+var MovablePointEditor = React$I.createClass({
   displayName: "MovablePointEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    startX: React$F.PropTypes.string,
-    startY: React$F.PropTypes.string,
-    constraint: React$F.PropTypes.string,
-    snap: React$F.PropTypes.number,
-    constraintFn: React$F.PropTypes.string
+    startX: React$I.PropTypes.string,
+    startY: React$I.PropTypes.string,
+    constraint: React$I.PropTypes.string,
+    snap: React$I.PropTypes.number,
+    constraintFn: React$I.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -49085,27 +50217,27 @@ var MovablePointEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Start: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Start: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.startX,
       onChange: this.change("startX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.startY,
       onChange: this.change("startY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Update ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(x_n, y_n)"), " for ", /*#__PURE__*/React$F.createElement(TeX$1, null, "n ="), " ", /*#__PURE__*/React$F.createElement(NumberInput$1, {
+    }, "Update ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(x_n, y_n)"), " for ", /*#__PURE__*/React$I.createElement(TeX$1, null, "n ="), " ", /*#__PURE__*/React$I.createElement(NumberInput$1, {
       value: this.props.varSubscript,
       placeholder: 0,
       onChange: this.change("varSubscript")
-    })), /*#__PURE__*/React$F.createElement(ConstraintEditor, this.props));
+    })), /*#__PURE__*/React$I.createElement(ConstraintEditor, this.props));
   },
 
   change() {
@@ -49127,16 +50259,16 @@ var MovablePointEditor = React$F.createClass({
 // TODO(eater): Rethink how constraints are represented
 //
 
-var MovableLineEditor = React$F.createClass({
+var MovableLineEditor = React$I.createClass({
   displayName: "MovableLineEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    startX: React$F.PropTypes.string,
-    startY: React$F.PropTypes.string,
-    endX: React$F.PropTypes.string,
-    endY: React$F.PropTypes.string,
-    constraint: React$F.PropTypes.string,
-    snap: React$F.PropTypes.number,
-    constraintFn: React$F.PropTypes.string
+    startX: React$I.PropTypes.string,
+    startY: React$I.PropTypes.string,
+    endX: React$I.PropTypes.string,
+    endY: React$I.PropTypes.string,
+    constraint: React$I.PropTypes.string,
+    snap: React$I.PropTypes.number,
+    constraintFn: React$I.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -49154,47 +50286,47 @@ var MovableLineEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, "Initial position:", /*#__PURE__*/React$F.createElement("div", {
+    }, "Initial position:", /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Start: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Start: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.startX,
       onChange: this.change("startX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.startY,
       onChange: this.change("startY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "End: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "End: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.endX,
       onChange: this.change("endX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.endY,
       onChange: this.change("endY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Start updates ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(x_n, y_n)"), " for ", /*#__PURE__*/React$F.createElement(TeX$1, null, "n ="), /*#__PURE__*/React$F.createElement(NumberInput$1, {
+    }, "Start updates ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(x_n, y_n)"), " for ", /*#__PURE__*/React$I.createElement(TeX$1, null, "n ="), /*#__PURE__*/React$I.createElement(NumberInput$1, {
       value: this.props.startSubscript,
       placeholder: 0,
       onChange: this.change("startSubscript")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "End updates ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(x_m, y_m)"), " for ", /*#__PURE__*/React$F.createElement(TeX$1, null, "m ="), /*#__PURE__*/React$F.createElement(NumberInput$1, {
+    }, "End updates ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(x_m, y_m)"), " for ", /*#__PURE__*/React$I.createElement(TeX$1, null, "m ="), /*#__PURE__*/React$I.createElement(NumberInput$1, {
       value: this.props.endSubscript,
       placeholder: 0,
       onChange: this.change("endSubscript")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "All constraints are applied to the start point."), /*#__PURE__*/React$F.createElement(ConstraintEditor, this.props));
+    }, "All constraints are applied to the start point."), /*#__PURE__*/React$I.createElement(ConstraintEditor, this.props));
   },
 
   change() {
@@ -49215,15 +50347,15 @@ var MovableLineEditor = React$F.createClass({
 // TODO(eater): Factor this out
 //
 
-var FunctionEditor = React$F.createClass({
+var FunctionEditor = React$I.createClass({
   displayName: "FunctionEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    value: React$F.PropTypes.string,
-    rangeMin: React$F.PropTypes.string,
-    rangeMax: React$F.PropTypes.string,
-    color: React$F.PropTypes.string,
-    strokeDashArray: React$F.PropTypes.string,
-    strokeWidth: React$F.PropTypes.number
+    value: React$I.PropTypes.string,
+    rangeMin: React$I.PropTypes.string,
+    rangeMax: React$I.PropTypes.string,
+    color: React$I.PropTypes.string,
+    strokeDashArray: React$I.PropTypes.string,
+    strokeWidth: React$I.PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -49236,42 +50368,42 @@ var FunctionEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(TeX$1, null, this.props.funcName + "(x)="), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, /*#__PURE__*/React$I.createElement(TeX$1, null, this.props.funcName + "(x)="), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.value,
       onChange: this.change("value")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Range: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Range: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.rangeMin,
       onChange: this.change("rangeMin")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.rangeMax,
       onChange: this.change("rangeMax")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(ColorPicker, {
+    }, /*#__PURE__*/React$I.createElement(ColorPicker, {
       value: this.props.color,
       onChange: this.change("color")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(DashPicker, {
+    }, /*#__PURE__*/React$I.createElement(DashPicker, {
       value: this.props.strokeDasharray,
       onChange: this.change("strokeDasharray")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "Width:", " ", /*#__PURE__*/React$F.createElement(NumberInput$1, {
+    }, "Width:", " ", /*#__PURE__*/React$I.createElement(NumberInput$1, {
       value: this.props.strokeWidth,
       placeholder: 2,
       onChange: this.change("strokeWidth")
@@ -49296,16 +50428,16 @@ var FunctionEditor = React$F.createClass({
 // TODO(eater): Factor this out
 //
 
-var ParametricEditor = React$F.createClass({
+var ParametricEditor = React$I.createClass({
   displayName: "ParametricEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    x: React$F.PropTypes.string,
-    y: React$F.PropTypes.string,
-    rangeMin: React$F.PropTypes.string,
-    rangeMax: React$F.PropTypes.string,
-    color: React$F.PropTypes.string,
-    strokeDashArray: React$F.PropTypes.string,
-    strokeWidth: React$F.PropTypes.number
+    x: React$I.PropTypes.string,
+    y: React$I.PropTypes.string,
+    rangeMin: React$I.PropTypes.string,
+    rangeMax: React$I.PropTypes.string,
+    color: React$I.PropTypes.string,
+    strokeDashArray: React$I.PropTypes.string,
+    strokeWidth: React$I.PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -49319,49 +50451,49 @@ var ParametricEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(TeX$1, null, "X(t) ="), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, /*#__PURE__*/React$I.createElement(TeX$1, null, "X(t) ="), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.x,
       onChange: this.change("x")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(TeX$1, null, "Y(t) ="), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, /*#__PURE__*/React$I.createElement(TeX$1, null, "Y(t) ="), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.y,
       onChange: this.change("y")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Range: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Range: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.rangeMin,
       onChange: this.change("rangeMin")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.rangeMax,
       onChange: this.change("rangeMax")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(ColorPicker, {
+    }, /*#__PURE__*/React$I.createElement(ColorPicker, {
       value: this.props.color,
       onChange: this.change("color")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(DashPicker, {
+    }, /*#__PURE__*/React$I.createElement(DashPicker, {
       value: this.props.strokeDasharray,
       onChange: this.change("strokeDasharray")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-left-col"
-    }, "Width:", " ", /*#__PURE__*/React$F.createElement(NumberInput$1, {
+    }, "Width:", " ", /*#__PURE__*/React$I.createElement(NumberInput$1, {
       value: this.props.strokeWidth,
       placeholder: 2,
       onChange: this.change("strokeWidth")
@@ -49387,13 +50519,13 @@ var ParametricEditor = React$F.createClass({
 // TODO(eater): Add text direction
 //
 
-var LabelEditor = React$F.createClass({
+var LabelEditor = React$I.createClass({
   displayName: "LabelEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    color: React$F.PropTypes.string,
-    coordX: React$F.PropTypes.string,
-    coordY: React$F.PropTypes.string,
-    label: React$F.PropTypes.string
+    color: React$I.PropTypes.string,
+    coordX: React$I.PropTypes.string,
+    coordY: React$I.PropTypes.string,
+    label: React$I.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -49404,31 +50536,31 @@ var LabelEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(TextInput$5, {
+    }, /*#__PURE__*/React$I.createElement(TextInput$5, {
       value: this.props.label,
       onChange: this.change("label"),
       style: {
         width: "100%"
       }
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Location: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Location: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.coordX,
       onChange: this.change("coordX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.coordY,
       onChange: this.change("coordY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(ColorPicker, {
+    }, /*#__PURE__*/React$I.createElement(ColorPicker, {
       value: this.props.color,
       onChange: this.change("color")
     })));
@@ -49452,14 +50584,14 @@ var LabelEditor = React$F.createClass({
 // TODO(eater): Factor this out maybe?
 //
 
-var RectangleEditor = React$F.createClass({
+var RectangleEditor = React$I.createClass({
   displayName: "RectangleEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    color: React$F.PropTypes.string,
-    coordX: React$F.PropTypes.string,
-    coordY: React$F.PropTypes.string,
-    height: React$F.PropTypes.string,
-    width: React$F.PropTypes.string
+    color: React$I.PropTypes.string,
+    coordX: React$I.PropTypes.string,
+    coordY: React$I.PropTypes.string,
+    height: React$I.PropTypes.string,
+    width: React$I.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -49471,41 +50603,41 @@ var RectangleEditor = React$F.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "graph-settings"
-    }, /*#__PURE__*/React$F.createElement("div", {
+    }, /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Bottom left: ", /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Bottom left: ", /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large("), /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.coordX,
       onChange: this.change("coordX")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, ","), " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.coordY,
       onChange: this.change("coordY")
-    }), /*#__PURE__*/React$F.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$F.createElement("div", {
+    }), /*#__PURE__*/React$I.createElement(TeX$1, null, "\\Large)")), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Width:", " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Width:", " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.width,
       onChange: this.change("width")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, "Height:", " ", /*#__PURE__*/React$F.createElement(MathInput$2, {
+    }, "Height:", " ", /*#__PURE__*/React$I.createElement(MathInput$2, {
       buttonSets: [],
       buttonsVisible: "never",
       value: this.props.height,
       onChange: this.change("height")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$F.createElement(ColorPicker, {
+    }, /*#__PURE__*/React$I.createElement(ColorPicker, {
       value: this.props.color,
       lightColors: true,
       onChange: this.change("color")
-    })), /*#__PURE__*/React$F.createElement("div", {
+    })), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-row"
     }, "You want a border? Sorry, draw your own."));
   },
@@ -49523,12 +50655,12 @@ var RectangleEditor = React$F.createClass({
   }
 
 });
-var InteractionEditor = React$F.createClass({
+var InteractionEditor = React$I.createClass({
   displayName: "InteractionEditor",
   // TODO(eater): Make more better
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    elements: React$F.PropTypes.arrayOf(React$F.PropTypes.object),
-    graph: React$F.PropTypes.objectOf(React$F.PropTypes.any)
+    elements: React$I.PropTypes.arrayOf(React$I.PropTypes.object),
+    graph: React$I.PropTypes.objectOf(React$I.PropTypes.any)
   }),
   getDefaultProps: function getDefaultProps() {
     return defaultInteractionProps$1;
@@ -49640,11 +50772,11 @@ var InteractionEditor = React$F.createClass({
 
   render: function render() {
     /* eslint-disable max-len */
-    return /*#__PURE__*/React$F.createElement("div", {
+    return /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-interaction-editor"
-    }, /*#__PURE__*/React$F.createElement(ElementContainer, {
+    }, /*#__PURE__*/React$I.createElement(ElementContainer, {
       title: "Grid settings"
-    }, /*#__PURE__*/React$F.createElement(GraphSettings$1, {
+    }, /*#__PURE__*/React$I.createElement(GraphSettings$1, {
       editableSettings: ["canvas", "graph"],
       box: this.props.graph.box,
       labels: this.props.graph.labels,
@@ -49653,15 +50785,15 @@ var InteractionEditor = React$F.createClass({
       gridStep: this.props.graph.gridStep,
       markings: this.props.graph.markings,
       onChange: this._updateGraphProps
-    }), this.props.graph.valid !== true && /*#__PURE__*/React$F.createElement("div", null, this.props.graph.valid)), _$w.map(this.props.elements, function (element, n) {
+    }), this.props.graph.valid !== true && /*#__PURE__*/React$I.createElement("div", null, this.props.graph.valid)), _$w.map(this.props.elements, function (element, n) {
       if (element.type === "movable-point") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Movable point", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(x_{" + element.options.varSubscript + "}, y_{" + element.options.varSubscript + "})")),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Movable point", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(x_{" + element.options.varSubscript + "}, y_{" + element.options.varSubscript + "})")),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement.bind(this, n),
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(MovablePointEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(MovablePointEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49673,13 +50805,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "movable-line") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Movable line", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(x_{" + element.options.startSubscript + "}, y_{" + element.options.startSubscript + "})"), " ", "to", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(x_{" + element.options.endSubscript + "}, y_{" + element.options.endSubscript + "})")),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Movable line", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(x_{" + element.options.startSubscript + "}, y_{" + element.options.startSubscript + "})"), " ", "to", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(x_{" + element.options.endSubscript + "}, y_{" + element.options.endSubscript + "})")),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement.bind(this, n),
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(MovableLineEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(MovableLineEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49691,13 +50823,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "point") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Point", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(" + element.options.coordX + ", " + element.options.coordY + ")")),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Point", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(" + element.options.coordX + ", " + element.options.coordY + ")")),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement.bind(this, n),
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(PointEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(PointEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49709,13 +50841,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "line") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Line", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(" + element.options.startX + ", " + element.options.startY + ")"), " ", "to", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(" + element.options.endX + ", " + element.options.endY + ")")),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Line", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(" + element.options.startX + ", " + element.options.startY + ")"), " ", "to", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(" + element.options.endX + ", " + element.options.endY + ")")),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement.bind(this, n),
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(LineEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(LineEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49727,13 +50859,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "function") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Function", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, element.options.funcName + "(x) = " + element.options.value)),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Function", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, element.options.funcName + "(x) = " + element.options.value)),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement,
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(FunctionEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(FunctionEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49745,13 +50877,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "parametric") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Parametric"),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Parametric"),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement,
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(ParametricEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(ParametricEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49763,13 +50895,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "label") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Label", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, element.options.label), " "),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Label", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, element.options.label), " "),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement,
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(LabelEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(LabelEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49781,13 +50913,13 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       } else if (element.type === "rectangle") {
-        return /*#__PURE__*/React$F.createElement(ElementContainer, {
-          title: /*#__PURE__*/React$F.createElement("span", null, "Rectangle", " ", /*#__PURE__*/React$F.createElement(TeX$1, null, "(" + element.options.coordX + ", " + element.options.coordY + ")"), "\xA0\u2014\xA0", /*#__PURE__*/React$F.createElement(TeX$1, null, element.options.width + " \\times " + element.options.height)),
+        return /*#__PURE__*/React$I.createElement(ElementContainer, {
+          title: /*#__PURE__*/React$I.createElement("span", null, "Rectangle", " ", /*#__PURE__*/React$I.createElement(TeX$1, null, "(" + element.options.coordX + ", " + element.options.coordY + ")"), "\xA0\u2014\xA0", /*#__PURE__*/React$I.createElement(TeX$1, null, element.options.width + " \\times " + element.options.height)),
           onUp: n === 0 ? null : this._moveElementUp.bind(this, n),
           onDown: n === this.props.elements.length - 1 ? null : this._moveElementDown.bind(this, n),
           onDelete: this._deleteElement,
           key: element.key
-        }, /*#__PURE__*/React$F.createElement(RectangleEditor, _extends({}, element.options, {
+        }, /*#__PURE__*/React$I.createElement(RectangleEditor, _extends({}, element.options, {
           onChange: newProps => {
             var elements = JSON.parse(JSON.stringify(this.props.elements));
 
@@ -49799,29 +50931,29 @@ var InteractionEditor = React$F.createClass({
           }
         })));
       }
-    }, this), /*#__PURE__*/React$F.createElement("div", {
+    }, this), /*#__PURE__*/React$I.createElement("div", {
       className: "perseus-widget-interaction-editor-select-element"
-    }, /*#__PURE__*/React$F.createElement("select", {
+    }, /*#__PURE__*/React$I.createElement("select", {
       onChange: this._addNewElement
-    }, /*#__PURE__*/React$F.createElement("option", {
+    }, /*#__PURE__*/React$I.createElement("option", {
       value: ""
-    }, "Add an element", "\u2026"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Add an element", "\u2026"), /*#__PURE__*/React$I.createElement("option", {
       disabled: true
-    }, "--"), /*#__PURE__*/React$F.createElement("option", {
+    }, "--"), /*#__PURE__*/React$I.createElement("option", {
       value: "point"
-    }, "Point"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Point"), /*#__PURE__*/React$I.createElement("option", {
       value: "line"
-    }, "Line segment"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Line segment"), /*#__PURE__*/React$I.createElement("option", {
       value: "function"
-    }, "Function plot"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Function plot"), /*#__PURE__*/React$I.createElement("option", {
       value: "parametric"
-    }, "Parametric plot"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Parametric plot"), /*#__PURE__*/React$I.createElement("option", {
       value: "label"
-    }, "Label"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Label"), /*#__PURE__*/React$I.createElement("option", {
       value: "rectangle"
-    }, "Rectangle"), /*#__PURE__*/React$F.createElement("option", {
+    }, "Rectangle"), /*#__PURE__*/React$I.createElement("option", {
       value: "movable-point"
-    }, "\u2605 Movable point"), /*#__PURE__*/React$F.createElement("option", {
+    }, "\u2605 Movable point"), /*#__PURE__*/React$I.createElement("option", {
       value: "movable-line"
     }, "\u2605 Movable line segment"))));
     /* eslint-enable max-len */
@@ -49844,7 +50976,7 @@ var _module_$G = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$E = _react__default["default"];
+var React$H = _react__default["default"];
 var _$v = _underscore__default["default"];
 var Changeable$o = _mixinsChangeableJsx;
 var Graphie$2 = _componentsGraphieJsx;
@@ -49915,12 +51047,12 @@ var defaultInteractionProps = {
   },
   elements: []
 };
-var Interaction = React$E.createClass({
+var Interaction = React$H.createClass({
   displayName: "Interaction",
   // TODO(eater): Make more better
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$o.propTypes), {}, {
-    graph: React$E.PropTypes.object,
-    elements: React$E.PropTypes.arrayOf(React$E.PropTypes.object)
+    graph: React$H.PropTypes.object,
+    elements: React$H.PropTypes.arrayOf(React$H.PropTypes.object)
   }),
   getDefaultProps: function getDefaultProps() {
     return defaultInteractionProps;
@@ -50112,7 +51244,7 @@ var Interaction = React$E.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$E.createElement(Graphie$2, {
+    return /*#__PURE__*/React$H.createElement(Graphie$2, {
       box: this.props.graph.box,
       range: this.props.graph.range,
       options: this.props.graph,
@@ -50120,7 +51252,7 @@ var Interaction = React$E.createClass({
       setDrawingAreaAvailable: this.props.apiOptions.setDrawingAreaAvailable
     }, _$v.map(this.props.elements, function (element, n) {
       if (element.type === "point") {
-        return /*#__PURE__*/React$E.createElement(Point, {
+        return /*#__PURE__*/React$H.createElement(Point, {
           key: element.key,
           coord: [this._eval(element.options.coordX), this._eval(element.options.coordY)],
           color: element.options.color
@@ -50128,7 +51260,7 @@ var Interaction = React$E.createClass({
       } else if (element.type === "line") {
         var start = [this._eval(element.options.startX), this._eval(element.options.startY)];
         var end = [this._eval(element.options.endX), this._eval(element.options.endY)];
-        return /*#__PURE__*/React$E.createElement(Line, {
+        return /*#__PURE__*/React$H.createElement(Line, {
           key: element.key,
           start: start,
           end: end,
@@ -50167,7 +51299,7 @@ var Interaction = React$E.createClass({
         // change
 
 
-        return /*#__PURE__*/React$E.createElement(MovablePoint$1, {
+        return /*#__PURE__*/React$H.createElement(MovablePoint$1, {
           key: element.key,
           coord: [this.state.variables["x_" + element.options.varSubscript], this.state.variables["y_" + element.options.varSubscript]],
           constraints: constraints,
@@ -50205,21 +51337,21 @@ var Interaction = React$E.createClass({
 
         var start = [this.state.variables["x_" + element.options.startSubscript], this.state.variables["y_" + element.options.startSubscript]];
         var end = [this.state.variables["x_" + element.options.endSubscript], this.state.variables["y_" + element.options.endSubscript]];
-        return /*#__PURE__*/React$E.createElement(MovableLine$1, {
+        return /*#__PURE__*/React$H.createElement(MovableLine$1, {
           key: element.key,
           constraints: constraints,
           onMove: _$v.bind(this._updateLineLocation, this, element.options),
           foo_x: element.options.constraint,
           foo_y: element.options.constraintFn,
           foo_z: element.options.snap
-        }, /*#__PURE__*/React$E.createElement(MovablePoint$1, {
+        }, /*#__PURE__*/React$H.createElement(MovablePoint$1, {
           coord: start,
           static: true,
           normalStyle: {
             stroke: "none",
             fill: "none"
           }
-        }), /*#__PURE__*/React$E.createElement(MovablePoint$1, {
+        }), /*#__PURE__*/React$H.createElement(MovablePoint$1, {
           coord: end,
           static: true,
           normalStyle: {
@@ -50243,7 +51375,7 @@ var Interaction = React$E.createClass({
         var varValues = _$v.object(vars, _$v.map(vars, v => this.state.variables[v]));
 
         var range = [this._eval(element.options.rangeMin, this.state.variables), this._eval(element.options.rangeMax, this.state.variables)];
-        return /*#__PURE__*/React$E.createElement(Plot$1, {
+        return /*#__PURE__*/React$H.createElement(Plot$1, {
           key: element.key,
           fn: fn,
           foo_fn: element.options.value,
@@ -50275,7 +51407,7 @@ var Interaction = React$E.createClass({
         var varValues = _$v.object(vars, _$v.map(vars, v => this.state.variables[v]));
 
         var range = [this._eval(element.options.rangeMin, this.state.variables), this._eval(element.options.rangeMax, this.state.variables)];
-        return /*#__PURE__*/React$E.createElement(PlotParametric, {
+        return /*#__PURE__*/React$H.createElement(PlotParametric, {
           key: element.key,
           fn: fn,
           foo_fnx: element.options.x,
@@ -50293,7 +51425,7 @@ var Interaction = React$E.createClass({
         });
       } else if (element.type === "label") {
         var coord = [this._eval(element.options.coordX), this._eval(element.options.coordY)];
-        return /*#__PURE__*/React$E.createElement(Label, {
+        return /*#__PURE__*/React$H.createElement(Label, {
           key: n + 1,
           coord: coord,
           text: element.options.label,
@@ -50302,7 +51434,7 @@ var Interaction = React$E.createClass({
           }
         });
       } else if (element.type === "rectangle") {
-        return /*#__PURE__*/React$E.createElement(Rect, {
+        return /*#__PURE__*/React$H.createElement(Rect, {
           key: n + 1,
           x: this._eval(element.options.coordX),
           y: this._eval(element.options.coordY),
@@ -50357,12 +51489,12 @@ var _module_$F = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$D = _react__default["default"];
+var React$G = _react__default["default"];
 var _$u = _underscore__default["default"];
 var Util$5 = Util$q;
 var Changeable$n = _mixinsChangeableJsx;
 var EditorJsonify$7 = _mixinsEditorJsonifyJsx;
-var BlurInput$3 = _reactComponentsBlurInputJsx__default["default"];
+var BlurInput$3 = _reactComponentsBlurInputJsx;
 var Editor$6 = _editorJsx;
 var InfoTip$6 = _componentsInfoTipJsx;
 var InlineIcon$b = _componentsInlineIconJsx;
@@ -50385,7 +51517,7 @@ var INTERNALLY_HOSTED_URL_RE = new RegExp("^(https?|web\\+graphie)://[^/]*" + IN
  */
 
 var captionAlignments = ["center", "above", "above right", "right", "below right", "below", "below left", "left", "above left"];
-var ImageEditor = React$D.createClass({
+var ImageEditor = React$G.createClass({
   displayName: "ImageEditor",
   propTypes: _objectSpread2({}, Changeable$n.propTypes),
   componentDidMount: function componentDidMount() {
@@ -50413,9 +51545,9 @@ var ImageEditor = React$D.createClass({
   },
   render: function render() {
     var backgroundImage = this.props.backgroundImage;
-    var imageSettings = /*#__PURE__*/React$D.createElement("div", {
+    var imageSettings = /*#__PURE__*/React$G.createElement("div", {
       className: "image-settings"
-    }, /*#__PURE__*/React$D.createElement("div", null, /*#__PURE__*/React$D.createElement("label", null, /*#__PURE__*/React$D.createElement("div", null, "Alt text:", /*#__PURE__*/React$D.createElement(InfoTip$6, null, "This is important for screenreaders. The content of this alt text will be formatted as markdown (tables, emphasis, etc. are supported).")), /*#__PURE__*/React$D.createElement(Editor$6, {
+    }, /*#__PURE__*/React$G.createElement("div", null, /*#__PURE__*/React$G.createElement("label", null, /*#__PURE__*/React$G.createElement("div", null, "Alt text:", /*#__PURE__*/React$G.createElement(InfoTip$6, null, "This is important for screenreaders. The content of this alt text will be formatted as markdown (tables, emphasis, etc. are supported).")), /*#__PURE__*/React$G.createElement(Editor$6, {
       apiOptions: this.props.apiOptions,
       content: this.props.alt,
       onChange: props => {
@@ -50424,7 +51556,7 @@ var ImageEditor = React$D.createClass({
         }
       },
       widgetEnabled: false
-    }))), /*#__PURE__*/React$D.createElement("div", null, /*#__PURE__*/React$D.createElement("label", null, /*#__PURE__*/React$D.createElement("div", null, "Caption:"), /*#__PURE__*/React$D.createElement(Editor$6, {
+    }))), /*#__PURE__*/React$G.createElement("div", null, /*#__PURE__*/React$G.createElement("label", null, /*#__PURE__*/React$G.createElement("div", null, "Caption:"), /*#__PURE__*/React$G.createElement(Editor$6, {
       apiOptions: this.props.apiOptions,
       content: this.props.caption,
       onChange: props => {
@@ -50434,12 +51566,12 @@ var ImageEditor = React$D.createClass({
       },
       widgetEnabled: false
     }))));
-    var backgroundImageErrorText = /*#__PURE__*/React$D.createElement("div", {
+    var backgroundImageErrorText = /*#__PURE__*/React$G.createElement("div", {
       className: "renderer-widget-error"
     }, this.state.backgroundImageError);
-    return /*#__PURE__*/React$D.createElement("div", {
+    return /*#__PURE__*/React$G.createElement("div", {
       className: "perseus-image-editor"
-    }, /*#__PURE__*/React$D.createElement("label", null, "Image url:", /*#__PURE__*/React$D.createElement(InfoTip$6, null, "Paste an image or graphie image URL."), this.state.backgroundImageError && backgroundImageErrorText, /*#__PURE__*/React$D.createElement(BlurInput$3, {
+    }, /*#__PURE__*/React$G.createElement("label", null, "Image url:", /*#__PURE__*/React$G.createElement(InfoTip$6, null, "Paste an image or graphie image URL."), this.state.backgroundImageError && backgroundImageErrorText, /*#__PURE__*/React$G.createElement(BlurInput$3, {
       value: backgroundImage.url || "",
       style: {
         width: 332
@@ -50448,36 +51580,36 @@ var ImageEditor = React$D.createClass({
     })), backgroundImage.url && imageSettings);
   },
   _renderRowForLabel: function _renderRowForLabel(label, i) {
-    return /*#__PURE__*/React$D.createElement("tr", {
+    return /*#__PURE__*/React$G.createElement("tr", {
       key: i
-    }, /*#__PURE__*/React$D.createElement("td", null, /*#__PURE__*/React$D.createElement(RangeInput, {
+    }, /*#__PURE__*/React$G.createElement("td", null, /*#__PURE__*/React$G.createElement(RangeInput, {
       value: label.coordinates,
       onChange: this.onCoordinateChange.bind(this, i)
-    })), /*#__PURE__*/React$D.createElement("td", {
+    })), /*#__PURE__*/React$G.createElement("td", {
       style: {
         verticalAlign: "bottom",
         width: "5px"
       }
-    }, /*#__PURE__*/React$D.createElement("input", {
+    }, /*#__PURE__*/React$G.createElement("input", {
       type: "text",
       className: "graph-settings-axis-label",
       value: label.content,
       onChange: this.onContentChange.bind(this, i)
-    })), /*#__PURE__*/React$D.createElement("td", null, /*#__PURE__*/React$D.createElement("select", {
+    })), /*#__PURE__*/React$G.createElement("td", null, /*#__PURE__*/React$G.createElement("select", {
       className: "perseus-widget-dropdown",
       value: label.alignment,
       onChange: this.onAlignmentChange.bind(this, i)
     }, captionAlignments.map(function (alignment, i) {
-      return /*#__PURE__*/React$D.createElement("option", {
+      return /*#__PURE__*/React$G.createElement("option", {
         key: "" + i,
         value: alignment
       }, alignment);
-    }, this))), /*#__PURE__*/React$D.createElement("td", null, /*#__PURE__*/React$D.createElement("a", {
+    }, this))), /*#__PURE__*/React$G.createElement("td", null, /*#__PURE__*/React$G.createElement("a", {
       href: "#",
       className: "simple-button orange delete-label",
       title: "Remove this label",
       onClick: this.removeLabel.bind(this, i)
-    }, /*#__PURE__*/React$D.createElement(InlineIcon$b, iconTrash))));
+    }, /*#__PURE__*/React$G.createElement(InlineIcon$b, iconTrash))));
   },
 
   change() {
@@ -50613,7 +51745,7 @@ var _module_$E = {
 */
 
 var classNames$9 = _classnames__default["default"];
-var React$C = _react__default["default"];
+var React$F = _react__default["default"];
 var _$t = _underscore__default["default"];
 var ApiOptions$e = _perseusApiJsx.Options;
 var Changeable$m = _mixinsChangeableJsx;
@@ -50633,30 +51765,30 @@ var defaultBackgroundImage = {
 var supportedAlignments = ["block", "float-left", "float-right", "full-width"];
 var editorAlignments = ["block", "full-width"];
 var DEFAULT_ALIGNMENT = "block";
-var ImageWidget = React$C.createClass({
+var ImageWidget = React$F.createClass({
   displayName: "ImageWidget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$m.propTypes), {}, {
-    alignment: React$C.PropTypes.oneOf(supportedAlignments),
-    alt: React$C.PropTypes.string,
+    alignment: React$F.PropTypes.oneOf(supportedAlignments),
+    alt: React$F.PropTypes.string,
     apiOptions: ApiOptions$e.propTypes,
     // TODO(alex): Rename to something else, e.g. "image", perhaps flatten
-    backgroundImage: React$C.PropTypes.shape({
-      url: React$C.PropTypes.string,
-      width: React$C.PropTypes.number,
-      height: React$C.PropTypes.number
+    backgroundImage: React$F.PropTypes.shape({
+      url: React$F.PropTypes.string,
+      width: React$F.PropTypes.number,
+      height: React$F.PropTypes.number
     }),
-    box: React$C.PropTypes.arrayOf(React$C.PropTypes.number),
-    caption: React$C.PropTypes.string,
+    box: React$F.PropTypes.arrayOf(React$F.PropTypes.number),
+    caption: React$F.PropTypes.string,
     // TODO(alex): Convert uses of this widget's labeling functionality to
     // SvgImage wherever possible (almost certainly requires a backfill)
-    labels: React$C.PropTypes.arrayOf(React$C.PropTypes.shape({
-      content: React$C.PropTypes.string,
-      coordinates: React$C.PropTypes.arrayOf(React$C.PropTypes.number),
-      alignment: React$C.PropTypes.string
+    labels: React$F.PropTypes.arrayOf(React$F.PropTypes.shape({
+      content: React$F.PropTypes.string,
+      coordinates: React$F.PropTypes.arrayOf(React$F.PropTypes.number),
+      alignment: React$F.PropTypes.string
     })),
-    range: React$C.PropTypes.arrayOf(React$C.PropTypes.arrayOf(React$C.PropTypes.number)),
-    title: React$C.PropTypes.string,
-    trackInteraction: React$C.PropTypes.func.isRequired,
+    range: React$F.PropTypes.arrayOf(React$F.PropTypes.arrayOf(React$F.PropTypes.number)),
+    title: React$F.PropTypes.string,
+    trackInteraction: React$F.PropTypes.func.isRequired,
     linterContext: linterContextProps
   }),
   statics: {
@@ -50699,7 +51831,7 @@ var ImageWidget = React$C.createClass({
     var backgroundImage = this.props.backgroundImage;
 
     if (backgroundImage.url) {
-      image = /*#__PURE__*/React$C.createElement(SvgImage$1, {
+      image = /*#__PURE__*/React$F.createElement(SvgImage$1, {
         src: backgroundImage.url,
         alt:
         /* alt text is formatted in a sr-only
@@ -50739,9 +51871,9 @@ var ImageWidget = React$C.createClass({
     }
 
     if (this.props.alt) {
-      alt = /*#__PURE__*/React$C.createElement("span", {
+      alt = /*#__PURE__*/React$F.createElement("span", {
         className: "perseus-sr-only"
-      }, /*#__PURE__*/React$C.createElement(Renderer$9, {
+      }, /*#__PURE__*/React$F.createElement(Renderer$9, {
         content: this.props.alt,
         apiOptions: apiOptions,
         linterContext: this.props.linterContext
@@ -50791,21 +51923,21 @@ var ImageWidget = React$C.createClass({
         // Aphrodite.
 
         var minWidth = isImageFullWidth ? null : "0 !important";
-        titleAndCaption = /*#__PURE__*/React$C.createElement("div", {
+        titleAndCaption = /*#__PURE__*/React$F.createElement("div", {
           className: className
-        }, /*#__PURE__*/React$C.createElement("div", {
+        }, /*#__PURE__*/React$F.createElement("div", {
           className: aphrodite.css(ImageWidget.styles.caption),
           style: {
             minWidth: minWidth
           }
-        }, /*#__PURE__*/React$C.createElement(Renderer$9, {
+        }, /*#__PURE__*/React$F.createElement(Renderer$9, {
           content: _title + this.props.caption,
           apiOptions: apiOptions,
           linterContext: this.props.linterContext
         })));
       }
 
-      return /*#__PURE__*/React$C.createElement("div", {
+      return /*#__PURE__*/React$F.createElement("div", {
         className: "perseus-image-widget"
       }, image, alt, titleAndCaption);
     } else {
@@ -50813,9 +51945,9 @@ var ImageWidget = React$C.createClass({
       var caption;
 
       if (this.props.title) {
-        title = /*#__PURE__*/React$C.createElement("div", {
+        title = /*#__PURE__*/React$F.createElement("div", {
           className: "perseus-image-title"
-        }, /*#__PURE__*/React$C.createElement(Renderer$9, {
+        }, /*#__PURE__*/React$F.createElement(Renderer$9, {
           content: this.props.title,
           apiOptions: apiOptions,
           linterContext: this.props.linterContext
@@ -50823,16 +51955,16 @@ var ImageWidget = React$C.createClass({
       }
 
       if (this.props.caption) {
-        caption = /*#__PURE__*/React$C.createElement("div", {
+        caption = /*#__PURE__*/React$F.createElement("div", {
           className: "perseus-image-caption"
-        }, /*#__PURE__*/React$C.createElement(Renderer$9, {
+        }, /*#__PURE__*/React$F.createElement(Renderer$9, {
           content: this.props.caption,
           apiOptions: apiOptions,
           linterContext: this.props.linterContext
         }));
       }
 
-      return /*#__PURE__*/React$C.createElement("div", {
+      return /*#__PURE__*/React$F.createElement("div", {
         className: "perseus-image-widget"
       }, title, image, alt, caption);
     }
@@ -50891,21 +52023,21 @@ var _module_$D = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$B = _react__default["default"];
+var React$E = _react__default["default"];
 var _$s = _underscore__default["default"];
 var Changeable$l = _mixinsChangeableJsx;
 var EditorJsonify$6 = _mixinsEditorJsonifyJsx;
-var BlurInput$2 = _reactComponentsBlurInputJsx__default["default"];
+var BlurInput$2 = _reactComponentsBlurInputJsx;
 var PropCheckBox$5 = _componentsPropCheckBoxJsx;
 /**
  * This is used for editing a name/value pair.
  */
 
-var PairEditor$1 = React$B.createClass({
+var PairEditor$1 = React$E.createClass({
   displayName: "PairEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$l.propTypes), {}, {
-    name: React$B.PropTypes.string,
-    value: React$B.PropTypes.string
+    name: React$E.PropTypes.string,
+    value: React$E.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50923,10 +52055,10 @@ var PairEditor$1 = React$B.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$B.createElement("fieldset", null, /*#__PURE__*/React$B.createElement("label", null, "Name:", /*#__PURE__*/React$B.createElement(BlurInput$2, {
+    return /*#__PURE__*/React$E.createElement("fieldset", null, /*#__PURE__*/React$E.createElement("label", null, "Name:", /*#__PURE__*/React$E.createElement(BlurInput$2, {
       value: this.props.name,
       onChange: this.change("name")
-    })), /*#__PURE__*/React$B.createElement("label", null, "Value:", /*#__PURE__*/React$B.createElement(BlurInput$2, {
+    })), /*#__PURE__*/React$E.createElement("label", null, "Value:", /*#__PURE__*/React$E.createElement(BlurInput$2, {
       value: this.props.value,
       onChange: this.change("value")
     })));
@@ -50941,17 +52073,17 @@ var PairEditor$1 = React$B.createClass({
  * This is used for editing a set of name/value pairs.
  */
 
-var PairsEditor$1 = React$B.createClass({
+var PairsEditor$1 = React$E.createClass({
   displayName: "PairsEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$l.propTypes), {}, {
-    pairs: React$B.PropTypes.arrayOf(React$B.PropTypes.shape({
-      name: React$B.PropTypes.string,
-      value: React$B.PropTypes.string
+    pairs: React$E.PropTypes.arrayOf(React$E.PropTypes.shape({
+      name: React$E.PropTypes.string,
+      value: React$E.PropTypes.string
     })).isRequired
   }),
   render: function render() {
     var editors = _$s.map(this.props.pairs, (pair, i) => {
-      return /*#__PURE__*/React$B.createElement(PairEditor$1, {
+      return /*#__PURE__*/React$E.createElement(PairEditor$1, {
         key: i,
         name: pair.name,
         value: pair.value,
@@ -50959,7 +52091,7 @@ var PairsEditor$1 = React$B.createClass({
       });
     });
 
-    return /*#__PURE__*/React$B.createElement("div", null, editors);
+    return /*#__PURE__*/React$E.createElement("div", null, editors);
   },
 
   change() {
@@ -50995,7 +52127,7 @@ var PairsEditor$1 = React$B.createClass({
  * This is the main editor for this widget, to specify all the options.
  */
 
-var IframeEditor = React$B.createClass({
+var IframeEditor = React$E.createClass({
   displayName: "IframeEditor",
   propTypes: _objectSpread2({}, Changeable$l.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -51021,32 +52153,32 @@ var IframeEditor = React$B.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$B.createElement("div", null, /*#__PURE__*/React$B.createElement("div", {
+    return /*#__PURE__*/React$E.createElement("div", null, /*#__PURE__*/React$E.createElement("div", {
       style: {
         fontWeight: "bold",
         textAlign: "center"
       }
-    }, "This widget is deprecated! ", /*#__PURE__*/React$B.createElement("br", null), "Try using the Video or CS Program widgets instead."), /*#__PURE__*/React$B.createElement("label", null, "Url or Program ID:", /*#__PURE__*/React$B.createElement(BlurInput$2, {
+    }, "This widget is deprecated! ", /*#__PURE__*/React$E.createElement("br", null), "Try using the Video or CS Program widgets instead."), /*#__PURE__*/React$E.createElement("label", null, "Url or Program ID:", /*#__PURE__*/React$E.createElement(BlurInput$2, {
       name: "url",
       value: this.props.url,
       onChange: this.change("url")
-    })), /*#__PURE__*/React$B.createElement("br", null), /*#__PURE__*/React$B.createElement("label", null, "Settings:", /*#__PURE__*/React$B.createElement(PairsEditor$1, {
+    })), /*#__PURE__*/React$E.createElement("br", null), /*#__PURE__*/React$E.createElement("label", null, "Settings:", /*#__PURE__*/React$E.createElement(PairsEditor$1, {
       name: "settings",
       pairs: this.props.settings,
       onChange: this.handleSettingsChange
-    })), /*#__PURE__*/React$B.createElement("br", null), /*#__PURE__*/React$B.createElement("label", null, "Width:", /*#__PURE__*/React$B.createElement(BlurInput$2, {
+    })), /*#__PURE__*/React$E.createElement("br", null), /*#__PURE__*/React$E.createElement("label", null, "Width:", /*#__PURE__*/React$E.createElement(BlurInput$2, {
       name: "width",
       value: this.props.width,
       onChange: this.change("width")
-    })), /*#__PURE__*/React$B.createElement("label", null, "Height:", /*#__PURE__*/React$B.createElement(BlurInput$2, {
+    })), /*#__PURE__*/React$E.createElement("label", null, "Height:", /*#__PURE__*/React$E.createElement(BlurInput$2, {
       name: "height",
       value: this.props.height,
       onChange: this.change("height")
-    })), /*#__PURE__*/React$B.createElement(PropCheckBox$5, {
+    })), /*#__PURE__*/React$E.createElement(PropCheckBox$5, {
       label: "Allow full screen",
       allowFullScreen: this.props.allowFullScreen,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$B.createElement("br", null), /*#__PURE__*/React$B.createElement(PropCheckBox$5, {
+    }), /*#__PURE__*/React$E.createElement("br", null), /*#__PURE__*/React$E.createElement(PropCheckBox$5, {
       label: "Allow iframe content to redirect the page",
       allowTopNavigation: this.props.allowTopNavigation,
       onChange: this.props.onChange
@@ -51086,24 +52218,24 @@ var _module_$C = {
 
 /* globals KA */
 
-var React$A = _react__default["default"];
+var React$D = _react__default["default"];
 var _$r = _underscore__default["default"];
 var Changeable$k = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated$1 = _mixinsWidgetJsonifyDeprecatedJsx;
 var updateQueryString$1 = Util$q.updateQueryString;
 /* This renders the iframe and handles validation via window.postMessage */
 
-var Iframe = React$A.createClass({
+var Iframe = React$D.createClass({
   displayName: "Iframe",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$k.propTypes), {}, {
-    width: React$A.PropTypes.string,
-    height: React$A.PropTypes.string,
-    url: React$A.PropTypes.string,
-    settings: React$A.PropTypes.array,
-    status: React$A.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
-    message: React$A.PropTypes.string,
-    allowFullScreen: React$A.PropTypes.bool,
-    allowTopNavigation: React$A.PropTypes.bool
+    width: React$D.PropTypes.string,
+    height: React$D.PropTypes.string,
+    url: React$D.PropTypes.string,
+    settings: React$D.PropTypes.array,
+    status: React$D.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
+    message: React$D.PropTypes.string,
+    allowFullScreen: React$D.PropTypes.bool,
+    allowTopNavigation: React$D.PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -51205,7 +52337,7 @@ var Iframe = React$A.createClass({
     //  creator "went wild".
     // http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/
 
-    return /*#__PURE__*/React$A.createElement("iframe", {
+    return /*#__PURE__*/React$D.createElement("iframe", {
       sandbox: sandboxProperties,
       style: style,
       src: url,
@@ -51274,18 +52406,18 @@ var _module_$B = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$z = _react__default["default"];
+var React$C = _react__default["default"];
 var _$q = _underscore__default["default"];
 var ApiOptions$d = _perseusApiJsx.Options;
 var Changeable$j = _mixinsChangeableJsx;
 var Editor$5 = _editorJsx;
-var GroupEditor = React$z.createClass({
+var GroupEditor = React$C.createClass({
   displayName: "GroupEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$j.propTypes), {}, {
-    content: React$z.PropTypes.string,
-    widgets: React$z.PropTypes.object,
-    images: React$z.PropTypes.object,
-    metadata: React$z.PropTypes.any,
+    content: React$C.PropTypes.string,
+    widgets: React$C.PropTypes.object,
+    images: React$C.PropTypes.object,
+    metadata: React$C.PropTypes.any,
     apiOptions: ApiOptions$d.propTypes
   }),
   getDefaultProps: function getDefaultProps() {
@@ -51299,9 +52431,9 @@ var GroupEditor = React$z.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$z.createElement("div", {
+    return /*#__PURE__*/React$C.createElement("div", {
       className: "perseus-group-editor"
-    }, /*#__PURE__*/React$z.createElement("div", null, this._renderMetadataEditor()), /*#__PURE__*/React$z.createElement(Editor$5, {
+    }, /*#__PURE__*/React$C.createElement("div", null, this._renderMetadataEditor()), /*#__PURE__*/React$C.createElement(Editor$5, {
       ref: "editor",
       content: this.props.content,
       widgets: this.props.widgets,
@@ -51314,7 +52446,7 @@ var GroupEditor = React$z.createClass({
   },
   _renderMetadataEditor: function _renderMetadataEditor() {
     var GroupMetadataEditor = this.props.apiOptions.GroupMetadataEditor;
-    return /*#__PURE__*/React$z.createElement(GroupMetadataEditor, {
+    return /*#__PURE__*/React$C.createElement(GroupMetadataEditor, {
       value: this.props.metadata,
       onChange: this.change("metadata")
     });
@@ -51350,19 +52482,19 @@ var _module_$A = {
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 var classNames$8 = _classnames__default["default"];
-var React$y = _react__default["default"];
+var React$B = _react__default["default"];
 var _$p = _underscore__default["default"];
 var ApiOptions$c = _perseusApiJsx.Options;
 var Changeable$i = _mixinsChangeableJsx;
 var Renderer$8 = _rendererJsx;
-var Group = React$y.createClass({
+var Group = React$B.createClass({
   displayName: "Group",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$i.propTypes), {}, {
-    content: React$y.PropTypes.string,
-    widgets: React$y.PropTypes.object,
-    images: React$y.PropTypes.object,
-    icon: React$y.PropTypes.object,
-    reviewModeRubric: React$y.PropTypes.object,
+    content: React$B.PropTypes.string,
+    widgets: React$B.PropTypes.object,
+    images: React$B.PropTypes.object,
+    icon: React$B.PropTypes.object,
+    reviewModeRubric: React$B.PropTypes.object,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -51422,20 +52554,20 @@ var Group = React$y.createClass({
     var isInvalid = score && score.type === "invalid"; // TODO(mdr): Widgets inside this Renderer are not discoverable through
     //     the parent Renderer's `findWidgets` function.
 
-    return /*#__PURE__*/React$y.createElement("div", {
+    return /*#__PURE__*/React$B.createElement("div", {
       className: classNames$8({
         "perseus-group": true,
         "perseus-group-valid-answer": isValid,
         "perseus-group-invalid-answer": isInvalid
       })
-    }, problemNumComponent, /*#__PURE__*/React$y.createElement(Renderer$8, _extends({}, this.props, {
+    }, problemNumComponent, /*#__PURE__*/React$B.createElement(Renderer$8, _extends({}, this.props, {
       ref: "renderer",
       apiOptions: apiOptions,
       findExternalWidgets: this.props.findWidgets,
       reviewMode: !!this.props.reviewModeRubric,
       onInteractWithWidget: onInteractWithWidget,
       linterContext: this.props.linterContext
-    })), this.props.icon && /*#__PURE__*/React$y.createElement("div", {
+    })), this.props.icon && /*#__PURE__*/React$B.createElement("div", {
       className: "group-icon"
     }, this.props.icon));
   },
@@ -51524,19 +52656,19 @@ var _module_$z = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$x = _react__default["default"];
+var React$A = _react__default["default"];
 var ApiOptions$b = _perseusApiJsx.Options;
 var Changeable$h = _mixinsChangeableJsx;
 var Editor$4 = _editorJsx;
 var TextInput$4 = _componentsTextInputJsx;
 var InlineIcon$a = _componentsInlineIconJsx;
-var GradedGroupEditor$1 = React$x.createClass({
+var GradedGroupEditor$1 = React$A.createClass({
   displayName: "GradedGroupEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$h.propTypes), {}, {
-    title: React$x.PropTypes.string,
-    content: React$x.PropTypes.string,
-    widgets: React$x.PropTypes.object,
-    images: React$x.PropTypes.object,
+    title: React$A.PropTypes.string,
+    content: React$A.PropTypes.string,
+    widgets: React$A.PropTypes.object,
+    images: React$A.PropTypes.object,
     apiOptions: ApiOptions$b.propTypes
   }),
   getDefaultProps: function getDefaultProps() {
@@ -51573,17 +52705,17 @@ var GradedGroupEditor$1 = React$x.createClass({
     });
   },
   render: function render() {
-    return /*#__PURE__*/React$x.createElement("div", {
+    return /*#__PURE__*/React$A.createElement("div", {
       className: "perseus-group-editor"
-    }, /*#__PURE__*/React$x.createElement("div", {
+    }, /*#__PURE__*/React$A.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$x.createElement("label", {
-      className: aphrodite.css(styles$b.title)
-    }, "Title:", " ", /*#__PURE__*/React$x.createElement(TextInput$4, {
+    }, /*#__PURE__*/React$A.createElement("label", {
+      className: aphrodite.css(styles$c.title)
+    }, "Title:", " ", /*#__PURE__*/React$A.createElement(TextInput$4, {
       value: this.props.title,
-      className: aphrodite.css(styles$b.input),
+      className: aphrodite.css(styles$c.input),
       onChange: this.change("title")
-    }))), /*#__PURE__*/React$x.createElement(Editor$4, {
+    }))), /*#__PURE__*/React$A.createElement(Editor$4, {
       ref: "editor",
       content: this.props.content,
       widgets: this.props.widgets,
@@ -51594,18 +52726,18 @@ var GradedGroupEditor$1 = React$x.createClass({
       onChange: this.props.onChange,
       warnNoPrompt: true,
       warnNoWidgets: true
-    }), !this.props.hint && /*#__PURE__*/React$x.createElement("button", {
+    }), !this.props.hint && /*#__PURE__*/React$A.createElement("button", {
       type: "button",
       style: {
         marginTop: 10
       },
       className: "add-hint simple-button orange",
       onClick: this.handleAddHint
-    }, /*#__PURE__*/React$x.createElement(InlineIcon$a, iconPlus), " Add a hint"), this.props.hint && /*#__PURE__*/React$x.createElement("div", {
+    }, /*#__PURE__*/React$A.createElement(InlineIcon$a, iconPlus), " Add a hint"), this.props.hint && /*#__PURE__*/React$A.createElement("div", {
       className: "perseus-hint-editor"
-    }, /*#__PURE__*/React$x.createElement("div", {
-      className: aphrodite.css(styles$b.hintsTitle)
-    }, "Hint"), /*#__PURE__*/React$x.createElement(Editor$4, {
+    }, /*#__PURE__*/React$A.createElement("div", {
+      className: aphrodite.css(styles$c.hintsTitle)
+    }, "Hint"), /*#__PURE__*/React$A.createElement(Editor$4, {
       ref: "hint-editor",
       content: this.props.hint ? this.props.hint.content : "",
       widgets: this.props.hint ? this.props.hint.widgets : {},
@@ -51618,11 +52750,11 @@ var GradedGroupEditor$1 = React$x.createClass({
         // and then add new props.
         this.change("hint", Object.assign({}, this.props.hint, props));
       }
-    }), /*#__PURE__*/React$x.createElement("button", {
+    }), /*#__PURE__*/React$A.createElement("button", {
       type: "button",
       className: "remove-hint simple-button orange",
       onClick: this.handleRemoveHint
-    }, /*#__PURE__*/React$x.createElement(InlineIcon$a, iconTrash), " Remove this hint")));
+    }, /*#__PURE__*/React$A.createElement(InlineIcon$a, iconTrash), " Remove this hint")));
   },
   getSaveWarnings: function getSaveWarnings() {
     return this.refs.editor.getSaveWarnings();
@@ -51635,7 +52767,7 @@ var GradedGroupEditor$1 = React$x.createClass({
     });
   }
 });
-var styles$b = aphrodite.StyleSheet.create({
+var styles$c = aphrodite.StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold"
@@ -51661,16 +52793,16 @@ var _module_$y = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$w = _react__default["default"];
+var React$z = _react__default["default"];
 var ApiOptions$a = _perseusApiJsx.Options;
 var Changeable$g = _mixinsChangeableJsx;
 var GradedGroupEditor = _widgetsGradedGroupEditorJsx;
-var GradedGroupSetEditor = React$w.createClass({
+var GradedGroupSetEditor = React$z.createClass({
   displayName: "GradedGroupSetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$g.propTypes), {}, {
     apiOptions: ApiOptions$a.propTypes,
-    gradedGroups: React$w.PropTypes.array,
-    onChange: React$w.PropTypes.func.isRequired
+    gradedGroups: React$z.PropTypes.array,
+    onChange: React$z.PropTypes.func.isRequired
   }),
 
   getDefaultProps() {
@@ -51706,7 +52838,7 @@ var GradedGroupSetEditor = React$w.createClass({
       return null;
     }
 
-    return this.props.gradedGroups.map((group, i) => /*#__PURE__*/React$w.createElement(GradedGroupEditor, _extends({
+    return this.props.gradedGroups.map((group, i) => /*#__PURE__*/React$z.createElement(GradedGroupEditor, _extends({
       key: i,
       ref: el => this._editors[i] = el
     }, group, {
@@ -51723,9 +52855,9 @@ var GradedGroupSetEditor = React$w.createClass({
   },
 
   render() {
-    return /*#__PURE__*/React$w.createElement("div", {
+    return /*#__PURE__*/React$z.createElement("div", {
       className: "perseus-group-editor"
-    }, this.renderGroups(), /*#__PURE__*/React$w.createElement("button", {
+    }, this.renderGroups(), /*#__PURE__*/React$z.createElement("button", {
       onClick: this.addGroup
     }, "Add group"));
   }
@@ -51746,7 +52878,7 @@ var _module_$x = {
  * Renders answer bar for mobile graded groups. [STATELESS]
  */
 
-var React$v = _react__default["default"];
+var React$y = _react__default["default"];
 var ApiOptions$9 = _perseusApiJsx.Options;
 var InlineIcon$9 = _componentsInlineIconJsx;
 var ANSWER_BAR_STATES$1 = {
@@ -51767,17 +52899,17 @@ var ANSWER_BAR_STATES$1 = {
   // The widgets in this grade-group are disabled.
   CORRECT: Symbol("CORRECT")
 };
-var GradedGroupAnswerBar$1 = React$v.createClass({
+var GradedGroupAnswerBar$1 = React$y.createClass({
   displayName: "GradedGroupAnswerBar",
   propTypes: {
     // TODO(kevinb) update to oneOf once we update to 15.2
-    answerBarState: React$v.PropTypes.any.isRequired,
+    answerBarState: React$y.PropTypes.any.isRequired,
     apiOptions: ApiOptions$9.propTypes,
-    onCheckAnswer: React$v.PropTypes.func.isRequired,
+    onCheckAnswer: React$y.PropTypes.func.isRequired,
     // The function to call when clicking "Next question" after correctly
     // answering one graded group out of a set. If this is null, the
     // "Next question" button will not appear.
-    onNextQuestion: React$v.PropTypes.func
+    onNextQuestion: React$y.PropTypes.func
   },
 
   render() {
@@ -51788,62 +52920,62 @@ var GradedGroupAnswerBar$1 = React$v.createClass({
       onNextQuestion
     } = this.props;
 
-    var answerBarStyle = _objectSpread2(_objectSpread2({}, styles$a.answerBar), {}, {
+    var answerBarStyle = _objectSpread2(_objectSpread2({}, styles$b.answerBar), {}, {
       backgroundColor: answerBarState === ANSWER_BAR_STATES$1.CORRECT ? gray95 : "white",
       // Center the "Correct!" message only when there's no next question
       justifyContent: answerBarState === ANSWER_BAR_STATES$1.CORRECT && !onNextQuestion ? "center" : "space-between"
     });
 
-    var buttonStyle = _objectSpread2(_objectSpread2({}, styles$a.button), {}, {
+    var buttonStyle = _objectSpread2(_objectSpread2({}, styles$b.button), {}, {
       // "Check" and "Next question" buttons should both be green
       backgroundColor: answerBarState === ANSWER_BAR_STATES$1.ACTIVE || answerBarState === ANSWER_BAR_STATES$1.CORRECT ? kaGreen : gray85
     });
 
-    var textStyle = _objectSpread2(_objectSpread2({}, styles$a.text), {}, {
+    var textStyle = _objectSpread2(_objectSpread2({}, styles$b.text), {}, {
       color: answerBarState === ANSWER_BAR_STATES$1.CORRECT ? kaGreen : gray68
     });
 
-    var message = answerBarState === ANSWER_BAR_STATES$1.INCORRECT ? /*#__PURE__*/React$v.createElement("span", {
+    var message = answerBarState === ANSWER_BAR_STATES$1.INCORRECT ? /*#__PURE__*/React$y.createElement("span", {
       style: textStyle
-    }, /*#__PURE__*/React$v.createElement("span", {
-      style: styles$a.tryAgainIcon
-    }, /*#__PURE__*/React$v.createElement(InlineIcon$9, iconTryAgain)), /*#__PURE__*/React$v.createElement("span", {
+    }, /*#__PURE__*/React$y.createElement("span", {
+      style: styles$b.tryAgainIcon
+    }, /*#__PURE__*/React$y.createElement(InlineIcon$9, iconTryAgain)), /*#__PURE__*/React$y.createElement("span", {
       style: {
         marginLeft: 8
       }
-    }, i18n._("Keep trying"))) : /*#__PURE__*/React$v.createElement("span", null); // empty span keeps the button on the right side
+    }, i18n._("Keep trying"))) : /*#__PURE__*/React$y.createElement("span", null); // empty span keeps the button on the right side
 
     if (answerBarState !== ANSWER_BAR_STATES$1.CORRECT) {
       var buttonLabel = answerBarState === ANSWER_BAR_STATES$1.INCORRECT ? i18n._("Try again") : i18n._("Check"); // Use <button> instead of <input> b/c iOS 9.3 on iPhone 6 renders
       // the <input> as a faded out green button instead of using our
       // styles.
 
-      return /*#__PURE__*/React$v.createElement("div", {
+      return /*#__PURE__*/React$y.createElement("div", {
         style: answerBarStyle
-      }, message, /*#__PURE__*/React$v.createElement("button", {
+      }, message, /*#__PURE__*/React$y.createElement("button", {
         style: buttonStyle,
         disabled: apiOptions.readOnly || answerBarState !== ANSWER_BAR_STATES$1.ACTIVE,
         onClick: onCheckAnswer
       }, buttonLabel));
     } else {
-      return /*#__PURE__*/React$v.createElement("div", {
+      return /*#__PURE__*/React$y.createElement("div", {
         style: answerBarStyle
-      }, /*#__PURE__*/React$v.createElement("span", {
+      }, /*#__PURE__*/React$y.createElement("span", {
         style: textStyle
-      }, /*#__PURE__*/React$v.createElement("span", {
+      }, /*#__PURE__*/React$y.createElement("span", {
         style: {
           fontSize: 28,
           color: "#FFB300"
         }
-      }, /*#__PURE__*/React$v.createElement(InlineIcon$9, _extends({}, iconStar, {
+      }, /*#__PURE__*/React$y.createElement(InlineIcon$9, _extends({}, iconStar, {
         style: {
           marginBottom: 5
         }
-      }))), /*#__PURE__*/React$v.createElement("span", {
+      }))), /*#__PURE__*/React$y.createElement("span", {
         style: {
           marginLeft: 8
         }
-      }, i18n._("Correct!"))), onNextQuestion && /*#__PURE__*/React$v.createElement("button", {
+      }, i18n._("Correct!"))), onNextQuestion && /*#__PURE__*/React$y.createElement("button", {
         style: buttonStyle,
         onClick: onNextQuestion
       }, i18n._("Next question")));
@@ -51852,7 +52984,7 @@ var GradedGroupAnswerBar$1 = React$v.createClass({
 
 });
 var fontSize = 17;
-var styles$a = {
+var styles$b = {
   answerBar: {
     display: "flex",
     alignItems: "center",
@@ -51905,7 +53037,7 @@ var _module_$w = {
 /* globals i18n */
 
 var classNames$7 = _classnames__default["default"];
-var React$u = _react__default["default"];
+var React$x = _react__default["default"];
 var _$o = _underscore__default["default"];
 var ApiOptions$8 = _perseusApiJsx.Options;
 var Changeable$f = _mixinsChangeableJsx;
@@ -51947,24 +53079,24 @@ var getNextState = (currentState, answerable) => {
 
 var INVALID_MESSAGE_PREFIX = "We couldn't grade your answer.";
 var DEFAULT_INVALID_MESSAGE = "It looks like you left something blank or " + "entered in an invalid answer.";
-var GradedGroup$1 = React$u.createClass({
+var GradedGroup$1 = React$x.createClass({
   displayName: "GradedGroup",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$f.propTypes), {}, {
     apiOptions: ApiOptions$8.propTypes,
-    content: React$u.PropTypes.string,
-    hasHint: React$u.PropTypes.bool,
-    hint: React$u.PropTypes.object,
-    images: React$u.PropTypes.object,
-    inGradedGroupSet: React$u.PropTypes.bool,
-    onBlur: React$u.PropTypes.func,
-    onFocus: React$u.PropTypes.func,
+    content: React$x.PropTypes.string,
+    hasHint: React$x.PropTypes.bool,
+    hint: React$x.PropTypes.object,
+    images: React$x.PropTypes.object,
+    inGradedGroupSet: React$x.PropTypes.bool,
+    onBlur: React$x.PropTypes.func,
+    onFocus: React$x.PropTypes.func,
     // The function to call when clicking "Next question" after correctly
     // answering one graded group out of a set. If this is null, the
     // "Next question" button will not appear.
-    onNextQuestion: React$u.PropTypes.func,
-    title: React$u.PropTypes.string,
-    trackInteraction: React$u.PropTypes.func.isRequired,
-    widgets: React$u.PropTypes.object,
+    onNextQuestion: React$x.PropTypes.func,
+    title: React$x.PropTypes.string,
+    trackInteraction: React$x.PropTypes.func.isRequired,
+    widgets: React$x.PropTypes.object,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -52082,20 +53214,20 @@ var GradedGroup$1 = React$u.createClass({
     var icon = null; // Colors are 10% darker than the colors in graded-group.less
 
     if (this.state.status === GRADING_STATUSES.correct) {
-      icon = /*#__PURE__*/React$u.createElement(InlineIcon$8, _extends({}, iconOk, {
+      icon = /*#__PURE__*/React$x.createElement(InlineIcon$8, _extends({}, iconOk, {
         style: {
           color: "#526f03"
         }
       }));
     } else if (this.state.status === GRADING_STATUSES.incorrect) {
-      icon = /*#__PURE__*/React$u.createElement(InlineIcon$8, _extends({}, iconRemove, {
+      icon = /*#__PURE__*/React$x.createElement(InlineIcon$8, _extends({}, iconRemove, {
         style: {
           color: "#ff5454"
         }
       }));
     }
 
-    var mobileClass = this.props.inGradedGroupSet ? aphrodite.css(styles$9.gradedGroupInSet) : aphrodite.css(styles$9.gradedGroup);
+    var mobileClass = this.props.inGradedGroupSet ? aphrodite.css(styles$a.gradedGroupInSet) : aphrodite.css(styles$a.gradedGroup);
     var classes = classNames$7({
       [mobileClass]: apiOptions.isMobile,
       "perseus-graded-group": true,
@@ -52110,26 +53242,26 @@ var GradedGroup$1 = React$u.createClass({
 
     var isCorrect = answerBarState === ANSWER_BAR_STATES.CORRECT;
     var readOnly = apiOptions.readOnly || apiOptions.isMobile && isCorrect;
-    return /*#__PURE__*/React$u.createElement("div", {
+    return /*#__PURE__*/React$x.createElement("div", {
       className: classes
-    }, !!this.props.title && /*#__PURE__*/React$u.createElement("div", {
-      className: aphrodite.css(styles$9.title)
-    }, this.props.title), /*#__PURE__*/React$u.createElement(Renderer$7, _extends({}, this.props, {
+    }, !!this.props.title && /*#__PURE__*/React$x.createElement("div", {
+      className: aphrodite.css(styles$a.title)
+    }, this.props.title), /*#__PURE__*/React$x.createElement(Renderer$7, _extends({}, this.props, {
       ref: "renderer",
       apiOptions: _objectSpread2(_objectSpread2({}, apiOptions), {}, {
         readOnly
       }),
       onInteractWithWidget: this._onInteractWithWidget,
       linterContext: this.props.linterContext
-    })), !apiOptions.isMobile && icon && /*#__PURE__*/React$u.createElement("div", {
+    })), !apiOptions.isMobile && icon && /*#__PURE__*/React$x.createElement("div", {
       className: "group-icon"
-    }, icon), !apiOptions.isMobile && /*#__PURE__*/React$u.createElement("p", null, this.state.message), !apiOptions.isMobile && /*#__PURE__*/React$u.createElement("input", {
+    }, icon), !apiOptions.isMobile && /*#__PURE__*/React$x.createElement("p", null, this.state.message), !apiOptions.isMobile && /*#__PURE__*/React$x.createElement("input", {
       type: "button",
       value: i18n._("Check"),
       className: "simple-button",
       disabled: this.props.apiOptions.readOnly,
       onClick: this._checkAnswer
-    }), !apiOptions.isMobile && isCorrect && this.props.onNextQuestion && /*#__PURE__*/React$u.createElement("input", {
+    }), !apiOptions.isMobile && isCorrect && this.props.onNextQuestion && /*#__PURE__*/React$x.createElement("input", {
       type: "button",
       value: i18n._("Next question"),
       className: "simple-button",
@@ -52138,21 +53270,21 @@ var GradedGroup$1 = React$u.createClass({
       style: {
         marginLeft: 5
       }
-    }), this.props.hint && this.props.hint.content && (this.state.showHint ? /*#__PURE__*/React$u.createElement("div", null, /*#__PURE__*/React$u.createElement("div", {
-      className: aphrodite.css(styles$9.explanationTitle),
+    }), this.props.hint && this.props.hint.content && (this.state.showHint ? /*#__PURE__*/React$x.createElement("div", null, /*#__PURE__*/React$x.createElement("div", {
+      className: aphrodite.css(styles$a.explanationTitle),
       onClick: () => this.setState({
         showHint: false
       })
-    }, i18n._("Hide explanation")), /*#__PURE__*/React$u.createElement(Renderer$7, _extends({}, this.props.hint, {
+    }, i18n._("Hide explanation")), /*#__PURE__*/React$x.createElement(Renderer$7, _extends({}, this.props.hint, {
       ref: "hints-renderer",
       apiOptions: apiOptions,
       linterContext: this.props.linterContext
-    }))) : /*#__PURE__*/React$u.createElement("div", {
+    }))) : /*#__PURE__*/React$x.createElement("div", {
       onClick: () => this.setState({
         showHint: true
       }),
-      className: aphrodite.css(styles$9.showHintLink)
-    }, i18n._("Explain"))), apiOptions.isMobile && answerBarState !== ANSWER_BAR_STATES.HIDDEN && /*#__PURE__*/React$u.createElement(GradedGroupAnswerBar, {
+      className: aphrodite.css(styles$a.showHintLink)
+    }, i18n._("Explain"))), apiOptions.isMobile && answerBarState !== ANSWER_BAR_STATES.HIDDEN && /*#__PURE__*/React$x.createElement(GradedGroupAnswerBar, {
       apiOptions: apiOptions,
       answerBarState: answerBarState,
       onCheckAnswer: this._checkAnswer,
@@ -52175,7 +53307,7 @@ _module_$w.exports = {
   tracking: "all",
   isLintable: true
 };
-var styles$9 = aphrodite.StyleSheet.create({
+var styles$a = aphrodite.StyleSheet.create({
   gradedGroupInSet: {
     // Reset a few desktop-only styles that come from graded-group.less
     marginLeft: 0,
@@ -52223,16 +53355,16 @@ var _module_$v = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$t = _react__default["default"];
+var React$w = _react__default["default"];
 var ApiOptions$7 = _perseusApiJsx.Options;
 var Changeable$e = _mixinsChangeableJsx;
 var GradedGroup = _widgetsGradedGroupJsx.widget;
-var Indicators = React$t.createClass({
+var Indicators = React$w.createClass({
   displayName: "Indicators",
   propTypes: {
-    currentGroup: React$t.PropTypes.number.isRequired,
-    numGroups: React$t.PropTypes.number.isRequired,
-    onChangeCurrentGroup: React$t.PropTypes.func.isRequired
+    currentGroup: React$w.PropTypes.number.isRequired,
+    numGroups: React$w.PropTypes.number.isRequired,
+    onChangeCurrentGroup: React$w.PropTypes.func.isRequired
   },
 
   render() {
@@ -52241,9 +53373,9 @@ var Indicators = React$t.createClass({
     var items = [];
 
     var _loop = function _loop(i) {
-      items.push( /*#__PURE__*/React$t.createElement("div", {
+      items.push( /*#__PURE__*/React$w.createElement("div", {
         key: i,
-        className: aphrodite.css(styles$8.indicator, i === _this.props.currentGroup && styles$8.selectedIndicator),
+        className: aphrodite.css(styles$9.indicator, i === _this.props.currentGroup && styles$9.selectedIndicator),
         onClick: () => _this.props.onChangeCurrentGroup(i)
       }));
     };
@@ -52252,20 +53384,20 @@ var Indicators = React$t.createClass({
       _loop(i);
     }
 
-    return /*#__PURE__*/React$t.createElement("div", {
-      className: aphrodite.css(styles$8.indicatorContainer)
+    return /*#__PURE__*/React$w.createElement("div", {
+      className: aphrodite.css(styles$9.indicatorContainer)
     }, items);
   }
 
 }); // TODO(jared): find a better name for this :) and for GradedGroup; the names
 // are currently a little confusing.
 
-var GradedGroupSet = React$t.createClass({
+var GradedGroupSet = React$w.createClass({
   displayName: "GradedGroupSet",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$e.propTypes), {}, {
     apiOptions: ApiOptions$7.propTypes,
-    gradedGroups: React$t.PropTypes.array,
-    trackInteraction: React$t.PropTypes.func.isRequired,
+    gradedGroups: React$w.PropTypes.array,
+    trackInteraction: React$w.PropTypes.func.isRequired,
     linterContext: linterContextProps
   }),
 
@@ -52336,26 +53468,26 @@ var GradedGroupSet = React$t.createClass({
     var currentGroup = this.props.gradedGroups[this.state.currentGroup];
 
     if (!currentGroup) {
-      return /*#__PURE__*/React$t.createElement("span", null, "No current group...");
+      return /*#__PURE__*/React$w.createElement("span", null, "No current group...");
     }
 
     var numGroups = this.props.gradedGroups.length;
     var handleNextQuestion = this.state.currentGroup < numGroups - 1 ? this.handleNextQuestion : null;
-    return /*#__PURE__*/React$t.createElement("div", {
-      className: aphrodite.css(styles$8.container)
-    }, /*#__PURE__*/React$t.createElement("div", {
-      className: aphrodite.css(styles$8.top)
-    }, /*#__PURE__*/React$t.createElement("div", {
-      className: aphrodite.css(styles$8.title)
-    }, currentGroup.title), /*#__PURE__*/React$t.createElement("div", {
-      className: aphrodite.css(styles$8.spacer)
-    }), /*#__PURE__*/React$t.createElement(Indicators, {
+    return /*#__PURE__*/React$w.createElement("div", {
+      className: aphrodite.css(styles$9.container)
+    }, /*#__PURE__*/React$w.createElement("div", {
+      className: aphrodite.css(styles$9.top)
+    }, /*#__PURE__*/React$w.createElement("div", {
+      className: aphrodite.css(styles$9.title)
+    }, currentGroup.title), /*#__PURE__*/React$w.createElement("div", {
+      className: aphrodite.css(styles$9.spacer)
+    }), /*#__PURE__*/React$w.createElement(Indicators, {
       numGroups: numGroups,
       currentGroup: this.state.currentGroup,
       onChangeCurrentGroup: currentGroup => this.setState({
         currentGroup
       })
-    })), /*#__PURE__*/React$t.createElement(GradedGroup, _extends({
+    })), /*#__PURE__*/React$w.createElement(GradedGroup, _extends({
       key: this.state.currentGroup,
       ref: comp => this._childGroup = comp
     }, this.props, currentGroup, {
@@ -52385,7 +53517,7 @@ _module_$v.exports = {
   tracking: "all",
   isLintable: true
 };
-var styles$8 = aphrodite.StyleSheet.create({
+var styles$9 = aphrodite.StyleSheet.create({
   top: {
     display: "flex",
     flexDirection: "row"
@@ -53040,12 +54172,12 @@ var _module_$u = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$s = _react__default["default"];
+var React$v = _react__default["default"];
 var _$m = _underscore__default["default"];
 var Interactive2 = _interactive2Js;
 var SvgImage = _componentsSvgImageJsx;
 var Util$3 = Util$q;
-var ButtonGroup$1 = _reactComponentsButtonGroupJsx__default["default"];
+var ButtonGroup$1 = _reactComponentsButtonGroupJsx;
 /* Graphie and relevant components. */
 
 var Graphie = _componentsGraphieJsx;
@@ -53075,7 +54207,7 @@ var typeSelectorStyle = {
 };
 /* Graphing interface. */
 
-var FunctionGrapher = React$s.createClass({
+var FunctionGrapher = React$v.createClass({
   displayName: "FunctionGrapher",
   _coords: function _coords(props) {
     // Coords are usually based on props, but should fall back to the
@@ -53091,16 +54223,16 @@ var FunctionGrapher = React$s.createClass({
     return props.asymptote;
   },
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$d.propTypes), {}, {
-    flexibleType: React$s.PropTypes.bool,
-    graph: React$s.PropTypes.any,
-    hideHairlines: React$s.PropTypes.func,
-    isMobile: React$s.PropTypes.bool,
-    model: React$s.PropTypes.any,
-    onChange: React$s.PropTypes.func,
-    setDrawingAreaAvailable: React$s.PropTypes.func,
-    showHairlines: React$s.PropTypes.func,
-    showTooltips: React$s.PropTypes.bool,
-    static: React$s.PropTypes.bool
+    flexibleType: React$v.PropTypes.bool,
+    graph: React$v.PropTypes.any,
+    hideHairlines: React$v.PropTypes.func,
+    isMobile: React$v.PropTypes.bool,
+    model: React$v.PropTypes.any,
+    onChange: React$v.PropTypes.func,
+    setDrawingAreaAvailable: React$v.PropTypes.func,
+    showHairlines: React$v.PropTypes.func,
+    showTooltips: React$v.PropTypes.bool,
+    static: React$v.PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -53124,7 +54256,7 @@ var FunctionGrapher = React$s.createClass({
 
   render: function render() {
     var pointForCoord = (coord, i) => {
-      return /*#__PURE__*/React$s.createElement(MovablePoint, {
+      return /*#__PURE__*/React$v.createElement(MovablePoint, {
         key: i,
         coord: coord,
         static: this.props.static,
@@ -53189,7 +54321,7 @@ var FunctionGrapher = React$s.createClass({
 
     if (imageDescription.url) {
       var scale = box[0] / interactiveSizes.defaultBoxSize;
-      image = /*#__PURE__*/React$s.createElement(SvgImage, {
+      image = /*#__PURE__*/React$v.createElement(SvgImage, {
         src: imageDescription.url,
         width: imageDescription.width,
         height: imageDescription.height,
@@ -53197,20 +54329,20 @@ var FunctionGrapher = React$s.createClass({
       });
     }
 
-    return /*#__PURE__*/React$s.createElement("div", {
+    return /*#__PURE__*/React$v.createElement("div", {
       className: "perseus-widget " + "perseus-widget-grapher",
       style: {
         width: box[0],
         height: this.props.flexibleType ? "auto" : box[1],
         boxSizing: "initial"
       }
-    }, /*#__PURE__*/React$s.createElement("div", {
+    }, /*#__PURE__*/React$v.createElement("div", {
       className: "graphie-container above-scratchpad",
       style: {
         width: box[0],
         height: box[1]
       }
-    }, image, /*#__PURE__*/React$s.createElement(Graphie, _extends({}, this.props.graph, {
+    }, image, /*#__PURE__*/React$v.createElement(Graphie, _extends({}, this.props.graph, {
       setDrawingAreaAvailable: this.props.setDrawingAreaAvailable
     }), this.props.model && this.renderPlot(), this.props.model && this.renderAsymptote(), this.props.model && points)));
   },
@@ -53231,7 +54363,7 @@ var FunctionGrapher = React$s.createClass({
     }
 
     var functionProps = model.getPropsForCoeffs(coeffs, xRange);
-    return /*#__PURE__*/React$s.createElement(model.Movable, _extends({}, functionProps, {
+    return /*#__PURE__*/React$v.createElement(model.Movable, _extends({}, functionProps, {
       key: this.props.model.url,
       range: xRange,
       style: style
@@ -53246,7 +54378,7 @@ var FunctionGrapher = React$s.createClass({
     var dashed = {
       strokeDasharray: "- "
     };
-    return asymptote && /*#__PURE__*/React$s.createElement(MovableLine, {
+    return asymptote && /*#__PURE__*/React$v.createElement(MovableLine, {
       onMove: (newCoord, oldCoord) => {
         // Calculate and apply displacement
         var delta = kvector.subtract(newCoord, oldCoord);
@@ -53272,7 +54404,7 @@ var FunctionGrapher = React$s.createClass({
       }],
       normalStyle: dashed,
       highlightStyle: dashed
-    }, _$m.map(asymptote, (coord, i) => /*#__PURE__*/React$s.createElement(MovablePoint, {
+    }, _$m.map(asymptote, (coord, i) => /*#__PURE__*/React$v.createElement(MovablePoint, {
       key: "asymptoteCoord-".concat(i),
       coord: coord,
       static: true,
@@ -53287,18 +54419,18 @@ var FunctionGrapher = React$s.createClass({
 });
 /* Widget and editor. */
 
-var Grapher$1 = React$s.createClass({
+var Grapher$1 = React$v.createClass({
   displayName: "Grapher",
   propTypes: {
-    apiOptions: React$s.PropTypes.any,
-    availableTypes: React$s.PropTypes.arrayOf(React$s.PropTypes.any),
+    apiOptions: React$v.PropTypes.any,
+    availableTypes: React$v.PropTypes.arrayOf(React$v.PropTypes.any),
     containerSizeClass: containerSizeClassPropType.isRequired,
-    graph: React$s.PropTypes.any,
-    markings: React$s.PropTypes.string,
-    onChange: React$s.PropTypes.func,
-    plot: React$s.PropTypes.any,
-    static: React$s.PropTypes.bool,
-    trackInteraction: React$s.PropTypes.func.isRequired
+    graph: React$v.PropTypes.any,
+    markings: React$v.PropTypes.string,
+    onChange: React$v.PropTypes.func,
+    plot: React$v.PropTypes.any,
+    static: React$v.PropTypes.bool,
+    trackInteraction: React$v.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return DEFAULT_GRAPHER_PROPS;
@@ -53307,10 +54439,10 @@ var Grapher$1 = React$s.createClass({
     var type = this.props.plot.type;
     var coords = this.props.plot.coords;
     var asymptote = this.props.plot.asymptote;
-    var typeSelector = /*#__PURE__*/React$s.createElement("div", {
+    var typeSelector = /*#__PURE__*/React$v.createElement("div", {
       style: typeSelectorStyle,
       className: "above-scratchpad"
-    }, /*#__PURE__*/React$s.createElement(ButtonGroup$1, {
+    }, /*#__PURE__*/React$v.createElement(ButtonGroup$1, {
       value: type,
       allowEmpty: true,
       buttons: _$m.map(this.props.availableTypes, typeToButton),
@@ -53350,7 +54482,7 @@ var Grapher$1 = React$s.createClass({
       showHairlines: this.showHairlines,
       hideHairlines: this.hideHairlines
     };
-    return /*#__PURE__*/React$s.createElement("div", null, /*#__PURE__*/React$s.createElement(FunctionGrapher, grapherProps), this.props.availableTypes.length > 1 && typeSelector);
+    return /*#__PURE__*/React$v.createElement("div", null, /*#__PURE__*/React$v.createElement(FunctionGrapher, grapherProps), this.props.availableTypes.length > 1 && typeSelector);
   },
   handlePlotChanges: function handlePlotChanges(newPlot) {
     var plot = _$m.extend({}, this.props.plot, newPlot);
@@ -53501,6 +54633,95 @@ _module_$u.exports = {
 };
 var _widgetsGrapherJsx = _module_$u.exports;
 
+var module$3 = {
+  exports: {}
+};
+/* MultiButtonGroup is an aesthetically pleasing group of buttons,
+ * which allows multiple buttons to be selected at the same time.
+ *
+ * The class requires these properties:
+ *   buttons - an array of objects with keys:
+ *     "value": this is the value returned when the button is selected
+ *     "content": this is the JSX shown within the button, typically a string
+ *         that gets rendered as the button's display text
+ *     "title": this is the title-text shown on hover
+ *   onChange - a function that is provided with an array of the updated
+ *     values (which it then is responsible for updating)
+ *
+ * The class has these optional properties:
+ *   values - an array of the initial values of the buttons selected.
+ *
+ * Requires stylesheets/perseus-admin-package/editor.less to look nice.
+ */
+
+var React$u = _react__default["default"];
+var ReactDOM$6 = _reactDom__default["default"];
+var createReactClass$2 = _createReactClass__default["default"];
+var PropTypes$2 = _propTypes__default["default"];
+var styles$8 = _stylesJs;
+var MultiButtonGroup$2 = createReactClass$2({
+  displayName: "MultiButtonGroup",
+  propTypes: {
+    values: PropTypes$2.arrayOf(PropTypes$2.any),
+    buttons: PropTypes$2.arrayOf(PropTypes$2.shape({
+      value: PropTypes$2.any.isRequired,
+      content: PropTypes$2.node,
+      title: PropTypes$2.string
+    })).isRequired,
+    onChange: PropTypes$2.func.isRequired,
+    allowEmpty: PropTypes$2.bool
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      values: [],
+      allowEmpty: true
+    };
+  },
+  focus: function focus() {
+    ReactDOM$6.findDOMNode(this).focus();
+    return true;
+  },
+  toggleSelect: function toggleSelect(newValue) {
+    var values = (this.props.values || []).slice(0);
+    var allowEmpty = this.props.allowEmpty;
+
+    if (values.indexOf(newValue) >= 0 && (values.length > 1 || allowEmpty)) {
+      // If the value is already selected, unselect it
+      values.splice(values.indexOf(newValue), 1);
+    } else {
+      // Otherwise merge with other values and return
+      if (values.indexOf(newValue) < 0) {
+        values.push(newValue);
+      }
+    }
+
+    this.props.onChange(values);
+  },
+  render: function render() {
+    var values = this.props.values || [];
+    var buttons = this.props.buttons.map((button, i) => {
+      var selected = values.indexOf(button.value) >= 0;
+      return /*#__PURE__*/React$u.createElement("button", {
+        title: button.title,
+        type: "button",
+        id: "" + i,
+        key: "" + i,
+        ref: "button" + i,
+        className: aphrodite.css(styles$8.button.buttonStyle, selected && styles$8.button.selectedStyle),
+        onClick: this.toggleSelect.bind(this, button.value)
+      }, button.content || "" + button.value);
+    });
+    var outerStyle = {
+      display: 'inline-block'
+    };
+    return /*#__PURE__*/React$u.createElement("div", {
+      style: outerStyle
+    }, buttons);
+  }
+});
+module$3.exports = MultiButtonGroup$2;
+var _reactComponentsMultiButtonGroupJsx = module$3.exports;
+
 var _module_$t = {
   exports: {}
 };
@@ -53510,14 +54731,14 @@ var _module_$t = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$r = _react__default["default"];
+var React$t = _react__default["default"];
 var _$l = _underscore__default["default"];
 var Changeable$c = _mixinsChangeableJsx;
 var GraphSettings = _componentsGraphSettingsJsx;
 var InfoTip$5 = _componentsInfoTipJsx;
-var MultiButtonGroup$1 = _reactComponentsMultiButtonGroupJsx__default["default"];
+var MultiButtonGroup$1 = _reactComponentsMultiButtonGroupJsx;
 var Grapher = _widgetsGrapherJsx.widget;
-var GrapherEditor = React$r.createClass({
+var GrapherEditor = React$t.createClass({
   displayName: "GrapherEditor",
   propTypes: _objectSpread2({}, Changeable$c.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -53562,18 +54783,18 @@ var GrapherEditor = React$r.createClass({
         },
         trackInteraction: function trackInteraction() {}
       };
-      graph = /*#__PURE__*/React$r.createElement(Grapher, _extends({}, graphProps, {
+      graph = /*#__PURE__*/React$t.createElement(Grapher, _extends({}, graphProps, {
         apiOptions: this.props.apiOptions,
         containerSizeClass: sizeClass
       }));
       equationString = GrapherUtil.getEquationString(graphProps);
     } else {
-      graph = /*#__PURE__*/React$r.createElement("div", {
+      graph = /*#__PURE__*/React$t.createElement("div", {
         className: "perseus-error"
       }, this.props.graph.valid);
     }
 
-    return /*#__PURE__*/React$r.createElement("div", null, /*#__PURE__*/React$r.createElement("div", null, "Correct answer", " ", /*#__PURE__*/React$r.createElement(InfoTip$5, null, /*#__PURE__*/React$r.createElement("p", null, "Graph the correct answer in the graph below and ensure the equation or point coordinates displayed represent the correct answer.")), " ", ": ", equationString), /*#__PURE__*/React$r.createElement(GraphSettings, {
+    return /*#__PURE__*/React$t.createElement("div", null, /*#__PURE__*/React$t.createElement("div", null, "Correct answer", " ", /*#__PURE__*/React$t.createElement(InfoTip$5, null, /*#__PURE__*/React$t.createElement("p", null, "Graph the correct answer in the graph below and ensure the equation or point coordinates displayed represent the correct answer.")), " ", ": ", equationString), /*#__PURE__*/React$t.createElement(GraphSettings, {
       editableSettings: ["graph", "snap", "image"],
       box: getInteractiveBoxFromSizeClass(sizeClass),
       range: this.props.graph.range,
@@ -53588,9 +54809,9 @@ var GrapherEditor = React$r.createClass({
       rulerTicks: this.props.graph.rulerTicks,
       showTooltips: this.props.graph.showTooltips,
       onChange: this.change("graph")
-    }), /*#__PURE__*/React$r.createElement("div", {
+    }), /*#__PURE__*/React$t.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$r.createElement("label", null, "Available functions:  "), /*#__PURE__*/React$r.createElement(MultiButtonGroup$1, {
+    }, /*#__PURE__*/React$t.createElement("label", null, "Available functions:  "), /*#__PURE__*/React$t.createElement(MultiButtonGroup$1, {
       allowEmpty: false,
       values: this.props.availableTypes,
       buttons: _$l.map(allTypes, typeToButton),
@@ -53624,18 +54845,18 @@ var _widgetsGrapherEditorJsx = _module_$t.exports;
 var _module_$s = {
   exports: {}
 };
-var React$q = _react__default["default"];
+var React$s = _react__default["default"];
 var _$k = _underscore__default["default"];
 var Changeable$b = _mixinsChangeableJsx;
 var EditorJsonify$5 = _mixinsEditorJsonifyJsx;
 var Editor$3 = _editorJsx;
 var TextInput$3 = _componentsTextInputJsx;
-var DefinitionEditor = React$q.createClass({
+var DefinitionEditor = React$s.createClass({
   displayName: "DefinitionEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$b.propTypes), {}, {
-    togglePrompt: React$q.PropTypes.string,
-    definition: React$q.PropTypes.string,
-    apiOptions: React$q.PropTypes.any
+    togglePrompt: React$s.PropTypes.string,
+    definition: React$s.PropTypes.string,
+    apiOptions: React$s.PropTypes.any
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -53657,20 +54878,20 @@ var DefinitionEditor = React$q.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$q.createElement("div", {
+    return /*#__PURE__*/React$s.createElement("div", {
       className: "perseus-widget-definition-editor"
-    }, /*#__PURE__*/React$q.createElement("a", {
+    }, /*#__PURE__*/React$s.createElement("a", {
       href: "https://docs.google.com/document/d/1udaPef4imOfTMhmLDlWq4SM0mxL0r3YHFZE-5J1uGfo",
       target: "_blank"
-    }, "Definition style guide"), /*#__PURE__*/React$q.createElement("div", {
+    }, "Definition style guide"), /*#__PURE__*/React$s.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$q.createElement("label", null, "Word to be defined:", " ", /*#__PURE__*/React$q.createElement(TextInput$3, {
+    }, /*#__PURE__*/React$s.createElement("label", null, "Word to be defined:", " ", /*#__PURE__*/React$s.createElement(TextInput$3, {
       value: this.props.togglePrompt,
       onChange: this.change("togglePrompt"),
       placeholder: "define me"
-    }))), /*#__PURE__*/React$q.createElement("div", {
+    }))), /*#__PURE__*/React$s.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$q.createElement(Editor$3, {
+    }, /*#__PURE__*/React$s.createElement(Editor$3, {
       apiOptions: this.props.apiOptions,
       content: this.props.definition,
       widgetEnabled: false,
@@ -53693,19 +54914,19 @@ var _widgetsDefinitionEditorJsx = _module_$s.exports;
 var _module_$r = {
   exports: {}
 };
-var React$p = _react__default["default"];
+var React$r = _react__default["default"];
 var _$j = _underscore__default["default"];
 var Changeable$a = _mixinsChangeableJsx;
 var PerseusApi$1 = _perseusApiJsx;
 var Renderer$6 = _rendererJsx;
 var mediaQueries$4 = _stylesMediaQueriesJs;
-var Definition = React$p.createClass({
+var Definition = React$r.createClass({
   displayName: "Definition",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$a.propTypes), {}, {
     apiOptions: PerseusApi$1.Options.propTypes,
-    definition: React$p.PropTypes.string,
-    togglePrompt: React$p.PropTypes.string,
-    trackInteraction: React$p.PropTypes.func.isRequired
+    definition: React$r.PropTypes.string,
+    togglePrompt: React$r.PropTypes.string,
+    trackInteraction: React$r.PropTypes.func.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -53881,13 +55102,13 @@ var Definition = React$p.createClass({
     var onMouseOut = this._onMouseOut;
 
     if (isMobile) {
-      link = /*#__PURE__*/React$p.createElement("a", {
+      link = /*#__PURE__*/React$r.createElement("a", {
         className: aphrodite.css(styles$7.mobileDefinitionLink),
         href: href,
         onClick: onClick
       }, linkAnchor);
     } else {
-      link = /*#__PURE__*/React$p.createElement("a", {
+      link = /*#__PURE__*/React$r.createElement("a", {
         className: aphrodite.css(styles$7.definitionLink),
         href: href,
         onMouseOver: onMouseOver,
@@ -53897,38 +55118,38 @@ var Definition = React$p.createClass({
 
     var expandedStyle = isMobile ? styles$7.contentExpandedMobile : styles$7.contentExpanded;
     var arrowTransform = this.state.belowScreen ? "scale(1, -1)" : "scale(1, 1)";
-    return /*#__PURE__*/React$p.createElement("div", {
+    return /*#__PURE__*/React$r.createElement("div", {
       className: aphrodite.css(styles$7.container),
       ref: e => this.container = e
-    }, /*#__PURE__*/React$p.createElement("div", {
+    }, /*#__PURE__*/React$r.createElement("div", {
       className: aphrodite.css(styles$7.linkContainer)
-    }, link, this.state.expanded && /*#__PURE__*/React$p.createElement("svg", {
+    }, link, this.state.expanded && /*#__PURE__*/React$r.createElement("svg", {
       className: aphrodite.css(styles$7.disclosureArrow),
       ref: e => this.arrow = e,
       transform: arrowTransform,
       style: {
         bottom: this.state.expanded && this.state.belowScreen ? "18px" : "-18px"
       }
-    }, /*#__PURE__*/React$p.createElement("filter", {
+    }, /*#__PURE__*/React$r.createElement("filter", {
       id: "definition-widget-dropshadow",
       height: "150%"
-    }, /*#__PURE__*/React$p.createElement("feOffset", {
+    }, /*#__PURE__*/React$r.createElement("feOffset", {
       dx: dropShadowXOffset,
       dy: dropShadowYOffset,
       result: "offsetblur"
-    }), /*#__PURE__*/React$p.createElement("feGaussianBlur", {
+    }), /*#__PURE__*/React$r.createElement("feGaussianBlur", {
       in: "SourceAlpha",
       stdDeviation: dropShadowRadius / 2
-    }), /*#__PURE__*/React$p.createElement("feComponentTransfer", null, /*#__PURE__*/React$p.createElement("feFuncA", {
+    }), /*#__PURE__*/React$r.createElement("feComponentTransfer", null, /*#__PURE__*/React$r.createElement("feFuncA", {
       type: "linear",
       slope: dropShadowOpacity
-    })), /*#__PURE__*/React$p.createElement("feMerge", null, /*#__PURE__*/React$p.createElement("feMergeNode", null), /*#__PURE__*/React$p.createElement("feMergeNode", {
+    })), /*#__PURE__*/React$r.createElement("feMerge", null, /*#__PURE__*/React$r.createElement("feMergeNode", null), /*#__PURE__*/React$r.createElement("feMergeNode", {
       in: "SourceGraphic"
-    }))), /*#__PURE__*/React$p.createElement("polyline", {
+    }))), /*#__PURE__*/React$r.createElement("polyline", {
       fill: "white",
       filter: "url(#definition-widget-dropshadow)",
       points: "0,".concat(arrowHeight$1, " ") + "".concat(arrowWidth$1, ",").concat(arrowHeight$1, " ") + "".concat(arrowWidth$1 / 2, ",0")
-    }))), /*#__PURE__*/React$p.createElement("div", {
+    }))), /*#__PURE__*/React$r.createElement("div", {
       className: aphrodite.css(styles$7.content, isMobile && styles$7.contentMobile, this.state.expanded && expandedStyle),
       style: {
         height: this.state.expanded ? "auto" : 0,
@@ -53938,7 +55159,7 @@ var Definition = React$p.createClass({
         marginTop: this.state.contentMarginTop
       },
       ref: e => this.content = e
-    }, /*#__PURE__*/React$p.createElement(Renderer$6, {
+    }, /*#__PURE__*/React$r.createElement(Renderer$6, {
       apiOptions: this.props.apiOptions,
       content: this.props.definition,
       widgets: this.props.widgets
@@ -54051,7 +55272,7 @@ var _module_$q = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$o = _react__default["default"];
+var React$q = _react__default["default"];
 var _$i = _underscore__default["default"];
 var Changeable$9 = _mixinsChangeableJsx;
 var EditorJsonify$4 = _mixinsEditorJsonifyJsx;
@@ -54063,14 +55284,14 @@ var defaultExplanationProps$1 = {
   explanation: "explanation goes here\n\nmore explanation",
   widgets: {}
 };
-var ExplanationEditor = React$o.createClass({
+var ExplanationEditor = React$q.createClass({
   displayName: "ExplanationEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$9.propTypes), {}, {
-    showPrompt: React$o.PropTypes.string,
-    hidePrompt: React$o.PropTypes.string,
-    explanation: React$o.PropTypes.string,
-    widgets: React$o.PropTypes.object,
-    apiOptions: React$o.PropTypes.any
+    showPrompt: React$q.PropTypes.string,
+    hidePrompt: React$q.PropTypes.string,
+    explanation: React$q.PropTypes.string,
+    widgets: React$q.PropTypes.object,
+    apiOptions: React$q.PropTypes.any
   }),
   getDefaultProps: function getDefaultProps() {
     return defaultExplanationProps$1;
@@ -54088,21 +55309,21 @@ var ExplanationEditor = React$o.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$o.createElement("div", {
+    return /*#__PURE__*/React$q.createElement("div", {
       className: "perseus-widget-explanation-editor"
-    }, /*#__PURE__*/React$o.createElement("div", {
+    }, /*#__PURE__*/React$q.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$o.createElement("label", null, "Prompt to show explanation:", " ", /*#__PURE__*/React$o.createElement(TextInput$2, {
+    }, /*#__PURE__*/React$q.createElement("label", null, "Prompt to show explanation:", " ", /*#__PURE__*/React$q.createElement(TextInput$2, {
       value: this.props.showPrompt,
       onChange: this.change("showPrompt")
-    }))), /*#__PURE__*/React$o.createElement("div", {
+    }))), /*#__PURE__*/React$q.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$o.createElement("label", null, "Prompt to hide explanation:", " ", /*#__PURE__*/React$o.createElement(TextInput$2, {
+    }, /*#__PURE__*/React$q.createElement("label", null, "Prompt to hide explanation:", " ", /*#__PURE__*/React$q.createElement(TextInput$2, {
       value: this.props.hidePrompt,
       onChange: this.change("hidePrompt")
-    }))), /*#__PURE__*/React$o.createElement("div", {
+    }))), /*#__PURE__*/React$q.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$o.createElement(Editor$2, {
+    }, /*#__PURE__*/React$q.createElement(Editor$2, {
       apiOptions: this.props.apiOptions,
       content: this.props.explanation,
       widgets: this.props.widgets,
@@ -54135,7 +55356,7 @@ var _widgetsExplanationEditorJsx = _module_$q.exports;
 var _module_$p = {
   exports: {}
 };
-var React$n = _react__default["default"];
+var React$p = _react__default["default"];
 var _$h = _underscore__default["default"];
 var Changeable$8 = _mixinsChangeableJsx;
 var PerseusApi = _perseusApiJsx;
@@ -54148,15 +55369,15 @@ var defaultExplanationProps = {
   widgets: {},
   linterContext: linterContextDefault
 };
-var Explanation = React$n.createClass({
+var Explanation = React$p.createClass({
   displayName: "Explanation",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$8.propTypes), {}, {
     apiOptions: PerseusApi.Options.propTypes,
-    explanation: React$n.PropTypes.string,
-    hidePrompt: React$n.PropTypes.string,
-    showPrompt: React$n.PropTypes.string,
-    trackInteraction: React$n.PropTypes.func.isRequired,
-    widgets: React$n.PropTypes.object,
+    explanation: React$p.PropTypes.string,
+    hidePrompt: React$p.PropTypes.string,
+    showPrompt: React$p.PropTypes.string,
+    trackInteraction: React$p.PropTypes.func.isRequired,
+    widgets: React$p.PropTypes.object,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -54196,24 +55417,24 @@ var Explanation = React$n.createClass({
     var onClick = readOnly ? null : this._onClick;
 
     if (isMobile) {
-      linkContainer = /*#__PURE__*/React$n.createElement("div", {
+      linkContainer = /*#__PURE__*/React$p.createElement("div", {
         className: aphrodite.css(styles$6.linkContainer)
-      }, /*#__PURE__*/React$n.createElement("a", {
+      }, /*#__PURE__*/React$p.createElement("a", {
         className: aphrodite.css(styles$6.mobileExplanationLink),
         href: href,
         onClick: onClick
-      }, linkAnchor), this.state.expanded && /*#__PURE__*/React$n.createElement("svg", {
+      }, linkAnchor), this.state.expanded && /*#__PURE__*/React$p.createElement("svg", {
         className: aphrodite.css(styles$6.disclosureArrow)
-      }, /*#__PURE__*/React$n.createElement("polygon", {
+      }, /*#__PURE__*/React$p.createElement("polygon", {
         style: {
           fill: backgroundColor
         },
         points: "0,".concat(arrowHeight, " ") + "".concat(arrowWidth, ",").concat(arrowHeight, " ") + "".concat(arrowWidth / 2, ",0")
       })));
     } else {
-      linkContainer = /*#__PURE__*/React$n.createElement("div", {
+      linkContainer = /*#__PURE__*/React$p.createElement("div", {
         className: aphrodite.css(styles$6.linkContainer)
-      }, /*#__PURE__*/React$n.createElement(Link, {
+      }, /*#__PURE__*/React$p.createElement(Link, {
         className: aphrodite.css(styles$6.explanationLink),
         href: href,
         onClick: onClick
@@ -54221,16 +55442,16 @@ var Explanation = React$n.createClass({
     }
 
     var expandedStyle = isMobile ? styles$6.contentExpandedMobile : styles$6.contentExpanded;
-    return /*#__PURE__*/React$n.createElement("div", {
+    return /*#__PURE__*/React$p.createElement("div", {
       className: aphrodite.css(styles$6.container)
-    }, linkContainer, /*#__PURE__*/React$n.createElement("div", {
+    }, linkContainer, /*#__PURE__*/React$p.createElement("div", {
       className: aphrodite.css(styles$6.content, isMobile && styles$6.contentMobile, this.state.expanded && expandedStyle),
       style: {
         height: this.state.expanded ? "auto" : 0,
         overflow: this.state.expanded ? "visible" : "hidden"
       },
       ref: "content"
-    }, /*#__PURE__*/React$n.createElement(Renderer$5, {
+    }, /*#__PURE__*/React$p.createElement(Renderer$5, {
       apiOptions: this.props.apiOptions,
       content: this.props.explanation,
       widgets: this.props.widgets,
@@ -54369,20 +55590,20 @@ var _module_$o = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$m = _react__default["default"];
-var ReactDOM$3 = _reactDom__default["default"];
+var React$o = _react__default["default"];
+var ReactDOM$5 = _reactDom__default["default"];
 var _$g = _underscore__default["default"];
 var InfoTip$4 = _componentsInfoTipJsx;
 var InlineIcon$7 = _componentsInlineIconJsx;
 var EditorJsonify$3 = _mixinsEditorJsonifyJsx;
-var DropdownEditor = React$m.createClass({
+var DropdownEditor = React$o.createClass({
   displayName: "DropdownEditor",
   propTypes: {
-    choices: React$m.PropTypes.arrayOf(React$m.PropTypes.shape({
-      content: React$m.PropTypes.string,
-      correct: React$m.PropTypes.bool
+    choices: React$o.PropTypes.arrayOf(React$o.PropTypes.shape({
+      content: React$o.PropTypes.string,
+      correct: React$o.PropTypes.bool
     })),
-    placeholder: React$m.PropTypes.string
+    placeholder: React$o.PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54396,52 +55617,52 @@ var DropdownEditor = React$m.createClass({
   render: function render() {
     var dropdownGroupName = _$g.uniqueId("perseus_dropdown_");
 
-    return /*#__PURE__*/React$m.createElement("div", {
+    return /*#__PURE__*/React$o.createElement("div", {
       className: "perseus-widget-dropdown"
-    }, /*#__PURE__*/React$m.createElement("div", {
+    }, /*#__PURE__*/React$o.createElement("div", {
       className: "dropdown-info"
-    }, "Dropdown", /*#__PURE__*/React$m.createElement(InfoTip$4, null, /*#__PURE__*/React$m.createElement("p", null, "The drop down is useful for making inequalities in a custom format. We normally use the symbols ", "<", ",", " ", ">", ", \u2264, \u2265 (in that order) which you can copy into the choices. When possible, use the \"multiple choice\" answer type instead."))), /*#__PURE__*/React$m.createElement("div", {
+    }, "Dropdown", /*#__PURE__*/React$o.createElement(InfoTip$4, null, /*#__PURE__*/React$o.createElement("p", null, "The drop down is useful for making inequalities in a custom format. We normally use the symbols ", "<", ",", " ", ">", ", \u2264, \u2265 (in that order) which you can copy into the choices. When possible, use the \"multiple choice\" answer type instead."))), /*#__PURE__*/React$o.createElement("div", {
       className: "dropdown-placeholder"
-    }, /*#__PURE__*/React$m.createElement("input", {
+    }, /*#__PURE__*/React$o.createElement("input", {
       type: "text",
       placeholder: "Placeholder value",
       value: this.props.placeholder,
       onChange: this.onPlaceholderChange
-    }), /*#__PURE__*/React$m.createElement(InfoTip$4, null, /*#__PURE__*/React$m.createElement("p", null, "This value will appear as the drop down default. It should give the user some indication of the values available in the drop down itself, e.g., Yes/No/Maybe."))), /*#__PURE__*/React$m.createElement("div", {
+    }), /*#__PURE__*/React$o.createElement(InfoTip$4, null, /*#__PURE__*/React$o.createElement("p", null, "This value will appear as the drop down default. It should give the user some indication of the values available in the drop down itself, e.g., Yes/No/Maybe."))), /*#__PURE__*/React$o.createElement("div", {
       className: "clearfix"
-    }), /*#__PURE__*/React$m.createElement("ul", {
+    }), /*#__PURE__*/React$o.createElement("ul", {
       className: "dropdown-choices"
     }, this.props.choices.map(function (choice, i) {
       var checkedClass = choice.correct ? "correct" : "incorrect";
-      return /*#__PURE__*/React$m.createElement("li", {
+      return /*#__PURE__*/React$o.createElement("li", {
         key: "" + i
-      }, /*#__PURE__*/React$m.createElement("div", null, /*#__PURE__*/React$m.createElement("input", {
+      }, /*#__PURE__*/React$o.createElement("div", null, /*#__PURE__*/React$o.createElement("input", {
         ref: "radio" + i,
         type: "radio",
         name: dropdownGroupName,
         checked: choice.correct ? "checked" : "",
         onChange: this.onCorrectChange.bind(this, i),
         value: i
-      }), /*#__PURE__*/React$m.createElement("input", {
+      }), /*#__PURE__*/React$o.createElement("input", {
         type: "text",
         ref: "editor" + i,
         onChange: this.onContentChange.bind(this, i),
         className: checkedClass,
         value: choice.content
-      }), /*#__PURE__*/React$m.createElement("a", {
+      }), /*#__PURE__*/React$o.createElement("a", {
         href: "#",
         className: "simple-button orange",
         onClick: this.removeChoice.bind(this, i)
-      }, /*#__PURE__*/React$m.createElement("span", {
+      }, /*#__PURE__*/React$o.createElement("span", {
         className: "remove-choice"
-      }, /*#__PURE__*/React$m.createElement(InlineIcon$7, iconTrash)))));
-    }, this)), /*#__PURE__*/React$m.createElement("div", {
+      }, /*#__PURE__*/React$o.createElement(InlineIcon$7, iconTrash)))));
+    }, this)), /*#__PURE__*/React$o.createElement("div", {
       className: "add-choice-container"
-    }, /*#__PURE__*/React$m.createElement("a", {
+    }, /*#__PURE__*/React$o.createElement("a", {
       href: "#",
       className: "simple-button orange",
       onClick: this.addChoice
-    }, /*#__PURE__*/React$m.createElement(InlineIcon$7, iconPlus), " Add a choice", " ")));
+    }, /*#__PURE__*/React$o.createElement(InlineIcon$7, iconPlus), " Add a choice", " ")));
   },
   onPlaceholderChange: function onPlaceholderChange(e) {
     var placeholder = e.target.value;
@@ -54493,7 +55714,7 @@ var DropdownEditor = React$m.createClass({
     });
   },
   focus: function focus(i) {
-    ReactDOM$3.findDOMNode(this.refs["editor" + i]).focus();
+    ReactDOM$5.findDOMNode(this.refs["editor" + i]).focus();
     return true;
   },
 
@@ -54509,22 +55730,22 @@ var _module_$n = {
   exports: {}
 };
 var classNames$6 = _classnames__default["default"];
-var React$l = _react__default["default"];
-var ReactDOM$2 = _reactDom__default["default"];
+var React$n = _react__default["default"];
+var ReactDOM$4 = _reactDom__default["default"];
 var _$f = _underscore__default["default"];
 var ApiClassNames$6 = _perseusApiJsx.ClassNames;
 var ApiOptions$6 = _perseusApiJsx.Options;
 var InlineIcon$6 = _componentsInlineIconJsx;
 var dropdownArrowSize = 24;
-var Dropdown = React$l.createClass({
+var Dropdown = React$n.createClass({
   displayName: "Dropdown",
   propTypes: {
     apiOptions: ApiOptions$6.propTypes,
-    choices: React$l.PropTypes.arrayOf(React$l.PropTypes.string),
-    onChange: React$l.PropTypes.func.isRequired,
-    placeholder: React$l.PropTypes.string,
-    selected: React$l.PropTypes.number,
-    trackInteraction: React$l.PropTypes.func.isRequired
+    choices: React$n.PropTypes.arrayOf(React$n.PropTypes.string),
+    onChange: React$n.PropTypes.func.isRequired,
+    placeholder: React$n.PropTypes.string,
+    selected: React$n.PropTypes.number,
+    trackInteraction: React$n.PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54539,7 +55760,7 @@ var Dropdown = React$l.createClass({
     var selectClasses = classNames$6({
       "perseus-widget-dropdown": true
     });
-    return /*#__PURE__*/React$l.createElement("div", null, /*#__PURE__*/React$l.createElement("select", {
+    return /*#__PURE__*/React$n.createElement("div", null, /*#__PURE__*/React$n.createElement("select", {
       onChange: this._handleChangeEvent,
       onClick: e => {
         e.stopPropagation();
@@ -54555,15 +55776,15 @@ var Dropdown = React$l.createClass({
       " nofastclick " + aphrodite.css(styles$5.dropdown) + " " + ApiClassNames$6.INTERACTIVE,
       disabled: this.props.apiOptions.readOnly,
       value: this.props.selected
-    }, /*#__PURE__*/React$l.createElement("option", {
+    }, /*#__PURE__*/React$n.createElement("option", {
       value: 0,
       disabled: true
     }, this.props.placeholder), choices.map((choice, i) => {
-      return /*#__PURE__*/React$l.createElement("option", {
+      return /*#__PURE__*/React$n.createElement("option", {
         key: "" + (i + 1),
         value: i + 1
       }, choice);
-    })), /*#__PURE__*/React$l.createElement(InlineIcon$6, _extends({}, iconDropdownArrow, {
+    })), /*#__PURE__*/React$n.createElement(InlineIcon$6, _extends({}, iconDropdownArrow, {
       style: {
         marginLeft: "-".concat(dropdownArrowSize, "px"),
         height: dropdownArrowSize,
@@ -54572,7 +55793,7 @@ var Dropdown = React$l.createClass({
     })));
   },
   focus: function focus() {
-    ReactDOM$2.findDOMNode(this).focus();
+    ReactDOM$4.findDOMNode(this).focus();
     return true;
   },
   _handleChangeEvent: function _handleChangeEvent(e) {
@@ -54666,11 +55887,11 @@ var _module_$m = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$k = _react__default["default"];
+var React$m = _react__default["default"];
 var _$e = _underscore__default["default"];
 var Changeable$7 = _mixinsChangeableJsx;
 var EditorJsonify$2 = _mixinsEditorJsonifyJsx;
-var BlurInput$1 = _reactComponentsBlurInputJsx__default["default"];
+var BlurInput$1 = _reactComponentsBlurInputJsx;
 var InfoTip$3 = _componentsInfoTipJsx;
 var PropCheckBox$4 = _componentsPropCheckBoxJsx;
 var DEFAULT_WIDTH = 400;
@@ -54679,11 +55900,11 @@ var DEFAULT_HEIGHT = 400;
  * This is used for editing a name/value pair.
  */
 
-var PairEditor = React$k.createClass({
+var PairEditor = React$m.createClass({
   displayName: "PairEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$7.propTypes), {}, {
-    name: React$k.PropTypes.string,
-    value: React$k.PropTypes.string
+    name: React$m.PropTypes.string,
+    value: React$m.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54701,12 +55922,12 @@ var PairEditor = React$k.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$k.createElement("fieldset", {
+    return /*#__PURE__*/React$m.createElement("fieldset", {
       className: "pair-editor"
-    }, /*#__PURE__*/React$k.createElement("label", null, "Name:", " ", /*#__PURE__*/React$k.createElement(BlurInput$1, {
+    }, /*#__PURE__*/React$m.createElement("label", null, "Name:", " ", /*#__PURE__*/React$m.createElement(BlurInput$1, {
       value: this.props.name,
       onChange: this.change("name")
-    })), /*#__PURE__*/React$k.createElement("label", null, " ", "Value:", " ", /*#__PURE__*/React$k.createElement(BlurInput$1, {
+    })), /*#__PURE__*/React$m.createElement("label", null, " ", "Value:", " ", /*#__PURE__*/React$m.createElement(BlurInput$1, {
       value: this.props.value,
       onChange: this.change("value")
     })));
@@ -54721,17 +55942,17 @@ var PairEditor = React$k.createClass({
  * This is used for editing a set of name/value pairs.
  */
 
-var PairsEditor = React$k.createClass({
+var PairsEditor = React$m.createClass({
   displayName: "PairsEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$7.propTypes), {}, {
-    pairs: React$k.PropTypes.arrayOf(React$k.PropTypes.shape({
-      name: React$k.PropTypes.string,
-      value: React$k.PropTypes.string
+    pairs: React$m.PropTypes.arrayOf(React$m.PropTypes.shape({
+      name: React$m.PropTypes.string,
+      value: React$m.PropTypes.string
     })).isRequired
   }),
   render: function render() {
     var editors = _$e.map(this.props.pairs, (pair, i) => {
-      return /*#__PURE__*/React$k.createElement(PairEditor, {
+      return /*#__PURE__*/React$m.createElement(PairEditor, {
         key: i,
         name: pair.name,
         value: pair.value,
@@ -54739,7 +55960,7 @@ var PairsEditor = React$k.createClass({
       });
     });
 
-    return /*#__PURE__*/React$k.createElement("div", null, editors);
+    return /*#__PURE__*/React$m.createElement("div", null, editors);
   },
 
   change() {
@@ -54792,7 +56013,7 @@ function isolateProgramID(programUrl) {
  */
 
 
-var CSProgramEditor = React$k.createClass({
+var CSProgramEditor = React$m.createClass({
   displayName: "CSProgramEditor",
   propTypes: _objectSpread2({}, Changeable$7.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -54809,23 +56030,23 @@ var CSProgramEditor = React$k.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$k.createElement("div", null, /*#__PURE__*/React$k.createElement("label", null, "Url or Program ID:", " ", /*#__PURE__*/React$k.createElement(BlurInput$1, {
+    return /*#__PURE__*/React$m.createElement("div", null, /*#__PURE__*/React$m.createElement("label", null, "Url or Program ID:", " ", /*#__PURE__*/React$m.createElement(BlurInput$1, {
       name: "programID",
       value: this.props.programID,
       onChange: this._handleProgramIDChange
-    })), /*#__PURE__*/React$k.createElement("br", null), /*#__PURE__*/React$k.createElement(PropCheckBox$4, {
+    })), /*#__PURE__*/React$m.createElement("br", null), /*#__PURE__*/React$m.createElement(PropCheckBox$4, {
       label: "Show Editor",
       showEditor: this.props.showEditor,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$k.createElement(InfoTip$3, null, "If you show the editor, you should use the \"full-width\" alignment to make room for the width of the editor."), /*#__PURE__*/React$k.createElement("br", null), /*#__PURE__*/React$k.createElement(PropCheckBox$4, {
+    }), /*#__PURE__*/React$m.createElement(InfoTip$3, null, "If you show the editor, you should use the \"full-width\" alignment to make room for the width of the editor."), /*#__PURE__*/React$m.createElement("br", null), /*#__PURE__*/React$m.createElement(PropCheckBox$4, {
       label: "Show Buttons",
       showButtons: this.props.showButtons,
       onChange: this.props.onChange
-    }), /*#__PURE__*/React$k.createElement("br", null), /*#__PURE__*/React$k.createElement("label", null, "Settings:", /*#__PURE__*/React$k.createElement(PairsEditor, {
+    }), /*#__PURE__*/React$m.createElement("br", null), /*#__PURE__*/React$m.createElement("label", null, "Settings:", /*#__PURE__*/React$m.createElement(PairsEditor, {
       name: "settings",
       pairs: this.props.settings,
       onChange: this._handleSettingsChange
-    }), /*#__PURE__*/React$k.createElement(InfoTip$3, null, "Settings that you add here are available to the program as an object returned by ", /*#__PURE__*/React$k.createElement("code", null, "Program.settings()"))));
+    }), /*#__PURE__*/React$m.createElement(InfoTip$3, null, "Settings that you add here are available to the program as an object returned by ", /*#__PURE__*/React$m.createElement("code", null, "Program.settings()"))));
   },
 
   change() {
@@ -54881,7 +56102,7 @@ var _module_$l = {
  * This widget is for embedding Khan Academy CS programs.
  */
 
-var React$j = _react__default["default"];
+var React$l = _react__default["default"];
 var _$d = _underscore__default["default"];
 var Changeable$6 = _mixinsChangeableJsx;
 var updateQueryString = Util$q.updateQueryString;
@@ -54904,17 +56125,17 @@ function getUrlFromProgramID(programID) {
  * window.postMessage */
 
 
-var CSProgram = React$j.createClass({
+var CSProgram = React$l.createClass({
   displayName: "CSProgram",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$6.propTypes), {}, {
-    programID: React$j.PropTypes.string,
-    width: React$j.PropTypes.number,
-    height: React$j.PropTypes.number,
-    settings: React$j.PropTypes.array,
-    showEditor: React$j.PropTypes.bool,
-    showButtons: React$j.PropTypes.bool,
-    status: React$j.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
-    message: React$j.PropTypes.string
+    programID: React$l.PropTypes.string,
+    width: React$l.PropTypes.number,
+    height: React$l.PropTypes.number,
+    settings: React$l.PropTypes.array,
+    showEditor: React$l.PropTypes.bool,
+    showButtons: React$l.PropTypes.bool,
+    status: React$l.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
+    message: React$l.PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54964,7 +56185,7 @@ var CSProgram = React$j.createClass({
 
   render: function render() {
     if (!this.props.programID) {
-      return /*#__PURE__*/React$j.createElement("div", null);
+      return /*#__PURE__*/React$l.createElement("div", null);
     }
 
     var url = getUrlFromProgramID(this.props.programID);
@@ -55009,7 +56230,7 @@ var CSProgram = React$j.createClass({
     //  creator "went wild".
     // http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/
 
-    return /*#__PURE__*/React$j.createElement("iframe", {
+    return /*#__PURE__*/React$l.createElement("iframe", {
       sandbox: sandboxOptions,
       src: url,
       style: style,
@@ -55063,7 +56284,7 @@ var _widgetsCsProgramJsx = _module_$l.exports;
 var _module_$k = {
   exports: {}
 };
-var React$i = _react__default["default"];
+var React$k = _react__default["default"];
 var classNames$5 = _classnames__default["default"];
 var Changeable$5 = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated = _mixinsWidgetJsonifyDeprecatedJsx;
@@ -55075,18 +56296,18 @@ var Renderer$4 = _rendererJsx;
 var Util$2 = Util$q;
 var mediaQueries$2 = _stylesMediaQueriesJs;
 var sharedStyles$2 = _stylesSharedJs;
-var Categorizer$1 = React$i.createClass({
+var Categorizer$1 = React$k.createClass({
   displayName: "Categorizer",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$5.propTypes), {}, {
     apiOptions: ApiOptions$5.propTypes,
     // List of categories (across the top)
-    categories: React$i.PropTypes.arrayOf(React$i.PropTypes.string),
+    categories: React$k.PropTypes.arrayOf(React$k.PropTypes.string),
     // List of items that are being categorized (along the left side)
-    items: React$i.PropTypes.arrayOf(React$i.PropTypes.string),
-    trackInteraction: React$i.PropTypes.func.isRequired,
+    items: React$k.PropTypes.arrayOf(React$k.PropTypes.string),
+    trackInteraction: React$k.PropTypes.func.isRequired,
     // Ordered list of correct answers, mapping items to categories thusly:
     //   values[<items_index>] == <categories_index>
-    values: React$i.PropTypes.arrayOf(React$i.PropTypes.number),
+    values: React$k.PropTypes.arrayOf(React$k.PropTypes.number),
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -55125,50 +56346,50 @@ var Categorizer$1 = React$i.createClass({
       indexedItems = Util$2.shuffle(indexedItems, this.props.problemNum);
     }
 
-    var table = /*#__PURE__*/React$i.createElement("table", {
+    var table = /*#__PURE__*/React$k.createElement("table", {
       className: "categorizer-table"
-    }, /*#__PURE__*/React$i.createElement("thead", null, /*#__PURE__*/React$i.createElement("tr", null, /*#__PURE__*/React$i.createElement("th", null, "\xA0"), this.props.categories.map((category, i) => {
+    }, /*#__PURE__*/React$k.createElement("thead", null, /*#__PURE__*/React$k.createElement("tr", null, /*#__PURE__*/React$k.createElement("th", null, "\xA0"), this.props.categories.map((category, i) => {
       // Array index is the correct key here, as that's
       // how category grading actually works -- no way
       // to add or remove categories or items in the
       // middle. (If we later add that, this should be
       // fixed.)
-      return /*#__PURE__*/React$i.createElement("th", {
+      return /*#__PURE__*/React$k.createElement("th", {
         className: aphrodite.css(styles$4.header),
         key: i
-      }, /*#__PURE__*/React$i.createElement(Renderer$4, {
+      }, /*#__PURE__*/React$k.createElement(Renderer$4, {
         content: category,
         linterContext: this.props.linterContext
       }));
-    }))), /*#__PURE__*/React$i.createElement("tbody", null, indexedItems.map(indexedItem => {
+    }))), /*#__PURE__*/React$k.createElement("tbody", null, indexedItems.map(indexedItem => {
       var item = indexedItem[0];
       var itemNum = indexedItem[1];
       var uniqueId = self.state.uniqueId + "_" + itemNum;
       /* eslint-disable max-len */
 
-      return /*#__PURE__*/React$i.createElement("tr", {
+      return /*#__PURE__*/React$k.createElement("tr", {
         key: itemNum
-      }, /*#__PURE__*/React$i.createElement("td", null, /*#__PURE__*/React$i.createElement(Renderer$4, {
+      }, /*#__PURE__*/React$k.createElement("td", null, /*#__PURE__*/React$k.createElement(Renderer$4, {
         content: item,
         linterContext: this.props.linterContext
       })), _$c.range(self.props.categories.length).map(catNum => {
         var selected = self.props.values[itemNum] === catNum;
-        return /*#__PURE__*/React$i.createElement("td", {
+        return /*#__PURE__*/React$k.createElement("td", {
           className: "category " + aphrodite.css(styles$4.cell, styles$4.responsiveCell),
           key: catNum
-        }, /*#__PURE__*/React$i.createElement("div", {
+        }, /*#__PURE__*/React$k.createElement("div", {
           className: ApiClassNames$5.INTERACTIVE,
           onClick: this.onChange.bind(this, itemNum, catNum)
-        }, isMobile && /*#__PURE__*/React$i.createElement("input", {
+        }, isMobile && /*#__PURE__*/React$k.createElement("input", {
           type: "radio",
           name: uniqueId,
           className: aphrodite.css(sharedStyles$2.responsiveInput, sharedStyles$2.responsiveRadioInput),
           checked: selected,
           onChange: this.onChange.bind(this, itemNum, catNum),
           onClick: e => e.stopPropagation()
-        }), !isMobile && /*#__PURE__*/React$i.createElement("span", {
+        }), !isMobile && /*#__PURE__*/React$k.createElement("span", {
           className: aphrodite.css(styles$4.responsiveSpan, styles$4.radioSpan, selected && styles$4.checkedRadioSpan, this.props.static && selected && styles$4.staticCheckedRadioSpan)
-        }, selected ? /*#__PURE__*/React$i.createElement(InlineIcon$5, iconCircle) : /*#__PURE__*/React$i.createElement(InlineIcon$5, iconCircleThin))));
+        }, selected ? /*#__PURE__*/React$k.createElement(InlineIcon$5, iconCircle) : /*#__PURE__*/React$k.createElement(InlineIcon$5, iconCircleThin))));
       }));
       /* eslint-enable max-len */
     }))); // TODO(benkomalo): kill CSS-based styling and move everything to
@@ -55179,7 +56400,7 @@ var Categorizer$1 = React$i.createClass({
       "static-mode": this.props.static
     });
     var inlineStyles = this.props.apiOptions.isMobile ? [styles$4.fullBleedContainer] : [];
-    return /*#__PURE__*/React$i.createElement("div", {
+    return /*#__PURE__*/React$k.createElement("div", {
       className: extraClassNames + " " + aphrodite.css(...inlineStyles)
     }, table);
   },
@@ -55286,7 +56507,7 @@ var _module_$j = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$h = _react__default["default"];
+var React$j = _react__default["default"];
 var Changeable$4 = _mixinsChangeableJsx;
 var _$b = _underscore__default["default"];
 var ApiOptions$4 = _perseusApiJsx.Options;
@@ -55294,14 +56515,14 @@ var EditorJsonify$1 = _mixinsEditorJsonifyJsx;
 var PropCheckBox$3 = _componentsPropCheckBoxJsx;
 var TextListEditor = _componentsTextListEditorJsx;
 var Categorizer = _widgetsCategorizerJsx.widget;
-var CategorizerEditor = React$h.createClass({
+var CategorizerEditor = React$j.createClass({
   displayName: "CategorizerEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$4.propTypes), {}, {
     apiOptions: ApiOptions$4.propTypes,
-    items: React$h.PropTypes.arrayOf(React$h.PropTypes.string),
-    categories: React$h.PropTypes.arrayOf(React$h.PropTypes.string),
-    values: React$h.PropTypes.arrayOf(React$h.PropTypes.number),
-    randomizeItems: React$h.PropTypes.bool
+    items: React$j.PropTypes.arrayOf(React$j.PropTypes.string),
+    categories: React$j.PropTypes.arrayOf(React$j.PropTypes.string),
+    values: React$j.PropTypes.arrayOf(React$j.PropTypes.number),
+    randomizeItems: React$j.PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -55321,20 +56542,20 @@ var CategorizerEditor = React$h.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$h.createElement("div", null, /*#__PURE__*/React$h.createElement("div", {
+    return /*#__PURE__*/React$j.createElement("div", null, /*#__PURE__*/React$j.createElement("div", {
       className: "perseus-widget-row"
-    }, /*#__PURE__*/React$h.createElement(PropCheckBox$3, {
+    }, /*#__PURE__*/React$j.createElement(PropCheckBox$3, {
       label: "Randomize item order",
       labelAlignment: "right",
       randomizeItems: this.props.randomizeItems,
       onChange: this.props.onChange
-    })), "Categories:", /*#__PURE__*/React$h.createElement(TextListEditor, {
+    })), "Categories:", /*#__PURE__*/React$j.createElement(TextListEditor, {
       options: this.props.categories,
       onChange: cat => {
         this.change("categories", cat);
       },
       layout: "horizontal"
-    }), "Items:", /*#__PURE__*/React$h.createElement(TextListEditor, {
+    }), "Items:", /*#__PURE__*/React$j.createElement(TextListEditor, {
       options: this.props.items,
       onChange: items => {
         this.change({
@@ -55351,7 +56572,7 @@ var CategorizerEditor = React$h.createClass({
         });
       },
       layout: "vertical"
-    }), /*#__PURE__*/React$h.createElement(Categorizer, {
+    }), /*#__PURE__*/React$j.createElement(Categorizer, {
       apiOptions: this.props.apiOptions,
       items: this.props.items,
       categories: this.props.categories,
@@ -55457,13 +56678,348 @@ var init$1 = function init(options) {
 _module_$i.exports = init$1;
 var _initJs = _module_$i.exports;
 
+var module$2 = {
+  exports: {}
+};
+/**
+ * A generic tooltip library for React.js
+ *
+ * This should eventually end up in react-components
+ *
+ * Interface: ({a, b} means one of a or b)
+ * const Tooltip = require("./tooltip.jsx");
+ * <Tooltip
+ *     className="class-for-tooltip-contents"
+ *     horizontalPosition="left" // one of "left", "right"
+ *     horizontalAlign="left" // one of "left", "right"
+ *     verticalPosition="bottom" // one of "top", "bottom"
+ *     arrowSize={10} // arrow size in pixels
+ *     borderColor="#ccc" // color of the border for the tooltip
+ *     show={true} // whether the tooltip should currently be visible
+ *     targetContainerStyle={targetContainerStyle}
+ * >
+ *     <TargetElementOfTheTooltip />
+ *     <TooltipContents1 />
+ *     <TooltipContents2 />
+ * </Tooltip>
+ *
+ * To show/hide the tooltip, the parent component should call the
+ * .show() and .hide() methods of the tooltip when appropriate.
+ * (These are usually set up as handlers of events on the target element.)
+ *
+ * Notes:
+ *     className should not specify a border; that is handled by borderColor
+ *     so that the arrow and tooltip match
+ */
+//          __,,--``\\
+//  _,,-''``         \\     ,
+// '----------_.------'-.___|\__
+//    _.--''``    `)__   )__   @\__
+//   (  .. ''---/___,,E/__,E'------`
+//    `-''`''
+// Here be dragons.
+// TODO(joel/aria) fix z-index issues https://s3.amazonaws.com/uploads.hipchat.com/6574/29028/yOApjwmgiMhEZYJ/Screen%20Shot%202014-05-30%20at%203.34.18%20PM.png
+// z-index: 3 on perseus-formats-tooltip seemed to work
+
+var React$i = _react__default["default"];
+var ReactDOM$3 = _reactDom__default["default"];
+var createReactClass$1 = _createReactClass__default["default"];
+var PropTypes$1 = _propTypes__default["default"];
+var zIndex = 10;
+var Triangle = createReactClass$1({
+  displayName: "Triangle",
+  propTypes: {
+    color: PropTypes$1.string.isRequired,
+    left: PropTypes$1.number.isRequired,
+    "top": PropTypes$1.number.isRequired,
+    width: PropTypes$1.number.isRequired,
+    height: PropTypes$1.number.isRequired,
+    horizontalDirection: PropTypes$1.oneOf(["left", "right"]).isRequired,
+    verticalDirection: PropTypes$1.oneOf(["top", "bottom"]).isRequired
+  },
+  render: function render() {
+    var borderLeft;
+    var borderRight;
+    var borderTop;
+    var borderBottom;
+    var hBorder = "".concat(this.props.width, "px solid transparent");
+
+    if (this.props.horizontalDirection === "right") {
+      borderLeft = hBorder;
+    } else {
+      borderRight = hBorder;
+    }
+
+    var vBorder = "".concat(this.props.height, "px solid ").concat(this.props.color);
+
+    if (this.props.verticalDirection === "top") {
+      borderTop = vBorder;
+    } else {
+      borderBottom = vBorder;
+    }
+
+    return /*#__PURE__*/React$i.createElement("div", {
+      style: {
+        display: "block",
+        height: 0,
+        width: 0,
+        position: "absolute",
+        left: this.props.left,
+        "top": this.props["top"],
+        borderLeft: borderLeft,
+        borderRight: borderRight,
+        borderTop: borderTop,
+        borderBottom: borderBottom
+      }
+    });
+  }
+});
+var TooltipArrow = createReactClass$1({
+  displayName: "TooltipArrow",
+  propTypes: {
+    position: PropTypes$1.string,
+    visibility: PropTypes$1.string,
+    left: PropTypes$1.number,
+    "top": PropTypes$1.number,
+    color: PropTypes$1.string.isRequired,
+    // a css color
+    border: PropTypes$1.string.isRequired,
+    // a css color
+    width: PropTypes$1.number.isRequired,
+    height: PropTypes$1.number.isRequired,
+    horizontalDirection: PropTypes$1.oneOf(["left", "right"]).isRequired,
+    verticalDirection: PropTypes$1.oneOf(["top", "bottom"]).isRequired
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      position: "relative",
+      visibility: "visible",
+      left: 0,
+      "top": 0
+    };
+  },
+  // TODO(aria): Think about adding a box-shadow to the triangle here
+  // See http://css-tricks.com/triangle-with-shadow/
+  render: function render() {
+    //const isRight = (this.props.horizontalDirection === "right");
+    var isTop = this.props.verticalDirection === "top";
+    var frontTopOffset = isTop ? 0 : 1;
+    var borderTopOffset = isTop ? 0 : -1;
+    return /*#__PURE__*/React$i.createElement("div", {
+      style: {
+        display: "block",
+        position: this.props.position,
+        visibility: this.props.visibility,
+        left: this.props.left,
+        "top": this.props["top"],
+        width: this.props.width + 2,
+        height: this.props.height + 1,
+        marginTop: -1,
+        marginBottom: -2,
+        zIndex: zIndex
+      }
+    }, /*#__PURE__*/React$i.createElement(Triangle, {
+      horizontalDirection: this.props.horizontalDirection,
+      verticalDirection: this.props.verticalDirection,
+      color: this.props.border,
+      left: 0,
+      top: borderTopOffset,
+      width: this.props.width + 2 // one extra for the diagonal
+      ,
+      height: this.props.height + 2
+    }), /*#__PURE__*/React$i.createElement(Triangle, {
+      horizontalDirection: this.props.horizontalDirection,
+      verticalDirection: this.props.verticalDirection,
+      color: this.props.color,
+      left: 1,
+      top: frontTopOffset,
+      width: this.props.width,
+      height: this.props.height
+    }));
+  }
+});
+var VERTICAL_CORNERS = {
+  "top": {
+    "top": "-100%"
+  },
+  bottom: {
+    "top": 0
+  }
+};
+var HORIZONTAL_CORNERS = {
+  left: {
+    targetLeft: 0
+  },
+  right: {
+    targetLeft: "100%"
+  }
+};
+var HORIZONTAL_ALIGNMNENTS = {
+  left: {
+    tooltipLeft: 0,
+    arrowLeft: arrowSize => 0
+  },
+  right: {
+    tooltipLeft: "-100%",
+    arrowLeft: arrowSize => -arrowSize - 2
+  }
+};
+var Tooltip$2 = createReactClass$1({
+  displayName: "Tooltip",
+  propTypes: {
+    show: PropTypes$1.bool.isRequired,
+    className: PropTypes$1.string,
+    arrowSize: PropTypes$1.number,
+    borderColor: PropTypes$1.string,
+    verticalPosition: PropTypes$1.oneOf(Object.keys(VERTICAL_CORNERS)),
+    horizontalPosition: PropTypes$1.oneOf(Object.keys(HORIZONTAL_CORNERS)),
+    horizontalAlign: PropTypes$1.oneOf(Object.keys(HORIZONTAL_ALIGNMNENTS)),
+    children: PropTypes$1.arrayOf(PropTypes$1.element).isRequired,
+    targetContainerStyle: PropTypes$1.any // style object
+
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      className: "",
+      arrowSize: 10,
+      borderColor: "#ccc",
+      verticalPosition: "bottom",
+      horizontalPosition: "left",
+      horizontalAlign: "left",
+      targetContainerStyle: {}
+    };
+  },
+  getInitialState: function getInitialState() {
+    return {
+      height: null // used for offsetting "top" positioned tooltips
+
+    };
+  },
+  componentDidMount: function componentDidMount() {
+    this._updateHeight();
+  },
+  componentWillReceiveProps: function componentWillReceiveProps() {
+    // If the contents have changed, reset our measure of the height
+    this.setState({
+      height: null
+    });
+  },
+  componentDidUpdate: function componentDidUpdate() {
+    this._updateHeight();
+  },
+  _renderToolTipDiv: function _renderToolTipDiv(isTooltipAbove) {
+    var settings = Object.assign({}, HORIZONTAL_CORNERS[this.props.horizontalPosition], HORIZONTAL_ALIGNMNENTS[this.props.horizontalAlign], VERTICAL_CORNERS[this.props.verticalPosition]);
+    var arrowAbove;
+    var arrowBelow;
+
+    if (isTooltipAbove) {
+      // We put an absolutely positioned arrow in the correct place
+      arrowAbove = /*#__PURE__*/React$i.createElement(TooltipArrow, {
+        verticalDirection: "top",
+        horizontalDirection: this.props.horizontalAlign,
+        position: "absolute",
+        color: "white",
+        border: this.props.borderColor,
+        left: settings.arrowLeft(this.props.arrowSize),
+        top: -this.props.arrowSize + 2,
+        width: this.props.arrowSize,
+        height: this.props.arrowSize,
+        zIndex: zIndex
+      }); // And we use a visibility: hidden arrow below to shift up the
+      // content by the correct amount
+
+      arrowBelow = /*#__PURE__*/React$i.createElement(TooltipArrow, {
+        verticalDirection: "top",
+        horizontalDirection: this.props.horizontalAlign,
+        visibility: "hidden",
+        color: "white",
+        border: this.props.borderColor,
+        left: settings.arrowLeft(this.props.arrowSize),
+        top: -1,
+        width: this.props.arrowSize,
+        height: this.props.arrowSize,
+        zIndex: zIndex
+      });
+    } else {
+      arrowAbove = /*#__PURE__*/React$i.createElement(TooltipArrow, {
+        verticalDirection: "bottom",
+        horizontalDirection: this.props.horizontalAlign,
+        color: "white",
+        border: this.props.borderColor,
+        left: settings.arrowLeft(this.props.arrowSize),
+        top: -1,
+        width: this.props.arrowSize,
+        height: this.props.arrowSize,
+        zIndex: zIndex
+      });
+      arrowBelow = null;
+    }
+    /* A positioned div below the input to be the parent for our
+        tooltip */
+
+
+    return /*#__PURE__*/React$i.createElement("div", {
+      style: {
+        position: "relative",
+        height: 0,
+        display: this.props.show ? "block" : "none"
+      }
+    }, /*#__PURE__*/React$i.createElement("div", {
+      ref: "tooltipContainer",
+      className: "tooltipContainer",
+      style: {
+        position: "absolute",
+        // height must start out undefined, not null, so that
+        // we can measure the actual height with jquery.
+        // This is used to position the tooltip with top: -100%
+        // when in verticalPosition: "top" mode
+        height: this.state.height || undefined,
+        left: settings.targetLeft
+      }
+    }, arrowAbove, /*#__PURE__*/React$i.createElement("div", {
+      className: this.props.className,
+      ref: "tooltipContent",
+      style: {
+        position: "relative",
+        top: settings["top"],
+        left: settings.tooltipLeft,
+        border: "1px solid " + this.props.borderColor,
+        WebkitBoxShadow: "0 1px 3px " + this.props.borderColor,
+        MozBoxShadow: "0 1px 3px " + this.props.borderColor,
+        boxShadow: "0 1px 3px " + this.props.borderColor,
+        zIndex: zIndex - 1
+      }
+    }, this.props.children.slice(1)), arrowBelow));
+  },
+  _updateHeight: function _updateHeight() {
+    var height = ReactDOM$3.findDOMNode(this.refs.tooltipContainer).offsetHeight;
+
+    if (height !== this.state.height) {
+      this.setState({
+        height
+      });
+    }
+  },
+  render: function render() {
+    var isTooltipAbove = this.props.verticalPosition === "top";
+    /* We wrap the entire output in a span so that it displays inline */
+
+    return /*#__PURE__*/React$i.createElement("span", null, isTooltipAbove && this._renderToolTipDiv(isTooltipAbove), /*#__PURE__*/React$i.createElement("div", {
+      style: this.props.targetContainerStyle
+    }, this.props.children[0]), !isTooltipAbove && this._renderToolTipDiv());
+  }
+}); // Sorry.  // Apology-Oriented-Programming
+
+module$2.exports = Tooltip$2;
+var _reactComponentsTooltipJsx = module$2.exports;
+
 var _module_$h = {
   exports: {}
 };
 /* eslint-disable react/sort-comp */
 
-var React$g = _react__default["default"];
-var Tooltip$1 = _reactComponentsTooltipJsx__default["default"];
+var React$h = _react__default["default"];
+var Tooltip$1 = _reactComponentsTooltipJsx;
 var _$a = _underscore__default["default"];
 var ApiClassNames$4 = _perseusApiJsx.ClassNames;
 var MathInput$1 = _componentsMathInputJsx;
@@ -55475,24 +57031,24 @@ var captureScratchpadTouchStart$1 = Util$q.captureScratchpadTouchStart;
 var MATH = "math";
 var TEXT = "text";
 var TEX = "tex";
-var InputWithExamples$3 = React$g.createClass({
+var InputWithExamples$3 = React$h.createClass({
   displayName: "InputWithExamples",
   propTypes: {
-    type: React$g.PropTypes.oneOf([MATH, TEXT, TEX]),
-    value: React$g.PropTypes.string,
-    onChange: React$g.PropTypes.func.isRequired,
-    className: React$g.PropTypes.string,
-    examples: React$g.PropTypes.arrayOf(React$g.PropTypes.string).isRequired,
-    shouldShowExamples: React$g.PropTypes.bool,
-    convertDotToTimes: React$g.PropTypes.bool,
-    buttonSet: React$g.PropTypes.string,
-    buttonsVisible: React$g.PropTypes.oneOf(["always", "never", "focused"]),
-    labelText: React$g.PropTypes.string,
-    onFocus: React$g.PropTypes.func,
-    onBlur: React$g.PropTypes.func,
-    disabled: React$g.PropTypes.bool,
+    type: React$h.PropTypes.oneOf([MATH, TEXT, TEX]),
+    value: React$h.PropTypes.string,
+    onChange: React$h.PropTypes.func.isRequired,
+    className: React$h.PropTypes.string,
+    examples: React$h.PropTypes.arrayOf(React$h.PropTypes.string).isRequired,
+    shouldShowExamples: React$h.PropTypes.bool,
+    convertDotToTimes: React$h.PropTypes.bool,
+    buttonSet: React$h.PropTypes.string,
+    buttonsVisible: React$h.PropTypes.oneOf(["always", "never", "focused"]),
+    labelText: React$h.PropTypes.string,
+    onFocus: React$h.PropTypes.func,
+    onBlur: React$h.PropTypes.func,
+    disabled: React$h.PropTypes.bool,
     // A unique string identifying this InputWithExamples
-    id: React$g.PropTypes.string.isRequired,
+    id: React$h.PropTypes.string.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -55593,7 +57149,7 @@ var InputWithExamples$3 = React$g.createClass({
 
     var InputComponent = this._getComponentForInputType();
 
-    return /*#__PURE__*/React$g.createElement(InputComponent, inputProps);
+    return /*#__PURE__*/React$h.createElement(InputComponent, inputProps);
   },
   render: function render() {
     var input = this._renderInput(); // Static rendering, which doesn't include the 'tooltip' logic that the
@@ -55610,7 +57166,7 @@ var InputWithExamples$3 = React$g.createClass({
     }).join("\n");
 
     var showExamples = this.props.shouldShowExamples && this.state.showExamples;
-    return /*#__PURE__*/React$g.createElement(Tooltip$1, {
+    return /*#__PURE__*/React$h.createElement(Tooltip$1, {
       ref: "tooltip",
       className: "perseus-formats-tooltip preview-measure",
       horizontalPosition: "left",
@@ -55619,9 +57175,9 @@ var InputWithExamples$3 = React$g.createClass({
       arrowSize: 10,
       borderColor: "#ccc",
       show: showExamples
-    }, input, /*#__PURE__*/React$g.createElement("div", {
+    }, input, /*#__PURE__*/React$h.createElement("div", {
       id: this._getUniqueId()
-    }, /*#__PURE__*/React$g.createElement(Renderer$3, {
+    }, /*#__PURE__*/React$h.createElement(Renderer$3, {
       content: examplesContent,
       linterContext: Gorgon.pushContextStack(this.props.linterContext, 'input-with-examples')
     })));
@@ -55673,8 +57229,8 @@ var _module_$g = {
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 var classNames$4 = _classnames__default["default"];
-var React$f = _react__default["default"];
-var Tooltip = _reactComponentsTooltipJsx__default["default"];
+var React$g = _react__default["default"];
+var Tooltip = _reactComponentsTooltipJsx;
 var _$9 = _underscore__default["default"];
 var ApiOptions$3 = _perseusApiJsx.Options;
 var Changeable$3 = _mixinsChangeableJsx;
@@ -55721,19 +57277,19 @@ var insertBraces = value => {
 }; // The new, MathQuill input expression widget
 
 
-var Expression$1 = React$f.createClass({
+var Expression$1 = React$g.createClass({
   displayName: "Expression",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$3.propTypes), {}, {
     apiOptions: ApiOptions$3.propTypes,
     buttonSets: TexButtons$1.buttonSetsType,
-    buttonsVisible: React$f.PropTypes.oneOf(["always", "never", "focused"]),
-    functions: React$f.PropTypes.arrayOf(React$f.PropTypes.string),
+    buttonsVisible: React$g.PropTypes.oneOf(["always", "never", "focused"]),
+    functions: React$g.PropTypes.arrayOf(React$g.PropTypes.string),
     keypadConfiguration: keypadConfigurationPropType,
     keypadElement: keypadElementPropType$2,
-    times: React$f.PropTypes.bool,
-    trackInteraction: React$f.PropTypes.func.isRequired,
-    value: React$f.PropTypes.string,
-    widgetId: React$f.PropTypes.string.isRequired,
+    times: React$g.PropTypes.bool,
+    trackInteraction: React$g.PropTypes.func.isRequired,
+    value: React$g.PropTypes.string,
+    widgetId: React$g.PropTypes.string.isRequired,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -55776,7 +57332,7 @@ var Expression$1 = React$f.createClass({
   },
   render: function render() {
     if (this.props.apiOptions.customKeypad) {
-      return /*#__PURE__*/React$f.createElement(KeypadInput, {
+      return /*#__PURE__*/React$g.createElement(KeypadInput, {
         ref: "input",
         value: this.props.value,
         keypadElement: this.props.keypadElement,
@@ -55794,7 +57350,7 @@ var Expression$1 = React$f.createClass({
       // To make things slightly easier, we just use an InputWithExamples
       // component to handle the static rendering, which is the same
       // component used by InputNumber and NumericInput
-      return /*#__PURE__*/React$f.createElement(InputWithExamples$2, {
+      return /*#__PURE__*/React$g.createElement(InputWithExamples$2, {
         ref: "input",
         value: this.props.value,
         type: "tex",
@@ -55809,9 +57365,9 @@ var Expression$1 = React$f.createClass({
     } else {
       // TODO(alex): Style this tooltip to be more consistent with other
       // tooltips on the site; align to left middle (once possible)
-      var errorTooltip = /*#__PURE__*/React$f.createElement("span", {
+      var errorTooltip = /*#__PURE__*/React$g.createElement("span", {
         className: "error-tooltip"
-      }, /*#__PURE__*/React$f.createElement(Tooltip, {
+      }, /*#__PURE__*/React$g.createElement(Tooltip, {
         className: "error-text-container",
         horizontalPosition: "right",
         horizontalAlign: "left",
@@ -55819,7 +57375,7 @@ var Expression$1 = React$f.createClass({
         arrowSize: 10,
         borderColor: "#fcc335",
         show: this.state.showErrorText
-      }, /*#__PURE__*/React$f.createElement("span", {
+      }, /*#__PURE__*/React$g.createElement("span", {
         className: "error-icon",
         onMouseEnter: () => {
           this.setState({
@@ -55837,16 +57393,16 @@ var Expression$1 = React$f.createClass({
             showErrorText: !this.state.showErrorText
           });
         }
-      }, /*#__PURE__*/React$f.createElement(InlineIcon$4, iconExclamationSign)), /*#__PURE__*/React$f.createElement("div", {
+      }, /*#__PURE__*/React$g.createElement(InlineIcon$4, iconExclamationSign)), /*#__PURE__*/React$g.createElement("div", {
         className: "error-text"
       }, ERROR_MESSAGE)));
       var className = classNames$4({
         "perseus-widget-expression": true,
         "show-error-tooltip": this.state.showErrorTooltip
       });
-      return /*#__PURE__*/React$f.createElement("span", {
+      return /*#__PURE__*/React$g.createElement("span", {
         className: className
-      }, /*#__PURE__*/React$f.createElement(MathInput, {
+      }, /*#__PURE__*/React$g.createElement(MathInput, {
         ref: "input",
         className: ApiClassNames$3.INTERACTIVE,
         value: this.props.value,
@@ -56175,6 +57731,197 @@ _module_$g.exports = {
 };
 var _widgetsExpressionJsx = _module_$g.exports;
 
+var module$1 = {
+  exports: {}
+};
+var React$f = _react__default["default"];
+var ReactDOM$2 = _reactDom__default["default"];
+var createReactClass = _createReactClass__default["default"];
+var PropTypes = _propTypes__default["default"];
+var PT = PropTypes; // Takes an array of components to sort
+
+var SortableArea$1 = createReactClass({
+  displayName: "SortableArea",
+  propTypes: {
+    className: PT.string,
+    components: PT.arrayOf(PT.node).isRequired,
+    onReorder: PT.func.isRequired,
+    style: PT.any,
+    verify: PT.func
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      verify: () => true
+    };
+  },
+  getInitialState: function getInitialState() {
+    return {
+      // index of the component being dragged
+      dragging: null,
+      components: this.props.components
+    };
+  },
+  // Firefox refuses to drag an element unless you set data on it. Hackily
+  // add data each time an item is dragged.
+  componentDidMount: function componentDidMount() {
+    this._setDragEvents();
+  },
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    this.setState({
+      components: nextProps.components
+    });
+  },
+  componentDidUpdate: function componentDidUpdate() {
+    this._setDragEvents();
+  },
+  // Alternatively send each handler to each component individually,
+  // partially applied
+  onDragStart: function onDragStart(startIndex) {
+    this.setState({
+      dragging: startIndex
+    });
+  },
+  onDrop: function onDrop() {
+    // tell the parent component
+    this.setState({
+      dragging: null
+    });
+    this.props.onReorder(this.state.components);
+  },
+  onDragEnter: function onDragEnter(enterIndex) {
+    // When a label is first dragged it triggers a dragEnter with itself,
+    // which we don't care about.
+    if (this.state.dragging === enterIndex) {
+      return;
+    }
+
+    var newComponents = this.state.components.slice(); // splice the tab out of its old position
+
+    var removed = newComponents.splice(this.state.dragging, 1); // ... and into its new position
+
+    newComponents.splice(enterIndex, 0, removed[0]);
+    var verified = this.props.verify(newComponents);
+
+    if (verified) {
+      this.setState({
+        dragging: enterIndex,
+        components: newComponents
+      });
+    }
+
+    return verified;
+  },
+  _listenEvent: function _listenEvent(e) {
+    e.dataTransfer.setData('hackhackhack', 'because browsers!');
+  },
+  _cancelEvent: function _cancelEvent(e) {
+    // prevent the browser from redirecting to 'because browsers!'
+    e.preventDefault();
+  },
+  _setDragEvents: function _setDragEvents() {
+    this._dragItems = this._dragItems || [];
+    var items = ReactDOM$2.findDOMNode(this).querySelectorAll('[draggable=true]');
+    var oldItems = [];
+    var newItems = [];
+
+    for (var i = 0; i < this._dragItems.length; i++) {
+      var item = this._dragItems[i];
+
+      if (items.indexOf(item) < 0) {
+        oldItems.push(item);
+      }
+    }
+
+    for (var _i = 0; _i < items.length; _i++) {
+      var _item = items[_i];
+
+      if (this._dragItems.indexOf(_item) < 0) {
+        newItems.push(_item);
+      }
+    }
+
+    for (var _i2 = 0; _i2 < newItems.length; _i2++) {
+      var dragItem = newItems[_i2];
+      dragItem.addEventListener('dragstart', this._listenEvent);
+      dragItem.addEventListener('drop', this._cancelEvent);
+    }
+
+    for (var _i3 = 0; _i3 < oldItems.length; _i3++) {
+      var _dragItem = oldItems[_i3];
+
+      _dragItem.removeEventListener('dragstart', this._listenEvent);
+
+      _dragItem.removeEventListener('drop', this._cancelEvent);
+    }
+  },
+  render: function render() {
+    var sortables = this.state.components.map((component, index) => /*#__PURE__*/React$f.createElement(SortableItem, {
+      index: index,
+      component: component,
+      area: this,
+      key: component.key,
+      draggable: component.props.draggable,
+      dragging: index === this.state.dragging
+    }));
+    return /*#__PURE__*/React$f.createElement("ol", {
+      className: this.props.className,
+      style: this.props.style
+    }, sortables);
+  }
+}); // An individual sortable item
+
+var SortableItem = createReactClass({
+  displayName: "SortableItem",
+  propTypes: {
+    area: PT.shape({
+      onDragEnter: PT.func.isRequired,
+      onDragStart: PT.func.isRequired,
+      onDrop: PT.func.isRequired
+    }),
+    component: PT.node.isRequired,
+    dragging: PT.bool.isRequired,
+    draggable: PT.bool.isRequired,
+    index: PT.number.isRequired
+  },
+  handleDragStart: function handleDragStart(e) {
+    e.nativeEvent.dataTransfer.effectAllowed = "move";
+    this.props.area.onDragStart(this.props.index);
+  },
+  handleDrop: function handleDrop() {
+    this.props.area.onDrop(this.props.index);
+  },
+  handleDragEnter: function handleDragEnter(e) {
+    var verified = this.props.area.onDragEnter(this.props.index); // Ideally this would change the cursor based on whether this is a
+    // valid place to drop.
+
+    e.nativeEvent.dataTransfer.effectAllowed = verified ? "move" : "none";
+  },
+  handleDragOver: function handleDragOver(e) {
+    // allow a drop by preventing default handling
+    e.preventDefault();
+  },
+  render: function render() {
+    var dragState = "sortable-disabled";
+
+    if (this.props.dragging) {
+      dragState = "sortable-dragging";
+    } else if (this.props.draggable) {
+      dragState = "sortable-enabled";
+    }
+
+    return /*#__PURE__*/React$f.createElement("li", {
+      draggable: this.props.draggable,
+      className: dragState,
+      onDragStart: this.handleDragStart,
+      onDrop: this.handleDrop,
+      onDragEnter: this.handleDragEnter,
+      onDragOver: this.handleDragOver
+    }, this.props.component);
+  }
+});
+module$1.exports = SortableArea$1;
+var _reactComponentsSortableJsx = module$1.exports;
+
 var _module_$f = {
   exports: {}
 };
@@ -56190,8 +57937,8 @@ var lens = lens$3;
 var Changeable$2 = _mixinsChangeableJsx;
 var InfoTip$2 = _componentsInfoTipJsx;
 var PropCheckBox$2 = _componentsPropCheckBoxJsx;
-var SortableArea = _reactComponentsSortableJsx__default["default"];
-var TeX = _reactComponentsTexJsx__default["default"]; // OldExpression only
+var SortableArea = _reactComponentsSortableJsx;
+var TeX = _reactComponentsTexJsx; // OldExpression only
 
 var TexButtons = _componentsTexButtonsJsx;
 var Expression = _widgetsExpressionJsx.Expression; // An answer can be considered correct, wrong, or ungraded.
@@ -56609,11 +58356,11 @@ var React$d = _react__default["default"];
 var _$7 = _underscore__default["default"];
 var Changeable$1 = _mixinsChangeableJsx;
 var EditorJsonify = _mixinsEditorJsonifyJsx;
-var ButtonGroup = _reactComponentsButtonGroupJsx__default["default"];
+var ButtonGroup = _reactComponentsButtonGroupJsx;
 var Editor$1 = _editorJsx;
 var InfoTip$1 = _componentsInfoTipJsx;
 var InlineIcon$3 = _componentsInlineIconJsx;
-var MultiButtonGroup = _reactComponentsMultiButtonGroupJsx__default["default"];
+var MultiButtonGroup = _reactComponentsMultiButtonGroupJsx;
 var NumberInput = _componentsNumberInputJsx;
 var PropCheckBox$1 = _componentsPropCheckBoxJsx;
 var TextInput = _componentsTextInputJsx;
@@ -57712,7 +59459,7 @@ var React$a = _react__default["default"];
 var ReactDOM$1 = _reactDom__default["default"];
 var _$4 = _underscore__default["default"];
 var Util$1 = Util$q;
-var BlurInput = _reactComponentsBlurInputJsx__default["default"];
+var BlurInput = _reactComponentsBlurInputJsx;
 var InfoTip = _componentsInfoTipJsx;
 var answerTypes$1 = {
   number: {
