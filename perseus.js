@@ -25153,23 +25153,147 @@ function treeToItem(node) {
   };
 }
 
+var isObject = function isObject(obj) {
+  return obj === Object(obj);
+};
+
+var merge = function merge() {
+  var obj = {};
+
+  for (var i = 0; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    if (source) {
+      for (var prop in source) {
+        obj[prop] = source[prop];
+      }
+    }
+  }
+
+  return obj;
+};
+
+var clone = function clone(obj) {
+  if (!isObject(obj)) {
+    return obj;
+  }
+
+  return Array.isArray(obj) ? obj.slice() : merge(obj);
+};
+
+var get$2 = function get(arr, monocle) {
+  return arr[monocle];
+};
+
+var set$2 = function set(arr, monocle, val) {
+  var newArr = arr.splice();
+  newArr[monocle] = val;
+  return newArr;
+};
+
+var mod$2 = function mod(arr, monocle, f) {
+  var newArr = arr.slice();
+  newArr[monocle] = f(arr[monocle]);
+  return newArr;
+};
+
+var del$2 = function del(arr, monocle) {
+  var newArr = arr.slice();
+  newArr.splice(monocle, 1);
+  return newArr;
+};
+/*
+// Lens must point to a member of an array. We'll insert into that array.
+lens.prototype.insertAt = function(lensArr, toInsert) {
+    var obj = this._wrapped;
+
+    var arrLens = lensArr.slice(0, -1);
+    var arr = lens(obj).get(arrLens).slice(); // slice to copy
+
+    var arrIdx = lensArr[lensArr.length-1];
+    arr.splice(arrIdx, 0, toInsert);
+    return lens(obj).set(arrLens, arr);
+};
+
+lens.prototype.insertBefore = lens.prototype.insertAt;
+lens.prototype.insertAfter = function(lensArr, toInsert) {
+    var newLens = lensArr.slice();
+    newLens[newLens.length-1] += 1;
+    return lens(this._wrapped).insertAt(newLens, toInsert);
+};
+*/
+
+
+var arr = {
+  get: get$2,
+  set: set$2,
+  mod: mod$2,
+  del: del$2
+};
+
+var get$1 = function get(obj, monocle) {
+  return obj[monocle];
+};
+
+var set$1 = function set(obj, monocle, val) {
+  var newObj = clone(obj);
+  newObj[monocle] = val;
+  return newObj;
+};
+
+var mod$1 = function mod(obj, monocle, f) {
+  var newObj = clone(obj);
+  newObj[monocle] = f(obj[monocle]);
+  return newObj;
+};
+
+var del$1 = function del(obj, monocle) {
+  var newObj = clone(obj);
+  delete newObj[monocle];
+  return newObj;
+};
+
+var obj = {
+  get: get$1,
+  set: set$1,
+  mod: mod$1,
+  del: del$1
+};
+
+var get = function get(arr, monocle) {
+  return arr[monocle];
+};
+
+var set = function set(arr, monocle, val) {
+  var newArr = arr.splice();
+  newArr[monocle] = val;
+  return newArr;
+};
+
+var mod = function mod(arr, monocle, f) {
+  var newArr = arr.splice();
+  newArr[monocle] = f(arr[monocle]);
+  return newArr;
+};
+
+var del = function del(arr, monocle) {
+  var newArr = arr.slice();
+  newArr.splice(monocle);
+  return newArr;
+};
+
+var str = {
+  get: get,
+  set: set,
+  mod: mod,
+  del: del
+};
+
 /* TODO batch *all* mutations
  * idea: freeze / thaw implementations for all types
  * lens constructor thaws, freeze delegates to type's freeze
  */
-var util = require("./util.js");
-
-var clone = util.clone;
-var isObject = util.isObject;
-var merge = util.merge;
-
-var arr = require('./arr.js');
-
-var obj = require('./obj.js');
-
-var str = require('./str.js'); // equivalents, without requiring it
 // find the implementation to use for a given object
-
 
 var dispatch = function dispatch(x) {
   if (Array.isArray(x)) {
