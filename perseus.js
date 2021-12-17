@@ -279,7 +279,7 @@ var _$1N = function _(str, options) {
     *   </$_>
     *
     * which react/jsx compiles to:
-    *   $_({textbox: React.DOM.input({type: "text"}),
+    *   $_({textbox: ReactDOMtags.input({type: "text"}),
     *       "Please enter a number: %(textbox)s")
     *
     * Note: this is not a full react component to avoid complex handling of
@@ -403,6 +403,7 @@ window.i18n = {
 window.$_ = $_$1;
 window.$i18nDoNotTranslate = $i18nDoNotTranslate;
 
+// NOTE: We don't import the CSS here. Instead, applications can do it separately:
 //       import "perseus-configured/lib/khan-exercises.css";
 //       import "perseus-configured/lib/perseus.css";
 // TODO: Consider a build step to make it one CSS file, and include Mathquill too?
@@ -410,9 +411,9 @@ window.$i18nDoNotTranslate = $i18nDoNotTranslate;
 // TODO: Update Perseus to use these libraries directly, instead. They're not perfect
 //       backfills and I'm not sure how reliable this is!
 
-_react__default["default"].createClass = _createReactClass__default["default"];
-_react__default["default"].PropTypes = _propTypes__default["default"];
-_react__default["default"].DOM = {
+window.createReactClass = _createReactClass__default["default"];
+window.PropTypes = _propTypes__default["default"];
+window.ReactDOMtags = {
   span: props => /*#__PURE__*/_react__default["default"].createElement("span", props),
   input: props => /*#__PURE__*/_react__default["default"].createElement("input", props)
 };
@@ -523,9 +524,9 @@ var _multiItemsShapesJs = _module_$3b.exports;
  */
 
 function buildPropTypeForShape(shape) {
-  return _react__default["default"].PropTypes.oneOfType([_react__default["default"].PropTypes.shape({
+  return PropTypes.oneOfType([PropTypes.shape({
     _multi: buildTreePropTypeForShape(shape)
-  }), _react__default["default"].PropTypes.oneOf([null, undefined])]);
+  }), PropTypes.oneOf([null, undefined])]);
 }
 /**
  * Return a PropType that accepts ItemTrees of the given shape, and rejects
@@ -534,33 +535,33 @@ function buildPropTypeForShape(shape) {
 
 function buildTreePropTypeForShape(shape) {
   if (shape.type === "content") {
-    return _react__default["default"].PropTypes.shape({
+    return PropTypes.shape({
       // TODO(mdr): Remove #LegacyContentNode support.
-      __type: _react__default["default"].PropTypes.oneOf(["content", "item"]).isRequired,
-      content: _react__default["default"].PropTypes.string,
-      images: _react__default["default"].PropTypes.objectOf(_react__default["default"].PropTypes.any),
-      widgets: _react__default["default"].PropTypes.objectOf(_react__default["default"].PropTypes.any)
+      __type: PropTypes.oneOf(["content", "item"]).isRequired,
+      content: PropTypes.string,
+      images: PropTypes.objectOf(PropTypes.any),
+      widgets: PropTypes.objectOf(PropTypes.any)
     });
   } else if (shape.type === "hint") {
-    return _react__default["default"].PropTypes.shape({
-      __type: _react__default["default"].PropTypes.oneOf(["hint"]).isRequired,
-      content: _react__default["default"].PropTypes.string,
-      images: _react__default["default"].PropTypes.objectOf(_react__default["default"].PropTypes.any),
-      widgets: _react__default["default"].PropTypes.objectOf(_react__default["default"].PropTypes.any),
-      replace: _react__default["default"].PropTypes.bool
+    return PropTypes.shape({
+      __type: PropTypes.oneOf(["hint"]).isRequired,
+      content: PropTypes.string,
+      images: PropTypes.objectOf(PropTypes.any),
+      widgets: PropTypes.objectOf(PropTypes.any),
+      replace: PropTypes.bool
     });
   } else if (shape.type === "tags") {
-    return _react__default["default"].PropTypes.arrayOf(_react__default["default"].PropTypes.string.isRequired);
+    return PropTypes.arrayOf(PropTypes.string.isRequired);
   } else if (shape.type === "array") {
     var elementPropType = buildTreePropTypeForShape(shape.elementShape);
-    return _react__default["default"].PropTypes.arrayOf(elementPropType.isRequired);
+    return PropTypes.arrayOf(elementPropType.isRequired);
   } else if (shape.type === "object") {
     var valueShapes = shape.shape;
     var propTypeShape = {};
     Object.keys(valueShapes).forEach(key => {
       propTypeShape[key] = buildTreePropTypeForShape(valueShapes[key]).isRequired;
     });
-    return _react__default["default"].PropTypes.shape(propTypeShape);
+    return PropTypes.shape(propTypeShape);
   } else {
     throw new Error("unexpected shape type ".concat(shape.type));
   }
@@ -2973,14 +2974,11 @@ var _objective_Js = {
   mapObjectFromArray: mapObjectFromArray
 };
 
-// tree with additional information about what we are checking.
-
-var React$2i = _react__default["default"];
-var linterContextProps = React$2i.PropTypes.shape({
-  contentType: React$2i.PropTypes.string,
-  highlightLint: React$2i.PropTypes.bool,
-  paths: React$2i.PropTypes.arrayOf(React$2i.PropTypes.string),
-  stack: React$2i.PropTypes.arrayOf(React$2i.PropTypes.string)
+var linterContextProps = PropTypes.shape({
+  contentType: PropTypes.string,
+  highlightLint: PropTypes.bool,
+  paths: PropTypes.arrayOf(PropTypes.string),
+  stack: PropTypes.arrayOf(PropTypes.string)
 });
 var linterContextDefault = {
   contentType: '',
@@ -4176,7 +4174,7 @@ var _module_$2E = {
  *
  */
 
-var React$2h = _react__default["default"];
+var React$2e = _react__default["default"];
 
 var InlineIcon$k = _ref => {
   var {
@@ -4186,7 +4184,7 @@ var InlineIcon$k = _ref => {
     style = {},
     title
   } = _ref;
-  return /*#__PURE__*/React$2h.createElement("svg", {
+  return /*#__PURE__*/React$2e.createElement("svg", {
     role: "img",
     "aria-hidden": !title,
     style: _objectSpread2({
@@ -4195,7 +4193,7 @@ var InlineIcon$k = _ref => {
     width: "".concat(width / height, "em"),
     height: "1em",
     viewBox: "0 0 ".concat(width, " ").concat(height)
-  }, !!title && /*#__PURE__*/React$2h.createElement("title", null, title), /*#__PURE__*/React$2h.createElement("path", {
+  }, !!title && /*#__PURE__*/React$2e.createElement("title", null, title), /*#__PURE__*/React$2e.createElement("path", {
     d: path,
     fill: "currentColor"
   }));
@@ -4203,15 +4201,15 @@ var InlineIcon$k = _ref => {
 
 InlineIcon$k.propTypes = {
   // An SVG path to render.
-  path: React$2h.PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
   // The path's viewBox dimensions.
   // We set the viewport height to 1em and scale the width accordingly.
-  height: React$2h.PropTypes.number.isRequired,
-  width: React$2h.PropTypes.number.isRequired,
-  style: React$2h.PropTypes.object,
+  height: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  style: PropTypes.object,
   // A11y description for this icon. If absent, icon is marked
   // aria-hidden=true
-  title: React$2h.PropTypes.string
+  title: PropTypes.string
 };
 _module_$2E.exports = InlineIcon$k;
 var _componentsInlineIconJsx = _module_$2E.exports;
@@ -4319,7 +4317,7 @@ var checkedColor = kaGreen;
  * to the left of where it belongs.  And if there is more
  **/
 
-var React$2g = _react__default["default"];
+var React$2d = _react__default["default"];
 var ReactDOM$E = _reactDom__default["default"];
 var InlineIcon$j = _componentsInlineIconJsx;
 var exclamationIcon = {
@@ -4328,22 +4326,22 @@ var exclamationIcon = {
   height: 12,
   width: 12
 };
-var Lint$1 = React$2g.createClass({
+var Lint$1 = createReactClass({
   displayName: "Lint",
   propTypes: {
     // The children are the linty content we're highlighting
-    children: React$2g.PropTypes.node,
+    children: PropTypes.node,
     // Inline lint is highlighted differently than block lint.
-    inline: React$2g.PropTypes.bool,
+    inline: PropTypes.bool,
     // This is the text that appears in the tooltip
-    message: React$2g.PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
     // This is used as the fragment id (hash) in the URL of the link
-    ruleName: React$2g.PropTypes.string.isRequired,
+    ruleName: PropTypes.string.isRequired,
     // Lint warnings inside tables are handled specially
-    insideTable: React$2g.PropTypes.bool.isRequired,
+    insideTable: PropTypes.bool.isRequired,
     // How important this lint message is for the editor. Severity goes
     // from 1 (indicating an error) to 4 (offline reporting only)
-    severity: React$2g.PropTypes.number
+    severity: PropTypes.number
   },
   getInitialState: function getInitialState() {
     return {
@@ -4391,20 +4389,20 @@ var Lint$1 = React$2g.createClass({
       warningTextStyle = styles$q.warning;
     }
 
-    return /*#__PURE__*/React$2g.createElement("a", {
+    return /*#__PURE__*/React$2d.createElement("a", {
       href: "https://khanacademy.org/r/linter-rules#" + this.props.ruleName,
       target: "lint-help-window",
       className: aphrodite.css(style)
-    }, /*#__PURE__*/React$2g.createElement("span", {
+    }, /*#__PURE__*/React$2d.createElement("span", {
       className: aphrodite.css(styles$q.indicator, severityStyle)
-    }, this.props.severity === 1 && /*#__PURE__*/React$2g.createElement(InlineIcon$j, exclamationIcon)), /*#__PURE__*/React$2g.createElement("div", {
+    }, this.props.severity === 1 && /*#__PURE__*/React$2d.createElement(InlineIcon$j, exclamationIcon)), /*#__PURE__*/React$2d.createElement("div", {
       className: aphrodite.css(styles$q.tooltip, tooltipAbove && styles$q.tooltipAbove)
-    }, this.props.message.split("\n\n").map((m, i) => /*#__PURE__*/React$2g.createElement("p", {
+    }, this.props.message.split("\n\n").map((m, i) => /*#__PURE__*/React$2d.createElement("p", {
       key: i,
       className: aphrodite.css(styles$q.tooltipParagraph)
-    }, /*#__PURE__*/React$2g.createElement("span", {
+    }, /*#__PURE__*/React$2d.createElement("span", {
       className: aphrodite.css(warningTextStyle)
-    }, warningText, ":", " "), m)), /*#__PURE__*/React$2g.createElement("div", {
+    }, warningText, ":", " "), m)), /*#__PURE__*/React$2d.createElement("div", {
       className: aphrodite.css(styles$q.tail, tooltipAbove && styles$q.tailAbove)
     })));
   },
@@ -4416,23 +4414,23 @@ var Lint$1 = React$2g.createClass({
       // If we're inside a table, then linty nodes just get
       // a simple wrapper that allows them to be highlighted
       if (this.props.inline) {
-        return /*#__PURE__*/React$2g.createElement("span", {
+        return /*#__PURE__*/React$2d.createElement("span", {
           "data-lint-inside-table": "true"
         }, this.props.children);
       } else {
-        return /*#__PURE__*/React$2g.createElement("div", {
+        return /*#__PURE__*/React$2d.createElement("div", {
           "data-lint-inside-table": "true"
         }, this.props.children);
       }
     } else {
       if (this.props.inline) {
-        return /*#__PURE__*/React$2g.createElement("span", {
+        return /*#__PURE__*/React$2d.createElement("span", {
           className: aphrodite.css(styles$q.lintContainer)
-        }, this.renderLink(styles$q.inlineHoverTarget), /*#__PURE__*/React$2g.createElement("span", null, this.props.children));
+        }, this.renderLink(styles$q.inlineHoverTarget), /*#__PURE__*/React$2d.createElement("span", null, this.props.children));
       } else {
-        return /*#__PURE__*/React$2g.createElement("div", {
+        return /*#__PURE__*/React$2d.createElement("div", {
           className: aphrodite.css(styles$q.lintContainer)
-        }, this.renderLink(styles$q.hoverTarget), /*#__PURE__*/React$2g.createElement("div", null, this.props.children));
+        }, this.renderLink(styles$q.hoverTarget), /*#__PURE__*/React$2d.createElement("div", null, this.props.children));
       }
     }
   }
@@ -5078,10 +5076,10 @@ var module$9 = {
 /* global MathJax */
 
 var PureRenderMixin = _reactAddonsPureRenderMixin__default["default"];
-var React$2f = _react__default["default"];
+var React$2c = _react__default["default"];
 var ReactDOM$D = _reactDom__default["default"];
-var createReactClass$7 = _createReactClass__default["default"];
-var PropTypes$9 = _propTypes__default["default"];
+var createReactClass$8 = _createReactClass__default["default"];
+var PropTypes$a = _propTypes__default["default"];
 var katex$1 = _katex__default["default"];
 var katexA11y = _katexA11yJs;
 var pendingScripts = [];
@@ -5150,14 +5148,14 @@ var srOnly = {
   position: "absolute",
   width: "1px"
 };
-var TeX$9 = createReactClass$7({
+var TeX$9 = createReactClass$8({
   displayName: "TeX",
   propTypes: {
-    children: PropTypes$9.node,
-    katexOptions: PropTypes$9.any,
-    onClick: PropTypes$9.func,
-    onRender: PropTypes$9.func,
-    style: PropTypes$9.any
+    children: PropTypes$a.node,
+    katexOptions: PropTypes$a.any,
+    onClick: PropTypes$a.func,
+    onRender: PropTypes$a.func,
+    style: PropTypes$a.any
   },
   mixins: [PureRenderMixin],
   getDefaultProps: function getDefaultProps() {
@@ -5359,17 +5357,17 @@ var TeX$9 = createReactClass$7({
       }
     }
 
-    return /*#__PURE__*/React$2f.createElement("span", {
+    return /*#__PURE__*/React$2c.createElement("span", {
       style: this.props.style,
       onClick: this.props.onClick
-    }, /*#__PURE__*/React$2f.createElement("span", {
+    }, /*#__PURE__*/React$2c.createElement("span", {
       ref: "mathjax"
-    }), /*#__PURE__*/React$2f.createElement("span", {
+    }), /*#__PURE__*/React$2c.createElement("span", {
       ref: "katex",
       dangerouslySetInnerHTML: katexHtml,
       "aria-hidden": !!katexA11yHtml,
       "aria-describedby": describedById
-    }), /*#__PURE__*/React$2f.createElement("span", {
+    }), /*#__PURE__*/React$2c.createElement("span", {
       dangerouslySetInnerHTML: katexA11yHtml,
       id: describedById,
       style: srOnly
@@ -6733,14 +6731,14 @@ var _module_$2z = {
  * Zooms child to fit with tap-to-zoom behavior.
  */
 
-var React$2e = _react__default["default"];
+var React$2b = _react__default["default"];
 var ReactDOM$C = _reactDom__default["default"];
 var Deferred$1 = _deferredJs;
-var Zoomable$1 = React$2e.createClass({
+var Zoomable$1 = createReactClass({
   displayName: "Zoomable",
   propTypes: {
-    animateHeight: React$2e.PropTypes.bool,
-    children: React$2e.PropTypes.element.isRequired,
+    animateHeight: PropTypes.bool,
+    children: PropTypes.element.isRequired,
 
     /**
      * Optional function that allows customizations in zooming.
@@ -6750,14 +6748,14 @@ var Zoomable$1 = React$2e.createClass({
      *
      * @return {Object} bounds object with `width` and `height` properties
      */
-    computeChildBounds: React$2e.PropTypes.func,
+    computeChildBounds: PropTypes.func,
     // If this prop is specified, we wait until the deferred is resolved
     // before measuring the child element.  This is necessary in cases
     // where the child size depends on whether or not resources, such as
     // fonts, have been loaded.
-    readyToMeasureDeferred: React$2e.PropTypes.shape({
-      then: React$2e.PropTypes.func.isRequired,
-      reject: React$2e.PropTypes.func.isRequired
+    readyToMeasureDeferred: PropTypes.shape({
+      then: PropTypes.func.isRequired,
+      reject: PropTypes.func.isRequired
     }).isRequired
   },
 
@@ -6950,7 +6948,7 @@ var Zoomable$1 = React$2e.createClass({
       WebkitTapHighlightColor: "transparent"
     }, transitionStyle);
 
-    return /*#__PURE__*/React$2e.createElement("span", {
+    return /*#__PURE__*/React$2b.createElement("span", {
       onClick: this.handleClick,
       onClickCapture: this.handleClickIfZoomed,
       onTouchCancelCapture: this.stopPropagationIfZoomed,
@@ -6969,7 +6967,7 @@ var _module_$2y = {
 };
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
 
-var React$2d = _react__default["default"];
+var React$2a = _react__default["default"];
 var ReactDOM$B = _reactDom__default["default"];
 var _$1F = _underscore__default["default"];
 var textWidthCache = {};
@@ -6985,12 +6983,12 @@ function getTextWidth(text) {
   return textWidthCache[text];
 }
 
-var TextListEditor$6 = React$2d.createClass({
+var TextListEditor$6 = createReactClass({
   displayName: "TextListEditor",
   propTypes: {
-    options: React$2d.PropTypes.array,
-    layout: React$2d.PropTypes.string,
-    onChange: React$2d.PropTypes.func.isRequired
+    options: PropTypes.array,
+    layout: PropTypes.string,
+    onChange: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -7012,9 +7010,9 @@ var TextListEditor$6 = React$2d.createClass({
     var className = ["perseus-text-list-editor", "perseus-clearfix", "layout-" + this.props.layout].join(" ");
 
     var inputs = _$1F.map(this.state.items, function (item, i) {
-      return /*#__PURE__*/React$2d.createElement("li", {
+      return /*#__PURE__*/React$2a.createElement("li", {
         key: i
-      }, /*#__PURE__*/React$2d.createElement("input", {
+      }, /*#__PURE__*/React$2a.createElement("input", {
         ref: "input_" + i,
         type: "text",
         value: item,
@@ -7026,7 +7024,7 @@ var TextListEditor$6 = React$2d.createClass({
       }));
     }, this);
 
-    return /*#__PURE__*/React$2d.createElement("ul", {
+    return /*#__PURE__*/React$2a.createElement("ul", {
       className: className
     }, inputs);
   },
@@ -7127,15 +7125,15 @@ var _module_$2x = {
  * in local demo mode.
  */
 
-var React$2c = _react__default["default"];
+var React$29 = _react__default["default"];
 var TextListEditor$5 = _componentsTextListEditorJsx;
 var EMPTY_ARRAY = [];
-var StubTagEditor = React$2c.createClass({
+var StubTagEditor = createReactClass({
   displayName: "StubTagEditor",
   propTypes: {
-    value: React$2c.PropTypes.arrayOf(React$2c.PropTypes.string),
-    onChange: React$2c.PropTypes.func.isRequired,
-    showTitle: React$2c.PropTypes.bool.isRequired
+    value: PropTypes.arrayOf(PropTypes.string),
+    onChange: PropTypes.func.isRequired,
+    showTitle: PropTypes.bool.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -7144,11 +7142,11 @@ var StubTagEditor = React$2c.createClass({
     };
   },
   render: function render() {
-    return /*#__PURE__*/React$2c.createElement("div", null, this.props.showTitle && /*#__PURE__*/React$2c.createElement("div", {
+    return /*#__PURE__*/React$29.createElement("div", null, this.props.showTitle && /*#__PURE__*/React$29.createElement("div", {
       style: {
         fontSize: 14
       }
-    }, "Tags:"), /*#__PURE__*/React$2c.createElement(TextListEditor$5, {
+    }, "Tags:"), /*#__PURE__*/React$29.createElement(TextListEditor$5, {
       options: this.props.value || EMPTY_ARRAY,
       layout: "vertical",
       onChange: this.props.onChange
@@ -7197,45 +7195,45 @@ var StubTagEditor$1 = _module_$2x.exports;
  */
 
 var Options = {
-  propTypes: _react__namespace.PropTypes.shape({
-    isArticle: _react__namespace.PropTypes.bool.isRequired,
-    satStyling: _react__namespace.PropTypes.bool.isRequired,
-    onInputError: _react__namespace.PropTypes.func.isRequired,
-    onFocusChange: _react__namespace.PropTypes.func.isRequired,
-    staticRender: _react__namespace.PropTypes.bool.isRequired,
-    GroupMetadataEditor: _react__namespace.PropTypes.func.isRequired,
-    showAlignmentOptions: _react__namespace.PropTypes.bool.isRequired,
-    readOnly: _react__namespace.PropTypes.bool.isRequired,
-    answerableCallback: _react__namespace.PropTypes.func,
-    getAnotherHint: _react__namespace.PropTypes.func,
-    interactionCallback: _react__namespace.PropTypes.func,
+  propTypes: PropTypes.shape({
+    isArticle: PropTypes.bool.isRequired,
+    satStyling: PropTypes.bool.isRequired,
+    onInputError: PropTypes.func.isRequired,
+    onFocusChange: PropTypes.func.isRequired,
+    staticRender: PropTypes.bool.isRequired,
+    GroupMetadataEditor: PropTypes.func.isRequired,
+    showAlignmentOptions: PropTypes.bool.isRequired,
+    readOnly: PropTypes.bool.isRequired,
+    answerableCallback: PropTypes.func,
+    getAnotherHint: PropTypes.func,
+    interactionCallback: PropTypes.func,
     // A function that takes in the relative problem number (starts at
     // 0 and is incremented for each group widget), and the ID of the
     // group widget, then returns a react component that will be added
     // immediately above the renderer in the group widget. If the
     // function returns null, no annotation will be added.
-    groupAnnotator: _react__namespace.PropTypes.func.isRequired,
+    groupAnnotator: PropTypes.func.isRequired,
     // If imagePlaceholder or widgetPlaceholder are set, perseus will
     // render the placeholder instead of the image or widget node.
-    imagePlaceholder: _react__namespace.PropTypes.node,
-    widgetPlaceholder: _react__namespace.PropTypes.node,
+    imagePlaceholder: PropTypes.node,
+    widgetPlaceholder: PropTypes.node,
     // Base React elements that can be used in place of the standard DOM
     // DOM elements. For example, when provided, <Link /> will be used
     // in place of <a />. This allows clients to provide pre-styled
     // components or components with custom behavior.
-    baseElements: _react__namespace.PropTypes.shape({
+    baseElements: PropTypes.shape({
       // The <Link /> component provided here must adhere to the same
       // interface as React's base <a /> component.
-      Link: _react__namespace.PropTypes.func
+      Link: PropTypes.func
     }),
     // Function that takes dimensions and returns a React component
     // to display while an image is loading
-    imagePreloader: _react__namespace.PropTypes.func,
+    imagePreloader: PropTypes.func,
     // Function that takes an object argument. The object should
     // include type and id, both strings, at least and can optionally
     // include a boolean "correct" value. This is used for keeping
     // track of widget interactions.
-    trackInteraction: _react__namespace.PropTypes.func,
+    trackInteraction: PropTypes.func,
     // A boolean that indicates whether or not a custom keypad is
     // being used.  For mobile web this will be the ProvidedKeypad
     // component.  In this situation we use the MathInput component
@@ -7245,15 +7243,15 @@ var Options = {
     // Internally, we defer to `customKeypad` over `staticRender`, but
     // they should really be represented as an enum or some other data
     // structure that forbids them both being enabled at once.
-    customKeypad: _react__namespace.PropTypes.bool,
+    customKeypad: PropTypes.bool,
     // Indicates whether or not to use mobile styling.
-    isMobile: _react__namespace.PropTypes.bool,
+    isMobile: PropTypes.bool,
     // A function, called with a bool indicating whether use of the
     // drawing area (scratchpad) should be allowed/disallowed.
     // Previously handled by `Khan.scratchpad.enable/disable`
-    setDrawingAreaAvailable: _react__namespace.PropTypes.func,
+    setDrawingAreaAvailable: PropTypes.func,
     // Whether to use the Draft.js editor or the legacy textarea
-    useDraftEditor: _react__namespace.PropTypes.bool,
+    useDraftEditor: PropTypes.bool,
     // Styling options that control the visual behavior of Perseus
     // items.
     // TODO(mdr): If we adopt this pattern, we'll need to think about
@@ -7261,7 +7259,7 @@ var Options = {
     //     how to set their default values without overwriting provided
     //     values. For now, though, you must either specify all fields
     //     of `styling`, or omit the `styling` option entirely.
-    styling: _react__namespace.PropTypes.shape({
+    styling: PropTypes.shape({
       // Which version of radio widget styles to use in non-SAT
       // contexts.
       //
@@ -7293,10 +7291,10 @@ var Options = {
       // TODO(emily): Remove this by Aug 1, 2017, at which point all
       //   callsites should have been switched to using the "final"
       //   designs.
-      radioStyleVersion: _react__namespace.PropTypes.oneOf(["intermediate", "final"])
+      radioStyleVersion: PropTypes.oneOf(["intermediate", "final"])
     }),
     // The color used for the hint progress indicator (eg. 1 / 3)
-    hintProgressColor: _react__namespace.PropTypes.string
+    hintProgressColor: PropTypes.string
   }).isRequired,
   defaults: {
     isArticle: false,
@@ -7348,17 +7346,11 @@ var _perseusApiJsx = {
 var _module_$2w = {
   exports: {}
 };
-/**
- * A mixin that accepts the `apiOptions` prop, and populates any missing values
- * with defaults.
- */
-
-var React$2b = _react__default["default"];
 var ApiOptions$x = _perseusApiJsx.Options;
 var ApiOptionsProps$2 = {
   propTypes: {
     // TODO(mdr): Should this actually be objectOf(any)?
-    apiOptions: React$2b.PropTypes.any
+    apiOptions: PropTypes.any
   },
 
   getDefaultProps() {
@@ -7720,12 +7712,6 @@ var Widgets$4 = {
 _module_$2v.exports = Widgets$4;
 var Widgets$5 = _module_$2v.exports;
 
-// specified in http://zpl.io/1mVmvU
-// TODO(benkomalo): these values aren't used in JS outside of this file, but
-// are coupled to the values in
-// stylesheets/exercise-content-package/articles.less - DRY it up at some point
-
-var React$2a = _react__default["default"];
 var smMax = 512;
 var mdMax = 688;
 var containerSizeClass = {
@@ -7734,7 +7720,7 @@ var containerSizeClass = {
   LARGE: "large",
   XLARGE: "xlarge"
 };
-var containerSizeClassPropType = React$2a.PropTypes.oneOf(Object.values(containerSizeClass));
+var containerSizeClassPropType = PropTypes.oneOf(Object.values(containerSizeClass));
 var getClassFromWidth = width => {
   if (!width) {
     return containerSizeClass.MEDIUM;
@@ -7766,15 +7752,15 @@ var _module_$2u = {
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
 var classNames$h = _classnames__default["default"];
-var React$29 = _react__default["default"];
+var React$28 = _react__default["default"];
 var ReactDOM$A = _reactDom__default["default"];
 var Widgets$3 = Widgets$5;
-var WidgetContainer$1 = React$29.createClass({
+var WidgetContainer$1 = createReactClass({
   displayName: "WidgetContainer",
   propTypes: {
-    shouldHighlight: React$29.PropTypes.bool.isRequired,
-    type: React$29.PropTypes.string,
-    initialProps: React$29.PropTypes.object.isRequired,
+    shouldHighlight: PropTypes.bool.isRequired,
+    type: PropTypes.string,
+    initialProps: PropTypes.object.isRequired,
     linterContext: linterContextProps
   },
 
@@ -7825,7 +7811,7 @@ var WidgetContainer$1 = React$29.createClass({
 
     if (WidgetType == null) {
       // Just give up on invalid widget types
-      return /*#__PURE__*/React$29.createElement("div", {
+      return /*#__PURE__*/React$28.createElement("div", {
         className: className
       });
     }
@@ -7871,14 +7857,14 @@ var WidgetContainer$1 = React$29.createClass({
     // after toggling static mode.
 
 
-    return /*#__PURE__*/React$29.createElement("div", {
+    return /*#__PURE__*/React$28.createElement("div", {
       className: className,
       style: isStatic ? staticContainerStyles : {}
-    }, /*#__PURE__*/React$29.createElement(WidgetType, _extends({}, this.state.widgetProps, {
+    }, /*#__PURE__*/React$28.createElement(WidgetType, _extends({}, this.state.widgetProps, {
       linterContext: linterContext,
       containerSizeClass: this.state.sizeClass,
       ref: "widget"
-    })), isStatic && /*#__PURE__*/React$29.createElement("div", {
+    })), isStatic && /*#__PURE__*/React$28.createElement("div", {
       style: staticOverlayStyles
     }));
   },
@@ -8589,28 +8575,28 @@ var _module_$2s = {
  * not introduce a wrapper element, which makes styling easier.
  */
 
-var React$28 = _react__default["default"];
+var React$27 = _react__default["default"];
 var {
-  PropTypes: PropTypes$8
-} = React$28;
+  PropTypes: PropTypes$9
+} = React$27;
 var Status = {
   PENDING: "pending",
   LOADING: "loading",
   LOADED: "loaded",
   FAILED: "failed"
 };
-var ImageLoader$1 = React$28.createClass({
+var ImageLoader$1 = createReactClass({
   displayName: "ImageLoader",
   propTypes: {
-    children: React$28.PropTypes.oneOfType([React$28.PropTypes.arrayOf(React$28.PropTypes.node), React$28.PropTypes.node]),
-    imgProps: PropTypes$8.any,
-    onError: PropTypes$8.func,
-    onLoad: PropTypes$8.func,
+    children: PropTypes$9.oneOfType([PropTypes$9.arrayOf(PropTypes$9.node), PropTypes$9.node]),
+    imgProps: PropTypes$9.any,
+    onError: PropTypes$9.func,
+    onLoad: PropTypes$9.func,
     // When the DOM updates to replace the preloader with the image, or
     // vice-versa, we trigger this callback.
-    onUpdate: PropTypes$8.func,
-    preloader: PropTypes$8.func,
-    src: PropTypes$8.string
+    onUpdate: PropTypes$9.func,
+    preloader: PropTypes$9.func,
+    src: PropTypes$9.string
   },
   getInitialState: function getInitialState(props) {
     return {
@@ -8691,7 +8677,7 @@ var ImageLoader$1 = React$28.createClass({
       }
     }
 
-    return /*#__PURE__*/React$28.createElement("img", props);
+    return /*#__PURE__*/React$27.createElement("img", props);
   },
   render: function render() {
     switch (this.state.status) {
@@ -20724,7 +20710,7 @@ var kpoint$7 = _kmath3.point;
 var kvector$4 = _kmath3.vector;
 var KhanColors$b = _utilColorsJs;
 var processMath = _utilTexJs.processMath;
-var React$27 = _react__default["default"];
+var React$26 = _react__default["default"];
 var ReactDOM$z = _reactDom__default["default"];
 var InlineIcon$i = _componentsInlineIconJsx; // State parameters that should be converted into an array of
 // functions
@@ -20901,11 +20887,11 @@ _$1q.extend(MovablePoint$7.prototype, {
 
     var showTrashTooltip = () => {
       this._showTooltip(container => {
-        ReactDOM$z.render( /*#__PURE__*/React$27.createElement("span", {
+        ReactDOM$z.render( /*#__PURE__*/React$26.createElement("span", {
           style: {
             fontSize: "2em"
           }
-        }, /*#__PURE__*/React$27.createElement(InlineIcon$i, _extends({}, iconTrash, {
+        }, /*#__PURE__*/React$26.createElement(InlineIcon$i, _extends({}, iconTrash, {
           style: {
             position: "static",
             color: KhanColors$b.INTERACTIVE,
@@ -21870,7 +21856,7 @@ var _graphieMovablesJsx = _module_$29.exports;
 var _module_$28 = {
   exports: {}
 };
-var React$26 = _react__default["default"];
+var React$25 = _react__default["default"];
 var ReactDOM$y = _reactDom__default["default"];
 var _$1m = _underscore__default["default"];
 var GraphieClasses = _graphieClassesJsx;
@@ -21881,24 +21867,24 @@ var nestedMap = Util$q.nestedMap;
 var assert$5 = InteractiveUtil$7.assert;
 var GraphUtils$4 = _utilGraphUtilsJs;
 var createGraphie = GraphUtils$4.createGraphie;
-var Graphie$7 = React$26.createClass({
+var Graphie$7 = createReactClass({
   displayName: "Graphie",
   propTypes: {
-    addMouseLayer: React$26.PropTypes.bool,
-    box: React$26.PropTypes.arrayOf(React$26.PropTypes.number).isRequired,
-    children: React$26.PropTypes.node,
-    isMobile: React$26.PropTypes.bool,
-    onClick: React$26.PropTypes.func,
-    onMouseDown: React$26.PropTypes.func,
-    onMouseMove: React$26.PropTypes.func,
-    onMouseUp: React$26.PropTypes.func,
-    options: React$26.PropTypes.shape({
-      snapStep: React$26.PropTypes.arrayOf(React$26.PropTypes.number)
+    addMouseLayer: PropTypes.bool,
+    box: PropTypes.arrayOf(PropTypes.number).isRequired,
+    children: PropTypes.node,
+    isMobile: PropTypes.bool,
+    onClick: PropTypes.func,
+    onMouseDown: PropTypes.func,
+    onMouseMove: PropTypes.func,
+    onMouseUp: PropTypes.func,
+    options: PropTypes.shape({
+      snapStep: PropTypes.arrayOf(PropTypes.number)
     }),
-    range: React$26.PropTypes.arrayOf(React$26.PropTypes.arrayOf(React$26.PropTypes.number)),
-    responsive: React$26.PropTypes.bool,
-    setDrawingAreaAvailable: React$26.PropTypes.func,
-    setup: React$26.PropTypes.func.isRequired
+    range: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    responsive: PropTypes.bool,
+    setDrawingAreaAvailable: PropTypes.func,
+    setup: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -22148,9 +22134,9 @@ var Graphie$7 = React$26.createClass({
     });
   },
   render: function render() {
-    return /*#__PURE__*/React$26.createElement("div", {
+    return /*#__PURE__*/React$25.createElement("div", {
       className: "graphie-container"
-    }, /*#__PURE__*/React$26.createElement("div", {
+    }, /*#__PURE__*/React$25.createElement("div", {
       className: "graphie",
       ref: "graphieDiv"
     }));
@@ -22187,16 +22173,16 @@ var _module_$27 = {
  */
 
 var classNames$g = _classnames__default["default"];
-var React$25 = _react__default["default"];
+var React$24 = _react__default["default"];
 var MIN_VIEWPORT_HEIGHT = 480;
-var FixedToResponsive$2 = React$25.createClass({
+var FixedToResponsive$2 = createReactClass({
   displayName: "FixedToResponsive",
   propTypes: {
-    width: React$25.PropTypes.number.isRequired,
-    height: React$25.PropTypes.number.isRequired,
-    className: React$25.PropTypes.string,
-    constrainHeight: React$25.PropTypes.bool,
-    allowFullBleed: React$25.PropTypes.bool
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    className: PropTypes.string,
+    constrainHeight: PropTypes.bool,
+    allowFullBleed: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -22246,7 +22232,7 @@ var FixedToResponsive$2 = React$25.createClass({
     //     (fixed height / fixed width) * display width = display height
     // Based on http://refills.bourbon.io/components/#video && medium.com
 
-    var spacer = /*#__PURE__*/React$25.createElement("div", {
+    var spacer = /*#__PURE__*/React$24.createElement("div", {
       style: {
         paddingBottom: (1 / aspectRatio).toFixed(4) * 100 + "%"
       }
@@ -22272,14 +22258,14 @@ var FixedToResponsive$2 = React$25.createClass({
       maxHeight: height
     };
     var className = classNames$g("fixed-to-responsive", this.props.className);
-    var container = /*#__PURE__*/React$25.createElement("div", {
+    var container = /*#__PURE__*/React$24.createElement("div", {
       className: className,
       style: style
     }, spacer, this.props.children);
     var shouldFullBleed = this.props.allowFullBleed && this.state.viewportWidth && width >= this.state.viewportWidth;
 
     if (shouldFullBleed) {
-      return /*#__PURE__*/React$25.createElement("div", {
+      return /*#__PURE__*/React$24.createElement("div", {
         style: {
           marginLeft: negativePhoneMargin,
           marginRight: negativePhoneMargin
@@ -22299,7 +22285,7 @@ var _module_$26 = {
 /* globals KA */
 
 var classNames$f = _classnames__default["default"];
-var React$24 = _react__default["default"];
+var React$23 = _react__default["default"];
 var $$4 = $__default["default"];
 var _$1l = _underscore__default["default"];
 var FixedToResponsive$1 = _componentsFixedToResponsiveJsx;
@@ -22412,7 +22398,7 @@ function getUrlHash(url) {
 }
 
 function defaultPreloader() {
-  return React$24.DOM.span({
+  return ReactDOMtags.span({
     style: {
       background: "url(/images/spinner.gif) no-repeat",
       backgroundPosition: "center",
@@ -22424,22 +22410,22 @@ function defaultPreloader() {
   });
 }
 
-var SvgImage$6 = React$24.createClass({
+var SvgImage$6 = createReactClass({
   displayName: "SvgImage",
   propTypes: {
-    allowFullBleed: React$24.PropTypes.bool,
-    alt: React$24.PropTypes.string,
-    constrainHeight: React$24.PropTypes.bool,
-    extraGraphie: React$24.PropTypes.shape({
-      box: React$24.PropTypes.array.isRequired,
-      range: React$24.PropTypes.array.isRequired,
-      labels: React$24.PropTypes.array.isRequired
+    allowFullBleed: PropTypes.bool,
+    alt: PropTypes.string,
+    constrainHeight: PropTypes.bool,
+    extraGraphie: PropTypes.shape({
+      box: PropTypes.array.isRequired,
+      range: PropTypes.array.isRequired,
+      labels: PropTypes.array.isRequired
     }),
-    height: React$24.PropTypes.number,
+    height: PropTypes.number,
     // When the DOM updates to replace the preloader with the image, or
     // vice-versa, we trigger this callback.
-    onUpdate: React$24.PropTypes.func,
-    preloader: React$24.PropTypes.func,
+    onUpdate: PropTypes.func,
+    preloader: PropTypes.func,
     // By default, this component attempts to be responsive whenever
     // possible (specifically, when width and height are passed in).
     // You can expliclty force unresponsive behavior by *either*
@@ -22447,18 +22433,18 @@ var SvgImage$6 = React$24.createClass({
     // The difference is that forcing via this prop will result in
     // explicit width and height styles being set on the rendered
     // component.
-    responsive: React$24.PropTypes.bool,
-    scale: React$24.PropTypes.number,
-    src: React$24.PropTypes.string.isRequired,
-    title: React$24.PropTypes.string,
-    trackInteraction: React$24.PropTypes.func,
-    width: React$24.PropTypes.number,
+    responsive: PropTypes.bool,
+    scale: PropTypes.number,
+    src: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    trackInteraction: PropTypes.func,
+    width: PropTypes.number,
     // Whether clicking this image will allow it to be fully zoomed in to
     // its original size on click, and allow the user to scroll in that
     // state. This also does some hacky viewport meta tag changing to
     // ensure this works on mobile devices, so I (david@) don't recommend
     // enabling this on desktop yet.
-    zoomToFullSizeOnMobile: React$24.PropTypes.bool
+    zoomToFullSizeOnMobile: PropTypes.bool
   },
   statics: {
     // Sometimes other components want to download the actual image e.g. to
@@ -22732,7 +22718,7 @@ var SvgImage$6 = React$24.createClass({
     var extraGraphie;
 
     if (this.props.extraGraphie && this.props.extraGraphie.labels.length) {
-      extraGraphie = /*#__PURE__*/React$24.createElement(Graphie$6, {
+      extraGraphie = /*#__PURE__*/React$23.createElement(Graphie$6, {
         box: this.props.extraGraphie.box,
         range: this.props.extraGraphie.range,
         options: {
@@ -22756,13 +22742,13 @@ var SvgImage$6 = React$24.createClass({
           "svg-image": true
         });
         imageProps.onClick = this._handleZoomClick;
-        return /*#__PURE__*/React$24.createElement(FixedToResponsive$1, {
+        return /*#__PURE__*/React$23.createElement(FixedToResponsive$1, {
           className: wrapperClasses,
           width: width,
           height: height,
           constrainHeight: this.props.constrainHeight,
           allowFullBleed: this.props.allowFullBleed && isImageProbablyPhotograph(imageSrc)
-        }, /*#__PURE__*/React$24.createElement(ImageLoader, {
+        }, /*#__PURE__*/React$23.createElement(ImageLoader, {
           src: imageSrc,
           imgProps: imageProps,
           preloader: preloader,
@@ -22770,7 +22756,7 @@ var SvgImage$6 = React$24.createClass({
         }), extraGraphie);
       } else {
         imageProps.style = dimensions;
-        return /*#__PURE__*/React$24.createElement(ImageLoader, {
+        return /*#__PURE__*/React$23.createElement(ImageLoader, {
           src: imageSrc,
           preloader: preloader,
           imgProps: imageProps,
@@ -22795,7 +22781,7 @@ var SvgImage$6 = React$24.createClass({
       }
 
       var scale = [40 * this.props.scale, 40 * this.props.scale];
-      graphie = /*#__PURE__*/React$24.createElement(Graphie$6, {
+      graphie = /*#__PURE__*/React$23.createElement(Graphie$6, {
         ref: "graphie",
         box: box,
         scale: scale,
@@ -22808,12 +22794,12 @@ var SvgImage$6 = React$24.createClass({
     }
 
     if (responsive) {
-      return /*#__PURE__*/React$24.createElement(FixedToResponsive$1, {
+      return /*#__PURE__*/React$23.createElement(FixedToResponsive$1, {
         className: "svg-image",
         width: width,
         height: height,
         constrainHeight: this.props.constrainHeight
-      }, /*#__PURE__*/React$24.createElement(ImageLoader, {
+      }, /*#__PURE__*/React$23.createElement(ImageLoader, {
         src: imageUrl,
         onLoad: this.onImageLoad,
         onUpdate: this.props.onUpdate,
@@ -22822,10 +22808,10 @@ var SvgImage$6 = React$24.createClass({
       }), graphie, extraGraphie);
     } else {
       imageProps.style = dimensions;
-      return /*#__PURE__*/React$24.createElement("div", {
+      return /*#__PURE__*/React$23.createElement("div", {
         className: "unresponsive-svg-image",
         style: dimensions
-      }, /*#__PURE__*/React$24.createElement(ImageLoader, {
+      }, /*#__PURE__*/React$23.createElement(ImageLoader, {
         src: imageUrl,
         onLoad: this.onImageLoad,
         onUpdate: this.props.onUpdate,
@@ -22847,14 +22833,14 @@ var _module_$25 = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$23 = _react__default["default"];
-var QuestionParagraph$1 = React$23.createClass({
+var React$22 = _react__default["default"];
+var QuestionParagraph$1 = createReactClass({
   displayName: "QuestionParagraph",
   render: function render() {
     var className = this.props.className ? "paragraph " + this.props.className : "paragraph"; // For perseus-article just-in-place-translation (jipt), we need
     // to attach some metadata to top-level QuestionParagraphs:
 
-    return /*#__PURE__*/React$23.createElement("div", {
+    return /*#__PURE__*/React$22.createElement("div", {
       className: className,
       "data-perseus-component-index": this.props.translationIndex,
       "data-perseus-paragraph-index": this.props.paragraphIndex
@@ -23010,7 +22996,7 @@ class NotGorgon {
 /* globals KA */
 
 var $$3 = $__default["default"];
-var React$22 = _react__default["default"];
+var React$21 = _react__default["default"];
 var ReactDOM$x = _reactDom__default["default"];
 var _$1k = _underscore__default["default"];
 var classNames$e = _classnames__default["default"];
@@ -23150,29 +23136,29 @@ InteractionTracker.prototype._track = function (extraData) {
 
 InteractionTracker.prototype._noop = function () {};
 
-var Renderer$n = React$22.createClass({
+var Renderer$n = createReactClass({
   displayName: "Renderer",
   propTypes: _objectSpread2(_objectSpread2({}, ApiOptionsProps$1.propTypes), {}, {
-    alwaysUpdate: React$22.PropTypes.bool,
-    findExternalWidgets: React$22.PropTypes.func,
-    highlightedWidgets: React$22.PropTypes.arrayOf(React$22.PropTypes.any),
-    ignoreMissingWidgets: React$22.PropTypes.bool,
-    images: React$22.PropTypes.any,
+    alwaysUpdate: PropTypes.bool,
+    findExternalWidgets: PropTypes.func,
+    highlightedWidgets: PropTypes.arrayOf(PropTypes.any),
+    ignoreMissingWidgets: PropTypes.bool,
+    images: PropTypes.any,
     keypadElement: keypadElementPropType$8,
-    onInteractWithWidget: React$22.PropTypes.func,
-    onRender: React$22.PropTypes.func,
-    problemNum: React$22.PropTypes.number,
-    questionCompleted: React$22.PropTypes.bool,
-    reviewMode: React$22.PropTypes.bool,
-    serializedState: React$22.PropTypes.any,
+    onInteractWithWidget: PropTypes.func,
+    onRender: PropTypes.func,
+    problemNum: PropTypes.number,
+    questionCompleted: PropTypes.bool,
+    reviewMode: PropTypes.bool,
+    serializedState: PropTypes.any,
     // Callback which is called when serialized state changes with the new
     // serialized state.
-    onSerializedStateUpdated: React$22.PropTypes.func,
+    onSerializedStateUpdated: PropTypes.func,
     // If linterContext.highlightLint is true, then content will be passed
     // to the linter and any warnings will be highlighted in the rendered
     // output.
     linterContext: linterContextProps,
-    legacyPerseusLint: React$22.PropTypes.arrayOf(React$22.PropTypes.string)
+    legacyPerseusLint: PropTypes.arrayOf(PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -23387,7 +23373,7 @@ var Renderer$n = React$22.createClass({
       // worry about using this widget key and ref:
 
 
-      return /*#__PURE__*/React$22.createElement(WidgetContainer, {
+      return /*#__PURE__*/React$21.createElement(WidgetContainer, {
         ref: "container:" + id,
         key: "container:" + id,
         type: type,
@@ -23773,7 +23759,7 @@ var Renderer$n = React$22.createClass({
         });
       }
 
-      return /*#__PURE__*/React$22.createElement(QuestionParagraph, {
+      return /*#__PURE__*/React$21.createElement(QuestionParagraph, {
         key: state.key,
         className: className,
         translationIndex: this.translationIndex,
@@ -23836,7 +23822,7 @@ var Renderer$n = React$22.createClass({
         // reasons). Instead we just notify the
         // hopefully-content-creator that they need to change the
         // widget id.
-        return /*#__PURE__*/React$22.createElement("span", {
+        return /*#__PURE__*/React$21.createElement("span", {
           key: state.key,
           className: "renderer-widget-error"
         }, "Widget [[", "\u2603", " ", node.id, "]] already exists.");
@@ -23878,7 +23864,7 @@ var Renderer$n = React$22.createClass({
         }
       };
 
-      var content = /*#__PURE__*/React$22.createElement(TeX$7, {
+      var content = /*#__PURE__*/React$21.createElement(TeX$7, {
         onRender: onRender,
         onResourceLoaded: onRender
       }, preprocessTex$1(node.content));
@@ -23939,22 +23925,22 @@ var Renderer$n = React$22.createClass({
           };
         };
 
-        return /*#__PURE__*/React$22.createElement("div", {
+        return /*#__PURE__*/React$21.createElement("div", {
           key: state.key,
           className: "perseus-block-math",
           style: outerStyle
-        }, /*#__PURE__*/React$22.createElement("div", {
+        }, /*#__PURE__*/React$21.createElement("div", {
           className: "perseus-block-math-inner",
           style: _objectSpread2(_objectSpread2({}, innerStyle), horizontalPadding)
-        }, /*#__PURE__*/React$22.createElement(Zoomable, {
+        }, /*#__PURE__*/React$21.createElement(Zoomable, {
           readyToMeasureDeferred: deferred,
           computeChildBounds: computeMathBounds
         }, content)));
       } else {
-        return /*#__PURE__*/React$22.createElement("div", {
+        return /*#__PURE__*/React$21.createElement("div", {
           key: state.key,
           className: "perseus-block-math"
-        }, /*#__PURE__*/React$22.createElement("div", {
+        }, /*#__PURE__*/React$21.createElement("div", {
           className: "perseus-block-math-inner",
           style: innerStyle
         }, content));
@@ -23967,17 +23953,17 @@ var Renderer$n = React$22.createClass({
       var tex = node.content.replace(/\{align[*]?\}/g, "{aligned}"); // We render math here instead of in perseus-markdown.jsx
       // because we need to pass it our onRender callback.
 
-      return /*#__PURE__*/React$22.createElement("span", {
+      return /*#__PURE__*/React$21.createElement("span", {
         key: state.key,
         style: {
           // If math is directly next to text, don't let it
           // wrap to the next line
           whiteSpace: "nowrap"
         }
-      }, /*#__PURE__*/React$22.createElement("span", null), /*#__PURE__*/React$22.createElement(TeX$7, {
+      }, /*#__PURE__*/React$21.createElement("span", null), /*#__PURE__*/React$21.createElement(TeX$7, {
         onRender: this.props.onRender,
         onResourceLoaded: this.props.onRender
-      }, tex), /*#__PURE__*/React$22.createElement("span", null));
+      }, tex), /*#__PURE__*/React$21.createElement("span", null));
     } else if (node.type === "image") {
       if (imagePlaceholder) {
         return imagePlaceholder;
@@ -23995,7 +23981,7 @@ var Renderer$n = React$22.createClass({
       // TODO(alex): Make tables themselves responsive.
 
       var responsive = !state.inTable;
-      return /*#__PURE__*/React$22.createElement(SvgImage$5, _extends({
+      return /*#__PURE__*/React$21.createElement(SvgImage$5, _extends({
         key: state.key,
         src: PerseusMarkdown$3.sanitizeUrl(node.target),
         alt: node.alt,
@@ -24043,16 +24029,16 @@ var Renderer$n = React$22.createClass({
         paddingLeft: 0,
         paddingRight: 0
       };
-      var wrappedOutput = /*#__PURE__*/React$22.createElement("div", {
+      var wrappedOutput = /*#__PURE__*/React$21.createElement("div", {
         style: _objectSpread2(_objectSpread2({}, _innerStyle), {}, {
           overflowX: "auto"
         })
-      }, /*#__PURE__*/React$22.createElement(Zoomable, {
+      }, /*#__PURE__*/React$21.createElement(Zoomable, {
         animateHeight: true
       }, output)); // TODO(benkomalo): how should we deal with tappable items inside
       // of tables?
 
-      return /*#__PURE__*/React$22.createElement("div", {
+      return /*#__PURE__*/React$21.createElement("div", {
         style: _outerStyle
       }, wrappedOutput);
     } else {
@@ -24501,7 +24487,7 @@ var Renderer$n = React$22.createClass({
         // Persues.TranslationComponent registry so that when jipt
         // calls its before_dom_insert we can lookup this component by
         // this attribute and render the text with markdown.
-        return /*#__PURE__*/React$22.createElement("div", {
+        return /*#__PURE__*/React$21.createElement("div", {
           "data-perseus-component-index": this.translationIndex
         }, content);
       }
@@ -24549,7 +24535,7 @@ var Renderer$n = React$22.createClass({
       [ApiClassNames$d.RESPONSIVE_RENDERER]: true,
       [ApiClassNames$d.TWO_COLUMN_RENDERER]: this._isTwoColumn
     });
-    this.lastRenderedMarkdown = /*#__PURE__*/React$22.createElement("div", {
+    this.lastRenderedMarkdown = /*#__PURE__*/React$21.createElement("div", {
       className: className
     }, markdownContents);
     return this.lastRenderedMarkdown;
@@ -24679,7 +24665,7 @@ var _stylesSharedJs = _module_$21.exports;
 var _module_$20 = {
   exports: {}
 };
-var React$21 = _react__default["default"];
+var React$20 = _react__default["default"];
 var classnames$1 = _classnames__default["default"];
 var i18n$2 = window.i18n;
 var Renderer$m = _rendererJsx;
@@ -24688,17 +24674,17 @@ var mediaQueries$7 = _stylesMediaQueriesJs;
 var Gorgon$5 = _gorgonGorgonJs;
 /* Renders just a hint preview */
 
-var HintRenderer$1 = React$21.createClass({
+var HintRenderer$1 = createReactClass({
   displayName: "HintRenderer",
   propTypes: {
     apiOptions: ApiOptions$w.propTypes,
-    className: React$21.PropTypes.string,
-    hint: React$21.PropTypes.any,
-    lastHint: React$21.PropTypes.bool,
-    lastRendered: React$21.PropTypes.bool,
-    pos: React$21.PropTypes.number,
-    totalHints: React$21.PropTypes.number,
-    findExternalWidgets: React$21.PropTypes.func,
+    className: PropTypes.string,
+    hint: PropTypes.any,
+    lastHint: PropTypes.bool,
+    lastRendered: PropTypes.bool,
+    pos: PropTypes.number,
+    totalHints: PropTypes.number,
+    findExternalWidgets: PropTypes.func,
     linterContext: linterContextProps
   },
 
@@ -24740,20 +24726,20 @@ var HintRenderer$1 = React$21.createClass({
       staticRender: false
     });
 
-    return /*#__PURE__*/React$21.createElement("div", {
+    return /*#__PURE__*/React$20.createElement("div", {
       className: classNames,
       tabIndex: "-1"
-    }, !apiOptions.isMobile && /*#__PURE__*/React$21.createElement("span", {
+    }, !apiOptions.isMobile && /*#__PURE__*/React$20.createElement("span", {
       className: "perseus-sr-only"
     }, i18n$2._("Hint #%(pos)s", {
       pos: pos + 1
-    })), !apiOptions.isMobile && !apiOptions.satStyling && totalHints && pos != null && /*#__PURE__*/React$21.createElement("span", {
+    })), !apiOptions.isMobile && !apiOptions.satStyling && totalHints && pos != null && /*#__PURE__*/React$20.createElement("span", {
       className: "perseus-hint-label",
       style: {
         display: "block",
         color: apiOptions.hintProgressColor
       }
-    }, "".concat(pos + 1, " / ").concat(totalHints)), /*#__PURE__*/React$21.createElement(Renderer$m, {
+    }, "".concat(pos + 1, " / ").concat(totalHints)), /*#__PURE__*/React$20.createElement(Renderer$m, {
       ref: "renderer",
       widgets: hint.widgets,
       content: hint.content || "",
@@ -24795,7 +24781,7 @@ var _hintRendererJsx = _module_$20.exports;
 var _module_$1$ = {
   exports: {}
 };
-var React$20 = _react__default["default"];
+var React$1$ = _react__default["default"];
 var ReactDOM$w = _reactDom__default["default"];
 var classnames = _classnames__default["default"];
 var _$1j = _underscore__default["default"];
@@ -24806,13 +24792,13 @@ var ApiOptionsProps = _mixinsApiOptionsPropsJs;
 var mediaQueries$6 = _stylesMediaQueriesJs;
 var sharedStyles$3 = _stylesSharedJs;
 var Gorgon$4 = _gorgonGorgonJs;
-var HintsRenderer$4 = React$20.createClass({
+var HintsRenderer$4 = createReactClass({
   displayName: "HintsRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ApiOptionsProps.propTypes), {}, {
-    className: React$20.PropTypes.string,
-    hints: React$20.PropTypes.arrayOf(React$20.PropTypes.any),
-    hintsVisible: React$20.PropTypes.number,
-    findExternalWidgets: React$20.PropTypes.func,
+    className: PropTypes.string,
+    hints: PropTypes.arrayOf(PropTypes.any),
+    hintsVisible: PropTypes.number,
+    findExternalWidgets: PropTypes.func,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -24905,7 +24891,7 @@ var HintsRenderer$4 = React$20.createClass({
     this.props.hints.slice(0, hintsVisible).forEach((hint, i) => {
       var lastHint = i === this.props.hints.length - 1 && !/\*\*/.test(hint.content);
       var lastRendered = i === hintsVisible - 1;
-      var renderer = /*#__PURE__*/React$20.createElement(HintRenderer, {
+      var renderer = /*#__PURE__*/React$1$.createElement(HintRenderer, {
         lastHint: lastHint,
         lastRendered: lastRendered,
         hint: hint,
@@ -24927,11 +24913,11 @@ var HintsRenderer$4 = React$20.createClass({
     var showGetAnotherHint = apiOptions.getAnotherHint && hintsVisible > 0 && hintsVisible < this.props.hints.length;
     var hintRatioCopy = "(".concat(hintsVisible, "/").concat(this.props.hints.length, ")");
     var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$o.mobileHintStylesHintsRenderer));
-    return /*#__PURE__*/React$20.createElement("div", {
+    return /*#__PURE__*/React$1$.createElement("div", {
       className: classNames
-    }, apiOptions.isMobile && hintsVisible > 0 && /*#__PURE__*/React$20.createElement("div", {
+    }, apiOptions.isMobile && hintsVisible > 0 && /*#__PURE__*/React$1$.createElement("div", {
       className: aphrodite.css(styles$o.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
-    }, i18n$1._("Hints")), hints, showGetAnotherHint && /*#__PURE__*/React$20.createElement("button", {
+    }, i18n$1._("Hints")), hints, showGetAnotherHint && /*#__PURE__*/React$1$.createElement("button", {
       rel: "button",
       className: aphrodite.css(styles$o.linkButton, styles$o.getAnotherHintButton, apiOptions.isMobile && styles$o.mobileHintStylesGetAnotherHintButton),
       onClick: evt => {
@@ -24939,9 +24925,9 @@ var HintsRenderer$4 = React$20.createClass({
         evt.stopPropagation();
         apiOptions.getAnotherHint();
       }
-    }, /*#__PURE__*/React$20.createElement("span", {
+    }, /*#__PURE__*/React$1$.createElement("span", {
       className: aphrodite.css(styles$o.plusText, apiOptions.isMobile && styles$o.mobileHintStylesPlusText)
-    }, "+"), /*#__PURE__*/React$20.createElement("span", {
+    }, "+"), /*#__PURE__*/React$1$.createElement("span", {
       className: aphrodite.css(styles$o.getAnotherHintText)
     }, i18n$1._("Get another hint"), " ", hintRatioCopy)));
   }
@@ -25306,12 +25292,12 @@ var _module_$1_ = {
   exports: {}
 };
 var lens$2 = lens$3;
-var React$1$ = _react__default["default"];
+var React$1_ = _react__default["default"];
 var HintsRenderer$3 = _hintsRendererJsx;
 var Renderer$l = _rendererJsx;
 var Util$l = Util$q;
 
-class MultiRenderer$1 extends React$1$.Component {
+class MultiRenderer$1 extends React$1_.Component {
   constructor(props) {
     super(props);
 
@@ -25408,7 +25394,7 @@ class MultiRenderer$1 extends React$1$.Component {
 
     var handleSerializedState = state => this._handleSerializedStateUpdated(path, state);
 
-    data.makeRenderer = () => /*#__PURE__*/React$1$.createElement(Renderer$l, _extends({}, this._getRendererProps(), content, {
+    data.makeRenderer = () => /*#__PURE__*/React$1_.createElement(Renderer$l, _extends({}, this._getRendererProps(), content, {
       ref: refFunc,
       findExternalWidgets: findExternalWidgets,
       serializedState: this.props.serializedState ? lens$2(this.props.serializedState).get(path) : null,
@@ -25441,7 +25427,7 @@ class MultiRenderer$1 extends React$1$.Component {
       findExternalWidgets,
       // _annotateRendererArray() needs this
       ref: null,
-      makeRenderer: () => /*#__PURE__*/React$1$.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
+      makeRenderer: () => /*#__PURE__*/React$1_.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
         findExternalWidgets: findExternalWidgets,
         hints: [hint]
       }))
@@ -25627,7 +25613,7 @@ class MultiRenderer$1 extends React$1$.Component {
       var hintRendererDatas = rendererDatas;
       renderers = [...renderers];
 
-      renderers.firstN = n => /*#__PURE__*/React$1$.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
+      renderers.firstN = n => /*#__PURE__*/React$1_.createElement(HintsRenderer$3, _extends({}, this._getRendererProps(), {
         findExternalWidgets: hintRendererDatas[0] ? hintRendererDatas[0].findExternalWidgets : undefined,
         hints: hintRendererDatas.map(d => d.hint),
         hintsVisible: n
@@ -25651,7 +25637,7 @@ class MultiRenderer$1 extends React$1$.Component {
 
   render() {
     if (this.state.renderError) {
-      return /*#__PURE__*/React$1$.createElement("div", {
+      return /*#__PURE__*/React$1_.createElement("div", {
         className: aphrodite.css(styles$n.error)
       }, "Error rendering: ", String(this.state.renderError));
     } // Pass the renderer tree to the `children` function, which will
@@ -25713,21 +25699,21 @@ var _module_$1Y = {
  * extend a `ProvideKeypad` component instead of using this mixin.
  */
 
-var React$1_ = _react__default["default"];
+var React$1Z = _react__default["default"];
 var ReactDOM$v = _reactDom__default["default"];
 var {
   Keypad
 } = _mathInput__default["default"].components;
 var ProvideKeypad$3 = {
   propTypes: {
-    apiOptions: React$1_.PropTypes.shape({
-      customKeypad: React$1_.PropTypes.bool
+    apiOptions: PropTypes.shape({
+      customKeypad: PropTypes.bool
     }),
     // An Aphrodite style object, to be applied to the keypad container.
     // Note that, given our awkward structure of injecting the keypad, this
     // style won't be applied or updated dynamically. Rather, it will only
     // be applied in `componentDidMount`.
-    keypadStyle: React$1_.PropTypes.any
+    keypadStyle: PropTypes.any
   },
 
   getInitialState() {
@@ -25743,7 +25729,7 @@ var ProvideKeypad$3 = {
       // on-demand in the future.
       this._keypadContainer = document.createElement('div');
       document.body.appendChild(this._keypadContainer);
-      ReactDOM$v.render( /*#__PURE__*/React$1_.createElement(Keypad, {
+      ReactDOM$v.render( /*#__PURE__*/React$1Z.createElement(Keypad, {
         onElementMounted: element => {
           this.setState({
             keypadElement: element
@@ -25791,7 +25777,7 @@ var _module_$1X = {
  * exercise.
  */
 
-var React$1Z = _react__default["default"];
+var React$1Y = _react__default["default"];
 var ReactDOM$u = _reactDom__default["default"];
 var _$1i = _underscore__default["default"];
 var ApiOptions$v = _perseusApiJsx.Options;
@@ -25799,8 +25785,8 @@ var HintsRenderer$2 = _hintsRendererJsx;
 var ProvideKeypad$2 = _mixinsProvideKeypadJsx;
 var Renderer$k = _rendererJsx;
 var Util$k = Util$q;
-var RP$1 = React$1Z.PropTypes;
-var ItemRenderer$2 = React$1Z.createClass({
+var RP$1 = PropTypes;
+var ItemRenderer$2 = createReactClass({
   displayName: "ItemRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ProvideKeypad$2.propTypes), {}, {
     apiOptions: RP$1.any,
@@ -26057,7 +26043,7 @@ var ItemRenderer$2 = React$1Z.createClass({
       onFocusChange: this._handleFocusChange
     });
 
-    var questionRenderer = /*#__PURE__*/React$1Z.createElement(Renderer$k, _extends({
+    var questionRenderer = /*#__PURE__*/React$1Y.createElement(Renderer$k, _extends({
       keypadElement: this.keypadElement(),
       problemNum: this.props.problemNum,
       onInteractWithWidget: this.handleInteractWithWidget,
@@ -26067,13 +26053,13 @@ var ItemRenderer$2 = React$1Z.createClass({
       reviewMode: this.props.reviewMode,
       ref: elem => this.questionRenderer = elem
     }, this.props.item.question));
-    var hintsRenderer = /*#__PURE__*/React$1Z.createElement(HintsRenderer$2, {
+    var hintsRenderer = /*#__PURE__*/React$1Y.createElement(HintsRenderer$2, {
       hints: this.props.item.hints,
       hintsVisible: this.props.hintsVisible,
       apiOptions: apiOptions,
       ref: elem => this.hintsRenderer = elem
     });
-    return /*#__PURE__*/React$1Z.createElement("div", null, /*#__PURE__*/React$1Z.createElement("div", null, questionRenderer), /*#__PURE__*/React$1Z.createElement("div", {
+    return /*#__PURE__*/React$1Y.createElement("div", null, /*#__PURE__*/React$1Y.createElement("div", null, questionRenderer), /*#__PURE__*/React$1Y.createElement("div", {
       className: // Avoid adding any horizontal padding when applying the
       // mobile hint styles, which are flush to the left.
       // NOTE(charlie): We may still want to apply this
@@ -26099,7 +26085,7 @@ var _module_$1W = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var React$1Y = _react__default["default"];
+var React$1X = _react__default["default"];
 var ReactDOM$t = _reactDom__default["default"];
 var _$1h = _underscore__default["default"];
 var ApiOptions$u = _perseusApiJsx.Options;
@@ -26108,8 +26094,8 @@ var Renderer$j = _rendererJsx;
 var ProvideKeypad$1 = _mixinsProvideKeypadJsx;
 var Util$j = Util$q;
 var Gorgon$3 = _gorgonGorgonJs;
-var RP = React$1Y.PropTypes;
-var ItemRenderer$1 = React$1Y.createClass({
+var RP = PropTypes;
+var ItemRenderer$1 = createReactClass({
   displayName: "ItemRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ProvideKeypad$1.propTypes), {}, {
     // defaults are set in `this.update()` so as to adhere to
@@ -26143,11 +26129,11 @@ var ItemRenderer$1 = React$1Y.createClass({
     onShowTTable: RP.func,
     onShowZTable: RP.func,
     problemNum: RP.number,
-    reviewMode: React$1Y.PropTypes.bool,
+    reviewMode: PropTypes.bool,
     savedState: RP.any,
     workAreaSelector: RP.string,
     linterContext: linterContextProps,
-    legacyPerseusLint: React$1Y.PropTypes.arrayOf(React$1Y.PropTypes.string)
+    legacyPerseusLint: PropTypes.arrayOf(PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -26229,7 +26215,7 @@ var ItemRenderer$1 = React$1Y.createClass({
     // TODO(alpert): Figure out how to clean this up somehow
 
 
-    this.questionRenderer = ReactDOM$t.render( /*#__PURE__*/React$1Y.createElement(Renderer$j, _extends({
+    this.questionRenderer = ReactDOM$t.render( /*#__PURE__*/React$1X.createElement(Renderer$j, _extends({
       keypadElement: this.keypadElement(),
       problemNum: this.props.problemNum,
       onInteractWithWidget: this.handleInteractWithWidget,
@@ -26242,7 +26228,7 @@ var ItemRenderer$1 = React$1Y.createClass({
     }, this.props.item.question, {
       legacyPerseusLint: this.props.legacyPerseusLint
     })), document.querySelector(this.props.workAreaSelector));
-    this.hintsRenderer = ReactDOM$t.render( /*#__PURE__*/React$1Y.createElement(HintsRenderer$1, {
+    this.hintsRenderer = ReactDOM$t.render( /*#__PURE__*/React$1X.createElement(HintsRenderer$1, {
       hints: this.props.item.hints,
       hintsVisible: this.state.hintsVisible,
       apiOptions: apiOptions,
@@ -26489,7 +26475,7 @@ var ItemRenderer$1 = React$1Y.createClass({
   },
 
   render: function render() {
-    return /*#__PURE__*/React$1Y.createElement("div", null);
+    return /*#__PURE__*/React$1X.createElement("div", null);
   }
 });
 _module_$1W.exports = ItemRenderer$1;
@@ -26535,7 +26521,7 @@ var _module_$1V = {
  * composed of multiple (Renderer) sections concatenated together.
  */
 
-var React$1X = _react__default["default"];
+var React$1W = _react__default["default"];
 var ReactDOM$s = _reactDom__default["default"];
 var classNames$d = _classnames__default["default"];
 var Util$i = Util$q;
@@ -26544,23 +26530,23 @@ var ApiClassNames$c = _perseusApiJsx.ClassNames;
 var Renderer$i = _rendererJsx;
 var ProvideKeypad = _mixinsProvideKeypadJsx;
 var Gorgon$2 = _gorgonGorgonJs;
-var rendererProps = React$1X.PropTypes.shape({
-  content: React$1X.PropTypes.string,
-  widgets: React$1X.PropTypes.object,
-  images: React$1X.PropTypes.object
+var rendererProps = PropTypes.shape({
+  content: PropTypes.string,
+  widgets: PropTypes.object,
+  images: PropTypes.object
 });
-var ArticleRenderer$1 = React$1X.createClass({
+var ArticleRenderer$1 = createReactClass({
   displayName: "ArticleRenderer",
   propTypes: _objectSpread2(_objectSpread2({}, ProvideKeypad.propTypes), {}, {
-    apiOptions: React$1X.PropTypes.shape({
-      onFocusChange: React$1X.PropTypes.func,
-      isMobile: React$1X.PropTypes.bool
+    apiOptions: PropTypes.shape({
+      onFocusChange: PropTypes.func,
+      isMobile: PropTypes.bool
     }),
-    json: React$1X.PropTypes.oneOfType([rendererProps, React$1X.PropTypes.arrayOf(rendererProps)]).isRequired,
+    json: PropTypes.oneOfType([rendererProps, PropTypes.arrayOf(rendererProps)]).isRequired,
     // Whether to use the new Bibliotron styles for articles
-    useNewStyles: React$1X.PropTypes.bool,
+    useNewStyles: PropTypes.bool,
     linterContext: linterContextProps,
-    legacyPerseusLint: React$1X.PropTypes.arrayOf(React$1X.PropTypes.string)
+    legacyPerseusLint: PropTypes.arrayOf(PropTypes.string)
   }),
 
   getDefaultProps() {
@@ -26677,10 +26663,10 @@ var ArticleRenderer$1 = React$1X.createClass({
 
     var sections = this._sections().map((section, i) => {
       var refForSection = "section-".concat(i);
-      return /*#__PURE__*/React$1X.createElement("div", {
+      return /*#__PURE__*/React$1W.createElement("div", {
         key: i,
         className: "clearfix"
-      }, /*#__PURE__*/React$1X.createElement(Renderer$i, _extends({}, section, {
+      }, /*#__PURE__*/React$1W.createElement(Renderer$i, _extends({}, section, {
         ref: refForSection,
         key: i,
         key_: i,
@@ -26698,7 +26684,7 @@ var ArticleRenderer$1 = React$1X.createClass({
       })));
     });
 
-    return /*#__PURE__*/React$1X.createElement("div", {
+    return /*#__PURE__*/React$1W.createElement("div", {
       className: classes
     }, sections);
   }
@@ -26755,16 +26741,6 @@ var _mixinsEditorJsonifyJsx = _module_$1T.exports;
 var _module_$1S = {
   exports: {}
 };
-/**
- * Changeable
- *
- * Adds a this.change() function to a component
- *
- * This.change takes prop changes as parameters, and calls
- * this.props.onChange with the modified props.
- */
-
-var React$1W = _react__default["default"];
 var _$1f = _underscore__default["default"];
 var WIDGET_PROP_BLACKLIST$2 = _mixinsWidgetPropBlacklistJsx;
 var USAGE = "Usage:\n" + "  this.change({propName: 5}, callback);\n" + "  this.change(\"propName\", 5, callback);\n" + "  this.change(\"propName\")";
@@ -26834,7 +26810,7 @@ var change = function change(newPropsOrSinglePropName, propValue, callback) {
   }
 };
 ({
-  onChange: React$1W.PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired
 });
 var _mixinsChangeableJsx = _module_$1S.exports;
 
@@ -26853,7 +26829,7 @@ var _mixinsChangeableJsx = _module_$1S.exports;
 var React$1V = _react__default["default"];
 var Changeable$P = _mixinsChangeableJsx;
 var EditorJsonify$n = _mixinsEditorJsonifyJsx;
-var TextArea = React$1V.createClass({
+var TextArea = createReactClass({
   displayName: "TextArea",
   render: function render() {
     return /*#__PURE__*/React$1V.createElement("textarea", {
@@ -26872,7 +26848,7 @@ var TextArea = React$1V.createClass({
     this.props.onChange(e.target.value);
   }
 });
-React$1V.createClass({
+createReactClass({
   displayName: "SimpleMarkdownTesterEditor",
   propTypes: _objectSpread2({}, Changeable$P.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -26919,10 +26895,10 @@ var Changeable$O = _mixinsChangeableJsx;
 var PerseusMarkdown$2 = _perseusMarkdownJsx;
 var mdParse = PerseusMarkdown$2.parse;
 var mdOutput = PerseusMarkdown$2.basicOutput;
-var SimpleMarkdownTester = React$1U.createClass({
+var SimpleMarkdownTester = createReactClass({
   displayName: "SimpleMarkdownTester",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$O.propTypes), {}, {
-    value: React$1U.PropTypes.string
+    value: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -27021,7 +26997,7 @@ var EditorJsonify$m = _mixinsEditorJsonifyJsx;
  * of the screen in the demo. Only the question writer sees this.
  */
 
-React$1T.createClass({
+createReactClass({
   displayName: "ExampleWidgetEditor",
   propTypes: _objectSpread2({}, Changeable$N.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -27079,7 +27055,7 @@ React$1T.createClass({
 var React$1S = _react__default["default"];
 var Changeable$M = _mixinsChangeableJsx;
 var _$1d = _underscore__default["default"];
-var TextInput$b = React$1S.createClass({
+var TextInput$b = createReactClass({
   displayName: "TextInput",
   render: function render() {
     return /*#__PURE__*/React$1S.createElement("input", {
@@ -27104,10 +27080,10 @@ var TextInput$b = React$1S.createClass({
  * users enter their answers.
  */
 
-var ExampleWidget = React$1S.createClass({
+var ExampleWidget = createReactClass({
   displayName: "ExampleWidget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$M.propTypes), {}, {
-    value: React$1S.PropTypes.string
+    value: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -27254,12 +27230,12 @@ var kpoint$5 = _kmath3.point;
  * users enter their answers.
  */
 
-var ExampleGraphieWidget$1 = React$1R.createClass({
+var ExampleGraphieWidget$1 = createReactClass({
   displayName: "ExampleGraphieWidget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$L.propTypes), {}, {
     apiOptions: ApiOptions$s.propTypes,
-    graph: React$1R.PropTypes.object.isRequired,
-    coord: React$1R.PropTypes.arrayOf(React$1R.PropTypes.number)
+    graph: PropTypes.object.isRequired,
+    coord: PropTypes.arrayOf(PropTypes.number)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -27395,7 +27371,7 @@ var ExampleGraphieWidget = _exampleGraphieWidgetJsx.widget;
  * of the screen in the demo page. Only the question writer sees this.
  */
 
-React$1Q.createClass({
+createReactClass({
   displayName: "ExampleGraphieWidgetEditor",
   propTypes: _objectSpread2({}, Changeable$K.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -27449,8 +27425,8 @@ var module$8 = {
   exports: {}
 };
 var React$1P = _react__default["default"];
-var createReactClass$6 = _createReactClass__default["default"];
-var PropTypes$7 = _propTypes__default["default"];
+var createReactClass$7 = _createReactClass__default["default"];
+var PropTypes$8 = _propTypes__default["default"];
 /* You know when you want to propagate input to a parent...
  * but then that parent does something with the input...
  * then changing the props of the input...
@@ -27464,13 +27440,13 @@ var PropTypes$7 = _propTypes__default["default"];
  * to its parent on blur.
  */
 
-var BlurInput$6 = createReactClass$6({
+var BlurInput$6 = createReactClass$7({
   displayName: "BlurInput",
   propTypes: {
-    className: PropTypes$7.string,
-    style: PropTypes$7.any,
-    value: PropTypes$7.string.isRequired,
-    onChange: PropTypes$7.func.isRequired
+    className: PropTypes$8.string,
+    style: PropTypes$8.any,
+    value: PropTypes$8.string.isRequired,
+    onChange: PropTypes$8.func.isRequired
   },
   getInitialState: function getInitialState() {
     return {
@@ -27508,8 +27484,8 @@ var module$7 = {
   exports: {}
 };
 var React$1O = _react__default["default"];
-var createReactClass$5 = _createReactClass__default["default"];
-var PropTypes$6 = _propTypes__default["default"];
+var createReactClass$6 = _createReactClass__default["default"];
+var PropTypes$7 = _propTypes__default["default"];
 var colors = {
   grayLight: '#aaa',
   basicBorderColor: '#ccc',
@@ -27564,10 +27540,10 @@ var styles$l = aphrodite.StyleSheet.create({
   }
 });
 var questionMark = 'data:image/png;base64,' + 'iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBB' + 'ZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/' + 'eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+' + 'IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2Jl' + 'IFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAg' + 'ICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5' + 'LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9' + 'IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHht' + 'bG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3Vy' + 'Y2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHht' + 'cE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2N2M3NTAxYS04YmVlLTQ0M2Mt' + 'YmRiNS04OGM2N2IxN2NhYzEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUJCRTk4' + 'Qjc4NjAwMTFFMzg3QUJDNEI4Mzk2QTRGQkQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5p' + 'aWQ6OUJCRTk4QjY4NjAwMTFFMzg3QUJDNEI4Mzk2QTRGQkQiIHhtcDpDcmVhdG9yVG9v' + 'bD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRG' + 'cm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NGE5ZDI0OTMtODk1NC00OGFkLTlh' + 'MTgtZDAwM2MwYWNjNDJlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY3Yzc1MDFh' + 'LThiZWUtNDQzYy1iZGI1LTg4YzY3YjE3Y2FjMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4g' + 'PC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pqm89uYAAADM' + 'SURBVHjaXJA9DoJAEIUH1M4TUHIFsCMGen9OwCGw1YRGW2ntKel0exsojHIBC0ouQAyU' + 'viFDstmXfNmZeS+zm7XSNCXRFiRgJf0bXIHixpbhGdxBBJYC1w/xaA424MhNEATkui71' + 'fU9KqfEU78UbD9PdbJRlOdae55GmhIP+1NV1TcMwkOM41DSNHvRtMhTHMRVFQW3b6mOL' + 'gx99kue5GRp/gIOZuZGvNpTNwjD8oliANU+qqqKu6/TQBdymN57AHjzBT+B6Jx79BRgA' + 'vc49kQA4yxgAAAAASUVORK5CYII=';
-var InfoTip$p = createReactClass$5({
+var InfoTip$p = createReactClass$6({
   displayName: "InfoTip",
   propTypes: {
-    children: PropTypes$6.node
+    children: PropTypes$7.node
   },
   getInitialState: function getInitialState() {
     return {
@@ -27620,7 +27596,7 @@ var _module_$1P = {
 
 var React$1N = _react__default["default"];
 var ReactComponentsInfoTip = _reactComponentsInfoTipJsx;
-var InfoTip$o = React$1N.createClass({
+var InfoTip$o = createReactClass({
   displayName: "InfoTip",
   getInitialState: function getInitialState() {
     return {
@@ -27679,11 +27655,11 @@ function getSlugFromUrl(url) {
  */
 
 
-var VideoEditor = React$1M.createClass({
+var VideoEditor = createReactClass({
   displayName: "VideoEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$J.propTypes), {}, {
-    location: React$1M.PropTypes.string,
-    onChange: React$1M.PropTypes.func
+    location: PropTypes.string,
+    onChange: PropTypes.func
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -27749,11 +27725,11 @@ var IS_KA_SITE$1 = /khanacademy\.org/;
  * Video renderer.
  */
 
-var Video = React$1L.createClass({
+var Video = createReactClass({
   displayName: "Video",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$I.propTypes), {}, {
-    alignment: React$1L.PropTypes.string,
-    location: React$1L.PropTypes.string
+    alignment: PropTypes.string,
+    location: PropTypes.string
   }),
   getUserInput: function getUserInput() {
     return null;
@@ -28352,17 +28328,17 @@ var getNumericFormat = KhanMath$6.getNumericFormat;
  * Optionally takes a size ("mini", "small", "normal")
  */
 
-var NumberInput$j = React$1K.createClass({
+var NumberInput$j = createReactClass({
   displayName: "NumberInput",
   propTypes: {
-    value: React$1K.PropTypes.number,
-    format: React$1K.PropTypes.string,
-    placeholder: React$1K.PropTypes.oneOfType([React$1K.PropTypes.string, React$1K.PropTypes.number]),
-    onChange: React$1K.PropTypes.func.isRequired,
-    onFormatChange: React$1K.PropTypes.func,
-    checkValidity: React$1K.PropTypes.func,
-    size: React$1K.PropTypes.string,
-    label: React$1K.PropTypes.oneOf(["put your labels outside your inputs!"])
+    value: PropTypes.number,
+    format: PropTypes.string,
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onChange: PropTypes.func.isRequired,
+    onFormatChange: PropTypes.func,
+    checkValidity: PropTypes.func,
+    size: PropTypes.string,
+    label: PropTypes.oneOf(["put your labels outside your inputs!"])
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -28561,7 +28537,7 @@ var primUnits$1 = function primUnits(expr) {
 // accepted in that unit.
 
 
-var UnitExample = React$1J.createClass({
+var UnitExample = createReactClass({
   displayName: "UnitExample",
   render: function render() {
     var icon;
@@ -28624,13 +28600,13 @@ var UnitExample = React$1J.createClass({
     });
   }
 });
-var UnitInputEditor = React$1J.createClass({
+var UnitInputEditor = createReactClass({
   displayName: "UnitInputEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$H.propTypes), {}, {
-    value: React$1J.PropTypes.string,
-    acceptingUnits: React$1J.PropTypes.arrayOf(React$1J.PropTypes.string),
-    accepting: React$1J.PropTypes.oneOf([ALL$1, SOME]),
-    sigfigs: React$1J.PropTypes.number
+    value: PropTypes.string,
+    acceptingUnits: PropTypes.arrayOf(PropTypes.string),
+    accepting: PropTypes.oneOf([ALL$1, SOME]),
+    sigfigs: PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -28951,14 +28927,14 @@ var _$17 = _underscore__default["default"];
 var TeX$6 = _reactComponentsTexJsx;
 var ApiClassNames$b = _perseusApiJsx.ClassNames;
 var ModifyTex = _texWranglerJs.modifyTex;
-var MathOutput$7 = React$1I.createClass({
+var MathOutput$7 = createReactClass({
   displayName: "MathOutput",
   propTypes: {
-    value: React$1I.PropTypes.oneOfType([React$1I.PropTypes.string, React$1I.PropTypes.number]),
-    className: React$1I.PropTypes.string,
-    labelText: React$1I.PropTypes.string,
-    onFocus: React$1I.PropTypes.func,
-    onBlur: React$1I.PropTypes.func
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    className: PropTypes.string,
+    labelText: PropTypes.string,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -29039,7 +29015,7 @@ var MathOutput$7 = React$1I.createClass({
   },
   _bindBlurHandler: function _bindBlurHandler() {
     $__default["default"](document).bind("vclick." + this.state.selectorNamespace, e => {
-      // Detect whether the target has our React DOM node as a parent
+      // Detect whether the target has our ReactDOMtags.node as a parent
       var $closestWidget = $__default["default"](e.target).closest(ReactDOM$q.findDOMNode(this));
 
       if (!$closestWidget.length) {
@@ -29098,10 +29074,10 @@ var sigfigPrint = function sigfigPrint(num, sigfigs) {
  */
 
 
-var OldUnitInput = React$1H.createClass({
+var OldUnitInput = createReactClass({
   displayName: "OldUnitInput",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$G.propTypes), {}, {
-    value: React$1H.PropTypes.string
+    value: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -29111,7 +29087,7 @@ var OldUnitInput = React$1H.createClass({
   },
   // TODO(joel) think about showing the error buddy
   render: function render() {
-    var inputType = this.props.apiOptions.staticRender ? React$1H.createFactory(MathOutput$6) : React$1H.DOM.input;
+    var inputType = this.props.apiOptions.staticRender ? React$1H.createFactory(MathOutput$6) : ReactDOMtags.input;
     var input = inputType({
       onChange: this.handleChange,
       ref: "input",
@@ -29355,12 +29331,12 @@ var {
 var {
   keypadElementPropType: keypadElementPropType$7
 } = _mathInput__default["default"].propTypes;
-var SimpleKeypadInput$6 = React$1G.createClass({
+var SimpleKeypadInput$6 = createReactClass({
   displayName: "SimpleKeypadInput",
   propTypes: {
     keypadElement: keypadElementPropType$7,
-    onFocus: React$1G.PropTypes.func,
-    value: React$1G.PropTypes.oneOfType([React$1G.PropTypes.string, React$1G.PropTypes.number])
+    onFocus: PropTypes.func,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   },
 
   focus() {
@@ -29451,28 +29427,28 @@ function numSteps$2(range, step) {
   return Math.floor((range[1] - range[0]) / step);
 }
 
-var Graph$3 = React$1F.createClass({
+var Graph$3 = createReactClass({
   displayName: "Graph",
   propTypes: {
-    box: React$1F.PropTypes.array.isRequired,
-    labels: React$1F.PropTypes.arrayOf(React$1F.PropTypes.string),
-    range: React$1F.PropTypes.arrayOf(React$1F.PropTypes.arrayOf(React$1F.PropTypes.number)),
-    step: React$1F.PropTypes.arrayOf(React$1F.PropTypes.number),
-    gridStep: React$1F.PropTypes.arrayOf(React$1F.PropTypes.number),
-    snapStep: React$1F.PropTypes.arrayOf(React$1F.PropTypes.number),
-    markings: React$1F.PropTypes.string,
-    backgroundImage: React$1F.PropTypes.shape({
-      url: React$1F.PropTypes.string
+    box: PropTypes.array.isRequired,
+    labels: PropTypes.arrayOf(PropTypes.string),
+    range: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    step: PropTypes.arrayOf(PropTypes.number),
+    gridStep: PropTypes.arrayOf(PropTypes.number),
+    snapStep: PropTypes.arrayOf(PropTypes.number),
+    markings: PropTypes.string,
+    backgroundImage: PropTypes.shape({
+      url: PropTypes.string
     }),
-    showProtractor: React$1F.PropTypes.bool,
-    showRuler: React$1F.PropTypes.bool,
-    rulerLabel: React$1F.PropTypes.string,
-    rulerTicks: React$1F.PropTypes.number,
-    onGraphieUpdated: React$1F.PropTypes.func,
-    instructions: React$1F.PropTypes.string,
-    onClick: React$1F.PropTypes.func,
-    setDrawingAreaAvailable: React$1F.PropTypes.func,
-    isMobile: React$1F.PropTypes.bool
+    showProtractor: PropTypes.bool,
+    showRuler: PropTypes.bool,
+    rulerLabel: PropTypes.string,
+    rulerTicks: PropTypes.number,
+    onGraphieUpdated: PropTypes.func,
+    instructions: PropTypes.string,
+    onClick: PropTypes.func,
+    setDrawingAreaAvailable: PropTypes.func,
+    isMobile: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -30046,7 +30022,7 @@ var TransformOps = {
   },
 
   /* A react representation of this transform object */
-  ListItem: React$1E.createClass({
+  ListItem: createReactClass({
     displayName: "ListItem",
     render: function render() {
       if (this.props.mode === "dynamic") {
@@ -30166,7 +30142,7 @@ var Transformations = {
         vector: texFromVector(transform.vector)
       }, "Translation by %(vector)s");
     },
-    Input: React$1E.createClass({
+    Input: createReactClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -30285,7 +30261,7 @@ var Transformations = {
         point: texFromPoint(transform.center)
       }, "Rotation by %(degrees)s about %(point)s");
     },
-    Input: React$1E.createClass({
+    Input: createReactClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -30435,7 +30411,7 @@ var Transformations = {
         point2: texFromPoint(point2)
       }, "Reflection over the line from %(point1)s to %(point2)s");
     },
-    Input: React$1E.createClass({
+    Input: createReactClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -30573,7 +30549,7 @@ var Transformations = {
         point: texFromPoint(transform.center)
       }, "Dilation of scale %(scale)s about %(point)s");
     },
-    Input: React$1E.createClass({
+    Input: createReactClass({
       displayName: "Input",
       getInitialState: function getInitialState() {
         return {
@@ -31082,7 +31058,7 @@ var ShapeTypes$1 = {
   }
 };
 var TransformationListItem = TransformOps.ListItem;
-var TransformationList = React$1E.createClass({
+var TransformationList = createReactClass({
   displayName: "TransformationList",
   render: function render() {
     if (this.props.mode === "static") {
@@ -31126,7 +31102,7 @@ var TransformationList = React$1E.createClass({
     }
   }
 });
-var ToolButton = React$1E.createClass({
+var ToolButton = createReactClass({
   displayName: "ToolButton",
   render: function render() {
     var classes = this.props.toggled ? "simple-button exercise-orange toggled highlighted-tool-button" : "simple-button";
@@ -31139,7 +31115,7 @@ var ToolButton = React$1E.createClass({
     }, this.props.children);
   }
 });
-var ToolsBar = React$1E.createClass({
+var ToolsBar = createReactClass({
   displayName: "ToolsBar",
   getInitialState: function getInitialState() {
     return {
@@ -31187,7 +31163,7 @@ var ToolsBar = React$1E.createClass({
     }
   }
 });
-var AddTransformBar = React$1E.createClass({
+var AddTransformBar = createReactClass({
   displayName: "AddTransformBar",
   render: function render() {
     var tools = _$14.map(Transformations, function (tool, type) {
@@ -31219,12 +31195,12 @@ var AddTransformBar = React$1E.createClass({
     }
   }
 });
-var Transformer$1 = React$1E.createClass({
+var Transformer$1 = createReactClass({
   displayName: "Transformer",
   propTypes: {
     apiOptions: ApiOptions$q.propTypes,
     keypadElement: keypadElementPropType$6,
-    trackInteraction: React$1E.PropTypes.func.isRequired
+    trackInteraction: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return _$14.defaults({
@@ -32060,10 +32036,10 @@ var _$13 = _underscore__default["default"];
  * dynamically from its props list
  */
 
-var PropCheckBox$f = React$1D.createClass({
+var PropCheckBox$f = createReactClass({
   displayName: "PropCheckBox",
   propTypes: {
-    labelAlignment: React$1D.PropTypes.oneOf(["left", "right"])
+    labelAlignment: PropTypes.oneOf(["left", "right"])
   },
   DEFAULT_PROPS: {
     label: null,
@@ -32119,13 +32095,13 @@ var truth = () => true;
  */
 
 
-var RangeInput$6 = React$1C.createClass({
+var RangeInput$6 = createReactClass({
   displayName: "RangeInput",
   propTypes: {
-    value: React$1C.PropTypes.array.isRequired,
-    onChange: React$1C.PropTypes.func.isRequired,
-    placeholder: React$1C.PropTypes.array,
-    checkValidity: React$1C.PropTypes.func
+    value: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.array,
+    checkValidity: PropTypes.func
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -32227,20 +32203,20 @@ var module$5 = {
 
 var React$1B = _react__default["default"];
 var ReactDOM$m = _reactDom__default["default"];
-var createReactClass$4 = _createReactClass__default["default"];
-var PropTypes$5 = _propTypes__default["default"];
+var createReactClass$5 = _createReactClass__default["default"];
+var PropTypes$6 = _propTypes__default["default"];
 var styles$k = _stylesJs;
-var ButtonGroup$8 = createReactClass$4({
+var ButtonGroup$8 = createReactClass$5({
   displayName: "ButtonGroup",
   propTypes: {
-    value: PropTypes$5.any,
-    buttons: PropTypes$5.arrayOf(PropTypes$5.shape({
-      value: PropTypes$5.any.isRequired,
-      content: PropTypes$5.node,
-      title: PropTypes$5.string
+    value: PropTypes$6.any,
+    buttons: PropTypes$6.arrayOf(PropTypes$6.shape({
+      value: PropTypes$6.any.isRequired,
+      content: PropTypes$6.node,
+      title: PropTypes$6.string
     })).isRequired,
-    onChange: PropTypes$5.func.isRequired,
-    allowEmpty: PropTypes$5.bool
+    onChange: PropTypes$6.func.isRequired,
+    allowEmpty: PropTypes$6.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -32312,24 +32288,24 @@ function numSteps$1(range, step) {
   return Math.floor((range[1] - range[0]) / step);
 }
 
-var GraphSettings$4 = React$1A.createClass({
+var GraphSettings$4 = createReactClass({
   displayName: "GraphSettings",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$F.propTypes), {}, {
-    editableSettings: React$1A.PropTypes.arrayOf(React$1A.PropTypes.oneOf(["canvas", "graph", "snap", "image", "measure"])),
-    box: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    labels: React$1A.PropTypes.arrayOf(React$1A.PropTypes.string),
-    range: React$1A.PropTypes.arrayOf(React$1A.PropTypes.arrayOf(React$1A.PropTypes.number)),
-    step: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    gridStep: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    snapStep: React$1A.PropTypes.arrayOf(React$1A.PropTypes.number),
-    valid: React$1A.PropTypes.oneOfType([React$1A.PropTypes.bool, React$1A.PropTypes.string]),
-    backgroundImage: React$1A.PropTypes.object,
-    markings: React$1A.PropTypes.oneOf(["graph", "grid", "none"]),
-    showProtractor: React$1A.PropTypes.bool,
-    showRuler: React$1A.PropTypes.bool,
-    showTooltips: React$1A.PropTypes.bool,
-    rulerLabel: React$1A.PropTypes.string,
-    rulerTicks: React$1A.PropTypes.number
+    editableSettings: PropTypes.arrayOf(PropTypes.oneOf(["canvas", "graph", "snap", "image", "measure"])),
+    box: PropTypes.arrayOf(PropTypes.number),
+    labels: PropTypes.arrayOf(PropTypes.string),
+    range: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    step: PropTypes.arrayOf(PropTypes.number),
+    gridStep: PropTypes.arrayOf(PropTypes.number),
+    snapStep: PropTypes.arrayOf(PropTypes.number),
+    valid: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    backgroundImage: PropTypes.object,
+    markings: PropTypes.oneOf(["graph", "grid", "none"]),
+    showProtractor: PropTypes.bool,
+    showRuler: PropTypes.bool,
+    showTooltips: PropTypes.bool,
+    rulerLabel: PropTypes.string,
+    rulerTicks: PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -32916,7 +32892,7 @@ var defaultTransformerProps = {
     transformations: []
   }
 };
-var ToolSettings = React$1z.createClass({
+var ToolSettings = createReactClass({
   displayName: "ToolSettings",
   getDefaultProps: function getDefaultProps() {
     return {
@@ -32946,7 +32922,7 @@ var ToolSettings = React$1z.createClass({
     });
   }
 });
-var TransformationExplorerSettings = React$1z.createClass({
+var TransformationExplorerSettings = createReactClass({
   displayName: "TransformationExplorerSettings",
   render: function render() {
     return /*#__PURE__*/React$1z.createElement("div", {
@@ -33402,7 +33378,7 @@ var ShapeTypes = {
     equal: kpoint$3.equal
   }
 };
-var TransformationsShapeEditor = React$1z.createClass({
+var TransformationsShapeEditor = createReactClass({
   displayName: "TransformationsShapeEditor",
   render: function render() {
     return /*#__PURE__*/React$1z.createElement("div", null, /*#__PURE__*/React$1z.createElement(Graph$1, {
@@ -33497,7 +33473,7 @@ var TransformationsShapeEditor = React$1z.createClass({
     });
   }
 });
-var TransformerEditor = React$1z.createClass({
+var TransformerEditor = createReactClass({
   displayName: "TransformerEditor",
   // TODO (jack): These should be refactored into a nice object at the top
   // so that we don't have all this duplication
@@ -33644,16 +33620,16 @@ var getRefForPath$1 = function getRefForPath(path) {
   return "answer" + row + "," + column;
 };
 
-var Table$1 = React$1y.createClass({
+var Table$1 = createReactClass({
   displayName: "Table",
   propTypes: {
-    answers: React$1y.PropTypes.arrayOf(React$1y.PropTypes.arrayOf(React$1y.PropTypes.string)),
-    editableHeaders: React$1y.PropTypes.bool,
+    answers: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+    editableHeaders: PropTypes.bool,
     // The editor to use when editableHeaders is enabled
-    Editor: React$1y.PropTypes.func,
-    headers: React$1y.PropTypes.arrayOf(React$1y.PropTypes.string),
+    Editor: PropTypes.func,
+    headers: PropTypes.arrayOf(PropTypes.string),
     keypadElement: keypadElementPropType$5,
-    trackInteraction: React$1y.PropTypes.func.isRequired,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -34448,7 +34424,7 @@ var styledBlock = (props, style) => /*#__PURE__*/React$1x.createElement("span", 
 }), props.children);
 
 styledBlock.propTypes = {
-  children: React$1x.PropTypes.any
+  children: PropTypes.any
 };
 
 var highlightedBlock = (props, backgroundColor) => styledBlock(props, {
@@ -34553,8 +34529,8 @@ var headerComponent = props => {
 };
 
 headerComponent.propTypes = {
-  decoratedText: React$1x.PropTypes.string,
-  children: React$1x.PropTypes.any
+  decoratedText: PropTypes.string,
+  children: PropTypes.any
 };
 var headerDecorator = {
   strategy: function strategy() {
@@ -34600,15 +34576,15 @@ var keyBindings = e => {
 */
 
 
-var PerseusEditor$1 = React$1x.createClass({
+var PerseusEditor$1 = createReactClass({
   displayName: "PerseusEditor",
   propTypes: {
-    onChange: React$1x.PropTypes.func,
-    content: React$1x.PropTypes.string,
-    initialWidgets: React$1x.PropTypes.any,
-    placeholder: React$1x.PropTypes.string,
-    imageUploader: React$1x.PropTypes.func,
-    widgetEnabled: React$1x.PropTypes.bool
+    onChange: PropTypes.func,
+    content: PropTypes.string,
+    initialWidgets: PropTypes.any,
+    placeholder: PropTypes.string,
+    imageUploader: PropTypes.func,
+    widgetEnabled: PropTypes.bool
   },
   getDefaultProps: () => ({
     onChange: () => {},
@@ -35235,12 +35211,12 @@ var _module_$1x = {
  */
 
 var React$1w = _react__default["default"];
-var KatexErrorView$1 = React$1w.createClass({
+var KatexErrorView$1 = createReactClass({
   displayName: "KatexErrorView",
   propTypes: {
-    errorList: React$1w.PropTypes.arrayOf(React$1w.PropTypes.shape({
-      math: React$1w.PropTypes.string.isRequired,
-      message: React$1w.PropTypes.string.isRequired
+    errorList: PropTypes.arrayOf(PropTypes.shape({
+      math: PropTypes.string.isRequired,
+      message: PropTypes.string.isRequired
     })).isRequired
   },
 
@@ -35337,18 +35313,18 @@ var module$4 = {
 // * only respond to certain types of drags (only images for instance)!
 
 var React$1v = _react__default["default"];
-var createReactClass$3 = _createReactClass__default["default"];
-var PropTypes$4 = _propTypes__default["default"];
-var DragTarget$1 = createReactClass$3({
+var createReactClass$4 = _createReactClass__default["default"];
+var PropTypes$5 = _propTypes__default["default"];
+var DragTarget$1 = createReactClass$4({
   displayName: "DragTarget",
   propTypes: {
     // All props not listed here are forwarded to the root element without
     // modification.
-    onDrop: PropTypes$4.func.isRequired,
-    component: PropTypes$4.any,
+    onDrop: PropTypes$5.func.isRequired,
+    component: PropTypes$5.any,
     // component type
-    shouldDragHighlight: PropTypes$4.func,
-    style: PropTypes$4.any
+    shouldDragHighlight: PropTypes$5.func,
+    style: PropTypes$5.any
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -35475,7 +35451,7 @@ var makeStartWithAParagraphAlways = content => {
   return "\n\n".slice(0, 2 - newlines.length) + content;
 };
 
-var WidgetSelect = React$1u.createClass({
+var WidgetSelect = createReactClass({
   displayName: "WidgetSelect",
   shouldComponentUpdate: function shouldComponentUpdate() {
     return false;
@@ -35520,23 +35496,23 @@ var WidgetSelect = React$1u.createClass({
 // with all available transforms applied, but the results of those
 // transforms will not be propogated upwards until serialization.
 
-var WidgetEditor = React$1u.createClass({
+var WidgetEditor = createReactClass({
   displayName: "WidgetEditor",
   propTypes: {
     // Unserialized props
-    id: React$1u.PropTypes.string.isRequired,
-    onChange: React$1u.PropTypes.func.isRequired,
-    onRemove: React$1u.PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired,
     apiOptions: ApiOptions$n.propTypes,
     // Serialized props
-    type: React$1u.PropTypes.string.isRequired,
-    alignment: React$1u.PropTypes.string,
-    static: React$1u.PropTypes.bool,
-    graded: React$1u.PropTypes.bool,
-    options: React$1u.PropTypes.any,
-    version: React$1u.PropTypes.shape({
-      major: React$1u.PropTypes.number.isRequired,
-      minor: React$1u.PropTypes.number.isRequired
+    type: PropTypes.string.isRequired,
+    alignment: PropTypes.string,
+    static: PropTypes.bool,
+    graded: PropTypes.bool,
+    options: PropTypes.any,
+    version: PropTypes.shape({
+      major: PropTypes.number.isRequired,
+      minor: PropTypes.number.isRequired
     })
   },
   getInitialState: function getInitialState() {
@@ -35717,12 +35693,12 @@ var imageUrlsFromContent = function imageUrlsFromContent(content) {
  */
 
 
-var Editor$b = React$1u.createClass({
+var Editor$b = createReactClass({
   displayName: "Editor",
   propTypes: {
     apiOptions: ApiOptions$n.propTypes,
-    imageUploader: React$1u.PropTypes.func,
-    onChange: React$1u.PropTypes.func
+    imageUploader: PropTypes.func,
+    onChange: PropTypes.func
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -36413,13 +36389,13 @@ var InfoTip$k = _componentsInfoTipJsx;
 var NumberInput$f = _componentsNumberInputJsx;
 var Editor$a = _editorJsx;
 var Table = _widgetsTableJsx.widget;
-var TableEditor = React$1t.createClass({
+var TableEditor = createReactClass({
   displayName: "TableEditor",
   propTypes: {
-    rows: React$1t.PropTypes.number,
-    columns: React$1t.PropTypes.number,
-    headers: React$1t.PropTypes.arrayOf(React$1t.PropTypes.string),
-    answers: React$1t.PropTypes.arrayOf(React$1t.PropTypes.arrayOf(React$1t.PropTypes.string))
+    rows: PropTypes.number,
+    columns: PropTypes.number,
+    headers: PropTypes.arrayOf(PropTypes.string),
+    answers: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
   },
   getDefaultProps: function getDefaultProps() {
     var defaultRows = 4;
@@ -36541,12 +36517,12 @@ var PropCheckBox$b = _componentsPropCheckBoxJsx;
 var TextListEditor$4 = _componentsTextListEditorJsx;
 var HORIZONTAL$4 = "horizontal";
 var VERTICAL$4 = "vertical";
-var SorterEditor = React$1s.createClass({
+var SorterEditor = createReactClass({
   displayName: "SorterEditor",
   propTypes: {
-    correct: React$1s.PropTypes.array,
-    layout: React$1s.PropTypes.oneOf([HORIZONTAL$4, VERTICAL$4]),
-    padding: React$1s.PropTypes.bool
+    correct: PropTypes.array,
+    layout: PropTypes.oneOf([HORIZONTAL$4, VERTICAL$4]),
+    padding: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -36609,12 +36585,12 @@ var DRAGGING = "dragging";
 var ANIMATING = "animating";
 var DISABLED = "disabled"; // A placeholder that appears in the sortable whenever an item is dragged.
 
-var Placeholder = React$1r.createClass({
+var Placeholder = createReactClass({
   displayName: "Placeholder",
   propTypes: {
-    layout: React$1r.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
-    width: React$1r.PropTypes.number.isRequired,
-    height: React$1r.PropTypes.number.isRequired
+    layout: PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired
   },
   render: function render() {
     var {
@@ -36644,19 +36620,19 @@ var Placeholder = React$1r.createClass({
 // Usual flow:      Static -> Dragging -> Animating -> Static
 // [Dis|en]abling:  Static|Dragging|Animating -> Disabled -> Static
 
-var Draggable = React$1r.createClass({
+var Draggable = createReactClass({
   displayName: "Draggable",
   propTypes: {
-    content: React$1r.PropTypes.string.isRequired,
-    endPosition: React$1r.PropTypes.object.isRequired,
-    includePadding: React$1r.PropTypes.bool,
-    layout: React$1r.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
-    onAnimationEnd: React$1r.PropTypes.func.isRequired,
-    onMouseDown: React$1r.PropTypes.func.isRequired,
-    onMouseMove: React$1r.PropTypes.func.isRequired,
-    onMouseUp: React$1r.PropTypes.func.isRequired,
-    onRender: React$1r.PropTypes.func.isRequired,
-    type: React$1r.PropTypes.oneOf([STATIC, DRAGGING, ANIMATING, DISABLED]),
+    content: PropTypes.string.isRequired,
+    endPosition: PropTypes.object.isRequired,
+    includePadding: PropTypes.bool,
+    layout: PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
+    onAnimationEnd: PropTypes.func.isRequired,
+    onMouseDown: PropTypes.func.isRequired,
+    onMouseMove: PropTypes.func.isRequired,
+    onMouseUp: PropTypes.func.isRequired,
+    onRender: PropTypes.func.isRequired,
+    type: PropTypes.oneOf([STATIC, DRAGGING, ANIMATING, DISABLED]),
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -36832,17 +36808,17 @@ var Draggable = React$1r.createClass({
   }
 }); // The main sortable component.
 
-var Sortable$2 = React$1r.createClass({
+var Sortable$2 = createReactClass({
   displayName: "Sortable",
   propTypes: {
-    constraints: React$1r.PropTypes.object,
-    disabled: React$1r.PropTypes.bool,
-    layout: React$1r.PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
-    margin: React$1r.PropTypes.number,
-    onChange: React$1r.PropTypes.func,
-    onMeasure: React$1r.PropTypes.func,
-    options: React$1r.PropTypes.array.isRequired,
-    padding: React$1r.PropTypes.bool,
+    constraints: PropTypes.object,
+    disabled: PropTypes.bool,
+    layout: PropTypes.oneOf([HORIZONTAL$3, VERTICAL$3]),
+    margin: PropTypes.number,
+    onChange: PropTypes.func,
+    onMeasure: PropTypes.func,
+    options: PropTypes.array.isRequired,
+    padding: PropTypes.bool,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -37193,16 +37169,16 @@ var ApiOptions$m = _perseusApiJsx.Options;
 var shuffle$2 = Util$q.shuffle;
 var HORIZONTAL$2 = "horizontal",
     VERTICAL$2 = "vertical";
-var Sorter = React$1q.createClass({
+var Sorter = createReactClass({
   displayName: "Sorter",
   propTypes: {
     apiOptions: ApiOptions$m.propTypes,
-    correct: React$1q.PropTypes.array,
-    layout: React$1q.PropTypes.oneOf([HORIZONTAL$2, VERTICAL$2]),
-    onChange: React$1q.PropTypes.func,
-    padding: React$1q.PropTypes.bool,
-    problemNum: React$1q.PropTypes.number,
-    trackInteraction: React$1q.PropTypes.func.isRequired,
+    correct: PropTypes.array,
+    layout: PropTypes.oneOf([HORIZONTAL$2, VERTICAL$2]),
+    onChange: PropTypes.func,
+    padding: PropTypes.bool,
+    problemNum: PropTypes.number,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -37285,14 +37261,14 @@ var EditorJsonify$i = _mixinsEditorJsonifyJsx;
 var InfoTip$i = _componentsInfoTipJsx;
 var NumberInput$e = _componentsNumberInputJsx;
 var maxTrials = 5000;
-var SimulatorEditor = React$1p.createClass({
+var SimulatorEditor = createReactClass({
   displayName: "SimulatorEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$E.propTypes), {}, {
-    xAxisLabel: React$1p.PropTypes.string,
-    yAxisLabel: React$1p.PropTypes.string,
-    numTrials: React$1p.PropTypes.number,
-    proportionLabel: React$1p.PropTypes.string,
-    proportionOrPercentage: React$1p.PropTypes.string
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string,
+    numTrials: PropTypes.number,
+    proportionLabel: PropTypes.string,
+    proportionOrPercentage: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -37396,13 +37372,13 @@ var KhanColors$6 = _utilColorsJs;
 var KhanMath$3 = _utilMathJs;
 var defaultBoxSize$2 = 400;
 var maxSampleSize = 1000;
-var Histogram = React$1o.createClass({
+var Histogram = createReactClass({
   displayName: "Histogram",
   propTypes: {
-    data: React$1o.PropTypes.arrayOf(React$1o.PropTypes.number),
-    xAxisLabel: React$1o.PropTypes.string,
-    yAxisLabel: React$1o.PropTypes.string,
-    box: React$1o.PropTypes.arrayOf(React$1o.PropTypes.number)
+    data: PropTypes.arrayOf(PropTypes.number),
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string,
+    box: PropTypes.arrayOf(PropTypes.number)
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -37702,20 +37678,20 @@ var Histogram = React$1o.createClass({
     return xRange[0] + (xRange[1] - xRange[0]) / 3;
   }
 });
-var Simulator = React$1o.createClass({
+var Simulator = createReactClass({
   displayName: "Simulator",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$D.propTypes), {}, {
     apiOptions: ApiOptions$l.propTypes,
-    data: React$1o.PropTypes.arrayOf(React$1o.PropTypes.number),
-    numTrials: React$1o.PropTypes.number,
-    proportionLabel: React$1o.PropTypes.string,
-    proportionOrPercentage: React$1o.PropTypes.string,
-    randomSeed: React$1o.PropTypes.number,
-    sampleSize: React$1o.PropTypes.number,
-    trackInteraction: React$1o.PropTypes.func.isRequired,
-    userProportion: React$1o.PropTypes.number,
-    xAxisLabel: React$1o.PropTypes.string,
-    yAxisLabel: React$1o.PropTypes.string
+    data: PropTypes.arrayOf(PropTypes.number),
+    numTrials: PropTypes.number,
+    proportionLabel: PropTypes.string,
+    proportionOrPercentage: PropTypes.string,
+    randomSeed: PropTypes.number,
+    sampleSize: PropTypes.number,
+    trackInteraction: PropTypes.func.isRequired,
+    userProportion: PropTypes.number,
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string
   }),
   getInitialState: function getInitialState() {
     return {
@@ -38023,7 +37999,7 @@ var _$U = _underscore__default["default"];
 var ApiOptions$k = _perseusApiJsx.Options;
 var Editor$9 = _editorJsx;
 var InlineIcon$e = _componentsInlineIconJsx;
-var StepControlButton = React$1n.createClass({
+var StepControlButton = createReactClass({
   displayName: "StepControlButton",
   render: function render() {
     return /*#__PURE__*/React$1n.createElement("a", {
@@ -38036,16 +38012,16 @@ var StepControlButton = React$1n.createClass({
     }, /*#__PURE__*/React$1n.createElement(InlineIcon$e, this.props.icon));
   }
 });
-var SequenceEditor = React$1n.createClass({
+var SequenceEditor = createReactClass({
   displayName: "SequenceEditor",
   propTypes: {
-    json: React$1n.PropTypes.arrayOf(React$1n.PropTypes.shape({
-      content: React$1n.PropTypes.string,
-      widgets: React$1n.PropTypes.object,
-      images: React$1n.PropTypes.object
+    json: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string,
+      widgets: PropTypes.object,
+      images: PropTypes.object
     })),
     apiOptions: ApiOptions$k.propTypes,
-    onChange: React$1n.PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -38193,16 +38169,16 @@ var Changeable$C = _mixinsChangeableJsx;
 var InlineIcon$d = _componentsInlineIconJsx;
 var Renderer$f = _rendererJsx;
 var Util$9 = Util$q;
-var Sequence = React$1m.createClass({
+var Sequence = createReactClass({
   displayName: "Sequence",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$C.propTypes), {}, {
     apiOptions: ApiOptions$j.propTypes,
-    json: React$1m.PropTypes.arrayOf(React$1m.PropTypes.shape({
-      content: React$1m.PropTypes.string,
-      images: React$1m.PropTypes.object,
-      widgets: React$1m.PropTypes.object
+    json: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string,
+      images: PropTypes.object,
+      widgets: PropTypes.object
     })),
-    trackInteraction: React$1m.PropTypes.func.isRequired,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -38324,16 +38300,16 @@ var _module_$1n = {
 
 var React$1l = _react__default["default"];
 var ReactDOM$f = _reactDom__default["default"];
-var TextInput$a = React$1l.createClass({
+var TextInput$a = createReactClass({
   displayName: "TextInput",
   propTypes: {
-    value: React$1l.PropTypes.string,
-    onChange: React$1l.PropTypes.func.isRequired,
-    className: React$1l.PropTypes.string,
-    labelText: React$1l.PropTypes.string,
-    onFocus: React$1l.PropTypes.func,
-    onBlur: React$1l.PropTypes.func,
-    disabled: React$1l.PropTypes.bool
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    labelText: PropTypes.string,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    disabled: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -38393,12 +38369,12 @@ var Changeable$B = _mixinsChangeableJsx;
 var EditorJsonify$h = _mixinsEditorJsonifyJsx;
 var NumberInput$c = _componentsNumberInputJsx;
 var TextInput$9 = _componentsTextInputJsx;
-var ReactionDiagramWidgetEditor = React$1k.createClass({
+var ReactionDiagramWidgetEditor = createReactClass({
   displayName: "ReactionDiagramWidgetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$B.propTypes), {}, {
-    rotationAngle: React$1k.PropTypes.arrayOf(React$1k.PropTypes.number),
-    separators: React$1k.PropTypes.arrayOf(React$1k.PropTypes.object),
-    smiles: React$1k.PropTypes.arrayOf(React$1k.PropTypes.string)
+    rotationAngle: PropTypes.arrayOf(PropTypes.number),
+    separators: PropTypes.arrayOf(PropTypes.object),
+    smiles: PropTypes.arrayOf(PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -39331,12 +39307,12 @@ var SmilesParser = _moleculeSmilesParserJsx;
 var parse$1 = SmilesParser.parse;
 var ParseError = SmilesParser.ParseError;
 var borderSize = 30;
-var Molecule$1 = React$1j.createClass({
+var Molecule$1 = createReactClass({
   displayName: "Molecule",
   propTypes: {
-    id: React$1j.PropTypes.string.isRequired,
-    rotationAngle: React$1j.PropTypes.number,
-    smiles: React$1j.PropTypes.string
+    id: PropTypes.string.isRequired,
+    rotationAngle: PropTypes.number,
+    smiles: PropTypes.string
   },
   getInitialState: function getInitialState() {
     return {
@@ -39421,12 +39397,12 @@ var Molecule$1 = React$1j.createClass({
     }, content);
   }
 });
-var MoleculeWidget = React$1j.createClass({
+var MoleculeWidget = createReactClass({
   displayName: "MoleculeWidget",
   propTypes: {
-    rotationAngle: React$1j.PropTypes.number,
-    smiles: React$1j.PropTypes.string,
-    widgetId: React$1j.PropTypes.string
+    rotationAngle: PropTypes.number,
+    smiles: PropTypes.string,
+    widgetId: PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -39477,12 +39453,12 @@ var _module_$1i = {
 };
 var React$1i = _react__default["default"];
 var Molecule = _widgetsMoleculeJsx.molecule;
-var Separator = React$1i.createClass({
+var Separator = createReactClass({
   displayName: "Separator",
   propTypes: {
     // TODO(colin): figure out and add shape.
-    data: React$1i.PropTypes.any,
-    index: React$1i.PropTypes.number
+    data: PropTypes.any,
+    index: PropTypes.number
   },
   componentDidMount: function componentDidMount() {
     this.drawArrow();
@@ -39523,16 +39499,16 @@ var Separator = React$1i.createClass({
     }, this.props.data.bottomText));
   }
 });
-var ReactionDiagramWidget = React$1i.createClass({
+var ReactionDiagramWidget = createReactClass({
   displayName: "ReactionDiagramWidget",
   propTypes: {
     // TODO(colin): at the moment, these must be arrays of two elements;
     // we're limited to a single reaction step.  At some point, add support
     // for more steps in the reaction.
-    rotationAngle: React$1i.PropTypes.arrayOf(React$1i.PropTypes.number),
-    separators: React$1i.PropTypes.arrayOf(React$1i.PropTypes.object),
-    smiles: React$1i.PropTypes.arrayOf(React$1i.PropTypes.string),
-    widgetId: React$1i.PropTypes.string
+    rotationAngle: PropTypes.arrayOf(PropTypes.number),
+    separators: PropTypes.arrayOf(PropTypes.object),
+    smiles: PropTypes.arrayOf(PropTypes.string),
+    widgetId: PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -39618,25 +39594,25 @@ var BAR$1 = "bar",
     HISTOGRAM$1 = "histogram",
     DOTPLOT$1 = "dotplot";
 ({
-  type: React$1h.PropTypes.oneOf([BAR$1, LINE$1, PIC$1, HISTOGRAM$1, DOTPLOT$1]),
-  labels: React$1h.PropTypes.arrayOf(React$1h.PropTypes.string),
-  categories: React$1h.PropTypes.arrayOf(React$1h.PropTypes.oneOfType([React$1h.PropTypes.number, React$1h.PropTypes.string])),
-  scaleY: React$1h.PropTypes.number,
-  maxY: React$1h.PropTypes.number,
-  snapsPerLine: React$1h.PropTypes.number,
-  picSize: React$1h.PropTypes.number,
-  pixBoxHeight: React$1h.PropTypes.number,
-  picUrl: React$1h.PropTypes.string,
-  plotDimensions: React$1h.PropTypes.arrayOf(React$1h.PropTypes.number),
-  labelInterval: React$1h.PropTypes.number,
-  starting: React$1h.PropTypes.arrayOf(React$1h.PropTypes.number),
-  static: React$1h.PropTypes.bool
+  type: PropTypes.oneOf([BAR$1, LINE$1, PIC$1, HISTOGRAM$1, DOTPLOT$1]),
+  labels: PropTypes.arrayOf(PropTypes.string),
+  categories: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+  scaleY: PropTypes.number,
+  maxY: PropTypes.number,
+  snapsPerLine: PropTypes.number,
+  picSize: PropTypes.number,
+  pixBoxHeight: PropTypes.number,
+  picUrl: PropTypes.string,
+  plotDimensions: PropTypes.arrayOf(PropTypes.number),
+  labelInterval: PropTypes.number,
+  starting: PropTypes.arrayOf(PropTypes.number),
+  static: PropTypes.bool
 });
-var Plotter$1 = React$1h.createClass({
+var Plotter$1 = createReactClass({
   displayName: "Plotter",
   propTypes: {
-    onChange: React$1h.PropTypes.func.isRequired,
-    trackInteraction: React$1h.PropTypes.func.isRequired // TODO(alex): Figure out why lint chokes on this line
+    onChange: PropTypes.func.isRequired,
+    trackInteraction: PropTypes.func.isRequired // TODO(alex): Figure out why lint chokes on this line
     // ...widgetPropTypes,
 
   },
@@ -40487,26 +40463,26 @@ var editorDefaults = {
   snapsPerLine: 2
 };
 var widgetPropTypes = {
-  type: React$1g.PropTypes.oneOf([BAR, LINE, PIC, HISTOGRAM, DOTPLOT]),
-  labels: React$1g.PropTypes.arrayOf(React$1g.PropTypes.string),
-  categories: React$1g.PropTypes.arrayOf(React$1g.PropTypes.oneOfType([React$1g.PropTypes.number, React$1g.PropTypes.string])),
-  scaleY: React$1g.PropTypes.number,
-  maxY: React$1g.PropTypes.number,
-  snapsPerLine: React$1g.PropTypes.number,
-  picSize: React$1g.PropTypes.number,
-  pixBoxHeight: React$1g.PropTypes.number,
-  picUrl: React$1g.PropTypes.string,
-  plotDimensions: React$1g.PropTypes.arrayOf(React$1g.PropTypes.number),
-  labelInterval: React$1g.PropTypes.number,
-  starting: React$1g.PropTypes.arrayOf(React$1g.PropTypes.number),
-  correct: React$1g.PropTypes.arrayOf(React$1g.PropTypes.number),
-  static: React$1g.PropTypes.bool,
-  onChange: React$1g.PropTypes.func
+  type: PropTypes.oneOf([BAR, LINE, PIC, HISTOGRAM, DOTPLOT]),
+  labels: PropTypes.arrayOf(PropTypes.string),
+  categories: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+  scaleY: PropTypes.number,
+  maxY: PropTypes.number,
+  snapsPerLine: PropTypes.number,
+  picSize: PropTypes.number,
+  pixBoxHeight: PropTypes.number,
+  picUrl: PropTypes.string,
+  plotDimensions: PropTypes.arrayOf(PropTypes.number),
+  labelInterval: PropTypes.number,
+  starting: PropTypes.arrayOf(PropTypes.number),
+  correct: PropTypes.arrayOf(PropTypes.number),
+  static: PropTypes.bool,
+  onChange: PropTypes.func
 };
 
 var formatNumber = num => "$" + knumber$4.round(num, 2) + "$";
 
-var PlotterEditor = React$1g.createClass({
+var PlotterEditor = createReactClass({
   displayName: "PlotterEditor",
   propTypes: widgetPropTypes,
   getDefaultProps: function getDefaultProps() {
@@ -40794,10 +40770,10 @@ var _module_$1f = {
 var React$1f = _react__default["default"];
 var Changeable$A = _mixinsChangeableJsx;
 var EditorJsonify$g = _mixinsEditorJsonifyJsx;
-var PassageRefTargetEditor = React$1f.createClass({
+var PassageRefTargetEditor = createReactClass({
   displayName: "PassageRefTargetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$A.propTypes), {}, {
-    content: React$1f.PropTypes.string
+    content: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -40848,10 +40824,10 @@ var _$Q = _underscore__default["default"];
 var Changeable$z = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated$4 = _mixinsWidgetJsonifyDeprecatedJsx;
 var Renderer$e = _rendererJsx;
-var PassageRefTarget = React$1e.createClass({
+var PassageRefTarget = createReactClass({
   displayName: "PassageRefTarget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$z.propTypes), {}, {
-    content: React$1e.PropTypes.string,
+    content: PropTypes.string,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -40928,12 +40904,12 @@ var EditorJsonify$f = _mixinsEditorJsonifyJsx;
 var InfoTip$f = _componentsInfoTipJsx;
 var NumberInput$a = _componentsNumberInputJsx;
 var TextInput$8 = _componentsTextInputJsx;
-var PassageRefEditor = React$1d.createClass({
+var PassageRefEditor = createReactClass({
   displayName: "PassageRefEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$y.propTypes), {}, {
-    passageNumber: React$1d.PropTypes.number,
-    referenceNumber: React$1d.PropTypes.number,
-    summaryText: React$1d.PropTypes.string
+    passageNumber: PropTypes.number,
+    referenceNumber: PropTypes.number,
+    summaryText: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -40989,12 +40965,12 @@ var Changeable$x = _mixinsChangeableJsx;
 var PerseusMarkdown = _perseusMarkdownJsx;
 var WidgetJsonifyDeprecated$3 = _mixinsWidgetJsonifyDeprecatedJsx;
 var EN_DASH$2 = "\u2013";
-var PassageRef$1 = React$1c.createClass({
+var PassageRef$1 = createReactClass({
   displayName: "PassageRef",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$x.propTypes), {}, {
-    passageNumber: React$1c.PropTypes.number,
-    referenceNumber: React$1c.PropTypes.number,
-    summaryText: React$1c.PropTypes.string
+    passageNumber: PropTypes.number,
+    referenceNumber: PropTypes.number,
+    summaryText: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -41140,13 +41116,13 @@ var EditorJsonify$e = _mixinsEditorJsonifyJsx;
 var Editor$8 = _editorJsx;
 var InfoTip$e = _componentsInfoTipJsx;
 var PropCheckBox$a = _componentsPropCheckBoxJsx;
-var PassageEditor = React$1b.createClass({
+var PassageEditor = createReactClass({
   displayName: "PassageEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$w.propTypes), {}, {
-    passageTitle: React$1b.PropTypes.string,
-    passageText: React$1b.PropTypes.string,
-    footnotes: React$1b.PropTypes.string,
-    showLineNumbers: React$1b.PropTypes.bool
+    passageTitle: PropTypes.string,
+    passageText: PropTypes.string,
+    footnotes: PropTypes.string,
+    showLineNumbers: PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -41266,10 +41242,10 @@ var CIRCLE_LABEL_STYLE = {
   borderRadius: "50%",
   textAlign: "center"
 };
-var RefStart = React$1a.createClass({
+var RefStart = createReactClass({
   displayName: "RefStart",
   propTypes: {
-    refContent: React$1a.PropTypes.node.isRequired
+    refContent: PropTypes.node.isRequired
   },
   render: function render() {
     return /*#__PURE__*/React$1a.createElement("span", {
@@ -41280,7 +41256,7 @@ var RefStart = React$1a.createClass({
     return this.props.refContent;
   }
 });
-var RefEnd = React$1a.createClass({
+var RefEnd = createReactClass({
   displayName: "RefEnd",
   render: function render() {
     return /*#__PURE__*/React$1a.createElement("span", {
@@ -43613,14 +43589,14 @@ var NORMAL$1 = "normal",
     AUTO$1 = "auto",
     HORIZONTAL$1 = "horizontal",
     VERTICAL$1 = "vertical";
-var OrdererEditor = React$12.createClass({
+var OrdererEditor = createReactClass({
   displayName: "OrdererEditor",
   propTypes: {
-    correctOptions: React$12.PropTypes.array,
-    otherOptions: React$12.PropTypes.array,
-    height: React$12.PropTypes.oneOf([NORMAL$1, AUTO$1]),
-    layout: React$12.PropTypes.oneOf([HORIZONTAL$1, VERTICAL$1]),
-    onChange: React$12.PropTypes.func.isRequired
+    correctOptions: PropTypes.array,
+    otherOptions: PropTypes.array,
+    height: PropTypes.oneOf([NORMAL$1, AUTO$1]),
+    layout: PropTypes.oneOf([HORIZONTAL$1, VERTICAL$1]),
+    onChange: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -43727,11 +43703,11 @@ var _$L = _underscore__default["default"];
 var Renderer$c = _rendererJsx;
 var Util$8 = Util$q;
 var ApiClassNames$7 = _perseusApiJsx.ClassNames;
-var PlaceholderCard = React$11.createClass({
+var PlaceholderCard = createReactClass({
   displayName: "PlaceholderCard",
   propTypes: {
-    width: React$11.PropTypes.number.isRequired,
-    height: React$11.PropTypes.number.isRequired
+    width: PropTypes$4.number.isRequired,
+    height: PropTypes$4.number.isRequired
   },
   render: function render() {
     return /*#__PURE__*/React$11.createElement("div", {
@@ -43747,7 +43723,7 @@ var PlaceholderCard = React$11.createClass({
     }));
   }
 });
-var DragHintCard = React$11.createClass({
+var DragHintCard = createReactClass({
   displayName: "DragHintCard",
   render: function render() {
     return /*#__PURE__*/React$11.createElement("div", {
@@ -43757,27 +43733,27 @@ var DragHintCard = React$11.createClass({
     }));
   }
 });
-var PropTypes$3 = {
-  position: React$11.PropTypes.shape({
-    left: React$11.PropTypes.number,
-    top: React$11.PropTypes.number
+var PropTypes$4 = {
+  position: PropTypes$4.shape({
+    left: PropTypes$4.number,
+    top: PropTypes$4.number
   })
 };
-var Card = React$11.createClass({
+var Card = createReactClass({
   displayName: "Card",
   propTypes: {
-    floating: React$11.PropTypes.bool.isRequired,
-    animating: React$11.PropTypes.bool,
-    width: React$11.PropTypes.number,
-    stack: React$11.PropTypes.bool,
-    onMouseDown: React$11.PropTypes.func,
-    onMouseMove: React$11.PropTypes.func,
-    onMouseUp: React$11.PropTypes.func,
+    floating: PropTypes$4.bool.isRequired,
+    animating: PropTypes$4.bool,
+    width: PropTypes$4.number,
+    stack: PropTypes$4.bool,
+    onMouseDown: PropTypes$4.func,
+    onMouseMove: PropTypes$4.func,
+    onMouseUp: PropTypes$4.func,
     // Used only for floating/animating cards
-    startMouse: PropTypes$3.position,
-    startOffset: PropTypes$3.position,
-    animateTo: PropTypes$3.position,
-    onAnimationEnd: React$11.PropTypes.func,
+    startMouse: PropTypes$4.position,
+    startOffset: PropTypes$4.position,
+    animateTo: PropTypes$4.position,
+    onAnimationEnd: PropTypes$4.func,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -43904,15 +43880,15 @@ var NORMAL = "normal",
     AUTO = "auto",
     HORIZONTAL = "horizontal",
     VERTICAL = "vertical";
-var Orderer = React$11.createClass({
+var Orderer = createReactClass({
   displayName: "Orderer",
   propTypes: {
-    correctOptions: React$11.PropTypes.array,
-    current: React$11.PropTypes.array,
-    height: React$11.PropTypes.oneOf([NORMAL, AUTO]),
-    layout: React$11.PropTypes.oneOf([HORIZONTAL, VERTICAL]),
-    options: React$11.PropTypes.array,
-    trackInteraction: React$11.PropTypes.func.isRequired,
+    correctOptions: PropTypes$4.array,
+    current: PropTypes$4.array,
+    height: PropTypes$4.oneOf([NORMAL, AUTO]),
+    layout: PropTypes$4.oneOf([HORIZONTAL, VERTICAL]),
+    options: PropTypes$4.array,
+    trackInteraction: PropTypes$4.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -44262,24 +44238,24 @@ var knumber$3 = _kmath3.number;
 var bound$1 = (x, gt, lt) => Math.min(Math.max(x, gt), lt);
 
 var EN_DASH$1 = "\u2013";
-var NumberLineEditor = React$10.createClass({
+var NumberLineEditor = createReactClass({
   displayName: "NumberLineEditor",
   propTypes: {
-    range: React$10.PropTypes.arrayOf(React$10.PropTypes.number).isRequired,
-    labelRange: React$10.PropTypes.arrayOf(React$10.PropTypes.number).isRequired,
-    labelStyle: React$10.PropTypes.string.isRequired,
-    labelTicks: React$10.PropTypes.bool,
-    divisionRange: React$10.PropTypes.arrayOf(React$10.PropTypes.number).isRequired,
-    numDivisions: React$10.PropTypes.number.isRequired,
-    snapDivisions: React$10.PropTypes.number,
-    tickStep: React$10.PropTypes.number,
-    correctRel: React$10.PropTypes.oneOf(["lt", "gt", "le", "ge", "eq"]),
-    correctX: React$10.PropTypes.number,
-    initialX: React$10.PropTypes.number,
-    isTickCtrl: React$10.PropTypes.bool,
-    onChange: React$10.PropTypes.func.isRequired,
-    static: React$10.PropTypes.bool,
-    showTooltips: React$10.PropTypes.bool
+    range: PropTypes.arrayOf(PropTypes.number).isRequired,
+    labelRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+    labelStyle: PropTypes.string.isRequired,
+    labelTicks: PropTypes.bool,
+    divisionRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+    numDivisions: PropTypes.number.isRequired,
+    snapDivisions: PropTypes.number,
+    tickStep: PropTypes.number,
+    correctRel: PropTypes.oneOf(["lt", "gt", "le", "ge", "eq"]),
+    correctX: PropTypes.number,
+    initialX: PropTypes.number,
+    isTickCtrl: PropTypes.bool,
+    onChange: PropTypes.func.isRequired,
+    static: PropTypes.bool,
+    showTooltips: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -44709,28 +44685,28 @@ var TickMarks = Graphie$3.createSimpleClass((graphie, props) => {
   });
   return results;
 });
-var NumberLine = React$$.createClass({
+var NumberLine = createReactClass({
   displayName: "NumberLine",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$v.propTypes), {}, {
-    range: React$$.PropTypes.arrayOf(React$$.PropTypes.number).isRequired,
-    labelRange: React$$.PropTypes.arrayOf(React$$.PropTypes.number).isRequired,
-    labelStyle: React$$.PropTypes.string.isRequired,
-    labelTicks: React$$.PropTypes.bool.isRequired,
-    divisionRange: React$$.PropTypes.arrayOf(React$$.PropTypes.number).isRequired,
-    numDivisions: React$$.PropTypes.number.isRequired,
-    snapDivisions: React$$.PropTypes.number.isRequired,
-    isTickCtrl: React$$.PropTypes.bool.isRequired,
-    isInequality: React$$.PropTypes.bool.isRequired,
-    numLinePosition: React$$.PropTypes.number.isRequired,
-    rel: React$$.PropTypes.oneOf(["lt", "gt", "le", "ge"]),
-    onFocus: React$$.PropTypes.func.isRequired,
-    onBlur: React$$.PropTypes.func.isRequired,
-    onChange: React$$.PropTypes.func.isRequired,
+    range: PropTypes.arrayOf(PropTypes.number).isRequired,
+    labelRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+    labelStyle: PropTypes.string.isRequired,
+    labelTicks: PropTypes.bool.isRequired,
+    divisionRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+    numDivisions: PropTypes.number.isRequired,
+    snapDivisions: PropTypes.number.isRequired,
+    isTickCtrl: PropTypes.bool.isRequired,
+    isInequality: PropTypes.bool.isRequired,
+    numLinePosition: PropTypes.number.isRequired,
+    rel: PropTypes.oneOf(["lt", "gt", "le", "ge"]),
+    onFocus: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     apiOptions: ApiOptions$i.propTypes,
     keypadElement: keypadElementPropType$4,
-    static: React$$.PropTypes.bool,
-    showTooltips: React$$.PropTypes.bool,
-    trackInteraction: React$$.PropTypes.func.isRequired
+    static: PropTypes.bool,
+    showTooltips: PropTypes.bool,
+    trackInteraction: PropTypes.func.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45184,11 +45160,11 @@ var EditorJsonify$c = _mixinsEditorJsonifyJsx;
 var Changeable$u = _mixinsChangeableJsx;
 var NumberInput$7 = _componentsNumberInputJsx;
 var TextInput$7 = _componentsTextInputJsx;
-var MoleculeWidgetEditor = React$_.createClass({
+var MoleculeWidgetEditor = createReactClass({
   displayName: "MoleculeWidgetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$u.propTypes), {}, {
-    rotationAngle: React$_.PropTypes.number,
-    smiles: React$_.PropTypes.string
+    rotationAngle: PropTypes.number,
+    smiles: PropTypes.string
   }),
 
   change() {
@@ -45249,22 +45225,22 @@ var defaultImage$1 = {
   top: 0,
   left: 0
 };
-var MeasurerEditor = React$Z.createClass({
+var MeasurerEditor = createReactClass({
   displayName: "MeasurerEditor",
   className: "perseus-widget-measurer",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$t.propTypes), {}, {
-    box: React$Z.PropTypes.arrayOf(React$Z.PropTypes.number),
-    image: React$Z.PropTypes.shape({
-      url: React$Z.PropTypes.string,
-      top: React$Z.PropTypes.number,
-      left: React$Z.PropTypes.number
+    box: PropTypes.arrayOf(PropTypes.number),
+    image: PropTypes.shape({
+      url: PropTypes.string,
+      top: PropTypes.number,
+      left: PropTypes.number
     }),
-    showProtractor: React$Z.PropTypes.bool,
-    showRuler: React$Z.PropTypes.bool,
-    rulerLabel: React$Z.PropTypes.string,
-    rulerTicks: React$Z.PropTypes.number,
-    rulerPixels: React$Z.PropTypes.number,
-    rulerLength: React$Z.PropTypes.number
+    showProtractor: PropTypes.bool,
+    showRuler: PropTypes.bool,
+    rulerLabel: PropTypes.string,
+    rulerTicks: PropTypes.number,
+    rulerPixels: PropTypes.number,
+    rulerLength: PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45413,24 +45389,24 @@ var defaultImage = {
   top: 0,
   left: 0
 };
-var Measurer = React$Y.createClass({
+var Measurer = createReactClass({
   displayName: "Measurer",
   propTypes: {
     apiOptions: ApiOptions$h.propTypes,
-    box: React$Y.PropTypes.arrayOf(React$Y.PropTypes.number),
-    image: React$Y.PropTypes.shape({
-      url: React$Y.PropTypes.string,
-      top: React$Y.PropTypes.number,
-      left: React$Y.PropTypes.number
+    box: PropTypes.arrayOf(PropTypes.number),
+    image: PropTypes.shape({
+      url: PropTypes.string,
+      top: PropTypes.number,
+      left: PropTypes.number
     }),
-    showProtractor: React$Y.PropTypes.bool,
-    protractorX: React$Y.PropTypes.number,
-    protractorY: React$Y.PropTypes.number,
-    showRuler: React$Y.PropTypes.bool,
-    rulerLabel: React$Y.PropTypes.string,
-    rulerTicks: React$Y.PropTypes.number,
-    rulerPixels: React$Y.PropTypes.number,
-    rulerLength: React$Y.PropTypes.number
+    showProtractor: PropTypes.bool,
+    protractorX: PropTypes.number,
+    protractorY: PropTypes.number,
+    showRuler: PropTypes.bool,
+    rulerLabel: PropTypes.string,
+    rulerTicks: PropTypes.number,
+    rulerPixels: PropTypes.number,
+    rulerLength: PropTypes.number
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45578,14 +45554,14 @@ var _$H = _underscore__default["default"];
 var InfoTip$a = _componentsInfoTipJsx;
 var PropCheckBox$7 = _componentsPropCheckBoxJsx;
 var TextListEditor$1 = _componentsTextListEditorJsx;
-var MatcherEditor = React$X.createClass({
+var MatcherEditor = createReactClass({
   displayName: "MatcherEditor",
   propTypes: {
-    left: React$X.PropTypes.array,
-    right: React$X.PropTypes.array,
-    labels: React$X.PropTypes.array,
-    orderMatters: React$X.PropTypes.bool,
-    padding: React$X.PropTypes.bool
+    left: PropTypes.array,
+    right: PropTypes.array,
+    labels: PropTypes.array,
+    orderMatters: PropTypes.bool,
+    padding: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -45674,18 +45650,18 @@ var ApiOptions$g = _perseusApiJsx.Options;
 var shuffle$1 = Util$q.shuffle;
 var seededRNG = Util$q.seededRNG;
 var HACKY_CSS_CLASSNAME = "perseus-widget-matcher";
-var Matcher = React$W.createClass({
+var Matcher = createReactClass({
   displayName: "Matcher",
   propTypes: {
     apiOptions: ApiOptions$g.propTypes,
-    labels: React$W.PropTypes.array,
-    left: React$W.PropTypes.array,
-    onChange: React$W.PropTypes.func,
-    orderMatters: React$W.PropTypes.bool,
-    padding: React$W.PropTypes.bool,
-    problemNum: React$W.PropTypes.number,
-    right: React$W.PropTypes.array,
-    trackInteraction: React$W.PropTypes.func.isRequired,
+    labels: PropTypes.array,
+    left: PropTypes.array,
+    onChange: PropTypes.func,
+    orderMatters: PropTypes.bool,
+    padding: PropTypes.bool,
+    problemNum: PropTypes.number,
+    right: PropTypes.array,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -45952,17 +45928,17 @@ var getMatrixSize$1 = function getMatrixSize(matrix) {
   return matrixSize;
 };
 
-var Matrix$1 = React$V.createClass({
+var Matrix$1 = createReactClass({
   displayName: "Matrix",
   propTypes: {
-    answers: React$V.PropTypes.arrayOf(React$V.PropTypes.arrayOf(React$V.PropTypes.oneOfType([React$V.PropTypes.string, React$V.PropTypes.number]))),
+    answers: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))),
     apiOptions: ApiOptions$f.propTypes,
-    cursorPosition: React$V.PropTypes.arrayOf(React$V.PropTypes.number),
+    cursorPosition: PropTypes.arrayOf(PropTypes.number),
     keypadElement: keypadElementPropType$3,
-    matrixBoardSize: React$V.PropTypes.arrayOf(React$V.PropTypes.number).isRequired,
-    prefix: React$V.PropTypes.string,
-    suffix: React$V.PropTypes.string,
-    trackInteraction: React$V.PropTypes.func.isRequired,
+    matrixBoardSize: PropTypes.arrayOf(PropTypes.number).isRequired,
+    prefix: PropTypes.string,
+    suffix: PropTypes.string,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -46394,14 +46370,14 @@ var getMatrixSize = function getMatrixSize(matrix) {
   return matrixSize;
 };
 
-var MatrixEditor = React$U.createClass({
+var MatrixEditor = createReactClass({
   displayName: "MatrixEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$s.propTypes), {}, {
-    matrixBoardSize: React$U.PropTypes.arrayOf(React$U.PropTypes.number).isRequired,
-    answers: React$U.PropTypes.arrayOf(React$U.PropTypes.arrayOf(React$U.PropTypes.number)),
-    prefix: React$U.PropTypes.string,
-    suffix: React$U.PropTypes.string,
-    cursorPosition: React$U.PropTypes.arrayOf(React$U.PropTypes.number)
+    matrixBoardSize: PropTypes.arrayOf(PropTypes.number).isRequired,
+    answers: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    prefix: PropTypes.string,
+    suffix: PropTypes.string,
+    cursorPosition: PropTypes.arrayOf(PropTypes.number)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -46556,11 +46532,11 @@ var flipTilesPredicate$1 = (oldCells, predicate) => {
 }; // A single glowy cell
 
 
-var Tile$1 = React$T.createClass({
+var Tile$1 = createReactClass({
   displayName: "Tile",
   propTypes: {
-    value: React$T.PropTypes.bool.isRequired,
-    size: React$T.PropTypes.number.isRequired
+    value: PropTypes.bool.isRequired,
+    size: PropTypes.number.isRequired
   },
   render: function render() {
     var color = this.props.value ? "#55dd55" : "#115511";
@@ -46581,11 +46557,11 @@ var Tile$1 = React$T.createClass({
   }
 }); // A grid of glowy cells
 
-var TileGrid$1 = React$T.createClass({
+var TileGrid$1 = createReactClass({
   displayName: "TileGrid",
   propTypes: {
-    cells: React$T.PropTypes.arrayOf(React$T.PropTypes.arrayOf(React$T.PropTypes.bool)).isRequired,
-    size: React$T.PropTypes.number.isRequired
+    cells: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)).isRequired,
+    size: PropTypes.number.isRequired
   },
   render: function render() {
     return /*#__PURE__*/React$T.createElement("div", {
@@ -46609,12 +46585,12 @@ var TileGrid$1 = React$T.createClass({
   }
 }); // The widget editor
 
-var LightsPuzzleEditor = React$T.createClass({
+var LightsPuzzleEditor = createReactClass({
   displayName: "LightsPuzzleEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$r.propTypes), {}, {
-    startCells: React$T.PropTypes.arrayOf(React$T.PropTypes.arrayOf(React$T.PropTypes.bool)),
-    flipPattern: React$T.PropTypes.string.isRequired,
-    gradeIncompleteAsWrong: React$T.PropTypes.bool.isRequired
+    startCells: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)),
+    flipPattern: PropTypes.string.isRequired,
+    gradeIncompleteAsWrong: PropTypes.bool.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -46763,11 +46739,11 @@ var PATTERNS = {
 };
 
 
-var Tile = React$S.createClass({
+var Tile = createReactClass({
   displayName: "Tile",
   propTypes: {
-    value: React$S.PropTypes.bool.isRequired,
-    size: React$S.PropTypes.number.isRequired
+    value: PropTypes.bool.isRequired,
+    size: PropTypes.number.isRequired
   },
   render: function render() {
     var color = this.props.value ? "#55dd55" : "#115511";
@@ -46788,11 +46764,11 @@ var Tile = React$S.createClass({
   }
 }); // A grid of glowy cells
 
-var TileGrid = React$S.createClass({
+var TileGrid = createReactClass({
   displayName: "TileGrid",
   propTypes: {
-    cells: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.bool)).isRequired,
-    size: React$S.PropTypes.number.isRequired
+    cells: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)).isRequired,
+    size: PropTypes.number.isRequired
   },
   render: function render() {
     return /*#__PURE__*/React$S.createElement("div", {
@@ -46839,13 +46815,13 @@ var flipTilesPattern = (oldCells, tileY, tileX, pattern) => {
 }; // The lights puzzle widget
 
 
-var LightsPuzzle = React$S.createClass({
+var LightsPuzzle = createReactClass({
   displayName: "LightsPuzzle",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$q.propTypes), {}, {
-    cells: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.bool)),
-    startCells: React$S.PropTypes.arrayOf(React$S.PropTypes.arrayOf(React$S.PropTypes.bool)),
-    flipPattern: React$S.PropTypes.string.isRequired,
-    moveCount: React$S.PropTypes.number.isRequired
+    cells: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)),
+    startCells: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)),
+    flipPattern: PropTypes.string.isRequired,
+    moveCount: PropTypes.number.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -47275,11 +47251,11 @@ var deprecatedProps$1 = {
     };
   }
 };
-var InteractiveGraph$1 = React$R.createClass({
+var InteractiveGraph$1 = createReactClass({
   displayName: "InteractiveGraph",
   propTypes: {
     containerSizeClass: containerSizeClassPropType.isRequired,
-    trackInteraction: React$R.PropTypes.func.isRequired
+    trackInteraction: PropTypes.func.isRequired
   },
   getInitialState: function getInitialState() {
     return {
@@ -49096,7 +49072,7 @@ var deprecatedProps = {
     };
   }
 };
-var InteractiveGraphEditor = React$Q.createClass({
+var InteractiveGraphEditor = createReactClass({
   displayName: "InteractiveGraphEditor",
   className: "perseus-widget-interactive-graph",
   getDefaultProps: function getDefaultProps() {
@@ -49384,12 +49360,12 @@ var buttonSets = {
     key: "geq"
   }, "\\geq"), "\\geq"]]
 };
-var buttonSetsType = React$P.PropTypes.arrayOf(React$P.PropTypes.oneOf(Object.keys(buttonSets)));
-var TexButtons$3 = React$P.createClass({
+var buttonSetsType = PropTypes.arrayOf(PropTypes.oneOf(Object.keys(buttonSets)));
+var TexButtons$3 = createReactClass({
   displayName: "TexButtons",
   propTypes: {
     sets: buttonSetsType.isRequired,
-    onInsert: React$P.PropTypes.func.isRequired
+    onInsert: PropTypes.func.isRequired
   },
   render: function render() {
     // Always show buttonSets in the same order. Note: Technically it's ok
@@ -49439,9 +49415,9 @@ var _$y = _underscore__default["default"];
 var TexButtons$2 = _componentsTexButtonsJsx; // TODO(alex): Package MathQuill
 
 var MathQuill = window.MathQuill;
-var PT$1 = React$O.PropTypes; // A WYSIWYG math input that calls `onChange(LaTeX-string)`
+var PT$1 = PropTypes; // A WYSIWYG math input that calls `onChange(LaTeX-string)`
 
-var MathInput$4 = React$O.createClass({
+var MathInput$4 = createReactClass({
   displayName: "MathInput",
   propTypes: {
     value: PT$1.string,
@@ -49449,7 +49425,7 @@ var MathInput$4 = React$O.createClass({
     convertDotToTimes: PT$1.bool,
     buttonsVisible: PT$1.oneOf(["always", "never", "focused"]),
     buttonSets: TexButtons$2.buttonSetsType.isRequired,
-    labelText: React$O.PropTypes.string,
+    labelText: PropTypes.string,
     onFocus: PT$1.func,
     onBlur: PT$1.func
   },
@@ -50045,12 +50021,12 @@ var defaultInteractionProps$1 = {
 // TODO(eater): Factor this out
 //
 
-var PointEditor = React$I.createClass({
+var PointEditor = createReactClass({
   displayName: "PointEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    coordX: React$I.PropTypes.string,
-    coordY: React$I.PropTypes.string,
-    color: React$I.PropTypes.string
+    coordX: PropTypes.string,
+    coordY: PropTypes.string,
+    color: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50100,17 +50076,17 @@ var PointEditor = React$I.createClass({
 // TODO(eater): Factor this out
 //
 
-var LineEditor = React$I.createClass({
+var LineEditor = createReactClass({
   displayName: "LineEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    startX: React$I.PropTypes.string,
-    startY: React$I.PropTypes.string,
-    endX: React$I.PropTypes.string,
-    endY: React$I.PropTypes.string,
-    color: React$I.PropTypes.string,
-    strokeDasharray: React$I.PropTypes.string,
-    arrows: React$I.PropTypes.string,
-    strokeWidth: React$I.PropTypes.number
+    startX: PropTypes.string,
+    startY: PropTypes.string,
+    endX: PropTypes.string,
+    endY: PropTypes.string,
+    color: PropTypes.string,
+    strokeDasharray: PropTypes.string,
+    arrows: PropTypes.string,
+    strokeWidth: PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50194,14 +50170,14 @@ var LineEditor = React$I.createClass({
 // TODO(eater): Rethink how constraints are represented
 //
 
-var MovablePointEditor = React$I.createClass({
+var MovablePointEditor = createReactClass({
   displayName: "MovablePointEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    startX: React$I.PropTypes.string,
-    startY: React$I.PropTypes.string,
-    constraint: React$I.PropTypes.string,
-    snap: React$I.PropTypes.number,
-    constraintFn: React$I.PropTypes.string
+    startX: PropTypes.string,
+    startY: PropTypes.string,
+    constraint: PropTypes.string,
+    snap: PropTypes.number,
+    constraintFn: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50259,16 +50235,16 @@ var MovablePointEditor = React$I.createClass({
 // TODO(eater): Rethink how constraints are represented
 //
 
-var MovableLineEditor = React$I.createClass({
+var MovableLineEditor = createReactClass({
   displayName: "MovableLineEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    startX: React$I.PropTypes.string,
-    startY: React$I.PropTypes.string,
-    endX: React$I.PropTypes.string,
-    endY: React$I.PropTypes.string,
-    constraint: React$I.PropTypes.string,
-    snap: React$I.PropTypes.number,
-    constraintFn: React$I.PropTypes.string
+    startX: PropTypes.string,
+    startY: PropTypes.string,
+    endX: PropTypes.string,
+    endY: PropTypes.string,
+    constraint: PropTypes.string,
+    snap: PropTypes.number,
+    constraintFn: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50347,15 +50323,15 @@ var MovableLineEditor = React$I.createClass({
 // TODO(eater): Factor this out
 //
 
-var FunctionEditor = React$I.createClass({
+var FunctionEditor = createReactClass({
   displayName: "FunctionEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    value: React$I.PropTypes.string,
-    rangeMin: React$I.PropTypes.string,
-    rangeMax: React$I.PropTypes.string,
-    color: React$I.PropTypes.string,
-    strokeDashArray: React$I.PropTypes.string,
-    strokeWidth: React$I.PropTypes.number
+    value: PropTypes.string,
+    rangeMin: PropTypes.string,
+    rangeMax: PropTypes.string,
+    color: PropTypes.string,
+    strokeDashArray: PropTypes.string,
+    strokeWidth: PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50428,16 +50404,16 @@ var FunctionEditor = React$I.createClass({
 // TODO(eater): Factor this out
 //
 
-var ParametricEditor = React$I.createClass({
+var ParametricEditor = createReactClass({
   displayName: "ParametricEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    x: React$I.PropTypes.string,
-    y: React$I.PropTypes.string,
-    rangeMin: React$I.PropTypes.string,
-    rangeMax: React$I.PropTypes.string,
-    color: React$I.PropTypes.string,
-    strokeDashArray: React$I.PropTypes.string,
-    strokeWidth: React$I.PropTypes.number
+    x: PropTypes.string,
+    y: PropTypes.string,
+    rangeMin: PropTypes.string,
+    rangeMax: PropTypes.string,
+    color: PropTypes.string,
+    strokeDashArray: PropTypes.string,
+    strokeWidth: PropTypes.number
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50519,13 +50495,13 @@ var ParametricEditor = React$I.createClass({
 // TODO(eater): Add text direction
 //
 
-var LabelEditor = React$I.createClass({
+var LabelEditor = createReactClass({
   displayName: "LabelEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    color: React$I.PropTypes.string,
-    coordX: React$I.PropTypes.string,
-    coordY: React$I.PropTypes.string,
-    label: React$I.PropTypes.string
+    color: PropTypes.string,
+    coordX: PropTypes.string,
+    coordY: PropTypes.string,
+    label: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50584,14 +50560,14 @@ var LabelEditor = React$I.createClass({
 // TODO(eater): Factor this out maybe?
 //
 
-var RectangleEditor = React$I.createClass({
+var RectangleEditor = createReactClass({
   displayName: "RectangleEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    color: React$I.PropTypes.string,
-    coordX: React$I.PropTypes.string,
-    coordY: React$I.PropTypes.string,
-    height: React$I.PropTypes.string,
-    width: React$I.PropTypes.string
+    color: PropTypes.string,
+    coordX: PropTypes.string,
+    coordY: PropTypes.string,
+    height: PropTypes.string,
+    width: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -50655,12 +50631,12 @@ var RectangleEditor = React$I.createClass({
   }
 
 });
-var InteractionEditor = React$I.createClass({
+var InteractionEditor = createReactClass({
   displayName: "InteractionEditor",
   // TODO(eater): Make more better
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$p.propTypes), {}, {
-    elements: React$I.PropTypes.arrayOf(React$I.PropTypes.object),
-    graph: React$I.PropTypes.objectOf(React$I.PropTypes.any)
+    elements: PropTypes.arrayOf(PropTypes.object),
+    graph: PropTypes.objectOf(PropTypes.any)
   }),
   getDefaultProps: function getDefaultProps() {
     return defaultInteractionProps$1;
@@ -51047,12 +51023,12 @@ var defaultInteractionProps = {
   },
   elements: []
 };
-var Interaction = React$H.createClass({
+var Interaction = createReactClass({
   displayName: "Interaction",
   // TODO(eater): Make more better
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$o.propTypes), {}, {
-    graph: React$H.PropTypes.object,
-    elements: React$H.PropTypes.arrayOf(React$H.PropTypes.object)
+    graph: PropTypes.object,
+    elements: PropTypes.arrayOf(PropTypes.object)
   }),
   getDefaultProps: function getDefaultProps() {
     return defaultInteractionProps;
@@ -51517,7 +51493,7 @@ var INTERNALLY_HOSTED_URL_RE = new RegExp("^(https?|web\\+graphie)://[^/]*" + IN
  */
 
 var captionAlignments = ["center", "above", "above right", "right", "below right", "below", "below left", "left", "above left"];
-var ImageEditor = React$G.createClass({
+var ImageEditor = createReactClass({
   displayName: "ImageEditor",
   propTypes: _objectSpread2({}, Changeable$n.propTypes),
   componentDidMount: function componentDidMount() {
@@ -51765,30 +51741,30 @@ var defaultBackgroundImage = {
 var supportedAlignments = ["block", "float-left", "float-right", "full-width"];
 var editorAlignments = ["block", "full-width"];
 var DEFAULT_ALIGNMENT = "block";
-var ImageWidget = React$F.createClass({
+var ImageWidget = createReactClass({
   displayName: "ImageWidget",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$m.propTypes), {}, {
-    alignment: React$F.PropTypes.oneOf(supportedAlignments),
-    alt: React$F.PropTypes.string,
+    alignment: PropTypes.oneOf(supportedAlignments),
+    alt: PropTypes.string,
     apiOptions: ApiOptions$e.propTypes,
     // TODO(alex): Rename to something else, e.g. "image", perhaps flatten
-    backgroundImage: React$F.PropTypes.shape({
-      url: React$F.PropTypes.string,
-      width: React$F.PropTypes.number,
-      height: React$F.PropTypes.number
+    backgroundImage: PropTypes.shape({
+      url: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number
     }),
-    box: React$F.PropTypes.arrayOf(React$F.PropTypes.number),
-    caption: React$F.PropTypes.string,
+    box: PropTypes.arrayOf(PropTypes.number),
+    caption: PropTypes.string,
     // TODO(alex): Convert uses of this widget's labeling functionality to
     // SvgImage wherever possible (almost certainly requires a backfill)
-    labels: React$F.PropTypes.arrayOf(React$F.PropTypes.shape({
-      content: React$F.PropTypes.string,
-      coordinates: React$F.PropTypes.arrayOf(React$F.PropTypes.number),
-      alignment: React$F.PropTypes.string
+    labels: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string,
+      coordinates: PropTypes.arrayOf(PropTypes.number),
+      alignment: PropTypes.string
     })),
-    range: React$F.PropTypes.arrayOf(React$F.PropTypes.arrayOf(React$F.PropTypes.number)),
-    title: React$F.PropTypes.string,
-    trackInteraction: React$F.PropTypes.func.isRequired,
+    range: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    title: PropTypes.string,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   }),
   statics: {
@@ -52033,11 +52009,11 @@ var PropCheckBox$5 = _componentsPropCheckBoxJsx;
  * This is used for editing a name/value pair.
  */
 
-var PairEditor$1 = React$E.createClass({
+var PairEditor$1 = createReactClass({
   displayName: "PairEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$l.propTypes), {}, {
-    name: React$E.PropTypes.string,
-    value: React$E.PropTypes.string
+    name: PropTypes.string,
+    value: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -52073,12 +52049,12 @@ var PairEditor$1 = React$E.createClass({
  * This is used for editing a set of name/value pairs.
  */
 
-var PairsEditor$1 = React$E.createClass({
+var PairsEditor$1 = createReactClass({
   displayName: "PairsEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$l.propTypes), {}, {
-    pairs: React$E.PropTypes.arrayOf(React$E.PropTypes.shape({
-      name: React$E.PropTypes.string,
-      value: React$E.PropTypes.string
+    pairs: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string
     })).isRequired
   }),
   render: function render() {
@@ -52127,7 +52103,7 @@ var PairsEditor$1 = React$E.createClass({
  * This is the main editor for this widget, to specify all the options.
  */
 
-var IframeEditor = React$E.createClass({
+var IframeEditor = createReactClass({
   displayName: "IframeEditor",
   propTypes: _objectSpread2({}, Changeable$l.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -52225,17 +52201,17 @@ var WidgetJsonifyDeprecated$1 = _mixinsWidgetJsonifyDeprecatedJsx;
 var updateQueryString$1 = Util$q.updateQueryString;
 /* This renders the iframe and handles validation via window.postMessage */
 
-var Iframe = React$D.createClass({
+var Iframe = createReactClass({
   displayName: "Iframe",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$k.propTypes), {}, {
-    width: React$D.PropTypes.string,
-    height: React$D.PropTypes.string,
-    url: React$D.PropTypes.string,
-    settings: React$D.PropTypes.array,
-    status: React$D.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
-    message: React$D.PropTypes.string,
-    allowFullScreen: React$D.PropTypes.bool,
-    allowTopNavigation: React$D.PropTypes.bool
+    width: PropTypes.string,
+    height: PropTypes.string,
+    url: PropTypes.string,
+    settings: PropTypes.array,
+    status: PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
+    message: PropTypes.string,
+    allowFullScreen: PropTypes.bool,
+    allowTopNavigation: PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -52411,13 +52387,13 @@ var _$q = _underscore__default["default"];
 var ApiOptions$d = _perseusApiJsx.Options;
 var Changeable$j = _mixinsChangeableJsx;
 var Editor$5 = _editorJsx;
-var GroupEditor = React$C.createClass({
+var GroupEditor = createReactClass({
   displayName: "GroupEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$j.propTypes), {}, {
-    content: React$C.PropTypes.string,
-    widgets: React$C.PropTypes.object,
-    images: React$C.PropTypes.object,
-    metadata: React$C.PropTypes.any,
+    content: PropTypes.string,
+    widgets: PropTypes.object,
+    images: PropTypes.object,
+    metadata: PropTypes.any,
     apiOptions: ApiOptions$d.propTypes
   }),
   getDefaultProps: function getDefaultProps() {
@@ -52487,14 +52463,14 @@ var _$p = _underscore__default["default"];
 var ApiOptions$c = _perseusApiJsx.Options;
 var Changeable$i = _mixinsChangeableJsx;
 var Renderer$8 = _rendererJsx;
-var Group = React$B.createClass({
+var Group = createReactClass({
   displayName: "Group",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$i.propTypes), {}, {
-    content: React$B.PropTypes.string,
-    widgets: React$B.PropTypes.object,
-    images: React$B.PropTypes.object,
-    icon: React$B.PropTypes.object,
-    reviewModeRubric: React$B.PropTypes.object,
+    content: PropTypes.string,
+    widgets: PropTypes.object,
+    images: PropTypes.object,
+    icon: PropTypes.object,
+    reviewModeRubric: PropTypes.object,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -52662,13 +52638,13 @@ var Changeable$h = _mixinsChangeableJsx;
 var Editor$4 = _editorJsx;
 var TextInput$4 = _componentsTextInputJsx;
 var InlineIcon$a = _componentsInlineIconJsx;
-var GradedGroupEditor$1 = React$A.createClass({
+var GradedGroupEditor$1 = createReactClass({
   displayName: "GradedGroupEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$h.propTypes), {}, {
-    title: React$A.PropTypes.string,
-    content: React$A.PropTypes.string,
-    widgets: React$A.PropTypes.object,
-    images: React$A.PropTypes.object,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    widgets: PropTypes.object,
+    images: PropTypes.object,
     apiOptions: ApiOptions$b.propTypes
   }),
   getDefaultProps: function getDefaultProps() {
@@ -52797,12 +52773,12 @@ var React$z = _react__default["default"];
 var ApiOptions$a = _perseusApiJsx.Options;
 var Changeable$g = _mixinsChangeableJsx;
 var GradedGroupEditor = _widgetsGradedGroupEditorJsx;
-var GradedGroupSetEditor = React$z.createClass({
+var GradedGroupSetEditor = createReactClass({
   displayName: "GradedGroupSetEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$g.propTypes), {}, {
     apiOptions: ApiOptions$a.propTypes,
-    gradedGroups: React$z.PropTypes.array,
-    onChange: React$z.PropTypes.func.isRequired
+    gradedGroups: PropTypes.array,
+    onChange: PropTypes.func.isRequired
   }),
 
   getDefaultProps() {
@@ -52899,17 +52875,17 @@ var ANSWER_BAR_STATES$1 = {
   // The widgets in this grade-group are disabled.
   CORRECT: Symbol("CORRECT")
 };
-var GradedGroupAnswerBar$1 = React$y.createClass({
+var GradedGroupAnswerBar$1 = createReactClass({
   displayName: "GradedGroupAnswerBar",
   propTypes: {
     // TODO(kevinb) update to oneOf once we update to 15.2
-    answerBarState: React$y.PropTypes.any.isRequired,
+    answerBarState: PropTypes.any.isRequired,
     apiOptions: ApiOptions$9.propTypes,
-    onCheckAnswer: React$y.PropTypes.func.isRequired,
+    onCheckAnswer: PropTypes.func.isRequired,
     // The function to call when clicking "Next question" after correctly
     // answering one graded group out of a set. If this is null, the
     // "Next question" button will not appear.
-    onNextQuestion: React$y.PropTypes.func
+    onNextQuestion: PropTypes.func
   },
 
   render() {
@@ -53079,24 +53055,24 @@ var getNextState = (currentState, answerable) => {
 
 var INVALID_MESSAGE_PREFIX = "We couldn't grade your answer.";
 var DEFAULT_INVALID_MESSAGE = "It looks like you left something blank or " + "entered in an invalid answer.";
-var GradedGroup$1 = React$x.createClass({
+var GradedGroup$1 = createReactClass({
   displayName: "GradedGroup",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$f.propTypes), {}, {
     apiOptions: ApiOptions$8.propTypes,
-    content: React$x.PropTypes.string,
-    hasHint: React$x.PropTypes.bool,
-    hint: React$x.PropTypes.object,
-    images: React$x.PropTypes.object,
-    inGradedGroupSet: React$x.PropTypes.bool,
-    onBlur: React$x.PropTypes.func,
-    onFocus: React$x.PropTypes.func,
+    content: PropTypes.string,
+    hasHint: PropTypes.bool,
+    hint: PropTypes.object,
+    images: PropTypes.object,
+    inGradedGroupSet: PropTypes.bool,
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
     // The function to call when clicking "Next question" after correctly
     // answering one graded group out of a set. If this is null, the
     // "Next question" button will not appear.
-    onNextQuestion: React$x.PropTypes.func,
-    title: React$x.PropTypes.string,
-    trackInteraction: React$x.PropTypes.func.isRequired,
-    widgets: React$x.PropTypes.object,
+    onNextQuestion: PropTypes.func,
+    title: PropTypes.string,
+    trackInteraction: PropTypes.func.isRequired,
+    widgets: PropTypes.object,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -53359,12 +53335,12 @@ var React$w = _react__default["default"];
 var ApiOptions$7 = _perseusApiJsx.Options;
 var Changeable$e = _mixinsChangeableJsx;
 var GradedGroup = _widgetsGradedGroupJsx.widget;
-var Indicators = React$w.createClass({
+var Indicators = createReactClass({
   displayName: "Indicators",
   propTypes: {
-    currentGroup: React$w.PropTypes.number.isRequired,
-    numGroups: React$w.PropTypes.number.isRequired,
-    onChangeCurrentGroup: React$w.PropTypes.func.isRequired
+    currentGroup: PropTypes.number.isRequired,
+    numGroups: PropTypes.number.isRequired,
+    onChangeCurrentGroup: PropTypes.func.isRequired
   },
 
   render() {
@@ -53392,12 +53368,12 @@ var Indicators = React$w.createClass({
 }); // TODO(jared): find a better name for this :) and for GradedGroup; the names
 // are currently a little confusing.
 
-var GradedGroupSet = React$w.createClass({
+var GradedGroupSet = createReactClass({
   displayName: "GradedGroupSet",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$e.propTypes), {}, {
     apiOptions: ApiOptions$7.propTypes,
-    gradedGroups: React$w.PropTypes.array,
-    trackInteraction: React$w.PropTypes.func.isRequired,
+    gradedGroups: PropTypes.array,
+    trackInteraction: PropTypes.func.isRequired,
     linterContext: linterContextProps
   }),
 
@@ -54207,7 +54183,7 @@ var typeSelectorStyle = {
 };
 /* Graphing interface. */
 
-var FunctionGrapher = React$v.createClass({
+var FunctionGrapher = createReactClass({
   displayName: "FunctionGrapher",
   _coords: function _coords(props) {
     // Coords are usually based on props, but should fall back to the
@@ -54223,16 +54199,16 @@ var FunctionGrapher = React$v.createClass({
     return props.asymptote;
   },
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$d.propTypes), {}, {
-    flexibleType: React$v.PropTypes.bool,
-    graph: React$v.PropTypes.any,
-    hideHairlines: React$v.PropTypes.func,
-    isMobile: React$v.PropTypes.bool,
-    model: React$v.PropTypes.any,
-    onChange: React$v.PropTypes.func,
-    setDrawingAreaAvailable: React$v.PropTypes.func,
-    showHairlines: React$v.PropTypes.func,
-    showTooltips: React$v.PropTypes.bool,
-    static: React$v.PropTypes.bool
+    flexibleType: PropTypes.bool,
+    graph: PropTypes.any,
+    hideHairlines: PropTypes.func,
+    isMobile: PropTypes.bool,
+    model: PropTypes.any,
+    onChange: PropTypes.func,
+    setDrawingAreaAvailable: PropTypes.func,
+    showHairlines: PropTypes.func,
+    showTooltips: PropTypes.bool,
+    static: PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54419,18 +54395,18 @@ var FunctionGrapher = React$v.createClass({
 });
 /* Widget and editor. */
 
-var Grapher$1 = React$v.createClass({
+var Grapher$1 = createReactClass({
   displayName: "Grapher",
   propTypes: {
-    apiOptions: React$v.PropTypes.any,
-    availableTypes: React$v.PropTypes.arrayOf(React$v.PropTypes.any),
+    apiOptions: PropTypes.any,
+    availableTypes: PropTypes.arrayOf(PropTypes.any),
     containerSizeClass: containerSizeClassPropType.isRequired,
-    graph: React$v.PropTypes.any,
-    markings: React$v.PropTypes.string,
-    onChange: React$v.PropTypes.func,
-    plot: React$v.PropTypes.any,
-    static: React$v.PropTypes.bool,
-    trackInteraction: React$v.PropTypes.func.isRequired
+    graph: PropTypes.any,
+    markings: PropTypes.string,
+    onChange: PropTypes.func,
+    plot: PropTypes.any,
+    static: PropTypes.bool,
+    trackInteraction: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return DEFAULT_GRAPHER_PROPS;
@@ -54656,20 +54632,20 @@ var module$3 = {
 
 var React$u = _react__default["default"];
 var ReactDOM$6 = _reactDom__default["default"];
-var createReactClass$2 = _createReactClass__default["default"];
-var PropTypes$2 = _propTypes__default["default"];
+var createReactClass$3 = _createReactClass__default["default"];
+var PropTypes$3 = _propTypes__default["default"];
 var styles$8 = _stylesJs;
-var MultiButtonGroup$2 = createReactClass$2({
+var MultiButtonGroup$2 = createReactClass$3({
   displayName: "MultiButtonGroup",
   propTypes: {
-    values: PropTypes$2.arrayOf(PropTypes$2.any),
-    buttons: PropTypes$2.arrayOf(PropTypes$2.shape({
-      value: PropTypes$2.any.isRequired,
-      content: PropTypes$2.node,
-      title: PropTypes$2.string
+    values: PropTypes$3.arrayOf(PropTypes$3.any),
+    buttons: PropTypes$3.arrayOf(PropTypes$3.shape({
+      value: PropTypes$3.any.isRequired,
+      content: PropTypes$3.node,
+      title: PropTypes$3.string
     })).isRequired,
-    onChange: PropTypes$2.func.isRequired,
-    allowEmpty: PropTypes$2.bool
+    onChange: PropTypes$3.func.isRequired,
+    allowEmpty: PropTypes$3.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54738,7 +54714,7 @@ var GraphSettings = _componentsGraphSettingsJsx;
 var InfoTip$5 = _componentsInfoTipJsx;
 var MultiButtonGroup$1 = _reactComponentsMultiButtonGroupJsx;
 var Grapher = _widgetsGrapherJsx.widget;
-var GrapherEditor = React$t.createClass({
+var GrapherEditor = createReactClass({
   displayName: "GrapherEditor",
   propTypes: _objectSpread2({}, Changeable$c.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -54851,12 +54827,12 @@ var Changeable$b = _mixinsChangeableJsx;
 var EditorJsonify$5 = _mixinsEditorJsonifyJsx;
 var Editor$3 = _editorJsx;
 var TextInput$3 = _componentsTextInputJsx;
-var DefinitionEditor = React$s.createClass({
+var DefinitionEditor = createReactClass({
   displayName: "DefinitionEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$b.propTypes), {}, {
-    togglePrompt: React$s.PropTypes.string,
-    definition: React$s.PropTypes.string,
-    apiOptions: React$s.PropTypes.any
+    togglePrompt: PropTypes.string,
+    definition: PropTypes.string,
+    apiOptions: PropTypes.any
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -54920,13 +54896,13 @@ var Changeable$a = _mixinsChangeableJsx;
 var PerseusApi$1 = _perseusApiJsx;
 var Renderer$6 = _rendererJsx;
 var mediaQueries$4 = _stylesMediaQueriesJs;
-var Definition = React$r.createClass({
+var Definition = createReactClass({
   displayName: "Definition",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$a.propTypes), {}, {
     apiOptions: PerseusApi$1.Options.propTypes,
-    definition: React$r.PropTypes.string,
-    togglePrompt: React$r.PropTypes.string,
-    trackInteraction: React$r.PropTypes.func.isRequired
+    definition: PropTypes.string,
+    togglePrompt: PropTypes.string,
+    trackInteraction: PropTypes.func.isRequired
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -55284,14 +55260,14 @@ var defaultExplanationProps$1 = {
   explanation: "explanation goes here\n\nmore explanation",
   widgets: {}
 };
-var ExplanationEditor = React$q.createClass({
+var ExplanationEditor = createReactClass({
   displayName: "ExplanationEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$9.propTypes), {}, {
-    showPrompt: React$q.PropTypes.string,
-    hidePrompt: React$q.PropTypes.string,
-    explanation: React$q.PropTypes.string,
-    widgets: React$q.PropTypes.object,
-    apiOptions: React$q.PropTypes.any
+    showPrompt: PropTypes.string,
+    hidePrompt: PropTypes.string,
+    explanation: PropTypes.string,
+    widgets: PropTypes.object,
+    apiOptions: PropTypes.any
   }),
   getDefaultProps: function getDefaultProps() {
     return defaultExplanationProps$1;
@@ -55369,15 +55345,15 @@ var defaultExplanationProps = {
   widgets: {},
   linterContext: linterContextDefault
 };
-var Explanation = React$p.createClass({
+var Explanation = createReactClass({
   displayName: "Explanation",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$8.propTypes), {}, {
     apiOptions: PerseusApi.Options.propTypes,
-    explanation: React$p.PropTypes.string,
-    hidePrompt: React$p.PropTypes.string,
-    showPrompt: React$p.PropTypes.string,
-    trackInteraction: React$p.PropTypes.func.isRequired,
-    widgets: React$p.PropTypes.object,
+    explanation: PropTypes.string,
+    hidePrompt: PropTypes.string,
+    showPrompt: PropTypes.string,
+    trackInteraction: PropTypes.func.isRequired,
+    widgets: PropTypes.object,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -55596,14 +55572,14 @@ var _$g = _underscore__default["default"];
 var InfoTip$4 = _componentsInfoTipJsx;
 var InlineIcon$7 = _componentsInlineIconJsx;
 var EditorJsonify$3 = _mixinsEditorJsonifyJsx;
-var DropdownEditor = React$o.createClass({
+var DropdownEditor = createReactClass({
   displayName: "DropdownEditor",
   propTypes: {
-    choices: React$o.PropTypes.arrayOf(React$o.PropTypes.shape({
-      content: React$o.PropTypes.string,
-      correct: React$o.PropTypes.bool
+    choices: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string,
+      correct: PropTypes.bool
     })),
-    placeholder: React$o.PropTypes.string
+    placeholder: PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -55737,15 +55713,15 @@ var ApiClassNames$6 = _perseusApiJsx.ClassNames;
 var ApiOptions$6 = _perseusApiJsx.Options;
 var InlineIcon$6 = _componentsInlineIconJsx;
 var dropdownArrowSize = 24;
-var Dropdown = React$n.createClass({
+var Dropdown = createReactClass({
   displayName: "Dropdown",
   propTypes: {
     apiOptions: ApiOptions$6.propTypes,
-    choices: React$n.PropTypes.arrayOf(React$n.PropTypes.string),
-    onChange: React$n.PropTypes.func.isRequired,
-    placeholder: React$n.PropTypes.string,
-    selected: React$n.PropTypes.number,
-    trackInteraction: React$n.PropTypes.func.isRequired
+    choices: PropTypes.arrayOf(PropTypes.string),
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    selected: PropTypes.number,
+    trackInteraction: PropTypes.func.isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -55900,11 +55876,11 @@ var DEFAULT_HEIGHT = 400;
  * This is used for editing a name/value pair.
  */
 
-var PairEditor = React$m.createClass({
+var PairEditor = createReactClass({
   displayName: "PairEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$7.propTypes), {}, {
-    name: React$m.PropTypes.string,
-    value: React$m.PropTypes.string
+    name: PropTypes.string,
+    value: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -55942,12 +55918,12 @@ var PairEditor = React$m.createClass({
  * This is used for editing a set of name/value pairs.
  */
 
-var PairsEditor = React$m.createClass({
+var PairsEditor = createReactClass({
   displayName: "PairsEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$7.propTypes), {}, {
-    pairs: React$m.PropTypes.arrayOf(React$m.PropTypes.shape({
-      name: React$m.PropTypes.string,
-      value: React$m.PropTypes.string
+    pairs: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string
     })).isRequired
   }),
   render: function render() {
@@ -56013,7 +55989,7 @@ function isolateProgramID(programUrl) {
  */
 
 
-var CSProgramEditor = React$m.createClass({
+var CSProgramEditor = createReactClass({
   displayName: "CSProgramEditor",
   propTypes: _objectSpread2({}, Changeable$7.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -56125,17 +56101,17 @@ function getUrlFromProgramID(programID) {
  * window.postMessage */
 
 
-var CSProgram = React$l.createClass({
+var CSProgram = createReactClass({
   displayName: "CSProgram",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$6.propTypes), {}, {
-    programID: React$l.PropTypes.string,
-    width: React$l.PropTypes.number,
-    height: React$l.PropTypes.number,
-    settings: React$l.PropTypes.array,
-    showEditor: React$l.PropTypes.bool,
-    showButtons: React$l.PropTypes.bool,
-    status: React$l.PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
-    message: React$l.PropTypes.string
+    programID: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    settings: PropTypes.array,
+    showEditor: PropTypes.bool,
+    showButtons: PropTypes.bool,
+    status: PropTypes.oneOf(["incomplete", "incorrect", "correct"]),
+    message: PropTypes.string
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -56296,18 +56272,18 @@ var Renderer$4 = _rendererJsx;
 var Util$2 = Util$q;
 var mediaQueries$2 = _stylesMediaQueriesJs;
 var sharedStyles$2 = _stylesSharedJs;
-var Categorizer$1 = React$k.createClass({
+var Categorizer$1 = createReactClass({
   displayName: "Categorizer",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$5.propTypes), {}, {
     apiOptions: ApiOptions$5.propTypes,
     // List of categories (across the top)
-    categories: React$k.PropTypes.arrayOf(React$k.PropTypes.string),
+    categories: PropTypes.arrayOf(PropTypes.string),
     // List of items that are being categorized (along the left side)
-    items: React$k.PropTypes.arrayOf(React$k.PropTypes.string),
-    trackInteraction: React$k.PropTypes.func.isRequired,
+    items: PropTypes.arrayOf(PropTypes.string),
+    trackInteraction: PropTypes.func.isRequired,
     // Ordered list of correct answers, mapping items to categories thusly:
     //   values[<items_index>] == <categories_index>
-    values: React$k.PropTypes.arrayOf(React$k.PropTypes.number),
+    values: PropTypes.arrayOf(PropTypes.number),
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -56515,14 +56491,14 @@ var EditorJsonify$1 = _mixinsEditorJsonifyJsx;
 var PropCheckBox$3 = _componentsPropCheckBoxJsx;
 var TextListEditor = _componentsTextListEditorJsx;
 var Categorizer = _widgetsCategorizerJsx.widget;
-var CategorizerEditor = React$j.createClass({
+var CategorizerEditor = createReactClass({
   displayName: "CategorizerEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$4.propTypes), {}, {
     apiOptions: ApiOptions$4.propTypes,
-    items: React$j.PropTypes.arrayOf(React$j.PropTypes.string),
-    categories: React$j.PropTypes.arrayOf(React$j.PropTypes.string),
-    values: React$j.PropTypes.arrayOf(React$j.PropTypes.number),
-    randomizeItems: React$j.PropTypes.bool
+    items: PropTypes.arrayOf(PropTypes.string),
+    categories: PropTypes.arrayOf(PropTypes.string),
+    values: PropTypes.arrayOf(PropTypes.number),
+    randomizeItems: PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -56723,19 +56699,19 @@ var module$2 = {
 
 var React$i = _react__default["default"];
 var ReactDOM$3 = _reactDom__default["default"];
-var createReactClass$1 = _createReactClass__default["default"];
-var PropTypes$1 = _propTypes__default["default"];
+var createReactClass$2 = _createReactClass__default["default"];
+var PropTypes$2 = _propTypes__default["default"];
 var zIndex = 10;
-var Triangle = createReactClass$1({
+var Triangle = createReactClass$2({
   displayName: "Triangle",
   propTypes: {
-    color: PropTypes$1.string.isRequired,
-    left: PropTypes$1.number.isRequired,
-    "top": PropTypes$1.number.isRequired,
-    width: PropTypes$1.number.isRequired,
-    height: PropTypes$1.number.isRequired,
-    horizontalDirection: PropTypes$1.oneOf(["left", "right"]).isRequired,
-    verticalDirection: PropTypes$1.oneOf(["top", "bottom"]).isRequired
+    color: PropTypes$2.string.isRequired,
+    left: PropTypes$2.number.isRequired,
+    "top": PropTypes$2.number.isRequired,
+    width: PropTypes$2.number.isRequired,
+    height: PropTypes$2.number.isRequired,
+    horizontalDirection: PropTypes$2.oneOf(["left", "right"]).isRequired,
+    verticalDirection: PropTypes$2.oneOf(["top", "bottom"]).isRequired
   },
   render: function render() {
     var borderLeft;
@@ -56774,21 +56750,21 @@ var Triangle = createReactClass$1({
     });
   }
 });
-var TooltipArrow = createReactClass$1({
+var TooltipArrow = createReactClass$2({
   displayName: "TooltipArrow",
   propTypes: {
-    position: PropTypes$1.string,
-    visibility: PropTypes$1.string,
-    left: PropTypes$1.number,
-    "top": PropTypes$1.number,
-    color: PropTypes$1.string.isRequired,
+    position: PropTypes$2.string,
+    visibility: PropTypes$2.string,
+    left: PropTypes$2.number,
+    "top": PropTypes$2.number,
+    color: PropTypes$2.string.isRequired,
     // a css color
-    border: PropTypes$1.string.isRequired,
+    border: PropTypes$2.string.isRequired,
     // a css color
-    width: PropTypes$1.number.isRequired,
-    height: PropTypes$1.number.isRequired,
-    horizontalDirection: PropTypes$1.oneOf(["left", "right"]).isRequired,
-    verticalDirection: PropTypes$1.oneOf(["top", "bottom"]).isRequired
+    width: PropTypes$2.number.isRequired,
+    height: PropTypes$2.number.isRequired,
+    horizontalDirection: PropTypes$2.oneOf(["left", "right"]).isRequired,
+    verticalDirection: PropTypes$2.oneOf(["top", "bottom"]).isRequired
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -56864,18 +56840,18 @@ var HORIZONTAL_ALIGNMNENTS = {
     arrowLeft: arrowSize => -arrowSize - 2
   }
 };
-var Tooltip$2 = createReactClass$1({
+var Tooltip$2 = createReactClass$2({
   displayName: "Tooltip",
   propTypes: {
-    show: PropTypes$1.bool.isRequired,
-    className: PropTypes$1.string,
-    arrowSize: PropTypes$1.number,
-    borderColor: PropTypes$1.string,
-    verticalPosition: PropTypes$1.oneOf(Object.keys(VERTICAL_CORNERS)),
-    horizontalPosition: PropTypes$1.oneOf(Object.keys(HORIZONTAL_CORNERS)),
-    horizontalAlign: PropTypes$1.oneOf(Object.keys(HORIZONTAL_ALIGNMNENTS)),
-    children: PropTypes$1.arrayOf(PropTypes$1.element).isRequired,
-    targetContainerStyle: PropTypes$1.any // style object
+    show: PropTypes$2.bool.isRequired,
+    className: PropTypes$2.string,
+    arrowSize: PropTypes$2.number,
+    borderColor: PropTypes$2.string,
+    verticalPosition: PropTypes$2.oneOf(Object.keys(VERTICAL_CORNERS)),
+    horizontalPosition: PropTypes$2.oneOf(Object.keys(HORIZONTAL_CORNERS)),
+    horizontalAlign: PropTypes$2.oneOf(Object.keys(HORIZONTAL_ALIGNMNENTS)),
+    children: PropTypes$2.arrayOf(PropTypes$2.element).isRequired,
+    targetContainerStyle: PropTypes$2.any // style object
 
   },
   getDefaultProps: function getDefaultProps() {
@@ -57031,24 +57007,24 @@ var captureScratchpadTouchStart$1 = Util$q.captureScratchpadTouchStart;
 var MATH = "math";
 var TEXT = "text";
 var TEX = "tex";
-var InputWithExamples$3 = React$h.createClass({
+var InputWithExamples$3 = createReactClass({
   displayName: "InputWithExamples",
   propTypes: {
-    type: React$h.PropTypes.oneOf([MATH, TEXT, TEX]),
-    value: React$h.PropTypes.string,
-    onChange: React$h.PropTypes.func.isRequired,
-    className: React$h.PropTypes.string,
-    examples: React$h.PropTypes.arrayOf(React$h.PropTypes.string).isRequired,
-    shouldShowExamples: React$h.PropTypes.bool,
-    convertDotToTimes: React$h.PropTypes.bool,
-    buttonSet: React$h.PropTypes.string,
-    buttonsVisible: React$h.PropTypes.oneOf(["always", "never", "focused"]),
-    labelText: React$h.PropTypes.string,
-    onFocus: React$h.PropTypes.func,
-    onBlur: React$h.PropTypes.func,
-    disabled: React$h.PropTypes.bool,
+    type: PropTypes.oneOf([MATH, TEXT, TEX]),
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    examples: PropTypes.arrayOf(PropTypes.string).isRequired,
+    shouldShowExamples: PropTypes.bool,
+    convertDotToTimes: PropTypes.bool,
+    buttonSet: PropTypes.string,
+    buttonsVisible: PropTypes.oneOf(["always", "never", "focused"]),
+    labelText: PropTypes.string,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    disabled: PropTypes.bool,
     // A unique string identifying this InputWithExamples
-    id: React$h.PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -57277,19 +57253,19 @@ var insertBraces = value => {
 }; // The new, MathQuill input expression widget
 
 
-var Expression$1 = React$g.createClass({
+var Expression$1 = createReactClass({
   displayName: "Expression",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$3.propTypes), {}, {
     apiOptions: ApiOptions$3.propTypes,
     buttonSets: TexButtons$1.buttonSetsType,
-    buttonsVisible: React$g.PropTypes.oneOf(["always", "never", "focused"]),
-    functions: React$g.PropTypes.arrayOf(React$g.PropTypes.string),
+    buttonsVisible: PropTypes.oneOf(["always", "never", "focused"]),
+    functions: PropTypes.arrayOf(PropTypes.string),
     keypadConfiguration: keypadConfigurationPropType,
     keypadElement: keypadElementPropType$2,
-    times: React$g.PropTypes.bool,
-    trackInteraction: React$g.PropTypes.func.isRequired,
-    value: React$g.PropTypes.string,
-    widgetId: React$g.PropTypes.string.isRequired,
+    times: PropTypes.bool,
+    trackInteraction: PropTypes.func.isRequired,
+    value: PropTypes.string,
+    widgetId: PropTypes.string.isRequired,
     linterContext: linterContextProps
   }),
   getDefaultProps: function getDefaultProps() {
@@ -57736,11 +57712,11 @@ var module$1 = {
 };
 var React$f = _react__default["default"];
 var ReactDOM$2 = _reactDom__default["default"];
-var createReactClass = _createReactClass__default["default"];
-var PropTypes = _propTypes__default["default"];
-var PT = PropTypes; // Takes an array of components to sort
+var createReactClass$1 = _createReactClass__default["default"];
+var PropTypes$1 = _propTypes__default["default"];
+var PT = PropTypes$1; // Takes an array of components to sort
 
-var SortableArea$1 = createReactClass({
+var SortableArea$1 = createReactClass$1({
   displayName: "SortableArea",
   propTypes: {
     className: PT.string,
@@ -57870,7 +57846,7 @@ var SortableArea$1 = createReactClass({
   }
 }); // An individual sortable item
 
-var SortableItem = createReactClass({
+var SortableItem = createReactClass$1({
   displayName: "SortableItem",
   propTypes: {
     area: PT.shape({
@@ -57944,11 +57920,11 @@ var TexButtons = _componentsTexButtonsJsx;
 var Expression = _widgetsExpressionJsx.Expression; // An answer can be considered correct, wrong, or ungraded.
 
 var CONSIDERED = ["correct", "wrong", "ungraded"];
-var answerFormType = React$e.PropTypes.shape({
-  considered: React$e.PropTypes.oneOf(CONSIDERED).isRequired,
-  value: React$e.PropTypes.string.isRequired,
-  form: React$e.PropTypes.bool.isRequired,
-  simplify: React$e.PropTypes.bool.isRequired
+var answerFormType = PropTypes.shape({
+  considered: PropTypes.oneOf(CONSIDERED).isRequired,
+  value: PropTypes.string.isRequired,
+  form: PropTypes.bool.isRequired,
+  simplify: PropTypes.bool.isRequired
 }); // Pick a key that isn't currently used by an answer in answerForms
 
 var _makeNewKey = answerForms => {
@@ -57971,13 +57947,13 @@ var _makeNewKey = answerForms => {
   return usedKeys.length;
 };
 
-var ExpressionEditor = React$e.createClass({
+var ExpressionEditor = createReactClass({
   displayName: "ExpressionEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$2.propTypes), {}, {
-    answerForms: React$e.PropTypes.arrayOf(answerFormType),
-    times: React$e.PropTypes.bool,
+    answerForms: PropTypes.arrayOf(answerFormType),
+    times: PropTypes.bool,
     buttonSets: TexButtons.buttonSetsType,
-    functions: React$e.PropTypes.arrayOf(React$e.PropTypes.string)
+    functions: PropTypes.arrayOf(PropTypes.string)
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -58245,17 +58221,17 @@ var findNextIn = function findNextIn(arr, val) {
   return arr[ix];
 };
 
-var AnswerOption = React$e.createClass({
+var AnswerOption = createReactClass({
   displayName: "AnswerOption",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable$2.propTypes), {}, {
-    considered: React$e.PropTypes.oneOf(CONSIDERED).isRequired,
-    expressionProps: React$e.PropTypes.object.isRequired,
+    considered: PropTypes.oneOf(CONSIDERED).isRequired,
+    expressionProps: PropTypes.object.isRequired,
     // Must the answer have the same form as this answer.
-    form: React$e.PropTypes.bool.isRequired,
+    form: PropTypes.bool.isRequired,
     // Must the answer be simplified.
-    simplify: React$e.PropTypes.bool.isRequired,
-    onChange: React$e.PropTypes.func.isRequired,
-    onDelete: React$e.PropTypes.func.isRequired
+    simplify: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
   }),
   getInitialState: function getInitialState() {
     return {
@@ -58403,7 +58379,7 @@ var initAnswer = status => {
   };
 };
 
-var NumericInputEditor = React$d.createClass({
+var NumericInputEditor = createReactClass({
   displayName: "NumericInputEditor",
   propTypes: _objectSpread2({}, Changeable$1.propTypes),
   getDefaultProps: function getDefaultProps() {
@@ -58744,10 +58720,10 @@ var _module_$d = {
 
 var React$c = _react__default["default"];
 var _$6 = _underscore__default["default"];
-var PossibleAnswers$2 = React$c.createClass({
+var PossibleAnswers$2 = createReactClass({
   displayName: "PossibleAnswers",
   propTypes: {
-    answers: React$c.PropTypes.arrayOf(React$c.PropTypes.string)
+    answers: PropTypes.arrayOf(PropTypes.string)
   },
   render: function render() {
     // It's redundant to show duplicate answers.
@@ -58827,25 +58803,25 @@ var formExamples$1 = {
   decimal: () => i18n._("an *exact* decimal, like $0.75$"),
   pi: () => i18n._("a multiple of pi, like $12\\ \\text{pi}$ or " + "$2/3\\ \\text{pi}$")
 };
-var NumericInput = React$b.createClass({
+var NumericInput = createReactClass({
   displayName: "NumericInput",
   propTypes: {
-    currentValue: React$b.PropTypes.string,
-    currentMultipleValues: React$b.PropTypes.arrayOf(React$b.PropTypes.string),
-    size: React$b.PropTypes.oneOf(["normal", "small"]),
+    currentValue: PropTypes.string,
+    currentMultipleValues: PropTypes.arrayOf(PropTypes.string),
+    size: PropTypes.oneOf(["normal", "small"]),
     apiOptions: ApiOptions$2.propTypes,
-    coefficient: React$b.PropTypes.bool,
-    answerForms: React$b.PropTypes.arrayOf(React$b.PropTypes.shape({
-      name: React$b.PropTypes.string.isRequired,
-      simplify: React$b.PropTypes.oneOf(["required", "optional"]).isRequired
+    coefficient: PropTypes.bool,
+    answerForms: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      simplify: PropTypes.oneOf(["required", "optional"]).isRequired
     })),
     keypadElement: keypadElementPropType$1,
-    labelText: React$b.PropTypes.string,
-    reviewModeRubric: React$b.PropTypes.object,
-    trackInteraction: React$b.PropTypes.func.isRequired,
-    widgetId: React$b.PropTypes.string.isRequired,
+    labelText: PropTypes.string,
+    reviewModeRubric: PropTypes.object,
+    trackInteraction: PropTypes.func.isRequired,
+    widgetId: PropTypes.string.isRequired,
     linterContext: linterContextProps,
-    multipleNumberInput: React$b.PropTypes.bool
+    multipleNumberInput: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -59495,15 +59471,15 @@ var answerTypes$1 = {
     forms: "pi"
   }
 };
-var InputNumberEditor = React$a.createClass({
+var InputNumberEditor = createReactClass({
   displayName: "InputNumberEditor",
   propTypes: {
-    value: React$a.PropTypes.number,
-    simplify: React$a.PropTypes.oneOf(["required", "optional", "enforced"]),
-    size: React$a.PropTypes.oneOf(["normal", "small"]),
-    inexact: React$a.PropTypes.bool,
-    maxError: React$a.PropTypes.number,
-    answerType: React$a.PropTypes.string
+    value: PropTypes.number,
+    simplify: PropTypes.oneOf(["required", "optional", "enforced"]),
+    size: PropTypes.oneOf(["normal", "small"]),
+    inexact: PropTypes.bool,
+    maxError: PropTypes.number,
+    answerType: PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -59690,14 +59666,14 @@ var formExamples = {
     return i18n._("a multiple of pi, like $12\\ \\text{pi}$ or " + "$2/3\\ \\text{pi}$");
   }
 };
-var InputNumber = React$9.createClass({
+var InputNumber = createReactClass({
   displayName: "InputNumber",
   propTypes: {
-    answerType: React$9.PropTypes.oneOf(Object.keys(answerTypes)),
-    currentValue: React$9.PropTypes.string,
+    answerType: PropTypes.oneOf(Object.keys(answerTypes)),
+    currentValue: PropTypes.string,
     keypadElement: keypadElementPropType,
-    reviewModeRubric: React$9.PropTypes.object,
-    widgetId: React$9.PropTypes.string.isRequired,
+    reviewModeRubric: PropTypes.object,
+    widgetId: PropTypes.string.isRequired,
     linterContext: linterContextProps
   },
   getDefaultProps: function getDefaultProps() {
@@ -60355,18 +60331,18 @@ var React$5 = _react__default["default"];
  * - Clicking with mac screenreader: handleClick, handleChange
  */
 
-var ToggleableRadioButton$1 = React$5.createClass({
+var ToggleableRadioButton$1 = createReactClass({
   displayName: "ToggleableRadioButton",
   propTypes: {
     // Whether the radio button should be checked or unchecked (this is a
     // controlled component).
-    checked: React$5.PropTypes.bool.isRequired,
+    checked: PropTypes.bool.isRequired,
     // A ref function to attach to the <input> element.
-    inputRef: React$5.PropTypes.func,
+    inputRef: PropTypes.func,
     // A function that will be called whenever the radio button is checked
     // or unchecked. It's possible for this to be called twice for a single
     // checking or unchecking.
-    onChecked: React$5.PropTypes.func.isRequired
+    onChecked: PropTypes.func.isRequired
   },
   handleClick: function handleClick(event) {
     this.props.onChecked(!this.props.checked); // NOTE(johnsullivan): Preventing default would make sense to do here
@@ -60438,51 +60414,51 @@ var focusedStyleMixin = {
 };
 var intermediateCheckboxPadding = "16px 16px";
 var intermediateCheckboxPaddingPhone = "12px 16px";
-var Choice$1 = React$4.createClass({
+var Choice$1 = createReactClass({
   displayName: "Choice",
   propTypes: {
     // TODO(kevinb) use Options.propTypes from perseus-api.jsx
     // This change will also require make sure that item-renderer.jsx and
     // server-item-renderer.jsx have appropriate defaults for apiOptions
     // because many of the properties on Options.propTypes are required.
-    apiOptions: React$4.PropTypes.shape({
-      satStyling: React$4.PropTypes.bool,
-      isMobile: React$4.PropTypes.bool,
-      styling: React$4.PropTypes.shape({
-        radioStyleVersion: React$4.PropTypes.oneOf(["intermediate", "final"]),
-        primaryProductColor: React$4.PropTypes.string
+    apiOptions: PropTypes.shape({
+      satStyling: PropTypes.bool,
+      isMobile: PropTypes.bool,
+      styling: PropTypes.shape({
+        radioStyleVersion: PropTypes.oneOf(["intermediate", "final"]),
+        primaryProductColor: PropTypes.string
       }),
-      readOnly: React$4.PropTypes.bool
+      readOnly: PropTypes.bool
     }),
-    checked: React$4.PropTypes.bool,
-    className: React$4.PropTypes.string,
-    rationale: React$4.PropTypes.node,
-    content: React$4.PropTypes.node,
-    correct: React$4.PropTypes.bool,
-    deselectEnabled: React$4.PropTypes.bool,
-    disabled: React$4.PropTypes.bool,
-    editMode: React$4.PropTypes.bool,
-    groupName: React$4.PropTypes.string,
-    isLastChoice: React$4.PropTypes.bool,
+    checked: PropTypes.bool,
+    className: PropTypes.string,
+    rationale: PropTypes.node,
+    content: PropTypes.node,
+    correct: PropTypes.bool,
+    deselectEnabled: PropTypes.bool,
+    disabled: PropTypes.bool,
+    editMode: PropTypes.bool,
+    groupName: PropTypes.string,
+    isLastChoice: PropTypes.bool,
     // Needed for border styling
     // This indicates the position of the choice relative to others
     // (so that we can display a nice little (A), (B), etc. next to it)
     // Also used to generate an id for each input.
-    pos: React$4.PropTypes.number,
-    reviewMode: React$4.PropTypes.bool,
-    showRationale: React$4.PropTypes.bool,
-    showCorrectness: React$4.PropTypes.bool,
-    type: React$4.PropTypes.string,
+    pos: PropTypes.number,
+    reviewMode: PropTypes.bool,
+    showRationale: PropTypes.bool,
+    showCorrectness: PropTypes.bool,
+    type: PropTypes.string,
     // Indicates whether the user has "crossed out" this choice, meaning
     // that they don't think it's correct. This value does not affect
     // scoring or other behavior; it's just a note for the user's
     // reference.
-    crossedOut: React$4.PropTypes.bool,
+    crossedOut: PropTypes.bool,
     // A callback indicating that this choice has changed. Its argument is
     // an object with two keys: `checked` and `crossedOut`. Each contains a
     // boolean value specifying the new checked and crossed-out value of
     // this choice.
-    onChange: React$4.PropTypes.func
+    onChange: PropTypes.func
   },
   statics: {
     styles: aphrodite.StyleSheet.create({
@@ -60900,12 +60876,12 @@ var sharedStyles = _stylesSharedJs;
 var mediaQueries = _stylesMediaQueriesJs;
 var captureScratchpadTouchStart = Util$q.captureScratchpadTouchStart;
 var Choice = _choiceJsx;
-var ChoiceNoneAbove = React$3.createClass({
+var ChoiceNoneAbove = createReactClass({
   displayName: "ChoiceNoneAbove",
   propTypes: {
-    className: React$3.PropTypes.string,
-    content: React$3.PropTypes.node,
-    showContent: React$3.PropTypes.bool
+    className: PropTypes.string,
+    content: PropTypes.node,
+    showContent: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -60933,50 +60909,50 @@ var ChoiceNoneAbove = React$3.createClass({
     return /*#__PURE__*/React$3.createElement(Choice, choiceProps);
   }
 });
-var ChoicesType = React$3.PropTypes.arrayOf(React$3.PropTypes.shape({
+var ChoicesType = PropTypes.arrayOf(PropTypes.shape({
   // Indicates whether this choice is checked.
-  checked: React$3.PropTypes.bool,
+  checked: PropTypes.bool,
   // Indicates whether the user has "crossed out" this choice, meaning
   // that they don't think it's correct. This value does not affect
   // scoring or other behavior; it's just a note for the user's
   // reference.
-  crossedOut: React$3.PropTypes.bool,
-  content: React$3.PropTypes.node,
-  rationale: React$3.PropTypes.node,
-  hasRationale: React$3.PropTypes.bool,
-  showRationale: React$3.PropTypes.bool,
-  showCorrectness: React$3.PropTypes.bool,
-  correct: React$3.PropTypes.bool,
-  originalIndex: React$3.PropTypes.number,
-  isNoneOfTheAbove: React$3.PropTypes.bool
+  crossedOut: PropTypes.bool,
+  content: PropTypes.node,
+  rationale: PropTypes.node,
+  hasRationale: PropTypes.bool,
+  showRationale: PropTypes.bool,
+  showCorrectness: PropTypes.bool,
+  correct: PropTypes.bool,
+  originalIndex: PropTypes.number,
+  isNoneOfTheAbove: PropTypes.bool
 }));
 var radioBorderColor = radioBorderColor$1;
-var BaseRadio$2 = React$3.createClass({
+var BaseRadio$2 = createReactClass({
   displayName: "BaseRadio",
   propTypes: {
-    apiOptions: React$3.PropTypes.shape({
-      readOnly: React$3.PropTypes.bool,
-      satStyling: React$3.PropTypes.bool,
-      isMobile: React$3.PropTypes.bool,
-      styling: React$3.PropTypes.shape({
-        radioStyleVersion: React$3.PropTypes.oneOf(["intermediate", "final"])
+    apiOptions: PropTypes.shape({
+      readOnly: PropTypes.bool,
+      satStyling: PropTypes.bool,
+      isMobile: PropTypes.bool,
+      styling: PropTypes.shape({
+        radioStyleVersion: PropTypes.oneOf(["intermediate", "final"])
       })
     }),
     choices: ChoicesType,
-    deselectEnabled: React$3.PropTypes.bool,
-    editMode: React$3.PropTypes.bool,
-    labelWrap: React$3.PropTypes.bool,
-    countChoices: React$3.PropTypes.bool,
-    numCorrect: React$3.PropTypes.number,
-    multipleSelect: React$3.PropTypes.bool,
-    reviewModeRubric: React$3.PropTypes.shape({
+    deselectEnabled: PropTypes.bool,
+    editMode: PropTypes.bool,
+    labelWrap: PropTypes.bool,
+    countChoices: PropTypes.bool,
+    numCorrect: PropTypes.number,
+    multipleSelect: PropTypes.bool,
+    reviewModeRubric: PropTypes.shape({
       choices: ChoicesType
     }),
     // A callback indicating that this choice has changed. Its argument is
     // an object with two keys: `checked` and `crossedOut`. Each contains
     // an array of boolean values, specifying the new checked and
     // crossed-out value of each choice.
-    onChange: React$3.PropTypes.func
+    onChange: PropTypes.func
   },
   statics: {
     styles: aphrodite.StyleSheet.create({
@@ -61326,15 +61302,15 @@ var Changeable = _mixinsChangeableJsx;
 var Editor = _editorJsx;
 var InlineIcon = _componentsInlineIconJsx;
 var PropCheckBox = _componentsPropCheckBoxJsx;
-var ChoiceEditor = React$2.createClass({
+var ChoiceEditor = createReactClass({
   displayName: "ChoiceEditor",
   propTypes: {
     apiOptions: ApiOptions.propTypes,
-    choice: React$2.PropTypes.object,
-    showDelete: React$2.PropTypes.bool,
-    onClueChange: React$2.PropTypes.func,
-    onContentChange: React$2.PropTypes.func,
-    onDelete: React$2.PropTypes.func
+    choice: PropTypes.object,
+    showDelete: PropTypes.bool,
+    onClueChange: PropTypes.func,
+    onContentChange: PropTypes.func,
+    onDelete: PropTypes.func
   },
   render: function render() {
     var checkedClass = this.props.choice.correct ? "correct" : "incorrect";
@@ -61376,25 +61352,25 @@ var ChoiceEditor = React$2.createClass({
     }, clueEditor), this.props.showDelete && deleteLink);
   }
 });
-var RadioEditor = React$2.createClass({
+var RadioEditor = createReactClass({
   displayName: "RadioEditor",
   propTypes: _objectSpread2(_objectSpread2({}, Changeable.propTypes), {}, {
     apiOptions: ApiOptions.propTypes,
-    choices: React$2.PropTypes.arrayOf(React$2.PropTypes.shape({
-      content: React$2.PropTypes.string,
-      clue: React$2.PropTypes.string,
-      correct: React$2.PropTypes.bool
+    choices: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string,
+      clue: PropTypes.string,
+      correct: PropTypes.bool
     })),
-    displayCount: React$2.PropTypes.number,
-    randomize: React$2.PropTypes.bool,
-    hasNoneOfTheAbove: React$2.PropTypes.bool,
-    multipleSelect: React$2.PropTypes.bool,
-    countChoices: React$2.PropTypes.bool,
+    displayCount: PropTypes.number,
+    randomize: PropTypes.bool,
+    hasNoneOfTheAbove: PropTypes.bool,
+    multipleSelect: PropTypes.bool,
+    countChoices: PropTypes.bool,
     // TODO(kevinb): DEPRECATED: This is be used to force deselectEnabled
     // behavior on mobile but not on desktop.  When enabled, the user can
     // deselect a radio input by tapping on it again.
-    deselectEnabled: React$2.PropTypes.bool,
-    static: React$2.PropTypes.bool
+    deselectEnabled: PropTypes.bool,
+    static: PropTypes.bool
   }),
   getDefaultProps: function getDefaultProps() {
     return {
@@ -61619,47 +61595,47 @@ var Renderer$1 = _rendererJsx;
 var PassageRef = _passageRefJsx;
 var Util = Util$q;
 var BaseRadio = _baseRadioJsx;
-var Radio$1 = React$1.createClass({
+var Radio$1 = createReactClass({
   displayName: "Radio",
   propTypes: {
     apiOptions: BaseRadio.propTypes.apiOptions,
-    choices: React$1.PropTypes.arrayOf(React$1.PropTypes.shape({
-      content: React$1.PropTypes.string.isRequired,
+    choices: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string.isRequired,
       // Clues are called "rationales" in most other places but are
       // left as "clue"s here to preserve legacy widget data.
-      clue: React$1.PropTypes.string,
-      correct: React$1.PropTypes.bool,
-      isNoneOfTheAbove: React$1.PropTypes.bool,
-      originalIndex: React$1.PropTypes.number.isRequired
+      clue: PropTypes.string,
+      correct: PropTypes.bool,
+      isNoneOfTheAbove: PropTypes.bool,
+      originalIndex: PropTypes.number.isRequired
     }).isRequired).isRequired,
-    deselectEnabled: React$1.PropTypes.bool,
-    displayCount: React$1.PropTypes.any,
-    findWidgets: React$1.PropTypes.func,
-    multipleSelect: React$1.PropTypes.bool,
-    countChoices: React$1.PropTypes.bool,
-    numCorrect: React$1.PropTypes.number,
-    onChange: React$1.PropTypes.func.isRequired,
-    questionCompleted: React$1.PropTypes.bool,
+    deselectEnabled: PropTypes.bool,
+    displayCount: PropTypes.any,
+    findWidgets: PropTypes.func,
+    multipleSelect: PropTypes.bool,
+    countChoices: PropTypes.bool,
+    numCorrect: PropTypes.number,
+    onChange: PropTypes.func.isRequired,
+    questionCompleted: PropTypes.bool,
     reviewModeRubric: BaseRadio.propTypes.reviewModeRubric,
-    trackInteraction: React$1.PropTypes.func.isRequired,
+    trackInteraction: PropTypes.func.isRequired,
     // values is the legacy choiceState data format
-    values: React$1.PropTypes.arrayOf(React$1.PropTypes.bool),
-    choiceStates: React$1.PropTypes.arrayOf(React$1.PropTypes.shape({
+    values: PropTypes.arrayOf(PropTypes.bool),
+    choiceStates: PropTypes.arrayOf(PropTypes.shape({
       // Indicates whether this choice is selected. (Inside
       // BaseRadio, this is called `checked`.)
-      selected: React$1.PropTypes.bool,
+      selected: PropTypes.bool,
       // Indicates whether the user has "crossed out" this choice,
       // meaning that they don't think it's correct. This value does
       // not affect scoring or other behavior; it's just a note for
       // the user's reference.
-      crossedOut: React$1.PropTypes.bool,
-      highlighted: React$1.PropTypes.bool,
-      rationaleShown: React$1.PropTypes.bool,
-      correctnessShown: React$1.PropTypes.bool,
-      readOnly: React$1.PropTypes.bool
+      crossedOut: PropTypes.bool,
+      highlighted: PropTypes.bool,
+      rationaleShown: PropTypes.bool,
+      correctnessShown: PropTypes.bool,
+      readOnly: PropTypes.bool
     }).isRequired),
     linterContext: linterContextProps,
-    static: React$1.PropTypes.bool
+    static: PropTypes.bool
   },
   getDefaultProps: function getDefaultProps() {
     return {
