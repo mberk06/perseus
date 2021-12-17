@@ -261,7 +261,7 @@ _.extend(OldUnitInput, {
             kasCorrect = KAS.compare(guessUnit, answerUnit).equal;
         } else {
             // Are any of the accepted units the same as what the user entered?
-            kasCorrect = _(rubric.acceptingUnits).any(unit => {
+            kasCorrect = rubric.acceptingUnits.some(unit => {
                 var thisAnswerUnit = primUnits(
                     KAS.unitParse(unit).unit.simplify()
                 );

@@ -142,7 +142,7 @@ const MathInput = React.createClass({
 
     insert: function(value) {
         const input = this.mathField();
-        if (_(value).isFunction()) {
+        if (_.isFunction(value)) {
             value(input);
         } else if (value[0] === "\\") {
             input.cmd(value).focus();

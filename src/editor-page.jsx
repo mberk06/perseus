@@ -142,7 +142,7 @@ var EditorPage = React.createClass({
 
         this.refs.itemEditor.triggerPreviewUpdate({
             type: "question",
-            data: _({
+            data: Object.assign({
                 item: this.serialize(),
                 apiOptions: deviceBasedApiOptions,
                 initialHintsVisible: 0,
@@ -154,8 +154,8 @@ var EditorPage = React.createClass({
                 },
                 reviewMode: true,
                 legacyPerseusLint: this.refs.itemEditor.getSaveWarnings(),
-            }).extend(
-                _(this.props).pick(
+            },
+                _.pick(this.props,
                     "workAreaSelector",
                     "solutionAreaSelector",
                     "hintsAreaSelector",
@@ -170,8 +170,8 @@ var EditorPage = React.createClass({
     },
 
     handleChange: function(toChange, cb, silent) {
-        var newProps = _(this.props).pick("question", "hints", "answerArea");
-        _(newProps).extend(toChange);
+        var newProps = _.pick(this.props, "question", "hints", "answerArea");
+        _.extend(newProps, toChange);
         this.props.onChange(newProps, cb, silent);
     },
 

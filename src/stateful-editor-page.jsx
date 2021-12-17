@@ -39,7 +39,7 @@ var StatefulEditorPage = React.createClass({
     },
 
     getInitialState: function() {
-        return _({}).extend(_.omit(this.props, "componentClass"), {
+        return _.extend({}, _.omit(this.props, "componentClass"), {
             onChange: this.handleChange,
             ref: "editor",
         });
@@ -51,7 +51,7 @@ var StatefulEditorPage = React.createClass({
     // (This component is currently re-rendered by the "Add image" button.)
     componentWillReceiveProps: function(nextProps) {
         this.setState(
-            _(nextProps).pick(
+            _.pick(nextProps,
                 "apiOptions",
                 "imageUploader",
                 "developerMode",

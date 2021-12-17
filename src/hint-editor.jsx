@@ -314,7 +314,7 @@ var CombinedHintsEditor = React.createClass({
 
     handleHintChange: function(i, newProps, cb, silent) {
         // TODO(joel) - lens
-        var hints = _(this.props.hints).clone();
+        var hints = _.clone(this.props.hints);
         hints[i] = _.extend(
             {},
             this.serializeHint(i, {keepDeletedWidgets: true}),
@@ -325,13 +325,13 @@ var CombinedHintsEditor = React.createClass({
     },
 
     handleHintRemove: function(i) {
-        var hints = _(this.props.hints).clone();
+        var hints = _.clone(this.props.hints);
         hints.splice(i, 1);
         this.props.onChange({hints: hints});
     },
 
     handleHintMove: function(i, dir) {
-        var hints = _(this.props.hints).clone();
+        var hints = _.clone(this.props.hints);
         var hint = hints.splice(i, 1)[0];
         hints.splice(i + dir, 0, hint);
         this.props.onChange({hints: hints}, () => {
@@ -340,7 +340,7 @@ var CombinedHintsEditor = React.createClass({
     },
 
     addHint: function() {
-        var hints = _(this.props.hints).clone().concat([{content: ""}]);
+        var hints = _.clone(this.props.hints).concat([{content: ""}]);
         this.props.onChange({hints: hints}, () => {
             var i = hints.length - 1;
             this.refs["hintEditor" + i].focus();

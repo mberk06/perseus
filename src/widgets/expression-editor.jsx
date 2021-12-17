@@ -95,7 +95,7 @@ var ExpressionEditor = React.createClass({
         if (this.props.answerForms.length === 0) {
             isTex = true;
         } else {
-            isTex = _(this.props.answerForms).any(form => {
+            isTex = this.props.answerForms.some(form => {
                 var {value} = form;
                 // only TeX has backslashes and curly braces
                 return (
@@ -154,7 +154,7 @@ var ExpressionEditor = React.createClass({
         );
 
         // checkboxes to choose which sets of input buttons are shown
-        var buttonSetChoices = _(TexButtons.buttonSets).map((set, name) => {
+        var buttonSetChoices = TexButtons.buttonSets.map((set, name) => {
             // The first one gets special cased to always be checked, disabled,
             // and float left.
             var isFirst = name === "basic";
@@ -275,12 +275,12 @@ var ExpressionEditor = React.createClass({
         var serializables = ["answerForms", "buttonSets", "functions", "times"];
 
         var answerForms = this.props.answerForms.map(form => {
-            return _(form).pick(formSerializables);
+            return _.pick(form, formSerializables);
         });
 
         return lens(this.props)
             .set(["answerForms"], answerForms)
-            .mod([], props => _(props).pick(serializables))
+            .mod([], props => _.pick(props, serializables))
             .freeze();
     },
 
@@ -290,14 +290,14 @@ var ExpressionEditor = React.createClass({
         if (this.props.answerForms.length === 0) {
             issues.push("No answers specified");
         } else {
-            var hasCorrect = !!_(this.props.answerForms).find(form => {
+            var hasCorrect = !!this.props.answerForms.find(form => {
                 return form.considered === "correct";
             });
             if (!hasCorrect) {
                 issues.push("No correct answer specified");
             }
 
-            _(this.props.answerForms).each((form, ix) => {
+            this.props.answerForms.forEach((form, ix) => {
                 if (this.props.value === "") {
                     issues.push(`Answer ${ix + 1} is empty`);
                 } else {
@@ -363,8 +363,8 @@ var ExpressionEditor = React.createClass({
     },
 
     handleReorder: function(components) {
-        var answerForms = _(components).map(component => {
-            var form = _(component.props).pick(
+        var answerForms = components.map(component => {
+            var form = _.pick(component.props,
                 "considered",
                 "form",
                 "simplify",
@@ -379,13 +379,13 @@ var ExpressionEditor = React.createClass({
 
     // called when the selected buttonset changes
     handleButtonSet: function(changingName) {
-        var buttonSetNames = _(TexButtons.buttonSets).keys();
+        var buttonSetNames = Object.keys(TexButtons.buttonSets);
 
         // Filter to preserve order - using .union and .difference would always
         // move the last added button set to the end.
-        var buttonSets = _(buttonSetNames).filter(set => {
+        var buttonSets = buttonSetNames.filter(set => {
             return (
-                _(this.props.buttonSets).contains(set) !==
+                _.contains(this.props.buttonSets, set) !==
                 (set === changingName)
             );
         });
@@ -399,7 +399,7 @@ var ExpressionEditor = React.createClass({
         // If someone can think of a more elegant formulation of this (there
         // must be one!) feel free to change it.
         var keep, remove;
-        if (_(this.props.buttonSets).contains("basic+div")) {
+        if (_.contains(this.props.buttonSets, "basic+div")) {
             keep = "basic";
             remove = "basic+div";
         } else {
@@ -407,8 +407,7 @@ var ExpressionEditor = React.createClass({
             remove = "basic";
         }
 
-        var buttonSets = _(this.props.buttonSets)
-            .reject(set => set === remove)
+        var buttonSets = _.reject(this.props.buttonSets, set => set === remove)
             .concat(keep);
 
         this.change("buttonSets", buttonSets);
@@ -429,7 +428,7 @@ var ExpressionEditor = React.createClass({
 
 // Find the next element in arr after val, wrapping around to the first.
 var findNextIn = function(arr, val) {
-    var ix = _(arr).indexOf(val);
+    var ix = arr.indexOf(val);
     ix = (ix + 1) % arr.length;
     return arr[ix];
 };

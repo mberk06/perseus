@@ -2264,8 +2264,7 @@ _.extend(Mul.prototype, {
     },
 
     getUnits: function() {
-        var tmUnits = _(this.terms)
-            .chain()
+        var tmUnits = _.chain(this.terms)
             .map(function(term) {
                 return term.getUnits();
             })
@@ -4656,12 +4655,12 @@ Unit.prototype = new Symbol();
 // "g" -> Unit("g")
 // "kg" -> 1000 * Unit("g")
 var unprefixify = function(symbol) {
-    if (_(baseUnits).has(symbol) || _(derivedUnits).has(symbol)) {
+    if (_.has(baseUnits, symbol) || _.has(derivedUnits, symbol)) {
         return new Unit(symbol);
     }
 
     // check for prefix
-    var prefix = _(_(siPrefixes).keys()).find(function(testPrefix) {
+    var prefix = Object.keys(siPrefixes).find(function(testPrefix) {
         return new RegExp("^" + testPrefix).test(symbol);
     });
 
@@ -4674,7 +4673,7 @@ var unprefixify = function(symbol) {
         //
         // Otherwise, we're trying to parse a unit label which is not
         // allowed (mwk, mBTU, etc).
-        if (_(baseUnits).has(base) ||
+        if (_.has(baseUnits, base) ||
             (derivedUnits[base] &&
              derivedUnits[base].prefixes === hasPrefixes)) {
 
@@ -4708,13 +4707,13 @@ KAS.unitParse = function(input) {
 
         var unitArray = [];
 
-        _(parseResult.unit.num).each(function(unitSpec) {
+        parseResult.unit.num.forEach(function(unitSpec) {
             unitArray.push(
                 new Pow(unprefixify(unitSpec.name), new Int(unitSpec.pow))
             );
         });
 
-        _(parseResult.unit.denom).each(function(unitSpec) {
+        parseResult.unit.denom.forEach(function(unitSpec) {
             unitArray.push(
                 new Pow(unprefixify(unitSpec.name), new Int(-1 * unitSpec.pow))
             );
@@ -4775,9 +4774,9 @@ _.extend(Unit.prototype, {
 
     // Simplify units by replacing prefixes with multiplication
     collect: function(options) {
-        if (_(baseUnits).has(this.symbol)) {
+        if (_.has(baseUnits, this.symbol)) {
             return this;
-        } else if (_(derivedUnits).has(this.symbol)) {
+        } else if (_.has(derivedUnits, this.symbol)) {
             return derivedUnits[this.symbol].conversion;
         } else {
             throw new Error("could not understand unit: " + this.symbol);

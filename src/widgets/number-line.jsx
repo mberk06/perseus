@@ -438,7 +438,7 @@ var NumberLine = React.createClass({
     },
 
     _renderNumberLinePoint: function(props) {
-        var isOpen = _(["lt", "gt"]).contains(props.rel);
+        var isOpen = ["lt", "gt"].includes(props.rel);
 
         // In static mode the point's fill and stroke is blue to signify that
         // it can't be interacted with.
@@ -508,7 +508,7 @@ var NumberLine = React.createClass({
     },
 
     _getInequalityEndpoint: function(props) {
-        var isGreater = _(["ge", "gt"]).contains(props.rel);
+        var isGreater = ["ge", "gt"].includes(props.rel);
         var widthInPixels = 400;
         var range = props.range;
         var scale = (range[1] - range[0]) / widthInPixels;
@@ -618,7 +618,7 @@ var NumberLine = React.createClass({
                     type="button"
                     className="simple-button"
                     value={
-                        _(["le", "ge"]).contains(this.props.rel)
+                        ["le", "ge"].includes(this.props.rel)
                             ? i18n._("Make circle open")
                             : i18n._("Make circle filled")
                     }

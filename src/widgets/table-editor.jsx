@@ -41,7 +41,7 @@ const TableEditor = React.createClass({
     getDefaultProps: function() {
         var defaultRows = 4;
         var defaultColumns = 1;
-        var blankAnswers = _(defaultRows).times(function() {
+        var blankAnswers = _.times(defaultRows, function() {
             return Util.stringArrayOfSize(defaultColumns);
         });
         return {
@@ -134,7 +134,7 @@ const TableEditor = React.createClass({
         if (rows <= oldRows) {
             answers.length = rows;
         } else {
-            _(rows - oldRows).times(function() {
+            _.times(rows - oldRows, function() {
                 answers.push(Util.stringArrayOfSize(oldColumns));
             });
         }
@@ -144,7 +144,7 @@ const TableEditor = React.createClass({
             if (columns <= oldColumns) {
                 array.length = columns;
             } else {
-                _(columns - oldColumns).times(function() {
+                _.times(columns - oldColumns, function() {
                     array.push("");
                 });
             }

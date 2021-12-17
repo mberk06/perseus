@@ -111,7 +111,7 @@ const TextDiff = React.createClass({
         const renderedLines = _.map(lines, line => {
             const contents = {};
 
-            contents.before = _(line).map(function(entry, i) {
+            contents.before = _.map(line, function(entry, i) {
                 return <span
                     key={i}
                     className={classFor(entry, "not-present", "removed dark")}
@@ -120,7 +120,7 @@ const TextDiff = React.createClass({
                 </span>;
             });
 
-            contents.after = _(line).map(function(entry, i) {
+            contents.after = _.map(line, function(entry, i) {
                 return <span
                     key={i}
                     className={classFor(entry, "added dark", "not-present")}

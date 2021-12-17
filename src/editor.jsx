@@ -540,8 +540,7 @@ var Editor = React.createClass({
          * extended to recognize this sentinel and highlight it like for
          * widgets.
          */
-        _(files)
-            .chain()
+        _.chain(files)
             .map(function(file) {
                 if (!file.type.match("image.*")) {
                     return null;
@@ -888,8 +887,7 @@ var Editor = React.createClass({
 
     getSaveWarnings: function() {
         var widgetIds = _.intersection(this.widgetIds, _.keys(this.refs));
-        var warnings = _(widgetIds)
-            .chain()
+        var warnings = _.chain(widgetIds)
             .map(id => {
                 var issuesFunc = this.refs[id].getSaveWarnings;
                 var issues = issuesFunc ? issuesFunc() : [];

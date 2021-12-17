@@ -35,9 +35,9 @@ var getMatrixSize = function(matrix) {
 
     // We need to find the widest row and tallest column to get the correct
     // matrix size.
-    _(matrix).each((matrixRow, row) => {
+    _.each(matrix, (matrixRow, row) => {
         var rowWidth = 0;
-        _(matrixRow).each((matrixCol, col) => {
+        _.each(matrixRow, (matrixCol, col) => {
             if (matrixCol != null && matrixCol.toString().length) {
                 rowWidth = col + 1;
             }
@@ -140,8 +140,8 @@ var MatrixEditor = React.createClass({
                 Math.round(Math.min(Math.max(range[0], 1), MAX_BOARD_SIZE)),
                 Math.round(Math.min(Math.max(range[1], 1), MAX_BOARD_SIZE)),
             ];
-            var answers = _(Math.min(range[0], matrixSize[0])).times(row => {
-                return _(Math.min(range[1], matrixSize[1])).times(col => {
+            var answers = _.times(Math.min(range[0], matrixSize[0]), row => {
+                return _.times(Math.min(range[1], matrixSize[1]), col => {
                     return this.props.answers[row][col];
                 });
             });

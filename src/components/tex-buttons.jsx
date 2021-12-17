@@ -187,9 +187,9 @@ const TexButtons = React.createClass({
         const sortedButtonSets = _.sortBy(this.props.sets, setName => _.keys(buttonSets).indexOf(setName)
         );
 
-        const buttons = _(sortedButtonSets).map(setName => buttonSets[setName]);
+        const buttons = sortedButtonSets.map(setName => buttonSets[setName]);
 
-        const buttonRows = _(buttons).map(row => row.map(symbGen => {
+        const buttonRows = buttons.map(row => row.map(symbGen => {
             // create a (component, thing we should send to mathquill) pair
             const symbol = symbGen(this.props);
             return (
@@ -206,7 +206,7 @@ const TexButtons = React.createClass({
         })
         );
 
-        const buttonPopup = _(buttonRows).map((row, i) => {
+        const buttonPopup = buttonRows.map((row, i) => {
             return (
                 <div
                     className="clearfix tex-button-row"

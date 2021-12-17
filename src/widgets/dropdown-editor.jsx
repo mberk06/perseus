@@ -179,7 +179,7 @@ var DropdownEditor = React.createClass({
 
     removeChoice: function(choiceIndex, e) {
         e.preventDefault();
-        var choices = _(this.props.choices).clone();
+        var choices = _.clone(this.props.choices);
         choices.splice(choiceIndex, 1);
         this.props.onChange({
             choices: choices,

@@ -81,7 +81,7 @@ var Table = React.createClass({
     getDefaultProps: function() {
         var defaultRows = 4;
         var defaultColumns = 1;
-        var blankAnswers = _(defaultRows).times(function() {
+        var blankAnswers = _.times(defaultRows, function() {
             return Util.stringArrayOfSize(defaultColumns);
         });
         return {
@@ -159,10 +159,10 @@ var Table = React.createClass({
                     </tr>
                 </thead>
                 <tbody>
-                    {_(rows).times(r => {
+                    {_.times(rows, r => {
                         return (
                             <tr key={r}>
-                                {_(columns).times(c => {
+                                {_.times(columns, c => {
                                     return (
                                         <td key={c}>
                                             <InputComponent
@@ -281,8 +281,8 @@ var Table = React.createClass({
         var rows = this._getRows();
         var columns = this._getColumns();
         var inputPaths = [];
-        _(rows).times(r => {
-            _(columns).times(c => {
+        _.times(rows, r => {
+            _.times(columns, c => {
                 var inputPath = getInputPath(r, c);
                 inputPaths.push(inputPath);
             });
@@ -376,7 +376,7 @@ var propTransform = editorProps => {
     // Remove answers before passing to widget
     var rows = editorProps.answers.length;
     var columns = editorProps.answers[0].length;
-    var blankAnswers = _(rows).times(function() {
+    var blankAnswers = _.times(rows, function() {
         return Util.stringArrayOfSize(columns);
     });
     return _.extend({}, editorProps, {

@@ -140,7 +140,7 @@ const DiffEntry = React.createClass({
         if (this.state.expanded) {
             shownChildren = entry.children;
         } else {
-            shownChildren = _(entry.children).select(function(child) {
+            shownChildren = _.select(entry.children, function(child) {
                 return child.status !== UNCHANGED;
             });
         }

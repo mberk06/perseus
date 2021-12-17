@@ -187,8 +187,7 @@ _.extend(Measurer, {
 
 var propUpgrades = {
     1: v0props => {
-        var v1props = _(v0props)
-            .chain()
+        var v1props = _.chain(v0props)
             .omit("imageUrl", "imageTop", "imageLeft")
             .extend({
                 image: {

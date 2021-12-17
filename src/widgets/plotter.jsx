@@ -925,7 +925,7 @@ var Plotter = React.createClass({
         pics[i] = [];
         dotTicks[i] = [];
         var n = Math.round(c.dimY / c.scaleY) + 1;
-        _(n).times(function(j) {
+        _.times(n, function(j) {
             j -= 1;
             var midY = (j + 0.5) * c.scaleY;
             var leftX = x - c.picBoxWidth / 2;

@@ -100,9 +100,9 @@ var getMatrixSize = function(matrix) {
 
     // We need to find the widest row and tallest column to get the correct
     // matrix size.
-    _(matrix).each((matrixRow, row) => {
+    _.each(matrix, (matrixRow, row) => {
         var rowWidth = 0;
-        _(matrixRow).each((matrixCol, col) => {
+        _.each(matrixRow, (matrixCol, col) => {
             if (matrixCol != null && matrixCol.toString().length) {
                 rowWidth = col + 1;
             }
@@ -219,11 +219,11 @@ var Matrix = React.createClass({
                             left: bracketOffset,
                         }}
                     />
-                    {_(maxRows).times(row => {
+                    {_.times(maxRows, row => {
                         var rowVals = this.props.answers[row];
                         return (
                             <div className="matrix-row" key={row}>
-                                {_(maxCols).times(col => {
+                                {_.times(maxCols, col => {
                                     var outside =
                                         row > highlightedRow ||
                                         col > highlightedCol;
@@ -365,8 +365,8 @@ var Matrix = React.createClass({
         var maxRows = this.props.matrixBoardSize[0];
         var maxCols = this.props.matrixBoardSize[1];
 
-        _(maxRows).times(row => {
-            _(maxCols).times(col => {
+        _.times(maxRows, row => {
+            _.times(maxCols, col => {
                 var inputPath = getInputPath(row, col);
                 inputPaths.push(inputPath);
             });
@@ -516,8 +516,8 @@ _.extend(Matrix, {
         var message = null;
         var hasEmptyCell = false;
         var incorrect = false;
-        _(suppliedSize[0]).times(row => {
-            _(suppliedSize[1]).times(col => {
+        _.times(suppliedSize[0], row => {
+            _.times(suppliedSize[1], col => {
                 if (
                     supplied[row][col] == null ||
                     supplied[row][col].toString().length === 0
@@ -566,7 +566,7 @@ _.extend(Matrix, {
 
 var propTransform = editorProps => {
     // Remove answers before passing to widget
-    var blankAnswers = _(editorProps.matrixBoardSize[0]).times(function() {
+    var blankAnswers = _.times(editorProps.matrixBoardSize[0], function() {
         return stringArrayOfSize(editorProps.matrixBoardSize[1]);
     });
     editorProps = _.pick(editorProps, "matrixBoardSize", "prefix", "suffix");

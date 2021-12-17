@@ -224,7 +224,7 @@ const ImageEditor = React.createClass({
 
     removeLabel: function(labelIndex, e) {
         e.preventDefault();
-        var labels = _(this.props.labels).clone();
+        var labels = _.clone(this.props.labels);
         labels.splice(labelIndex, 1);
         this.props.onChange({labels: labels});
     },

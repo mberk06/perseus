@@ -395,7 +395,7 @@ _.extend(Expression, {
                 // don't want a solution to work if the student is using a
                 // different language but not in english.
                 KAS.parse(answer.value, rubric).expr,
-                _({}).extend(options, {
+                _.extend({}, options, {
                     simplify: answer.simplify,
                     form: answer.form,
                 })
@@ -406,7 +406,7 @@ _.extend(Expression, {
         var result;
         var matchingAnswer;
         var allEmpty = true;
-        var foundMatch = !!_(rubric.answerForms).find(answer => {
+        var foundMatch = !!rubric.answerForms.find(answer => {
             var validate = createValidator(answer);
 
             // save these because they'll be needed if this answer matches
