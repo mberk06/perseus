@@ -1,4 +1,4 @@
-var clone = require("./util.js").clone;
+import { clone } from "./util.js";
 
 var get = function(obj, monocle) {
     return obj[monocle];

@@ -3,14 +3,11 @@
  * lens constructor thaws, freeze delegates to type's freeze
  */
 
-var util = require("./util.js");
-    var clone = util.clone;
-    var isObject = util.isObject;
-    var merge = util.merge;
+import { clone, isObject, merge } from './util.js'
 
-var arr = require('./arr.js');
-var obj = require('./obj.js');
-var str = require('./str.js');
+import arr from './arr.js';
+import obj from './obj.js';
+import str from './str.js';
 
 // equivalents, without requiring it
 // find the implementation to use for a given object

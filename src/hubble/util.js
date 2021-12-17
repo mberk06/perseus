@@ -25,4 +25,5 @@ var clone = function(obj) {
     return Array.isArray(obj) ? obj.slice() : merge(obj);
 };
 
-export default { isObject: isObject, merge: merge, clone: clone };
+export { isObject, merge, clone };
+export default { isObject, merge, clone };
