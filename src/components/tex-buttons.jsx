@@ -171,7 +171,7 @@ const buttonSets = {
 };
 
 const buttonSetsType = React.PropTypes.arrayOf(
-    React.PropTypes.oneOf(_(buttonSets).keys())
+    React.PropTypes.oneOf(Object.keys(buttonSets))
 );
 
 const TexButtons = React.createClass({

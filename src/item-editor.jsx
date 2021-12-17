@@ -46,9 +46,9 @@ var ItemEditor = React.createClass({
 
     // Notify the parent that the question or answer area has been updated.
     updateProps: function(newProps, cb, silent) {
-        var props = _(this.props).pick("question", "answerArea");
+        var props = _.pick(this.props, "question", "answerArea");
 
-        this.props.onChange(_(props).extend(newProps), cb, silent);
+      this.props.onChange(Object.assign({}, props, newProps), cb, silent);
     },
 
     render: function() {

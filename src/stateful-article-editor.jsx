@@ -24,7 +24,7 @@ const ArticleEditor = _articleEditorJsx;
 
 const StatefulArticleEditor = React.createClass({
     getInitialState: function() {
-        return _({}).extend(this.props, {
+        return Object.assign({}, this.props, {
             mode: "edit",
             onChange: this.handleChange,
             ref: "editor",
@@ -38,7 +38,7 @@ const StatefulArticleEditor = React.createClass({
     // (This component is currently re-rendered by the "Add image" button.)
     componentWillReceiveProps: function(nextProps) {
         // be careful not to overwrite our onChange and ref
-        this.setState(_(nextProps).omit("onChange", "ref"));
+        this.setState(_.omit(nextProps, "onChange", "ref"));
     },
 
     getSaveWarnings: function() {
