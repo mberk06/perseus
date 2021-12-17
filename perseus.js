@@ -12,7 +12,6 @@ var mathquill = require('mathquill');
 var katex$1 = require('katex');
 var _classnames = require('classnames');
 var _underscore = require('underscore');
-var _kmath = require('kmath');
 var _mathInput = require('@khanacademy/math-input');
 var aphrodite = require('aphrodite');
 var _reactComponentsTexJsx = require('react-components/tex.jsx');
@@ -23,7 +22,6 @@ var _reactComponentsButtonGroupJsx = require('react-components/button-group.jsx'
 var immutable = require('immutable');
 var draftJs = require('draft-js');
 var _reactComponentsDragTargetJsx = require('react-components/drag-target.jsx');
-var _reactAddonsCreateFragment = require('react-addons-create-fragment');
 var _reactComponentsMultiButtonGroupJsx = require('react-components/multi-button-group.jsx');
 var _reactComponentsTooltipJsx = require('react-components/tooltip.jsx');
 var _reactComponentsSortableJsx = require('react-components/sortable.jsx');
@@ -59,7 +57,6 @@ var mathquill__default = /*#__PURE__*/_interopDefaultLegacy(mathquill);
 var katex__default = /*#__PURE__*/_interopDefaultLegacy(katex$1);
 var _classnames__default = /*#__PURE__*/_interopDefaultLegacy(_classnames);
 var _underscore__default = /*#__PURE__*/_interopDefaultLegacy(_underscore);
-var _kmath__default = /*#__PURE__*/_interopDefaultLegacy(_kmath);
 var _mathInput__default = /*#__PURE__*/_interopDefaultLegacy(_mathInput);
 var _reactComponentsTexJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsTexJsx);
 var _simpleMarkdown__default = /*#__PURE__*/_interopDefaultLegacy(_simpleMarkdown);
@@ -67,13 +64,12 @@ var _reactComponentsBlurInputJsx__default = /*#__PURE__*/_interopDefaultLegacy(_
 var _reactComponentsInfoTipJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsInfoTipJsx);
 var _reactComponentsButtonGroupJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsButtonGroupJsx);
 var _reactComponentsDragTargetJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsDragTargetJsx);
-var _reactAddonsCreateFragment__default = /*#__PURE__*/_interopDefaultLegacy(_reactAddonsCreateFragment);
 var _reactComponentsMultiButtonGroupJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsMultiButtonGroupJsx);
 var _reactComponentsTooltipJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsTooltipJsx);
 var _reactComponentsSortableJsx__default = /*#__PURE__*/_interopDefaultLegacy(_reactComponentsSortableJsx);
 
 // Perseus running in local mode depends on $_, which is defined here
-var createFragment = function createFragment(obj) {
+var createFragment$1 = function createFragment(obj) {
   return React.createElement(React.Fragment, null, Object.keys(obj).map(key => React.createElement(React.Fragment, {
     key: key
   }, obj[key])));
@@ -251,7 +247,7 @@ var interpolateStringToFragment = function interpolateStringToFragment(str, opti
     result["text_" + (i + 1)] = split[i + 1];
   }
 
-  return createFragment(result);
+  return createFragment$1(result);
 };
 /**
     * Simple i18n method with sprintf-like %(name)s replacement
@@ -261,7 +257,7 @@ var interpolateStringToFragment = function interpolateStringToFragment(str, opti
     */
 
 
-var _$1K = function _(str, options) {
+var _$1N = function _(str, options) {
   // Sometimes we're given an argument that's meant for ngettext().  This
   // happens if the same string is used in both i18n._() and i18n.ngettext()
   // (.g. a = i18n._(foo); b = i18n.ngettext("foo", "bar", count);
@@ -378,7 +374,7 @@ var ngettext = function ngettext(singular, plural, num, options) {
   options = options || {};
   options.num = options.num || num; // Then pass into i18n._ for the actual substitution
 
-  return _$1K(translation, options);
+  return _$1N(translation, options);
 };
 /*
     * Return the ngettext position that matches the given number and locale.
@@ -405,14 +401,14 @@ var ngetpos = function ngetpos(num, lang) {
     */
 
 
-var i18nDoNotTranslate = _$1K;
+var i18nDoNotTranslate = _$1N;
 // bootstrap-daterangepicker (live-editor also uses the global i18n
 // var, but defines its own version of it.)  We export the symbols
 // that they need.
 
 
 window.i18n = {
-  _: _$1K,
+  _: _$1N,
   ngettext: ngettext,
   i18nDoNotTranslate: i18nDoNotTranslate,
   // khan-exercises is the only client of ngetpos (which is emitted
@@ -732,10 +728,489 @@ function getRealImageUrl(url) {
   }
 }
 
+var module$6 = {
+  exports: {}
+};
+/*
+ * Number Utils
+ * A number is a js-number, e.g. 5.12
+ */
+
+var _$1M = _underscore__default["default"];
+var DEFAULT_TOLERANCE = 1e-9;
+var EPSILON = Math.pow(2, -42);
+var knumber$c = {
+  DEFAULT_TOLERANCE: DEFAULT_TOLERANCE,
+  EPSILON: EPSILON,
+  is: function is(x) {
+    return _$1M.isNumber(x) && !_$1M.isNaN(x);
+  },
+  equal: function equal(x, y, tolerance) {
+    // Checking for undefined makes this function behave nicely
+    // with vectors of different lengths that are _.zip'd together
+    if (x == null || y == null) {
+      return x === y;
+    } // We check === here so that +/-Infinity comparisons work correctly
+
+
+    if (x === y) {
+      return true;
+    }
+
+    if (tolerance == null) {
+      tolerance = DEFAULT_TOLERANCE;
+    }
+
+    return Math.abs(x - y) < tolerance;
+  },
+  sign: function sign(x, tolerance) {
+    return knumber$c.equal(x, 0, tolerance) ? 0 : Math.abs(x) / x;
+  },
+  isInteger: function isInteger(num, tolerance) {
+    return knumber$c.equal(Math.round(num), num, tolerance);
+  },
+  // Round a number to a certain number of decimal places
+  round: function round(num, precision) {
+    var factor = Math.pow(10, precision);
+    return Math.round(num * factor) / factor;
+  },
+  // Round num to the nearest multiple of increment
+  // i.e. roundTo(83, 5) -> 85
+  roundTo: function roundTo(num, increment) {
+    return Math.round(num / increment) * increment;
+  },
+  floorTo: function floorTo(num, increment) {
+    return Math.floor(num / increment) * increment;
+  },
+  ceilTo: function ceilTo(num, increment) {
+    return Math.ceil(num / increment) * increment;
+  },
+
+  /**
+   * toFraction
+   *
+   * Returns a [numerator, denominator] array rational representation
+   * of `decimal`
+   *
+   * See http://en.wikipedia.org/wiki/Continued_fraction for implementation
+   * details
+   *
+   * toFraction(4/8) => [1, 2]
+   * toFraction(0.66) => [33, 50]
+   * toFraction(0.66, 0.01) => [2/3]
+   * toFraction(283 + 1/3) => [850, 3]
+   */
+  toFraction: function toFraction(decimal, tolerance, max_denominator) {
+    max_denominator = max_denominator || 1000;
+    tolerance = tolerance || EPSILON; // can't be 0
+    // Initialize everything to compute successive terms of
+    // continued-fraction approximations via recurrence relation
+
+    var n = [1, 0],
+        d = [0, 1];
+    var a = Math.floor(decimal);
+    var rem = decimal - a;
+
+    while (d[0] <= max_denominator) {
+      if (knumber$c.equal(n[0] / d[0], decimal, tolerance)) {
+        return [n[0], d[0]];
+      }
+
+      n = [a * n[0] + n[1], n[0]];
+      d = [a * d[0] + d[1], d[0]];
+      a = Math.floor(1 / rem);
+      rem = 1 / rem - a;
+    } // We failed to find a nice rational representation,
+    // so return an irrational "fraction"
+
+
+    return [decimal, 1];
+  }
+};
+module$6.exports = knumber$c;
+var _numberJs = module$6.exports;
+
+var module$5 = {
+  exports: {}
+};
+/*
+ * Vector Utils 
+ * A vector is an array of numbers e.g. [0, 3, 4].
+ */
+
+var _$1L = _underscore__default["default"];
+var knumber$b = _numberJs;
+
+function arraySum$1(array) {
+  return _$1L.reduce(array, function (memo, arg) {
+    return memo + arg;
+  }, 0);
+}
+
+function arrayProduct(array) {
+  return _$1L.reduce(array, function (memo, arg) {
+    return memo * arg;
+  }, 1);
+}
+
+var kvector$h = {
+  is: function is(vec, dimension) {
+    if (!_$1L.isArray(vec)) {
+      return false;
+    }
+
+    if (dimension !== undefined && vec.length !== dimension) {
+      return false;
+    }
+
+    return _$1L.all(vec, knumber$b.is);
+  },
+  // Normalize to a unit vector
+  normalize: function normalize(v) {
+    return kvector$h.scale(v, 1 / kvector$h.length(v));
+  },
+  // Length/magnitude of a vector
+  length: function length(v) {
+    return Math.sqrt(kvector$h.dot(v, v));
+  },
+  // Dot product of two vectors
+  dot: function dot(a, b) {
+    var vecs = _$1L.toArray(arguments);
+
+    var zipped = _$1L.zip.apply(_$1L, vecs);
+
+    var multiplied = _$1L.map(zipped, arrayProduct);
+
+    return arraySum$1(multiplied);
+  },
+
+  /* vector-add multiple [x, y] coords/vectors
+   *
+   * kvector.add([1, 2], [3, 4]) -> [4, 6]
+   */
+  add: function add() {
+    var points = _$1L.toArray(arguments);
+
+    var zipped = _$1L.zip.apply(_$1L, points);
+
+    return _$1L.map(zipped, arraySum$1);
+  },
+  subtract: function subtract(v1, v2) {
+    return _$1L.map(_$1L.zip(v1, v2), function (dim) {
+      return dim[0] - dim[1];
+    });
+  },
+  negate: function negate(v) {
+    return _$1L.map(v, function (x) {
+      return -x;
+    });
+  },
+  // Scale a vector
+  scale: function scale(v1, scalar) {
+    return _$1L.map(v1, function (x) {
+      return x * scalar;
+    });
+  },
+  equal: function equal(v1, v2, tolerance) {
+    // _.zip will nicely deal with the lengths, going through
+    // the length of the longest vector. knumber.equal then
+    // returns false for any number compared to the undefined
+    // passed in if one of the vectors is shorter.
+    return _$1L.all(_$1L.zip(v1, v2), function (pair) {
+      return knumber$b.equal(pair[0], pair[1], tolerance);
+    });
+  },
+  codirectional: function codirectional(v1, v2, tolerance) {
+    // The origin is trivially codirectional with all other vectors.
+    // This gives nice semantics for codirectionality between points when
+    // comparing their difference vectors.
+    if (knumber$b.equal(kvector$h.length(v1), 0, tolerance) || knumber$b.equal(kvector$h.length(v2), 0, tolerance)) {
+      return true;
+    }
+
+    v1 = kvector$h.normalize(v1);
+    v2 = kvector$h.normalize(v2);
+    return kvector$h.equal(v1, v2, tolerance);
+  },
+  collinear: function collinear(v1, v2, tolerance) {
+    return kvector$h.codirectional(v1, v2, tolerance) || kvector$h.codirectional(v1, kvector$h.negate(v2), tolerance);
+  },
+  // Convert a cartesian coordinate into a radian polar coordinate
+  polarRadFromCart: function polarRadFromCart(v) {
+    var radius = kvector$h.length(v);
+    var theta = Math.atan2(v[1], v[0]); // Convert angle range from [-pi, pi] to [0, 2pi]
+
+    if (theta < 0) {
+      theta += 2 * Math.PI;
+    }
+
+    return [radius, theta];
+  },
+  // Converts a cartesian coordinate into a degree polar coordinate
+  polarDegFromCart: function polarDegFromCart(v) {
+    var polar = kvector$h.polarRadFromCart(v);
+    return [polar[0], polar[1] * 180 / Math.PI];
+  },
+
+  /* Convert a polar coordinate into a cartesian coordinate
+   *
+   * Examples:
+   * cartFromPolarRad(5, Math.PI)
+   * cartFromPolarRad([5, Math.PI])
+   */
+  cartFromPolarRad: function cartFromPolarRad(radius, theta) {
+    if (_$1L.isUndefined(theta)) {
+      theta = radius[1];
+      radius = radius[0];
+    }
+
+    return [radius * Math.cos(theta), radius * Math.sin(theta)];
+  },
+
+  /* Convert a polar coordinate into a cartesian coordinate
+   *
+   * Examples:
+   * cartFromPolarDeg(5, 30)
+   * cartFromPolarDeg([5, 30])
+   */
+  cartFromPolarDeg: function cartFromPolarDeg(radius, theta) {
+    if (_$1L.isUndefined(theta)) {
+      theta = radius[1];
+      radius = radius[0];
+    }
+
+    return kvector$h.cartFromPolarRad(radius, theta * Math.PI / 180);
+  },
+  // Rotate vector
+  rotateRad: function rotateRad(v, theta) {
+    var polar = kvector$h.polarRadFromCart(v);
+    var angle = polar[1] + theta;
+    return kvector$h.cartFromPolarRad(polar[0], angle);
+  },
+  rotateDeg: function rotateDeg(v, theta) {
+    var polar = kvector$h.polarDegFromCart(v);
+    var angle = polar[1] + theta;
+    return kvector$h.cartFromPolarDeg(polar[0], angle);
+  },
+  // Angle between two vectors
+  angleRad: function angleRad(v1, v2) {
+    return Math.acos(kvector$h.dot(v1, v2) / (kvector$h.length(v1) * kvector$h.length(v2)));
+  },
+  angleDeg: function angleDeg(v1, v2) {
+    return kvector$h.angleRad(v1, v2) * 180 / Math.PI;
+  },
+  // Vector projection of v1 onto v2
+  projection: function projection(v1, v2) {
+    var scalar = kvector$h.dot(v1, v2) / kvector$h.dot(v2, v2);
+    return kvector$h.scale(v2, scalar);
+  },
+  // Round each number to a certain number of decimal places
+  round: function round(vec, precision) {
+    return _$1L.map(vec, function (elem, i) {
+      return knumber$b.round(elem, precision[i] || precision);
+    });
+  },
+  // Round each number to the nearest increment
+  roundTo: function roundTo(vec, increment) {
+    return _$1L.map(vec, function (elem, i) {
+      return knumber$b.roundTo(elem, increment[i] || increment);
+    });
+  },
+  floorTo: function floorTo(vec, increment) {
+    return _$1L.map(vec, function (elem, i) {
+      return knumber$b.floorTo(elem, increment[i] || increment);
+    });
+  },
+  ceilTo: function ceilTo(vec, increment) {
+    return _$1L.map(vec, function (elem, i) {
+      return knumber$b.ceilTo(elem, increment[i] || increment);
+    });
+  }
+};
+module$5.exports = kvector$h;
+var _vectorJs = module$5.exports;
+
+var module$4 = {
+  exports: {}
+};
+/*
+ * Point Utils
+ * A point is an array of two numbers e.g. [0, 0].
+ */
+
+var _$1K = _underscore__default["default"];
+var kvector$g = _vectorJs;
+var knumber$a = _numberJs;
+var kpoint$h = {
+  // Rotate point (around origin unless a center is specified)
+  rotateRad: function rotateRad(point, theta, center) {
+    if (center === undefined) {
+      return kvector$g.rotateRad(point, theta);
+    } else {
+      return kvector$g.add(center, kvector$g.rotateRad(kvector$g.subtract(point, center), theta));
+    }
+  },
+  rotateDeg: function rotateDeg(point, theta, center) {
+    if (center === undefined) {
+      return kvector$g.rotateDeg(point, theta);
+    } else {
+      return kvector$g.add(center, kvector$g.rotateDeg(kvector$g.subtract(point, center), theta));
+    }
+  },
+  // Distance between two points
+  distanceToPoint: function distanceToPoint(point1, point2) {
+    return kvector$g.length(kvector$g.subtract(point1, point2));
+  },
+  // Distance between point and line
+  distanceToLine: function distanceToLine(point, line) {
+    var lv = kvector$g.subtract(line[1], line[0]);
+    var pv = kvector$g.subtract(point, line[0]);
+    var projectedPv = kvector$g.projection(pv, lv);
+    var distancePv = kvector$g.subtract(projectedPv, pv);
+    return kvector$g.length(distancePv);
+  },
+  // Reflect point over line
+  reflectOverLine: function reflectOverLine(point, line) {
+    var lv = kvector$g.subtract(line[1], line[0]);
+    var pv = kvector$g.subtract(point, line[0]);
+    var projectedPv = kvector$g.projection(pv, lv);
+    var reflectedPv = kvector$g.subtract(kvector$g.scale(projectedPv, 2), pv);
+    return kvector$g.add(line[0], reflectedPv);
+  },
+
+  /**
+   * Compares two points, returning -1, 0, or 1, for use with
+   * Array.prototype.sort
+   *
+   * Note: This technically doesn't satisfy the total-ordering
+   * requirements of Array.prototype.sort unless equalityTolerance
+   * is 0. In some cases very close points that compare within a
+   * few equalityTolerances could appear in the wrong order.
+   */
+  compare: function compare(point1, point2, equalityTolerance) {
+    if (point1.length !== point2.length) {
+      return point1.length - point2.length;
+    }
+
+    for (var i = 0; i < point1.length; i++) {
+      if (!knumber$a.equal(point1[i], point2[i], equalityTolerance)) {
+        return point1[i] - point2[i];
+      }
+    }
+
+    return 0;
+  }
+};
+
+_$1K.extend(kpoint$h, {
+  // Check if a value is a point
+  is: kvector$g.is,
+  // Add and subtract vector(s)
+  addVector: kvector$g.add,
+  addVectors: kvector$g.add,
+  subtractVector: kvector$g.subtract,
+  equal: kvector$g.equal,
+  // Convert from cartesian to polar and back
+  polarRadFromCart: kvector$g.polarRadFromCart,
+  polarDegFromCart: kvector$g.polarDegFromCart,
+  cartFromPolarRad: kvector$g.cartFromPolarRad,
+  cartFromPolarDeg: kvector$g.cartFromPolarDeg,
+  // Rounding
+  round: kvector$g.round,
+  roundTo: kvector$g.roundTo,
+  floorTo: kvector$g.floorTo,
+  ceilTo: kvector$g.ceilTo
+});
+
+module$4.exports = kpoint$h;
+var _pointJs = module$4.exports;
+
+var module$3 = {
+  exports: {}
+};
+/*
+ * Ray Utils
+ * A ray is an array of an endpoint and another point along the ray.
+ * For example, [[0, 0], [1, 0]] is the ray starting at the origin and
+ * traveling along the positive x-axis.
+ */
+
+var kvector$f = _vectorJs;
+var kpoint$g = _pointJs;
+var kray$2 = {
+  equal: function equal(ray1, ray2, tolerance) {
+    // Compare the directions of the rays
+    var v1 = kvector$f.subtract(ray1[1], ray1[0]);
+    var v2 = kvector$f.subtract(ray2[1], ray2[0]);
+    var sameOrigin = kpoint$g.equal(ray1[0], ray2[0]);
+    var codirectional = kvector$f.codirectional(v1, v2, tolerance);
+    return sameOrigin && codirectional;
+  }
+};
+module$3.exports = kray$2;
+var _rayJs = module$3.exports;
+
+var module$2 = {
+  exports: {}
+};
+/*
+ * Line Utils
+ * A line is an array of two points e.g. [[-5, 0], [5, 0]].
+ */
+
+var kpoint$f = _pointJs;
+var kvector$e = _vectorJs;
+var kline$3 = {
+  distanceToPoint: function distanceToPoint(line, point) {
+    return kpoint$f.distanceToLine(point, line);
+  },
+  reflectPoint: function reflectPoint(line, point) {
+    return kpoint$f.reflectOverLine(point, line);
+  },
+  midpoint: function midpoint(line) {
+    return [(line[0][0] + line[1][0]) / 2, (line[0][1] + line[1][1]) / 2];
+  },
+  equal: function equal(line1, line2, tolerance) {
+    // TODO: A nicer implementation might just check collinearity of
+    // vectors using underscore magick
+    // Compare the directions of the lines
+    var v1 = kvector$e.subtract(line1[1], line1[0]);
+    var v2 = kvector$e.subtract(line2[1], line2[0]);
+
+    if (!kvector$e.collinear(v1, v2, tolerance)) {
+      return false;
+    } // If the start point is the same for the two lines, then they are the same
+
+
+    if (kpoint$f.equal(line1[0], line2[0])) {
+      return true;
+    } // Make sure that the direction to get from line1 to
+    // line2 is the same as the direction of the lines
+
+
+    var line1ToLine2Vector = kvector$e.subtract(line2[0], line1[0]);
+    return kvector$e.collinear(v1, line1ToLine2Vector, tolerance);
+  }
+};
+module$2.exports = kline$3;
+var _lineJs = module$2.exports;
+
+var module$1 = {
+  exports: {}
+};
+module$1.exports = {
+  number: _numberJs,
+  vector: _vectorJs,
+  point: _pointJs,
+  line: _lineJs,
+  ray: _rayJs
+};
+var _kmath3 = module$1.exports;
+
 var _module_$3a = {
   exports: {}
 };
-var knumber$9 = _kmath__default["default"].number;
+var knumber$9 = _kmath3.number;
 var KhanMath$d = {
   // Simplify formulas before display
   cleanMath: function cleanMath(expr) {
@@ -7507,7 +7982,7 @@ var _module_$2r = {
  */
 
 var _$1D = _underscore__default["default"];
-var kpoint$e = _kmath__default["default"].point;
+var kpoint$e = _kmath3.point;
 /* Local helper methods. */
 
 function getKey(eventName, id) {
@@ -7871,7 +8346,7 @@ var _module_$2p = {
 var _$1B = _underscore__default["default"];
 var InteractiveUtil$6 = InteractiveUtil$7;
 var objective_$3 = _objective_Js;
-var kvector$d = _kmath__default["default"].vector;
+var kvector$d = _kmath3.vector;
 /*
  * These functions, when called on the wrapped object, simply pass the
  * arguments to the underlying Raphael object.
@@ -7975,8 +8450,8 @@ var _module_$2n = {
 var _$1z = _underscore__default["default"];
 var InteractiveUtil$5 = InteractiveUtil$7;
 var WrappedDefaults$1 = _wrappedDefaultsJs;
-var kpoint$d = _kmath__default["default"].point;
-var kvector$c = _kmath__default["default"].vector;
+var kpoint$d = _kmath3.point;
+var kvector$c = _kmath3.vector;
 var KhanMath$b = _utilMathJs;
 var DEFAULT_OPTIONS$1 = {
   thickness: 2,
@@ -8044,7 +8519,7 @@ var _module_$2m = {
 var _$1y = _underscore__default["default"];
 var WrappedDefaults = _wrappedDefaultsJs;
 var InteractiveUtil$4 = InteractiveUtil$7;
-var kvector$b = _kmath__default["default"].vector;
+var kvector$b = _kmath3.vector;
 var DEFAULT_OPTIONS = {
   maxScale: 1,
   mouselayer: false,
@@ -13235,8 +13710,8 @@ var _module_$2k = {
 
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
 
-var kpoint$c = _kmath__default["default"].point;
-var kvector$a = _kmath__default["default"].vector;
+var kpoint$c = _kmath3.point;
+var kvector$a = _kmath3.vector;
 var _$1x = _underscore__default["default"]; // Minify Raphael ourselves because IE8 has a problem with the 1.5.2 minified
 // release
 // http://groups.google.com/group/raphaeljs/browse_thread/thread/c34c75ad8d431544
@@ -14898,9 +15373,9 @@ var _$1w = _underscore__default["default"];
 /* global Raphael:false */
 
 var GraphUtils$7 = _graphieJs;
-var kvector$9 = _kmath__default["default"].vector;
-var kpoint$b = _kmath__default["default"].point;
-var kline$2 = _kmath__default["default"].line;
+var kvector$9 = _kmath3.vector;
+var kpoint$b = _kmath3.point;
+var kline$2 = _kmath3.line;
 var WrappedEllipse$2 = _wrappedEllipseJs;
 var WrappedLine$5 = _interactive2WrappedLineJs;
 var WrappedPath$1 = _wrappedPathJs;
@@ -18055,8 +18530,8 @@ var _module_$2i = {
  */
 
 var _$1v = _underscore__default["default"];
-var kpoint$a = _kmath__default["default"].point;
-var kvector$8 = _kmath__default["default"].vector;
+var kpoint$a = _kmath3.point;
+var kvector$8 = _kmath3.vector;
 
 function sum(array) {
   return _$1v.reduce(array, function (memo, arg) {
@@ -18338,7 +18813,7 @@ var _module_$2h = {
  * It allows constraints on its movement and draws when moves happen.
  */
 
-var kvector$7 = _kmath__default["default"].vector;
+var kvector$7 = _kmath3.vector;
 var _$1u = _underscore__default["default"];
 var MovablePolygonOptions = _movablePolygonOptionsJs;
 var InteractiveUtil$3 = InteractiveUtil$7;
@@ -18646,8 +19121,8 @@ var _module_$2g = {
 var _$1t = _underscore__default["default"];
 var WrappedLine$4 = _interactive2WrappedLineJs;
 var WrappedPath = _wrappedPathJs;
-var kvector$6 = _kmath__default["default"].vector;
-var kpoint$9 = _kmath__default["default"].point;
+var kvector$6 = _kmath3.vector;
+var kpoint$9 = _kmath3.point;
 var KhanMath$7 = _utilMathJs;
 /**
  * Helper functions
@@ -18949,7 +19424,7 @@ var InteractiveUtil$2 = InteractiveUtil$7;
 var objective_$1 = _objective_Js;
 var assert$8 = InteractiveUtil$2.assert;
 var normalizeOptions$2 = InteractiveUtil$2.normalizeOptions;
-var kvector$5 = _kmath__default["default"].vector;
+var kvector$5 = _kmath3.vector;
 var KhanColors$c = _utilColorsJs;
 var FUNCTION_ARRAY_OPTIONS$2 = ["add", "draw", "remove", "onMoveStart", "constraints", "onMove", "onMoveEnd"]; // Default "props" and "state". Both are added to this.state and
 // receive magic getter methods (this.cursor() etc).
@@ -19295,7 +19770,7 @@ var _module_$2e = {
 
 var _$1r = _underscore__default["default"];
 var WrappedEllipse$1 = _wrappedEllipseJs;
-var kpoint$8 = _kmath__default["default"].point;
+var kpoint$8 = _kmath3.point;
 var add = {
   constrain: function constrain() {
     this.constrain();
@@ -19497,8 +19972,8 @@ var InteractiveUtil$1 = InteractiveUtil$7;
 var objective_ = _objective_Js;
 var assert$7 = InteractiveUtil$1.assert;
 var normalizeOptions$1 = InteractiveUtil$1.normalizeOptions;
-var kpoint$7 = _kmath__default["default"].point;
-var kvector$4 = _kmath__default["default"].vector;
+var kpoint$7 = _kmath3.point;
+var kvector$4 = _kmath3.vector;
 var KhanColors$b = _utilColorsJs;
 var processMath = _utilTexJs.processMath;
 var React$20 = _react__default["default"];
@@ -19983,7 +20458,7 @@ var _$1p = _underscore__default["default"];
 var InteractiveUtil = InteractiveUtil$7;
 var normalizeOptions = InteractiveUtil.normalizeOptions;
 var assert$6 = InteractiveUtil.assert;
-var kpoint$6 = _kmath__default["default"].point; // state parameters that should be converted into an array of
+var kpoint$6 = _kmath3.point; // state parameters that should be converted into an array of
 // functions
 
 var FUNCTION_ARRAY_OPTIONS = ["add", "modify", "draw", "remove", "onMoveStart", "onMove", "onMoveEnd", "onClick"]; // Default "props" and "state". Both are added to this.state and
@@ -26023,8 +26498,8 @@ var Changeable$L = _mixinsChangeableJsx;
 var WidgetJsonifyDeprecated$5 = _mixinsWidgetJsonifyDeprecatedJsx;
 var Graphie$5 = _componentsGraphieJsx;
 var MovablePoint$4 = Graphie$5.MovablePoint;
-_kmath__default["default"].number;
-var kpoint$5 = _kmath__default["default"].point;
+_kmath3.number;
+var kpoint$5 = _kmath3.point;
 /**
  * This is the widget's renderer. It shows up in the right column
  * in the demo, and is what is visible to users, and where
@@ -26948,7 +27423,7 @@ var ReactDOM$n = _reactDom__default["default"];
 var _$19 = _underscore__default["default"];
 var firstNumericalParse$1 = Util$q.firstNumericalParse;
 var captureScratchpadTouchStart$3 = Util$q.captureScratchpadTouchStart;
-var knumber$8 = _kmath__default["default"].number;
+var knumber$8 = _kmath3.number;
 var KhanMath$6 = _utilMathJs;
 var toNumericString = KhanMath$6.toNumericString;
 var getNumericFormat = KhanMath$6.getNumericFormat;
@@ -28391,11 +28866,11 @@ var REFLECT_BUTTON_SIZE = 1;
 var deepEq$3 = Util$q.deepEq;
 var getGridStep$1 = Util$q.getGridStep;
 var captureScratchpadTouchStart$2 = Util$q.captureScratchpadTouchStart;
-var knumber$7 = _kmath__default["default"].number;
-var kvector$3 = _kmath__default["default"].vector;
-var kpoint$4 = _kmath__default["default"].point;
-var kray$1 = _kmath__default["default"].ray;
-var kline$1 = _kmath__default["default"].line;
+var knumber$7 = _kmath3.number;
+var kvector$3 = _kmath3.vector;
+var kpoint$4 = _kmath3.point;
+var kray$1 = _kmath3.ray;
+var kline$1 = _kmath3.line;
 var KhanMath$5 = _utilMathJs;
 var KhanColors$8 = _utilColorsJs;
 var assert$4 = InteractiveUtil$7.assert;
@@ -31298,11 +31773,11 @@ var PropCheckBox$d = _componentsPropCheckBoxJsx;
 var Transformer = _widgetsTransformerJsx.widget;
 var deepEq$2 = Util$q.deepEq;
 var getGridStep = Util$q.getGridStep;
-var kline = _kmath__default["default"].line;
-var knumber$6 = _kmath__default["default"].number;
-var kpoint$3 = _kmath__default["default"].point;
-var kray = _kmath__default["default"].ray;
-var kvector$2 = _kmath__default["default"].vector;
+var kline = _kmath3.line;
+var knumber$6 = _kmath3.number;
+var kpoint$3 = _kmath3.point;
+var kray = _kmath3.ray;
+var kvector$2 = _kmath3.vector;
 var KhanColors$7 = _utilColorsJs;
 
 function arraySum(array) {
@@ -33801,6 +34276,12 @@ var styles$i = aphrodite.StyleSheet.create({
 _module_$1x.exports = KatexErrorView$1;
 var _katexErrorViewJsx = _module_$1x.exports;
 
+var createFragment = function createFragment(obj) {
+  return React.createElement(React.Fragment, null, Object.keys(obj).map(key => React.createElement(React.Fragment, {
+    key: key
+  }, obj[key])));
+};
+
 var _module_$1w = {
   exports: {}
 };
@@ -33814,7 +34295,7 @@ var _module_$1w = {
 
 var React$1r = _react__default["default"];
 var ReactDOM$g = _reactDom__default["default"];
-var ReactCreateFragment = _reactAddonsCreateFragment__default["default"];
+var ReactCreateFragment = createFragment;
 var $$2 = $__default["default"];
 var _$$ = _underscore__default["default"];
 var ApiOptions$n = _perseusApiJsx.Options;
@@ -35778,7 +36259,7 @@ var {
 var NumberInput$d = _componentsNumberInputJsx;
 var MathOutput$3 = _componentsMathOutputJsx;
 var Util$a = Util$q;
-var knumber$5 = _kmath__default["default"].number;
+var knumber$5 = _kmath3.number;
 var KhanColors$6 = _utilColorsJs;
 var KhanMath$3 = _utilMathJs;
 var defaultBoxSize$2 = 400;
@@ -38849,7 +39330,7 @@ var RangeInput$4 = _componentsRangeInputJsx;
 var SvgImage$2 = _componentsSvgImageJsx;
 var TextListEditor$3 = _componentsTextListEditorJsx;
 var Plotter = _widgetsPlotterJsx.widget;
-var knumber$4 = _kmath__default["default"].number;
+var knumber$4 = _kmath3.number;
 var BAR = "bar",
     LINE = "line",
     PIC = "pic",
@@ -42644,7 +43125,7 @@ var InfoTip$c = _componentsInfoTipJsx;
 var NumberInput$9 = _componentsNumberInputJsx;
 var PropCheckBox$9 = _componentsPropCheckBoxJsx;
 var RangeInput$3 = _componentsRangeInputJsx;
-var knumber$3 = _kmath__default["default"].number;
+var knumber$3 = _kmath3.number;
 
 var bound$1 = (x, gt, lt) => Math.min(Math.max(x, gt), lt);
 
@@ -42964,7 +43445,7 @@ var {
 var Graphie$3 = _componentsGraphieJsx;
 var MovablePoint$2 = Graphie$3.MovablePoint;
 var Line$1 = Graphie$3.Line;
-var knumber$2 = _kmath__default["default"].number;
+var knumber$2 = _kmath3.number;
 var KhanMath$1 = _utilMathJs;
 var KhanColors$4 = _utilColorsJs;
 
@@ -45402,8 +45883,8 @@ var InfoTip$8 = _componentsInfoTipJsx;
 var Interactive2$1 = _interactive2Js;
 var NumberInput$3 = _componentsNumberInputJsx;
 var Util$7 = Util$q;
-var knumber$1 = _kmath__default["default"].number;
-var kpoint$2 = _kmath__default["default"].point;
+var knumber$1 = _kmath3.number;
+var kpoint$2 = _kmath3.point;
 var KhanColors$3 = _utilColorsJs;
 var GraphUtils = _utilGraphUtilsJs;
 var WrappedLine$1 = _interactive2WrappedLineJs;
@@ -49375,7 +49856,7 @@ var Plot$1 = Graphie$2.Plot;
 var PlotParametric = Graphie$2.PlotParametric;
 var Point = Graphie$2.Point;
 var Rect = Graphie$2.Rect;
-var kvector$1 = _kmath__default["default"].vector; // Memoize KAS parsing
+var kvector$1 = _kmath3.vector; // Memoize KAS parsing
 
 var KAShashFunc = (expr, options) => {
   options = options || {};
@@ -51959,7 +52440,7 @@ var _$n = _underscore__default["default"];
 var Util$4 = Util$q;
 var Graphie$1 = _componentsGraphieJsx;
 var Plot = Graphie$1.Plot;
-var kpoint$1 = _kmath__default["default"].point;
+var kpoint$1 = _kmath3.point;
 var DEFAULT_BACKGROUND_IMAGE = {
   url: null
 }; // TODO(charlie): These really need to go into a utility file as they're being
@@ -52571,9 +53052,9 @@ var Graphie = _componentsGraphieJsx;
 var MovablePoint = Graphie.MovablePoint;
 var MovableLine = Graphie.MovableLine;
 var WrappedLine = _interactive2WrappedLineJs;
-var knumber = _kmath__default["default"].number;
-var kvector = _kmath__default["default"].vector;
-var kpoint = _kmath__default["default"].point;
+var knumber = _kmath3.number;
+var kvector = _kmath3.vector;
+var kpoint = _kmath3.point;
 var KhanColors = _utilColorsJs;
 /* Mixins. */
 
