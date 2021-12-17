@@ -5079,7 +5079,7 @@ var PureRenderMixin = _reactAddonsPureRenderMixin__default["default"];
 var React$2c = _react__default["default"];
 var ReactDOM$D = _reactDom__default["default"];
 var createReactClass$8 = _createReactClass__default["default"];
-var PropTypes$a = _propTypes__default["default"];
+var PropTypes$9 = _propTypes__default["default"];
 var katex$1 = _katex__default["default"];
 var katexA11y = _katexA11yJs;
 var pendingScripts = [];
@@ -5151,11 +5151,11 @@ var srOnly = {
 var TeX$9 = createReactClass$8({
   displayName: "TeX",
   propTypes: {
-    children: PropTypes$a.node,
-    katexOptions: PropTypes$a.any,
-    onClick: PropTypes$a.func,
-    onRender: PropTypes$a.func,
-    style: PropTypes$a.any
+    children: PropTypes$9.node,
+    katexOptions: PropTypes$9.any,
+    onClick: PropTypes$9.func,
+    onRender: PropTypes$9.func,
+    style: PropTypes$9.any
   },
   mixins: [PureRenderMixin],
   getDefaultProps: function getDefaultProps() {
@@ -8576,9 +8576,6 @@ var _module_$2s = {
  */
 
 var React$27 = _react__default["default"];
-var {
-  PropTypes: PropTypes$9
-} = React$27;
 var Status = {
   PENDING: "pending",
   LOADING: "loading",
@@ -8588,15 +8585,15 @@ var Status = {
 var ImageLoader$1 = createReactClass({
   displayName: "ImageLoader",
   propTypes: {
-    children: PropTypes$9.oneOfType([PropTypes$9.arrayOf(PropTypes$9.node), PropTypes$9.node]),
-    imgProps: PropTypes$9.any,
-    onError: PropTypes$9.func,
-    onLoad: PropTypes$9.func,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    imgProps: PropTypes.any,
+    onError: PropTypes.func,
+    onLoad: PropTypes.func,
     // When the DOM updates to replace the preloader with the image, or
     // vice-versa, we trigger this callback.
-    onUpdate: PropTypes$9.func,
-    preloader: PropTypes$9.func,
-    src: PropTypes$9.string
+    onUpdate: PropTypes.func,
+    preloader: PropTypes.func,
+    src: PropTypes.string
   },
   getInitialState: function getInitialState(props) {
     return {
