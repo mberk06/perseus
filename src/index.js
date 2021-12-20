@@ -6,58 +6,59 @@ import * as Perseus from './perseus';
 //import "./lib/mathquill/mathquill.css";
 
 const itemData = {
-  question: {
-    content: "This is a *sample question* ^_^\n\n[[☃ grapher 1]]",
-    images: {},
-    widgets: {
-      "grapher 1": {
-        type: "grapher",
-        alignment: "default",
-        static: false,
-        graded: true,
-        options: {
-          correct: {
-            type: "linear",
-            coords: null,
-          },
-          availableTypes: ["linear"],
-          graph: {
-            labels: ["x", "y"],
-            range: [
-              [-10, 10],
-              [-10, 10],
-            ],
-            step: [1, 1],
-            backgroundImage: {
-              url: null,
-            },
-            markings: "graph",
-            rulerLabel: "",
-            rulerTicks: 10,
-            valid: true,
-            showTooltips: false,
-          },
-        },
-        version: {
-          major: 0,
-          minor: 0,
-        },
-      },
+    "question": {
+        "content": "$3 + 5 = $ [[☃ numeric-input 1]]",
+        "images": {},
+        "widgets": {
+            "numeric-input 1": {
+                "type": "numeric-input",
+                "alignment": "default",
+                "static": false,
+                "graded": true,
+                "options": {
+                    "static": false,
+                    "answers": [
+                        {
+                            "value": 8,
+                            "status": "correct",
+                            "message": "",
+                            "simplify": "required",
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "small",
+                    "coefficient": false,
+                    "labelText": "result",
+                    "multipleNumberInput": false
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
     },
-  },
-  answerArea: {
-    calculator: false,
-    chi2Table: false,
-    periodicTable: false,
-    tTable: false,
-    zTable: false,
-  },
-  itemDataVersion: {
-    major: 0,
-    minor: 1,
-  },
-  hints: [],
-};
+    "answerArea": {
+        "calculator": false,
+        "chi2Table": false,
+        "periodicTable": false,
+        "tTable": false,
+        "zTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": [
+        {
+            "replace": false,
+            "content": "$3 + 5 = 8$",
+            "images": {},
+            "widgets": {}
+        }
+    ]
+}
 
 const styles = {
   container: {
@@ -72,7 +73,7 @@ const styles = {
 ReactDOM.render(
   <React.StrictMode>
     <div style={styles.container}>
-      <Perseus.QuestionRenderer question={itemData} />
+      <Perseus.QuestionRenderer item={itemData} />
     </div>
   </React.StrictMode>,
   document.getElementById('root')
