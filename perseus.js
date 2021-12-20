@@ -4376,17 +4376,17 @@ var Lint$1 = createReactClass({
     var warningTextStyle;
 
     if (this.props.severity === 1) {
-      severityStyle = styles$q.indicatorError;
+      severityStyle = styles$r.indicatorError;
       warningText = "Error";
-      warningTextStyle = styles$q.publishBlockingError;
+      warningTextStyle = styles$r.publishBlockingError;
     } else if (this.props.severity === 2) {
-      severityStyle = styles$q.indicatorWarning;
+      severityStyle = styles$r.indicatorWarning;
       warningText = "Warning";
-      warningTextStyle = styles$q.warning;
+      warningTextStyle = styles$r.warning;
     } else {
-      severityStyle = styles$q.indicatorGuideline;
+      severityStyle = styles$r.indicatorGuideline;
       warningText = "Recommendation";
-      warningTextStyle = styles$q.warning;
+      warningTextStyle = styles$r.warning;
     }
 
     return /*#__PURE__*/React$2d.createElement("a", {
@@ -4394,16 +4394,16 @@ var Lint$1 = createReactClass({
       target: "lint-help-window",
       className: aphrodite.css(style)
     }, /*#__PURE__*/React$2d.createElement("span", {
-      className: aphrodite.css(styles$q.indicator, severityStyle)
+      className: aphrodite.css(styles$r.indicator, severityStyle)
     }, this.props.severity === 1 && /*#__PURE__*/React$2d.createElement(InlineIcon$j, exclamationIcon)), /*#__PURE__*/React$2d.createElement("div", {
-      className: aphrodite.css(styles$q.tooltip, tooltipAbove && styles$q.tooltipAbove)
+      className: aphrodite.css(styles$r.tooltip, tooltipAbove && styles$r.tooltipAbove)
     }, this.props.message.split("\n\n").map((m, i) => /*#__PURE__*/React$2d.createElement("p", {
       key: i,
-      className: aphrodite.css(styles$q.tooltipParagraph)
+      className: aphrodite.css(styles$r.tooltipParagraph)
     }, /*#__PURE__*/React$2d.createElement("span", {
       className: aphrodite.css(warningTextStyle)
     }, warningText, ":", " "), m)), /*#__PURE__*/React$2d.createElement("div", {
-      className: aphrodite.css(styles$q.tail, tooltipAbove && styles$q.tailAbove)
+      className: aphrodite.css(styles$r.tail, tooltipAbove && styles$r.tailAbove)
     })));
   },
   // The main render method surrounds linty content with a block or
@@ -4425,17 +4425,17 @@ var Lint$1 = createReactClass({
     } else {
       if (this.props.inline) {
         return /*#__PURE__*/React$2d.createElement("span", {
-          className: aphrodite.css(styles$q.lintContainer)
-        }, this.renderLink(styles$q.inlineHoverTarget), /*#__PURE__*/React$2d.createElement("span", null, this.props.children));
+          className: aphrodite.css(styles$r.lintContainer)
+        }, this.renderLink(styles$r.inlineHoverTarget), /*#__PURE__*/React$2d.createElement("span", null, this.props.children));
       } else {
         return /*#__PURE__*/React$2d.createElement("div", {
-          className: aphrodite.css(styles$q.lintContainer)
-        }, this.renderLink(styles$q.hoverTarget), /*#__PURE__*/React$2d.createElement("div", null, this.props.children));
+          className: aphrodite.css(styles$r.lintContainer)
+        }, this.renderLink(styles$r.hoverTarget), /*#__PURE__*/React$2d.createElement("div", null, this.props.children));
       }
     }
   }
 });
-var styles$q = aphrodite.StyleSheet.create({
+var styles$r = aphrodite.StyleSheet.create({
   // This is the class of the outermost element.
   // We use relative positioning so that the lint indicator can be
   // positioned absolutely relative to the position of the linty container.
@@ -24710,7 +24710,7 @@ var HintRenderer$1 = createReactClass({
     var {
       isMobile
     } = apiOptions;
-    var classNames = classnames$1(!isMobile && "perseus-hint-renderer", isMobile && aphrodite.css(styles$p.newHint), isMobile && lastRendered && aphrodite.css(styles$p.lastRenderedNewHint), lastHint && "last-hint", lastRendered && "last-rendered", className); // TODO(charlie): Allowing `staticRender` here would require that we
+    var classNames = classnames$1(!isMobile && "perseus-hint-renderer", isMobile && aphrodite.css(styles$q.newHint), isMobile && lastRendered && aphrodite.css(styles$q.lastRenderedNewHint), lastHint && "last-hint", lastRendered && "last-rendered", className); // TODO(charlie): Allowing `staticRender` here would require that we
     // extend `HintsRenderer` and `HintRenderer` to implement the full
     // "input' API, so that clients could access the static inputs. Allowing
     // `customKeypad` would require that we extend `ItemRenderer` to support
@@ -24747,7 +24747,7 @@ var HintRenderer$1 = createReactClass({
     }));
   }
 });
-var styles$p = aphrodite.StyleSheet.create({
+var styles$q = aphrodite.StyleSheet.create({
   newHint: {
     marginBottom: 1.5 * baseUnitPx,
     borderLeftColor: gray97,
@@ -24909,28 +24909,28 @@ var HintsRenderer$4 = createReactClass({
     });
     var showGetAnotherHint = apiOptions.getAnotherHint && hintsVisible > 0 && hintsVisible < this.props.hints.length;
     var hintRatioCopy = "(".concat(hintsVisible, "/").concat(this.props.hints.length, ")");
-    var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$o.mobileHintStylesHintsRenderer));
+    var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$p.mobileHintStylesHintsRenderer));
     return /*#__PURE__*/React$1$.createElement("div", {
       className: classNames
     }, apiOptions.isMobile && hintsVisible > 0 && /*#__PURE__*/React$1$.createElement("div", {
-      className: aphrodite.css(styles$o.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
+      className: aphrodite.css(styles$p.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
     }, i18n$1._("Hints")), hints, showGetAnotherHint && /*#__PURE__*/React$1$.createElement("button", {
       rel: "button",
-      className: aphrodite.css(styles$o.linkButton, styles$o.getAnotherHintButton, apiOptions.isMobile && styles$o.mobileHintStylesGetAnotherHintButton),
+      className: aphrodite.css(styles$p.linkButton, styles$p.getAnotherHintButton, apiOptions.isMobile && styles$p.mobileHintStylesGetAnotherHintButton),
       onClick: evt => {
         evt.preventDefault();
         evt.stopPropagation();
         apiOptions.getAnotherHint();
       }
     }, /*#__PURE__*/React$1$.createElement("span", {
-      className: aphrodite.css(styles$o.plusText, apiOptions.isMobile && styles$o.mobileHintStylesPlusText)
+      className: aphrodite.css(styles$p.plusText, apiOptions.isMobile && styles$p.mobileHintStylesPlusText)
     }, "+"), /*#__PURE__*/React$1$.createElement("span", {
-      className: aphrodite.css(styles$o.getAnotherHintText)
+      className: aphrodite.css(styles$p.getAnotherHintText)
     }, i18n$1._("Get another hint"), " ", hintRatioCopy)));
   }
 });
 var hintIndentation = baseUnitPx + hintBorderWidth;
-var styles$o = aphrodite.StyleSheet.create({
+var styles$p = aphrodite.StyleSheet.create({
   rendererMargins: {
     marginTop: baseUnitPx
   },
@@ -25759,7 +25759,7 @@ class MultiRenderer$1 extends React$1_.Component {
   render() {
     if (this.state.renderError) {
       return /*#__PURE__*/React$1_.createElement("div", {
-        className: aphrodite.css(styles$n.error)
+        className: aphrodite.css(styles$o.error)
       }, "Error rendering: ", String(this.state.renderError));
     } // Pass the renderer tree to the `children` function, which will
     // determine the actual content of this component.
@@ -25772,7 +25772,7 @@ class MultiRenderer$1 extends React$1_.Component {
 
 }
 
-var styles$n = aphrodite.StyleSheet.create({
+var styles$o = aphrodite.StyleSheet.create({
   error: {
     color: "red"
   }
@@ -26185,11 +26185,11 @@ var ItemRenderer$2 = createReactClass({
       // mobile hint styles, which are flush to the left.
       // NOTE(charlie): We may still want to apply this
       // padding for desktop exercises.
-      !apiOptions.isMobile && aphrodite.css(styles$m.hintsContainer)
+      !apiOptions.isMobile && aphrodite.css(styles$n.hintsContainer)
     }, hintsRenderer));
   }
 });
-var styles$m = aphrodite.StyleSheet.create({
+var styles$n = aphrodite.StyleSheet.create({
   hintsContainer: {
     marginLeft: 50
   }
@@ -26602,37 +26602,352 @@ var ItemRenderer$1 = createReactClass({
 _module_$1W.exports = ItemRenderer$1;
 var _itemRendererJsx = _module_$1W.exports;
 
-class QuestionRenderer$1 extends _react.Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.question !== this.props.question || nextProps.readOnly !== this.props.readOnly;
-  }
+/**
+ * A copy of the ItemRenderer which renders its question renderer and hints
+ * renderer normally instead of ReactDOM.render()ing them into elements in the
+ * DOM.
+ *
+ * As well as check answer, grading, and hints buttons built in
+ */
 
-  render() {
-    var {
-      question,
-      setRef,
-      readOnly,
-      isMobile
-    } = this.props;
-    var questionContents = /*#__PURE__*/_react__default["default"].createElement(_serverItemRendererJsx, {
-      controlPeripherals: false,
-      item: question,
-      apiOptions: {
-        isMobile: isMobile,
-        staticRender: !!readOnly,
-        readOnly: !!readOnly,
-        customKeypad: !readOnly
-      },
+var QuestionRenderer$1 = createReactClass({
+  displayName: "QuestionRenderer",
+  propTypes: _objectSpread2(_objectSpread2({}, _mixinsProvideKeypadJsx.propTypes), {}, {
+    apiOptions: PropTypes.any,
+    initialHintsVisible: PropTypes.number,
+    item: PropTypes.shape({
+      answerArea: PropTypes.shape({
+        calculator: PropTypes.bool,
+        chi2Table: PropTypes.bool,
+        periodicTable: PropTypes.bool,
+        tTable: PropTypes.bool,
+        zTable: PropTypes.bool
+      }),
+      hints: PropTypes.arrayOf(PropTypes.object),
+      question: PropTypes.object
+    }).isRequired,
+    problemNum: PropTypes.number,
+    reviewMode: PropTypes.bool
+  }),
+  getDefaultProps: function getDefaultProps() {
+    return {
+      apiOptions: {},
+      // a deep default is done in `this.update()`
+      initialHintsVisible: 0,
       problemNum: 0,
-      hintsVisible: 0,
-      ref: n => setRef ? setRef(n) : null
+      reviewMode: false
+    };
+  },
+  getInitialState: function getInitialState() {
+    return _objectSpread2(_objectSpread2({}, _mixinsProvideKeypadJsx.getInitialState()), {}, {
+      hintsVisible: this.props.initialHintsVisible,
+      questionCompleted: false,
+      questionHighlightedWidgets: []
     });
-    return /*#__PURE__*/_react__default["default"].createElement("div", {
-      className: 'framework-perseus' + (isMobile ? ' perseus-mobile' : '')
-    }, /*#__PURE__*/_react__default["default"].createElement("div", null, questionContents));
-  }
+  },
+  componentDidMount: function componentDidMount() {
+    _mixinsProvideKeypadJsx.componentDidMount.call(this);
+    this._currentFocus = null;
+  },
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    this.setState({
+      questionHighlightedWidgets: []
+    });
+  },
+  componentDidUpdate: function componentDidUpdate() {
+    if (this.props.apiOptions.answerableCallback) {
+      var isAnswerable = this.questionRenderer.emptyWidgets().length === 0;
+      this.props.apiOptions.answerableCallback(isAnswerable);
+    }
+  },
 
-}
+  componentWillUnmount() {
+    _mixinsProvideKeypadJsx.componentWillUnmount.call(this);
+  },
+
+  keypadElement() {
+    return _mixinsProvideKeypadJsx.keypadElement.call(this);
+  },
+
+  _handleFocusChange: function _handleFocusChange(newFocus, oldFocus) {
+    if (newFocus != null) {
+      this._setCurrentFocus(newFocus);
+    } else {
+      this._onRendererBlur(oldFocus);
+    }
+  },
+  // Sets the current focus path and element and
+  // send an onChangeFocus event back to our parent.
+  _setCurrentFocus: function _setCurrentFocus(newFocus) {
+    var keypadElement = this.keypadElement(); // By the time this happens, newFocus cannot be a prefix of
+    // prevFocused, since we must have either been called from
+    // an onFocusChange within a renderer, which is only called when
+    // this is not a prefix, or between the question and answer areas,
+    // which can never prefix each other.
+
+    var prevFocus = this._currentFocus;
+    this._currentFocus = newFocus; // Determine whether the newly focused path represents an input.
+
+    var inputPaths = this.getInputPaths();
+    var didFocusInput = this._currentFocus && inputPaths.some(inputPath => {
+      return Util$q.inputPathsEqual(inputPath, this._currentFocus);
+    });
+
+    if (this.props.apiOptions.onFocusChange != null) {
+      this.props.apiOptions.onFocusChange(this._currentFocus, prevFocus, didFocusInput && keypadElement && _reactDom__default["default"].findDOMNode(keypadElement));
+    }
+
+    if (keypadElement) {
+      if (didFocusInput) {
+        keypadElement.activate();
+      } else {
+        keypadElement.dismiss();
+      }
+    }
+  },
+  _onRendererBlur: function _onRendererBlur(blurPath) {
+    var blurringFocusPath = this._currentFocus; // Failsafe: abort if ID is different, because focus probably happened
+    // before blur
+
+    if (!_underscore__default["default"].isEqual(blurPath, blurringFocusPath)) {
+      return;
+    } // Wait until after any new focus events fire this tick before
+    // declaring that nothing is focused.
+    // If a different widget was focused, we'll see an onBlur event
+    // now, but then an onFocus event on a different element before
+    // this callback is executed
+
+
+    _underscore__default["default"].defer(() => {
+      if (_underscore__default["default"].isEqual(this._currentFocus, blurringFocusPath)) {
+        this._setCurrentFocus(null);
+      }
+    });
+  },
+
+  /**
+   * Accepts a question area widgetId, or an answer area widgetId of
+   * the form "answer-input-number 1", or the string "answer-area"
+   * for the whole answer area (if the answer area is a single widget).
+   */
+  _setWidgetProps: function _setWidgetProps(widgetId, newProps, callback) {
+    this.questionRenderer._setWidgetProps(widgetId, newProps, callback);
+  },
+  _handleAPICall: function _handleAPICall(functionName, path) {
+    // Get arguments to pass to function, including `path`
+    var functionArgs = _underscore__default["default"].rest(arguments);
+
+    var caller = this.questionRenderer;
+    return caller[functionName](...functionArgs);
+  },
+  setInputValue: function setInputValue(path, newValue, focus) {
+    return this._handleAPICall("setInputValue", path, newValue, focus);
+  },
+  focusPath: function focusPath(path) {
+    return this._handleAPICall("focusPath", path);
+  },
+  blurPath: function blurPath(path) {
+    return this._handleAPICall("blurPath", path);
+  },
+  getDOMNodeForPath: function getDOMNodeForPath(path) {
+    return this._handleAPICall("getDOMNodeForPath", path);
+  },
+  getGrammarTypeForPath: function getGrammarTypeForPath(path) {
+    return this._handleAPICall("getGrammarTypeForPath", path);
+  },
+  getInputPaths: function getInputPaths() {
+    var questionAreaInputPaths = this.questionRenderer.getInputPaths();
+    return questionAreaInputPaths;
+  },
+  handleInteractWithWidget: function handleInteractWithWidget(widgetId) {
+    var withRemoved = _underscore__default["default"].difference(this.state.questionHighlightedWidgets, [widgetId]);
+
+    this.setState({
+      questionCompleted: false,
+      questionHighlightedWidgets: withRemoved
+    });
+
+    if (this.props.apiOptions.interactionCallback) {
+      this.props.apiOptions.interactionCallback();
+    }
+  },
+  focus: function focus() {
+    return this.questionRenderer.focus();
+  },
+  blur: function blur() {
+    if (this._currentFocus) {
+      this.blurPath(this._currentFocus);
+    }
+  },
+  showHint: function showHint() {
+    if (this.state.hintsVisible < this.getNumHints()) {
+      console.log("Hint ".concat(this.state.hintsVisible + 1, " shown"));
+      this.setState({
+        hintsVisible: this.state.hintsVisible + 1
+      });
+    }
+  },
+  getNumHints: function getNumHints() {
+    return this.props.item.hints.length;
+  },
+
+  /**
+   * Grades the item.
+   *
+   * Returns a KE-style score of {
+   *     empty: bool,
+   *     correct: bool,
+   *     message: string|null,
+   *     guess: Array
+   * }
+   */
+  scoreInput: function scoreInput() {
+    var guessAndScore = this.questionRenderer.guessAndScore();
+    var guess = guessAndScore[0];
+    var score = guessAndScore[1]; // Continue to include an empty guess for the now defunct answer area.
+    // TODO(alex): Check whether we rely on the format here for
+    //             analyzing ProblemLogs. If not, remove this layer.
+
+    var maxCompatGuess = [guess, []];
+    var keScore = Util$q.keScoreFromPerseusScore(score, maxCompatGuess, this.questionRenderer.getSerializedState());
+    var emptyQuestionAreaWidgets = this.questionRenderer.emptyWidgets();
+    this.setState({
+      questionCompleted: keScore.correct,
+      questionHighlightedWidgets: emptyQuestionAreaWidgets
+    });
+    return keScore;
+  },
+  checkAnswer: function checkAnswer(e) {
+    var score = this.scoreInput();
+    e.preventDefault();
+    console.log("Check answer:", score);
+  },
+
+  /**
+   * Returns an array of all widget IDs in the order they occur in
+   * the question content.
+   */
+  getWidgetIds: function getWidgetIds() {
+    return this.questionRenderer.getWidgetIds();
+  },
+
+  /**
+   * Returns an object mapping from widget ID to KE-style score.
+   * The keys of this object are the values of the array returned
+   * from `getWidgetIds`.
+   */
+  scoreWidgets: function scoreWidgets() {
+    var qScore = this.questionRenderer.scoreWidgets();
+    var qGuess = this.questionRenderer.getUserInputForWidgets();
+    var state = this.questionRenderer.getSerializedState();
+    return mapObject(qScore, (score, id) => {
+      return Util$q.keScoreFromPerseusScore(score, qGuess[id], state);
+    });
+  },
+
+  /**
+   * Get a representation of the current state of the item.
+   */
+  getSerializedState: function getSerializedState() {
+    return {
+      question: this.questionRenderer.getSerializedState(),
+      hints: this.hintsRenderer.getSerializedState()
+    };
+  },
+  restoreSerializedState: function restoreSerializedState(state, callback) {
+    // We need to wait for both the question renderer and the hints
+    // renderer to finish restoring their states.
+    var numCallbacks = 2;
+
+    var fireCallback = () => {
+      --numCallbacks;
+
+      if (callback && numCallbacks === 0) {
+        callback();
+      }
+    };
+
+    this.questionRenderer.restoreSerializedState(state.question, fireCallback);
+    this.hintsRenderer.restoreSerializedState(state.hints, fireCallback);
+  },
+
+  showRationalesForCurrentlySelectedChoices() {
+    this.questionRenderer.showRationalesForCurrentlySelectedChoices();
+  },
+
+  deselectIncorrectSelectedChoices() {
+    this.questionRenderer.deselectIncorrectSelectedChoices();
+  },
+
+  render: function render() {
+    var apiOptions = _objectSpread2(_objectSpread2(_objectSpread2({}, Options.defaults), this.props.apiOptions), {}, {
+      onFocusChange: this._handleFocusChange
+    });
+
+    var questionRenderer = /*#__PURE__*/_react__namespace.createElement(_rendererJsx, _extends({
+      keypadElement: this.keypadElement(),
+      problemNum: this.props.problemNum,
+      onInteractWithWidget: this.handleInteractWithWidget,
+      highlightedWidgets: this.state.questionHighlightedWidgets,
+      apiOptions: apiOptions,
+      questionCompleted: this.state.questionCompleted,
+      reviewMode: this.props.reviewMode,
+      ref: elem => this.questionRenderer = elem
+    }, this.props.item.question));
+    var hintsRenderer = /*#__PURE__*/_react__namespace.createElement(_hintsRendererJsx, {
+      hints: this.props.item.hints,
+      hintsVisible: this.state.hintsVisible,
+      apiOptions: apiOptions,
+      ref: elem => this.hintsRenderer = elem
+    });
+    var isOutOfHints = this.state.hintsVisible >= this.getNumHints();
+    return /*#__PURE__*/_react__namespace.createElement("form", {
+      onSubmit: this.checkAnswer
+    }, /*#__PURE__*/_react__namespace.createElement("div", null, questionRenderer), /*#__PURE__*/_react__namespace.createElement("div", {
+      style: {
+        paddingTop: 10,
+        paddingBottom: 10
+      }
+    }, /*#__PURE__*/_react__namespace.createElement("button", {
+      type: "submit",
+      style: {
+        padding: 10,
+        backgroundColor: "green",
+        color: "white",
+        fontSize: 14,
+        borderRadius: 5
+      },
+      disabled: this.state.questionCompleted
+    }, this.state.questionCompleted ? "🌟 Yes! You got it!" : "Check answer"), /*#__PURE__*/_react__namespace.createElement("div", {
+      style: {
+        display: 'inline-block',
+        width: 10
+      }
+    }), /*#__PURE__*/_react__namespace.createElement("button", {
+      type: "button",
+      style: {
+        padding: 10,
+        backgroundColor: isOutOfHints ? "darkgray" : "orange",
+        color: "white",
+        fontSize: 14,
+        borderRadius: 5
+      },
+      disabled: isOutOfHints,
+      onClick: this.showHint
+    }, isOutOfHints ? "We're out of hints!" : "I'd like a hint!")), /*#__PURE__*/_react__namespace.createElement("div", {
+      className: // Avoid adding any horizontal padding when applying the
+      // mobile hint styles, which are flush to the left.
+      // NOTE(charlie): We may still want to apply this
+      // padding for desktop exercises.
+      !apiOptions.isMobile && aphrodite.css(styles$m.hintsContainer)
+    }, hintsRenderer));
+  }
+});
+var styles$m = aphrodite.StyleSheet.create({
+  hintsContainer: {
+    marginLeft: 50
+  }
+});
 
 var _module_$1V = {
   exports: {}
