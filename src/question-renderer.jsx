@@ -17,6 +17,24 @@ import { StyleSheet, css } from "aphrodite";
  * As well as check answer, grading, and hints buttons built in
  */
 
+const styles = StyleSheet.create({
+    hintsContainer: {
+        marginLeft: 50,
+    },
+    checkAnswerButton: {
+        padding: 10,
+        color: "white",
+        fontSize: 14,
+        borderRadius: 5,
+        display: "inline-grid",
+        gridTemplateColumns: "1fr",
+        gridTemplateRows: "1fr",
+    },
+    checkAnswerText: {
+        gridArea: "1 / 1 / 2 / 2",
+    },
+});
+
 const QuestionRenderer = createReactClass({
     propTypes: {
         ...ProvideKeypad.propTypes,
@@ -373,21 +391,21 @@ const QuestionRenderer = createReactClass({
                 <div style={{ paddingTop: 10, paddingBottom: 10 }}>
                     <button
                         type="submit"
+                        className={"check-answer-button " + css(styles.checkAnswerButton)}
                         style={{
-                            padding: 10,
-                            backgroundColor: "green",
-                            color: "white",
-                            fontSize: 14,
-                            borderRadius: 5,
+                            backgroundColor: this.state.answerState === "incorrect" ? "orange" : "green",
                         }}
                         disabled={this.state.answerState === "correct"}
                     >
-                        {this.state.answerState === "correct" ?
-                            "🌟 Yes! You got it!" :
-                          this.state.answerState === "incorrect" ?
-                            "Try again" :
-                            "Check answer"
-                        }
+                        <span className={css(styles.checkAnswerText)} style={{ visibility: this.state.answerState === "correct" ? "visible" : "hidden"}}>
+                            🌟 Yes! You got it!
+                        </span>
+                        <span className={css(styles.checkAnswerText)} style={{ visibility: this.state.answerState === "incorrect" ? "visible" : "hidden"}}>
+                            Try again
+                        </span>
+                        <span className={css(styles.checkAnswerText)} style={{ visibility: this.state.answerState === "unanswered" ? "visible" : "hidden"}}>
+                            Check answer
+                        </span>
                     </button>
                     <div style={{ display: 'inline-block', width: 10 }} />
                     <button
@@ -421,12 +439,6 @@ const QuestionRenderer = createReactClass({
                 </div>
             </form>
         );
-    },
-});
-
-const styles = StyleSheet.create({
-    hintsContainer: {
-        marginLeft: 50,
     },
 });
 
