@@ -53,6 +53,8 @@ const QuestionRenderer = createReactClass({
         }).isRequired,
         problemNum: PropTypes.number,
         reviewMode: PropTypes.bool,
+        onAnswer: PropTypes.func,
+        onHint: PropTypes.func,
     },
 
     getDefaultProps: function() {
@@ -260,34 +262,24 @@ const QuestionRenderer = createReactClass({
      * }
      */
     scoreInput: function() {
-        const guessAndScore = this.questionRenderer.guessAndScore();
-        const guess = guessAndScore[0];
-        const score = guessAndScore[1];
+        const [guess, score] = this.questionRenderer.guessAndScore();
 
-        // Continue to include an empty guess for the now defunct answer area.
-        // TODO(alex): Check whether we rely on the format here for
-        //             analyzing ProblemLogs. If not, remove this layer.
-        const maxCompatGuess = [guess, []];
-
-        const keScore = Util.keScoreFromPerseusScore(
-            score,
-            maxCompatGuess,
-            this.questionRenderer.getSerializedState()
-        );
-
+        const isCorrect = score.type === "points" && score.earned >= score.total;
         const emptyQuestionAreaWidgets = this.questionRenderer.emptyWidgets();
 
+        // TODO(aria): Add in "unfinished"/invalid suppost to answerState
+        // for better check answer messages
         this.setState({
-            answerState: keScore.correct ? "correct" : "incorrect",
+            answerState: isCorrect ? "correct" : "incorrect",
             questionHighlightedWidgets: emptyQuestionAreaWidgets,
         });
 
-        return keScore;
+        return [guess, score];
     },
 
     checkAnswer: function(e) {
-        const score = this.scoreInput();
         e.preventDefault();
+        const score = this.scoreInput();
         console.log("Check answer:", score);
     },
 
