@@ -50,7 +50,7 @@ const QuestionRenderer = createReactClass({
         return {
             ...ProvideKeypad.getInitialState(),
             hintsVisible: this.props.initialHintsVisible,
-            questionCompleted: false,
+            answerState: 'unanswered',
             questionHighlightedWidgets: [],
         };
     },
@@ -199,7 +199,7 @@ const QuestionRenderer = createReactClass({
             [widgetId]
         );
         this.setState({
-            questionCompleted: false,
+            answerState: "unanswered",
             questionHighlightedWidgets: withRemoved,
         });
 
@@ -260,7 +260,7 @@ const QuestionRenderer = createReactClass({
         const emptyQuestionAreaWidgets = this.questionRenderer.emptyWidgets();
 
         this.setState({
-            questionCompleted: keScore.correct,
+            answerState: keScore.correct ? "correct" : "incorrect",
             questionHighlightedWidgets: emptyQuestionAreaWidgets,
         });
 
@@ -345,7 +345,7 @@ const QuestionRenderer = createReactClass({
                 onInteractWithWidget={this.handleInteractWithWidget}
                 highlightedWidgets={this.state.questionHighlightedWidgets}
                 apiOptions={apiOptions}
-                questionCompleted={this.state.questionCompleted}
+                questionCompleted={this.state.answerState === "correct"}
                 reviewMode={this.props.reviewMode}
                 ref={elem => this.questionRenderer = elem}
                 {...this.props.item.question}
@@ -380,10 +380,12 @@ const QuestionRenderer = createReactClass({
                             fontSize: 14,
                             borderRadius: 5,
                         }}
-                        disabled={this.state.questionCompleted}
+                        disabled={this.state.answerState === "correct"}
                     >
-                        {this.state.questionCompleted ?
+                        {this.state.answerState === "correct" ?
                             "🌟 Yes! You got it!" :
+                          this.state.answerState === "incorrect" ?
+                            "Try again" :
                             "Check answer"
                         }
                     </button>
