@@ -1,3 +1,4 @@
+import KAS from "../lib/kas";
 import _expressionJsx from "./expression.jsx";
 import _componentsTexButtonsJsx from "../components/tex-buttons.jsx";
 import _reactComponentsTexJsx from "react-components/tex.jsx";

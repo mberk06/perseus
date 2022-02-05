@@ -1,3 +1,4 @@
+import KAS from "../lib/kas";
 import _kmath from "kmath";
 import _componentsGraphieJsx from "../components/graphie.jsx";
 import _mixinsChangeableJsx from "../mixins/changeable.jsx";

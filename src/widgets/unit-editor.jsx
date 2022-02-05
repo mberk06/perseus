@@ -1,3 +1,4 @@
+import KAS from "../lib/kas";
 import { displaySigFigs } from "../sigfigs.jsx";
 import { iconOk, iconRemove } from "../icon-paths.js";
 import _componentsNumberInputJsx from "../components/number-input.jsx";

@@ -1,3 +1,4 @@
+import KAS from "../lib/kas";
 import _hubbleIndexJs from "../hubble/index.js";
 import { iconExclamationSign } from "../icon-paths.js";
 import { linterContextProps, linterContextDefault } from "../gorgon/proptypes.js";

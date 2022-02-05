@@ -1,3 +1,4 @@
+import KAS from "../lib/kas";
 import _mathJs from "./math.js";
 import _underscore from "underscore";
 import _jquery from "jquery";

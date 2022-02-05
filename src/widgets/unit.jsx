@@ -1,3 +1,4 @@
+import KAS from "../lib/kas";
 import { SignificantFigures, displaySigFigs } from "../sigfigs.jsx";
 import _componentsMathOutputJsx from "../components/math-output.jsx";
 import _mixinsChangeableJsx from "../mixins/changeable.jsx";
