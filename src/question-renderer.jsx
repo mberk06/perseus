@@ -63,6 +63,8 @@ const QuestionRenderer = createReactClass({
             initialHintsVisible: 0,
             problemNum: 0,
             reviewMode: false,
+            onAnswer: () => {},
+            onHint: () => {},
         };
     },
 
@@ -240,7 +242,7 @@ const QuestionRenderer = createReactClass({
 
     showHint: function() {
         if (this.state.hintsVisible < this.getNumHints()) {
-            console.log(`Hint ${this.state.hintsVisible + 1} shown`);
+            this.props.onHint(this.state.hintsVisible + 1, this.getNumHints());
             this.setState({
                 hintsVisible: this.state.hintsVisible + 1,
             });
@@ -279,8 +281,8 @@ const QuestionRenderer = createReactClass({
 
     checkAnswer: function(e) {
         e.preventDefault();
-        const score = this.scoreInput();
-        console.log("Check answer:", score);
+        const [guess, score] = this.scoreInput();
+        this.props.onAnswer(guess, score);
     },
 
     /**

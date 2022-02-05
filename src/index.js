@@ -73,7 +73,11 @@ const styles = {
 ReactDOM.render(
   <React.StrictMode>
     <div style={styles.container}>
-      <Perseus.QuestionRenderer item={itemData} />
+      <Perseus.QuestionRenderer
+        item={itemData}
+        onAnswer={(guess, score) => console.log("answer attempt:", guess, "with score:", score)}
+        onHint={(num, total) => console.log(`hint ${num} taken of ${total} total`)}
+      />
     </div>
   </React.StrictMode>,
   document.getElementById('root')
