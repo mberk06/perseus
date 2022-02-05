@@ -7,33 +7,37 @@ import * as Perseus from './perseus';
 
 const itemData = {
     "question": {
-        "content": "$3 + 5 = $ [[☃ numeric-input 1]]",
+        "content": "Testing an expression:\n\nSimplify $(2x + 3)(x - 1)$\n\n[[☃ expression 1]]",
         "images": {},
         "widgets": {
-            "numeric-input 1": {
-                "type": "numeric-input",
+            "expression 1": {
+                "type": "expression",
                 "alignment": "default",
                 "static": false,
                 "graded": true,
                 "options": {
-                    "static": false,
-                    "answers": [
+                    "answerForms": [
                         {
-                            "value": 8,
-                            "status": "correct",
-                            "message": "",
-                            "simplify": "required",
-                            "strict": false,
-                            "maxError": null
+                            "value": "2x^2+x-3",
+                            "form": false,
+                            "simplify": true,
+                            "considered": "correct",
+                            "key": 0
                         }
                     ],
-                    "size": "small",
-                    "coefficient": false,
-                    "labelText": "result",
-                    "multipleNumberInput": false
+                    "buttonSets": [
+                        "basic",
+                        "prealgebra"
+                    ],
+                    "functions": [
+                        "f",
+                        "g",
+                        "h"
+                    ],
+                    "times": false
                 },
                 "version": {
-                    "major": 0,
+                    "major": 1,
                     "minor": 0
                 }
             }
@@ -53,7 +57,13 @@ const itemData = {
     "hints": [
         {
             "replace": false,
-            "content": "$3 + 5 = 8$",
+            "content": "Hint number !",
+            "images": {},
+            "widgets": {}
+        },
+        {
+            "replace": false,
+            "content": "**Hint number 2!**",
             "images": {},
             "widgets": {}
         }
