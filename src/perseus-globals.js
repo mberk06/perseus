@@ -4,11 +4,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import createReactClass from "create-react-class";
 import PropTypes from "prop-types";
-import mathquill from "mathquill";
 import katex from "katex";
 import classnames from "classnames";
 import _ from "underscore";
 import "./lib/i18n.js"; // side effects
+import MathQuill from "mathquill";
 
 // NOTE: We don't import the CSS here. Instead, applications can do it separately:
 //       import "perseus-configured/lib/khan-exercises.css";
@@ -27,7 +27,7 @@ window.ReactDOMtags = {
 
 window.jQuery = window.$ = $;
 window.katex = katex;
-window.mathquill = mathquill;
+window.MathQuill = MathQuill;
 window.classnames = classnames;
 window._ = _;
 

@@ -3,6 +3,7 @@ import "./perseus-globals"; // side effects
 
 // Global css
 import 'katex/dist/katex.css';
+import './lib/mathquill/mathquill.css';
 import "./lib/khan-exercises.css";
 import "./lib/perseus.css";
 
