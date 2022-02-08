@@ -1,13 +1,9 @@
 
-import _widgetPropBlacklistJsx from "./widget-prop-blacklist.jsx";
-import _underscore from "underscore";
-import _react from "react";
+import WIDGET_PROP_BLACKLIST from "./widget-prop-blacklist.jsx";
+import _ from "underscore";
+import React from "react";
+import PropTypes from "prop-types";
 
-var _module_ = {
-    exports: {}
-};
-
-var exports = _module_.exports;
 /**
  * Changeable
  *
@@ -16,11 +12,6 @@ var exports = _module_.exports;
  * This.change takes prop changes as parameters, and calls
  * this.props.onChange with the modified props.
  */
-
-const React = _react;
-const _ = _underscore;
-
-const WIDGET_PROP_BLACKLIST = _widgetPropBlacklistJsx;
 
 const USAGE = "Usage:\n" +
             "  this.change({propName: 5}, callback);\n" +
@@ -102,4 +93,10 @@ export const change = function(newPropsOrSinglePropName, propValue, callback) {
 export const propTypes = {
     onChange: PropTypes.func.isRequired,
 };
-export default _module_.exports;
+
+const Changeable = {
+  change: change,
+  propTypes: propTypes,
+}
+
+export default Changeable;
