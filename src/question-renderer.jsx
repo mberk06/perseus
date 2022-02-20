@@ -377,6 +377,7 @@ const QuestionRenderer = createReactClass({
 
         return (
             <form
+                className="framework-perseus"
                 onSubmit={this.checkAnswer}
             >
                 <div>
