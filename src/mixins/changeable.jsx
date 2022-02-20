@@ -94,6 +94,10 @@ export const propTypes = {
     onChange: PropTypes.func.isRequired,
 };
 
+export const ChangeableProps = {
+    onChange: PropTypes.func.isRequired,
+};
+
 const Changeable = {
   change: change,
   propTypes: propTypes,
