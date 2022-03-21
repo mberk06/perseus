@@ -1,10 +1,11 @@
 {
   "name": "openperseus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open-source community fork of Khan Academy's Perseus questions/exercises/articles framework",
   "keywords": ["khan", "exercises", "perseus", "interactive", "questions", "education"],
   "author": "Aria Buckles <aria@buckles.dev> (https://github.com/ariabuckles)",
   "contributors": ["Khan Academy, et al (https://github.com/Khan/perseus/graphs/contributors)"],
+  "license": "MIT",
   "main": "perseus.js",
   "scripts": {
     "start": "react-scripts start",
