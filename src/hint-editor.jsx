@@ -4,15 +4,11 @@ import { iconCircleArrowDown, iconCircleArrowUp, iconPlus, iconTrash } from "./i
 import _perseusApiJsx from "./perseus-api.jsx";
 import _componentsDeviceFramerJsx from "./components/device-framer.jsx";
 import _componentsInfoTipJsx from "./components/info-tip.jsx";
-import _editorJsx from "./editor.jsx";
+import Editor from "./editor.jsx";
+import Renderer from "./renderer.jsx";
 import _underscore from "underscore";
 import _react from "react";
 
-var _module_ = {
-    exports: {}
-};
-
-var exports = _module_.exports;
 /* eslint-disable no-var, object-curly-spacing, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types, react/sort-comp */
 /* TODO(csilvers): fix these lint errors (http://eslint.org/docs/rules): */
 /* To fix, remove an entry above, run ka-lint, and fix errors. */
@@ -24,7 +20,6 @@ var exports = _module_.exports;
 var React = _react;
 var _ = _underscore;
 
-var Editor = _editorJsx;
 var InfoTip = _componentsInfoTipJsx;
 var DeviceFramer = _componentsDeviceFramerJsx;
 
@@ -40,7 +35,7 @@ const IframeContentRenderer = _iframeContentRendererJsx;
  *  ~ the "remove this hint" box
  *  ~ the move hint up/down arrows
  */
-var HintEditor = createReactClass({
+export const HintEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
         className: PropTypes.string,
@@ -137,7 +132,7 @@ var HintEditor = createReactClass({
 });
 
 /* A single hint-row containing a hint editor and preview */
-var CombinedHintEditor = createReactClass({
+export const CombinedHintEditor = createReactClass({
     propTypes: {
         apiOptions: ApiOptions.propTypes,
         deviceType: PropTypes.string.isRequired,
@@ -153,23 +148,23 @@ var CombinedHintEditor = createReactClass({
     },
 
     updatePreview: function() {
-        const shouldBold =
-            this.props.isLast && !/\*\*/.test(this.props.hint.content);
-
-        this.refs.frame.sendNewData({
-            type: "hint",
-            data: {
-                hint: this.props.hint,
-                bold: shouldBold,
-                pos: this.props.pos,
-                apiOptions: this.props.apiOptions,
-                linterContext: {
-                    contentType: "hint",
-                    highlightLint: this.props.highlightLint,
-                    paths: this.props.contentPaths,
-                },
-            },
-        });
+        // TODO(aria): decide what to do with this
+        //const shouldBold =
+        //    this.props.isLast && !/\*\*/.test(this.props.hint.content);
+        //this.refs.frame.sendNewData({
+        //    type: "hint",
+        //    data: {
+        //        hint: this.props.hint,
+        //        bold: shouldBold,
+        //        pos: this.props.pos,
+        //        apiOptions: this.props.apiOptions,
+        //        linterContext: {
+        //            contentType: "hint",
+        //            highlightLint: this.props.highlightLint,
+        //            paths: this.props.contentPaths,
+        //        },
+        //    },
+        //});
     },
 
     componentDidMount: function() {
@@ -207,7 +202,11 @@ var CombinedHintEditor = createReactClass({
                     />
                 </div>
                 <div className="perseus-editor-right-cell">
-                    <DeviceFramer
+                    <Renderer
+                        apiOptions={this.props.apiOptions}
+                        {...this.props.hint}
+                    />
+                    {/*<DeviceFramer
                         deviceType={this.props.deviceType}
                         nochrome={true}
                     >
@@ -218,7 +217,7 @@ var CombinedHintEditor = createReactClass({
                             datasetValue={isMobile}
                             seamless={true}
                         />
-                    </DeviceFramer>
+                    </DeviceFramer>*/}
                 </div>
             </div>
         );
@@ -370,5 +369,4 @@ var CombinedHintsEditor = createReactClass({
     },
 });
 
-_module_.exports = CombinedHintsEditor;
-export default _module_.exports;
+export default  CombinedHintsEditor;

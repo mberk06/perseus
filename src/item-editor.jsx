@@ -1,8 +1,10 @@
+import "./lib/perseus-admin.css";
 import _iframeContentRendererJsx from "./iframe-content-renderer.jsx";
 import _versionJson from "./version.json";
 import _componentsDeviceFramerJsx from "./components/device-framer.jsx";
 import _itemExtrasEditorJsx from "./item-extras-editor.jsx";
-import _editorJsx from "./editor.jsx";
+import Editor from "./editor.jsx";
+import Renderer from "./renderer.jsx";
 import _perseusApiJsx from "./perseus-api.jsx";
 import _underscore from "underscore";
 import _react from "react";
@@ -20,7 +22,6 @@ var React = _react;
 var _ = _underscore;
 
 var ApiOptions = _perseusApiJsx.Options;
-var Editor = _editorJsx;
 var ItemExtrasEditor = _itemExtrasEditorJsx;
 var DeviceFramer = _componentsDeviceFramerJsx;
 var ITEM_DATA_VERSION = _versionJson.itemDataVersion;
@@ -74,7 +75,11 @@ var ItemEditor = createReactClass({
 
                     <div className="perseus-editor-right-cell">
                         <div id="problemarea">
-                            <DeviceFramer
+                            <Renderer
+                                apiOptions={this.props.apiOptions}
+                                {...this.props.question}
+                            />
+                            {/*<DeviceFramer
                                 deviceType={this.props.deviceType}
                                 nochrome={true}
                             >
@@ -86,7 +91,7 @@ var ItemEditor = createReactClass({
                                     datasetValue={isMobile}
                                     seamless={true}
                                 />
-                            </DeviceFramer>
+                            </DeviceFramer>*/}
                             <div
                                 id="hintsarea"
                                 className="hintsarea"
@@ -115,7 +120,8 @@ var ItemEditor = createReactClass({
     },
 
     triggerPreviewUpdate: function(newData) {
-        this.refs.frame.sendNewData(newData);
+      // TODO(aria): remove this?
+      //this.refs.frame.sendNewData(newData);
     },
 
     handleEditorChange: function(newProps, cb, silent) {

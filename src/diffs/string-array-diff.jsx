@@ -1,5 +1,5 @@
 import _underscore from "underscore";
-import _libJsdiff from "../../lib/jsdiff";
+import _libJsdiff from "../lib/jsdiff";
 
 var _module_ = {
     exports: {}

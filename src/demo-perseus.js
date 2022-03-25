@@ -1,3 +1,6 @@
+import ReactDOM from 'react-dom';
+import * as Perseus from './perseus';
+import Util from './util';
 import _articleDiffDemoJsx from "./article-diff-demo.jsx";
 import _itemDiffDemoJsx from "./item-diff-demo.jsx";
 import _multirendererDemoJsx from "./multirenderer-demo.jsx";
@@ -28,9 +31,6 @@ window.Khan = {
     imageBase: "/images/",
 };
 
-const Perseus = (window.Perseus = _editorPerseusJs);
-const ReactDOM = (window.ReactDOM = React.__internalReactDOM);
-
 const EditorDemo = _editorDemoJsx;
 const RendererDemo = _rendererDemoJsx;
 const ArticleDemo = _articleDemoJsx;
@@ -38,7 +38,7 @@ const MultirendererDemo = _multirendererDemoJsx;
 const ItemDiffDemo = _itemDiffDemoJsx;
 const ArticleDiffDemo = _articleDiffDemoJsx;
 
-const query = Perseus.Util.parseQueryString(window.location.hash.substring(1));
+const query = Util.parseQueryString(window.location.hash.substring(1));
 const question = query.content && JSON.parse(query.content);
 const problemNum = Math.floor(Math.random() * 100);
 
@@ -54,11 +54,11 @@ const routes = {
     "": [EditorDemo, {question, problemNum}],
 };
 
-Perseus.init({skipMathJax: false, loadExtraWidgets: true})
+Perseus.init({skipMathJax: true, loadExtraWidgets: true})
     .then(function() {
         ReactDOM.render(
             React.createElement(...(routes[path] || routes[""])),
-            document.getElementById("perseus-container")
+            document.getElementById("root")
         );
     })
     .then(

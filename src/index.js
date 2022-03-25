@@ -1,5 +1,5 @@
 // Demo page index for create-react-app
-
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as Perseus from './perseus';
@@ -92,3 +92,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+*/
+
+import "./demo-perseus";

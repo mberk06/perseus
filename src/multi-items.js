@@ -17,7 +17,7 @@ var exports = _module_.exports;
 const MultiRenderer = _multiItemsMultiRendererJsx;
 const shapes = _multiItemsShapesJs;
 
-_module_.exports = {
+export {
     // Tools for rendering your multi-items
     MultiRenderer,
 
@@ -31,4 +31,17 @@ _module_.exports = {
     findHintNodesInItem,
     inferItemShape,
 };
-export default _module_.exports;
+export default {
+    // Tools for rendering your multi-items
+    MultiRenderer,
+
+    // Tools for declaring your multi-item shapes
+    shapes,
+    buildPropTypeForShape,
+
+    // Tools for generically manipulating multi-items
+    buildEmptyItemForShape,
+    findContentNodesInItem,
+    findHintNodesInItem,
+    inferItemShape,
+};

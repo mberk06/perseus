@@ -396,6 +396,4 @@ var JsDiff = (function() {
   };
 })();
 
-if (typeof module !== 'undefined') {
-    module.exports = JsDiff;
-}
+export default JsDiff;
