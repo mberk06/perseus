@@ -68,6 +68,8 @@ import _widgetsCsProgramEditorJsx from "./widgets/cs-program-editor.jsx";
 import _widgetsCsProgramJsx from "./widgets/cs-program.jsx";
 import _widgetsCategorizerEditorJsx from "./widgets/categorizer-editor.jsx";
 import _widgetsCategorizerJsx from "./widgets/categorizer.jsx";
+import LikertScaleEditor from "./widgets/likert-scale-editor.jsx";
+import LikertScale from "./widgets/likert-scale.jsx";
 
 // TODO(aria): Env variable & bundling magic?
 const __EDITOR__ = true;
@@ -107,6 +109,7 @@ const allWidgets = [
     [_widgetsTransformerJsx, __EDITOR__ && _widgetsTransformerEditorJsx],
     [_widgetsUnitJsx, __EDITOR__ && _widgetsUnitEditorJsx],
     [_widgetsVideoJsx, __EDITOR__ && _widgetsVideoEditorJsx],
+    [LikertScale, LikertScaleEditor],
     // These widgets are only used when testing things, so remove them in the
     // non-editor bundle.
     //__EDITOR__ && [
