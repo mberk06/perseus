@@ -1,11 +1,19 @@
-_**As of January 2018 this repo is no longer under active development. It will, however, remain open source.**_
+# OpenPerseus
 
-# Perseus
+OpenPerseus is an open-source community fork of Khan Academy's Perseus
+questions/exercises/articles framework, by @ariabuckles, the previous in-house
+lead dev on perseus at Khan Academy.
 
-[![Build Status](https://travis-ci.org/Khan/perseus.svg?branch=master)](https://travis-ci.org/Khan/perseus)
-[![Join the chat at https://gitter.im/Khan/perseus](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Khan/perseus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+After years of Khan Academy not supporting external use of perseus, and
+requests from others to use it themselves, I've been working on restoring
+perseus to a state usable by third-parties, thanks to some sponsorship from
+@LearnToBeFoundation.
 
-Perseus is Khan Academy's new exercise question editor and renderer. It allows
+It may be a while until this repo is documented to the extent it deserves.
+Feel free to submit an issue if you'd like to get help with something, and I'll
+do my best to get to it when I have time!
+
+OpenPerseus is an exercise question editor and renderer. It allows
 you to create and display interactive questions.
 
 ![screenshot of Perseus](https://s3.amazonaws.com/uploads.hipchat.com/6574/26709/TfZBRXV0nmRH64g/upload.png)
