@@ -92,11 +92,31 @@ class LikertScale extends React.PureComponent {
             <LikertChoice value={4} selected={this.props.selected} onSelect={this._handleChoice}>🙂</LikertChoice>
             <LikertChoice value={5} selected={this.props.selected} onSelect={this._handleChoice}>😁</LikertChoice>
         </div>;
-    }
+    };
 
     _handleChoice = (selected) => {
         this.props.onChange({selected: selected});
-    }
+    };
+
+    getUserInput = () => {
+        return {
+            selected: this.props.selected,
+        };
+    };
+
+    simpleValidate = (rubric, onInputError) => {
+        if (this.props.selected == null) {
+            return {
+                type: "invalid",
+                message: null,
+            };
+        }
+        return {
+            type: "points",
+            earned: 1,
+            total: 1,
+        };
+    };
 }
 
 const editorPropsToWidgetProps = (editorProps) => {
