@@ -1,6 +1,12 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, css } from "aphrodite";
+import Likert1 from "./likert-scale/likert-face-1.svg";
+import Likert2 from "./likert-scale/likert-face-2.svg";
+import Likert3 from "./likert-scale/likert-face-3.svg";
+import Likert4 from "./likert-scale/likert-face-4.svg";
+import Likert5 from "./likert-scale/likert-face-5.svg";
+
 
 const styles = StyleSheet.create({
     container: {
@@ -16,8 +22,7 @@ const styles = StyleSheet.create({
         marginRight: -1,
         borderColor: 'gray',
         backgroundColor: '#eee',
-        padding: 5,
-        fontSize: '200%',
+        padding: 15,
         ':hover': {
             zIndex: 1,
             outline: '2px solid lime',
@@ -42,14 +47,20 @@ const styles = StyleSheet.create({
     selectedChoice: {
         backgroundColor: 'green',
     },
+    emoji: {
+        display: 'block',
+        height: 50,
+        width: 50,
+    },
 });
 
 class LikertChoice extends React.PureComponent {
     static propTypes = {
         value: PropTypes.number.isRequired,
         onSelect: PropTypes.func.isRequired,
-        children: PropTypes.node.isRequired,
         styles: PropTypes.object,
+        image: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
     };
 
     render = () => {
@@ -61,7 +72,7 @@ class LikertChoice extends React.PureComponent {
             className={css(styles.choice, this.props.value === 1 && styles.first, this.props.value === 5 && styles.last, isSelected && styles.selectedChoice)}
             onClick={this._handleSelect}
         >
-            {this.props.children}
+            <img className={css(styles.emoji)} src={this.props.image} alt={this.props.alt} title={this.props.alt} />
         </button>;
     }
 
@@ -86,11 +97,11 @@ class LikertScale extends React.PureComponent {
 
     render = () => {
         return <div role="radiogroup" className={css(styles.container)}>
-            <LikertChoice value={1} selected={this.props.selected} onSelect={this._handleChoice}>😞</LikertChoice>
-            <LikertChoice value={2} selected={this.props.selected} onSelect={this._handleChoice}>😕</LikertChoice>
-            <LikertChoice value={3} selected={this.props.selected} onSelect={this._handleChoice}>😐</LikertChoice>
-            <LikertChoice value={4} selected={this.props.selected} onSelect={this._handleChoice}>🙂</LikertChoice>
-            <LikertChoice value={5} selected={this.props.selected} onSelect={this._handleChoice}>😁</LikertChoice>
+            <LikertChoice value={1} selected={this.props.selected} onSelect={this._handleChoice} image={Likert1} alt="bad" />
+            <LikertChoice value={2} selected={this.props.selected} onSelect={this._handleChoice} image={Likert2} alt="not good" />
+            <LikertChoice value={3} selected={this.props.selected} onSelect={this._handleChoice} image={Likert3} alt="neutral or unsure" />
+            <LikertChoice value={4} selected={this.props.selected} onSelect={this._handleChoice} image={Likert4} alt="good"/>
+            <LikertChoice value={5} selected={this.props.selected} onSelect={this._handleChoice} image={Likert5} alt="great!" />
         </div>;
     };
 
