@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import json from '@rollup/plugin-json';
+import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import { visualizer } from 'rollup-plugin-visualizer';
 
@@ -54,6 +55,7 @@ export default {
     json(),
     resolve(),
     commonjs(),
+    image(),
     babel({ babelHelpers: 'bundled' }),
     postcss({ extract: 'perseus.css' }),
     visualizer({ filename: 'rollup-stats.html' }),
