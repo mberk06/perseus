@@ -7,7 +7,7 @@ var $$6 = require('jquery');
 var _react = require('react');
 var _reactDom = require('react-dom');
 var _createReactClass = require('create-react-class');
-var _propTypes = require('prop-types');
+var PropTypes$9 = require('prop-types');
 var _katex = require('katex');
 var _classnames = require('classnames');
 var _underscore = require('underscore');
@@ -44,7 +44,7 @@ var _react__default = /*#__PURE__*/_interopDefaultLegacy(_react);
 var _react__namespace = /*#__PURE__*/_interopNamespace(_react);
 var _reactDom__default = /*#__PURE__*/_interopDefaultLegacy(_reactDom);
 var _createReactClass__default = /*#__PURE__*/_interopDefaultLegacy(_createReactClass);
-var _propTypes__default = /*#__PURE__*/_interopDefaultLegacy(_propTypes);
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes$9);
 var _katex__default = /*#__PURE__*/_interopDefaultLegacy(_katex);
 var _classnames__default = /*#__PURE__*/_interopDefaultLegacy(_classnames);
 var _underscore__default = /*#__PURE__*/_interopDefaultLegacy(_underscore);
@@ -411,7 +411,7 @@ window.$i18nDoNotTranslate = $i18nDoNotTranslate;
 //       backfills and I'm not sure how reliable this is!
 
 window.createReactClass = _createReactClass__default["default"];
-window.PropTypes = _propTypes__default["default"];
+window.PropTypes = PropTypes__default["default"];
 window.ReactDOMtags = {
   span: props => /*#__PURE__*/_react__default["default"].createElement("span", props),
   input: props => /*#__PURE__*/_react__default["default"].createElement("input", props)
@@ -475,7 +475,7 @@ window.Khan = {
   imageBase: "/images/"
 };
 
-var _module_$3a = {
+var _module_$39 = {
   exports: {}
 };
 /**
@@ -505,7 +505,7 @@ var buildObjectShape = shape => ({
 });
 
 var hintsShape = buildArrayShape(hintShape);
-_module_$3a.exports = {
+_module_$39.exports = {
   content: contentShape,
   hint: hintShape,
   hints: hintsShape,
@@ -513,7 +513,7 @@ _module_$3a.exports = {
   arrayOf: buildArrayShape,
   shape: buildObjectShape
 };
-var _multiItemsShapesJs = _module_$3a.exports;
+var _multiItemsShapesJs = _module_$39.exports;
 
 /**
  * Return a PropType that accepts Items of the given shape, and rejects other
@@ -7658,7 +7658,7 @@ module$b.exports = {
 };
 var _kmath3 = module$b.exports;
 
-var _module_$39 = {
+var _module_$38 = {
   exports: {}
 };
 var knumber$9 = _kmath3.number;
@@ -7905,10 +7905,10 @@ var KhanMath$d = {
     return String(number);
   }
 };
-_module_$39.exports = KhanMath$d;
-var _utilMathJs = _module_$39.exports;
+_module_$38.exports = KhanMath$d;
+var _utilMathJs = _module_$38.exports;
 
-var _module_$38 = {
+var _module_$37 = {
   exports: {}
 };
 /* eslint-disable object-curly-spacing */
@@ -8552,8 +8552,8 @@ var KhanAnswerTypes$6 = {
     }
   }
 };
-_module_$38.exports = KhanAnswerTypes$6;
-var _utilAnswerTypesJs = _module_$38.exports;
+_module_$37.exports = KhanAnswerTypes$6;
+var _utilAnswerTypesJs = _module_$37.exports;
 
 /* eslint-disable brace-style, comma-dangle, indent, max-len, no-var, one-var, prefer-spread */
 
@@ -10068,7 +10068,7 @@ _defineProperty(Rule, "Severity", {
 
 Rule.DEFAULT_SELECTOR = Selector.parse("text");
 
-var _module_$37 = {
+var _module_$36 = {
   exports: {}
 };
 // can't match specific widget types directly, this rule implements
@@ -10077,7 +10077,7 @@ var _module_$37 = {
 // than one problem with an image widget, the user will only see one
 // problem at a time.
 
-_module_$37.exports = Rule.makeRule({
+_module_$36.exports = Rule.makeRule({
   name: "image-widget",
   severity: Rule.Severity.BULK_WARNING,
   selector: "widget",
@@ -10112,12 +10112,12 @@ _module_$37.exports = Rule.makeRule({
     }
   }
 });
-var _imageWidgetJs = _module_$37.exports;
+var _imageWidgetJs = _module_$36.exports;
 
-var _module_$36 = {
+var _module_$35 = {
   exports: {}
 };
-_module_$36.exports = Rule.makeRule({
+_module_$35.exports = Rule.makeRule({
   name: "image-spaces-around-urls",
   severity: Rule.Severity.ERROR,
   selector: "image",
@@ -10144,22 +10144,7 @@ _module_$36.exports = Rule.makeRule({
     }
   }
 });
-var _imageSpacesAroundUrlsJs = _module_$36.exports;
-
-var _module_$35 = {
-  exports: {}
-};
-// Math and code hold their content directly and do not have text nodes
-// beneath them (unlike the HTML DOM) so this rule automatically does not
-// apply inside $$ or ``.
-
-_module_$35.exports = Rule.makeRule({
-  name: "unbalanced-code-delimiters",
-  severity: Rule.Severity.ERROR,
-  pattern: /[`~]+/,
-  message: "Unbalanced code delimiters:\ncode blocks should begin and end with the same type and number of delimiters"
-});
-var _unbalancedCodeDelimitersJs = _module_$35.exports;
+var _imageSpacesAroundUrlsJs = _module_$35.exports;
 
 var _module_$34 = {
   exports: {}
@@ -10169,51 +10154,66 @@ var _module_$34 = {
 // apply inside $$ or ``.
 
 _module_$34.exports = Rule.makeRule({
+  name: "unbalanced-code-delimiters",
+  severity: Rule.Severity.ERROR,
+  pattern: /[`~]+/,
+  message: "Unbalanced code delimiters:\ncode blocks should begin and end with the same type and number of delimiters"
+});
+var _unbalancedCodeDelimitersJs = _module_$34.exports;
+
+var _module_$33 = {
+  exports: {}
+};
+// Math and code hold their content directly and do not have text nodes
+// beneath them (unlike the HTML DOM) so this rule automatically does not
+// apply inside $$ or ``.
+
+_module_$33.exports = Rule.makeRule({
   name: "math-without-dollars",
   severity: Rule.Severity.GUIDELINE,
   pattern: /\\\w+{[^}]*}|{|}/,
   message: "This looks like LaTeX:\ndid you mean to put it inside dollar signs?"
 });
-var _mathWithoutDollarsJs = _module_$34.exports;
+var _mathWithoutDollarsJs = _module_$33.exports;
 
-var _module_$33 = {
+var _module_$32 = {
   exports: {}
 };
-_module_$33.exports = Rule.makeRule({
+_module_$32.exports = Rule.makeRule({
   name: "profanity",
   // This list could obviously be expanded a lot, but I figured we
   // could start with https://en.wikipedia.org/wiki/Seven_dirty_words
   pattern: /\b(shit|piss|fuck|cunt|cocksucker|motherfucker|tits)\b/i,
   message: "Avoid profanity"
 });
-var _profanityJs = _module_$33.exports;
-
-var _module_$32 = {
-  exports: {}
-};
-_module_$32.exports = Rule.makeRule({
-  name: "widget-in-table",
-  severity: Rule.Severity.BULK_WARNING,
-  selector: "table widget",
-  message: "Widget in table:\ndo not put widgets inside of tables."
-});
-var _widgetInTableJs = _module_$32.exports;
+var _profanityJs = _module_$32.exports;
 
 var _module_$31 = {
   exports: {}
 };
 _module_$31.exports = Rule.makeRule({
-  name: "unescaped-dollar",
-  severity: Rule.Severity.ERROR,
-  selector: "unescapedDollar",
-  message: "Unescaped dollar sign:\nDollar signs must appear in pairs or be escaped as \\$"
+  name: "widget-in-table",
+  severity: Rule.Severity.BULK_WARNING,
+  selector: "table widget",
+  message: "Widget in table:\ndo not put widgets inside of tables."
 });
-var _unescapedDollarJs = _module_$31.exports;
+var _widgetInTableJs = _module_$31.exports;
 
 var _module_$30 = {
   exports: {}
 };
 _module_$30.exports = Rule.makeRule({
+  name: "unescaped-dollar",
+  severity: Rule.Severity.ERROR,
+  selector: "unescapedDollar",
+  message: "Unescaped dollar sign:\nDollar signs must appear in pairs or be escaped as \\$"
+});
+var _unescapedDollarJs = _module_$30.exports;
+
+var _module_$2$ = {
+  exports: {}
+};
+_module_$2$.exports = Rule.makeRule({
   name: "table-missing-cells",
   severity: Rule.Severity.WARNING,
   selector: "table",
@@ -10229,71 +10229,71 @@ _module_$30.exports = Rule.makeRule({
     }
   }
 });
-var _tableMissingCellsJs = _module_$30.exports;
-
-var _module_$2$ = {
-  exports: {}
-};
-_module_$2$.exports = Rule.makeRule({
-  name: "nested-lists",
-  severity: Rule.Severity.WARNING,
-  selector: "list list",
-  message: "Nested lists:\nnested lists are hard to read on mobile devices;\ndo not use additional indentation."
-});
-var _nestedListsJs = _module_$2$.exports;
+var _tableMissingCellsJs = _module_$2$.exports;
 
 var _module_$2_ = {
   exports: {}
 };
 _module_$2_.exports = Rule.makeRule({
+  name: "nested-lists",
+  severity: Rule.Severity.WARNING,
+  selector: "list list",
+  message: "Nested lists:\nnested lists are hard to read on mobile devices;\ndo not use additional indentation."
+});
+var _nestedListsJs = _module_$2_.exports;
+
+var _module_$2Z = {
+  exports: {}
+};
+_module_$2Z.exports = Rule.makeRule({
   name: "math-text-empty",
   severity: Rule.Severity.WARNING,
   selector: "math, blockMath",
   pattern: /\\text{\s*}/,
   message: "Empty \\text{} block in math expression"
 });
-var _mathTextEmptyJs = _module_$2_.exports;
+var _mathTextEmptyJs = _module_$2Z.exports;
 
-var _module_$2Z = {
+var _module_$2Y = {
   exports: {}
 };
-_module_$2Z.exports = Rule.makeRule({
+_module_$2Y.exports = Rule.makeRule({
   name: "math-starts-with-space",
   severity: Rule.Severity.GUIDELINE,
   selector: "math, blockMath",
   pattern: /^\s*(~|\\qquad|\\quad|\\,|\\;|\\:|\\ |\\!|\\enspace|\\phantom)/,
   message: "Math starts with space:\nmath should not be indented. Do not begin math expressions with\nLaTeX space commands like ~, \\;, \\quad, or \\phantom"
 });
-var _mathStartsWithSpaceJs = _module_$2Z.exports;
+var _mathStartsWithSpaceJs = _module_$2Y.exports;
 
-var _module_$2Y = {
+var _module_$2X = {
   exports: {}
 };
-_module_$2Y.exports = Rule.makeRule({
+_module_$2X.exports = Rule.makeRule({
   name: "math-nested",
   severity: Rule.Severity.ERROR,
   selector: "math, blockMath",
   pattern: /\\text{[^$}]*\$[^$}]*\$[^}]*}/,
   message: "Nested math:\nDon't nest math expressions inside \\text{} blocks"
 });
-var _mathNestedJs = _module_$2Y.exports;
+var _mathNestedJs = _module_$2X.exports;
 
-var _module_$2X = {
+var _module_$2W = {
   exports: {}
 };
-_module_$2X.exports = Rule.makeRule({
+_module_$2W.exports = Rule.makeRule({
   name: "math-frac",
   severity: Rule.Severity.GUIDELINE,
   selector: "math, blockMath",
   pattern: /\\frac[ {]/,
   message: "Use \\dfrac instead of \\frac in your math expressions."
 });
-var _mathFracJs = _module_$2X.exports;
+var _mathFracJs = _module_$2W.exports;
 
-var _module_$2W = {
+var _module_$2V = {
   exports: {}
 };
-_module_$2W.exports = Rule.makeRule({
+_module_$2V.exports = Rule.makeRule({
   name: "math-font-size",
   severity: Rule.Severity.GUIDELINE,
   selector: "math, blockMath",
@@ -10301,59 +10301,59 @@ _module_$2W.exports = Rule.makeRule({
   pattern: /\\(tiny|Tiny|small|large|Large|LARGE|huge|Huge|scriptsize|normalsize)\s*{/,
   message: "Math font size:\nDon't change the default font size with \\Large{} or similar commands"
 });
-var _mathFontSizeJs = _module_$2W.exports;
+var _mathFontSizeJs = _module_$2V.exports;
 
-var _module_$2V = {
+var _module_$2U = {
   exports: {}
 };
-_module_$2V.exports = Rule.makeRule({
+_module_$2U.exports = Rule.makeRule({
   name: "math-empty",
   severity: Rule.Severity.WARNING,
   selector: "math, blockMath",
   pattern: /^$/,
   message: "Empty math: don't use $$ in your markdown."
 });
-var _mathEmptyJs = _module_$2V.exports;
+var _mathEmptyJs = _module_$2U.exports;
 
-var _module_$2U = {
+var _module_$2T = {
   exports: {}
 };
-_module_$2U.exports = Rule.makeRule({
+_module_$2T.exports = Rule.makeRule({
   name: "math-align-linebreaks",
   severity: Rule.Severity.WARNING,
   selector: "blockMath",
   pattern: /\\begin{align}.*[^\\](\\{2,3}[^\\]|\\{5,}).*\\end{align}/,
   message: "Use four backslashes between lines of an align block"
 });
-var _mathAlignLinebreaksJs = _module_$2U.exports;
+var _mathAlignLinebreaksJs = _module_$2T.exports;
 
-var _module_$2T = {
+var _module_$2S = {
   exports: {}
 };
-_module_$2T.exports = Rule.makeRule({
+_module_$2S.exports = Rule.makeRule({
   name: "math-align-extra-break",
   severity: Rule.Severity.WARNING,
   selector: "blockMath",
   pattern: /(\\{2,})\s*\\end{align}/,
   message: "Extra space at end of block:\nDon't end an align block with backslashes"
 });
-var _mathAlignExtraBreakJs = _module_$2T.exports;
-
-var _module_$2S = {
-  exports: {}
-};
-_module_$2S.exports = Rule.makeRule({
-  name: "math-adjacent",
-  severity: Rule.Severity.WARNING,
-  selector: "blockMath+blockMath",
-  message: "Adjacent math blocks:\ncombine the blocks between \\begin{align} and \\end{align}"
-});
-var _mathAdjacentJs = _module_$2S.exports;
+var _mathAlignExtraBreakJs = _module_$2S.exports;
 
 var _module_$2R = {
   exports: {}
 };
 _module_$2R.exports = Rule.makeRule({
+  name: "math-adjacent",
+  severity: Rule.Severity.WARNING,
+  selector: "blockMath+blockMath",
+  message: "Adjacent math blocks:\ncombine the blocks between \\begin{align} and \\end{align}"
+});
+var _mathAdjacentJs = _module_$2R.exports;
+
+var _module_$2Q = {
+  exports: {}
+};
+_module_$2Q.exports = Rule.makeRule({
   name: "long-paragraph",
   severity: Rule.Severity.GUIDELINE,
   selector: "paragraph",
@@ -10362,35 +10362,35 @@ _module_$2R.exports = Rule.makeRule({
     return "Paragraph too long:\nThis paragraph is ".concat(content.length, " characters long.\nShorten it to 500 characters or fewer.");
   }
 });
-var _longParagraphJs = _module_$2R.exports;
+var _longParagraphJs = _module_$2Q.exports;
 
-var _module_$2Q = {
+var _module_$2P = {
   exports: {}
 };
-_module_$2Q.exports = Rule.makeRule({
+_module_$2P.exports = Rule.makeRule({
   name: "link-click-here",
   severity: Rule.Severity.WARNING,
   selector: "link",
   pattern: /click here/i,
   message: "Inappropriate link text:\nDo not use the words \"click here\" in links."
 });
-var _linkClickHereJs = _module_$2Q.exports;
-
-var _module_$2P = {
-  exports: {}
-};
-_module_$2P.exports = Rule.makeRule({
-  name: "image-in-table",
-  severity: Rule.Severity.BULK_WARNING,
-  selector: "table image",
-  message: "Image in table:\ndo not put images inside of tables."
-});
-var _imageInTableJs = _module_$2P.exports;
+var _linkClickHereJs = _module_$2P.exports;
 
 var _module_$2O = {
   exports: {}
 };
 _module_$2O.exports = Rule.makeRule({
+  name: "image-in-table",
+  severity: Rule.Severity.BULK_WARNING,
+  selector: "table image",
+  message: "Image in table:\ndo not put images inside of tables."
+});
+var _imageInTableJs = _module_$2O.exports;
+
+var _module_$2N = {
+  exports: {}
+};
+_module_$2N.exports = Rule.makeRule({
   name: "image-alt-text",
   severity: Rule.Severity.BULK_WARNING,
   selector: "image",
@@ -10404,9 +10404,9 @@ _module_$2O.exports = Rule.makeRule({
     }
   }
 });
-var _imageAltTextJs = _module_$2O.exports;
+var _imageAltTextJs = _module_$2N.exports;
 
-var _module_$2N = {
+var _module_$2M = {
   exports: {}
 };
 // capitalized even in a title-case heading.  See
@@ -10425,7 +10425,7 @@ function isCapitalized(word) {
   return c === c.toUpperCase();
 }
 
-_module_$2N.exports = Rule.makeRule({
+_module_$2M.exports = Rule.makeRule({
   name: "heading-title-case",
   severity: Rule.Severity.GUIDELINE,
   selector: "heading",
@@ -10467,12 +10467,12 @@ _module_$2N.exports = Rule.makeRule({
     }
   }
 });
-var _headingTitleCaseJs = _module_$2N.exports;
+var _headingTitleCaseJs = _module_$2M.exports;
 
-var _module_$2M = {
+var _module_$2L = {
   exports: {}
 };
-_module_$2M.exports = Rule.makeRule({
+_module_$2L.exports = Rule.makeRule({
   name: "heading-sentence-case",
   severity: Rule.Severity.GUIDELINE,
   selector: "heading",
@@ -10480,12 +10480,12 @@ _module_$2M.exports = Rule.makeRule({
   // first letter is lowercase
   message: "First letter is lowercase:\nthe first letter of a heading should be capitalized."
 });
-var _headingSentenceCaseJs = _module_$2M.exports;
+var _headingSentenceCaseJs = _module_$2L.exports;
 
-var _module_$2L = {
+var _module_$2K = {
   exports: {}
 };
-_module_$2L.exports = Rule.makeRule({
+_module_$2K.exports = Rule.makeRule({
   name: "heading-level-skip",
   severity: Rule.Severity.WARNING,
   selector: "heading ~ heading",
@@ -10500,12 +10500,12 @@ _module_$2L.exports = Rule.makeRule({
     }
   }
 });
-var _headingLevelSkipJs = _module_$2L.exports;
+var _headingLevelSkipJs = _module_$2K.exports;
 
-var _module_$2K = {
+var _module_$2J = {
   exports: {}
 };
-_module_$2K.exports = Rule.makeRule({
+_module_$2J.exports = Rule.makeRule({
   name: "heading-level-1",
   severity: Rule.Severity.WARNING,
   selector: "heading",
@@ -10515,12 +10515,12 @@ _module_$2K.exports = Rule.makeRule({
     }
   }
 });
-var _headingLevel1Js = _module_$2K.exports;
+var _headingLevel1Js = _module_$2J.exports;
 
-var _module_$2J = {
+var _module_$2I = {
   exports: {}
 };
-_module_$2J.exports = Rule.makeRule({
+_module_$2I.exports = Rule.makeRule({
   name: "extra-content-spacing",
   selector: "paragraph",
   pattern: /\s+$/,
@@ -10529,41 +10529,41 @@ _module_$2J.exports = Rule.makeRule({
   },
   message: "No extra whitespace at the end of content blocks."
 });
-var _extraContentSpacingJs = _module_$2J.exports;
+var _extraContentSpacingJs = _module_$2I.exports;
 
-var _module_$2I = {
+var _module_$2H = {
   exports: {}
 };
-_module_$2I.exports = Rule.makeRule({
+_module_$2H.exports = Rule.makeRule({
   name: "double-spacing-after-terminal",
   severity: Rule.Severity.BULK_WARNING,
   selector: "paragraph",
   pattern: /[.!\?] {2}/i,
   message: "Use a single space after a sentence-ending period, or\nany other kind of terminal punctuation."
 });
-var _doubleSpacingAfterTerminalJs = _module_$2I.exports;
-
-var _module_$2H = {
-  exports: {}
-};
-_module_$2H.exports = Rule.makeRule({
-  name: "blockquoted-widget",
-  severity: Rule.Severity.WARNING,
-  selector: "blockQuote widget",
-  message: "Blockquoted widget:\nwidgets should not be indented."
-});
-var _blockquotedWidgetJs = _module_$2H.exports;
+var _doubleSpacingAfterTerminalJs = _module_$2H.exports;
 
 var _module_$2G = {
   exports: {}
 };
 _module_$2G.exports = Rule.makeRule({
+  name: "blockquoted-widget",
+  severity: Rule.Severity.WARNING,
+  selector: "blockQuote widget",
+  message: "Blockquoted widget:\nwidgets should not be indented."
+});
+var _blockquotedWidgetJs = _module_$2G.exports;
+
+var _module_$2F = {
+  exports: {}
+};
+_module_$2F.exports = Rule.makeRule({
   name: "blockquoted-math",
   severity: Rule.Severity.WARNING,
   selector: "blockQuote math, blockQuote blockMath",
   message: "Blockquoted math:\nmath should not be indented."
 });
-var _blockquotedMathJs = _module_$2G.exports;
+var _blockquotedMathJs = _module_$2F.exports;
 
 // Return the portion of a URL between // and /. This is the authority
 // portion which is usually just the hostname, but may also include
@@ -10581,10 +10581,10 @@ function getHostname(url) {
   return match ? match[1] : "";
 } // This list of domains that count as internal domains is from
 
-var _module_$2F = {
+var _module_$2E = {
   exports: {}
 };
-_module_$2F.exports = Rule.makeRule({
+_module_$2E.exports = Rule.makeRule({
   name: "absolute-url",
   severity: Rule.Severity.GUIDELINE,
   selector: "link, image",
@@ -10597,9 +10597,9 @@ _module_$2F.exports = Rule.makeRule({
     }
   }
 });
-var _absoluteUrlJs = _module_$2F.exports;
+var _absoluteUrlJs = _module_$2E.exports;
 
-var _module_$2E = {
+var _module_$2D = {
   exports: {}
 };
 // This should probably be converted to use import and to export
@@ -10607,10 +10607,10 @@ var _module_$2E = {
 // be an auto-generated file with a script that updates it any time
 // we add a new rule?
 
-_module_$2E.exports = [_absoluteUrlJs, _blockquotedMathJs, _blockquotedWidgetJs, _doubleSpacingAfterTerminalJs, _extraContentSpacingJs, _headingLevel1Js, _headingLevelSkipJs, _headingSentenceCaseJs, _headingTitleCaseJs, _imageAltTextJs, _imageInTableJs, _linkClickHereJs, _longParagraphJs, _mathAdjacentJs, _mathAlignExtraBreakJs, _mathAlignLinebreaksJs, _mathEmptyJs, _mathFontSizeJs, _mathFracJs, _mathNestedJs, _mathStartsWithSpaceJs, _mathTextEmptyJs, _nestedListsJs, _tableMissingCellsJs, _unescapedDollarJs, _widgetInTableJs, _profanityJs, _mathWithoutDollarsJs, _unbalancedCodeDelimitersJs, _imageSpacesAroundUrlsJs, _imageWidgetJs];
-var _rulesAllRulesJs = _module_$2E.exports;
+_module_$2D.exports = [_absoluteUrlJs, _blockquotedMathJs, _blockquotedWidgetJs, _doubleSpacingAfterTerminalJs, _extraContentSpacingJs, _headingLevel1Js, _headingLevelSkipJs, _headingSentenceCaseJs, _headingTitleCaseJs, _imageAltTextJs, _imageInTableJs, _linkClickHereJs, _longParagraphJs, _mathAdjacentJs, _mathAlignExtraBreakJs, _mathAlignLinebreaksJs, _mathEmptyJs, _mathFontSizeJs, _mathFracJs, _mathNestedJs, _mathStartsWithSpaceJs, _mathTextEmptyJs, _nestedListsJs, _tableMissingCellsJs, _unescapedDollarJs, _widgetInTableJs, _profanityJs, _mathWithoutDollarsJs, _unbalancedCodeDelimitersJs, _imageSpacesAroundUrlsJs, _imageWidgetJs];
+var _rulesAllRulesJs = _module_$2D.exports;
 
-var _module_$2D = {
+var _module_$2C = {
   exports: {}
 };
 /* eslint-disable react/forbid-prop-types */
@@ -10677,8 +10677,8 @@ InlineIcon$k.propTypes = {
   // aria-hidden=true
   title: PropTypes.string
 };
-_module_$2D.exports = InlineIcon$k;
-var _componentsInlineIconJsx = _module_$2D.exports;
+_module_$2C.exports = InlineIcon$k;
+var _componentsInlineIconJsx = _module_$2C.exports;
 
 // Generated by running:
 // `node less-to-js.js 'stylesheets/exercise-content-package/variables.less'`
@@ -10842,17 +10842,17 @@ var Lint$1 = createReactClass({
     var warningTextStyle;
 
     if (this.props.severity === 1) {
-      severityStyle = styles$r.indicatorError;
+      severityStyle = styles$t.indicatorError;
       warningText = "Error";
-      warningTextStyle = styles$r.publishBlockingError;
+      warningTextStyle = styles$t.publishBlockingError;
     } else if (this.props.severity === 2) {
-      severityStyle = styles$r.indicatorWarning;
+      severityStyle = styles$t.indicatorWarning;
       warningText = "Warning";
-      warningTextStyle = styles$r.warning;
+      warningTextStyle = styles$t.warning;
     } else {
-      severityStyle = styles$r.indicatorGuideline;
+      severityStyle = styles$t.indicatorGuideline;
       warningText = "Recommendation";
-      warningTextStyle = styles$r.warning;
+      warningTextStyle = styles$t.warning;
     }
 
     return /*#__PURE__*/React$2d.createElement("a", {
@@ -10860,16 +10860,16 @@ var Lint$1 = createReactClass({
       target: "lint-help-window",
       className: aphrodite.css(style)
     }, /*#__PURE__*/React$2d.createElement("span", {
-      className: aphrodite.css(styles$r.indicator, severityStyle)
+      className: aphrodite.css(styles$t.indicator, severityStyle)
     }, this.props.severity === 1 && /*#__PURE__*/React$2d.createElement(InlineIcon$j, exclamationIcon)), /*#__PURE__*/React$2d.createElement("div", {
-      className: aphrodite.css(styles$r.tooltip, tooltipAbove && styles$r.tooltipAbove)
+      className: aphrodite.css(styles$t.tooltip, tooltipAbove && styles$t.tooltipAbove)
     }, this.props.message.split("\n\n").map((m, i) => /*#__PURE__*/React$2d.createElement("p", {
       key: i,
-      className: aphrodite.css(styles$r.tooltipParagraph)
+      className: aphrodite.css(styles$t.tooltipParagraph)
     }, /*#__PURE__*/React$2d.createElement("span", {
       className: aphrodite.css(warningTextStyle)
     }, warningText, ":", " "), m)), /*#__PURE__*/React$2d.createElement("div", {
-      className: aphrodite.css(styles$r.tail, tooltipAbove && styles$r.tailAbove)
+      className: aphrodite.css(styles$t.tail, tooltipAbove && styles$t.tailAbove)
     })));
   },
   // The main render method surrounds linty content with a block or
@@ -10891,17 +10891,17 @@ var Lint$1 = createReactClass({
     } else {
       if (this.props.inline) {
         return /*#__PURE__*/React$2d.createElement("span", {
-          className: aphrodite.css(styles$r.lintContainer)
-        }, this.renderLink(styles$r.inlineHoverTarget), /*#__PURE__*/React$2d.createElement("span", null, this.props.children));
+          className: aphrodite.css(styles$t.lintContainer)
+        }, this.renderLink(styles$t.inlineHoverTarget), /*#__PURE__*/React$2d.createElement("span", null, this.props.children));
       } else {
         return /*#__PURE__*/React$2d.createElement("div", {
-          className: aphrodite.css(styles$r.lintContainer)
-        }, this.renderLink(styles$r.hoverTarget), /*#__PURE__*/React$2d.createElement("div", null, this.props.children));
+          className: aphrodite.css(styles$t.lintContainer)
+        }, this.renderLink(styles$t.hoverTarget), /*#__PURE__*/React$2d.createElement("div", null, this.props.children));
       }
     }
   }
 });
-var styles$r = aphrodite.StyleSheet.create({
+var styles$t = aphrodite.StyleSheet.create({
   // This is the class of the outermost element.
   // We use relative positioning so that the lint indicator can be
   // positioned absolutely relative to the position of the linty container.
@@ -11545,7 +11545,7 @@ var PureRenderMixin = _reactAddonsPureRenderMixin__default["default"];
 var React$2c = _react__default["default"];
 var ReactDOM$D = _reactDom__default["default"];
 var createReactClass$8 = _createReactClass__default["default"];
-var PropTypes$8 = _propTypes__default["default"];
+var PropTypes$8 = PropTypes__default["default"];
 var katex$1 = _katex__default["default"];
 var katexA11y = _katexA11yJs;
 var pendingScripts = [];
@@ -11843,7 +11843,7 @@ var TeX$9 = createReactClass$8({
 module$9.exports = TeX$9;
 var _reactComponentsTexJsx = module$9.exports;
 
-var _module_$2C = {
+var _module_$2B = {
   exports: {}
 };
 /* eslint-disable no-var, object-curly-spacing */
@@ -12353,7 +12353,7 @@ var characterCount = source => {
   return content.length;
 };
 
-_module_$2C.exports = {
+_module_$2B.exports = {
   characterCount: characterCount,
   traverseContent: traverseContent,
   parse: parse$3,
@@ -12363,7 +12363,7 @@ _module_$2C.exports = {
   basicOutput: SimpleMarkdown$2.reactFor(SimpleMarkdown$2.ruleOutput(rules$1, "react")),
   sanitizeUrl: SimpleMarkdown$2.sanitizeUrl
 };
-var _perseusMarkdownJsx = _module_$2C.exports;
+var _perseusMarkdownJsx = _module_$2B.exports;
 
 // This is the TreeTransformer class described in detail at the
 // top of this file.
@@ -12875,7 +12875,7 @@ class Stack {
 
 }
 
-var _module_$2B = {
+var _module_$2A = {
   exports: {}
 };
 
@@ -13141,15 +13141,15 @@ function pushContextStack(context, name) {
 //
 
 
-_module_$2B.exports = {
+_module_$2A.exports = {
   runLinter,
   parse: _perseusMarkdownJsx.parse,
   pushContextStack,
   rules: allLintRules
 };
-var _gorgonGorgonJs = _module_$2B.exports;
+var _gorgonGorgonJs = _module_$2A.exports;
 
-var _module_$2A = {
+var _module_$2z = {
   exports: {}
 };
 /**
@@ -13157,16 +13157,16 @@ var _module_$2A = {
  * to things is does.
  */
 
-_module_$2A.exports = texCode => texCode // Replace uses of \begin{align}...\end{align} which KaTeX doesn't
+_module_$2z.exports = texCode => texCode // Replace uses of \begin{align}...\end{align} which KaTeX doesn't
 // support (yet) with \begin{aligned}...\end{aligned} which renders
 // the same is supported by KaTeX.  It does the same for align*.
 // TODO(kevinb) update content to use aligned instead of align.
 .replace(/\{align[*]?\}/g, "{aligned}") // Replace non-breaking spaces with regular spaces.
 .replace(/[\u00a0]/g, " ");
 
-var _utilKatexPreprocessJs = _module_$2A.exports;
+var _utilKatexPreprocessJs = _module_$2z.exports;
 
-var _module_$2z = {
+var _module_$2y = {
   exports: {}
 };
 /**
@@ -13187,10 +13187,10 @@ class Deferred$2 {
 
 }
 
-_module_$2z.exports = Deferred$2;
-var _deferredJs = _module_$2z.exports;
+_module_$2y.exports = Deferred$2;
+var _deferredJs = _module_$2y.exports;
 
-var _module_$2y = {
+var _module_$2x = {
   exports: {}
 };
 /**
@@ -13425,10 +13425,10 @@ var Zoomable$1 = createReactClass({
   }
 
 });
-_module_$2y.exports = Zoomable$1;
-var _componentsZoomableJsx = _module_$2y.exports;
+_module_$2x.exports = Zoomable$1;
+var _componentsZoomableJsx = _module_$2x.exports;
 
-var _module_$2x = {
+var _module_$2w = {
   exports: {}
 };
 /* eslint-disable react/forbid-prop-types, react/sort-comp */
@@ -13571,10 +13571,10 @@ var TextListEditor$6 = createReactClass({
     }
   }
 });
-_module_$2x.exports = TextListEditor$6;
-var _componentsTextListEditorJsx = _module_$2x.exports;
+_module_$2w.exports = TextListEditor$6;
+var _componentsTextListEditorJsx = _module_$2w.exports;
 
-var _module_$2w = {
+var _module_$2v = {
   exports: {}
 };
 /**
@@ -13619,8 +13619,8 @@ var StubTagEditor = createReactClass({
     }));
   }
 });
-_module_$2w.exports = StubTagEditor;
-var StubTagEditor$1 = _module_$2w.exports;
+_module_$2v.exports = StubTagEditor;
+var StubTagEditor$1 = _module_$2v.exports;
 
 /* eslint-disable brace-style */
 
@@ -13809,7 +13809,7 @@ var _perseusApiJsx = {
   ClassNames: ClassNames
 };
 
-var _module_$2v = {
+var _module_$2u = {
   exports: {}
 };
 var ApiOptions$x = _perseusApiJsx.Options;
@@ -13830,10 +13830,10 @@ var ApiOptionsProps$2 = {
   }
 
 };
-_module_$2v.exports = ApiOptionsProps$2;
-var _mixinsApiOptionsPropsJs = _module_$2v.exports;
+_module_$2u.exports = ApiOptionsProps$2;
+var _mixinsApiOptionsPropsJs = _module_$2u.exports;
 
-var _module_$2u = {
+var _module_$2t = {
   exports: {}
 };
 /* eslint-disable no-console, no-var, space-before-function-paren */
@@ -14175,8 +14175,8 @@ var Widgets$4 = {
     return widgetInfo && widgetInfo.isLintable || DEFAULT_LINTABLE;
   }
 };
-_module_$2u.exports = Widgets$4;
-var Widgets$5 = _module_$2u.exports;
+_module_$2t.exports = Widgets$4;
+var Widgets$5 = _module_$2t.exports;
 
 var smMax = 512;
 var mdMax = 688;
@@ -14208,7 +14208,7 @@ var getInteractiveBoxFromSizeClass = sizeClass => {
   }
 };
 
-var _module_$2t = {
+var _module_$2s = {
   exports: {}
 };
 /* eslint-disable comma-dangle, react/forbid-prop-types, react/jsx-closing-bracket-location, react/jsx-indent-props, react/sort-comp */
@@ -14351,8 +14351,8 @@ var WidgetContainer$1 = createReactClass({
     });
   }
 });
-_module_$2t.exports = WidgetContainer$1;
-var _widgetContainerJsx = _module_$2t.exports;
+_module_$2s.exports = WidgetContainer$1;
+var _widgetContainerJsx = _module_$2s.exports;
 
 /* eslint-disable comma-dangle, max-len, no-var */
 
@@ -14371,10 +14371,10 @@ var _widgetContainerJsx = _module_$2t.exports;
 /*global $*/
 
 /*jshint browser:true, node:true */
-var _module_$2s = {
+var _module_$2r = {
   exports: {}
 };
-var exports$1 = _module_$2s.exports;
+var exports$1 = _module_$2r.exports;
 /* ========================================================================
  * Bootstrap: transition.js v3.3.4
  * http://getbootstrap.com/javascript/#transitions
@@ -14826,7 +14826,7 @@ Zoom$1.prototype.dispose = function () {
 };
 
 exports$1.ZoomService = new _ZoomService();
-var _zoomJs = _module_$2s.exports;
+var _zoomJs = _module_$2r.exports;
 
 /*
     We are currently in a situation where Crowdin adds extra backslashes
@@ -15028,7 +15028,7 @@ var maybeUnescape = function maybeUnescape(text) {
   }
 }; // Unescape both of the given strings if the first one seems to be escaped.
 
-var _module_$2r = {
+var _module_$2q = {
   exports: {}
 };
 /**
@@ -15164,10 +15164,10 @@ var ImageLoader$1 = createReactClass({
     return null;
   }
 });
-_module_$2r.exports = ImageLoader$1;
-var _componentsImageLoaderJsx = _module_$2r.exports;
+_module_$2q.exports = ImageLoader$1;
+var _componentsImageLoaderJsx = _module_$2q.exports;
 
-var _module_$2q = {
+var _module_$2p = {
   exports: {}
 };
 /**
@@ -15299,8 +15299,8 @@ var MovableHelperMethods$1 = {
     }
   }
 };
-_module_$2q.exports = MovableHelperMethods$1;
-var _movableHelperMethodsJs = _module_$2q.exports;
+_module_$2p.exports = MovableHelperMethods$1;
+var _movableHelperMethodsJs = _module_$2p.exports;
 
 /**
  * Utility functions for writing Interactive2 movablethings
@@ -15434,7 +15434,7 @@ var InteractiveUtil$7 = {
 };
 var getCanUse3dTransform = InteractiveUtil$7.getCanUse3dTransform;
 
-var _module_$2p = {
+var _module_$2o = {
   exports: {}
 };
 /**
@@ -15530,10 +15530,10 @@ var KhanColors$g = {
 KhanColors$g.INTERACTING = KhanColors$g.KA_GREEN;
 KhanColors$g.INTERACTIVE = KhanColors$g.KA_GREEN;
 KhanColors$g.DYNAMIC = KhanColors$g.BLUE;
-_module_$2p.exports = KhanColors$g;
-var _utilColorsJs = _module_$2p.exports;
+_module_$2o.exports = KhanColors$g;
+var _utilColorsJs = _module_$2o.exports;
 
-var _module_$2o = {
+var _module_$2n = {
   exports: {}
 };
 /**
@@ -15598,10 +15598,10 @@ var WrappedDefaults$3 = _$1B.extend({
   };
 }));
 
-_module_$2o.exports = WrappedDefaults$3;
-var _wrappedDefaultsJs = _module_$2o.exports;
+_module_$2n.exports = WrappedDefaults$3;
+var _wrappedDefaultsJs = _module_$2n.exports;
 
-var _module_$2n = {
+var _module_$2m = {
   exports: {}
 };
 var _$1A = _underscore__default["default"];
@@ -15638,10 +15638,10 @@ var WrappedPath$2 = function WrappedPath(graphie, points, options) {
 
 _$1A.extend(WrappedPath$2.prototype, WrappedDefaults$2);
 
-_module_$2n.exports = WrappedPath$2;
-var _wrappedPathJs = _module_$2n.exports;
+_module_$2m.exports = WrappedPath$2;
+var _wrappedPathJs = _module_$2m.exports;
 
-var _module_$2m = {
+var _module_$2l = {
   exports: {}
 };
 var _$1z = _underscore__default["default"];
@@ -15707,10 +15707,10 @@ _$1z.extend(WrappedLine$6.prototype, WrappedDefaults$1, {
   }
 });
 
-_module_$2m.exports = WrappedLine$6;
-var _interactive2WrappedLineJs = _module_$2m.exports;
+_module_$2l.exports = WrappedLine$6;
+var _interactive2WrappedLineJs = _module_$2l.exports;
 
-var _module_$2l = {
+var _module_$2k = {
   exports: {}
 };
 var _$1y = _underscore__default["default"];
@@ -15766,10 +15766,10 @@ var WrappedEllipse$3 = function WrappedEllipse(graphie, center, radii, options) 
 
 _$1y.extend(WrappedEllipse$3.prototype, WrappedDefaults);
 
-_module_$2l.exports = WrappedEllipse$3;
-var _wrappedEllipseJs = _module_$2l.exports;
+_module_$2k.exports = WrappedEllipse$3;
+var _wrappedEllipseJs = _module_$2k.exports;
 
-var _module_$2k = {
+var _module_$2j = {
   exports: {}
 };
 /* globals katex:false, MathJax:false, Exercises:false */
@@ -15803,7 +15803,7 @@ function doCallback(elem, callback) {
   })();
 }
 
-_module_$2k.exports = {
+_module_$2j.exports = {
   // Process a node and add math inside of it. This attempts to use KaTeX to
   // format the math, and if that fails it falls back to MathJax.
   //
@@ -15969,7 +15969,7 @@ _module_$2k.exports = {
     return $__default["default"](elem).attr("data-math-formula");
   }
 };
-var _utilTexJs = _module_$2k.exports;
+var _utilTexJs = _module_$2j.exports;
 
 /*!
  * Raphael 1.5.2 - JavaScript Vector Library
@@ -20898,7 +20898,7 @@ var _utilTexJs = _module_$2k.exports;
   oldRaphael.was ? win.Raphael = R : Raphael = R;
 })();
 
-var _module_$2j = {
+var _module_$2i = {
   exports: {}
 };
 /* eslint-disable brace-style, max-lines, object-curly-spacing */
@@ -22075,8 +22075,8 @@ GraphUtils$8.createGraphie = function (el) {
   return graphie;
 };
 
-_module_$2j.exports = GraphUtils$8;
-var _graphieJs = _module_$2j.exports;
+_module_$2i.exports = GraphUtils$8;
+var _graphieJs = _module_$2i.exports;
 
 /*
 * jQuery Mobile Framework : "mouse" plugin
@@ -25702,7 +25702,7 @@ _$1w.extend(MovableAngle.prototype, {
   }
 });
 
-var _module_$2i = {
+var _module_$2h = {
   exports: {}
 };
 /**
@@ -25716,10 +25716,10 @@ var _module_$2i = {
  */
 
 var GraphUtils$6 = _graphieJs;
-_module_$2i.exports = GraphUtils$6;
-var _utilGraphUtilsJs = _module_$2i.exports;
+_module_$2h.exports = GraphUtils$6;
+var _utilGraphUtilsJs = _module_$2h.exports;
 
-var _module_$2h = {
+var _module_$2g = {
   exports: {}
 };
 /**
@@ -25983,7 +25983,7 @@ var onMove$1 = {
   }
 };
 onMove$1.standard = null;
-_module_$2h.exports = {
+_module_$2g.exports = {
   add: add$2,
   modify: modify$2,
   draw: draw$4,
@@ -26000,9 +26000,9 @@ _module_$2h.exports = {
     standard: null
   }
 };
-var _movablePolygonOptionsJs = _module_$2h.exports;
+var _movablePolygonOptionsJs = _module_$2g.exports;
 
-var _module_$2g = {
+var _module_$2f = {
   exports: {}
 };
 /**
@@ -26305,10 +26305,10 @@ _$1u.extend(MovablePolygon$1.prototype, {
   }
 });
 
-_module_$2g.exports = MovablePolygon$1;
-var _interactive2MovablePolygonJs = _module_$2g.exports;
+_module_$2f.exports = MovablePolygon$1;
+var _interactive2MovablePolygonJs = _module_$2f.exports;
 
-var _module_$2f = {
+var _module_$2e = {
   exports: {}
 };
 /**
@@ -26591,7 +26591,7 @@ var onMove = {
   }
 };
 onMove.standard = null;
-_module_$2f.exports = {
+_module_$2e.exports = {
   add: add$1,
   modify: modify$1,
   draw: draw$3,
@@ -26605,9 +26605,9 @@ _module_$2f.exports = {
     standard: null
   }
 };
-var _movableLineOptionsJs = _module_$2f.exports;
+var _movableLineOptionsJs = _module_$2e.exports;
 
-var _module_$2e = {
+var _module_$2d = {
   exports: {}
 };
 /**
@@ -26854,8 +26854,8 @@ _$1s.extend(MovableLine$5.prototype, {
   }
 });
 
-_module_$2e.exports = MovableLine$5;
-var _interactive2MovableLineJs = _module_$2e.exports;
+_module_$2d.exports = MovableLine$5;
+var _interactive2MovableLineJs = _module_$2d.exports;
 
 /**
  * Icon paths to be used with `inline-icon.jsx`.
@@ -26958,7 +26958,7 @@ var iconMinus = {
   height: 24
 };
 
-var _module_$2d = {
+var _module_$2c = {
   exports: {}
 };
 /**
@@ -27086,7 +27086,7 @@ var constraints = {
   }
 };
 constraints.standard = null;
-_module_$2d.exports = {
+_module_$2c.exports = {
   add: add,
   modify: modify,
   draw: draw$2,
@@ -27105,9 +27105,9 @@ _module_$2d.exports = {
     standard: null
   }
 };
-var _movablePointOptionsJs = _module_$2d.exports;
+var _movablePointOptionsJs = _module_$2c.exports;
 
-var _module_$2c = {
+var _module_$2b = {
   exports: {}
 };
 /**
@@ -27633,10 +27633,10 @@ _$1q.extend(MovablePoint$7.prototype, {
   }
 });
 
-_module_$2c.exports = MovablePoint$7;
-var _interactive2MovablePointJsx = _module_$2c.exports;
+_module_$2b.exports = MovablePoint$7;
+var _interactive2MovablePointJsx = _module_$2b.exports;
 
-var _module_$2b = {
+var _module_$2a = {
   exports: {}
 };
 /**
@@ -27890,10 +27890,10 @@ _$1p.extend(Movable$1.prototype, {
   }
 });
 
-_module_$2b.exports = Movable$1;
-var _interactive2MovableJs = _module_$2b.exports;
+_module_$2a.exports = Movable$1;
+var _interactive2MovableJs = _module_$2a.exports;
 
-var _module_$2a = {
+var _module_$29 = {
   exports: {}
 };
 var Movable = _interactive2MovableJs;
@@ -27945,10 +27945,10 @@ var Interactive2$4 = {
     return Interactive2$4.addMovablePoint(widget.graphie, Object.assign(extraProps, props));
   }
 };
-_module_$2a.exports = Interactive2$4;
-var _interactive2Js = _module_$2a.exports;
+_module_$29.exports = Interactive2$4;
+var _interactive2Js = _module_$29.exports;
 
-var _module_$29 = {
+var _module_$28 = {
   exports: {}
 };
 var Util$o = Util$q;
@@ -28068,14 +28068,14 @@ var createSimpleClass = function createSimpleClass(addFunction) {
   });
 };
 
-_module_$29.exports = {
+_module_$28.exports = {
   GraphieMovable: GraphieMovable$1,
   createClass: createClass,
   createSimpleClass: createSimpleClass
 };
-var _graphieClassesJsx = _module_$29.exports;
+var _graphieClassesJsx = _module_$28.exports;
 
-var _module_$28 = {
+var _module_$27 = {
   exports: {}
 };
 var _$1n = _underscore__default["default"];
@@ -28299,7 +28299,7 @@ var Circle$1 = GraphieClasses$1.createSimpleClass((graphie, props) => {
 var Rect$1 = GraphieClasses$1.createSimpleClass((graphie, props) => {
   return graphie.rect(props.x, props.y, props.width, props.height, props.style);
 });
-_module_$28.exports = {
+_module_$27.exports = {
   Arc: Arc$1,
   Circle: Circle$1,
   Label: Label$2,
@@ -28314,9 +28314,9 @@ _module_$28.exports = {
   Sinusoid: Sinusoid$1,
   Rect: Rect$1
 };
-var _graphieMovablesJsx = _module_$28.exports;
+var _graphieMovablesJsx = _module_$27.exports;
 
-var _module_$27 = {
+var _module_$26 = {
   exports: {}
 };
 var React$25 = _react__default["default"];
@@ -28611,10 +28611,10 @@ _$1m.extend(Graphie$7, GraphieClasses); // Attach the Movable react components f
 
 _$1m.extend(Graphie$7, Movables);
 
-_module_$27.exports = Graphie$7;
-var _componentsGraphieJsx = _module_$27.exports;
+_module_$26.exports = Graphie$7;
+var _componentsGraphieJsx = _module_$26.exports;
 
-var _module_$26 = {
+var _module_$25 = {
   exports: {}
 };
 /* eslint-disable react/prop-types */
@@ -28739,10 +28739,10 @@ var FixedToResponsive$2 = createReactClass({
     }
   }
 });
-_module_$26.exports = FixedToResponsive$2;
-var _componentsFixedToResponsiveJsx = _module_$26.exports;
+_module_$25.exports = FixedToResponsive$2;
+var _componentsFixedToResponsiveJsx = _module_$25.exports;
 
-var _module_$25 = {
+var _module_$24 = {
   exports: {}
 };
 /* globals KA */
@@ -29284,10 +29284,10 @@ var SvgImage$6 = createReactClass({
     }
   }
 });
-_module_$25.exports = SvgImage$6;
-var _componentsSvgImageJsx = _module_$25.exports;
+_module_$24.exports = SvgImage$6;
+var _componentsSvgImageJsx = _module_$24.exports;
 
-var _module_$24 = {
+var _module_$23 = {
   exports: {}
 };
 /* eslint-disable comma-dangle, no-var, react/jsx-closing-bracket-location, react/jsx-indent-props, react/prop-types */
@@ -29310,10 +29310,10 @@ var QuestionParagraph$1 = createReactClass({
     }, this.props.children);
   }
 });
-_module_$24.exports = QuestionParagraph$1;
-var _questionParagraphJsx = _module_$24.exports;
+_module_$23.exports = QuestionParagraph$1;
+var _questionParagraphJsx = _module_$23.exports;
 
-var _module_$23 = {
+var _module_$22 = {
   exports: {}
 };
 /**
@@ -29348,11 +29348,11 @@ var parseToArray = source => {
 
 var joinFromArray = paragraphs => paragraphs.join("\n\n");
 
-_module_$23.exports = {
+_module_$22.exports = {
   parseToArray: parseToArray,
   joinFromArray: joinFromArray
 };
-var _jiptParagraphsJsx = _module_$23.exports;
+var _jiptParagraphsJsx = _module_$22.exports;
 
 // last call. The timer is reset if the lint is called during the wait.
 
@@ -29478,7 +29478,7 @@ var Deferred = _deferredJs;
 var preprocessTex$1 = _utilKatexPreprocessJs;
 var Gorgon$6 = _gorgonGorgonJs; // The linter engine
 
-var _module_$22 = {
+var _module_$21 = {
   exports: {}
 };
 var {
@@ -31004,13 +31004,13 @@ var Renderer$n = createReactClass({
     return this.lastRenderedMarkdown;
   }
 });
-_module_$22.exports = Renderer$n;
-var _rendererJsx = _module_$22.exports;
+_module_$21.exports = Renderer$n;
+var _rendererJsx = _module_$21.exports;
 
-var _module_$21 = {
+var _module_$20 = {
   exports: {}
 };
-_module_$21.exports = {
+_module_$20.exports = {
   xs: "@media screen and (max-width: ".concat(pureXsMax, ")"),
   sm: "@media screen and (min-width: ".concat(pureSmMin, ") and ") + "(max-width: ".concat(pureSmMax, ")"),
   md: "@media screen and (min-width: ".concat(pureMdMin, ") and ") + "(max-width: ".concat(pureMdMax, ")"),
@@ -31023,13 +31023,13 @@ _module_$21.exports = {
   mdOrLarger: "@media screen and (min-width: ".concat(pureMdMin, ")"),
   lgOrLarger: "@media screen and (min-width: ".concat(pureLgMin, ")")
 };
-var _stylesMediaQueriesJs = _module_$21.exports;
+var _stylesMediaQueriesJs = _module_$20.exports;
 
-var _module_$20 = {
+var _module_$1$ = {
   exports: {}
 };
 var mediaQueries$8 = _stylesMediaQueriesJs;
-_module_$20.exports = aphrodite.StyleSheet.create({
+_module_$1$.exports = aphrodite.StyleSheet.create({
   perseusInteractive: {
     zIndex: zIndexInteractiveComponent,
     position: "relative"
@@ -31123,9 +31123,9 @@ _module_$20.exports = aphrodite.StyleSheet.create({
     userSelect: 'none'
   }
 });
-var _stylesSharedJs = _module_$20.exports;
+var _stylesSharedJs = _module_$1$.exports;
 
-var _module_$1$ = {
+var _module_$1_ = {
   exports: {}
 };
 var React$20 = _react__default["default"];
@@ -31176,7 +31176,7 @@ var HintRenderer$1 = createReactClass({
     var {
       isMobile
     } = apiOptions;
-    var classNames = classnames$1(!isMobile && "perseus-hint-renderer", isMobile && aphrodite.css(styles$q.newHint), isMobile && lastRendered && aphrodite.css(styles$q.lastRenderedNewHint), lastHint && "last-hint", lastRendered && "last-rendered", className); // TODO(charlie): Allowing `staticRender` here would require that we
+    var classNames = classnames$1(!isMobile && "perseus-hint-renderer", isMobile && aphrodite.css(styles$s.newHint), isMobile && lastRendered && aphrodite.css(styles$s.lastRenderedNewHint), lastHint && "last-hint", lastRendered && "last-rendered", className); // TODO(charlie): Allowing `staticRender` here would require that we
     // extend `HintsRenderer` and `HintRenderer` to implement the full
     // "input' API, so that clients could access the static inputs. Allowing
     // `customKeypad` would require that we extend `ItemRenderer` to support
@@ -31213,7 +31213,7 @@ var HintRenderer$1 = createReactClass({
     }));
   }
 });
-var styles$q = aphrodite.StyleSheet.create({
+var styles$s = aphrodite.StyleSheet.create({
   newHint: {
     marginBottom: 1.5 * baseUnitPx,
     borderLeftColor: gray97,
@@ -31238,10 +31238,10 @@ var styles$q = aphrodite.StyleSheet.create({
     borderLeftColor: kaGreen
   }
 });
-_module_$1$.exports = HintRenderer$1;
-var _hintRendererJsx = _module_$1$.exports;
+_module_$1_.exports = HintRenderer$1;
+var _hintRendererJsx = _module_$1_.exports;
 
-var _module_$1_ = {
+var _module_$1Z = {
   exports: {}
 };
 var React$1$ = _react__default["default"];
@@ -31375,28 +31375,28 @@ var HintsRenderer$4 = createReactClass({
     });
     var showGetAnotherHint = apiOptions.getAnotherHint && hintsVisible > 0 && hintsVisible < this.props.hints.length;
     var hintRatioCopy = "(".concat(hintsVisible, "/").concat(this.props.hints.length, ")");
-    var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$p.mobileHintStylesHintsRenderer));
+    var classNames = classnames(this.props.className, apiOptions.isMobile && hintsVisible > 0 && aphrodite.css(styles$r.mobileHintStylesHintsRenderer));
     return /*#__PURE__*/React$1$.createElement("div", {
       className: classNames
     }, apiOptions.isMobile && hintsVisible > 0 && /*#__PURE__*/React$1$.createElement("div", {
-      className: aphrodite.css(styles$p.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
+      className: aphrodite.css(styles$r.mobileHintStylesHintTitle, sharedStyles$3.responsiveLabel)
     }, i18n$1._("Hints")), hints, showGetAnotherHint && /*#__PURE__*/React$1$.createElement("button", {
       rel: "button",
-      className: aphrodite.css(styles$p.linkButton, styles$p.getAnotherHintButton, apiOptions.isMobile && styles$p.mobileHintStylesGetAnotherHintButton),
+      className: aphrodite.css(styles$r.linkButton, styles$r.getAnotherHintButton, apiOptions.isMobile && styles$r.mobileHintStylesGetAnotherHintButton),
       onClick: evt => {
         evt.preventDefault();
         evt.stopPropagation();
         apiOptions.getAnotherHint();
       }
     }, /*#__PURE__*/React$1$.createElement("span", {
-      className: aphrodite.css(styles$p.plusText, apiOptions.isMobile && styles$p.mobileHintStylesPlusText)
+      className: aphrodite.css(styles$r.plusText, apiOptions.isMobile && styles$r.mobileHintStylesPlusText)
     }, "+"), /*#__PURE__*/React$1$.createElement("span", {
-      className: aphrodite.css(styles$p.getAnotherHintText)
+      className: aphrodite.css(styles$r.getAnotherHintText)
     }, i18n$1._("Get another hint"), " ", hintRatioCopy)));
   }
 });
 var hintIndentation = baseUnitPx + hintBorderWidth;
-var styles$p = aphrodite.StyleSheet.create({
+var styles$r = aphrodite.StyleSheet.create({
   rendererMargins: {
     marginTop: baseUnitPx
   },
@@ -31475,8 +31475,8 @@ var styles$p = aphrodite.StyleSheet.create({
     }
   }
 });
-_module_$1_.exports = HintsRenderer$4;
-var _hintsRendererJsx = _module_$1_.exports;
+_module_$1Z.exports = HintsRenderer$4;
+var _hintsRendererJsx = _module_$1Z.exports;
 
 var shapes$1 = _multiItemsShapesJs;
 /**
@@ -31875,7 +31875,7 @@ lens$3.prototype.set = function (lensArr, set) {
 };
 
 var _excluded$3 = ["item", "children", "shape"];
-var _module_$1Z = {
+var _module_$1Y = {
   exports: {}
 };
 var lens$2 = lens$3;
@@ -32225,7 +32225,7 @@ class MultiRenderer$1 extends React$1_.Component {
   render() {
     if (this.state.renderError) {
       return /*#__PURE__*/React$1_.createElement("div", {
-        className: aphrodite.css(styles$o.error)
+        className: aphrodite.css(styles$q.error)
       }, "Error rendering: ", String(this.state.renderError));
     } // Pass the renderer tree to the `children` function, which will
     // determine the actual content of this component.
@@ -32238,20 +32238,17 @@ class MultiRenderer$1 extends React$1_.Component {
 
 }
 
-var styles$o = aphrodite.StyleSheet.create({
+var styles$q = aphrodite.StyleSheet.create({
   error: {
     color: "red"
   }
 });
-_module_$1Z.exports = MultiRenderer$1;
-var _multiItemsMultiRendererJsx = _module_$1Z.exports;
+_module_$1Y.exports = MultiRenderer$1;
+var _multiItemsMultiRendererJsx = _module_$1Y.exports;
 
-var _module_$1Y = {
-  exports: {}
-};
 var MultiRenderer = _multiItemsMultiRendererJsx;
 var shapes = _multiItemsShapesJs;
-_module_$1Y.exports = {
+var _multiItemsJs = {
   // Tools for rendering your multi-items
   MultiRenderer,
   // Tools for declaring your multi-item shapes
@@ -32263,7 +32260,6 @@ _module_$1Y.exports = {
   findHintNodesInItem,
   inferItemShape
 };
-var _multiItemsJs = _module_$1Y.exports;
 
 var _module_$1X = {
   exports: {}
@@ -32651,11 +32647,11 @@ var ItemRenderer$2 = createReactClass({
       // mobile hint styles, which are flush to the left.
       // NOTE(charlie): We may still want to apply this
       // padding for desktop exercises.
-      !apiOptions.isMobile && aphrodite.css(styles$n.hintsContainer)
+      !apiOptions.isMobile && aphrodite.css(styles$p.hintsContainer)
     }, hintsRenderer));
   }
 });
-var styles$n = aphrodite.StyleSheet.create({
+var styles$p = aphrodite.StyleSheet.create({
   hintsContainer: {
     marginLeft: 50
   }
@@ -33076,7 +33072,7 @@ var _itemRendererJsx = _module_$1V.exports;
  * As well as check answer, grading, and hints buttons built in
  */
 
-var styles$m = aphrodite.StyleSheet.create({
+var styles$o = aphrodite.StyleSheet.create({
   hintsContainer: {
     marginLeft: 50
   },
@@ -33394,23 +33390,23 @@ var QuestionRenderer$1 = createReactClass({
       }
     }, /*#__PURE__*/_react__namespace.createElement("button", {
       type: "submit",
-      className: "check-answer-button " + aphrodite.css(styles$m.checkAnswerButton),
+      className: "check-answer-button " + aphrodite.css(styles$o.checkAnswerButton),
       style: {
         backgroundColor: this.state.answerState === "incorrect" ? "orange" : "green"
       },
       disabled: this.state.answerState === "correct"
     }, /*#__PURE__*/_react__namespace.createElement("span", {
-      className: aphrodite.css(styles$m.checkAnswerText),
+      className: aphrodite.css(styles$o.checkAnswerText),
       style: {
         visibility: this.state.answerState === "correct" ? "visible" : "hidden"
       }
     }, "\uD83C\uDF1F Yes! You got it!"), /*#__PURE__*/_react__namespace.createElement("span", {
-      className: aphrodite.css(styles$m.checkAnswerText),
+      className: aphrodite.css(styles$o.checkAnswerText),
       style: {
         visibility: this.state.answerState === "incorrect" ? "visible" : "hidden"
       }
     }, "Try again"), /*#__PURE__*/_react__namespace.createElement("span", {
-      className: aphrodite.css(styles$m.checkAnswerText),
+      className: aphrodite.css(styles$o.checkAnswerText),
       style: {
         visibility: this.state.answerState === "unanswered" ? "visible" : "hidden"
       }
@@ -33435,7 +33431,7 @@ var QuestionRenderer$1 = createReactClass({
       // mobile hint styles, which are flush to the left.
       // NOTE(charlie): We may still want to apply this
       // padding for desktop exercises.
-      !apiOptions.isMobile && aphrodite.css(styles$m.hintsContainer)
+      !apiOptions.isMobile && aphrodite.css(styles$o.hintsContainer)
     }, hintsRenderer));
   }
 });
@@ -33741,10 +33737,10 @@ var change = function change(newPropsOrSinglePropName, propValue, callback) {
   }
 };
 var propTypes = {
-  onChange: _propTypes__default["default"].func.isRequired
+  onChange: PropTypes__default["default"].func.isRequired
 };
 ({
-  onChange: _propTypes__default["default"].func.isRequired
+  onChange: PropTypes__default["default"].func.isRequired
 });
 var Changeable$Q = {
   change: change,
@@ -34363,7 +34359,7 @@ var module$8 = {
 };
 var React$1P = _react__default["default"];
 var createReactClass$7 = _createReactClass__default["default"];
-var PropTypes$7 = _propTypes__default["default"];
+var PropTypes$7 = PropTypes__default["default"];
 /* You know when you want to propagate input to a parent...
  * but then that parent does something with the input...
  * then changing the props of the input...
@@ -34422,7 +34418,7 @@ var module$7 = {
 };
 var React$1O = _react__default["default"];
 var createReactClass$6 = _createReactClass__default["default"];
-var PropTypes$6 = _propTypes__default["default"];
+var PropTypes$6 = PropTypes__default["default"];
 var colors = {
   grayLight: '#aaa',
   basicBorderColor: '#ccc',
@@ -34437,7 +34433,7 @@ var triangleBeforeAfter = {
   top: '0',
   width: '0'
 };
-var styles$l = aphrodite.StyleSheet.create({
+var styles$n = aphrodite.StyleSheet.create({
   infoTip: {
     display: 'inline-block',
     marginLeft: '5px',
@@ -34499,7 +34495,7 @@ var InfoTip$p = createReactClass$6({
   },
   render: function render() {
     return /*#__PURE__*/React$1O.createElement("div", {
-      className: aphrodite.css(styles$l.infoTip)
+      className: aphrodite.css(styles$n.infoTip)
     }, /*#__PURE__*/React$1O.createElement("img", {
       width: 10,
       height: 10,
@@ -34507,14 +34503,14 @@ var InfoTip$p = createReactClass$6({
       onMouseEnter: this.handleMouseEnter,
       onMouseLeave: this.handleMouseLeave
     }), /*#__PURE__*/React$1O.createElement("div", {
-      className: aphrodite.css(styles$l.infoTipContainer),
+      className: aphrodite.css(styles$n.infoTipContainer),
       style: {
         display: this.state.hover ? 'block' : 'none'
       }
     }, /*#__PURE__*/React$1O.createElement("div", {
-      className: aphrodite.css(styles$l.infoTipTriangle)
+      className: aphrodite.css(styles$n.infoTipTriangle)
     }), /*#__PURE__*/React$1O.createElement("div", {
-      className: aphrodite.css(styles$l.verticalShadow, styles$l.infoTipContentContainer)
+      className: aphrodite.css(styles$n.verticalShadow, styles$n.infoTipContentContainer)
     }, this.props.children)));
   }
 });
@@ -39141,8 +39137,8 @@ var module$5 = {
 var React$1B = _react__default["default"];
 var ReactDOM$m = _reactDom__default["default"];
 var createReactClass$5 = _createReactClass__default["default"];
-var PropTypes$5 = _propTypes__default["default"];
-var styles$k = _stylesJs;
+var PropTypes$5 = PropTypes__default["default"];
+var styles$m = _stylesJs;
 var ButtonGroup$8 = createReactClass$5({
   displayName: "ButtonGroup",
   propTypes: {
@@ -39184,7 +39180,7 @@ var ButtonGroup$8 = createReactClass$5({
         id: "" + i,
         ref: "button" + i,
         key: "" + i,
-        className: aphrodite.css(styles$k.button.buttonStyle, button.value === value && styles$k.button.selectedStyle),
+        className: aphrodite.css(styles$m.button.buttonStyle, button.value === value && styles$m.button.selectedStyle),
         onClick: this.toggleSelect.bind(this, button.value)
       }, button.content || "" + button.value);
     });
@@ -42179,9 +42175,9 @@ var KatexErrorView$1 = createReactClass({
 
     var disclosureClass = showErrors ? "icon-chevron-down" : "icon-chevron-right";
     return /*#__PURE__*/React$1w.createElement("div", {
-      className: aphrodite.css(styles$j.errorContainer)
+      className: aphrodite.css(styles$l.errorContainer)
     }, /*#__PURE__*/React$1w.createElement("div", {
-      className: aphrodite.css(styles$j.title),
+      className: aphrodite.css(styles$l.title),
       onClick: this.handleToggleKatexErrors
     }, /*#__PURE__*/React$1w.createElement("i", {
       className: disclosureClass,
@@ -42189,9 +42185,9 @@ var KatexErrorView$1 = createReactClass({
         fontSize: 14
       }
     }), "\xA0 KaTeX Errors (", errorList.length, ")"), showErrors && /*#__PURE__*/React$1w.createElement("div", {
-      className: aphrodite.css(styles$j.errorExplanation)
+      className: aphrodite.css(styles$l.errorExplanation)
     }, "These errors will cause your LaTeX to load really slowly for the student. Please fix them if you can. If you can\u2019t because KaTeX doesn\u2019t support the feature you need, please message Cam."), showErrors && errorList.map((e, index) => /*#__PURE__*/React$1w.createElement("div", {
-      className: aphrodite.css(styles$j.error),
+      className: aphrodite.css(styles$l.error),
       key: index
     }, /*#__PURE__*/React$1w.createElement("div", {
       style: {
@@ -42201,7 +42197,7 @@ var KatexErrorView$1 = createReactClass({
   }
 
 });
-var styles$j = aphrodite.StyleSheet.create({
+var styles$l = aphrodite.StyleSheet.create({
   title: {
     backgroundColor: "#eee",
     fontSize: "1.25em",
@@ -42251,7 +42247,7 @@ var module$4 = {
 
 var React$1v = _react__default["default"];
 var createReactClass$4 = _createReactClass__default["default"];
-var PropTypes$4 = _propTypes__default["default"];
+var PropTypes$4 = PropTypes__default["default"];
 var DragTarget$1 = createReactClass$4({
   displayName: "DragTarget",
   propTypes: {
@@ -43533,7 +43529,7 @@ var Placeholder = createReactClass({
     var {
       layout
     } = this.props;
-    var className = aphrodite.css(styles$i.card, styles$i.placeholder, layout === HORIZONTAL$3 && styles$i.horizontalCard);
+    var className = aphrodite.css(styles$k.card, styles$k.placeholder, layout === HORIZONTAL$3 && styles$k.horizontalCard);
     var style = {
       width: this.props.width,
       height: this.props.height
@@ -43620,7 +43616,7 @@ var Draggable = createReactClass({
     // in CSS. Hence the hacky tacking on of manual classNames.
     // See sortable.less for details.
 
-    var className = aphrodite.css(styles$i.card, styles$i.draggable, layout === HORIZONTAL$3 && styles$i.horizontalCard, layout === VERTICAL$3 && styles$i.verticalCard, type === DRAGGING && styles$i.dragging, type === ANIMATING && styles$i.animating, type === DISABLED && styles$i.disabled, !includePadding && styles$i.unpaddedCard) + " " + ApiClassNames$9.INTERACTIVE + " perseus-sortable-draggable";
+    var className = aphrodite.css(styles$k.card, styles$k.draggable, layout === HORIZONTAL$3 && styles$k.horizontalCard, layout === VERTICAL$3 && styles$k.verticalCard, type === DRAGGING && styles$k.dragging, type === ANIMATING && styles$k.animating, type === DISABLED && styles$k.disabled, !includePadding && styles$k.unpaddedCard) + " " + ApiClassNames$9.INTERACTIVE + " perseus-sortable-draggable";
 
     if (!includePadding) {
       className += " perseus-sortable-draggable-unpadded";
@@ -43882,7 +43878,7 @@ var Sortable$2 = createReactClass({
     } = this.props; // We need to keep backwards compatbility with rules specified directly
     // in CSS. See sortable.less for details.
 
-    var className = aphrodite.css(styles$i.sortable) + " perseus-sortable";
+    var className = aphrodite.css(styles$k.sortable) + " perseus-sortable";
 
     _$Z.each(this.state.items, function (item, i, items) {
       var isLast = i === items.length - 1;
@@ -44039,7 +44035,7 @@ var Sortable$2 = createReactClass({
     return _$Z.pluck(this.state.items, "option");
   }
 });
-var styles$i = aphrodite.StyleSheet.create({
+var styles$k = aphrodite.StyleSheet.create({
   sortable: {
     boxSizing: "border-box",
     float: "left",
@@ -46073,9 +46069,9 @@ function drawText(ctx, item) {
     return;
   }
 
-  ctx.fillStyle = styles$h.fgColor;
-  ctx.font = styles$h.font;
-  ctx.fillText(item.value, item.pos[0] - styles$h.fontSizePx / 2 + 1, item.pos[1] + styles$h.fontSizePx / 2);
+  ctx.fillStyle = styles$j.fgColor;
+  ctx.font = styles$j.font;
+  ctx.fillText(item.value, item.pos[0] - styles$j.fontSizePx / 2 + 1, item.pos[1] + styles$j.fontSizePx / 2);
 }
 /**
  * Draw a double line into a 2D canvas drawing context.
@@ -46097,15 +46093,15 @@ function drawText(ctx, item) {
 function drawDoubleLine(ctx, item) {
   // Outer line that forms both of the bond lines.
   var path = new Path2D();
-  ctx.lineWidth = 5 * styles$h.lineWidth;
-  ctx.strokeStyle = styles$h.fgColor;
+  ctx.lineWidth = 5 * styles$j.lineWidth;
+  ctx.strokeStyle = styles$j.fgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path); // Inner white line that separates the two bond lines.
 
   path = new Path2D();
-  ctx.lineWidth = 3 * styles$h.lineWidth;
-  ctx.strokeStyle = styles$h.bgColor;
+  ctx.lineWidth = 3 * styles$j.lineWidth;
+  ctx.strokeStyle = styles$j.bgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path);
@@ -46132,15 +46128,15 @@ function drawTripleLine(ctx, item) {
   // functions.
   // Outer line that will form the two outer bond lines.
   var path = new Path2D();
-  ctx.lineWidth = 7 * styles$h.lineWidth;
-  ctx.strokeStyle = styles$h.fgColor;
+  ctx.lineWidth = 7 * styles$j.lineWidth;
+  ctx.strokeStyle = styles$j.fgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path); // Middle white line that separates the bonds
 
   path = new Path2D();
-  ctx.lineWidth = 5 * styles$h.lineWidth;
-  ctx.strokeStyle = styles$h.bgColor;
+  ctx.lineWidth = 5 * styles$j.lineWidth;
+  ctx.strokeStyle = styles$j.bgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path); // Inner line that forms the middle bond line.
@@ -46162,8 +46158,8 @@ function drawTripleLine(ctx, item) {
 
 function drawLine(ctx, item) {
   var path = new Path2D();
-  ctx.lineWidth = styles$h.lineWidth;
-  ctx.strokeStyle = styles$h.fgColor;
+  ctx.lineWidth = styles$j.lineWidth;
+  ctx.strokeStyle = styles$j.fgColor;
   path.moveTo(item.startPos[0], item.startPos[1]);
   path.lineTo(item.endPos[0], item.endPos[1]);
   ctx.stroke(path);
@@ -46219,13 +46215,13 @@ function draw$1(ctx, items) {
   items.sort(compareElements).forEach(drawItem(ctx));
 }
 
-var styles$h = {
+var styles$j = {
   bgColor: "rgb(255, 255, 255)",
   fgColor: "rgb(0, 0, 0)",
   fontSizePx: 12,
   lineWidth: 1
 };
-styles$h.font = styles$h.fontSizePx + "px sans";
+styles$j.font = styles$j.fontSizePx + "px sans";
 _module_$1k.exports = draw$1;
 var _moleculeMoleculeDrawingJsx = _module_$1k.exports;
 
@@ -49421,7 +49417,7 @@ class HighlightTooltip$2 extends React$17.PureComponent {
     }
 
     return /*#__PURE__*/React$17.createElement("div", {
-      className: aphrodite.css(styles$g.tooltip),
+      className: aphrodite.css(styles$i.tooltip),
       onClick: this.props.onClick,
       onMouseEnter: this.props.onMouseEnter,
       onMouseLeave: this.props.onMouseLeave,
@@ -49431,15 +49427,15 @@ class HighlightTooltip$2 extends React$17.PureComponent {
         zIndex: this.props.zIndex
       }
     }, /*#__PURE__*/React$17.createElement("div", {
-      className: aphrodite.css(styles$g.label)
+      className: aphrodite.css(styles$i.label)
     }, this.props.label), /*#__PURE__*/React$17.createElement("div", {
-      className: aphrodite.css(styles$g.arrow)
+      className: aphrodite.css(styles$i.arrow)
     }));
   }
 
 }
 
-var styles$g = aphrodite.StyleSheet.create({
+var styles$i = aphrodite.StyleSheet.create({
   tooltip: {
     // Positioning.
     //
@@ -49977,7 +49973,7 @@ class HighlightableContent$1 extends React$14.PureComponent {
     var buildHighlight = r => this._buildHighlight(r);
 
     return /*#__PURE__*/React$14.createElement("div", {
-      className: aphrodite.css(styles$f.container),
+      className: aphrodite.css(styles$h.container),
       ref: container => this._container = container
     }, /*#__PURE__*/React$14.createElement("div", null, this.props.enabled && this._container && this._content && /*#__PURE__*/React$14.createElement(HighlightingUI, {
       buildHighlight: buildHighlight,
@@ -49995,7 +49991,7 @@ class HighlightableContent$1 extends React$14.PureComponent {
       onAddHighlight: this._handleAddHighlight,
       onRemoveHighlight: this._handleRemoveHighlight
     })), /*#__PURE__*/React$14.createElement("div", {
-      className: aphrodite.css(styles$f.content),
+      className: aphrodite.css(styles$h.content),
       ref: content => this._content = content
     }, /*#__PURE__*/React$14.createElement(WordIndexer, {
       onWordsUpdate: this._handleWordsUpdate
@@ -50004,7 +50000,7 @@ class HighlightableContent$1 extends React$14.PureComponent {
 
 }
 
-var styles$f = aphrodite.StyleSheet.create({
+var styles$h = aphrodite.StyleSheet.create({
   // We render content with z-index 1, and highlights with z-index 0, so that
   // content will receive the browser's native pointer events. (Highlights
   // have their own magic code to manage hover detection, despite being
@@ -50071,7 +50067,7 @@ class LineHeightMeasurer extends React$13.Component {
 
   render() {
     return /*#__PURE__*/React$13.createElement("div", {
-      className: aphrodite.css(styles$e.measurer)
+      className: aphrodite.css(styles$g.measurer)
     }, /*#__PURE__*/React$13.createElement("div", null, /*#__PURE__*/React$13.createElement("div", {
       ref: e => this.$body = $$1(e),
       className: "paragraph"
@@ -50082,7 +50078,7 @@ class LineHeightMeasurer extends React$13.Component {
 
 }
 
-var styles$e = aphrodite.StyleSheet.create({
+var styles$g = aphrodite.StyleSheet.create({
   measurer: {
     position: "absolute",
     width: "100%",
@@ -52642,23 +52638,23 @@ var Matcher = createReactClass({
     };
     var cellMarginPx = this.props.apiOptions.isMobile ? 8 : 5;
     return /*#__PURE__*/React$W.createElement("table", {
-      className: aphrodite.css(styles$d.widget) + " " + HACKY_CSS_CLASSNAME
+      className: aphrodite.css(styles$f.widget) + " " + HACKY_CSS_CLASSNAME
     }, /*#__PURE__*/React$W.createElement("tbody", null, showLabels && /*#__PURE__*/React$W.createElement("tr", {
-      className: aphrodite.css(styles$d.row)
+      className: aphrodite.css(styles$f.row)
     }, /*#__PURE__*/React$W.createElement("th", {
-      className: aphrodite.css(styles$d.column, styles$d.columnLabel)
+      className: aphrodite.css(styles$f.column, styles$f.columnLabel)
     }, /*#__PURE__*/React$W.createElement(Renderer$b, {
       content: this.props.labels[0] || "...",
       linterContext: this.props.linterContext
     })), /*#__PURE__*/React$W.createElement("th", {
-      className: aphrodite.css(styles$d.column, styles$d.columnRight, styles$d.columnLabel)
+      className: aphrodite.css(styles$f.column, styles$f.columnRight, styles$f.columnLabel)
     }, /*#__PURE__*/React$W.createElement(Renderer$b, {
       content: this.props.labels[1] || "...",
       linterContext: this.props.linterContext
     }))), /*#__PURE__*/React$W.createElement("tr", {
-      className: aphrodite.css(styles$d.row)
+      className: aphrodite.css(styles$f.row)
     }, /*#__PURE__*/React$W.createElement("td", {
-      className: aphrodite.css(styles$d.column)
+      className: aphrodite.css(styles$f.column)
     }, /*#__PURE__*/React$W.createElement(Sortable, {
       options: left,
       layout: "vertical",
@@ -52671,7 +52667,7 @@ var Matcher = createReactClass({
       linterContext: this.props.linterContext,
       ref: "left"
     })), /*#__PURE__*/React$W.createElement("td", {
-      className: aphrodite.css(styles$d.column, styles$d.columnRight)
+      className: aphrodite.css(styles$f.column, styles$f.columnRight)
     }, /*#__PURE__*/React$W.createElement(Sortable, {
       options: right,
       layout: "vertical",
@@ -52728,7 +52724,7 @@ _$H.extend(Matcher, {
 
 var padding = 5;
 var border = "1px solid #444";
-var styles$d = aphrodite.StyleSheet.create({
+var styles$f = aphrodite.StyleSheet.create({
   widget: {
     paddingTop: padding,
     maxWidth: "100%",
@@ -59621,10 +59617,10 @@ var GradedGroupEditor$1 = createReactClass({
     }, /*#__PURE__*/React$A.createElement("div", {
       className: "perseus-widget-row"
     }, /*#__PURE__*/React$A.createElement("label", {
-      className: aphrodite.css(styles$c.title)
+      className: aphrodite.css(styles$e.title)
     }, "Title:", " ", /*#__PURE__*/React$A.createElement(TextInput$4, {
       value: this.props.title,
-      className: aphrodite.css(styles$c.input),
+      className: aphrodite.css(styles$e.input),
       onChange: this.change("title")
     }))), /*#__PURE__*/React$A.createElement(Editor$4, {
       ref: "editor",
@@ -59647,7 +59643,7 @@ var GradedGroupEditor$1 = createReactClass({
     }, /*#__PURE__*/React$A.createElement(InlineIcon$a, iconPlus), " Add a hint"), this.props.hint && /*#__PURE__*/React$A.createElement("div", {
       className: "perseus-hint-editor"
     }, /*#__PURE__*/React$A.createElement("div", {
-      className: aphrodite.css(styles$c.hintsTitle)
+      className: aphrodite.css(styles$e.hintsTitle)
     }, "Hint"), /*#__PURE__*/React$A.createElement(Editor$4, {
       ref: "hint-editor",
       content: this.props.hint ? this.props.hint.content : "",
@@ -59678,7 +59674,7 @@ var GradedGroupEditor$1 = createReactClass({
     });
   }
 });
-var styles$c = aphrodite.StyleSheet.create({
+var styles$e = aphrodite.StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold"
@@ -59831,25 +59827,25 @@ var GradedGroupAnswerBar$1 = createReactClass({
       onNextQuestion
     } = this.props;
 
-    var answerBarStyle = _objectSpread2(_objectSpread2({}, styles$b.answerBar), {}, {
+    var answerBarStyle = _objectSpread2(_objectSpread2({}, styles$d.answerBar), {}, {
       backgroundColor: answerBarState === ANSWER_BAR_STATES$1.CORRECT ? gray95 : "white",
       // Center the "Correct!" message only when there's no next question
       justifyContent: answerBarState === ANSWER_BAR_STATES$1.CORRECT && !onNextQuestion ? "center" : "space-between"
     });
 
-    var buttonStyle = _objectSpread2(_objectSpread2({}, styles$b.button), {}, {
+    var buttonStyle = _objectSpread2(_objectSpread2({}, styles$d.button), {}, {
       // "Check" and "Next question" buttons should both be green
       backgroundColor: answerBarState === ANSWER_BAR_STATES$1.ACTIVE || answerBarState === ANSWER_BAR_STATES$1.CORRECT ? kaGreen : gray85
     });
 
-    var textStyle = _objectSpread2(_objectSpread2({}, styles$b.text), {}, {
+    var textStyle = _objectSpread2(_objectSpread2({}, styles$d.text), {}, {
       color: answerBarState === ANSWER_BAR_STATES$1.CORRECT ? kaGreen : gray68
     });
 
     var message = answerBarState === ANSWER_BAR_STATES$1.INCORRECT ? /*#__PURE__*/React$y.createElement("span", {
       style: textStyle
     }, /*#__PURE__*/React$y.createElement("span", {
-      style: styles$b.tryAgainIcon
+      style: styles$d.tryAgainIcon
     }, /*#__PURE__*/React$y.createElement(InlineIcon$9, iconTryAgain)), /*#__PURE__*/React$y.createElement("span", {
       style: {
         marginLeft: 8
@@ -59895,7 +59891,7 @@ var GradedGroupAnswerBar$1 = createReactClass({
 
 });
 var fontSize = 17;
-var styles$b = {
+var styles$d = {
   answerBar: {
     display: "flex",
     alignItems: "center",
@@ -60138,7 +60134,7 @@ var GradedGroup$1 = createReactClass({
       }));
     }
 
-    var mobileClass = this.props.inGradedGroupSet ? aphrodite.css(styles$a.gradedGroupInSet) : aphrodite.css(styles$a.gradedGroup);
+    var mobileClass = this.props.inGradedGroupSet ? aphrodite.css(styles$c.gradedGroupInSet) : aphrodite.css(styles$c.gradedGroup);
     var classes = classNames$7({
       [mobileClass]: apiOptions.isMobile,
       "perseus-graded-group": true,
@@ -60156,7 +60152,7 @@ var GradedGroup$1 = createReactClass({
     return /*#__PURE__*/React$x.createElement("div", {
       className: classes
     }, !!this.props.title && /*#__PURE__*/React$x.createElement("div", {
-      className: aphrodite.css(styles$a.title)
+      className: aphrodite.css(styles$c.title)
     }, this.props.title), /*#__PURE__*/React$x.createElement(Renderer$7, _extends({}, this.props, {
       ref: "renderer",
       apiOptions: _objectSpread2(_objectSpread2({}, apiOptions), {}, {
@@ -60182,7 +60178,7 @@ var GradedGroup$1 = createReactClass({
         marginLeft: 5
       }
     }), this.props.hint && this.props.hint.content && (this.state.showHint ? /*#__PURE__*/React$x.createElement("div", null, /*#__PURE__*/React$x.createElement("div", {
-      className: aphrodite.css(styles$a.explanationTitle),
+      className: aphrodite.css(styles$c.explanationTitle),
       onClick: () => this.setState({
         showHint: false
       })
@@ -60194,7 +60190,7 @@ var GradedGroup$1 = createReactClass({
       onClick: () => this.setState({
         showHint: true
       }),
-      className: aphrodite.css(styles$a.showHintLink)
+      className: aphrodite.css(styles$c.showHintLink)
     }, i18n._("Explain"))), apiOptions.isMobile && answerBarState !== ANSWER_BAR_STATES.HIDDEN && /*#__PURE__*/React$x.createElement(GradedGroupAnswerBar, {
       apiOptions: apiOptions,
       answerBarState: answerBarState,
@@ -60218,7 +60214,7 @@ _module_$w.exports = {
   tracking: "all",
   isLintable: true
 };
-var styles$a = aphrodite.StyleSheet.create({
+var styles$c = aphrodite.StyleSheet.create({
   gradedGroupInSet: {
     // Reset a few desktop-only styles that come from graded-group.less
     marginLeft: 0,
@@ -60286,7 +60282,7 @@ var Indicators = createReactClass({
     var _loop = function _loop(i) {
       items.push( /*#__PURE__*/React$w.createElement("div", {
         key: i,
-        className: aphrodite.css(styles$9.indicator, i === _this.props.currentGroup && styles$9.selectedIndicator),
+        className: aphrodite.css(styles$b.indicator, i === _this.props.currentGroup && styles$b.selectedIndicator),
         onClick: () => _this.props.onChangeCurrentGroup(i)
       }));
     };
@@ -60296,7 +60292,7 @@ var Indicators = createReactClass({
     }
 
     return /*#__PURE__*/React$w.createElement("div", {
-      className: aphrodite.css(styles$9.indicatorContainer)
+      className: aphrodite.css(styles$b.indicatorContainer)
     }, items);
   }
 
@@ -60385,13 +60381,13 @@ var GradedGroupSet = createReactClass({
     var numGroups = this.props.gradedGroups.length;
     var handleNextQuestion = this.state.currentGroup < numGroups - 1 ? this.handleNextQuestion : null;
     return /*#__PURE__*/React$w.createElement("div", {
-      className: aphrodite.css(styles$9.container)
+      className: aphrodite.css(styles$b.container)
     }, /*#__PURE__*/React$w.createElement("div", {
-      className: aphrodite.css(styles$9.top)
+      className: aphrodite.css(styles$b.top)
     }, /*#__PURE__*/React$w.createElement("div", {
-      className: aphrodite.css(styles$9.title)
+      className: aphrodite.css(styles$b.title)
     }, currentGroup.title), /*#__PURE__*/React$w.createElement("div", {
-      className: aphrodite.css(styles$9.spacer)
+      className: aphrodite.css(styles$b.spacer)
     }), /*#__PURE__*/React$w.createElement(Indicators, {
       numGroups: numGroups,
       currentGroup: this.state.currentGroup,
@@ -60428,7 +60424,7 @@ _module_$v.exports = {
   tracking: "all",
   isLintable: true
 };
-var styles$9 = aphrodite.StyleSheet.create({
+var styles$b = aphrodite.StyleSheet.create({
   top: {
     display: "flex",
     flexDirection: "row"
@@ -61568,8 +61564,8 @@ var module$3 = {
 var React$u = _react__default["default"];
 var ReactDOM$6 = _reactDom__default["default"];
 var createReactClass$3 = _createReactClass__default["default"];
-var PropTypes$3 = _propTypes__default["default"];
-var styles$8 = _stylesJs;
+var PropTypes$3 = PropTypes__default["default"];
+var styles$a = _stylesJs;
 var MultiButtonGroup$2 = createReactClass$3({
   displayName: "MultiButtonGroup",
   propTypes: {
@@ -61618,7 +61614,7 @@ var MultiButtonGroup$2 = createReactClass$3({
         id: "" + i,
         key: "" + i,
         ref: "button" + i,
-        className: aphrodite.css(styles$8.button.buttonStyle, selected && styles$8.button.selectedStyle),
+        className: aphrodite.css(styles$a.button.buttonStyle, selected && styles$a.button.selectedStyle),
         onClick: this.toggleSelect.bind(this, button.value)
       }, button.content || "" + button.value);
     });
@@ -62014,28 +62010,28 @@ var Definition = createReactClass({
 
     if (isMobile) {
       link = /*#__PURE__*/React$r.createElement("a", {
-        className: aphrodite.css(styles$7.mobileDefinitionLink),
+        className: aphrodite.css(styles$9.mobileDefinitionLink),
         href: href,
         onClick: onClick
       }, linkAnchor);
     } else {
       link = /*#__PURE__*/React$r.createElement("a", {
-        className: aphrodite.css(styles$7.definitionLink),
+        className: aphrodite.css(styles$9.definitionLink),
         href: href,
         onMouseOver: onMouseOver,
         onMouseOut: onMouseOut
       }, linkAnchor);
     }
 
-    var expandedStyle = isMobile ? styles$7.contentExpandedMobile : styles$7.contentExpanded;
+    var expandedStyle = isMobile ? styles$9.contentExpandedMobile : styles$9.contentExpanded;
     var arrowTransform = this.state.belowScreen ? "scale(1, -1)" : "scale(1, 1)";
     return /*#__PURE__*/React$r.createElement("div", {
-      className: aphrodite.css(styles$7.container),
+      className: aphrodite.css(styles$9.container),
       ref: e => this.container = e
     }, /*#__PURE__*/React$r.createElement("div", {
-      className: aphrodite.css(styles$7.linkContainer)
+      className: aphrodite.css(styles$9.linkContainer)
     }, link, this.state.expanded && /*#__PURE__*/React$r.createElement("svg", {
-      className: aphrodite.css(styles$7.disclosureArrow),
+      className: aphrodite.css(styles$9.disclosureArrow),
       ref: e => this.arrow = e,
       transform: arrowTransform,
       style: {
@@ -62061,7 +62057,7 @@ var Definition = createReactClass({
       filter: "url(#definition-widget-dropshadow)",
       points: "0,".concat(arrowHeight$1, " ") + "".concat(arrowWidth$1, ",").concat(arrowHeight$1, " ") + "".concat(arrowWidth$1 / 2, ",0")
     }))), /*#__PURE__*/React$r.createElement("div", {
-      className: aphrodite.css(styles$7.content, isMobile && styles$7.contentMobile, this.state.expanded && expandedStyle),
+      className: aphrodite.css(styles$9.content, isMobile && styles$9.contentMobile, this.state.expanded && expandedStyle),
       style: {
         height: this.state.expanded ? "auto" : 0,
         overflow: this.state.expanded ? "visible" : "hidden",
@@ -62084,7 +62080,7 @@ var dropShadowRadius = 4;
 var arrowWidth$1 = 20;
 var arrowHeight$1 = 14;
 var backgroundColor$1 = white;
-var styles$7 = aphrodite.StyleSheet.create({
+var styles$9 = aphrodite.StyleSheet.create({
   container: {
     display: "inline",
     position: "relative"
@@ -62329,13 +62325,13 @@ var Explanation = createReactClass({
 
     if (isMobile) {
       linkContainer = /*#__PURE__*/React$p.createElement("div", {
-        className: aphrodite.css(styles$6.linkContainer)
+        className: aphrodite.css(styles$8.linkContainer)
       }, /*#__PURE__*/React$p.createElement("a", {
-        className: aphrodite.css(styles$6.mobileExplanationLink),
+        className: aphrodite.css(styles$8.mobileExplanationLink),
         href: href,
         onClick: onClick
       }, linkAnchor), this.state.expanded && /*#__PURE__*/React$p.createElement("svg", {
-        className: aphrodite.css(styles$6.disclosureArrow)
+        className: aphrodite.css(styles$8.disclosureArrow)
       }, /*#__PURE__*/React$p.createElement("polygon", {
         style: {
           fill: backgroundColor
@@ -62344,19 +62340,19 @@ var Explanation = createReactClass({
       })));
     } else {
       linkContainer = /*#__PURE__*/React$p.createElement("div", {
-        className: aphrodite.css(styles$6.linkContainer)
+        className: aphrodite.css(styles$8.linkContainer)
       }, /*#__PURE__*/React$p.createElement(Link, {
-        className: aphrodite.css(styles$6.explanationLink),
+        className: aphrodite.css(styles$8.explanationLink),
         href: href,
         onClick: onClick
       }, "[".concat(linkAnchor, "]")));
     }
 
-    var expandedStyle = isMobile ? styles$6.contentExpandedMobile : styles$6.contentExpanded;
+    var expandedStyle = isMobile ? styles$8.contentExpandedMobile : styles$8.contentExpanded;
     return /*#__PURE__*/React$p.createElement("div", {
-      className: aphrodite.css(styles$6.container)
+      className: aphrodite.css(styles$8.container)
     }, linkContainer, /*#__PURE__*/React$p.createElement("div", {
-      className: aphrodite.css(styles$6.content, isMobile && styles$6.contentMobile, this.state.expanded && expandedStyle),
+      className: aphrodite.css(styles$8.content, isMobile && styles$8.contentMobile, this.state.expanded && expandedStyle),
       style: {
         height: this.state.expanded ? "auto" : 0,
         overflow: this.state.expanded ? "visible" : "hidden"
@@ -62381,7 +62377,7 @@ var verticalContentPadding = 10;
 var arrowWidth = 30;
 var arrowHeight = 14;
 var backgroundColor = gray95;
-var styles$6 = aphrodite.StyleSheet.create({
+var styles$8 = aphrodite.StyleSheet.create({
   container: {
     display: "inline",
     position: "relative"
@@ -62684,7 +62680,7 @@ var Dropdown = createReactClass({
       className: selectClasses + // This makes it so that mobile's fastclick doesn't
       // interfere & call `.focus` when we're inside of a
       // zoomable table.
-      " nofastclick " + aphrodite.css(styles$5.dropdown) + " " + ApiClassNames$6.INTERACTIVE,
+      " nofastclick " + aphrodite.css(styles$7.dropdown) + " " + ApiClassNames$6.INTERACTIVE,
       disabled: this.props.apiOptions.readOnly,
       value: this.props.selected
     }, /*#__PURE__*/React$n.createElement("option", {
@@ -62754,7 +62750,7 @@ var propTransform$1 = editorProps => {
   };
 };
 
-var styles$5 = aphrodite.StyleSheet.create({
+var styles$7 = aphrodite.StyleSheet.create({
   dropdown: {
     appearance: "none",
     backgroundColor: "transparent",
@@ -63266,7 +63262,7 @@ var Categorizer$1 = createReactClass({
       // middle. (If we later add that, this should be
       // fixed.)
       return /*#__PURE__*/React$k.createElement("th", {
-        className: aphrodite.css(styles$4.header),
+        className: aphrodite.css(styles$6.header),
         key: i
       }, /*#__PURE__*/React$k.createElement(Renderer$4, {
         content: category,
@@ -63286,7 +63282,7 @@ var Categorizer$1 = createReactClass({
       })), _$d.range(self.props.categories.length).map(catNum => {
         var selected = self.props.values[itemNum] === catNum;
         return /*#__PURE__*/React$k.createElement("td", {
-          className: "category " + aphrodite.css(styles$4.cell, styles$4.responsiveCell),
+          className: "category " + aphrodite.css(styles$6.cell, styles$6.responsiveCell),
           key: catNum
         }, /*#__PURE__*/React$k.createElement("div", {
           className: ApiClassNames$5.INTERACTIVE,
@@ -63299,7 +63295,7 @@ var Categorizer$1 = createReactClass({
           onChange: this.onChange.bind(this, itemNum, catNum),
           onClick: e => e.stopPropagation()
         }), !isMobile && /*#__PURE__*/React$k.createElement("span", {
-          className: aphrodite.css(styles$4.responsiveSpan, styles$4.radioSpan, selected && styles$4.checkedRadioSpan, this.props.static && selected && styles$4.staticCheckedRadioSpan)
+          className: aphrodite.css(styles$6.responsiveSpan, styles$6.radioSpan, selected && styles$6.checkedRadioSpan, this.props.static && selected && styles$6.staticCheckedRadioSpan)
         }, selected ? /*#__PURE__*/React$k.createElement(InlineIcon$5, iconCircle) : /*#__PURE__*/React$k.createElement(InlineIcon$5, iconCircleThin))));
       }));
       /* eslint-enable max-len */
@@ -63310,7 +63306,7 @@ var Categorizer$1 = createReactClass({
       "categorizer-container": true,
       "static-mode": this.props.static
     });
-    var inlineStyles = this.props.apiOptions.isMobile ? [styles$4.fullBleedContainer] : [];
+    var inlineStyles = this.props.apiOptions.isMobile ? [styles$6.fullBleedContainer] : [];
     return /*#__PURE__*/React$k.createElement("div", {
       className: extraClassNames + " " + aphrodite.css(...inlineStyles)
     }, table);
@@ -63360,7 +63356,7 @@ _$d.extend(Categorizer$1, {
 
 
 var pageMargin = 16;
-var styles$4 = aphrodite.StyleSheet.create({
+var styles$6 = aphrodite.StyleSheet.create({
   fullBleedContainer: {
     [mediaQueries$2.mdOrSmaller]: {
       marginLeft: -pageMargin,
@@ -63503,9 +63499,235 @@ var CategorizerEditor = createReactClass({
 _module_$j.exports = CategorizerEditor;
 var _widgetsCategorizerEditorJsx = _module_$j.exports;
 
+var img$4 = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3e%3cpath style='fill:%23f70000%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M240.3 0a240.3 240.3 0 1 1 0 480.5 240.3 240.3 0 0 1 0-480.5z' transform='rotate(.1) scale(.9959)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 805.5 -556.9) scale(1.46454)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 874 -1214.8) scale(1.46454)'/%3e%3cpath style='fill:black%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M168.4 24a102.5 102.5 0 0 1 0 157l-7.2-8.6a91.2 91.2 0 0 0 0-139.8z' transform='matrix(0 -1.47737 1 0 135.8 592.2)'/%3e%3c/svg%3e";
+
+var img$3 = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3e%3cpath style='fill:%23ff8f00%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M240.3 0a240.3 240.3 0 1 1 0 480.5 240.3 240.3 0 0 1 0-480.5z' transform='rotate(.1) scale(.9959)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 805.5 -556.9) scale(1.46454)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 874 -1214.8) scale(1.46454)'/%3e%3cpath style='fill:black%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M168.4 24a102.5 102.5 0 0 1 0 157l-7.2-8.6a91.2 91.2 0 0 0 0-139.8z' transform='matrix(-.00032 -.798 1 -.0004 136 453)'/%3e%3c/svg%3e";
+
+var img$2 = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3e%3cpath style='fill:%23ffd300%3bvector-effect:non-scaling-stroke' d='M240.3 0a240.3 240.3 0 1 1 0 480.5 240.3 240.3 0 0 1 0-480.5z' transform='rotate(.1) scale(.9959)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 805.5 -556.9) scale(1.46454)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 874 -1214.8) scale(1.46454)'/%3e%3cpath style='fill:black%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M0 0h144v20H0z' transform='matrix(1.34949 0 0 .61332 142 321.7)'/%3e%3c/svg%3e";
+
+var img$1 = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3e%3cpath style='fill:%23aeee00%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M240.3 0a240.3 240.3 0 1 1 0 480.5 240.3 240.3 0 0 1 0-480.5z' transform='rotate(.1) scale(.9959)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 805.5 -556.9) scale(1.46454)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 874 -1214.8) scale(1.46454)'/%3e%3cpath style='fill:black%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M168.4 24a102.5 102.5 0 0 1 0 157l-7.2-8.6a91.2 91.2 0 0 0 0-139.8z' transform='matrix(-.00163 .798 -1 -.00204 342.1 212.6)'/%3e%3c/svg%3e";
+
+var img = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3e%3cpath style='fill:%2302aa1e%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M240.3 0a240.3 240.3 0 1 1 0 480.5 240.3 240.3 0 0 1 0-480.5z' transform='rotate(.1) scale(.9959)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 805.5 -556.9) scale(1.46454)'/%3e%3cpath style='fill:%231f1f1f%3bstroke:black%3bmix-blend-mode:source-over%3bpaint-order:stroke fill markers%3bfill-opacity:1%3bstroke-dasharray:none%3bstroke-dashoffset:0%3bstroke-linecap:round%3bstroke-linejoin:miter%3bstroke-miterlimit:4%3bstroke-opacity:1%3bstroke-width:2%3bvector-effect:non-scaling-stroke' d='M19.4 0a19.4 19.4 0 1 1 0 38.8 19.4 19.4 0 0 1 0-38.8z' transform='rotate(-11.9 874 -1214.8) scale(1.46454)'/%3e%3cpath style='fill:black%3bmix-blend-mode:source-over%3bfill-opacity:1%3bvector-effect:non-scaling-stroke' d='M168.4 24a102.5 102.5 0 0 1 0 157l-7.2-8.6a91.2 91.2 0 0 0 0-139.8z' transform='matrix(.00018 1.47737 -1 .00012 341 76)'/%3e%3c/svg%3e";
+
+var LikertFaces = [img$4, img$3, img$2, img$1, img];
+var styles$5 = aphrodite.StyleSheet.create({
+  container: {
+    // create a new stacking context:
+    position: 'relative',
+    // TODO(aria): better approach to scratchpad z-indexing
+    zIndex: 3,
+    // to match #problemaria > button
+    userSelect: 'none',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'stretch'
+  },
+  choice: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'start',
+    alignItems: 'center',
+    zIndex: 0,
+    borderWidth: 1,
+    borderRadius: 0,
+    marginRight: -1,
+    borderColor: 'gray',
+    backgroundColor: '#eee',
+    padding: 15,
+    ':hover': {
+      zIndex: 1,
+      outline: '2px solid aqua'
+    },
+    ':focus-visible': {
+      zIndex: 1,
+      outline: '2px solid aqua'
+    },
+    ':active': {
+      backgroundColor: 'deepskyblue'
+    }
+  },
+  first: {
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5
+  },
+  last: {
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
+    marginRight: 0
+  },
+  selectedChoice: {
+    backgroundColor: 'deepskyblue'
+  },
+  face: {
+    display: 'block',
+    height: 50,
+    width: 50,
+    marginBottom: 5
+  }
+});
+
+class LikertChoice extends _react__namespace.PureComponent {
+  constructor() {
+    super(...arguments);
+
+    _defineProperty(this, "render", () => {
+      var isSelected = this.props.selected === this.props.value;
+      return /*#__PURE__*/_react__namespace.createElement("button", {
+        type: "button",
+        role: "radio",
+        "aria-checked": isSelected,
+        className: aphrodite.css(styles$5.choice, this.props.value === 1 && styles$5.first, this.props.value === 5 && styles$5.last, isSelected && styles$5.selectedChoice),
+        onClick: this._handleSelect
+      }, /*#__PURE__*/_react__namespace.createElement("img", {
+        className: aphrodite.css(styles$5.face),
+        src: this.props.image,
+        alt: this.props.alt,
+        title: this.props.alt
+      }), this.props.label);
+    });
+
+    _defineProperty(this, "_handleSelect", () => {
+      this.props.onSelect(this.props.value);
+    });
+  }
+
+}
+
+_defineProperty(LikertChoice, "propTypes", {
+  value: PropTypes__default["default"].number.isRequired,
+  onSelect: PropTypes__default["default"].func.isRequired,
+  image: PropTypes__default["default"].string.isRequired,
+  label: PropTypes__default["default"].string.isRequired
+});
+
+class LikertScale extends _react__namespace.PureComponent {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "render", () => {
+      return /*#__PURE__*/_react__namespace.createElement("div", {
+        role: "radiogroup",
+        className: aphrodite.css(styles$5.container)
+      }, this.props.labels.map((label, index) => /*#__PURE__*/_react__namespace.createElement(LikertChoice, {
+        value: index + 1,
+        image: LikertFaces[index],
+        label: label,
+        selected: this.props.selected,
+        onSelect: this._handleChoice
+      })));
+    });
+
+    _defineProperty(this, "_handleChoice", selected => {
+      this.props.onChange({
+        selected: selected
+      });
+    });
+
+    _defineProperty(this, "getUserInput", () => {
+      return {
+        selected: this.props.selected,
+        label: this.props.selected == null ? null : this.props.labels[this.props.selected - 1]
+      };
+    });
+
+    _defineProperty(this, "simpleValidate", (rubric, onInputError) => {
+      if (this.props.selected == null) {
+        return {
+          type: "invalid",
+          message: null
+        };
+      }
+
+      return {
+        type: "points",
+        earned: 1,
+        total: 1
+      };
+    });
+  }
+
+}
+
+_defineProperty(LikertScale, "propTypes", {
+  labels: PropTypes__default["default"].arrayOf(PropTypes__default["default"].string).isRequired,
+  selected: PropTypes__default["default"].oneOf([null, 1, 2, 3, 4, 5]),
+  onChange: PropTypes__default["default"].func.isRequired
+});
+
+_defineProperty(LikertScale, "defaultProps", {
+  selected: null
+});
+
+var editorPropsToWidgetProps = editorProps => {
+  return {
+    labels: editorProps.labels
+  };
+};
+
+var LikertScaleInfo = {
+  name: "likert-scale",
+  displayName: "Likert Scale",
+  // Tell the renderer what type of `display:` style we would like
+  // for the component wrapping this one.
+  defaultAlignment: "block",
+  widget: LikertScale,
+  transform: editorPropsToWidgetProps
+};
+
+var styles$4 = aphrodite.StyleSheet.create({
+  face: {
+    display: 'inline-block',
+    width: 30,
+    height: 30,
+    margin: 5,
+    verticalAlign: 'middle'
+  }
+});
+
+class LikertScaleEditor extends _react__namespace.Component {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "_changeLabel", (index, newLabel) => {
+      this.props.onChange({
+        labels: this.props.labels.map((label, i) => i === index ? newLabel : label)
+      });
+    });
+  }
+
+  render() {
+    return /*#__PURE__*/_react__namespace.createElement("div", null, "Choice Labels:", this.props.labels.map((label, i) => /*#__PURE__*/_react__namespace.createElement("div", null, /*#__PURE__*/_react__namespace.createElement("img", {
+      className: aphrodite.css(styles$4.face),
+      src: LikertFaces[i],
+      alt: ""
+    }), /*#__PURE__*/_react__namespace.createElement("input", {
+      type: "text",
+      className: aphrodite.css(styles$4.labelInput),
+      value: label,
+      onChange: e => this._changeLabel(i, e.target.value)
+    }))));
+  }
+
+  serialize() {
+    return {
+      labels: this.props.labels
+    };
+  }
+
+}
+
+_defineProperty(LikertScaleEditor, "propTypes", {
+  labels: PropTypes__default["default"].arrayOf(PropTypes__default["default"].string),
+  onChange: PropTypes__default["default"].func.isRequired
+});
+
+_defineProperty(LikertScaleEditor, "defaultProps", {
+  labels: ["", "", "", "", ""]
+});
+
 // webapp perseus/traversal.py so they can be properly translated.
 
-var allWidgets = [[_widgetsCategorizerJsx, _widgetsCategorizerEditorJsx], [_widgetsCsProgramJsx, _widgetsCsProgramEditorJsx], [_widgetsDropdownJsx, _widgetsDropdownEditorJsx], [_widgetsExplanationJsx, _widgetsExplanationEditorJsx], [_widgetsDefinitionJsx, _widgetsDefinitionEditorJsx], [_widgetsGrapherJsx, _widgetsGrapherEditorJsx], [_widgetsGradedGroupJsx, _widgetsGradedGroupEditorJsx], [_widgetsGradedGroupSetJsx, _widgetsGradedGroupSetEditorJsx], [_widgetsGroupJsx, _widgetsGroupEditorJsx], [_widgetsIframeJsx, _widgetsIframeEditorJsx], [_widgetsImageJsx, _widgetsImageEditorJsx], [_widgetsInteractionJsx, _widgetsInteractionEditorJsx], [_widgetsInteractiveGraphJsx, _widgetsInteractiveGraphEditorJsx], [_widgetsLightsPuzzleJsx, _widgetsLightsPuzzleEditorJsx], [_widgetsMatrixJsx, _widgetsMatrixEditorJsx], [_widgetsMatcherJsx, _widgetsMatcherEditorJsx], [_widgetsMeasurerJsx, _widgetsMeasurerEditorJsx], [_widgetsMoleculeJsx, _widgetsMoleculeEditorJsx], [_widgetsNumberLineJsx, _widgetsNumberLineEditorJsx], [_widgetsOrdererJsx, _widgetsOrdererEditorJsx], [_widgetsPassageJsx, _widgetsPassageEditorJsx], [_passageRefJsx, _widgetsPassageRefEditorJsx], [_widgetsPassageRefTargetJsx, _widgetsPassageRefTargetEditorJsx], [_widgetsPlotterJsx, _widgetsPlotterEditorJsx], [_widgetsReactionDiagramJsx, _widgetsReactionDiagramEditorJsx], [_widgetsSequenceJsx, _widgetsSequenceEditorJsx], [_widgetsSimulatorJsx, _widgetsSimulatorEditorJsx], [_widgetsSorterJsx, _widgetsSorterEditorJsx], [_widgetsTableJsx, _widgetsTableEditorJsx], [_widgetsTransformerJsx, _widgetsTransformerEditorJsx], [_widgetsUnitJsx, _widgetsUnitEditorJsx], [_widgetsVideoJsx, _widgetsVideoEditorJsx] // These widgets are only used when testing things, so remove them in the
+var allWidgets = [[_widgetsCategorizerJsx, _widgetsCategorizerEditorJsx], [_widgetsCsProgramJsx, _widgetsCsProgramEditorJsx], [_widgetsDropdownJsx, _widgetsDropdownEditorJsx], [_widgetsExplanationJsx, _widgetsExplanationEditorJsx], [_widgetsDefinitionJsx, _widgetsDefinitionEditorJsx], [_widgetsGrapherJsx, _widgetsGrapherEditorJsx], [_widgetsGradedGroupJsx, _widgetsGradedGroupEditorJsx], [_widgetsGradedGroupSetJsx, _widgetsGradedGroupSetEditorJsx], [_widgetsGroupJsx, _widgetsGroupEditorJsx], [_widgetsIframeJsx, _widgetsIframeEditorJsx], [_widgetsImageJsx, _widgetsImageEditorJsx], [_widgetsInteractionJsx, _widgetsInteractionEditorJsx], [_widgetsInteractiveGraphJsx, _widgetsInteractiveGraphEditorJsx], [_widgetsLightsPuzzleJsx, _widgetsLightsPuzzleEditorJsx], [_widgetsMatrixJsx, _widgetsMatrixEditorJsx], [_widgetsMatcherJsx, _widgetsMatcherEditorJsx], [_widgetsMeasurerJsx, _widgetsMeasurerEditorJsx], [_widgetsMoleculeJsx, _widgetsMoleculeEditorJsx], [_widgetsNumberLineJsx, _widgetsNumberLineEditorJsx], [_widgetsOrdererJsx, _widgetsOrdererEditorJsx], [_widgetsPassageJsx, _widgetsPassageEditorJsx], [_passageRefJsx, _widgetsPassageRefEditorJsx], [_widgetsPassageRefTargetJsx, _widgetsPassageRefTargetEditorJsx], [_widgetsPlotterJsx, _widgetsPlotterEditorJsx], [_widgetsReactionDiagramJsx, _widgetsReactionDiagramEditorJsx], [_widgetsSequenceJsx, _widgetsSequenceEditorJsx], [_widgetsSimulatorJsx, _widgetsSimulatorEditorJsx], [_widgetsSorterJsx, _widgetsSorterEditorJsx], [_widgetsTableJsx, _widgetsTableEditorJsx], [_widgetsTransformerJsx, _widgetsTransformerEditorJsx], [_widgetsUnitJsx, _widgetsUnitEditorJsx], [_widgetsVideoJsx, _widgetsVideoEditorJsx], [LikertScaleInfo, LikertScaleEditor] // These widgets are only used when testing things, so remove them in the
 // non-editor bundle.
 //__EDITOR__ && [
 //    _widgetsExampleGraphieWidgetJsx,
@@ -63635,7 +63857,7 @@ var module$2 = {
 var React$i = _react__default["default"];
 var ReactDOM$3 = _reactDom__default["default"];
 var createReactClass$2 = _createReactClass__default["default"];
-var PropTypes$2 = _propTypes__default["default"];
+var PropTypes$2 = PropTypes__default["default"];
 var zIndex = 10;
 var Triangle = createReactClass$2({
   displayName: "Triangle",
@@ -64648,7 +64870,7 @@ var module$1 = {
 var React$f = _react__default["default"];
 var ReactDOM$2 = _reactDom__default["default"];
 var createReactClass$1 = _createReactClass__default["default"];
-var PropTypes$1 = _propTypes__default["default"];
+var PropTypes$1 = PropTypes__default["default"];
 var PT = PropTypes$1; // Takes an array of components to sort
 
 var SortableArea$1 = createReactClass$1({
