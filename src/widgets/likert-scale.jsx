@@ -7,6 +7,7 @@ import Likert3 from "./likert-scale/likert-face-3.svg";
 import Likert4 from "./likert-scale/likert-face-4.svg";
 import Likert5 from "./likert-scale/likert-face-5.svg";
 
+export const LikertFaces = [Likert1, Likert2, Likert3, Likert4, Likert5];
 
 const styles = StyleSheet.create({
     container: {
@@ -14,8 +15,16 @@ const styles = StyleSheet.create({
         position: 'relative',
         // TODO(aria): better approach to scratchpad z-indexing
         zIndex: 3, // to match #problemaria > button
+        userSelect: 'none',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'stretch',
     },
     choice: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'start',
+        alignItems: 'center',
         zIndex: 0,
         borderWidth: 1,
         borderRadius: 0,
@@ -25,14 +34,14 @@ const styles = StyleSheet.create({
         padding: 15,
         ':hover': {
             zIndex: 1,
-            outline: '2px solid lime',
+            outline: '2px solid aqua',
         },
         ':focus-visible': {
             zIndex: 1,
-            outline: '2px solid lime',
+            outline: '2px solid aqua',
         },
         ':active': {
-            backgroundColor: 'green',
+            backgroundColor: 'deepskyblue',
         },
     },
     first: {
@@ -45,12 +54,13 @@ const styles = StyleSheet.create({
         marginRight: 0,
     },
     selectedChoice: {
-        backgroundColor: 'green',
+        backgroundColor: 'deepskyblue',
     },
-    emoji: {
+    face: {
         display: 'block',
         height: 50,
         width: 50,
+        marginBottom: 5,
     },
 });
 
@@ -58,9 +68,8 @@ class LikertChoice extends React.PureComponent {
     static propTypes = {
         value: PropTypes.number.isRequired,
         onSelect: PropTypes.func.isRequired,
-        styles: PropTypes.object,
         image: PropTypes.string.isRequired,
-        alt: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
     };
 
     render = () => {
@@ -72,7 +81,8 @@ class LikertChoice extends React.PureComponent {
             className={css(styles.choice, this.props.value === 1 && styles.first, this.props.value === 5 && styles.last, isSelected && styles.selectedChoice)}
             onClick={this._handleSelect}
         >
-            <img className={css(styles.emoji)} src={this.props.image} alt={this.props.alt} title={this.props.alt} />
+            <img className={css(styles.face)} src={this.props.image} alt={this.props.alt} title={this.props.alt} />
+            {this.props.label}
         </button>;
     }
 
@@ -83,6 +93,7 @@ class LikertChoice extends React.PureComponent {
 
 class LikertScale extends React.PureComponent {
     static propTypes = {
+        labels: PropTypes.arrayOf(PropTypes.string).isRequired,
         selected: PropTypes.oneOf([null, 1, 2, 3, 4, 5]),
         onChange: PropTypes.func.isRequired,
     };
@@ -97,11 +108,15 @@ class LikertScale extends React.PureComponent {
 
     render = () => {
         return <div role="radiogroup" className={css(styles.container)}>
-            <LikertChoice value={1} selected={this.props.selected} onSelect={this._handleChoice} image={Likert1} alt="bad" />
-            <LikertChoice value={2} selected={this.props.selected} onSelect={this._handleChoice} image={Likert2} alt="not good" />
-            <LikertChoice value={3} selected={this.props.selected} onSelect={this._handleChoice} image={Likert3} alt="neutral or unsure" />
-            <LikertChoice value={4} selected={this.props.selected} onSelect={this._handleChoice} image={Likert4} alt="good"/>
-            <LikertChoice value={5} selected={this.props.selected} onSelect={this._handleChoice} image={Likert5} alt="great!" />
+            {this.props.labels.map((label, index) => (
+                <LikertChoice
+                    value={index + 1}
+                    image={LikertFaces[index]}
+                    label={label}
+                    selected={this.props.selected}
+                    onSelect={this._handleChoice}
+                />
+            ))}
         </div>;
     };
 
@@ -112,6 +127,8 @@ class LikertScale extends React.PureComponent {
     getUserInput = () => {
         return {
             selected: this.props.selected,
+            label: this.props.selected == null ? null :
+                this.props.labels[this.props.selected - 1],
         };
     };
 
@@ -131,7 +148,9 @@ class LikertScale extends React.PureComponent {
 }
 
 const editorPropsToWidgetProps = (editorProps) => {
-  return {};
+    return {
+        labels: editorProps.labels
+    };
 };
 
 
