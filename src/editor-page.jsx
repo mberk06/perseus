@@ -74,7 +74,6 @@ var EditorPage = createReactClass({
             developerMode: false,
             jsonMode: false,
             onChange: () => {},
-            ref: "",
         };
     },
 

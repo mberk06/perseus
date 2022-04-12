@@ -76,6 +76,7 @@ var ItemEditor = createReactClass({
                     <div className="perseus-editor-right-cell">
                         <div id="problemarea">
                             <Renderer
+                                ref="questionRenderer"
                                 apiOptions={this.props.apiOptions}
                                 {...this.props.question}
                             />
