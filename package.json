@@ -18,11 +18,13 @@
   "main": "perseus.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c",
+    "build": "rollup -c && react-scripts build",
+    "postbuild": "rm -rf ./docs/; mv ./build/ ./docs",
     "prepare": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": ".",
   "eslintConfig": {
     "extends": []
   },
